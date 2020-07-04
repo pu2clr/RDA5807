@@ -557,6 +557,7 @@ class RDA5807 {
 
 
         uint16_t startBand[4] = {8700, 7600, 7600, 6500};
+        uint16_t endBand[4] = {10800, 9100, 10800, 7600}; //!< End FM band limit
         uint16_t fmSpace[4] = {100, 200, 50, 25};
 
     protected:
@@ -616,7 +617,12 @@ class RDA5807 {
             void setup(uint8_t clock_type = CLOCK_32K, uint8_t oscillator_type = OSCILLATOR_TYPE_CRYSTAL);
 
             void setFrequency(uint16_t frequency);
+
+
             uint16_t getFrequency();
+            void setFrequencyUp();
+            void setFrequencyDown();
+
             uint16_t getRealFrequency();
             uint16_t getRealChannel();
             void setChannel(uint16_t channel);
@@ -630,6 +636,7 @@ class RDA5807 {
             void setSoftmute(bool value);
 
             void setMono(bool value);
+            bool isStereo();
 
             void setRDS(bool value);
             void setRBDS(bool value);

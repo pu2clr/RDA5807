@@ -64,9 +64,7 @@ void setup()
     rx.setFrequency(10650); // It is the frequency you want to select in MHz multiplied by 100.
 
     // Enables SDR
-    rx.setRds(true);
-    rx.setRdsMode(0); 
-    rx.setSeekThreshold(30); // Sets RSSI Seek Threshold (0 to 127)
+    rx.setRDS(true);
 
     showHelp();
     showStatus();

@@ -256,6 +256,36 @@ void RDA5807::setFrequency(uint16_t frequency)
 
 /**
  * @ingroup GA03
+ * @brief Increments the current frequency
+ * @details The increment uses the band space as step. See array: uint16_t fmSpace[4] = {100/10, 200/10, 50/10, 25/10};
+ */
+void RDA5807::setFrequencyUp()
+{
+    if (this->currentFrequency < this->endBand[this->currentFMBand])
+        this->currentFrequency += (this->fmSpace[currentFMSpace] / 10.0);
+    else
+        this->currentFrequency = this->startBand[this->currentFMBand];
+
+    setFrequency(this->currentFrequency);
+}
+
+/**
+ * @ingroup GA03
+ * @brief Decrements the current frequency
+ * @details The drecrement uses the band space as step. See array: uint16_t fmSpace[4] = {20, 10, 5, 1};
+ */
+void RDA5807::setFrequencyDown()
+{
+    if (this->currentFrequency > this->startBand[this->currentFMBand])
+        this->currentFrequency -= (this->fmSpace[currentFMSpace] / 10.0);
+    else
+        this->currentFrequency = this->endBand[this->currentFMBand];
+
+    setFrequency(this->currentFrequency);
+}
+
+/**
+ * @ingroup GA03
  * @brief Gets the current frequency.
  * @return uint16_t
  */
@@ -400,6 +430,18 @@ void RDA5807::setMono(bool value)
 {
     reg02->refined.MONO = value;
     setRegister(REG02, reg02->raw);
+}
+
+/**
+ * @ingroup GA03
+ * @brief Gets the current Stereo status
+ *
+ * @return TRUE if stereo; 
+ */
+bool RDA5807::isStereo()
+{
+    getStatus(REG0A);
+    return reg0a->refined.ST;
 }
 
 /**
