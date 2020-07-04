@@ -16,9 +16,9 @@
 #include <RDA5807.h>
 
 #define RESET_PIN PA12       // On Arduino Atmega328 based board, this pin is labeled as A0 (14 means digital pin instead analog)
-#define STM32_SDA_PIN   PB7        //  
+#define STM32_SDA_PIN   PB7  //  
 
-#define MAX_DELAY_RDS 40   // 40ms - polling method
+#define MAX_DELAY_RDS 40     // 40ms - polling method
 
 long rds_elapsed = millis();
 
