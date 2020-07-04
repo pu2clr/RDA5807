@@ -7,9 +7,20 @@ It is an Arduini Library for RDA5807
 
 1. [Preface](https://pu2clr.github.io/RDA5807#preface)
 2. [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html)
+3. [Examples](https://github.com/pu2clr/RDA5807/tree/master/examples)
 
 
-## RDA features implemented by this library
+
+## Preface 
+
+The RDA5807 is a FM DSP integrated circuit receiver (50 to 115MHz) with low noise amplifier support. This device requires very few external components if compared with other similar devices. It also supports RDS/RBDS functionalities, direct auto gain control (AGC) and real time adaptive noise cancellation function. The PU2CLR RDA5807 Arduino Library was developed to take the most functionalities of this device. Plese, check the [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html/) for more details. 
+
+The photo below shows a Breakbout that uses the RDA5807. You can find it on eBay, AliExpress and Amazon. 
+
+![RDA5807 Breakout board](extras/images/breakout_01A.png)
+
+
+## RDA5807 features implemented by this library
 
 1. 76–108 MHz
 2. Seek tuning
@@ -18,11 +29,9 @@ It is an Arduini Library for RDA5807
 5. Programmable de-emphasis (50/75 μs)
 6. Adaptive noise suppression
 7. Volume control
-8. RDS/RBDS Processor
-
-
-## Preface 
-
+8. Mute control
+9. Mono/Stereo control
+10. RDS/RBDS Processor (under construction)
 
 
 ### See also
