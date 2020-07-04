@@ -16,6 +16,43 @@
  */
 
 /**
+ * @brief Set the Device GPIO pins
+ * @details This method is useful to add control to the system via GPIO RDA devive pins.
+ * @details For example: You can use these pins to control RDS and SEEK via interrupt. 
+ * @details GPIOs are General Purpose I/O pin.  
+ * @details GPIO setup
+ * @details When gpioPin is 1; gpioSetup can be: 00 = High impedance; 01 = Reserved; 10 = Low; 11 = High
+ * @details When gpioPin is 2; gpioSetup can be: 00 = High impedance; 01 = Interrupt (INT) 10 = Low; 11 = High
+ * @details When gpioPin is 2; gpioSetup can be: 00 = High impedance; 01 = Mono/Stereo indicator (ST) = Low; 11 = High
+ * 
+ * @param gpioPin   gpio number (1, 2 or 3)
+ * @param gpioSetup See description above
+ * @param mcuPip    MCU (Arduino) pin connected to the gpio
+ */
+void RDA5807::setGpio(uint8_t gpioPin, uint8_t gpioSetup, int mcuPin)
+{
+
+    switch (gpioPin) {
+        case 1:
+            this->gpio1Control = mcuPin;
+            reg04->refined.GPIO1 = gpioSetup;
+            break;
+        case 2:
+            this->gpio2Control = mcuPin;
+            reg04->refined.GPIO2 = gpioSetup;
+            break;
+        case 3:
+            this->gpio3Control = mcuPin;
+            reg04->refined.GPIO3 = gpioSetup;
+            break;
+        default:
+            gpio1Control = gpio2Control = gpio3Control = -1;
+           
+    }
+    setRegister(REG04,reg04->raw);
+}
+
+/**
  * @ingroup GA03
  * @brief Gets all current device status and RDS information registers (From 0x0A to 0x0F)
  * @see RDA5807M - SINGLE-CHIP BROADCAST FMRADIO TUNER; pages 5, 9, 12 and 13. 
@@ -29,7 +66,7 @@ void RDA5807::getStatusRegisters()
 
     Wire.requestFrom(this->deviceAddressDirectAccess, 12); // This call starts reading from 0x0A register
     delayMicroseconds(250);
-    for (i = 0; i <= 6; i++) {
+    for (i = 0; i < 6; i++) {
         aux.refined.highByte = Wire.read();
         aux.refined.lowByte = Wire.read();
         shadowStatusRegisters[i] = aux.raw;
@@ -47,14 +84,22 @@ void RDA5807::getStatusRegisters()
 void *RDA5807::getStatus(uint8_t reg)
 {
     word16_to_bytes aux;
+
     if ( reg < 0x0A || reg > 0x0F ) return NULL;  // Maybe not necessary.
+
+    Wire.beginTransmission(this->deviceAddressDirectAccess);
+    Wire.write(reg);
+    Wire.endTransmission(false);
     Wire.requestFrom(this->deviceAddressDirectAccess, 2); // reading 0x0A register
     delayMicroseconds(250);
     aux.refined.highByte = Wire.read();
     aux.refined.lowByte = Wire.read();
+    Wire.endTransmission(true);
     shadowStatusRegisters[reg - 0x0A] = aux.raw;
+
     return &shadowStatusRegisters[reg - 0x0A];
 }
+
 
 /**
  * @ingroup GA03
@@ -68,13 +113,14 @@ void RDA5807::setAllRegisters()
 {
     word16_to_bytes aux;
     Wire.beginTransmission(this->deviceAddressFullAccess);
-    for (int i = 0x02; i <= 0x7; i++)
+    for (int i = 2; i <= 7; i++)
     {
-        aux.raw = shadowStatusRegisters[i];
+        aux.raw = shadowRegisters[i];
         Wire.write(aux.refined.highByte);
         Wire.write(aux.refined.lowByte);
     }
     Wire.endTransmission();
+    delayMicroseconds(3000);  // Check
 }
 
 /**
@@ -98,15 +144,18 @@ void RDA5807::setRegister(uint8_t reg, uint16_t value)
     Wire.write(aux.refined.lowByte);
     Wire.endTransmission();
     shadowRegisters[reg] = aux.raw;  // Updates the shadowRegisters element
-    delayMicroseconds(250);
+    delayMicroseconds(3000); // Check
 }
 
 /**
  * @ingroup GA03
+ * @brief Waits for Seek or Tune finish
  */
 void RDA5807::waitAndFinishTune()
 {
-
+    do {
+        getStatus(REG0A);
+    } while (reg0a->refined.STC == 0);
 }
 
 /**
@@ -136,31 +185,18 @@ void RDA5807::powerUp()
     reg02->refined.DMUTE = 1;   // Normal operation
     reg02->refined.DHIZ = 1;    // Normal operation
     reg02->refined.ENABLE = 1;
+    reg02->refined.BASS = 1;
 
-    // reg02->refined.SOFT_RESET = 1;
-    // setRegister(REG02,reg02->raw);
-
-    reg05->raw = 0x9081;
-
-    reg06->raw = 0;
-    reg07->raw = 0; 
-    reg08->raw = 0;
-
-    setAllRegisters();
-
-    // reg02->refined.ENABLE = 1;
-    // reg02->raw = 1;
-    setRegister(REG02, reg02->raw);
-
-    /*
-    reg05->raw = 0;
-    reg05->refined.VOLUME = this->currentVolume;
-    reg05->refined.INT_MODE = 1;
-    reg05->refined.SEEKTH = 0b1000;
+    setRegister(REG02,reg02->raw);
+    
+    reg05->raw = 0x00;
+    reg05->refined.INT_MODE = 0;
     reg05->refined.LNA_PORT_SEL = 2;
-    reg05->refined.LNA_ICSEL_BIT = 1;
+    reg05->refined.LNA_ICSEL_BIT = 0;
+    reg05->refined.SEEKTH = 8;  // 0b1000
+    reg05->refined.VOLUME = 0;
+
     setRegister(REG05, reg05->raw);
-    */
 }
 
 /**
@@ -184,14 +220,11 @@ void RDA5807::setup(uint8_t clock_type, uint8_t oscillator_type)
     this->oscillatorType = oscillator_type;
     this->clockType = clock_type;
 
-    Serial.println("Cheguei aqui");
-
     Wire.begin();
     delay(1);
     powerUp();
-    Serial.println("Passei");
-}
 
+}
 
 /**
  * @ingroup GA03
@@ -200,25 +233,13 @@ void RDA5807::setup(uint8_t clock_type, uint8_t oscillator_type)
  */
 void RDA5807::setChannel(uint16_t channel)
 {
-    /*
-    reg02->refined.ENABLE = 1;
-    reg02->refined.RDS_EN = 0;
-    reg02->refined.DHIZ = 1;
-    reg02->refined.DMUTE = 1;
-    setRegister(REG02, reg02->raw);
-    */
-
     reg03->refined.CHAN = channel;
     reg03->refined.TUNE = 1;
     reg03->refined.BAND = this->currentFMBand;
     reg03->refined.SPACE = this->currentFMSpace;
     reg03->refined.DIRECT_MODE = 0;
     setRegister(REG03, reg03->raw);
-
-    /* 
-      reg05->refined.LNA_PORT_SEL = 2;
-      setRegister(REG05, reg05->raw);
-    */
+    waitAndFinishTune();
 }
 
 /**
@@ -250,7 +271,8 @@ uint16_t RDA5807::getFrequency()
  */
 uint16_t RDA5807::getRealChannel()
 {
-
+    getStatus(REG0A);
+    return reg0a->refined.READCHAN;
 }
 
 /**
@@ -260,19 +282,22 @@ uint16_t RDA5807::getRealChannel()
  * @return uint16_t
  */
 uint16_t RDA5807::getRealFrequency() {
-
-}
+    return getRealChannel() * (this->fmSpace[this->currentFMSpace] / 10.0) + this->startBand[currentFMBand];
+ }
 
 /**
  * @ingroup GA03
  * @brief Seek function
  *
- * @param seek_mode
- * @param direction
+ * @param seek_mode  if 0, wrap at the upper or lower band limit and continue seeking; 1 = stop seeking at the upper or lower band limit   
+ * @param direction  if 0, seek down; if 1, seek up.
  */
 void RDA5807::seek(uint8_t seek_mode, uint8_t direction)
-{
-
+ {
+     reg02->refined.SEEK = 1;
+     reg02->refined.SKMODE = seek_mode;
+     reg02->refined.SEEKUP = direction;
+     setRegister(REG02,reg02->raw);
 }
 
 /**
@@ -282,80 +307,82 @@ void RDA5807::seek(uint8_t seek_mode, uint8_t direction)
  */
 void RDA5807::setSeekThreshold(uint8_t value)
 {
-
+    reg05->refined.SEEKTH = value;
+    setRegister(REG05,reg05->raw);
 }
 
 /**
  * @ingroup GA03
- * @brief
+ * @brief Sets the FM band. See table below.
+ * 
+ * FM band table 
+ * 
+ * | Value | Description                 | 
+ * | ----- | --------------------------- | 
+ * | 00    | 87–108 MHz (US/Europe)      |
+ * | 01    | 76–91 MHz (Japan)           | 
+ * | 10    | 76–108 MHz (world wide)     | 
+ * | 11    | 65 –76 MHz (East Europe) or 50-65MHz (see bit 9 of gegister 0x06) |
+ * 
+ * @param band FM band index. See table above. 
  */
 void RDA5807::setBand(uint8_t band)
 {
-
-
+    reg03->refined.BAND = band;
+    setRegister(REG03,reg03->raw);
 }
 
 /**
  * @ingroup GA03
- * @brief
+ * @brief Sets the FM channel space.
+ * 
+ * Channel space table
+ * 
+ * | Value | Description | 
+ * | ----- | ----------- | 
+ * | 00    | 100KHz      |
+ * | 01    | 200KHz      | 
+ * | 10    | 50KHz       | 
+ * | 11    | 25KHz       | 
+ * 
+ * @param space FM channel space. See table above.
  */
 void RDA5807::setSpace(uint8_t space)
 {
-
+    reg03->refined.SPACE = space;
+    setRegister(REG03, reg03->raw);
 }
 
 /**
  * @ingroup GA03
- * @brief Gets the Rssi
+ * @brief Gets the current Rssi
+ * @details RSSI; 000000 = min; 111111 = max; RSSI scale is logarithmic.
  *
  * @return int
  */
 int RDA5807::getRssi()
 {
-
+    getStatus(REG0B);
+    return reg0b->refined.RSSI;
 }
 
 /**
  * @ingroup GA03
- * @brief
+ * @brief Sets Soft Mute Enable or disable 
+ * @param value true = enable; false=disable
  */
 void RDA5807::setSoftmute(bool value)
 {
-
+    reg04->refined.SOFTMUTE_EN = value;
+    setRegister(REG04, reg04->raw);
 }
 
-/**
- * @ingroup GA03
- * @brief
- *
- * @param value
- */
-void RDA5807::setSoftmuteAttack(uint8_t value){
-
-}
-
-/**
- * @ingroup GA03
- * @brief
- */
-void RDA5807::setSoftmuteAttenuation(uint8_t value)
-{
-
-}
-
-/**
- * @ingroup GA03
- * @brief
- */
-void RDA5807::setAgc(bool value) {
-
-}
 
 
 /**
  * @ingroup GA03
- * @brief
- * @param value TRUE or FALSE
+ * @brief Sets Audio mute or unmute
+ * @param value TRUE = mute; FALSE = unmute
  */
 void RDA5807::setMute(bool value)
 {
@@ -365,16 +392,15 @@ void RDA5807::setMute(bool value)
 
 /**
  * @ingroup GA03
- * @brief
+ * @brief Sets audio Mono or stereo
  *
- * @param value TRUE or FALSE
+ * @param value TRUE = Mono; FALSE force stereo
  */
 void RDA5807::setMono(bool value)
 {
     reg02->refined.MONO = value;
     setRegister(REG02, reg02->raw);
 }
-
 
 /**
  * @ingroup GA03
@@ -383,21 +409,37 @@ void RDA5807::setMono(bool value)
  *
  * @param true = turns the RDS ON; false  = turns the RDS OFF
  */
-void RDA5807::setRds(bool value)
+void RDA5807::setRDS(bool value)
 {
-
+    reg02->refined.RDS_EN =  value;
+    setRegister(REG02, reg02->raw);
 }
 
 /**
  * @ingroup GA03
- * @brief Sets the Rds Mode Standard or Verbose
+ * @brief Sets the RBDS operation
+ * @details Enable or Disable the RDS
  *
- * @param rds_mode  0 = Standard (default); 1 = Verbose
+ * @param true = turns the RBDS ON; false  = turns the RBDS OFF
  */
-void RDA5807::setRdsMode(uint8_t rds_mode)
+void RDA5807::setRBDS(bool value)
 {
-
+    reg02->refined.RDS_EN = 1;
+    setRegister(REG02, reg02->raw);
+    reg04->refined.RBDS = value;
+    setRegister(REG04, reg04->raw);
 }
+
+/**
+ * @ingroup GA03
+ * @brief Clears RDS/RBDS FIFO
+ */
+void RDA5807::clearRdsFifo()
+{
+    reg04->refined.RDS_FIFO_CLR = 1;
+    setRegister(REG04, reg04->raw);
+}
+
 
 /**
  * @ingroup GA03
@@ -409,8 +451,9 @@ void RDA5807::setVolume(uint8_t value)
 {
     if ( value > 15 ) value = 15;
 
-    reg05->refined.VOLUME = this->currentVolume;
+    reg05->refined.VOLUME = this->currentVolume = value;
     setRegister(REG05, reg05->raw);
+    setRegister(REG02, reg02->raw);
 }
 
 /**
@@ -453,40 +496,9 @@ void RDA5807::setVolumeDown()
 }
 
 
-
 /**
  * @ingroup GA03
- * @brief Gets the Part Number
- * @return the part number
- */
-uint8_t RDA5807::getPartNumber()
-{
-  return 0;
-}
-
-/**
- * @ingroup GA03
- * @brief Gets the Manufacturer ID
- * @return number
- */
-uint16_t RDA5807::getManufacturerId()
-{
-  return 0;
-}
-
-/**
- * @ingroup GA03
- * @brief Gets the Firmware Version
- * @details The return velue before powerup will be 0. After powerup should be 010011 (19)
- * @return number
- */
-uint8_t RDA5807::getFirmwareVersion()
-{
-  return 0;
-}
-
-/**
- * @ingroup GA03
+ * @todo 
  * @brief Gets the Device identification
  * @return number
  */
@@ -497,20 +509,12 @@ uint8_t RDA5807::getDeviceId()
 
 /**
  * @ingroup GA03
- * @brief Gets the Chip Version
- * @return number
- */
-uint8_t RDA5807::getChipVersion()
-{
-    return 0;
-}
-
-/**
  * @brief Sets De-emphasis.
  * @details 75 μs. Used in USA (default); 50 μs. Used in Europe, Australia, Japan.
  *
  * @param de  0 = 75 μs; 1 = 50 μs
  */
 void RDA5807::setFmDeemphasis(uint8_t de) {
-    
+  reg04->refined.DE = de;
+  setRegister(REG04,reg04->raw);
 }

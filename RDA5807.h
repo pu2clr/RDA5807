@@ -42,13 +42,16 @@
 
 #define RDS_STANDARD     0  //!< RDS Mode.
 #define RDS_VERBOSE      1  //!< RDS Mode.
-#define DEVICE_SEEK_DOWN 0  //!< Seek Down  Direction
-#define DEVICE_SEEK_UP   1  //!< Seek Up  Direction
 
-#define FM_BAND_USA_EU       0  //!< 87.5–108 MHz (US / Europe, Default)
-#define FM_BAND_JAPAN_WIDE   1  //!< 76–91 MHz (Japan wide band)
-#define FM_BAND_WORLD        2  //!< 76–108 MHz (world wide)
-#define FM_BAND_SPECIAL      3  //!< 65 –76 MHz(East Europe) or 50 - 65MHz(see bit 9 of gegister 0x06) 
+#define RDA_FM_BAND_USA_EU       0  //!< 87.5–108 MHz (US / Europe, Default)
+#define RDA_FM_BAND_JAPAN_WIDE   1  //!< 76–91 MHz (Japan wide band)
+#define RDA_FM_BAND_WORLD        2  //!< 76–108 MHz (world wide)
+#define RDA_FM_BAND_SPECIAL      3  //!< 65 –76 MHz(East Europe) or 50 - 65MHz(see bit 9 of gegister 0x06)
+
+#define RDA_SEEK_WRAP  0     //!< Wrap at the upper or lower band limit and continue seeking
+#define RDA_SEEK_STOP  1     //!< Stop seeking at the upper or lower band limit
+#define RDA_SEEK_DOWN  0     //!< Seek Up
+#define RDA_SEEK_UP    1     //!< Seek Down
 
 #define REG00 0x00
 #define REG02 0x02
@@ -565,8 +568,11 @@ class RDA5807 {
         uint8_t currentFMBand = 0;
         uint8_t currentFMSpace = 0;
         uint8_t currentVolume = 0;
-        int rdsInterruptPin = -1;
-        int seekInterruptPin = -1;
+    
+        int gpio1Control = -1;      //!< Can be used to add control to the  system via GPIO1 pin
+        int gpio2Control = -1;      //!< Can be used to add control to the  system via GPIO2 pin
+        int gpio3Control = -1;      //!< Can be used to add control to the  system via GPIO3 pin
+
         uint8_t clockType = CLOCK_32K;
         uint8_t oscillatorType = OSCILLATOR_TYPE_CRYSTAL;
 
@@ -582,6 +588,7 @@ class RDA5807 {
             inline void setDelayAfterCrystalOn(uint8_t ms_value) { maxDelayAftarCrystalOn = ms_value; };
 
             /**
+             * @ingroup GA03
              * @brief Sets alternatives I2C bus address 
              * @details You do not need use this function on RDA5807M
              * @param directAccess 
@@ -596,6 +603,8 @@ class RDA5807 {
             void *getStatus(uint8_t reg);
             void setAllRegisters();
             void setRegister(uint8_t reg, uint16_t value);
+
+            void setGpio(uint8_t gpioPin, uint8_t gpioSetup = 0, int mcuPin = -1);
 
             void waitAndFinishTune();
 
@@ -619,19 +628,14 @@ class RDA5807 {
             int getRssi();
 
             void setSoftmute(bool value);
-            void setSoftmuteAttack(uint8_t value);
-            void setSoftmuteAttenuation(uint8_t value);
-            void setAgc(bool value);
 
             void setMono(bool value);
-            void setRdsMode(uint8_t rds_mode = 0);
-            void setRds(bool value);
 
-            uint8_t getPartNumber();
-            uint16_t getManufacturerId();
-            uint8_t getFirmwareVersion();
+            void setRDS(bool value);
+            void setRBDS(bool value);
+            void clearRdsFifo();
+
             uint8_t getDeviceId();
-            uint8_t getChipVersion();
 
             void setMute(bool value);
             void setVolume(uint8_t value);
