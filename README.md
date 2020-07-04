@@ -2,13 +2,18 @@
 
 It is an Arduini Library for RDA5807  
 
+This library can be freely distributed using the MIT Free Software model. 
+
+[Copyright (c) 2019 Ricardo Lima Caratti](https://pu2clr.github.io/RDA5807/#mit-license). 
+
+Contact: __pu2clr@gmail.com__.
+
 
 ## Contents
 
 1. [Preface](https://pu2clr.github.io/RDA5807#preface)
 2. [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html)
 3. [Examples](https://github.com/pu2clr/RDA5807/tree/master/examples)
-
 
 
 ## Preface 
@@ -43,12 +48,15 @@ The photo below shows a Breakbout that uses the RDA5807. You can find it on eBay
 5. [PU2CLR RDA5807 Arduino Library](https://pu2clr.github.io/RDA5807/).
 
 
-## About the RDA
+## MIT License 
 
+Copyright (c) 2019 Ricardo Lima Caratti
 
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-## RDA5807 and Registers
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE ARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 
