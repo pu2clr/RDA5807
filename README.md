@@ -1,6 +1,6 @@
 # SI470X Arduino Library
 
-It is an Arduini Library for Si4702/03 FM tuner family. 
+It is an Arduini Library for RDA5807  
 
 
 ## Contents
@@ -10,7 +10,7 @@ It is an Arduini Library for Si4702/03 FM tuner family.
 
 
 
-## Si4703 features implemented by this library
+## RDA features implemented by this library
 
 1. 76–108 MHz
 2. Seek tuning
@@ -25,9 +25,6 @@ It is an Arduini Library for Si4702/03 FM tuner family.
 
 ## Preface 
 
-The SI470X is a FM DSP receiver with RDS/RBDS support.  This document you will give you Arduino source codes, schematics, examples and tips to help you to build a receiver based on Arduino board and the SI470X Shield. The following figure shows a very common kit sold on eBay and AliExpress.
-
-![SI4703 Shield](https://github.com/pu2clr/SI470X/blob/master/extras/images/si4703_module0.png)
 
 
 ### See also
@@ -38,33 +35,12 @@ The SI470X is a FM DSP receiver with RDS/RBDS support.  This document you will g
 4. [PU2CLR KT0915 Arduino Library](https://pu2clr.github.io/KT0915/).
 
 
-## About the Si4703
+## About the RDA
 
 
 
 
 ## SI470X and Registers
-
-The SI4701/02/03 can be controlled by deal with register via I2C interface.  The tebla below was extracted from Silicon Labs; document Si4702/03-C19 - "BROADCAST FM RADIO TUNER FOR PORTABLE APPLICATIONS"; Rev 1.1; page 22. This table shows the set of register that you can used to controle the device.
-
-
-![SI4702/03 Register Summary](https://github.com/pu2clr/SI470X/blob/master/extras/images/SI470X_REGISTER_SUMMARY.png)
-
-Source: Silicon Labs; document Si4702/03-C19 - "BROADCAST FM RADIO TUNER FOR PORTABLE APPLICATIONS"; Rev 1.1; Page 22.
-
-
-__Except that you need something very specific, the PU2CLR SI470X Arduino Library offers all the functions necessary for you to build your own FM receiver using an Arduino Board__.
-
-If you need something else, this library implemented two basic functions to deal direct with the device registers shown above. See setAllRegister and getAllRegister functions on [https://pu2clr.github.io/SI470X/extras/apidoc/html/](https://pu2clr.github.io/SI470X/extras/apidoc/html/).
-
-
-
-
-
-
-
-
-
 
 
 
@@ -72,4 +48,4 @@ If you need something else, this library implemented two basic functions to deal
 # References 
 
 * [RDA5807M - SINGLE-CHIP BROADCAST FMRADIO TUNER](https://www.electrodragon.com/w/images/5/5f/RDA5807M_datasheet_v1.pdf)
-* [](https://github.com/csdexter/RDA5807M)
+
