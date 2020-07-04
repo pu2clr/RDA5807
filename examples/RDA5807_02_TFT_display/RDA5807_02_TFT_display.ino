@@ -28,7 +28,7 @@
   |                           | B                         |       3       |
 
   Prototype documentation: https://pu2clr.github.io/RDA5807/
-  PU2CLR Si47XX API documentation: https://pu2clr.github.io/RDA5807/extras/apidoc/html/
+  PU2CLR RDA5807 API documentation: https://pu2clr.github.io/RDA5807/extras/apidoc/html/
 
   By PU2CLR, Ricardo,  Feb  2020.
 */
