@@ -9,7 +9,6 @@ It is an Arduini Library for RDA5807
 2. [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html)
 
 
-
 ## RDA features implemented by this library
 
 1. 76–108 MHz
