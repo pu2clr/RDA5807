@@ -94,10 +94,10 @@ void loop()
       rx.setFrequencyDown();
       break;
     case 'S':
-      rx.seek(RDA5807_SEEK_WRAP, RDA5807_SEEK_UP);
+      rx.seek(RDA_SEEK_WRAP, RDA_SEEK_UP);
       break;
     case 's':
-      rx.seek(RDA5807_SEEK_WRAP, RDA5807_SEEK_DOWN);
+      rx.seek(RDA_SEEK_WRAP, RDA_SEEK_DOWN);
       break;
     case '0':
       showStatus();

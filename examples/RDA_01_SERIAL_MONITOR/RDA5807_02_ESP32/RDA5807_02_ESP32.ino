@@ -20,7 +20,6 @@
 #define ESP32_I2C_SDA 21
 #define ESP32_I2C_SCL 22
 
-
 #define MAX_DELAY_RDS 40   // 40ms - polling method
 
 long rds_elapsed = millis();
