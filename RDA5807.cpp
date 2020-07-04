@@ -2,7 +2,7 @@
  * @mainpage RDA5807 Arduino Library implementation
  * @details RDA5807 Arduino Library implementation. This is an Arduino library for the RDA5807, BROADCAST RECEIVER.
  * @details It works with I2C protocol and can provide an easier interface to control the RDA5807 device.<br>
- * @details This library was built based on "RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.0–May.2011"
+ * @details This library was built based on "RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015"
  * @details This library can be freely distributed using the MIT Free Software model.
  * @copyright Copyright (c) 2020 Ricardo Lima Caratti.
  * @author Ricardo LIma Caratti (pu2clr@gmail.com)
