@@ -1,4 +1,4 @@
-# RDA5907 Arduino Library
+# RDA5807 Arduino Library
 
 It is an Arduini Library for RDA5807  
 
