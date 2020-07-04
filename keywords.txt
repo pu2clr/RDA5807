@@ -1,0 +1,19 @@
+##################################################################
+# Syntax Coloring Map 
+##################################################################
+# Datatypes (KEYWORD1)
+SI470X   KEYWORD1
+
+# Methods (KEYWORD2)
+
+SI470X                  KEYWORD2
+setup                   KEYWORD2
+reset                   KEYWORD2
+setRegister             KEYWORD2
+getRegister             KEYWORD2
+setFM                   KEYWORD2
+setFrequency            KEYWORD2
+frequencyUp             KEYWORD2
+frequencyDown           KEYWORD2
+
+
