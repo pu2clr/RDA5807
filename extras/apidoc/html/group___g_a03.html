@@ -127,6 +127,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gad16a6afa9520b77498b17a72c226305a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#gad16a6afa9520b77498b17a72c226305a">RDA5807::setFrequency</a> (uint16_t frequency)</td></tr>
 <tr class="memdesc:gad16a6afa9520b77498b17a72c226305a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the frequency.  <a href="group___g_a03.html#gad16a6afa9520b77498b17a72c226305a">More...</a><br /></td></tr>
 <tr class="separator:gad16a6afa9520b77498b17a72c226305a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e8db177fea475ea00fa04e3d8f1f08c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#ga4e8db177fea475ea00fa04e3d8f1f08c">RDA5807::setFrequencyUp</a> ()</td></tr>
+<tr class="memdesc:ga4e8db177fea475ea00fa04e3d8f1f08c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments the current frequency.  <a href="group___g_a03.html#ga4e8db177fea475ea00fa04e3d8f1f08c">More...</a><br /></td></tr>
+<tr class="separator:ga4e8db177fea475ea00fa04e3d8f1f08c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadba771c864ace7a8373a76554b9d3e6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#gadba771c864ace7a8373a76554b9d3e6a">RDA5807::setFrequencyDown</a> ()</td></tr>
+<tr class="memdesc:gadba771c864ace7a8373a76554b9d3e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrements the current frequency.  <a href="group___g_a03.html#gadba771c864ace7a8373a76554b9d3e6a">More...</a><br /></td></tr>
+<tr class="separator:gadba771c864ace7a8373a76554b9d3e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga59b981002d383a13731bd939482a5236"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#ga59b981002d383a13731bd939482a5236">RDA5807::getFrequency</a> ()</td></tr>
 <tr class="memdesc:ga59b981002d383a13731bd939482a5236"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current frequency.  <a href="group___g_a03.html#ga59b981002d383a13731bd939482a5236">More...</a><br /></td></tr>
 <tr class="separator:ga59b981002d383a13731bd939482a5236"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,6 +164,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gad6e77ffbeb3f4dc885548130e09590d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#gad6e77ffbeb3f4dc885548130e09590d6">RDA5807::setMono</a> (bool value)</td></tr>
 <tr class="memdesc:gad6e77ffbeb3f4dc885548130e09590d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets audio Mono or stereo.  <a href="group___g_a03.html#gad6e77ffbeb3f4dc885548130e09590d6">More...</a><br /></td></tr>
 <tr class="separator:gad6e77ffbeb3f4dc885548130e09590d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga250ff3788a7831dae3c6200919b446dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#ga250ff3788a7831dae3c6200919b446dd">RDA5807::isStereo</a> ()</td></tr>
+<tr class="memdesc:ga250ff3788a7831dae3c6200919b446dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current Stereo status.  <a href="group___g_a03.html#ga250ff3788a7831dae3c6200919b446dd">More...</a><br /></td></tr>
+<tr class="separator:ga250ff3788a7831dae3c6200919b446dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4b741f1433eda57949bb40fa9e973732"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#ga4b741f1433eda57949bb40fa9e973732">RDA5807::setRDS</a> (bool value)</td></tr>
 <tr class="memdesc:ga4b741f1433eda57949bb40fa9e973732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the RDS operation.  <a href="group___g_a03.html#ga4b741f1433eda57949bb40fa9e973732">More...</a><br /></td></tr>
 <tr class="separator:ga4b741f1433eda57949bb40fa9e973732"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -520,6 +529,46 @@ shadowStatusRegisters; </dd></dl>
 
 </div>
 </div>
+<a id="ga4e8db177fea475ea00fa04e3d8f1f08c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4e8db177fea475ea00fa04e3d8f1f08c">&#9670;&nbsp;</a></span>setFrequencyUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setFrequencyUp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Increments the current frequency. </p>
+<p>The increment uses the band space as step. See array: uint16_t fmSpace[4] = {100/10, 200/10, 50/10, 25/10}; </p>
+
+</div>
+</div>
+<a id="gadba771c864ace7a8373a76554b9d3e6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadba771c864ace7a8373a76554b9d3e6a">&#9670;&nbsp;</a></span>setFrequencyDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setFrequencyDown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decrements the current frequency. </p>
+<p>The drecrement uses the band space as step. See array: uint16_t fmSpace[4] = {20, 10, 5, 1}; </p>
+
+</div>
+</div>
 <a id="ga59b981002d383a13731bd939482a5236"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga59b981002d383a13731bd939482a5236">&#9670;&nbsp;</a></span>getFrequency()</h2>
 
@@ -814,6 +863,26 @@ shadowStatusRegisters; </dd></dl>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ga250ff3788a7831dae3c6200919b446dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga250ff3788a7831dae3c6200919b446dd">&#9670;&nbsp;</a></span>isStereo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RDA5807::isStereo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the current Stereo status. </p>
+<dl class="section return"><dt>Returns</dt><dd>TRUE if stereo; </dd></dl>
 
 </div>
 </div>

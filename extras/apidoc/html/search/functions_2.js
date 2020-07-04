@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['powerdown_186',['powerDown',['../group___g_a03.html#ga214f631aef72ece69db73c99879c7c46',1,'RDA5807']]],
-  ['powerup_187',['powerUp',['../group___g_a03.html#ga30d2b0c4662922df53bcef118663329c',1,'RDA5807']]]
+  ['isstereo_189',['isStereo',['../group___g_a03.html#ga250ff3788a7831dae3c6200919b446dd',1,'RDA5807']]]
 ];
