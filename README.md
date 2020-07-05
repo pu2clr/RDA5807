@@ -70,15 +70,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
  In general, the RDA5807 can be found in kit or breakout form. In this case, the circuit below can help you to connect the arduino to the RDA5807 shield. If you are using just the IC, you might want to check the  [RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015](https://datasheet.lcsc.com/szlcsc/RDA-Microelectronics-RDA5807MS_C167246.pdf); page 17.
 
 
-![schematic with TFT, push buttons and encoder](./extras/images/circuit_basic.png)
+![Basic Schematic](./extras/images/circuit_basic.png)
 
 
 ### Wire up on Arduino UNO, Pro mini or other based on ATmega 328.
 
-| RDA5807 / Description      |  Arduino Pin  |
-| --------------------       | ------------  |
-| SDIO                       |     A4        |
-| SCLK                       |     A5        |
+| RDA5807 / Description |  Arduino Pin  |
+| --------------------- | ------------  |
+| SDA / SDIO            |     A4        |
+| SCL / SCLK            |     A5        |
 
 
 

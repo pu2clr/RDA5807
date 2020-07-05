@@ -928,134 +928,54 @@ Audio_Jack_2.5MM
 </deviceset>
 </devicesets>
 </library>
-<library name="SparkFun-GPS" urn="urn:adsk.eagle:library:518">
-<description>&lt;h3&gt;SparkFun GPS, Antennas&lt;/h3&gt;
-This library contains GPS modules, GPS antennas, etc. 
-&lt;br&gt;
-&lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
-&lt;br&gt;
-&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
-&lt;br&gt;
-&lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
-&lt;br&gt;
-&lt;br&gt;
-You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<library name="discrete" urn="urn:adsk.eagle:library:211">
+<description>Discrete devices (Antenna, Arrrester, Thermistor)</description>
 <packages>
-<package name="ANT-GPS-2X8MM" urn="urn:adsk.eagle:footprint:38578/1" library_version="1">
-<description>&lt;h3&gt;GPS Chip Antenna - 2.0 x 8.0 x 1.5 mm&lt;/h3&gt;
-&lt;p&gt;2.0 x 8.0 x 1.5 mm package&lt;/p&gt;
-&lt;p&gt;Package used for Chant Sincere Co. 922D03E15X11113 GPS Antenna&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.sparkfun.com/datasheets/GPS/GPS-ChipAntenna.pdf"&gt;Example Datasheet&lt;/a&gt;&lt;/p&gt;</description>
-<wire x1="-4" y1="1" x2="-4" y2="-1" width="0.127" layer="51"/>
-<wire x1="-4" y1="-1" x2="4" y2="-1" width="0.127" layer="51"/>
-<wire x1="4" y1="-1" x2="4" y2="1" width="0.127" layer="51"/>
-<wire x1="4" y1="1" x2="-4" y2="1" width="0.127" layer="51"/>
-<wire x1="-3" y1="1.1" x2="3" y2="1.1" width="0.2032" layer="21"/>
-<wire x1="3" y1="-1.1" x2="-3" y2="-1.1" width="0.2032" layer="21"/>
-<wire x1="-4.7" y1="1" x2="-4.7" y2="-1" width="0.2032" layer="21"/>
-<circle x="-3" y="0.6" radius="0.254" width="0" layer="21"/>
-<smd name="SIG" x="-4" y="0" dx="1" dy="2" layer="1"/>
-<smd name="NC" x="4" y="0" dx="1" dy="2" layer="1"/>
-<text x="0" y="0" size="0.6096" layer="51" font="vector" align="center">152111</text>
-<text x="0" y="-1.243" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
-<text x="0" y="1.243" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
-</package>
-<package name="ANT-GPS-2X7MM" urn="urn:adsk.eagle:footprint:38579/1" library_version="1">
-<description>&lt;h3&gt;GPS Chip Antenna - 7.0 x 2.0 x 0.8 mm&lt;/h3&gt;
-&lt;p&gt;7.0 x 2.0 x 0.8 mm package&lt;/p&gt;
-&lt;p&gt;Package used for Johanson 1575AT43A40 GPS Antenna&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.sparkfun.com/datasheets/GPS/JTI_Antenna-1575AT43A40_2006-09.pdf"&gt;Example Datasheet&lt;/a&gt;&lt;/p&gt;</description>
-<wire x1="-2.7" y1="1.1" x2="2.7" y2="1.1" width="0.2032" layer="21"/>
-<wire x1="-2.7" y1="-1.1" x2="2.7" y2="-1.1" width="0.2032" layer="21"/>
-<wire x1="-2.6" y1="0.3" x2="-2.6" y2="-0.3" width="0.2032" layer="21"/>
-<wire x1="-2.6" y1="-0.3" x2="-1.6" y2="-0.3" width="0.2032" layer="21"/>
-<wire x1="-1.6" y1="-0.3" x2="-1.6" y2="0.3" width="0.2032" layer="21"/>
-<wire x1="-1.6" y1="0.3" x2="-2.6" y2="0.3" width="0.2032" layer="21"/>
-<wire x1="-3.5" y1="1" x2="3.5" y2="1" width="0.127" layer="51"/>
-<wire x1="3.5" y1="1" x2="3.5" y2="-1" width="0.127" layer="51"/>
-<wire x1="3.5" y1="-1" x2="-3.5" y2="-1" width="0.127" layer="51"/>
-<wire x1="-3.5" y1="-1" x2="-3.5" y2="1" width="0.127" layer="51"/>
-<wire x1="-4.1" y1="1" x2="-4.1" y2="-1" width="0.2032" layer="21"/>
-<smd name="NC" x="3.4" y="0" dx="2" dy="0.75" layer="1" rot="R90"/>
-<smd name="1" x="-3.4" y="0" dx="2" dy="0.75" layer="1" rot="R90"/>
-<text x="0" y="1.243" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-1.243" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+<package name="PAD-01" urn="urn:adsk.eagle:footprint:12919/1" library_version="2">
+<description>&lt;b&gt;PAD&lt;/b&gt;</description>
+<circle x="0" y="0" radius="0.889" width="0.762" layer="51"/>
+<pad name="1" x="0" y="0" drill="1.3208" diameter="2.54" shape="octagon"/>
+<text x="-1.27" y="1.524" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<text x="-1.27" y="3.048" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 </package>
 </packages>
 <packages3d>
-<package3d name="ANT-GPS-2X8MM" urn="urn:adsk.eagle:package:38593/1" type="box" library_version="1">
-<description>GPS Chip Antenna - 2.0 x 8.0 x 1.5 mm
-2.0 x 8.0 x 1.5 mm package
-Package used for Chant Sincere Co. 922D03E15X11113 GPS Antenna
-Example Datasheet</description>
+<package3d name="PAD-01" urn="urn:adsk.eagle:package:12928/1" type="box" library_version="2">
+<description>PAD</description>
 <packageinstances>
-<packageinstance name="ANT-GPS-2X8MM"/>
-</packageinstances>
-</package3d>
-<package3d name="ANT-GPS-2X7MM" urn="urn:adsk.eagle:package:38594/1" type="box" library_version="1">
-<description>GPS Chip Antenna - 7.0 x 2.0 x 0.8 mm
-7.0 x 2.0 x 0.8 mm package
-Package used for Johanson 1575AT43A40 GPS Antenna
-Example Datasheet</description>
-<packageinstances>
-<packageinstance name="ANT-GPS-2X7MM"/>
+<packageinstance name="PAD-01"/>
 </packageinstances>
 </package3d>
 </packages3d>
 <symbols>
-<symbol name="ANTENNA" urn="urn:adsk.eagle:symbol:38577/1" library_version="1">
-<description>&lt;h3&gt;Antenna&lt;/h3&gt;</description>
-<wire x1="0" y1="2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="5.08" x2="2.54" y2="5.08" width="0.254" layer="94"/>
-<wire x1="0" y1="2.54" x2="2.54" y2="5.08" width="0.254" layer="94"/>
-<wire x1="0" y1="2.54" x2="-2.54" y2="5.08" width="0.254" layer="94"/>
-<text x="0.508" y="0" size="1.778" layer="95" font="vector">&gt;NAME</text>
-<text x="0.508" y="-2.54" size="1.778" layer="96" font="vector">&gt;VALUE</text>
-<pin name="SIGNAL" x="0" y="-5.08" visible="off" length="short" rot="R90"/>
+<symbol name="ANTENNA" urn="urn:adsk.eagle:symbol:12918/1" library_version="2">
+<wire x1="-2.54" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="2.54" y1="0" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="-2.54" x2="-2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
+<text x="-2.54" y="1.27" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="1" x="0" y="-5.08" visible="off" length="short" direction="out" rot="R90"/>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="ANTENNA" urn="urn:adsk.eagle:component:38600/1" library_version="1">
-<description>&lt;h3&gt;Single-ended Antennae&lt;/h3&gt;
-&lt;p&gt;1.575GHz antennae with just one terminal. These are all chip antennae.&lt;/p&gt;
-&lt;p&gt;&lt;b&gt;1575MHz (GPS) Antennae&lt;/b&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;b&gt;ANT-GPS-2X7MM&lt;/b&gt; - 2.0 x 7.0 mm chip antenna. (&lt;a href="https://www.sparkfun.com/products/9131"&gt;SparkFun Product&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;ANT-GPS-2X8MM&lt;/b&gt; - 2.0 x 8.0 mm chip antenna. (&lt;a href="https://www.sparkfun.com/products/8418"&gt;SparkFun Product&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;</description>
+<deviceset name="ANTENNA" urn="urn:adsk.eagle:component:12934/2" prefix="ANT" uservalue="yes" library_version="2">
+<description>&lt;b&gt;Antenna&lt;/b&gt;</description>
 <gates>
-<gate name="G$1" symbol="ANTENNA" x="0" y="0"/>
+<gate name="A" symbol="ANTENNA" x="0" y="10.16"/>
 </gates>
 <devices>
-<device name="GPS-2X8MM" package="ANT-GPS-2X8MM">
+<device name="" package="PAD-01">
 <connects>
-<connect gate="G$1" pin="SIGNAL" pad="SIG"/>
+<connect gate="A" pin="1" pad="1"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:38593/1"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:12928/1"/>
 </package3dinstances>
 <technologies>
 <technology name="">
-<attribute name="PROD_ID" value="GPS-08510"/>
-<attribute name="SF_ID" value="GPS-08418"/>
-<attribute name="VALUE" value="1.575GHz"/>
-</technology>
-</technologies>
-</device>
-<device name="GPS-2X7MM" package="ANT-GPS-2X7MM">
-<connects>
-<connect gate="G$1" pin="SIGNAL" pad="1"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:38594/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="ANT-09087"/>
-<attribute name="SF_ID" value="GPS-09131"/>
-<attribute name="VALUE" value="1.575GHz"/>
+<attribute name="POPULARITY" value="11" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -1078,7 +998,7 @@ Example Datasheet</description>
 <part name="SUPPLY1" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="AUDIO_JACK_2.5MM" device="SPECIAL_POGO_PINS" package3d_urn="urn:adsk.eagle:package:38005/1"/>
-<part name="U$2" library="SparkFun-GPS" library_urn="urn:adsk.eagle:library:518" deviceset="ANTENNA" device="GPS-2X7MM" package3d_urn="urn:adsk.eagle:package:38594/1" value="1.575GHz"/>
+<part name="ANT1" library="discrete" library_urn="urn:adsk.eagle:library:211" deviceset="ANTENNA" device="" package3d_urn="urn:adsk.eagle:package:12928/1"/>
 </parts>
 <sheets>
 <sheet>
@@ -1101,9 +1021,9 @@ Example Datasheet</description>
 <attribute name="NAME" x="152.4" y="57.912" size="1.778" layer="95" font="vector" rot="R180"/>
 <attribute name="VALUE" x="152.4" y="66.04" size="1.778" layer="96" font="vector" rot="R180"/>
 </instance>
-<instance part="U$2" gate="G$1" x="127" y="88.9" smashed="yes">
-<attribute name="NAME" x="127.508" y="88.9" size="1.778" layer="95" font="vector"/>
-<attribute name="VALUE" x="127.508" y="86.36" size="1.778" layer="96" font="vector"/>
+<instance part="ANT1" gate="A" x="127" y="88.9" smashed="yes">
+<attribute name="NAME" x="124.46" y="90.17" size="1.778" layer="95"/>
+<attribute name="VALUE" x="129.54" y="83.82" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -1175,9 +1095,10 @@ Example Datasheet</description>
 <net name="N$6" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="ANT"/>
-<pinref part="U$2" gate="G$1" pin="SIGNAL"/>
 <wire x1="121.6" y1="69.12" x2="127" y2="69.12" width="0.1524" layer="91"/>
 <wire x1="127" y1="69.12" x2="127" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="ANT1" gate="A" pin="1"/>
+<junction x="127" y="83.82"/>
 </segment>
 </net>
 </nets>
