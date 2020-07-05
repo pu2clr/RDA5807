@@ -75,11 +75,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ### Wire up on Arduino UNO, Pro mini or other based on ATmega 328.
 
-| SI4703 / Description      |  Arduino Pin  |
-| --------------------      | ------------  |
-| SDIO (pin  8)             |     A4        |
-| SCLK (pin  7)             |     A5        |
-
+| RDA5807 / Description      |  Arduino Pin  |
+| --------------------       | ------------  |
+| SDIO                       |     A4        |
+| SCLK                       |     A5        |
 
 
 
