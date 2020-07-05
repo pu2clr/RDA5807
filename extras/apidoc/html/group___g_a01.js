@@ -236,7 +236,7 @@ var group___g_a01 =
       [ "getStatus", "group___g_a03.html#ga1f4bc3d6f9d94171b2965dbb4e812f4f", null ],
       [ "setAllRegisters", "group___g_a03.html#ga69f8c596479c7db1f61a9dea348c8474", null ],
       [ "setRegister", "group___g_a03.html#ga3b581b82ab8c631cfec537a47008ddf3", null ],
-      [ "setGpio", "group___g_a01.html#a677eff1084b294696a32e3ca4dfe593b", null ],
+      [ "setGpio", "group___g_a03.html#ga677eff1084b294696a32e3ca4dfe593b", null ],
       [ "waitAndFinishTune", "group___g_a03.html#ga3fe1feed45d3290beba0efef491128e6", null ],
       [ "softReset", "group___g_a03.html#ga3f6dace4c93f82ec66da5641e3e3fdaa", null ],
       [ "powerUp", "group___g_a03.html#ga30d2b0c4662922df53bcef118663329c", null ],

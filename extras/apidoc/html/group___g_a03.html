@@ -95,6 +95,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gadf634cb6733022e30d8f1a74a5946e78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#gadf634cb6733022e30d8f1a74a5946e78">RDA5807::setI2CBusAddrs</a> (int directAccess, int fullAccess)</td></tr>
 <tr class="memdesc:gadf634cb6733022e30d8f1a74a5946e78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets alternatives I2C bus address.  <a href="group___g_a03.html#gadf634cb6733022e30d8f1a74a5946e78">More...</a><br /></td></tr>
 <tr class="separator:gadf634cb6733022e30d8f1a74a5946e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga677eff1084b294696a32e3ca4dfe593b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#ga677eff1084b294696a32e3ca4dfe593b">RDA5807::setGpio</a> (uint8_t gpioPin, uint8_t gpioSetup=0, int mcuPin=-1)</td></tr>
+<tr class="memdesc:ga677eff1084b294696a32e3ca4dfe593b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Device GPIO pins.  <a href="group___g_a03.html#ga677eff1084b294696a32e3ca4dfe593b">More...</a><br /></td></tr>
+<tr class="separator:ga677eff1084b294696a32e3ca4dfe593b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab9e3a5584a6238f719e9c9e49435f5ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#gab9e3a5584a6238f719e9c9e49435f5ce">RDA5807::getStatusRegisters</a> ()</td></tr>
 <tr class="memdesc:gab9e3a5584a6238f719e9c9e49435f5ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all current device status and RDS information registers (From 0x0A to 0x0F)  <a href="group___g_a03.html#gab9e3a5584a6238f719e9c9e49435f5ce">More...</a><br /></td></tr>
 <tr class="separator:gab9e3a5584a6238f719e9c9e49435f5ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,6 +120,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga30d2b0c4662922df53bcef118663329c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Powers the receiver on.  <a href="group___g_a03.html#ga30d2b0c4662922df53bcef118663329c">More...</a><br /></td></tr>
 <tr class="separator:ga30d2b0c4662922df53bcef118663329c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga214f631aef72ece69db73c99879c7c46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#ga214f631aef72ece69db73c99879c7c46">RDA5807::powerDown</a> ()</td></tr>
+<tr class="memdesc:ga214f631aef72ece69db73c99879c7c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power the receiver off.  <a href="group___g_a03.html#ga214f631aef72ece69db73c99879c7c46">More...</a><br /></td></tr>
 <tr class="separator:ga214f631aef72ece69db73c99879c7c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac79c1fec6c416c9993ff19362fe312cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#gac79c1fec6c416c9993ff19362fe312cb">RDA5807::setup</a> (uint8_t clock_type=<a class="el" href="_r_d_a5807_8h.html#aaaa8a7748321c8739d938babeb67d8e9">CLOCK_32K</a>, uint8_t oscillator_type=<a class="el" href="_r_d_a5807_8h.html#ad0763fd256db4ec1ecc62f84bbff56e2">OSCILLATOR_TYPE_CRYSTAL</a>)</td></tr>
 <tr class="memdesc:gac79c1fec6c416c9993ff19362fe312cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the device.  <a href="group___g_a03.html#gac79c1fec6c416c9993ff19362fe312cb">More...</a><br /></td></tr>
@@ -137,8 +141,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga59b981002d383a13731bd939482a5236"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current frequency.  <a href="group___g_a03.html#ga59b981002d383a13731bd939482a5236">More...</a><br /></td></tr>
 <tr class="separator:ga59b981002d383a13731bd939482a5236"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga39480a49f7878fffe8c3ddf120aba2b0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#ga39480a49f7878fffe8c3ddf120aba2b0">RDA5807::getRealChannel</a> ()</td></tr>
+<tr class="memdesc:ga39480a49f7878fffe8c3ddf120aba2b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current channel stored in 0x0A status register.  <a href="group___g_a03.html#ga39480a49f7878fffe8c3ddf120aba2b0">More...</a><br /></td></tr>
 <tr class="separator:ga39480a49f7878fffe8c3ddf120aba2b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1476967ed4e1d9bc00e2ea8e3135520e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#ga1476967ed4e1d9bc00e2ea8e3135520e">RDA5807::getRealFrequency</a> ()</td></tr>
+<tr class="memdesc:ga1476967ed4e1d9bc00e2ea8e3135520e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current frequency bases on the current channel.  <a href="group___g_a03.html#ga1476967ed4e1d9bc00e2ea8e3135520e">More...</a><br /></td></tr>
 <tr class="separator:ga1476967ed4e1d9bc00e2ea8e3135520e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga87de696f0a40724c19c89b6b48766020"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#ga87de696f0a40724c19c89b6b48766020">RDA5807::seek</a> (uint8_t seek_mode, uint8_t direction)</td></tr>
 <tr class="memdesc:ga87de696f0a40724c19c89b6b48766020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seek function.  <a href="group___g_a03.html#ga87de696f0a40724c19c89b6b48766020">More...</a><br /></td></tr>
@@ -243,6 +249,58 @@ Basic</h1>
 </dl>
 
 <p class="reference">References <a class="el" href="group___g_a01.html#a18c3e5a103b683af7c46d8b9a3d47518">RDA5807::deviceAddressDirectAccess</a>, and <a class="el" href="group___g_a01.html#a81c00f45187f93be0698ef8c5bd80619">RDA5807::deviceAddressFullAccess</a>.</p>
+
+</div>
+</div>
+<a id="ga677eff1084b294696a32e3ca4dfe593b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga677eff1084b294696a32e3ca4dfe593b">&#9670;&nbsp;</a></span>setGpio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setGpio </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>gpioPin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>gpioSetup</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mcuPin</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Device GPIO pins. </p>
+<p>This method is useful to add control to the system via GPIO RDA devive pins.</p>
+<p>For example: You can use these pins to control RDS and SEEK via interrupt.</p>
+<p>GPIOs are General Purpose I/O pin. <br  />
+</p>
+<p>GPIO setup</p>
+<p>When gpioPin is 1; gpioSetup can be: 00 = High impedance; 01 = Reserved; 10 = Low; 11 = High</p>
+<p>When gpioPin is 2; gpioSetup can be: 00 = High impedance; 01 = Interrupt (INT) 10 = Low; 11 = High</p>
+<p>When gpioPin is 2; gpioSetup can be: 00 = High impedance; 01 = Mono/Stereo indicator (ST) = Low; 11 = High</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpioPin</td><td>gpio number (1, 2 or 3) </td></tr>
+    <tr><td class="paramname">gpioSetup</td><td>See description above </td></tr>
+    <tr><td class="paramname">mcuPip</td><td>MCU (Arduino) pin connected to the gpio </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -434,6 +492,8 @@ shadowStatusRegisters; </dd></dl>
       </table>
 </div><div class="memdoc">
 
+<p>Power the receiver off. </p>
+
 </div>
 </div>
 <a id="gac79c1fec6c416c9993ff19362fe312cb"></a>
@@ -492,6 +552,12 @@ shadowStatusRegisters; </dd></dl>
 </div><div class="memdoc">
 
 <p>Sets the channel. </p>
+<p>This method tunes the rteceiver in a given channel.</p>
+<p>The channel can be calculated by using the follow formula</p>
+<p>channel = (desired frequency - start band frequency) / space channel in use / 10.0);</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group___g_a03.html#gad16a6afa9520b77498b17a72c226305a" title="Sets the frequency.">setFrequency</a>, <a class="el" href="group___g_a03.html#ga7ee7b25b9fb81b8547a7fe230fcd6482" title="Sets the FM band. See table below.">setBand</a>, <a class="el" href="group___g_a03.html#ga76f6c3400b038aef15ba7318592e1dd0" title="Sets the FM channel space.">setSpace</a> </dd>
+<dd>
+RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">channel</td><td></td></tr>
@@ -603,7 +669,12 @@ shadowStatusRegisters; </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
+
+<p>Gets the current channel stored in 0x0A status register. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group___g_a03.html#gaa9cfaddbd43257e810bb3817b021fa8a" title="Sets the channel.">setChannel</a>, <a class="el" href="group___g_a03.html#gad16a6afa9520b77498b17a72c226305a" title="Sets the frequency.">setFrequency</a>, <a class="el" href="group___g_a03.html#ga7ee7b25b9fb81b8547a7fe230fcd6482" title="Sets the FM band. See table below.">setBand</a>, <a class="el" href="group___g_a03.html#ga76f6c3400b038aef15ba7318592e1dd0" title="Sets the FM channel space.">setSpace</a> </dd>
+<dd>
+RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>uint16_t current channel value </dd></dl>
 
 </div>
 </div>
@@ -621,6 +692,23 @@ shadowStatusRegisters; </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets the current frequency bases on the current channel. </p>
+<p>The current channel is stored in the 0x0A register. This value is updated after a tune or seek operation.</p>
+<p>The current frequency can be calculated by the formula below</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Band </th><th class="markdownTableHeadNone">Formula  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">0 </td><td class="markdownTableBodyNone">Frequency = Channel Spacing (kHz) x READCHAN[9:0]+ 87.0 MHz  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">1 or 2 </td><td class="markdownTableBodyNone">Frequency = Channel Spacing (kHz) x READCHAN[9:0]+ 76.0 MHz  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">3 </td><td class="markdownTableBodyNone">Frequency = Channel Spacing (kHz) x READCHAN[9:0]+ 65.0 MHz  </td></tr>
+</table>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group___g_a03.html#gaa9cfaddbd43257e810bb3817b021fa8a" title="Sets the channel.">setChannel</a>, <a class="el" href="group___g_a03.html#gad16a6afa9520b77498b17a72c226305a" title="Sets the frequency.">setFrequency</a>, <a class="el" href="group___g_a03.html#ga7ee7b25b9fb81b8547a7fe230fcd6482" title="Sets the FM band. See table below.">setBand</a>, <a class="el" href="group___g_a03.html#ga76f6c3400b038aef15ba7318592e1dd0" title="Sets the FM channel space.">setSpace</a> </dd>
+<dd>
+RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
 
 </div>

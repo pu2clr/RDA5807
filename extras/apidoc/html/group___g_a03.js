@@ -1,6 +1,7 @@
 var group___g_a03 =
 [
     [ "setI2CBusAddrs", "group___g_a03.html#gadf634cb6733022e30d8f1a74a5946e78", null ],
+    [ "setGpio", "group___g_a03.html#ga677eff1084b294696a32e3ca4dfe593b", null ],
     [ "getStatusRegisters", "group___g_a03.html#gab9e3a5584a6238f719e9c9e49435f5ce", null ],
     [ "getStatus", "group___g_a03.html#ga1f4bc3d6f9d94171b2965dbb4e812f4f", null ],
     [ "setAllRegisters", "group___g_a03.html#ga69f8c596479c7db1f61a9dea348c8474", null ],

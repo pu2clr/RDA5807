@@ -181,7 +181,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a01_1a677eff1084b294696a32e3ca4dfe593b';
+      sec-mem-id   = 'group___g_a03_1ga677eff1084b294696a32e3ca4dfe593b';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -263,7 +263,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1gaa9cfaddbd43257e810bb3817b021fa8a';
-        sec-mem-ref-line = '234';
+        sec-mem-ref-line = '242';
         sec-mem-ref-name = 'setChannel';
     };
     }; /* sec-member */
@@ -307,7 +307,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1gac79c1fec6c416c9993ff19362fe312cb';
-        sec-mem-ref-line = '218';
+        sec-mem-ref-line = '219';
         sec-mem-ref-name = 'setup';
     };
     }; /* sec-member */
@@ -323,7 +323,7 @@ _EnD_oF_dEf_TeXt_;
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
       sec-mem-desc-line = '615';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-
+Power the receiver off.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
 
@@ -367,7 +367,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga30d2b0c4662922df53bcef118663329c';
-        sec-mem-ref-line = '177';
+        sec-mem-ref-line = '178';
         sec-mem-ref-name = 'powerUp';
     };
     }; /* sec-member */
@@ -461,9 +461,22 @@ _EnD_oF_dEf_TeXt_;
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
       sec-mem-desc-line = '626';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-
+Gets the current frequency bases on the current channel.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+The current channel is stored in the 0x0A register. This value is updated after a tune or seek operation.
+
+
+The current frequency can be calculated by the formula below
+
+<table class="markdownTable">  <tr class="markdownTableHead">    <th class="markdownTableHeadNone"> Band</th>    <th class="markdownTableHeadNone"> Formula</th>  </tr>
+<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 0</td>    <td class="markdownTableBodyNone"> Frequency = Channel Spacing (kHz) x READCHAN[9:0]+ 87.0 MHz</td>  </tr>
+<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 1 or 2</td>    <td class="markdownTableBodyNone"> Frequency = Channel Spacing (kHz) x READCHAN[9:0]+ 76.0 MHz</td>  </tr>
+<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 3</td>    <td class="markdownTableBodyNone"> Frequency = Channel Spacing (kHz) x READCHAN[9:0]+ 65.0 MHz</td>  </tr>
+</table>
+
+@see setChannel, setFrequency, setBand, setSpace
+@see RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12. 
 @return uint16_t
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
@@ -479,10 +492,13 @@ _EnD_oF_dEf_TeXt_;
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
       sec-mem-desc-line = '627';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-
+Gets the current channel stored in 0x0A status register.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-@return uint16_t
+@see setChannel, setFrequency, setBand, setSpace
+@see RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12. 
+
+@return uint16_t current channel value
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -506,11 +522,22 @@ _EnD_oF_dEf_TeXt_;
 Sets the channel.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+This method tunes the rteceiver in a given channel. 
+
+
+The channel can be calculated by using the follow formula
+
+
+channel = (desired frequency - start band frequency) / space channel in use / 10.0);
+
+@see setFrequency, setBand, setSpace
+@see RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12.
+
 @param channel
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga3fe1feed45d3290beba0efef491128e6';
-        sec-mem-ref-line = '154';
+        sec-mem-ref-line = '155';
         sec-mem-ref-name = 'waitAndFinishTune';
     };
     }; /* sec-member */
