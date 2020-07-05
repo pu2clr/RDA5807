@@ -16,6 +16,7 @@
  */
 
 /**
+ * @ingroup GA03
  * @brief Set the Device GPIO pins
  * @details This method is useful to add control to the system via GPIO RDA devive pins.
  * @details For example: You can use these pins to control RDS and SEEK via interrupt. 
@@ -201,7 +202,7 @@ void RDA5807::powerUp()
 
 /**
  * @ingroup GA03
- * @brief
+ * @brief Power the receiver off
  */
 void RDA5807::powerDown()
 {
@@ -229,6 +230,13 @@ void RDA5807::setup(uint8_t clock_type, uint8_t oscillator_type)
 /**
  * @ingroup GA03
  * @brief Sets the channel
+ * @details This method tunes the rteceiver in a given channel. 
+ * @details The channel can be calculated by using the follow formula
+ * @details channel = (desired frequency - start band frequency) / space channel in use / 10.0);
+ * 
+ * @see setFrequency, setBand, setSpace
+ * @see RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12.
+ * 
  * @param channel
  */
 void RDA5807::setChannel(uint16_t channel)
@@ -296,8 +304,12 @@ uint16_t RDA5807::getFrequency()
 
 /**
  * @ingroup GA03
- * @brief
- * @return uint16_t
+ * @brief Gets the current channel stored in 0x0A status register. 
+ * 
+ * @see setChannel, setFrequency, setBand, setSpace
+ * @see RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12. 
+ * 
+ * @return uint16_t current channel value
  */
 uint16_t RDA5807::getRealChannel()
 {
@@ -307,8 +319,18 @@ uint16_t RDA5807::getRealChannel()
 
 /**
  * @ingroup GA03
- * @brief
- *
+ * @brief Gets the current frequency bases on the current channel. 
+ * @details The current channel is stored in the 0x0A register. This value is updated after a tune or seek operation.
+ * @details The current frequency can be calculated by the formula below
+ * 
+ * | Band   | Formula |
+ * | ------ | ------- | 
+ * |    0   | Frequency = Channel Spacing (kHz) x READCHAN[9:0]+ 87.0 MHz |
+ * | 1 or 2 | Frequency = Channel Spacing (kHz) x READCHAN[9:0]+ 76.0 MHz |
+ * |    3   | Frequency = Channel Spacing (kHz) x READCHAN[9:0]+ 65.0 MHz | 
+ * 
+ * @see setChannel, setFrequency, setBand, setSpace
+ * @see RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12. 
  * @return uint16_t
  */
 uint16_t RDA5807::getRealFrequency() {
