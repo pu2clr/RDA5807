@@ -1,8 +1,6 @@
 var annotated_dup =
 [
     [ "RDA5807", "group___g_a01.html#class_r_d_a5807", "group___g_a01_class_r_d_a5807" ],
-    [ "rda_rds_date_time", "group___g_a01.html#unionrda__rds__date__time", "group___g_a01_unionrda__rds__date__time" ],
-    [ "rda_rds_date_time.refined", "group___g_a01.html#structrda__rds__date__time_8refined", "group___g_a01_structrda__rds__date__time_8refined" ],
     [ "rda_reg00", "group___g_a01.html#unionrda__reg00", "group___g_a01_unionrda__reg00" ],
     [ "rda_reg00.refined", "group___g_a01.html#structrda__reg00_8refined", "group___g_a01_structrda__reg00_8refined" ],
     [ "rda_reg01", "group___g_a01.html#unionrda__reg01", "group___g_a01_unionrda__reg01" ],
@@ -37,6 +35,8 @@ var annotated_dup =
     [ "rds_blockb.group0", "group___g_a01.html#structrds__blockb_8group0", "group___g_a01_structrds__blockb_8group0" ],
     [ "rds_blockb.group2", "group___g_a01.html#structrds__blockb_8group2", "group___g_a01_structrds__blockb_8group2" ],
     [ "rds_blockb.refined", "group___g_a01.html#structrds__blockb_8refined", "group___g_a01_structrds__blockb_8refined" ],
+    [ "rds_date_time", "group___g_a01.html#unionrds__date__time", "group___g_a01_unionrds__date__time" ],
+    [ "rds_date_time.refined", "group___g_a01.html#structrds__date__time_8refined", "group___g_a01_structrds__date__time_8refined" ],
     [ "word16_to_bytes", "group___g_a01.html#unionword16__to__bytes", "group___g_a01_unionword16__to__bytes" ],
     [ "word16_to_bytes.refined", "group___g_a01.html#structword16__to__bytes_8refined", "group___g_a01_structword16__to__bytes_8refined" ]
 ];

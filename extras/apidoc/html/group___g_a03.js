@@ -27,8 +27,6 @@ var group___g_a03 =
     [ "setMute", "group___g_a03.html#gafec3018913d735ee0684b88cf503c84a", null ],
     [ "setMono", "group___g_a03.html#gad6e77ffbeb3f4dc885548130e09590d6", null ],
     [ "isStereo", "group___g_a03.html#ga250ff3788a7831dae3c6200919b446dd", null ],
-    [ "setRDS", "group___g_a03.html#ga4b741f1433eda57949bb40fa9e973732", null ],
-    [ "setRBDS", "group___g_a03.html#gaecbab42ef08c486b2eb1ab25649c921a", null ],
     [ "clearRdsFifo", "group___g_a03.html#gab3accd716dc5fe07d936b860b64d9e4e", null ],
     [ "setVolume", "group___g_a03.html#ga51bf4344ebeb44f7170265901df870f5", null ],
     [ "getVolume", "group___g_a03.html#ga743d91d820922b3feda10d06443bc8a9", null ],

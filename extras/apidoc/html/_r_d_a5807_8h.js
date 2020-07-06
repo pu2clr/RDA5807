@@ -34,5 +34,11 @@ var _r_d_a5807_8h =
     [ "REG0C", "_r_d_a5807_8h.html#a0e3b6e600782d453f87223f87784c54d", null ],
     [ "REG0D", "_r_d_a5807_8h.html#a41b7a4f7b9e629eb87dba4152995a616", null ],
     [ "REG0E", "_r_d_a5807_8h.html#a1a5322c7bc447986d2d3b4d13de95315", null ],
-    [ "REG0F", "_r_d_a5807_8h.html#a949846d6974a39c871614c2f15ee0691", null ]
+    [ "REG0F", "_r_d_a5807_8h.html#a949846d6974a39c871614c2f15ee0691", null ],
+    [ "SH_REG0A", "_r_d_a5807_8h.html#aab666077c255544a7917c9c3bc1c9823", null ],
+    [ "SH_REG0B", "_r_d_a5807_8h.html#aab0f53fa6543d47802083a4392f3cae8", null ],
+    [ "SH_REG0C", "_r_d_a5807_8h.html#a97d86a295365c8476e3383c294a9ed1d", null ],
+    [ "SH_REG0D", "_r_d_a5807_8h.html#a85cd795594517e3bce030696a8a6bb97", null ],
+    [ "SH_REG0E", "_r_d_a5807_8h.html#a03c5e8c07784d364f88f9c856e1468bf", null ],
+    [ "SH_REG0F", "_r_d_a5807_8h.html#a3c08c738466db46639091800ff72d36c", null ]
 ];

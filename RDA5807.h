@@ -67,6 +67,13 @@
 #define REG0E 0x0E
 #define REG0F 0x0F
 
+#define SH_REG0A 0 // Shadow array position for register 0x0A
+#define SH_REG0B 1 // Shadow array position for register 0x0B
+#define SH_REG0C 2 // Shadow array position for register 0x0C
+#define SH_REG0D 3 // Shadow array position for register 0x0D
+#define SH_REG0E 5 // Shadow array position for register 0x0E
+#define SH_REG0F 5 // Shadow array position for register 0x0F
+
 /**
  * @defgroup GA01 Union, Structure and Defined Data Types
  * @brief   rda Defined Data Types
@@ -482,7 +489,7 @@ typedef union {
         uint8_t versionCode : 1;        // (B0) => 0=A; 1=B
         uint8_t groupType : 4;          // Group Type code.
     } refined;
-    rda_reg0d blockB;
+    uint16_t blockB;
 } rds_blockb;
 
 /**
@@ -507,7 +514,7 @@ typedef union {
         uint32_t mjd : 17;        // Modified Julian Day Code
     } refined;
     uint8_t raw[6];
-} rda_rds_date_time;
+} rds_date_time;
 
 /**
  * @ingroup GA01
@@ -548,17 +555,23 @@ class RDA5807 {
         rda_reg08 *reg08 = (rda_reg08 *)&shadowRegisters[8]; // REG08;
 
         // Shadow device status register references (read only registers)
-        rda_reg0a *reg0a = (rda_reg0a *)&shadowStatusRegisters[0]; // REG0A;
-        rda_reg0b *reg0b = (rda_reg0b *)&shadowStatusRegisters[1]; // REG0B;
-        rda_reg0c *reg0c = (rda_reg0c *)&shadowStatusRegisters[2]; // REG0C;
-        rda_reg0d *reg0d = (rda_reg0d *)&shadowStatusRegisters[3]; // REG0D;
-        rda_reg0e *reg0e = (rda_reg0e *)&shadowStatusRegisters[4]; // REG0E;
-        rda_reg0f *reg0f = (rda_reg0f *)&shadowStatusRegisters[5]; // REG0F;
+        rda_reg0a *reg0a = (rda_reg0a *)&shadowStatusRegisters[0]; // SH_REG0A; 
+        rda_reg0b *reg0b = (rda_reg0b *)&shadowStatusRegisters[1]; // SH_REG0B;
+        rda_reg0c *reg0c = (rda_reg0c *)&shadowStatusRegisters[2]; // SH_REG0C;
+        rda_reg0d *reg0d = (rda_reg0d *)&shadowStatusRegisters[3]; // SH_REG0D;
+        rda_reg0e *reg0e = (rda_reg0e *)&shadowStatusRegisters[4]; // SH_REG0E;
+        rda_reg0f *reg0f = (rda_reg0f *)&shadowStatusRegisters[5]; // SH_REG0F;
 
 
         uint16_t startBand[4] = {8700, 7600, 7600, 6500};
         uint16_t endBand[4] = {10800, 9100, 10800, 7600}; //!< End FM band limit
         uint16_t fmSpace[4] = {100, 200, 50, 25};
+
+        char rds_buffer2A[65]; //!<  RDS Radio Text buffer - Program Information
+        char rds_buffer2B[33]; //!<  RDS Radio Text buffer - Station Informaation
+        char rds_buffer0A[9];  //!<  RDS Basic tuning and switching information (Type 0 groups)
+        char rds_time[20];     //!<  RDS date time received information
+
 
     protected:
         int deviceAddressDirectAccess = I2C_ADDR_DIRECT_ACCESS;
@@ -638,10 +651,6 @@ class RDA5807 {
             void setMono(bool value);
             bool isStereo();
 
-            void setRDS(bool value);
-            void setRBDS(bool value);
-            void clearRdsFifo();
-
             uint8_t getDeviceId();
 
             void setMute(bool value);
@@ -651,4 +660,23 @@ class RDA5807 {
             void setVolumeDown();
 
             void setFmDeemphasis(uint8_t de);
+
+            //******** RDS methods 
+            void setRDS(bool value);
+            void setRBDS(bool value);
+            void clearRdsFifo();
+
+            bool getRdsReady();
+            uint8_t getRdsFlagAB(void);
+            uint8_t getRdsVersionCode(void);
+            uint16_t getRdsGroupType();
+            uint8_t getRdsProgramType(void);
+            void getNext2Block(char *c);
+            void getNext4Block(char *c);
+            char *getRdsText(void);
+            char *getRdsText0A(void);
+            char *getRdsText2A(void);
+            char *getRdsText2B(void);
+            char *getRdsTime();
+            bool getRdsSync();
 };

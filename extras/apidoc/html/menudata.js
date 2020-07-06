@@ -63,10 +63,12 @@ var menudata={children:[
 {text:"i",url:"globals.html#index_i"},
 {text:"m",url:"globals.html#index_m"},
 {text:"o",url:"globals.html#index_o"},
-{text:"r",url:"globals.html#index_r"}]},
+{text:"r",url:"globals.html#index_r"},
+{text:"s",url:"globals.html#index_s"}]},
 {text:"Macros",url:"globals_defs.html",children:[
 {text:"c",url:"globals_defs.html#index_c"},
 {text:"i",url:"globals_defs.html#index_i"},
 {text:"m",url:"globals_defs.html#index_m"},
 {text:"o",url:"globals_defs.html#index_o"},
-{text:"r",url:"globals_defs.html#index_r"}]}]}]}]}
+{text:"r",url:"globals_defs.html#index_r"},
+{text:"s",url:"globals_defs.html#index_s"}]}]}]}]}

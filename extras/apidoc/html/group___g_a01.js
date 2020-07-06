@@ -180,7 +180,7 @@ var group___g_a01 =
       [ "group0", "group___g_a01.html#ac5781cba2e954484c72ae3077e25afcf", null ],
       [ "group2", "group___g_a01.html#a0a430ac426505b17010fe872dba656a8", null ],
       [ "refined", "group___g_a01.html#ab34c18f5ea4466a422f8370757d4fcbc", null ],
-      [ "blockB", "group___g_a01.html#a1eeb253e750460e6d6823637b255f987", null ]
+      [ "blockB", "group___g_a01.html#a5dae9f2b7edfd4dff7592ed38e403344", null ]
     ] ],
     [ "rds_blockb.group0", "group___g_a01.html#structrds__blockb_8group0", [
       [ "address", "group___g_a01.html#a884d9804999fc47a3c2694e49ad2536a", null ],
@@ -208,11 +208,11 @@ var group___g_a01 =
       [ "versionCode", "group___g_a01.html#a20583dcf173525a78f726ef45329c5ae", null ],
       [ "groupType", "group___g_a01.html#a19223bd3731a4215ead3ba6a1eb8bbe8", null ]
     ] ],
-    [ "rda_rds_date_time", "group___g_a01.html#unionrda__rds__date__time", [
-      [ "refined", "group___g_a01.html#ae54ec79de07a1ab231ff2c29f1b4fc39", null ],
-      [ "raw", "group___g_a01.html#a0f235f5ddf6fc8efbd88b3bdc6c8fd8c", null ]
+    [ "rds_date_time", "group___g_a01.html#unionrds__date__time", [
+      [ "refined", "group___g_a01.html#a9bcded0e419c611d9920953260c352cb", null ],
+      [ "raw", "group___g_a01.html#abb6c459455299730ef24dc149a871202", null ]
     ] ],
-    [ "rda_rds_date_time.refined", "group___g_a01.html#structrda__rds__date__time_8refined", [
+    [ "rds_date_time.refined", "group___g_a01.html#structrds__date__time_8refined", [
       [ "offset", "group___g_a01.html#a7a86c157ee9713c34fbd7a1ee40f0c5a", null ],
       [ "offset_sense", "group___g_a01.html#a5ba6e404c489ff4f757e7c77cb9fa310", null ],
       [ "minute1", "group___g_a01.html#a756bdae430708e155654a844c2bcc33b", null ],
@@ -257,9 +257,6 @@ var group___g_a01 =
       [ "setSoftmute", "group___g_a03.html#gadd2c2ab8b861ab0714fdeb99c774d656", null ],
       [ "setMono", "group___g_a03.html#gad6e77ffbeb3f4dc885548130e09590d6", null ],
       [ "isStereo", "group___g_a03.html#ga250ff3788a7831dae3c6200919b446dd", null ],
-      [ "setRDS", "group___g_a03.html#ga4b741f1433eda57949bb40fa9e973732", null ],
-      [ "setRBDS", "group___g_a03.html#gaecbab42ef08c486b2eb1ab25649c921a", null ],
-      [ "clearRdsFifo", "group___g_a03.html#gab3accd716dc5fe07d936b860b64d9e4e", null ],
       [ "getDeviceId", "group___g_a03.html#ga53316e685a196bba1819f5b1fe2b42af", null ],
       [ "setMute", "group___g_a03.html#gafec3018913d735ee0684b88cf503c84a", null ],
       [ "setVolume", "group___g_a03.html#ga51bf4344ebeb44f7170265901df870f5", null ],
@@ -267,6 +264,22 @@ var group___g_a01 =
       [ "setVolumeUp", "group___g_a03.html#ga864af32df4d3365e03f8876703218283", null ],
       [ "setVolumeDown", "group___g_a03.html#ga910965f74897b0246a0b3bed39743d8c", null ],
       [ "setFmDeemphasis", "group___g_a03.html#ga4f8fe00a561c39d2dc9a0a143b1866e9", null ],
+      [ "setRDS", "group___g_a04.html#ga4b741f1433eda57949bb40fa9e973732", null ],
+      [ "setRBDS", "group___g_a04.html#gaecbab42ef08c486b2eb1ab25649c921a", null ],
+      [ "clearRdsFifo", "group___g_a03.html#gab3accd716dc5fe07d936b860b64d9e4e", null ],
+      [ "getRdsReady", "group___g_a04.html#gacfa48dfcf792a9bcee489658177aed90", null ],
+      [ "getRdsFlagAB", "group___g_a04.html#ga04e5fe0cacbdcae620388a15630cf9c1", null ],
+      [ "getRdsVersionCode", "group___g_a04.html#gad85ccedd8baecd8bc2f42325a3ee8741", null ],
+      [ "getRdsGroupType", "group___g_a04.html#ga32c361b9b996a5920519315aa86d174d", null ],
+      [ "getRdsProgramType", "group___g_a04.html#gae3bde947a89c6dadfc4dc22aea85b467", null ],
+      [ "getNext2Block", "group___g_a04.html#ga6afb347f32121c480adea2a36032d56f", null ],
+      [ "getNext4Block", "group___g_a04.html#ga3ab713bb63978518d42a761b9db445c9", null ],
+      [ "getRdsText", "group___g_a04.html#ga96152112619e139bd7e0ff523009a161", null ],
+      [ "getRdsText0A", "group___g_a04.html#ga5a26789f1910a5b2098919dbd50e6a3c", null ],
+      [ "getRdsText2A", "group___g_a04.html#ga482098a64299cb8af976d4d10a460212", null ],
+      [ "getRdsText2B", "group___g_a04.html#gacd6614bc7be99d55a3d9a17739ee7074", null ],
+      [ "getRdsTime", "group___g_a04.html#gaef398d848e7378ec4897965b8e1b4441", null ],
+      [ "getRdsSync", "group___g_a04.html#ga25df690020bab4154b0737e7365ed8ea", null ],
       [ "deviceAddressDirectAccess", "group___g_a01.html#a18c3e5a103b683af7c46d8b9a3d47518", null ],
       [ "deviceAddressFullAccess", "group___g_a01.html#a81c00f45187f93be0698ef8c5bd80619", null ],
       [ "resetPin", "group___g_a01.html#a55c07acd68120f74f787999364fc92c9", null ],

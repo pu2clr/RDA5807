@@ -5,8 +5,8 @@ var indexSectionsWithContent =
   2: "r",
   3: "cgipsw",
   4: "bcdgmor",
-  5: "cimor",
-  6: "bu",
+  5: "cimors",
+  6: "bru",
   7: "rt"
 };
 

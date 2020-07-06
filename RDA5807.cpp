@@ -466,33 +466,6 @@ bool RDA5807::isStereo()
     return reg0a->refined.ST;
 }
 
-/**
- * @ingroup GA03
- * @brief Sets the RDS operation
- * @details Enable or Disable the RDS
- *
- * @param true = turns the RDS ON; false  = turns the RDS OFF
- */
-void RDA5807::setRDS(bool value)
-{
-    reg02->refined.RDS_EN =  value;
-    setRegister(REG02, reg02->raw);
-}
-
-/**
- * @ingroup GA03
- * @brief Sets the RBDS operation
- * @details Enable or Disable the RDS
- *
- * @param true = turns the RBDS ON; false  = turns the RBDS OFF
- */
-void RDA5807::setRBDS(bool value)
-{
-    reg02->refined.RDS_EN = 1;
-    setRegister(REG02, reg02->raw);
-    reg04->refined.RBDS = value;
-    setRegister(REG04, reg04->raw);
-}
 
 /**
  * @ingroup GA03
@@ -581,4 +554,364 @@ uint8_t RDA5807::getDeviceId()
 void RDA5807::setFmDeemphasis(uint8_t de) {
   reg04->refined.DE = de;
   setRegister(REG04,reg04->raw);
+}
+
+/** 
+ * @defgroup GA04 RDS Functions
+ * @section GA04 RDS/RBDS
+ * @todo Need optimizing the method to get the RDS informastion - getStatusRegisters should be called just once at a cicle. 
+ */
+
+/**
+ * @ingroup GA04
+ * @brief Sets the RDS operation
+ * @details Enable or Disable the RDS
+ *
+ * @param true = turns the RDS ON; false  = turns the RDS OFF
+ */
+void RDA5807::setRDS(bool value)
+{
+    reg02->refined.RDS_EN = value;
+    setRegister(REG02, reg02->raw);
+}
+
+/**
+ * @ingroup GA04
+ * @brief Sets the RBDS operation
+ * @details Enable or Disable the RDS
+ *
+ * @param true = turns the RBDS ON; false  = turns the RBDS OFF
+ */
+void RDA5807::setRBDS(bool value)
+{
+    reg02->refined.RDS_EN = 1;
+    setRegister(REG02, reg02->raw);
+    reg04->refined.RBDS = value;
+    setRegister(REG04, reg04->raw);
+}
+
+
+/**
+ * @ingroup GA04
+ * @brief Returns true if RDS Ready
+ * @details Read address 0Ah and check the bit RDSR.
+ * @details When using the polling method, it is best not to poll continuously. The data will appear in intervals. 
+ * @return true 
+ * @return false 
+ */
+bool RDA5807::getRdsReady()
+{
+    getStatus(REG0A);
+    return reg0a->refined.RDSR;       
+}
+
+/**
+ * @ingroup GA04
+ * 
+ * @brief Returns the current Text Flag A/B  
+ * @return uint8_t current Text Flag A/B  
+ */
+uint8_t RDA5807::getRdsFlagAB(void)
+{
+    rds_blockb blkb;
+    getStatusRegisters(); // TODO: Should be called just once and be processed by all RDS functions at a time.
+    blkb.blockB =  shadowStatusRegisters[SH_REG0D]; // Real array position
+    return blkb.refined.textABFlag;
+}
+
+/**
+ * @ingroup GA04
+ * @brief Return the group type 
+ * 
+ * @return uint16_t 
+ */
+uint16_t RDA5807::getRdsGroupType()
+{
+    rds_blockb blkb;
+    getStatusRegisters(); // TODO: Should be called just once and be processed by all RDS functions at a time.
+    blkb.blockB = shadowStatusRegisters[SH_REG0D];
+    return blkb.group0.groupType;
+}
+
+/**
+ * @ingroup GA04
+ * 
+ * @brief Gets the version code (extracted from the Block B)
+ * @returns  0=A or 1=B
+ */
+uint8_t RDA5807::getRdsVersionCode(void)
+{
+    rds_blockb blkb;
+    getStatusRegisters();    // TODO: Should be called just once and be processed by all RDS functions at a time.
+    blkb.blockB = shadowStatusRegisters[SH_REG0D];
+    return blkb.refined.programType;
+}
+
+/**  
+ * @ingroup GA04  
+ * @brief Returns the Program Type (extracted from the Block B)
+ * @see https://en.wikipedia.org/wiki/Radio_Data_System
+ * @return program type (an integer betwenn 0 and 31)
+ */
+uint8_t RDA5807::getRdsProgramType(void)
+{
+    rds_blockb blkb;
+    getStatusRegisters(); // TODO: Should be called just once and be processed by all RDS functions at a time.
+    blkb.blockB = shadowStatusRegisters[SH_REG0D];
+    return blkb.refined.programType;
+}
+
+/**
+ * @ingroup GA04
+ * 
+ * @brief Process data received from group 2B
+ * @param c  char array reference to the "group 2B" text 
+ */
+void RDA5807::getNext2Block(char *c)
+{
+    char raw[2];
+    int i, j;
+    word16_to_bytes blk;
+
+    blk.raw = shadowStatusRegisters[SH_REG0F];
+
+    raw[1] = blk.refined.lowByte;
+    raw[0] = blk.refined.highByte;
+
+    for (i = j = 0; i < 2; i++)
+    {
+        if (raw[i] == 0xD || raw[i] == 0xA)
+        {
+            c[j] = '\0';
+            return;
+        }
+        if (raw[i] >= 32)
+        {
+            c[j] = raw[i];
+            j++;
+        }
+        else
+        {
+            c[i] = ' ';
+        }
+    }
+}
+
+/**
+ * @ingroup GA04
+ * 
+ * @brief Process data received from group 2A
+ * 
+ * @param c  char array reference to the "group  2A" text 
+ */
+void RDA5807::getNext4Block(char *c)
+{
+    char raw[4];
+    int i, j;
+    word16_to_bytes blk_c, blk_d;
+
+    blk_c.raw = shadowStatusRegisters[SH_REG0E];
+    blk_d.raw = shadowStatusRegisters[SH_REG0F];
+
+    raw[0] = blk_c.refined.highByte;
+    raw[1] = blk_c.refined.lowByte;
+    raw[2] = blk_d.refined.highByte;
+    raw[3] = blk_d.refined.lowByte;
+
+    for (i = j = 0; i < 4; i++)
+    {
+        if (raw[i] == 0xD || raw[i] == 0xA)
+        {
+            c[j] = '\0';
+            return;
+        }
+        if (raw[i] >= 32)
+        {
+            c[j] = raw[i];
+            j++;
+        }
+        else
+        {
+            c[i] = ' ';
+        }
+    }
+}
+
+/**
+ * @ingroup GA04
+ * 
+ * @brief Gets the RDS Text when the message is of the Group Type 2 version A
+ * @return char*  The string (char array) with the content (Text) received from group 2A 
+ */
+char *RDA5807::getRdsText(void)
+{
+    static int rdsTextAdress2A;
+    rds_blockb blkb;
+
+    getStatusRegisters();
+
+    blkb.blockB = shadowStatusRegisters[SH_REG0D];
+    rdsTextAdress2A = blkb.group2.address;
+
+    if (rdsTextAdress2A >= 16)
+        rdsTextAdress2A = 0;
+
+    getNext4Block(&rds_buffer2A[rdsTextAdress2A * 4]);
+    rdsTextAdress2A += 4;
+    return rds_buffer2A;
+}
+
+/**
+ * @ingroup GA04
+ * @todo RDS Dynamic PS or Scrolling PS support
+ * @brief Gets the station name and other messages. 
+ * 
+ * @return char* should return a string with the station name. 
+ *         However, some stations send other kind of messages
+ */
+char *RDA5807::getRdsText0A(void)
+{
+    static int rdsTextAdress0A;
+    rds_blockb blkb;
+
+    getStatusRegisters();
+    blkb.blockB = shadowStatusRegisters[SH_REG0D];
+
+    if (blkb.group0.groupType == 0)
+    {
+        // Process group type 0
+        rdsTextAdress0A = blkb.group0.address;
+        if (rdsTextAdress0A >= 0 && rdsTextAdress0A < 4)
+        {
+            getNext2Block(&rds_buffer0A[rdsTextAdress0A * 2]);
+            rds_buffer0A[8] = '\0';
+            return rds_buffer0A;
+        }
+    }
+    return NULL;
+}
+
+/**
+ * @ingroup @ingroup GA04
+ * 
+ * @brief Gets the Text processed for the 2A group
+ * 
+ * @return char* string with the Text of the group A2  
+ */
+char *RDA5807::getRdsText2A(void)
+{
+    static int rdsTextAdress2A;
+    rds_blockb blkb;
+
+    getStatusRegisters();
+
+    blkb.blockB = shadowStatusRegisters[SH_REG0D];
+    rdsTextAdress2A = blkb.group2.address;
+
+    if (blkb.group2.groupType == 2)
+    {
+        // Process group 2A
+        // Decode B block information
+        if (rdsTextAdress2A >= 0 && rdsTextAdress2A < 16)
+        {
+            getNext4Block(&rds_buffer2A[rdsTextAdress2A * 4]);
+            rds_buffer2A[63] = '\0';
+            return rds_buffer2A;
+        }
+    }
+    return NULL;
+}
+
+/**
+ * @ingroup GA04
+ * @brief Gets the Text processed for the 2B group
+ * @return char* string with the Text of the group AB  
+ */
+char *RDA5807::getRdsText2B(void)
+{
+    static int rdsTextAdress2B;
+    rds_blockb blkb;
+
+    getStatusRegisters();
+    blkb.blockB = shadowStatusRegisters[SH_REG0D];
+    if (blkb.group2.groupType == 2)
+    {
+        // Process group 2B
+        rdsTextAdress2B = blkb.group2.address;
+        if (rdsTextAdress2B >= 0 && rdsTextAdress2B < 16)
+        {
+            getNext2Block(&rds_buffer2B[rdsTextAdress2B * 2]);
+            return rds_buffer2B;
+        }
+    }
+    return NULL;
+}
+
+/**
+ * @ingroup GA04 
+ * @brief Gets the RDS time and date when the Group type is 4 
+ * @return char* a string with hh:mm +/- offset
+ */
+char *RDA5807::getRdsTime()
+{
+    // Under Test and construction
+    // Need to check the Group Type before.
+    rds_date_time dt;
+    word16_to_bytes blk_b, blk_c, blk_d;
+    rds_blockb blkb;
+
+    getStatusRegisters();
+
+    blk_b.raw = blkb.blockB = shadowStatusRegisters[SH_REG0D];
+    blk_c.raw = shadowStatusRegisters[REG0E];
+    blk_d.raw = shadowStatusRegisters[REG0F];
+
+    uint16_t minute;
+    uint16_t hour;
+
+    if (blkb.group0.groupType == 4)
+    {
+        char offset_sign;
+        int offset_h;
+        int offset_m;
+
+        // uint16_t y, m, d;
+
+        dt.raw[4] = blk_b.refined.lowByte;
+        dt.raw[5] = blk_b.refined.highByte;
+
+        dt.raw[2] = blk_c.refined.lowByte;
+        dt.raw[3] = blk_c.refined.highByte;
+
+        dt.raw[0] = blk_d.refined.lowByte;
+        dt.raw[1] = blk_d.refined.highByte;
+
+        // Unfortunately it was necessary to wotk well on the GCC compiler on 32-bit
+        // platforms. See si47x_rds_date_time (typedef union) and CGG “Crosses boundary” issue/features.
+        // Now it is working on Atmega328, STM32, Arduino DUE, ESP32 and more.
+        minute = (dt.refined.minute2 << 2) | dt.refined.minute1;
+        hour = (dt.refined.hour2 << 4) | dt.refined.hour1;
+
+        offset_sign = (dt.refined.offset_sense == 1) ? '+' : '-';
+        offset_h = (dt.refined.offset * 30) / 60;
+        offset_m = (dt.refined.offset * 30) - (offset_h * 60);
+        // sprintf(rds_time, "%02u:%02u %c%02u:%02u", dt.refined.hour, dt.refined.minute, offset_sign, offset_h, offset_m);
+        sprintf(rds_time, "%02u:%02u %c%02u:%02u", hour, minute, offset_sign, offset_h, offset_m);
+
+        return rds_time;
+    }
+
+    return NULL;
+}
+
+/**
+ * @ingroup GA04 
+ * @brief Get the Rds Sync 
+ * @details Returns true if RDS currently synchronized.
+ * @return true or false
+ */
+bool RDA5807::getRdsSync()
+{
+    getStatus(REG0A);
+    return reg0a->refined.RDSS;
 }
