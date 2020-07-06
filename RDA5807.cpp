@@ -65,8 +65,7 @@ void RDA5807::getStatusRegisters()
     word16_to_bytes aux;
     int i;
 
-    Wire.requestFrom(this->deviceAddressDirectAccess, 12); // This call starts reading from 0x0A register
-    delayMicroseconds(250);
+    Wire.requestFrom(this->deviceAddressFullAccess, 12); // This call starts reading from 0x0A register
     for (i = 0; i < 6; i++) {
         aux.refined.highByte = Wire.read();
         aux.refined.lowByte = Wire.read();
@@ -602,7 +601,8 @@ void RDA5807::setRBDS(bool value)
 bool RDA5807::getRdsReady()
 {
     getStatus(REG0A);
-    return reg0a->refined.RDSR;       
+
+    return reg0a->refined.RDSR;
 }
 
 /**
@@ -895,7 +895,7 @@ char *RDA5807::getRdsTime()
         offset_sign = (dt.refined.offset_sense == 1) ? '+' : '-';
         offset_h = (dt.refined.offset * 30) / 60;
         offset_m = (dt.refined.offset * 30) - (offset_h * 60);
-        // sprintf(rds_time, "%02u:%02u %c%02u:%02u", dt.refined.hour, dt.refined.minute, offset_sign, offset_h, offset_m);
+
         sprintf(rds_time, "%02u:%02u %c%02u:%02u", hour, minute, offset_sign, offset_h, offset_m);
 
         return rds_time;
@@ -915,3 +915,50 @@ bool RDA5807::getRdsSync()
     getStatus(REG0A);
     return reg0a->refined.RDSS;
 }
+
+/**
+ * @ingroup GA04 
+ * @brief Get the current Block ID
+ * @details 1= the block id of register 0cH,0dH,0eH,0fH is E
+ * @details 0= the block id of register 0cH, 0dH, 0eH,0fH is A, B, C, D
+ * @return  0= the block id of register 0cH, 0dH, 0eH,0fH is A, B, C, D; 1 = the block id of register 0cH,0dH,0eH,0fH is E
+ */
+uint8_t RDA5807::getBlockId()
+{
+    getStatus(REG0B);
+    return reg0b->refined.ABCD_E;
+}
+
+/**
+ * @ingroup GA04 
+ * @brief Get the current Status of block B
+ * 
+ * Block Errors Level of RDS_DATA_1, and is always read as Errors Level of RDS BLOCK B (in RDS mode ) or E (in RBDS mode when ABCD_E flag is 1).
+ * | value | description |
+ * | ----- | ----------- |
+ * |  00   | 0 errors requiring correction |
+ * |  01   | 1~2 errors requiring correction |
+ * |  10   | 3~5 errors requiring correction |
+ * |  11   | 6+ errors or error in checkword, correction not possible |
+ * 
+ *  **Available only in RDS Verbose mode** 
+ * 
+ * @return  value See table above.
+ */
+uint8_t RDA5807::getErrorBlockB()
+{
+    getStatus(REG0B);
+    return reg0b->refined.BLERB;
+}
+
+/**
+ * @ingroup GA04 
+ * @brief Returns true when the RDS system has valid information 
+ * @details Returns true if RDS currently synchronized; the information are A, B, C and D blocks; and no errors 
+ * @return  true or false
+ */
+bool RDA5807::hasRdsInfo() {
+    getStatus(REG0B);
+    return  (reg0a->refined.RDSS && reg0b->refined.ABCD_E == 0 && reg0b->refined.BLERB == 0 );
+}
+

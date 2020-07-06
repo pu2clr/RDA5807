@@ -69,10 +69,10 @@
 
 #define SH_REG0A 0 // Shadow array position for register 0x0A
 #define SH_REG0B 1 // Shadow array position for register 0x0B
-#define SH_REG0C 2 // Shadow array position for register 0x0C
-#define SH_REG0D 3 // Shadow array position for register 0x0D
-#define SH_REG0E 5 // Shadow array position for register 0x0E
-#define SH_REG0F 5 // Shadow array position for register 0x0F
+#define SH_REG0C 2 // Shadow array position for register 0x0C - RDS Block A
+#define SH_REG0D 3 // Shadow array position for register 0x0D - RDS Block B
+#define SH_REG0E 4 // Shadow array position for register 0x0E - RDS Block C
+#define SH_REG0F 5 // Shadow array position for register 0x0F - RDS Block D
 
 /**
  * @defgroup GA01 Union, Structure and Defined Data Types
@@ -679,4 +679,7 @@ class RDA5807 {
             char *getRdsText2B(void);
             char *getRdsTime();
             bool getRdsSync();
+            uint8_t getBlockId();
+            uint8_t getErrorBlockB();
+            bool hasRdsInfo();
 };

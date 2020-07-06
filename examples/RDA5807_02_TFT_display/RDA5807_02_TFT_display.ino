@@ -75,6 +75,7 @@
 #define SEEK_FUNCTION 12
 
 #define POLLING_TIME  2000
+#define POLLING_RDS     80
 
 char oldFreq[10];
 char oldStereo[10];
@@ -207,8 +208,8 @@ void showFrequency()
 
   tft.setFont(&DSEG7_Classic_Mini_Regular_30);
   tft.setTextSize(1);
-  printValue(0, 35, &oldFreq[0], &freq[0], 23, COLOR_YELLOW);
-  printValue(80, 35, &oldFreq[4], &freq[4], 23, COLOR_YELLOW);
+  printValue(0, 35, &oldFreq[0], &freq[0], 23, COLOR_RED);
+  printValue(80, 35, &oldFreq[4], &freq[4], 23, COLOR_RED);
   tft.setCursor(78, 35);
   tft.print('.');
 }
@@ -254,13 +255,13 @@ char *rdsTime;
 char bufferStatioName[40];
 char bufferRdsMsg[40];
 char bufferRdsTime[32];
-
 long stationNameElapsed = millis();
+long polling_rds = millis();
 
 void showRDSMsg()
 {
   tft.setFont(&Serif_plain_7);
-  rdsMsg[19] = bufferRdsMsg[19] = '\0';   // Truncate the message to fit on display.  You can try scrolling 
+  rdsMsg[19] = bufferRdsMsg[22] = '\0';   // Truncate the message to fit on display.  You can try scrolling
   if (strcmp(bufferRdsMsg, rdsMsg) == 0)
     return;
   printValue(5, 90, bufferRdsMsg, rdsMsg, 7, COLOR_YELLOW);
@@ -272,7 +273,7 @@ void showRDSMsg()
 */
 void showRDSStation()
 {
-    tft.setFont(&Serif_plain_8);
+  tft.setFont(&Serif_plain_8);
   if (strncmp(bufferStatioName, stationName, 3) == 0)
     return;
   printValue(5, 110, bufferStatioName, stationName, 7, COLOR_YELLOW);
@@ -295,9 +296,8 @@ void clearRds() {
 
 void checkRDS()
 {
-  /*
-  if (rx.getRdsReady() )
-  {
+  // check if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
+  if ( rx.hasRdsInfo() ) {
     rdsMsg = rx.getRdsText2A();
     stationName = rx.getRdsText0A();
     rdsTime = rx.getRdsTime();
@@ -314,7 +314,6 @@ void checkRDS()
     if (rdsTime != NULL)
       showRDSTime();
   }
-  */
 }
 
 void showRds() {
@@ -336,7 +335,7 @@ void showSplash()
   // Splash
   tft.setFont(&Serif_plain_14);
   tft.setTextSize(1);
-  tft.setTextColor(COLOR_WHITE);
+  tft.setTextColor(COLOR_YELLOW);
   tft.setCursor(45, 23);
   tft.print("RDA5807");
   tft.setCursor(15, 50);
@@ -352,6 +351,7 @@ void showSplash()
 
 void setup()
 {
+  Serial.begin(9600);
   pinMode(ENCODER_PIN_A, INPUT_PULLUP);
   pinMode(ENCODER_PIN_B, INPUT_PULLUP);
 
@@ -377,8 +377,7 @@ void setup()
   rx.setup();
   rx.setVolume(6);
   rx.setMono(false); // Force stereo
-  rx.setRDS(true);
-  // rx.setRdsMode(1);
+  rx.setRBDS(true);  //  set RDS and RBDS. See setRDS.
   rx.setFrequency(10650); // It is the frequency you want to select in MHz multiplied by 100.
   rx.setSeekThreshold(50); // Sets RSSI Seek Threshold (0 to 127)
   showStatus();
@@ -442,13 +441,16 @@ void loop()
   if ( (millis() - pollin_elapsed) > POLLING_TIME ) {
     showRSSI();
     showStereoMono();
-    if ( bRds ) {
-      showRds();
-    }
     if ( bShow ) clearRds();
     pollin_elapsed = millis();
   }
 
+  if ( (millis() - polling_rds) > POLLING_RDS) {
+    if ( bRds ) {
+      showRds();
+    }
+    polling_rds = millis();
+  }
 
   delay(100);
 }
