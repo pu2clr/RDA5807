@@ -27,7 +27,7 @@ The RDA5807 is a FM DSP integrated circuit receiver (50 to 115MHz) with low nois
 
 [See the presentation video on youtube](https://youtu.be/eLWEWEjxM8U) 
 
-The photo below shows a Breakbout that uses the RDA5807. You can find it on eBay, AliExpress and Amazon. 
+The photo below shows a Breakout that uses the RDA5807. You can find it on eBay, AliExpress and Amazon. 
 
 ![RDA5807 Breakout board](extras/images/breakout_01A.png)
 
