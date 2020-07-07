@@ -109,6 +109,13 @@ After, unzip the SI4735-master.zip file in your Arduino Library folder.
 ![Basic Schematic](./extras/images/circuit_basic.png)
 
 
+### RDA5807 breakout, ATtiny84, Encoder and Buttons schematic
+
+
+![Basic Schematic](./extras/images/circuit_attiny84.png)
+
+
+
 ### Wire up on Arduino UNO, Pro mini or other based on ATmega 328.
 
 | RDA5807 / Description |  Arduino Pin  |
