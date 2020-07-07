@@ -91,47 +91,47 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga04e5fe0cacbdcae620388a15630cf9c1';
-        sec-mem-ref-line = '614';
+        sec-mem-ref-line = '637';
         sec-mem-ref-name = 'getRdsFlagAB';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga32c361b9b996a5920519315aa86d174d';
-        sec-mem-ref-line = '628';
+        sec-mem-ref-line = '651';
         sec-mem-ref-name = 'getRdsGroupType';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1gae3bde947a89c6dadfc4dc22aea85b467';
-        sec-mem-ref-line = '656';
+        sec-mem-ref-line = '679';
         sec-mem-ref-name = 'getRdsProgramType';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga96152112619e139bd7e0ff523009a161';
-        sec-mem-ref-line = '746';
+        sec-mem-ref-line = '769';
         sec-mem-ref-name = 'getRdsText';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
-        sec-mem-ref-line = '772';
+        sec-mem-ref-line = '795';
         sec-mem-ref-name = 'getRdsText0A';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
-        sec-mem-ref-line = '801';
+        sec-mem-ref-line = '824';
         sec-mem-ref-name = 'getRdsText2A';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
-        sec-mem-ref-line = '830';
+        sec-mem-ref-line = '853';
         sec-mem-ref-name = 'getRdsText2B';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1gaef398d848e7378ec4897965b8e1b4441';
-        sec-mem-ref-line = '855';
+        sec-mem-ref-line = '878';
         sec-mem-ref-name = 'getRdsTime';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1gad85ccedd8baecd8bc2f42325a3ee8741';
-        sec-mem-ref-line = '642';
+        sec-mem-ref-line = '665';
         sec-mem-ref-name = 'getRdsVersionCode';
     };
     }; /* sec-member */
@@ -165,31 +165,6 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga69f8c596479c7db1f61a9dea348c8474';
-      sec-mem-virt = normal;
-      sec-mem-prot = public;
-      sec-mem-type = <<_EnD_oF_dEf_TeXt_
-void
-_EnD_oF_dEf_TeXt_;
-      sec-mem-name = 'setAllRegisters';
-      sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '618';
-      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Sets values to the device registers from 0x02 to 0x07.
-_EnD_oF_dEf_TeXt_;
-      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-An internal address counter automatically increments to allow continuous data byte writes, starting with the upper byte of register 02h, followed by the lower byte of register 02h, and onward until the lower byte of the last register is reached. 
-
-
-The registers from 0x2 to 0x07 are used to setup the device. This method writes the array  shadowStatusRegisters. See Device registers map  in RDA5807.h file.
-
-
-To implement this, a register maping was created to deal with each register structure. For each type of register, there is a reference to the array element.
-@see shadowStatusRegisters;
-_EnD_oF_dEf_TeXt_;
-    }; /* sec-member */
-    sec-member = {
-      sec-mem-kind = 'function';
       sec-mem-id   = 'group___g_a03_1ga3b581b82ab8c631cfec537a47008ddf3';
       sec-mem-virt = normal;
       sec-mem-prot = public;
@@ -210,7 +185,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'value';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '619';
+      sec-mem-desc-line = '618';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Sets a given value to a specific device register.
 _EnD_oF_dEf_TeXt_;
@@ -258,7 +233,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '621';
+      sec-mem-desc-line = '620';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Set the Device GPIO pins.
 _EnD_oF_dEf_TeXt_;
@@ -299,7 +274,7 @@ void
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'waitAndFinishTune';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '623';
+      sec-mem-desc-line = '622';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Waits for Seek or Tune finish.
 _EnD_oF_dEf_TeXt_;
@@ -307,8 +282,13 @@ _EnD_oF_dEf_TeXt_;
 
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
+        sec-mem-ref-id = '_r_d_a5807_8cpp_1gade55e697c7752811086300e710727397';
+        sec-mem-ref-line = '364';
+        sec-mem-ref-name = 'seek';
+    };
+      sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1gaa9cfaddbd43257e810bb3817b021fa8a';
-        sec-mem-ref-line = '242';
+        sec-mem-ref-line = '219';
         sec-mem-ref-name = 'setChannel';
     };
     }; /* sec-member */
@@ -322,7 +302,7 @@ void
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'softReset';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '625';
+      sec-mem-desc-line = '624';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Resets the device.
 _EnD_oF_dEf_TeXt_;
@@ -343,7 +323,7 @@ void
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'powerUp';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '627';
+      sec-mem-desc-line = '626';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Powers the receiver on.
 _EnD_oF_dEf_TeXt_;
@@ -352,7 +332,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1gac79c1fec6c416c9993ff19362fe312cb';
-        sec-mem-ref-line = '219';
+        sec-mem-ref-line = '196';
         sec-mem-ref-name = 'setup';
     };
     }; /* sec-member */
@@ -366,7 +346,7 @@ void
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'powerDown';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '628';
+      sec-mem-desc-line = '627';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Power the receiver off.
 _EnD_oF_dEf_TeXt_;
@@ -402,7 +382,7 @@ OSCILLATOR_TYPE_CRYSTAL
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '630';
+      sec-mem-desc-line = '629';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Starts the device.
 _EnD_oF_dEf_TeXt_;
@@ -412,7 +392,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga30d2b0c4662922df53bcef118663329c';
-        sec-mem-ref-line = '178';
+        sec-mem-ref-line = '155';
         sec-mem-ref-name = 'powerUp';
     };
     }; /* sec-member */
@@ -432,7 +412,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'frequency';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '632';
+      sec-mem-desc-line = '631';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Sets the frequency.
 _EnD_oF_dEf_TeXt_;
@@ -450,7 +430,7 @@ uint16_t
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'getFrequency';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '635';
+      sec-mem-desc-line = '634';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the current frequency.
 _EnD_oF_dEf_TeXt_;
@@ -468,7 +448,7 @@ void
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'setFrequencyUp';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '636';
+      sec-mem-desc-line = '635';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Increments the current frequency.
 _EnD_oF_dEf_TeXt_;
@@ -486,7 +466,7 @@ void
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'setFrequencyDown';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '637';
+      sec-mem-desc-line = '636';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Decrements the current frequency.
 _EnD_oF_dEf_TeXt_;
@@ -504,7 +484,7 @@ uint16_t
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'getRealFrequency';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '639';
+      sec-mem-desc-line = '638';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the current frequency bases on the current channel.
 _EnD_oF_dEf_TeXt_;
@@ -535,7 +515,7 @@ uint16_t
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'getRealChannel';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '640';
+      sec-mem-desc-line = '639';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the current channel stored in 0x0A status register.
 _EnD_oF_dEf_TeXt_;
@@ -562,7 +542,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'channel';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '641';
+      sec-mem-desc-line = '640';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Sets the channel.
 _EnD_oF_dEf_TeXt_;
@@ -582,7 +562,7 @@ channel = (desired frequency - start band frequency) / space channel in use / 10
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga3fe1feed45d3290beba0efef491128e6';
-        sec-mem-ref-line = '155';
+        sec-mem-ref-line = '132';
         sec-mem-ref-name = 'waitAndFinishTune';
     };
     }; /* sec-member */
@@ -608,7 +588,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'direction';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '642';
+      sec-mem-desc-line = '641';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Seek function.
 _EnD_oF_dEf_TeXt_;
@@ -617,6 +597,87 @@ _EnD_oF_dEf_TeXt_;
 <br>
 @param direction  if 0, seek down; if 1, seek up.
 _EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'group___g_a03_1gade55e697c7752811086300e710727397';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'seek';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+uint8_t
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'seek_mode';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+uint8_t
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'direction';
+      }; /*        sec-mem-param--param */
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+void(*)()
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'showFunc';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
+      sec-mem-desc-line = '642';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Seek function.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+Seeks a station up or down.
+
+
+Seek up or down a station and call a function defined by the user to show the frequency during the seek process. 
+
+
+Seek begins at the current channel, and goes in the direction specified with the SEEKUP bit. Seek operation stops when a channel is qualified as valid according to the seek parameters, the entire band has been searched (SKMODE = 0), or the upper or lower band limit has been reached (SKMODE = 1).
+
+
+The STC bit is set high when the seek operation completes and/or the SF/BL bit is set high if the seek operation was unable to find a channel qualified as valid according to the seek parameters. The STC and SF/BL bits must be set low by setting the SEEK bit low before the next seek or tune may begin.
+
+
+The SEEK bit is set low and the STC bit is set high when the seek operation completes.
+
+
+It is important to say you have to implement a show frequency function. This function have to get the frequency via getFrequency function.  
+<br>
+
+
+Example:
+@code 
+
+SI470X rx;
+
+void showFrequency() {
+   uint16_t freq = rx.getFrequency();
+   Serial.print(freq); 
+   Serial.println("MHz ");
+}
+
+void loop() {
+ .
+ .
+     rx.seek(SI470X_SEEK_WRAP, SI470X_SEEK_UP, showFrequency); // Seek Up
+ .
+ .
+}
+@endcode
+@param seek_mode  Seek Mode; 0 = Wrap at the upper or lower band limit and continue seeking (default); 1 = Stop seeking at the upper or lower band limit.
+@param direction  Seek Direction; 0 = Seek down (default); 1 = Seek up.
+@param showFunc  function that you have to implement to show the frequency during the seeking process. Set NULL if you do not want to show the progress. 
+_EnD_oF_dEf_TeXt_;
+      sec-mem-referenceto = {
+        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga3fe1feed45d3290beba0efef491128e6';
+        sec-mem-ref-line = '132';
+        sec-mem-ref-name = 'waitAndFinishTune';
+    };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
@@ -1000,7 +1061,32 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1gab3accd716dc5fe07d936b860b64d9e4e';
+      sec-mem-id   = 'group___g_a04_1gae27337170a5f3dedebf585aa19855ad6';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'setRdsFifo';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'value';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
+      sec-mem-desc-line = '667';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Sets RDS fifo mode enable.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@param value  If true, it makes the the fifo mode enable. 
+@return true  or false
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'group___g_a04_1gab3accd716dc5fe07d936b860b64d9e4e';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1008,12 +1094,13 @@ void
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'clearRdsFifo';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '667';
+      sec-mem-desc-line = '668';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Clears RDS/RBDS FIFO.
+Clear RDS fifo.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-
+@param value  If true, it makes the the fifo mode enable. 
+@return true  or false
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -1026,7 +1113,7 @@ bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'getRdsReady';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '669';
+      sec-mem-desc-line = '670';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Returns true if RDS Ready.
 _EnD_oF_dEf_TeXt_;
@@ -1054,7 +1141,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '670';
+      sec-mem-desc-line = '671';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Returns the current Text Flag A/B  
 <br>
@@ -1084,7 +1171,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '671';
+      sec-mem-desc-line = '672';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the version code (extracted from the Block B)
 _EnD_oF_dEf_TeXt_;
@@ -1107,7 +1194,7 @@ uint16_t
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'getRdsGroupType';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '672';
+      sec-mem-desc-line = '673';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Return the group type.
 _EnD_oF_dEf_TeXt_;
@@ -1135,7 +1222,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '673';
+      sec-mem-desc-line = '674';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Returns the Program Type (extracted from the Block B)
 _EnD_oF_dEf_TeXt_;
@@ -1166,7 +1253,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'c';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '674';
+      sec-mem-desc-line = '675';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Process data received from group 2B.
 _EnD_oF_dEf_TeXt_;
@@ -1175,12 +1262,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
-        sec-mem-ref-line = '772';
+        sec-mem-ref-line = '795';
         sec-mem-ref-name = 'getRdsText0A';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
-        sec-mem-ref-line = '830';
+        sec-mem-ref-line = '853';
         sec-mem-ref-name = 'getRdsText2B';
     };
     }; /* sec-member */
@@ -1200,7 +1287,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'c';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '675';
+      sec-mem-desc-line = '676';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Process data received from group 2A.
 _EnD_oF_dEf_TeXt_;
@@ -1209,12 +1296,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga96152112619e139bd7e0ff523009a161';
-        sec-mem-ref-line = '746';
+        sec-mem-ref-line = '769';
         sec-mem-ref-name = 'getRdsText';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
-        sec-mem-ref-line = '801';
+        sec-mem-ref-line = '824';
         sec-mem-ref-name = 'getRdsText2A';
     };
     }; /* sec-member */
@@ -1233,7 +1320,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '676';
+      sec-mem-desc-line = '677';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the RDS Text when the message is of the Group Type 2 version A.
 _EnD_oF_dEf_TeXt_;
@@ -1242,7 +1329,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga3ab713bb63978518d42a761b9db445c9';
-        sec-mem-ref-line = '707';
+        sec-mem-ref-line = '730';
         sec-mem-ref-name = 'getNext4Block';
     };
       sec-mem-referenceto = {
@@ -1266,7 +1353,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '677';
+      sec-mem-desc-line = '678';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the station name and other messages.
 _EnD_oF_dEf_TeXt_;
@@ -1276,7 +1363,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga6afb347f32121c480adea2a36032d56f';
-        sec-mem-ref-line = '670';
+        sec-mem-ref-line = '693';
         sec-mem-ref-name = 'getNext2Block';
     };
       sec-mem-referenceto = {
@@ -1300,7 +1387,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '678';
+      sec-mem-desc-line = '679';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the Text processed for the 2A group.
 _EnD_oF_dEf_TeXt_;
@@ -1312,7 +1399,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga3ab713bb63978518d42a761b9db445c9';
-        sec-mem-ref-line = '707';
+        sec-mem-ref-line = '730';
         sec-mem-ref-name = 'getNext4Block';
     };
       sec-mem-referenceto = {
@@ -1336,7 +1423,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '679';
+      sec-mem-desc-line = '680';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the Text processed for the 2B group.
 _EnD_oF_dEf_TeXt_;
@@ -1346,7 +1433,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga6afb347f32121c480adea2a36032d56f';
-        sec-mem-ref-line = '670';
+        sec-mem-ref-line = '693';
         sec-mem-ref-name = 'getNext2Block';
     };
       sec-mem-referenceto = {
@@ -1365,7 +1452,7 @@ char *
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'getRdsTime';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '680';
+      sec-mem-desc-line = '681';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the RDS time and date when the Group type is 4.
 _EnD_oF_dEf_TeXt_;
@@ -1388,13 +1475,82 @@ bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'getRdsSync';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
-      sec-mem-desc-line = '681';
+      sec-mem-desc-line = '682';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Get the Rds Sync.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
 Returns true if RDS currently synchronized.
 @return true or false
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'group___g_a04_1ga2e63d5c85cb1825492a5ba2ea3bef2c3';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+uint8_t
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'getBlockId';
+      sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
+      sec-mem-desc-line = '683';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Get the current Block ID.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+1= the block id of register 0cH,0dH,0eH,0fH is E
+
+
+0= the block id of register 0cH, 0dH, 0eH,0fH is A, B, C, D
+@return  0= the block id of register 0cH, 0dH, 0eH,0fH is A, B, C, D; 1 = the block id of register 0cH,0dH,0eH,0fH is E
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'group___g_a04_1gadcc73bed36f5dbad1b41a8777be575d9';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+uint8_t
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'getErrorBlockB';
+      sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
+      sec-mem-desc-line = '684';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Get the current Status of block B.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+Block Errors Level of RDS_DATA_1, and is always read as Errors Level of RDS BLOCK B (in RDS mode ) or E (in RBDS mode when ABCD_E flag is 1).
+<table class="markdownTable">  <tr class="markdownTableHead">    <th class="markdownTableHeadNone"> value</th>    <th class="markdownTableHeadNone"> description</th>  </tr>
+<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 00</td>    <td class="markdownTableBodyNone"> 0 errors requiring correction</td>  </tr>
+<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 01</td>    <td class="markdownTableBodyNone"> 1~2 errors requiring correction</td>  </tr>
+<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 10</td>    <td class="markdownTableBodyNone"> 3~5 errors requiring correction</td>  </tr>
+<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 11</td>    <td class="markdownTableBodyNone"> 6+ errors or error in checkword, correction not possible</td>  </tr>
+</table>
+
+ <strong>Available only in RDS Verbose mode</strong> 
+
+@return  value See table above.
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'group___g_a04_1ga0d809c6cc2928e1fee006713f77b60e9';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'hasRdsInfo';
+      sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
+      sec-mem-desc-line = '685';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Returns true when the RDS system has valid information.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+Returns true if RDS currently synchronized; the information are A, B, C and D blocks; and no errors 
+@return  true or false
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
   }; /* cp-section */
@@ -6350,7 +6506,7 @@ _EnD_oF_dEf_TeXt_;
       define-mem-prot = public;
       define-mem-name = 'SH_REG0E';
       define-mem-initializer = <<_EnD_oF_dEf_TeXt_
-5
+4
 _EnD_oF_dEf_TeXt_;
       define-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/RDA5807.h';
       define-mem-desc-line = '74';

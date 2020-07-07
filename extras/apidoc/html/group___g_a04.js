@@ -14,5 +14,10 @@ var group___g_a04 =
     [ "getRdsText2A", "group___g_a04.html#ga482098a64299cb8af976d4d10a460212", null ],
     [ "getRdsText2B", "group___g_a04.html#gacd6614bc7be99d55a3d9a17739ee7074", null ],
     [ "getRdsTime", "group___g_a04.html#gaef398d848e7378ec4897965b8e1b4441", null ],
-    [ "getRdsSync", "group___g_a04.html#ga25df690020bab4154b0737e7365ed8ea", null ]
+    [ "getRdsSync", "group___g_a04.html#ga25df690020bab4154b0737e7365ed8ea", null ],
+    [ "getBlockId", "group___g_a04.html#ga2e63d5c85cb1825492a5ba2ea3bef2c3", null ],
+    [ "getErrorBlockB", "group___g_a04.html#gadcc73bed36f5dbad1b41a8777be575d9", null ],
+    [ "hasRdsInfo", "group___g_a04.html#ga0d809c6cc2928e1fee006713f77b60e9", null ],
+    [ "setRdsFifo", "group___g_a04.html#gae27337170a5f3dedebf585aa19855ad6", null ],
+    [ "clearRdsFifo", "group___g_a04.html#gab3accd716dc5fe07d936b860b64d9e4e", null ]
 ];

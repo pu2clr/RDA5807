@@ -138,6 +138,21 @@ Functions</h2></td></tr>
 <tr class="memitem:ga25df690020bab4154b0737e7365ed8ea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a04.html#ga25df690020bab4154b0737e7365ed8ea">RDA5807::getRdsSync</a> ()</td></tr>
 <tr class="memdesc:ga25df690020bab4154b0737e7365ed8ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Rds Sync.  <a href="group___g_a04.html#ga25df690020bab4154b0737e7365ed8ea">More...</a><br /></td></tr>
 <tr class="separator:ga25df690020bab4154b0737e7365ed8ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2e63d5c85cb1825492a5ba2ea3bef2c3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a04.html#ga2e63d5c85cb1825492a5ba2ea3bef2c3">RDA5807::getBlockId</a> ()</td></tr>
+<tr class="memdesc:ga2e63d5c85cb1825492a5ba2ea3bef2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current Block ID.  <a href="group___g_a04.html#ga2e63d5c85cb1825492a5ba2ea3bef2c3">More...</a><br /></td></tr>
+<tr class="separator:ga2e63d5c85cb1825492a5ba2ea3bef2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadcc73bed36f5dbad1b41a8777be575d9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a04.html#gadcc73bed36f5dbad1b41a8777be575d9">RDA5807::getErrorBlockB</a> ()</td></tr>
+<tr class="memdesc:gadcc73bed36f5dbad1b41a8777be575d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current Status of block B.  <a href="group___g_a04.html#gadcc73bed36f5dbad1b41a8777be575d9">More...</a><br /></td></tr>
+<tr class="separator:gadcc73bed36f5dbad1b41a8777be575d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0d809c6cc2928e1fee006713f77b60e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a04.html#ga0d809c6cc2928e1fee006713f77b60e9">RDA5807::hasRdsInfo</a> ()</td></tr>
+<tr class="memdesc:ga0d809c6cc2928e1fee006713f77b60e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true when the RDS system has valid information.  <a href="group___g_a04.html#ga0d809c6cc2928e1fee006713f77b60e9">More...</a><br /></td></tr>
+<tr class="separator:ga0d809c6cc2928e1fee006713f77b60e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae27337170a5f3dedebf585aa19855ad6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a04.html#gae27337170a5f3dedebf585aa19855ad6">RDA5807::setRdsFifo</a> (bool value)</td></tr>
+<tr class="memdesc:gae27337170a5f3dedebf585aa19855ad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets RDS fifo mode enable.  <a href="group___g_a04.html#gae27337170a5f3dedebf585aa19855ad6">More...</a><br /></td></tr>
+<tr class="separator:gae27337170a5f3dedebf585aa19855ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab3accd716dc5fe07d936b860b64d9e4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a04.html#gab3accd716dc5fe07d936b860b64d9e4e">RDA5807::clearRdsFifo</a> ()</td></tr>
+<tr class="memdesc:gab3accd716dc5fe07d936b860b64d9e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear RDS fifo.  <a href="group___g_a04.html#gab3accd716dc5fe07d936b860b64d9e4e">More...</a><br /></td></tr>
+<tr class="separator:gab3accd716dc5fe07d936b860b64d9e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h1><a class="anchor" id="GA04"></a>
@@ -507,6 +522,133 @@ false </dd></dl>
 
 <p>Get the Rds Sync. </p>
 <p>Returns true if RDS currently synchronized. </p><dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
+
+</div>
+</div>
+<a id="ga2e63d5c85cb1825492a5ba2ea3bef2c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2e63d5c85cb1825492a5ba2ea3bef2c3">&#9670;&nbsp;</a></span>getBlockId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t RDA5807::getBlockId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current Block ID. </p>
+<p>1= the block id of register 0cH,0dH,0eH,0fH is E</p>
+<p>0= the block id of register 0cH, 0dH, 0eH,0fH is A, B, C, D </p><dl class="section return"><dt>Returns</dt><dd>0= the block id of register 0cH, 0dH, 0eH,0fH is A, B, C, D; 1 = the block id of register 0cH,0dH,0eH,0fH is E </dd></dl>
+
+</div>
+</div>
+<a id="gadcc73bed36f5dbad1b41a8777be575d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadcc73bed36f5dbad1b41a8777be575d9">&#9670;&nbsp;</a></span>getErrorBlockB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t RDA5807::getErrorBlockB </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current Status of block B. </p>
+<p>Block Errors Level of RDS_DATA_1, and is always read as Errors Level of RDS BLOCK B (in RDS mode ) or E (in RBDS mode when ABCD_E flag is 1). </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">value </th><th class="markdownTableHeadNone">description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">00 </td><td class="markdownTableBodyNone">0 errors requiring correction  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">01 </td><td class="markdownTableBodyNone">1~2 errors requiring correction  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">10 </td><td class="markdownTableBodyNone">3~5 errors requiring correction  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">11 </td><td class="markdownTableBodyNone">6+ errors or error in checkword, correction not possible  </td></tr>
+</table>
+<p><b>Available only in RDS Verbose mode</b></p>
+<dl class="section return"><dt>Returns</dt><dd>value See table above. </dd></dl>
+
+</div>
+</div>
+<a id="ga0d809c6cc2928e1fee006713f77b60e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0d809c6cc2928e1fee006713f77b60e9">&#9670;&nbsp;</a></span>hasRdsInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RDA5807::hasRdsInfo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true when the RDS system has valid information. </p>
+<p>Returns true if RDS currently synchronized; the information are A, B, C and D blocks; and no errors </p><dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
+
+</div>
+</div>
+<a id="gae27337170a5f3dedebf585aa19855ad6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae27337170a5f3dedebf585aa19855ad6">&#9670;&nbsp;</a></span>setRdsFifo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setRdsFifo </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets RDS fifo mode enable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>If true, it makes the the fifo mode enable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
+
+</div>
+</div>
+<a id="gab3accd716dc5fe07d936b860b64d9e4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab3accd716dc5fe07d936b860b64d9e4e">&#9670;&nbsp;</a></span>clearRdsFifo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::clearRdsFifo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clear RDS fifo. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>If true, it makes the the fifo mode enable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isstereo_222',['isStereo',['../group___g_a03.html#ga250ff3788a7831dae3c6200919b446dd',1,'RDA5807']]]
+  ['hasrdsinfo_227',['hasRdsInfo',['../group___g_a04.html#ga0d809c6cc2928e1fee006713f77b60e9',1,'RDA5807']]]
 ];
