@@ -383,8 +383,10 @@ void setup()
   rx.setup();
   rx.setVolume(6);
   rx.setMono(false); // Force stereo
-  rx.setRBDS(true);  //  set RDS and RBDS. See setRDS.
+  // rx.setRBDS(true);  //  set RDS and RBDS. See setRDS.
+  rx.setRDS(true);
   rx.setRdsFifo(true);
+
   rx.setFrequency(10650); // It is the frequency you want to select in MHz multiplied by 100.
   rx.setSeekThreshold(50); // Sets RSSI Seek Threshold (0 to 127)
   showStatus();
@@ -408,7 +410,7 @@ void doRds() {
    The seek direction is based on the last encoder direction rotation.
 */
 void doSeek() {
-  rx.seek(RDA_SEEK_WRAP, seekDirection);  // showFrequency will be called by the seek function during the process.
+  rx.seek(RDA_SEEK_WRAP, seekDirection, showFrequency);  // showFrequency will be called by the seek function during the process.
   delay(200);
   bShow =  true;
   rx.setFrequency(rx.getRealFrequency());

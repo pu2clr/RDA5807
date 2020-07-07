@@ -639,6 +639,7 @@ class RDA5807 {
             uint16_t getRealChannel();
             void setChannel(uint16_t channel);
             void seek(uint8_t seek_mode, uint8_t direction);
+            void seek(uint8_t seek_mode, uint8_t direction, void (*showFunc)());
             void setSeekThreshold(uint8_t value);
 
             void setBand(uint8_t band = 1);

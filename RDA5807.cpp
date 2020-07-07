@@ -331,6 +331,61 @@ void RDA5807::seek(uint8_t seek_mode, uint8_t direction)
 
 /**
  * @ingroup GA03
+ * @brief Seek function
+ * @details Seeks a station up or down.
+ * @details Seek up or down a station and call a function defined by the user to show the frequency during the seek process. 
+ * @details Seek begins at the current channel, and goes in the direction specified with the SEEKUP bit. Seek operation stops when a channel is qualified as valid according to the seek parameters, the entire band has been searched (SKMODE = 0), or the upper or lower band limit has been reached (SKMODE = 1).
+ * @details The STC bit is set high when the seek operation completes and/or the SF/BL bit is set high if the seek operation was unable to find a channel qualified as valid according to the seek parameters. The STC and SF/BL bits must be set low by setting the SEEK bit low before the next seek or tune may begin.
+ * @details The SEEK bit is set low and the STC bit is set high when the seek operation completes.
+ * @details It is important to say you have to implement a show frequency function. This function have to get the frequency via getFrequency function.  
+ * @details Example:
+ * @code
+ * 
+ * SI470X rx;
+ * 
+ * void showFrequency() {
+ *    uint16_t freq = rx.getFrequency();
+ *    Serial.print(freq); 
+ *    Serial.println("MHz ");
+ * }
+ * 
+ * void loop() {
+ *  .
+ *  .
+ *      rx.seek(SI470X_SEEK_WRAP, SI470X_SEEK_UP, showFrequency); // Seek Up
+ *  .
+ *  .
+ * }
+ * @endcode
+ * @param seek_mode  Seek Mode; 0 = Wrap at the upper or lower band limit and continue seeking (default); 1 = Stop seeking at the upper or lower band limit.
+ * @param direction  Seek Direction; 0 = Seek down (default); 1 = Seek up.
+ * @param showFunc  function that you have to implement to show the frequency during the seeking process. Set NULL if you do not want to show the progress. 
+ */
+void RDA5807::seek(uint8_t seek_mode, uint8_t direction, void (*showFunc)())
+{
+    getStatus(REG0A);
+    do
+    {
+        reg02->refined.SEEK = 1;
+        reg02->refined.SKMODE = seek_mode;
+        reg02->refined.SEEKUP = direction;
+        setRegister(REG02, reg02->raw);
+        this->currentFrequency = getRealFrequency(); // gets the current seek frequency
+        if (showFunc != NULL)
+        {
+            showFunc();
+        }
+        delay(10);
+        getStatus(REG0A);
+    } while (reg0a->refined.STC == 0);
+    waitAndFinishTune();
+    setFrequency(getRealFrequency()); // Fixes station found.
+}
+
+
+
+/**
+ * @ingroup GA03
  * @brief Sets RSSI Seek Threshold
  * @param  value
  */
