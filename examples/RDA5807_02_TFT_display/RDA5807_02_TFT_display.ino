@@ -27,6 +27,9 @@
   |                           | A                         |       2       |
   |                           | B                         |       3       |
 
+  About 77% of the space occupied by this sketch is due to the library for the TFT Display.
+
+
   Prototype documentation: https://pu2clr.github.io/RDA5807/
   PU2CLR RDA5807 API documentation: https://pu2clr.github.io/RDA5807/extras/apidoc/html/
 
@@ -413,7 +416,6 @@ void doSeek() {
   rx.seek(RDA_SEEK_WRAP, seekDirection, showFrequency);  // showFrequency will be called by the seek function during the process.
   delay(200);
   bShow =  true;
-  rx.setFrequency(rx.getRealFrequency());
   showFrequency();
 }
 
