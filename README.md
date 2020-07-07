@@ -52,7 +52,7 @@ The photo below shows a Breakout that uses the RDA5807. You can find it on eBay,
 2. [PU2CLR SI4844 Arduino Library](https://github.com/pu2clr/SI4844). This is an Arduino library for the SI4844, BROADCAST ANALOG TUNING DIGITAL DISPLAY AM/FM/SW RADIO RECEIVER,  IC from Silicon Labs.  It is available on Arduino IDE. This library is intended to provide an easier interface for controlling the SI4844.
 3. [PU2CLR AKC695X Arduino Library](https://pu2clr.github.io/AKC695X/). The AKC695X is a family of IC DSP receiver from AKC technology. The AKC6955 and AKC6959sx support AM and FM modes. On AM mode the AKC6955 and AKC6959sx work on LW, MW and SW. On FM mode they work from 64MHz to 222MHz.
 4. [PU2CLR KT0915 Arduino Library](https://pu2clr.github.io/KT0915/).
-5. [PU2CLR RDA5807 Arduino Library](https://pu2clr.github.io/RDA5807/).
+5. [PU2CLR SI470X Arduino Library](https://pu2clr.github.io/SI470X/).
 
 
 ## MIT License 
