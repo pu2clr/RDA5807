@@ -103,28 +103,6 @@ void *RDA5807::getStatus(uint8_t reg)
 
 /**
  * @ingroup GA03
- * @brief   Sets values to the device registers from 0x02 to 0x07
- * @details An internal address counter automatically increments to allow continuous data byte writes, starting with the upper byte of register 02h, followed by the lower byte of register 02h, and onward until the lower byte of the last register is reached. 
- * @details The registers from 0x2 to 0x07 are used to setup the device. This method writes the array  shadowStatusRegisters. See Device registers map  in RDA5807.h file.
- * @details To implement this, a register maping was created to deal with each register structure. For each type of register, there is a reference to the array element.
- * @see shadowStatusRegisters;
- */
-void RDA5807::setAllRegisters()
-{
-    word16_to_bytes aux;
-    Wire.beginTransmission(this->deviceAddressFullAccess);
-    for (int i = 2; i <= 7; i++)
-    {
-        aux.raw = shadowRegisters[i];
-        Wire.write(aux.refined.highByte);
-        Wire.write(aux.refined.lowByte);
-    }
-    Wire.endTransmission();
-    delayMicroseconds(3000);  // Check
-}
-
-/**
- * @ingroup GA03
  * @brief Sets a given value to a specific device register 
  *
  * @see RDA5807M - SINGLE-CHIP BROADCAST FMRADIO TUNER; pages 5, 9, 10 and 11. 
@@ -466,16 +444,6 @@ bool RDA5807::isStereo()
 }
 
 
-/**
- * @ingroup GA03
- * @brief Clears RDS/RBDS FIFO
- */
-void RDA5807::clearRdsFifo()
-{
-    reg04->refined.RDS_FIFO_CLR = 1;
-    setRegister(REG04, reg04->raw);
-}
-
 
 /**
  * @ingroup GA03
@@ -615,7 +583,7 @@ uint8_t RDA5807::getRdsFlagAB(void)
 {
     rds_blockb blkb;
     getStatusRegisters(); // TODO: Should be called just once and be processed by all RDS functions at a time.
-    blkb.blockB =  shadowStatusRegisters[SH_REG0D]; // Real array position
+    blkb.blockB = reg0d->RDSB;  
     return blkb.refined.textABFlag;
 }
 
@@ -629,7 +597,7 @@ uint16_t RDA5807::getRdsGroupType()
 {
     rds_blockb blkb;
     getStatusRegisters(); // TODO: Should be called just once and be processed by all RDS functions at a time.
-    blkb.blockB = shadowStatusRegisters[SH_REG0D];
+    blkb.blockB = reg0d->RDSB; 
     return blkb.group0.groupType;
 }
 
@@ -643,7 +611,7 @@ uint8_t RDA5807::getRdsVersionCode(void)
 {
     rds_blockb blkb;
     getStatusRegisters();    // TODO: Should be called just once and be processed by all RDS functions at a time.
-    blkb.blockB = shadowStatusRegisters[SH_REG0D];
+    blkb.blockB = reg0d->RDSB; 
     return blkb.refined.programType;
 }
 
@@ -657,7 +625,7 @@ uint8_t RDA5807::getRdsProgramType(void)
 {
     rds_blockb blkb;
     getStatusRegisters(); // TODO: Should be called just once and be processed by all RDS functions at a time.
-    blkb.blockB = shadowStatusRegisters[SH_REG0D];
+    blkb.blockB = reg0d->RDSB; 
     return blkb.refined.programType;
 }
 
@@ -673,7 +641,7 @@ void RDA5807::getNext2Block(char *c)
     int i, j;
     word16_to_bytes blk;
 
-    blk.raw = shadowStatusRegisters[SH_REG0F];
+    blk.raw = reg0f->RDSD; 
 
     raw[1] = blk.refined.lowByte;
     raw[0] = blk.refined.highByte;
@@ -710,8 +678,8 @@ void RDA5807::getNext4Block(char *c)
     int i, j;
     word16_to_bytes blk_c, blk_d;
 
-    blk_c.raw = shadowStatusRegisters[SH_REG0E];
-    blk_d.raw = shadowStatusRegisters[SH_REG0F];
+    blk_c.raw = reg0e->RDSC; 
+    blk_d.raw = reg0f->RDSD; 
 
     raw[0] = blk_c.refined.highByte;
     raw[1] = blk_c.refined.lowByte;
@@ -750,7 +718,7 @@ char *RDA5807::getRdsText(void)
 
     getStatusRegisters();
 
-    blkb.blockB = shadowStatusRegisters[SH_REG0D];
+    blkb.blockB = reg0d->RDSB; 
     rdsTextAdress2A = blkb.group2.address;
 
     if (rdsTextAdress2A >= 16)
@@ -775,7 +743,7 @@ char *RDA5807::getRdsText0A(void)
     rds_blockb blkb;
 
     getStatusRegisters();
-    blkb.blockB = shadowStatusRegisters[SH_REG0D];
+    blkb.blockB = reg0d->RDSB; 
 
     if (blkb.group0.groupType == 0)
     {
@@ -805,7 +773,7 @@ char *RDA5807::getRdsText2A(void)
 
     getStatusRegisters();
 
-    blkb.blockB = shadowStatusRegisters[SH_REG0D];
+    blkb.blockB = reg0d->RDSB; 
     rdsTextAdress2A = blkb.group2.address;
 
     if (blkb.group2.groupType == 2)
@@ -833,7 +801,7 @@ char *RDA5807::getRdsText2B(void)
     rds_blockb blkb;
 
     getStatusRegisters();
-    blkb.blockB = shadowStatusRegisters[SH_REG0D];
+    blkb.blockB = reg0d->RDSB; 
     if (blkb.group2.groupType == 2)
     {
         // Process group 2B
@@ -862,9 +830,9 @@ char *RDA5807::getRdsTime()
 
     getStatusRegisters();
 
-    blk_b.raw = blkb.blockB = shadowStatusRegisters[SH_REG0D];
-    blk_c.raw = shadowStatusRegisters[REG0E];
-    blk_d.raw = shadowStatusRegisters[REG0F];
+    blk_b.raw = blkb.blockB = reg0d->RDSB;   
+    blk_c.raw = reg0e->RDSC;                 
+    blk_d.raw = reg0f->RDSD;                 
 
     uint16_t minute;
     uint16_t hour;
@@ -962,3 +930,27 @@ bool RDA5807::hasRdsInfo() {
     return  (reg0a->refined.RDSS && reg0b->refined.ABCD_E == 0 && reg0b->refined.BLERB == 0 );
 }
 
+/**
+ * @ingroup GA04 
+ * @brief Sets RDS fifo mode enable
+ * 
+ * @param value  If true, it makes the the fifo mode enable. 
+ * @return true  or false
+ */
+void RDA5807::setRdsFifo(bool value) {
+    reg04->refined.RDS_FIFO_EN = value;
+    setRegister(REG04,reg04->raw);
+}
+
+/**
+ * @ingroup GA04 
+ * @brief Clear RDS fifo 
+ * 
+ * @param value  If true, it makes the the fifo mode enable. 
+ * @return true  or false
+ */
+void RDA5807::clearRdsFifo()
+{
+    reg04->refined.RDS_FIFO_CLR = 1;
+    setRegister(REG04, reg04->raw);
+}

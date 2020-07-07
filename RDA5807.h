@@ -11,7 +11,7 @@
  * @details If you need to access a set o register, use the 0x10 buss adress. 
  * 
  * @see RDA5807M - SINGLE-CHIP BROADCAST FMRADIO TUNER; page 5.
- * @see the methods setRegister, setAllRegisters, getRegister and getStatusRegisters
+ * @see the methods setRegister, getRegister and getStatusRegisters
  *  
  * This library can be freely distributed using the MIT Free Software model.
  * Copyright(c) 2020 Ricardo Lima Caratti.
@@ -615,7 +615,6 @@ class RDA5807 {
 
             void getStatusRegisters();
             void *getStatus(uint8_t reg);
-            void setAllRegisters();
             void setRegister(uint8_t reg, uint16_t value);
 
             void setGpio(uint8_t gpioPin, uint8_t gpioSetup = 0, int mcuPin = -1);
@@ -664,6 +663,7 @@ class RDA5807 {
             //******** RDS methods 
             void setRDS(bool value);
             void setRBDS(bool value);
+            void setRdsFifo(bool value);
             void clearRdsFifo();
 
             bool getRdsReady();

@@ -38,7 +38,6 @@
 #include <Adafruit_GFX.h>    // Core graphics library
 #include <Adafruit_ST7735.h> // Hardware-specific library for ST7735
 #include "Serif_plain_7.h"
-#include "Serif_plain_8.h"
 #include "Serif_plain_14.h"
 #include "DSEG7_Classic_Mini_Regular_30.h"
 #include <SPI.h>
@@ -252,16 +251,17 @@ void showStereoMono() {
 char *rdsMsg;
 char *stationName;
 char *rdsTime;
-char bufferStatioName[40];
+char bufferStatioName[16];
 char bufferRdsMsg[40];
-char bufferRdsTime[32];
+char bufferRdsTime[20];
 long stationNameElapsed = millis();
 long polling_rds = millis();
+long clear_fifo = millis();
 
 void showRDSMsg()
 {
   tft.setFont(&Serif_plain_7);
-  rdsMsg[19] = bufferRdsMsg[22] = '\0';   // Truncate the message to fit on display.  You can try scrolling
+  rdsMsg[22] = bufferRdsMsg[22] = '\0';   // Truncate the message to fit on display.  You can try scrolling
   if (strcmp(bufferRdsMsg, rdsMsg) == 0)
     return;
   printValue(5, 90, bufferRdsMsg, rdsMsg, 7, COLOR_YELLOW);
@@ -273,7 +273,7 @@ void showRDSMsg()
 */
 void showRDSStation()
 {
-  tft.setFont(&Serif_plain_8);
+  tft.setFont(&Serif_plain_7);
   if (strncmp(bufferStatioName, stationName, 3) == 0)
     return;
   printValue(5, 110, bufferStatioName, stationName, 7, COLOR_YELLOW);
@@ -281,7 +281,7 @@ void showRDSStation()
 
 void showRDSTime()
 {
-  tft.setFont(&Serif_plain_8);
+  tft.setFont(&Serif_plain_7);
   if (strcmp(bufferRdsTime, rdsTime) == 0)
     return;
   printValue(80, 110, bufferRdsTime, rdsTime, 6, COLOR_RED);
@@ -314,13 +314,19 @@ void checkRDS()
     if (rdsTime != NULL)
       showRDSTime();
   }
+
+  if ( (millis() - clear_fifo) > 10000 ) {
+    rx.clearRdsFifo();
+    clear_fifo = millis();
+    
+  }
 }
 
 void showRds() {
   char rdsStatus[10];
 
   tft.setTextSize(1);
-  tft.setFont(&Serif_plain_8);
+  tft.setFont(&Serif_plain_7);
   sprintf(rdsStatus, "RDS %s", (bRds) ? "ON" : "OFF");
   printValue(5, 75, oldRdsStatus, rdsStatus, 9, COLOR_WHITE);
   checkRDS();
@@ -378,6 +384,7 @@ void setup()
   rx.setVolume(6);
   rx.setMono(false); // Force stereo
   rx.setRBDS(true);  //  set RDS and RBDS. See setRDS.
+  rx.setRdsFifo(true);
   rx.setFrequency(10650); // It is the frequency you want to select in MHz multiplied by 100.
   rx.setSeekThreshold(50); // Sets RSSI Seek Threshold (0 to 127)
   showStatus();
