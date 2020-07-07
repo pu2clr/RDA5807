@@ -12,9 +12,10 @@ Contact: __pu2clr@gmail.com__.
 ## Contents
 
 1. [Preface](https://pu2clr.github.io/RDA5807#preface)
-2. [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html)
-3. [Schematic](https://pu2clr.github.io/RDA5807#schematic)
-4. [Sketch examples](https://github.com/pu2clr/RDA5807/tree/master/examples)
+2. [Library Installation](https://pu2clr.github.io/RDA5807#library-installation)
+3. [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html)
+4. [Schematic](https://pu2clr.github.io/RDA5807#schematic)
+5. [Sketch examples](https://github.com/pu2clr/RDA5807/tree/master/examples)
 
 
 ## Preface 
@@ -63,6 +64,41 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE ARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+## Library Installation
+
+ The easiest method to install this library is via your Arduino IDE. All you have to do is:
+ 
+ 1. Select Tools menu;
+ 2. Select Manage Libraries option;
+ 3. In the text box (top windows), type PU2CLR or RDA5807;
+ 4. Select the PU2CLR RDA5807. 
+
+
+The images below show how you can install this library via your Arduino IDE from Manage Libraries tool.
+
+
+ ![Arduino IDE - Manage Libraries menu option]()
+
+
+
+ ![Arduino IDE - Looking for the library RDA5807]()
+
+
+### Installing via the repository 
+
+With this approach, you will have the __most current version__ of the library. However, __it may not be the most stable version__. This is because the current version is always in development. [Prefer releases](https://github.com/pu2clr/RDA5807/releases). Do you need some old version (release) of this library?  If yes, [check here](https://github.com/pu2clr/RDA5807/releases).
+
+
+First, you have to [download](https://github.com/pu2clr/RDA5807/archive/master.zip) this library in zip format.  
+After, unzip the SI4735-master.zip file in your Arduino Library folder. 
+
+* On __Windows__: "My Documents\Arduino\libraries"
+* On __MAC OS__: ˜/Documents/Arduino/libraries
+* On __Linux__: ˜/Documents/Arduino/libraries
+
+
 
 
 
