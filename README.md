@@ -99,9 +99,7 @@ After, unzip the SI4735-master.zip file in your Arduino Library folder.
 * On __MAC OS__: ˜/Documents/Arduino/libraries
 * On __Linux__: ˜/Documents/Arduino/libraries
 
-
-
-
+<BR>
 
 ## Schematic
 
