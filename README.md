@@ -80,11 +80,11 @@ The images below show how you can install this library via your Arduino IDE from
 
 <BR>
 
-![Arduino IDE - Manage Libraries menu option]()
+![Arduino IDE - Manage Libraries menu option](extras/images/RDA5807_install_01.png)
 
 <BR>
 
-![Arduino IDE - Looking for the library RDA5807]()
+![Arduino IDE - Looking for the library RDA5807](extras/images/RDA5807_install_02.png)
 
 
 ### Installing via the repository 
