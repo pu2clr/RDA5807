@@ -78,12 +78,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 The images below show how you can install this library via your Arduino IDE from Manage Libraries tool.
 
+<BR>
 
- ![Arduino IDE - Manage Libraries menu option]()
+![Arduino IDE - Manage Libraries menu option]()
 
+<BR>
 
-
- ![Arduino IDE - Looking for the library RDA5807]()
+![Arduino IDE - Looking for the library RDA5807]()
 
 
 ### Installing via the repository 
