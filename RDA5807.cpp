@@ -667,7 +667,7 @@ uint8_t RDA5807::getRdsVersionCode(void)
     rds_blockb blkb;
     getStatusRegisters();    // TODO: Should be called just once and be processed by all RDS functions at a time.
     blkb.blockB = reg0d->RDSB; 
-    return blkb.refined.programType;
+    return blkb.refined.versionCode;
 }
 
 /**  
