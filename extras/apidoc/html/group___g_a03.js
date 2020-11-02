@@ -26,6 +26,7 @@ var group___g_a03 =
     [ "setSoftmute", "group___g_a03.html#gadd2c2ab8b861ab0714fdeb99c774d656", null ],
     [ "setMute", "group___g_a03.html#gafec3018913d735ee0684b88cf503c84a", null ],
     [ "setMono", "group___g_a03.html#gad6e77ffbeb3f4dc885548130e09590d6", null ],
+    [ "setBass", "group___g_a03.html#ga8002bb394ef19db02e04a39de04dffc5", null ],
     [ "isStereo", "group___g_a03.html#ga250ff3788a7831dae3c6200919b446dd", null ],
     [ "setVolume", "group___g_a03.html#ga51bf4344ebeb44f7170265901df870f5", null ],
     [ "getVolume", "group___g_a03.html#ga743d91d820922b3feda10d06443bc8a9", null ],

@@ -256,6 +256,7 @@ var group___g_a01 =
       [ "getRssi", "group___g_a03.html#ga4bd7597d4c9090b04486aec21a6a0a5d", null ],
       [ "setSoftmute", "group___g_a03.html#gadd2c2ab8b861ab0714fdeb99c774d656", null ],
       [ "setMono", "group___g_a03.html#gad6e77ffbeb3f4dc885548130e09590d6", null ],
+      [ "setBass", "group___g_a03.html#ga8002bb394ef19db02e04a39de04dffc5", null ],
       [ "isStereo", "group___g_a03.html#ga250ff3788a7831dae3c6200919b446dd", null ],
       [ "getDeviceId", "group___g_a03.html#ga53316e685a196bba1819f5b1fe2b42af", null ],
       [ "setMute", "group___g_a03.html#gafec3018913d735ee0684b88cf503c84a", null ],
