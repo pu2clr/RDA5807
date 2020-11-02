@@ -649,6 +649,7 @@ class RDA5807 {
             void setSoftmute(bool value);
 
             void setMono(bool value);
+            void setBass(bool value);
             bool isStereo();
 
             uint8_t getDeviceId();

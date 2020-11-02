@@ -488,6 +488,18 @@ void RDA5807::setMono(bool value)
 
 /**
  * @ingroup GA03
+ * @brief Sets Bass Boost
+ *
+ * @param value FALSE = Disable; TRUE = Enable
+ */
+void RDA5807::setBass(bool value)
+{
+    reg02->refined.BASS = value;
+    setRegister(REG02, reg02->raw);
+}
+
+/**
+ * @ingroup GA03
  * @brief Gets the current Stereo status
  *
  * @return TRUE if stereo; 
