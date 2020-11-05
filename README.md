@@ -118,6 +118,12 @@ After, unzip the RDA5807-master.zip file in your Arduino Library folder.
 
 
 
+### Wire up on Arduino, TFT7735 display and Push Buttons.
+
+
+![Basic Schematic](./extras/images/circuit_tft.png)
+
+
 
 ## RDA5807 breakout, ATtiny84, Encoder and Buttons schematic
 
