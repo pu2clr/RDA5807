@@ -131,6 +131,29 @@ After, unzip the RDA5807-master.zip file in your Arduino Library folder.
 ![Basic Schematic](./extras/images/circuit_attiny84.png)
 
 
+| Device name       | Device Pin / Description  |  Arduino Pin  |
+| ----------------  | --------------------      | ------------  |
+| Display TFT       |                           |               |
+|                   | RST (RESET)               |      8        |
+|                   | RS  or DC                 |      9        |
+|                   | CS  or SS                 |     10        |
+|                   | SDI                       |     11        |
+|                   | CLK                       |     13        |
+|     RDA5807       |                           |               |
+|                   | SDIO (pin 8)              |     A4        |
+|                   | SCLK (pin 7)              |     A5        |
+|     Buttons       |                           |               |
+|                   | Volume Up                 |      4        |
+|                   | Volume Down               |      5        |
+|                   | Stereo/Mono               |      6        |
+|                   | RDS ON/off                |      7        |
+|                   | SEEK (encoder button)     |     12        |
+|    Encoder        |                           |               |
+|                   | A                         |       2       |
+|                   | B                         |       3       |
+
+
+
 ### RDA5807 breakout, ATtiny84, Encoder and Buttons  wireup  
 
 <BR>
