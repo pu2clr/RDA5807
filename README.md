@@ -124,13 +124,6 @@ After, unzip the RDA5807-master.zip file in your Arduino Library folder.
 ![Basic Schematic with TFT](./extras/images/circuit_tft.png)
 
 
-
-## RDA5807 breakout, ATtiny84, Encoder and Buttons schematic
-
-
-![Basic Schematic](./extras/images/circuit_attiny84.png)
-
-
 | Device name       | Device Pin / Description  |  Arduino Pin  |
 | ----------------  | --------------------      | ------------  |
 | Display TFT       |                           |               |
@@ -151,6 +144,13 @@ After, unzip the RDA5807-master.zip file in your Arduino Library folder.
 |    Encoder        |                           |               |
 |                   | A                         |       2       |
 |                   | B                         |       3       |
+
+
+
+## RDA5807 breakout, ATtiny84, Encoder and Buttons schematic
+
+
+![Basic Schematic](./extras/images/circuit_attiny84.png)
 
 
 
