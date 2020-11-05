@@ -1197,6 +1197,8 @@ Audio_Jack_2.5MM
 <sheets>
 <sheet>
 <plain>
+<text x="58.42" y="96.52" size="1.778" layer="91">RDA5807</text>
+<text x="12.7" y="48.26" size="1.778" layer="91">Encoder</text>
 </plain>
 <instances>
 <instance part="GND2" gate="1" x="-50.8" y="50.8" smashed="yes">
