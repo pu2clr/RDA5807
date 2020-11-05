@@ -172,5 +172,5 @@ After, unzip the RDA5807-master.zip file in your Arduino Library folder.
 # References 
 
 * [RDA5807M - SINGLE-CHIP BROADCAST FMRADIO TUNER](https://www.electrodragon.com/w/images/5/5f/RDA5807M_datasheet_v1.pdf)
-* [A small eagle library for popular RDA5807m Radio module](https://github.com/TigerBouli/RDA5807m-Module-)
+* [A small eagle library for popular RDA5807 Radio module](https://github.com/TigerBouli/RDA5807m-Module-)
 
