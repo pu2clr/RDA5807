@@ -121,7 +121,7 @@ After, unzip the RDA5807-master.zip file in your Arduino Library folder.
 ### Wire up on Arduino, TFT7735 display and Push Buttons.
 
 
-![Basic Schematic](./extras/images/circuit_tft.png)
+![Basic Schematic with TFT](./extras/images/circuit_tft.png)
 
 
 
