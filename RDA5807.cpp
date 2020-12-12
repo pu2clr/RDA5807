@@ -524,7 +524,6 @@ void RDA5807::setVolume(uint8_t value)
 
     reg05->refined.VOLUME = this->currentVolume = value;
     setRegister(REG05, reg05->raw);
-    setRegister(REG02, reg02->raw);
 }
 
 /**
