@@ -164,6 +164,7 @@ void RDA5807::powerUp()
     reg02->refined.DHIZ = 1;    // Normal operation
     reg02->refined.ENABLE = 1;
     reg02->refined.BASS = 1;
+    reg02->refined.SEEK = 0;
 
     setRegister(REG02,reg02->raw);
     
@@ -183,6 +184,7 @@ void RDA5807::powerUp()
  */
 void RDA5807::powerDown()
 {
+    reg02->refined.SEEK = 0;
     reg02->refined.ENABLE = 0;
     setRegister(REG02, reg02->raw);
 }
@@ -470,6 +472,7 @@ void RDA5807::setSoftmute(bool value)
  */
 void RDA5807::setMute(bool value)
 {
+    reg02->refined.SEEK = 0;    
     reg02->refined.DHIZ = !value;
     setRegister(REG02,reg02->raw); 
 }
@@ -482,6 +485,7 @@ void RDA5807::setMute(bool value)
  */
 void RDA5807::setMono(bool value)
 {
+    reg02->refined.SEEK = 0;
     reg02->refined.MONO = value;
     setRegister(REG02, reg02->raw);
 }
@@ -494,6 +498,7 @@ void RDA5807::setMono(bool value)
  */
 void RDA5807::setBass(bool value)
 {
+    reg02->refined.SEEK = 0;
     reg02->refined.BASS = value;
     setRegister(REG02, reg02->raw);
 }
@@ -604,6 +609,7 @@ void RDA5807::setFmDeemphasis(uint8_t de) {
  */
 void RDA5807::setRDS(bool value)
 {
+    reg02->refined.SEEK = 0;
     reg02->refined.RDS_EN = value;
     setRegister(REG02, reg02->raw);
 }
@@ -617,6 +623,7 @@ void RDA5807::setRDS(bool value)
  */
 void RDA5807::setRBDS(bool value)
 {
+    reg02->refined.SEEK = 0;
     reg02->refined.RDS_EN = 1;
     setRegister(REG02, reg02->raw);
     reg04->refined.RBDS = value;
