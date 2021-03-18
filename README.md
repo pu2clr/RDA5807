@@ -15,7 +15,7 @@ Contact: __pu2clr@gmail.com__.
 2. [Library Installation](https://pu2clr.github.io/RDA5807#library-installation)
 3. [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html)
 4. [Schematic](https://pu2clr.github.io/RDA5807#schematic)
-5. [Sketch examples](https://github.com/pu2clr/RDA5807/tree/master/examples)
+5. [Source code - Arduino Sketches](https://github.com/pu2clr/RDA5807/tree/master/examples)
 
 
 ## Preface 
