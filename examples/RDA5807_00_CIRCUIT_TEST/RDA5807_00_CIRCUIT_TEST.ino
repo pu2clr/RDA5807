@@ -36,7 +36,7 @@ void setup() {
 
 
   rx.setup();
-  rx.setVolume(3);  
+  rx.setVolume(8);  
 
   
   delay(500);
@@ -63,6 +63,12 @@ void setup() {
   rx.setMute(false);
   Serial.print("\nMute test has finished.");
 
+
+  Serial.print("\nEstacao 106.5MHz");
+  rx.setFrequency(10650);
+  delay(10000);
+
+  /*
   // Seek test
   Serial.print("\nSeek station");
   for (int i = 0; i < 10; i++ ) { 
@@ -71,11 +77,7 @@ void setup() {
     Serial.print(rx.getRealFrequency());
     delay(5000);
   }
-
-
-  Serial.print("\nEstacao 106.5MHz");
-  rx.setFrequency(10650);
-  
+  */
   
 }
 
