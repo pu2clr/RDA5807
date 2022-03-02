@@ -414,7 +414,8 @@ void RDA5807::setSeekThreshold(uint8_t value)
  */
 void RDA5807::setBand(uint8_t band)
 {
-    reg03->refined.BAND = band;
+    // reg03->refined.BAND = band;
+    reg03->refined.BAND = this->currentFMBand = band; // Adjusted by anonimous developer
     setRegister(REG03,reg03->raw);
 }
 
