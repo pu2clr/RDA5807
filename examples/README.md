@@ -10,3 +10,9 @@ The examples stored in this folder are made to assist you to build your own sket
 
 The [RDA5807_01_SERIAL_MONITOR](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA_01_SERIAL_MONITOR) folder shows how you can check your circuit by using just the Arduino IDE Serial Monitor to control the receiver. Check the examples with Atmega328 and ESP32. __In the sketch you will find the wireup with Atmega328 or ESP32 and RDA5807 device__.  
 
+
+## Examples of third parties 
+
+*  Dimitri's project with Nextion screen on https://github.com/f5swb/RDA5807
+
+
