@@ -1,0 +1,477 @@
+/*
+  UNDER CONSTRUCTION ...
+  This sketch uses an Arduino Nano with NOKIA 5110display
+  It is also a FM receiver capable to tune your local FM stations.
+
+  Read more on https://pu2clr.github.io/RDA5807/
+
+  Wire up on Arduino UNO, Nano or Pro mini
+
+  | Device name               | Device Pin / Description  |  Arduino Pin  |
+  | --------------------------| --------------------      | ------------  |
+  | NOKIA 5110                |                           |               |
+  | --------------------------| ------------------------- | ------------  |
+  |                           | (1) RST (RESET)           |     8         |
+  |                           | (2) CE or CS              |     9         |
+  |                           | (3) DC or DO              |    10         |
+  |                           | (4) DIN or DI or MOSI     |    11         |
+  |                           | (5) CLK                   |    13         |
+  |                           | (6) VCC  (3V-5V)          |    +VCC       |
+  |                           | (7) BL/DL/LIGHT           |    +VCC       |
+  |                           | (8) GND                   |    GND        |
+  | --------------------------| ------------------------- | --------------|
+  | RDA5807                   |                           |               | 
+  |                           | ------------------------- | --------------|
+  |                           | SDIO (pin 8)              |     A4        |
+  |                           | SCLK (pin 7)              |     A5        |
+  | --------------------------| --------------------------| --------------|
+  | Buttons                   |                           |               |
+  |                           | Volume Up                 |      4        |
+  |                           | Volume Down               |      5        |
+  |                           | Stereo/Mono               |      6        |
+  |                           | RDS ON/off                |      7        |
+  |                           | SEEK (encoder button)     |     12        |
+  | --------------------------| --------------------------|---------------| 
+  | Encoder                   |                           |               |
+  |                           | --------------------------|---------------| 
+  |                           | A                         |       2       |
+  |                           | B                         |       3       |
+
+  About 77% of the space occupied by this sketch is due to the library for the TFT Display.
+
+
+  Prototype documentation: https://pu2clr.github.io/RDA5807/
+  PU2CLR RDA5807 API documentation: https://pu2clr.github.io/RDA5807/extras/apidoc/html/
+
+  By PU2CLR, Ricardo,  Feb  2023.
+*/
+
+#include <RDA5807.h>
+
+#include <Adafruit_GFX.h>    // Core graphics library
+#include <Adafruit_ST7735.h> // Hardware-specific library for ST7735
+#include "Serif_plain_7.h"
+#include "Serif_plain_14.h"
+#include "DSEG7_Classic_Mini_Regular_30.h"
+#include <SPI.h>
+
+#include "Rotary.h"
+
+// TFT MICROYUM or ILI9225 based device pin setup
+#define TFT_RST 8
+#define TFT_DC 9
+#define TFT_CS 10  // SS
+#define TFT_SDI 11 // MOSI
+#define TFT_CLK 13 // SCK
+#define TFT_LED 0  // 0 if wired to +3.3V directly
+#define TFT_BRIGHTNESS 200
+
+#define COLOR_BLACK 0x0000
+#define COLOR_YELLOW 0xFFE0
+#define COLOR_WHITE 0xFFFF
+#define COLOR_RED 0xF800
+#define COLOR_BLUE 0x001F
+
+#define RESET_PIN 14
+#define SDA_PIN A4 // SDA pin used by your Arduino Board
+
+// Enconder PINs
+#define ENCODER_PIN_A 2
+#define ENCODER_PIN_B 3
+
+// Buttons controllers
+#define VOLUME_UP 4     // Volume Up
+#define VOLUME_DOWN 5   // Volume Down
+#define SWITCH_STEREO 6 // Select Mono or Stereo
+#define SWITCH_RDS 7    // SDR ON or OFF
+#define SEEK_FUNCTION 12
+
+#define POLLING_TIME  2000
+#define POLLING_RDS     80
+
+char oldFreq[10];
+char oldStereo[10];
+char oldRssi[10];
+char oldRdsStatus[10];
+char oldRdsMsg[65];
+
+bool bSt = true;
+bool bRds = true;
+bool bShow = false;
+uint8_t seekDirection = 1; // 0 = Down; 1 = Up. This value is set by the last encoder direction.
+
+long pollin_elapsed = millis();
+
+
+// Encoder control variables
+volatile int encoderCount = 0;
+
+uint16_t currentFrequency;
+
+// Encoder control
+Rotary encoder = Rotary(ENCODER_PIN_A, ENCODER_PIN_B);
+
+// Nokia 5110 display
+Adafruit_PCD8544 display = Adafruit_PCD8544(NOKIA_DC, NOKIA_CE, NOKIA_RST);
+
+RDA5807 rx;
+
+/*
+    Reads encoder via interrupt
+    Use Rotary.h and  Rotary.cpp implementation to process encoder via interrupt
+*/
+void rotaryEncoder()
+{ // rotary encoder events
+  uint8_t encoderStatus = encoder.process();
+  if (encoderStatus)
+    encoderCount = (encoderStatus == DIR_CW) ? 1 : -1;
+}
+
+/*
+   Shows the static content on  display
+*/
+void showTemplate()
+{
+
+  int maxX1 = display.width() - 2;
+  int maxY1 = display.height() - 5;
+
+  display.fillScreen(COLOR_BLACK);
+
+  display.drawRect(2, 2, maxX1, maxY1, COLOR_YELLOW);
+  display.drawLine(2, 40, maxX1, 40, COLOR_YELLOW);
+  display.drawLine(2, 60, maxX1, 60, COLOR_YELLOW);
+}
+
+/*
+  Prevents blinking during the frequency display.
+  Erases the old digits if it has changed and print the new digit values.
+*/
+void printValue(int col, int line, char *oldValue, char *newValue, uint8_t space, uint16_t color)
+{
+  int c = col;
+  char *pOld;
+  char *pNew;
+
+  pOld = oldValue;
+  pNew = newValue;
+
+  // prints just changed digits
+  while (*pOld && *pNew)
+  {
+    if (*pOld != *pNew)
+    {
+      // Erases olde value
+      display.setTextColor(COLOR_BLACK);
+      display.setCursor(c, line);
+      display.print(*pOld);
+      // Writes new value
+      display.setTextColor(color);
+      display.setCursor(c, line);
+      display.print(*pNew);
+    }
+    pOld++;
+    pNew++;
+    c += space;
+  }
+
+  // Is there anything else to erase?
+  display.setTextColor(COLOR_BLACK);
+  while (*pOld)
+  {
+    display.setCursor(c, line);
+    display.print(*pOld);
+    pOld++;
+    c += space;
+  }
+
+  // Is there anything else to print?
+  display.setTextColor(color);
+  while (*pNew)
+  {
+    display.setCursor(c, line);
+    display.print(*pNew);
+    pNew++;
+    c += space;
+  }
+
+  // Save the current content to be tested next time
+  strcpy(oldValue, newValue);
+}
+
+/*
+   Shows frequency information on Display
+*/
+void showFrequency()
+{
+  char freq[10];
+  char tmp[10];
+
+  currentFrequency = rx.getFrequency();
+  sprintf(tmp, "%5.5u", currentFrequency);
+
+  freq[0] = (tmp[0] == '0') ? ' ' : tmp[0];
+  freq[1] = tmp[1];
+  freq[2] = tmp[2];
+  freq[3] = '\0';
+  freq[4] = tmp[3];
+  freq[5] = tmp[4];
+  freq[6] = '\0';
+
+  display.setFont(&DSEG7_Classic_Mini_Regular_30);
+  display.setTextSize(1);
+  printValue(0, 35, &oldFreq[0], &freq[0], 23, COLOR_RED);
+  printValue(80, 35, &oldFreq[4], &freq[4], 23, COLOR_RED);
+  display.setCursor(78, 35);
+  display.print('.');
+}
+
+/*
+    Show some basic information on display
+*/
+void showStatus()
+{
+  oldFreq[0] = oldStereo[0] = oldRdsStatus[0] = oldRdsMsg[0] =  0;
+
+  showFrequency();
+  showStereoMono();
+  showRSSI();
+}
+
+/* *******************************
+   Shows RSSI status
+*/
+void showRSSI()
+{
+  char rssi[10];
+  sprintf(rssi, "%i dBuV", rx.getRssi());
+  display.setFont(&Serif_plain_14);
+  display.setTextSize(1);
+  printValue(5, 55, oldRssi, rssi, 11, COLOR_WHITE);
+}
+
+void showStereoMono() {
+  char stereo[10];
+  sprintf(stereo, "%s", (rx.isStereo()) ? "St" : "Mo");
+  display.setFont(&Serif_plain_14);
+  display.setTextSize(1);
+  printValue(125, 55, oldStereo, stereo, 15, COLOR_WHITE);
+}
+
+/*********************************************************
+   RDS
+ *********************************************************/
+char *rdsMsg;
+char *stationName;
+char *rdsTime;
+char bufferStatioName[16];
+char bufferRdsMsg[40];
+char bufferRdsTime[20];
+long stationNameElapsed = millis();
+long polling_rds = millis();
+long clear_fifo = millis();
+
+void showRDSMsg()
+{
+  display.setFont(&Serif_plain_7);
+  rdsMsg[22] = bufferRdsMsg[22] = '\0';   // Truncate the message to fit on display.  You can try scrolling
+  if (strcmp(bufferRdsMsg, rdsMsg) == 0)
+    return;
+  printValue(5, 90, bufferRdsMsg, rdsMsg, 7, COLOR_YELLOW);
+  delay(250);
+}
+
+/**
+   TODO: process RDS Dynamic PS or Scrolling PS
+*/
+void showRDSStation()
+{
+  display.setFont(&Serif_plain_7);
+  if (strncmp(bufferStatioName, stationName, 3) == 0)
+    return;
+  printValue(5, 110, bufferStatioName, stationName, 7, COLOR_YELLOW);
+}
+
+void showRDSTime()
+{
+  display.setFont(&Serif_plain_7);
+  if (strcmp(bufferRdsTime, rdsTime) == 0)
+    return;
+  printValue(80, 110, bufferRdsTime, rdsTime, 6, COLOR_RED);
+  delay(100);
+}
+
+
+void clearRds() {
+  display.fillRect(4, 79, 150, 40, COLOR_BLACK);
+  bShow = false;
+}
+
+void checkRDS()
+{
+  // check if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
+  if ( rx.hasRdsInfo() ) {
+    rdsMsg = rx.getRdsText2A();
+    stationName = rx.getRdsText0A();
+    rdsTime = rx.getRdsTime();
+    if (rdsMsg != NULL)
+      showRDSMsg();
+
+    if ((millis() - stationNameElapsed) > 1000)
+    {
+      if (stationName != NULL)
+        showRDSStation();
+      stationNameElapsed = millis();
+    }
+
+    if (rdsTime != NULL)
+      showRDSTime();
+  }
+
+  if ( (millis() - clear_fifo) > 10000 ) {
+    rx.clearRdsFifo();
+    clear_fifo = millis();
+    
+  }
+}
+
+void showRds() {
+  char rdsStatus[10];
+
+  display.setTextSize(1);
+  display.setFont(&Serif_plain_7);
+  sprintf(rdsStatus, "RDS %s", (bRds) ? "ON" : "OFF");
+  printValue(5, 75, oldRdsStatus, rdsStatus, 9, COLOR_WHITE);
+  checkRDS();
+}
+
+/*********************************************************
+
+ *********************************************************/
+
+void showSplash()
+{
+  // Splash
+  display.setFont(&Serif_plain_14);
+  display.setTextSize(1);
+  display.setTextColor(COLOR_YELLOW);
+  display.setCursor(45, 23);
+  display.print("RDA5807");
+  display.setCursor(15, 50);
+  display.print("Arduino Library");
+  display.setCursor(25, 80);
+  display.print("By PU2CLR");
+  display.setFont(&Serif_plain_14);
+  display.setTextSize(0);
+  display.setCursor(12, 110);
+  display.print("Ricardo L. Caratti");
+  delay(4000);
+}
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(ENCODER_PIN_A, INPUT_PULLUP);
+  pinMode(ENCODER_PIN_B, INPUT_PULLUP);
+
+  // Push button pin
+  pinMode(VOLUME_UP, INPUT_PULLUP);
+  pinMode(VOLUME_DOWN, INPUT_PULLUP);
+  pinMode(SWITCH_STEREO, INPUT_PULLUP);
+  pinMode(SWITCH_RDS, INPUT_PULLUP);
+  pinMode(SEEK_FUNCTION, INPUT_PULLUP);
+
+  display.initR(INITR_BLACKTAB);
+  display.fillScreen(COLOR_BLACK);
+  display.setTextColor(COLOR_BLUE);
+  display.setRotation(1);
+
+  showSplash();
+  showTemplate();
+
+  // Encoder interrupt
+  attachInterrupt(digitalPinToInterrupt(ENCODER_PIN_A), rotaryEncoder, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(ENCODER_PIN_B), rotaryEncoder, CHANGE);
+
+  rx.setup();
+  rx.setVolume(6);
+  rx.setMono(false); // Force stereo
+  // rx.setRBDS(true);  //  set RDS and RBDS. See setRDS.
+  rx.setRDS(true);
+  rx.setRdsFifo(true);
+
+  rx.setFrequency(10650); // It is the frequency you want to select in MHz multiplied by 100.
+  rx.setSeekThreshold(50); // Sets RSSI Seek Threshold (0 to 127)
+  showStatus();
+}
+
+
+void doStereo() {
+  rx.setMono((bSt = !bSt));
+  bShow =  true;
+  showStereoMono();
+  delay(100);
+}
+
+void doRds() {
+  rx.setRDS((bRds = !bRds));
+  showRds();
+}
+
+/**
+   Process seek command.
+   The seek direction is based on the last encoder direction rotation.
+*/
+void doSeek() {
+  rx.seek(RDA_SEEK_WRAP, seekDirection, showFrequency);  // showFrequency will be called by the seek function during the process.
+  delay(200);
+  bShow =  true;
+  showFrequency();
+}
+
+void loop()
+{
+
+  // Check if the encoder has moved.
+  if (encoderCount != 0)
+  {
+    if (encoderCount == 1) {
+      rx.setFrequencyUp();
+      seekDirection = RDA_SEEK_UP;
+    }
+    else {
+      rx.setFrequencyDown();
+      seekDirection = RDA_SEEK_DOWN;
+    }
+    showFrequency();
+    bShow = true;
+    encoderCount = 0;
+  }
+
+  if (digitalRead(VOLUME_UP) == LOW)
+    rx.setVolumeUp();
+  else if (digitalRead(VOLUME_DOWN) == LOW)
+    rx.setVolumeDown();
+  else if (digitalRead(SWITCH_STEREO) == LOW)
+    doStereo();
+  else if (digitalRead(SWITCH_RDS) == LOW)
+    doRds();
+  else if (digitalRead(SEEK_FUNCTION) == LOW)
+    doSeek();
+
+  if ( (millis() - pollin_elapsed) > POLLING_TIME ) {
+    showRSSI();
+    showStereoMono();
+    if ( bShow ) clearRds();
+    pollin_elapsed = millis();
+  }
+
+  if ( (millis() - polling_rds) > POLLING_RDS) {
+    if ( bRds ) {
+      showRds();
+    }
+    polling_rds = millis();
+  }
+
+  delay(100);
+}

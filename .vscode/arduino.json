@@ -1,0 +1,4 @@
+{
+    "configuration": "cpu=atmega328",
+    "board": "arduino:avr:nano"
+}
