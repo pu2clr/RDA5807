@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -1639,21 +1639,12 @@ Audio_Jack_2.5MM
 </net>
 <net name="N$17" class="0">
 <segment>
-<pinref part="M1" gate="G$1" pin="D10"/>
-<wire x1="48.26" y1="45.72" x2="55.88" y2="45.72" width="0.1524" layer="91"/>
-<wire x1="55.88" y1="45.72" x2="55.88" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="55.88" y1="7.62" x2="-5.08" y2="7.62" width="0.1524" layer="91"/>
 <pinref part="SEEK" gate="G$1" pin="P$2"/>
 <wire x1="-5.08" y1="7.62" x2="-5.08" y2="22.86" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$18" class="0">
-<segment>
 <pinref part="M1" gate="G$1" pin="D12"/>
-<wire x1="48.26" y1="50.8" x2="68.58" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="68.58" y1="50.8" x2="68.58" y2="-2.54" width="0.1524" layer="91"/>
-<pinref part="LCD1" gate="G$1" pin="CS"/>
-<wire x1="68.58" y1="-2.54" x2="78.74" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="50.8" x2="55.88" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="50.8" x2="55.88" y2="7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -1699,6 +1690,15 @@ Audio_Jack_2.5MM
 <wire x1="121.92" y1="81.82" x2="121.92" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="ANT1" gate="A" pin="1"/>
 <wire x1="121.92" y1="81.82" x2="121.92" y2="91.44" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$16" class="0">
+<segment>
+<pinref part="M1" gate="G$1" pin="D10"/>
+<wire x1="48.26" y1="45.72" x2="68.58" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="LCD1" gate="G$1" pin="CS"/>
+<wire x1="68.58" y1="-2.54" x2="78.74" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="45.72" x2="68.58" y2="-2.54" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
