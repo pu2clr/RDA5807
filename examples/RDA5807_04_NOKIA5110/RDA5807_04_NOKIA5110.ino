@@ -208,12 +208,6 @@ void showFrequency()
   currentFrequency = rx.getFrequency();
   sprintf(tmp, "%5.5u", currentFrequency);
 
-
-  display.setCursor(0,0);
-  display.print(tmp);
-  display.display();
-  while(1);
-
   freq[0] = (tmp[0] == '0') ? ' ' : tmp[0];
   freq[1] = tmp[1];
   freq[2] = tmp[2];
@@ -222,9 +216,9 @@ void showFrequency()
   freq[5] = tmp[4];
   freq[6] = '\0';
 
-  printValue(0, 10, &oldFreq[0], &freq[0], 23, COLOR_BLACK);
-  printValue(40, 35, &oldFreq[4], &freq[4], 23, COLOR_BLACK);
-  display.setCursor(38, 35);
+  printValue(0, 10, &oldFreq[0], &freq[0], 6, COLOR_BLACK);
+  printValue(40, 10, &oldFreq[4], &freq[4],6, COLOR_BLACK);
+  display.setCursor(38, 10);
   display.print('.');
 }
 
