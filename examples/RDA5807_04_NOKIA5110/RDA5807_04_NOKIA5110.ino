@@ -51,6 +51,7 @@
 #include <Adafruit_GFX.h>     // Core graphics library
 #include <Adafruit_PCD8544.h> // See: https://www.electronoobs.com/eng_arduino_Adafruit_PCD8544.php
 #include <SPI.h>
+// #include "DSEG7_Modern_Regular_7.h"
 
 #include "Rotary.h"
 
@@ -206,8 +207,15 @@ void showFrequency()
   char tmp[10];
 
   currentFrequency = rx.getFrequency();
+  display.clearDisplay();
+  display.display();
+  display.setTextColor(BLACK);
+  // display.setFont(&DSEG7_Modern_Regular_7);
   sprintf(tmp, "%5.5u", currentFrequency);
-
+  display.setCursor(0, 25);
+  display.print(tmp);
+  display.display();
+  /*
   freq[0] = (tmp[0] == '0') ? ' ' : tmp[0];
   freq[1] = tmp[1];
   freq[2] = tmp[2];
@@ -220,6 +228,7 @@ void showFrequency()
   printValue(40, 10, &oldFreq[4], &freq[4],6, COLOR_BLACK);
   display.setCursor(38, 10);
   display.print('.');
+  */
 }
 
 /*
@@ -381,7 +390,7 @@ void setup()
 
   // Start the Nokia display device
   display.begin();  
-  display.setContrast(50);    // You may need adjust this value for you Nokia 5110
+  display.setContrast(20);    // You may need adjust this value for you Nokia 5110
   showSplash();
   showTemplate();
 
