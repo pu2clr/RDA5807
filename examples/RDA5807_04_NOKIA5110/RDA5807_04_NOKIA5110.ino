@@ -51,7 +51,6 @@
 #include <Adafruit_GFX.h>     // Core graphics library
 #include <Adafruit_PCD8544.h> // See: https://www.electronoobs.com/eng_arduino_Adafruit_PCD8544.php
 #include <SPI.h>
-// #include "DSEG7_Modern_Regular_7.h"
 
 #include "Rotary.h"
 
@@ -65,13 +64,7 @@
 
 
 #define COLOR_BLACK 0x0000
-#define COLOR_YELLOW 0xFFE0
 #define COLOR_WHITE 0xFFFF
-#define COLOR_RED 0xF800
-#define COLOR_BLUE 0x001F
-
-#define RESET_PIN 14
-#define SDA_PIN A4 // SDA pin used by your Arduino Board
 
 // Enconder PINs
 #define ENCODER_PIN_A 2
@@ -99,6 +92,9 @@ bool bShow = false;
 uint8_t seekDirection = 1; // 0 = Down; 1 = Up. This value is set by the last encoder direction.
 
 long pollin_elapsed = millis();
+
+  int maxX1;
+  int maxY1;
 
 
 // Encoder control variables
@@ -131,72 +127,15 @@ void rotaryEncoder()
 void showTemplate()
 {
 
-  int maxX1 = display.width() - 2;
-  int maxY1 = display.height() - 5;
+  maxX1 = display.width() - 2;
+  maxY1 = display.height() - 2;
 
-  // display.fillScreen(COLOR_BLACK);
+  // display.fillScreen(COLOR_WHITE);
+  // display.drawRect(2, 2, maxX1, maxY1, COLOR_BLACK);
+  // display.display();
 
-  // display.drawRect(2, 2, maxX1, maxY1, COLOR_YELLOW);
-  // display.drawLine(2, 40, maxX1, 40, COLOR_YELLOW);
-  // display.drawLine(2, 60, maxX1, 60, COLOR_YELLOW);
 }
 
-/*
-  Prevents blinking during the frequency // display.
-  Erases the old digits if it has changed and print the new digit values.
-*/
-void printValue(int col, int line, char *oldValue, char *newValue, uint8_t space, uint16_t color)
-{
-  int c = col;
-  char *pOld;
-  char *pNew;
-
-  pOld = oldValue;
-  pNew = newValue;
-
-  // prints just changed digits
-  while (*pOld && *pNew)
-  {
-    if (*pOld != *pNew)
-    {
-      // Erases olde value
-      display.setTextColor(COLOR_WHITE);
-      display.setCursor(c, line);
-      display.print(*pOld);
-      // Writes new value
-      display.setTextColor(color);
-      display.setCursor(c, line);
-      display.print(*pNew);
-    }
-    pOld++;
-    pNew++;
-    c += space;
-    display.display();
-  }
-
-  // Is there anything else to erase?
-  // display.setTextColor(COLOR_BLACK);
-  while (*pOld)
-  {
-    // display.setCursor(c, line);
-    // display.print(*pOld);
-    pOld++;
-    c += space;
-  }
-
-  // Is there anything else to print?
-  // display.setTextColor(color);
-  while (*pNew)
-  {
-    // display.setCursor(c, line);
-    // display.print(*pNew);
-    pNew++;
-    c += space;
-  }
-
-  // Save the current content to be tested next time
-  strcpy(oldValue, newValue);
-}
 
 /*
    Shows frequency information on Display
@@ -204,31 +143,16 @@ void printValue(int col, int line, char *oldValue, char *newValue, uint8_t space
 void showFrequency()
 {
   char freq[10];
-  char tmp[10];
 
   currentFrequency = rx.getFrequency();
-  display.clearDisplay();
-  display.display();
+  display.setTextSize(2);
+  display.fillRect( 3, 0, maxX1, 10, COLOR_WHITE);
+  rx.convertToChar(currentFrequency,freq,5,3,',', true);
   display.setTextColor(BLACK);
-  // display.setFont(&DSEG7_Modern_Regular_7);
-  sprintf(tmp, "%5.5u", currentFrequency);
-  display.setCursor(0, 25);
-  display.print(tmp);
+  display.setCursor(3, 10);
+  display.print(freq);
   display.display();
-  /*
-  freq[0] = (tmp[0] == '0') ? ' ' : tmp[0];
-  freq[1] = tmp[1];
-  freq[2] = tmp[2];
-  freq[3] = '\0';
-  freq[4] = tmp[3];
-  freq[5] = tmp[4];
-  freq[6] = '\0';
 
-  printValue(0, 10, &oldFreq[0], &freq[0], 6, COLOR_BLACK);
-  printValue(40, 10, &oldFreq[4], &freq[4],6, COLOR_BLACK);
-  display.setCursor(38, 10);
-  display.print('.');
-  */
 }
 
 /*
@@ -237,11 +161,11 @@ void showFrequency()
 void showStatus()
 {
   oldFreq[0] = oldStereo[0] = oldRdsStatus[0] = oldRdsMsg[0] =  0;
-
-
-  showFrequency();
+  display.clearDisplay();
   showStereoMono();
   showRSSI();
+  showFrequency();
+  display.display();
 }
 
 /* *******************************
@@ -250,10 +174,11 @@ void showStatus()
 void showRSSI()
 {
   char rssi[10];
-  sprintf(rssi, "%i dBuV", rx.getRssi());
-  // display.setFont(&Serif_plain_14);
-  // display.setTextSize(1);
-  printValue(5, 55, oldRssi, rssi, 11, COLOR_WHITE);
+  display.setTextSize(1);
+  rx.convertToChar(rx.getRssi(),rssi,3,0,'.', true);
+  display.setCursor(40, 0);
+  display.print(rssi);
+
 }
 
 void showStereoMono() {
@@ -261,7 +186,7 @@ void showStereoMono() {
   sprintf(stereo, "%s", (rx.isStereo()) ? "St" : "Mo");
   // display.setFont(&Serif_plain_14);
   // display.setTextSize(1);
-  printValue(125, 55, oldStereo, stereo, 15, COLOR_WHITE);
+  // printValue(125, 55, oldStereo, stereo, 15, COLOR_WHITE);
 }
 
 /*********************************************************
@@ -283,7 +208,7 @@ void showRDSMsg()
   rdsMsg[22] = bufferRdsMsg[22] = '\0';   // Truncate the message to fit on // display.  You can try scrolling
   if (strcmp(bufferRdsMsg, rdsMsg) == 0)
     return;
-  printValue(5, 90, bufferRdsMsg, rdsMsg, 7, COLOR_YELLOW);
+  // printValue(5, 90, bufferRdsMsg, rdsMsg, 7, COLOR_YELLOW);
   delay(250);
 }
 
@@ -295,7 +220,7 @@ void showRDSStation()
   // display.setFont(&Serif_plain_7);
   if (strncmp(bufferStatioName, stationName, 3) == 0)
     return;
-  printValue(5, 110, bufferStatioName, stationName, 7, COLOR_YELLOW);
+  // printValue(5, 110, bufferStatioName, stationName, 7, COLOR_YELLOW);
 }
 
 void showRDSTime()
@@ -303,7 +228,7 @@ void showRDSTime()
   // display.setFont(&Serif_plain_7);
   if (strcmp(bufferRdsTime, rdsTime) == 0)
     return;
-  printValue(80, 110, bufferRdsTime, rdsTime, 6, COLOR_RED);
+  // printValue(80, 110, bufferRdsTime, rdsTime, 6, COLOR_RED);
   delay(100);
 }
 
@@ -347,7 +272,7 @@ void showRds() {
   // display.setTextSize(1);
   // display.setFont(&Serif_plain_7);
   sprintf(rdsStatus, "RDS %s", (bRds) ? "ON" : "OFF");
-  printValue(5, 75, oldRdsStatus, rdsStatus, 9, COLOR_WHITE);
+  // printValue(5, 75, oldRdsStatus, rdsStatus, 9, COLOR_WHITE);
   checkRDS();
 }
 
