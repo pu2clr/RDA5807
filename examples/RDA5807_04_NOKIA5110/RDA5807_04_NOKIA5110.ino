@@ -80,14 +80,9 @@
 #define POLLING_TIME  2000
 #define POLLING_RDS     80
 
-char oldFreq[10];
-char oldStereo[10];
-char oldRssi[10];
-char oldRdsStatus[10];
-char oldRdsMsg[65];
 
 bool bSt = true;
-bool bRds = true;
+bool bRds = false;
 bool bShow = false;
 uint8_t seekDirection = 1; // 0 = Down; 1 = Up. This value is set by the last encoder direction.
 
@@ -110,195 +105,6 @@ Adafruit_PCD8544 display = Adafruit_PCD8544(NOKIA_DC, NOKIA_CE, NOKIA_RST);
 
 RDA5807 rx;
 
-/*
-    Reads encoder via interrupt
-    Use Rotary.h and  Rotary.cpp implementation to process encoder via interrupt
-*/
-void rotaryEncoder()
-{ // rotary encoder events
-  uint8_t encoderStatus = encoder.process();
-  if (encoderStatus)
-    encoderCount = (encoderStatus == DIR_CW) ? 1 : -1;
-}
-
-/*
-   Shows the static content on  display
-*/
-void showTemplate()
-{
-
-  maxX1 = display.width() - 2;
-  maxY1 = display.height() - 2;
-
-  // display.fillScreen(COLOR_WHITE);
-  // display.drawRect(2, 2, maxX1, maxY1, COLOR_BLACK);
-  // display.display();
-
-}
-
-
-/*
-   Shows frequency information on Display
-*/
-void showFrequency()
-{
-  char freq[10];
-
-  currentFrequency = rx.getFrequency();
-  display.setTextSize(2);
-  display.fillRect( 3, 0, maxX1, 10, COLOR_WHITE);
-  rx.convertToChar(currentFrequency,freq,5,3,',', true);
-  display.setTextColor(BLACK);
-  display.setCursor(3, 10);
-  display.print(freq);
-  display.display();
-
-}
-
-/*
-    Show some basic information on display
-*/
-void showStatus()
-{
-  oldFreq[0] = oldStereo[0] = oldRdsStatus[0] = oldRdsMsg[0] =  0;
-  display.clearDisplay();
-  showStereoMono();
-  showRSSI();
-  showFrequency();
-  display.display();
-}
-
-/* *******************************
-   Shows RSSI status
-*/
-void showRSSI()
-{
-  char rssi[10];
-  display.setTextSize(1);
-  rx.convertToChar(rx.getRssi(),rssi,3,0,'.', true);
-  display.setCursor(40, 0);
-  display.print(rssi);
-
-}
-
-void showStereoMono() {
-  char stereo[10];
-  sprintf(stereo, "%s", (rx.isStereo()) ? "St" : "Mo");
-  // display.setFont(&Serif_plain_14);
-  // display.setTextSize(1);
-  // printValue(125, 55, oldStereo, stereo, 15, COLOR_WHITE);
-}
-
-/*********************************************************
-   RDS
- *********************************************************/
-char *rdsMsg;
-char *stationName;
-char *rdsTime;
-char bufferStatioName[16];
-char bufferRdsMsg[40];
-char bufferRdsTime[20];
-long stationNameElapsed = millis();
-long polling_rds = millis();
-long clear_fifo = millis();
-
-void showRDSMsg()
-{
-  // display.setFont(&Serif_plain_7);
-  rdsMsg[22] = bufferRdsMsg[22] = '\0';   // Truncate the message to fit on // display.  You can try scrolling
-  if (strcmp(bufferRdsMsg, rdsMsg) == 0)
-    return;
-  // printValue(5, 90, bufferRdsMsg, rdsMsg, 7, COLOR_YELLOW);
-  delay(250);
-}
-
-/**
-   TODO: process RDS Dynamic PS or Scrolling PS
-*/
-void showRDSStation()
-{
-  // display.setFont(&Serif_plain_7);
-  if (strncmp(bufferStatioName, stationName, 3) == 0)
-    return;
-  // printValue(5, 110, bufferStatioName, stationName, 7, COLOR_YELLOW);
-}
-
-void showRDSTime()
-{
-  // display.setFont(&Serif_plain_7);
-  if (strcmp(bufferRdsTime, rdsTime) == 0)
-    return;
-  // printValue(80, 110, bufferRdsTime, rdsTime, 6, COLOR_RED);
-  delay(100);
-}
-
-
-void clearRds() {
-  // display.fillRect(4, 79, 150, 40, COLOR_BLACK);
-  bShow = false;
-}
-
-void checkRDS()
-{
-  // check if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
-  if ( rx.hasRdsInfo() ) {
-    rdsMsg = rx.getRdsText2A();
-    stationName = rx.getRdsText0A();
-    rdsTime = rx.getRdsTime();
-    if (rdsMsg != NULL)
-      showRDSMsg();
-
-    if ((millis() - stationNameElapsed) > 1000)
-    {
-      if (stationName != NULL)
-        showRDSStation();
-      stationNameElapsed = millis();
-    }
-
-    if (rdsTime != NULL)
-      showRDSTime();
-  }
-
-  if ( (millis() - clear_fifo) > 10000 ) {
-    rx.clearRdsFifo();
-    clear_fifo = millis();
-    
-  }
-}
-
-void showRds() {
-  char rdsStatus[10];
-
-  // display.setTextSize(1);
-  // display.setFont(&Serif_plain_7);
-  sprintf(rdsStatus, "RDS %s", (bRds) ? "ON" : "OFF");
-  // printValue(5, 75, oldRdsStatus, rdsStatus, 9, COLOR_WHITE);
-  checkRDS();
-}
-
-/*********************************************************
-
- *********************************************************/
-
-void showSplash()
-{
-  display.clearDisplay();
-  display.display();
-  display.setTextColor(BLACK);
-  // Splash - Change it by the your introduction text.
-  display.setCursor(0, 0);
-  display.setTextSize(2);
-  display.print("RDA5810");
-  display.setCursor(0, 15);
-  display.print("Arduino");
-  display.setCursor(0, 30);
-  display.print("Library");
-  display.display();
-  delay(2000);
-  display.clearDisplay();
-  delay(4000);
-  display.display();  
-}
 
 void setup()
 {
@@ -330,11 +136,214 @@ void setup()
   rx.setRDS(true);
   rx.setRdsFifo(true);
 
-  rx.setFrequency(10650); // It is the frequency you want to select in MHz multiplied by 100.
+  rx.setFrequency(10390); // It is the frequency you want to select in MHz multiplied by 100.
 
   rx.setSeekThreshold(50); // Sets RSSI Seek Threshold (0 to 127)
   showStatus();
 }
+
+
+/*
+    Reads encoder via interrupt
+    Use Rotary.h and  Rotary.cpp implementation to process encoder via interrupt
+*/
+void rotaryEncoder()
+{ // rotary encoder events
+  uint8_t encoderStatus = encoder.process();
+  if (encoderStatus)
+    encoderCount = (encoderStatus == DIR_CW) ? 1 : -1;
+}
+
+/*
+   Shows the static content on  display
+*/
+void showTemplate()
+{
+
+  maxX1 = display.width() - 2;
+  maxY1 = display.height() - 2;
+
+  // TO DO: The frame of the screen
+
+}
+
+
+/*
+   Shows frequency information on Display
+*/
+void showFrequency()
+{
+  char freq[10];
+
+  currentFrequency = rx.getFrequency();
+  display.setTextSize(2);
+  rx.convertToChar(currentFrequency,freq,5,3,',', true);
+  display.setCursor(3, 10);
+  display.print(freq);
+  display.display();
+
+}
+
+void showFrequencySeek()
+{
+  display.clearDisplay();
+  showFrequency();
+  display.display();
+}
+
+/*
+    Show some basic information on display
+*/
+void showStatus()
+{
+  display.clearDisplay();
+  display.setTextColor(BLACK);
+  showFrequency();
+  showStereoMono();
+  showRSSI();
+  display.display();
+}
+
+/* *******************************
+   Shows RSSI status
+*/
+void showRSSI()
+{
+  char rssi[12];
+  display.setTextSize(1);
+  rx.convertToChar(rx.getRssi(),rssi,3,0,'.');
+  strcat(rssi,"dB");
+  display.setCursor(53, 0);
+  display.print(rssi);
+
+}
+
+void showStereoMono() {
+  display.setTextSize(1);
+  display.setCursor(0, 2);
+  if (rx.isStereo() ) { 
+    display.print("ST");
+  } else {
+    display.print("MO");
+  }
+}
+
+/*********************************************************
+   RDS
+ *********************************************************/
+char *rdsMsg;
+char *stationName;
+char *rdsTime;
+long stationNameElapsed = millis();
+long polling_rds = millis();
+long clear_fifo = millis();
+
+void showRDSMsg()
+{
+  rdsMsg[22] = '\0';   // Truncate the message to fit on // display.  You can try scrolling
+
+  // TO DO: show RDS message   
+  // display.setTextSize(1);
+  // display.setCursor(0, 30);  
+  // display.print(rdsMsg);
+  // delay(100);
+}
+
+/**
+   TODO: process RDS Dynamic PS or Scrolling PS
+*/
+void showRDSStation()
+{
+
+  // TO DO 
+  // display.setTextSize(1);
+  // display.setCursor(0, 40);  
+  // display.print(stationName);
+  // delay(100);
+  
+}
+
+void showRDSTime()
+{
+  // TO DO
+  // display.setCursor(0, 40);  
+  // display.print(rdsTime);  
+  // delay(100);
+}
+
+
+void clearRds() {
+  bShow = false;
+}
+
+void checkRDS()
+{
+  // check if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
+  if ( rx.hasRdsInfo() ) {
+    rdsMsg = rx.getRdsText2A();
+    stationName = rx.getRdsText0A();
+    rdsTime = rx.getRdsTime();
+    if (rdsMsg != NULL)
+      showRDSMsg();
+
+    if ((millis() - stationNameElapsed) > 1000)
+    {
+      if (stationName != NULL)
+        showRDSStation();
+      stationNameElapsed = millis();
+    }
+
+    if (rdsTime != NULL)
+      showRDSTime();
+  }
+
+  if ( (millis() - clear_fifo) > 10000 ) {
+    rx.clearRdsFifo();
+    clear_fifo = millis();
+    
+  }
+  showStatus();
+}
+
+void showRds() {
+
+  display.setCursor(25, 0);
+  if ( bRds ) { 
+    display.print("RDS");
+  } else {
+    display.print("   ");
+  }  
+  display.display();
+  // TO DO
+  // checkRDS();
+  
+}
+
+/*********************************************************
+
+ *********************************************************/
+
+void showSplash()
+{
+  display.clearDisplay();
+  display.display();
+  display.setTextColor(BLACK);
+  // Splash - Change it by the your introduction text.
+  display.setCursor(0, 0);
+  display.setTextSize(2);
+  display.print("RDA5810");
+  display.setCursor(0, 15);
+  display.print("Arduino");
+  display.setCursor(0, 30);
+  display.print("Library");
+  display.display();
+  delay(2000);
+  display.clearDisplay();
+  delay(4000);
+  display.display();  
+}
+
+
 
 
 void doStereo() {
@@ -354,10 +363,10 @@ void doRds() {
    The seek direction is based on the last encoder direction rotation.
 */
 void doSeek() {
-  rx.seek(RDA_SEEK_WRAP, seekDirection, showFrequency);  // showFrequency will be called by the seek function during the process.
+  rx.seek(RDA_SEEK_WRAP, seekDirection, showFrequencySeek);  // showFrequency will be called by the seek function during the process.
   delay(200);
   bShow =  true;
-  showFrequency();
+  showStatus();
 }
 
 void loop()
@@ -374,7 +383,7 @@ void loop()
       rx.setFrequencyDown();
       seekDirection = RDA_SEEK_DOWN;
     }
-    showFrequency();
+    showStatus();
     bShow = true;
     encoderCount = 0;
   }
@@ -391,8 +400,7 @@ void loop()
     doSeek();
 
   if ( (millis() - pollin_elapsed) > POLLING_TIME ) {
-    showRSSI();
-    showStereoMono();
+    showStatus();
     if ( bShow ) clearRds();
     pollin_elapsed = millis();
   }
@@ -404,5 +412,5 @@ void loop()
     polling_rds = millis();
   }
 
-  delay(100);
+  delay(50);
 }
