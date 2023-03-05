@@ -684,4 +684,7 @@ class RDA5807 {
             uint8_t getBlockId();
             uint8_t getErrorBlockB();
             bool hasRdsInfo();
+
+            // Tools (Helper)
+            void convertToChar(uint16_t value, char *strValue, uint8_t len, uint8_t dot, uint8_t separator, bool remove_leading_zeros = true );
 };

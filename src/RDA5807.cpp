@@ -1029,3 +1029,53 @@ void RDA5807::clearRdsFifo()
     reg04->refined.RDS_FIFO_CLR = 1;
     setRegister(REG04, reg04->raw);
 }
+
+
+
+
+
+/** @defgroup G05 Tools method 
+ * @details A set of functions used to support other functions
+*/
+
+/**
+ * @ingroup G05 Covert numbers to char array
+ * @brief Converts a number to a char array 
+ * @details It is useful to mitigate memory space used by functions like sprintf or othetr generic similar functions
+ * @details You can use it to format frequency using decimal or tousand separator and also to convert smalm numbers.      
+ * 
+ * @param value  value to be converted
+ * @param strValue char array that will be receive the converted value 
+ * @param len final string size (in bytes) 
+ * @param dot the decimal or tousand separator position
+ * @param separator symbol "." or "," 
+ * @param remove_leading_zeros if true removes up to two leading zeros (default is true)
+ */
+void RDA5807::convertToChar(uint16_t value, char *strValue, uint8_t len, uint8_t dot, uint8_t separator, bool remove_leading_zeros)
+{
+    char d;
+    for (int i = (len - 1); i >= 0; i--)
+    {
+        d = value % 10;
+        value = value / 10;
+        strValue[i] = d + 48;
+    }
+    strValue[len] = '\0';
+    if (dot > 0)
+    {
+        for (int i = len; i >= dot; i--)
+        {
+            strValue[i + 1] = strValue[i];
+        }
+        strValue[dot] = separator;
+    }
+
+    if (remove_leading_zeros) { 
+        if (strValue[0] == '0')
+        {
+            strValue[0] = ' ';
+            if (strValue[1] == '0')
+                strValue[1] = ' ';
+        }
+    }
+}
