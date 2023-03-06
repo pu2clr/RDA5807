@@ -88,13 +88,11 @@ uint8_t seekDirection = 1; // 0 = Down; 1 = Up. This value is set by the last en
 
 long pollin_elapsed = millis();
 
-  int maxX1;
-  int maxY1;
-
+int maxX1;
+int maxY1;
 
 // Encoder control variables
 volatile int encoderCount = 0;
-
 uint16_t currentFrequency;
 
 // Encoder control
@@ -104,7 +102,6 @@ Rotary encoder = Rotary(ENCODER_PIN_A, ENCODER_PIN_B);
 Adafruit_PCD8544 display = Adafruit_PCD8544(NOKIA_DC, NOKIA_CE, NOKIA_RST);
 
 RDA5807 rx;
-
 
 void setup()
 {

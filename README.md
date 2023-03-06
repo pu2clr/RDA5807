@@ -182,6 +182,46 @@ After, unzip the RDA5807-master.zip file in your Arduino Library folder.
 
 
 
+
+### RDA5805breakout, Arduino Nano and Nokia 5110 display wireup
+
+
+| Device name               | Nokia 5110                |  Arduino      |
+| --------------------------| --------------------      | ------------  |
+| NOKIA 5110                | Pin function              |  Nano Pin     |
+| --------------------------| ------------------------- | ------------  |
+|                           | (1) RST (RESET)           |     8         |
+|                           | (2) CE or CS              |     9         |
+|                           | (3) DC or DO              |    10         |
+|                           | (4) DIN or DI or MOSI     |    11         |
+|                           | (5) CLK                   |    13         |
+|                           | (6) VCC  (3V-5V)          |    +VCC       |
+|                           | (7) BL/DL/LIGHT           |    +VCC       |
+|                           | (8) GND                   |    GND        |
+| --------------------------| ------------------------- | --------------|
+| RDA5807                   |       Pin Function        |               | 
+|                           | ------------------------- | --------------|
+|                           | SDIO (pin 8)              |     A4        |
+|                           | SCLK (pin 7)              |     A5        |
+| --------------------------| --------------------------| --------------|
+| Buttons                   |                           |               |
+|                           | Volume Up                 |      4        |
+|                           | Volume Down               |      5        |
+|                           | Stereo/Mono               |      6        |
+|                           | RDS ON/off                |      7        |
+|                           | SEEK (encoder button)     |     12        |
+| --------------------------| --------------------------|---------------| 
+| Encoder                   |                           |               |
+|                           | --------------------------|---------------| 
+|                           | A                         |       2       |
+|                           | B                         |       3       |
+
+
+
+![Basic Nokia 5110 Schematic](./extras/images/circuit_nokia_5110.png)
+
+
+
 # Thanks
 
 * I would like to thanks to __Dimitri, F5SWB__, for sharing his project based on RDA5807 (RDA5807 fm chipset / arduino with a Nextion screen F5SWB@2021 / Version 1.18). See [RDA5807](https://github.com/f5swb/RDA5807) 

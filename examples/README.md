@@ -15,7 +15,7 @@ The [RDA5807_01_SERIAL_MONITOR](https://github.com/pu2clr/RDA5807/tree/master/ex
 
 * LCD16x2 example
 * I2C Oled example
-* Nokia 5110 example
+
 
 
 
