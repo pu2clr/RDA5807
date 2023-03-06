@@ -183,7 +183,7 @@ After, unzip the RDA5807-master.zip file in your Arduino Library folder.
 
 
 
-### RDA5805breakout, Arduino Nano and Nokia 5110 display wireup
+### RDA5805 breakout, Arduino Nano and Nokia 5110 display wireup
 
 
 | Device name               | Nokia 5110                |  Arduino      |
