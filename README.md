@@ -221,6 +221,14 @@ After, unzip the RDA5807-master.zip file in your Arduino Library folder.
 ![Basic Nokia 5110 Schematic](./extras/images/circuit_nokia_5110.png)
 
 
+<BR>
+
+###Arduino Nano, RDA5807 and Nokia 5110 setup  on Breadboard
+
+
+![RDA5807 and Nokia 5110 on Breadboard](./extras/images/RDA5807_NOKIA5110_01.png)
+
+
 
 # Thanks
 
