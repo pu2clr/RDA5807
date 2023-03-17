@@ -223,6 +223,25 @@ void rotaryEncoder()
     encoderCount = (encoderStatus == DIR_CW) ? 1 : -1;
 }
 
+void showSplash()
+{
+  display.clearDisplay();
+  display.display();
+  display.setTextColor(BLACK);
+  // Splash - Change it by the your introduction text.
+  display.setCursor(0, 0);
+  display.setTextSize(2);
+  display.print("RDA5807");
+  display.setCursor(0, 15);
+  display.print("Arduino");
+  display.setCursor(0, 30);
+  display.print("Library");
+  display.display();
+  delay(2000);
+  display.clearDisplay();
+  display.display();  
+}
+
 /*
    Shows the static content on  display
 */
@@ -391,27 +410,6 @@ void showRds() {
 /*********************************************************
 
  *********************************************************/
-
-void showSplash()
-{
-  display.clearDisplay();
-  display.display();
-  display.setTextColor(BLACK);
-  // Splash - Change it by the your introduction text.
-  display.setCursor(0, 0);
-  display.setTextSize(2);
-  display.print("RDA5810");
-  display.setCursor(0, 15);
-  display.print("Arduino");
-  display.setCursor(0, 30);
-  display.print("Library");
-  display.display();
-  delay(2000);
-  display.clearDisplay();
-  display.display();  
-}
-
-
 
 
 void doStereo() {
