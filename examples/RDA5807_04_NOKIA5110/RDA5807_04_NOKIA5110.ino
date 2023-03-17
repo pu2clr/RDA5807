@@ -2,6 +2,17 @@
   UNDER CONSTRUCTION ...
   This sketch uses an Arduino Nano with NOKIA 5110display
   It is also a FM receiver capable to tune your local FM stations.
+  This sketch saves the latest status of the receiver into the Atmega328 eeprom.
+  
+  ABOUT THE EEPROM:
+  ATMEL says the lifetime of an EEPROM memory position is about 100,000 writes.
+  For this reason, this sketch tries to avoid save unnecessary writes into the eeprom.
+  So, the condition to store any status of the receiver is changing the frequency or volume and 10 seconds of inactivity.
+  For example, if you switch the band and turn the receiver off immediately, no new information will be written into the eeprom.
+  But you wait 10 seconds after changing anything, all new information will be written.
+
+  TO RESET the EEPROM: Turn your receiver on with the encoder push button pressed.
+
 
   Read more on https://pu2clr.github.io/RDA5807/
 
@@ -47,6 +58,7 @@
 */
 
 #include <RDA5807.h>
+#include <EEPROM.h>
 
 #include <Adafruit_GFX.h>     // Core graphics library
 #include <Adafruit_PCD8544.h> // See: https://www.electronoobs.com/eng_arduino_Adafruit_PCD8544.php
@@ -80,6 +92,13 @@
 #define POLLING_TIME  2000
 #define POLLING_RDS     80
 
+#define STORE_TIME 10000 // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
+
+
+const uint8_t app_id = 43; // Useful to check the EEPROM content before processing useful data
+const int eeprom_address = 0;
+long storeTime = millis();
+
 
 bool bSt = true;
 bool bRds = false;
@@ -94,6 +113,7 @@ int maxY1;
 // Encoder control variables
 volatile int encoderCount = 0;
 uint16_t currentFrequency;
+uint16_t previousFrequency;
 
 // Encoder control
 Rotary encoder = Rotary(ENCODER_PIN_A, ENCODER_PIN_B);
@@ -123,21 +143,72 @@ void setup()
   showSplash();
   showTemplate();
 
+
+  // If you want to reset the eeprom, keep the VOLUME_UP button pressed during statup
+  if (digitalRead(SEEK_FUNCTION) == LOW)
+  {
+    EEPROM.write(eeprom_address, 0);
+    display.clearDisplay();
+    display.display();
+    display.setTextColor(BLACK);
+    display.setTextSize(2);
+    display.setCursor(0, 10);
+    display.print("RESET");  
+    display.display();
+    delay(1500);
+    showSplash();
+  }
+
   // Encoder interrupt
   attachInterrupt(digitalPinToInterrupt(ENCODER_PIN_A), rotaryEncoder, CHANGE);
   attachInterrupt(digitalPinToInterrupt(ENCODER_PIN_B), rotaryEncoder, CHANGE);
 
   rx.setup();
-  rx.setVolume(6);
-  rx.setMono(false); // Force stereo
-  // rx.setRBDS(true);  //  set RDS and RBDS. See setRDS.
-  rx.setRDS(true);
-  rx.setRdsFifo(true);
 
-  rx.setFrequency(10390); // It is the frequency you want to select in MHz multiplied by 100.
+  // Checking the EEPROM content
+  if (EEPROM.read(eeprom_address) == app_id)
+  {
+    readAllReceiverInformation();
+  } else {
+    // Default values
+    rx.setVolume(6);
+    rx.setMono(false); // Force stereo
+    // rx.setRBDS(true);  //  set RDS and RBDS. See setRDS.
+    rx.setRDS(true);
+    rx.setRdsFifo(true); 
+    currentFrequency = previousFrequency = 10390;
+  }
 
+  rx.setFrequency(currentFrequency); // It is the frequency you want to select in MHz multiplied by 100.
   rx.setSeekThreshold(50); // Sets RSSI Seek Threshold (0 to 127)
   showStatus();
+}
+
+
+void saveAllReceiverInformation()
+{
+  EEPROM.update(eeprom_address, app_id);    
+  EEPROM.update(eeprom_address + 1, rx.getVolume());           // stores the current Volume
+  EEPROM.update(eeprom_address + 2, currentFrequency >> 8);   // stores the current Frequency HIGH byte for the band
+  EEPROM.update(eeprom_address + 3, currentFrequency & 0xFF);  // stores the current Frequency LOW byte for the band
+}
+
+void readAllReceiverInformation()
+{
+  rx.setVolume(EEPROM.read(eeprom_address + 1));
+  currentFrequency = EEPROM.read(eeprom_address + 2) << 8;
+  currentFrequency |= EEPROM.read(eeprom_address +3);
+  previousFrequency = currentFrequency;
+}
+
+
+/*
+   To store any change into the EEPROM, it is needed at least STORE_TIME  milliseconds of inactivity.
+*/
+void resetEepromDelay()
+{
+  storeTime = millis();
+  previousFrequency = 0;
 }
 
 
@@ -337,7 +408,6 @@ void showSplash()
   display.display();
   delay(2000);
   display.clearDisplay();
-  delay(4000);
   display.display();  
 }
 
@@ -384,12 +454,17 @@ void loop()
     showStatus();
     bShow = true;
     encoderCount = 0;
+    storeTime = millis();
   }
 
-  if (digitalRead(VOLUME_UP) == LOW)
+  if (digitalRead(VOLUME_UP) == LOW) {
     rx.setVolumeUp();
-  else if (digitalRead(VOLUME_DOWN) == LOW)
+    resetEepromDelay();
+  }
+  else if (digitalRead(VOLUME_DOWN) == LOW) {
     rx.setVolumeDown();
+    resetEepromDelay();
+  }
   else if (digitalRead(SWITCH_STEREO) == LOW)
     doStereo();
   else if (digitalRead(SWITCH_RDS) == LOW)
@@ -408,6 +483,17 @@ void loop()
       showRds();
     }
     polling_rds = millis();
+  }
+
+  // Show the current frequency only if it has changed
+  if ((currentFrequency = rx.getFrequency()) != previousFrequency)
+  {
+    if ((millis() - storeTime) > STORE_TIME)
+    {
+      saveAllReceiverInformation();
+      storeTime = millis();
+      previousFrequency = currentFrequency;
+    }
   }
 
   delay(50);
