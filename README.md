@@ -227,12 +227,52 @@ After, unzip the RDA5807-master.zip file in your Arduino Library folder.
 ![Basic Nokia 5110 Schematic](./extras/images/circuit_nokia_5110.png)
 
 
+
+
+
 <BR>
 
 ### Arduino Nano, RDA5807 and Nokia 5110 setup  on Breadboard
 
 
 ![RDA5807 and Nokia 5110 on Breadboard](./extras/images/RDA5807_NOKIA5110_01.jpg)
+
+
+### RDA5807 breakout, Arduino Nano and LCD16X02 display wireup
+
+![Basic LCD16X02 Schematic](./extras/images/RDA5807_LCD16X02.png)
+
+<BR>
+
+
+| Device name               | Device Pin / Description  |  Arduino Pin  |
+| --------------------------| --------------------      | ------------  |
+|    LCD 16x2 or 20x4       |                           |               |
+|                           | D4                        |     D7        |
+|                           | D5                        |     D6        |
+|                           | D6                        |     D5        |
+|                           | D7                        |     D4        |
+|                           | RS                        |     D12       |
+|                           | E/ENA                     |     D13       |
+|                           | RW & VSS & K (16)         |    GND        |
+|                           | A (15) & VDD              |    +Vcc       |
+| --------------------------| ------------------------- | --------------|
+| RDA5807                   |                           |               | 
+|                           | ------------------------- | --------------|
+|                           | SDIO (pin 8)              |     A4        |
+|                           | SCLK (pin 7)              |     A5        |
+| --------------------------| --------------------------| --------------|
+| Buttons                   |                           |               |
+|                           | Volume Up                 |      8        |
+|                           | Volume Down               |      9        |
+|                           | Stereo/Mono               |     10        |
+|                           | RDS ON/off                |     11        |
+|                           | SEEK (encoder button)     |     D14/A0    |
+| --------------------------| --------------------------|---------------| 
+| Encoder                   |                           |               |
+|                           | --------------------------|---------------| 
+|                           | A                         |       2       |
+|                           | B                         |       3       |
 
 
 
