@@ -1,4 +1,5 @@
 {
     "configuration": "cpu=atmega328",
-    "board": "arduino:avr:nano"
+    "board": "arduino:avr:nano",
+    "sketch": "examples/RDA5807_04_NOKIA5110/RDA5807_04_NOKIA5110.ino"
 }
