@@ -282,6 +282,15 @@ After, unzip the RDA5807-master.zip file in your Arduino Library folder.
 * I would like to thanks to __Dimitri, F5SWB__, for sharing his project based on RDA5807 (RDA5807 fm chipset / arduino with a Nextion screen F5SWB@2021 / Version 1.18). See [RDA5807](https://github.com/f5swb/RDA5807) 
 
 
+# TO DO
+
+* RDS Improvments;
+* Example using OLED;
+* Add function to deal with I2S (RDA5807FP);
+
+
+
+
 # References 
 
 * [RDA5807M - SINGLE-CHIP BROADCAST FMRADIO TUNER](https://www.electrodragon.com/w/images/5/5f/RDA5807M_datasheet_v1.pdf)
