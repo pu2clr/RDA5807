@@ -123,7 +123,7 @@ After, unzip the RDA5807-master.zip file in your Arduino Library folder.
 ### Installing the most current version via arduino-cli
 
 The commands below Install the latest version of the PU2CLR RDA5807 Arduino Library from github. 
-As said before, unlike a release (installed from Arduino IDE) this method installs the current version of the PU2CLR SI4535 Arduino Library (latest modifications even if not yet released).
+As said before, unlike a release (installed from Arduino IDE) this method installs the current version of the PU2CLR RDA5807 Arduino Library (latest modifications even if not yet released).
 
 
 #### On macOS or Linux
