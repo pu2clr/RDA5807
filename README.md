@@ -117,7 +117,36 @@ After, unzip the RDA5807-master.zip file in your Arduino Library folder.
 
 * On __Windows__: "My Documents\Arduino\libraries"
 * On __MAC OS__: ˜/Documents/Arduino/libraries
-* On __Linux__: ˜/Documents/Arduino/libraries
+* On __Linux__: ˜/home/Arduino/libraries
+
+
+### Installing the most current version via arduino-cli
+
+The commands below Install the latest version of the PU2CLR RDA5807 Arduino Library from github. 
+As said before, unlike a release (installed from Arduino IDE) this method installs the current version of the PU2CLR SI4535 Arduino Library (latest modifications even if not yet released).
+
+
+#### On macOS or Linux
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
+export ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
+./bin/arduino-cli lib install --git-url https://github.com/pu2clr/RDA5807
+```
+
+#### On Windows 10 or 11
+
+Run the command shell (cmd / Command Prompt) and follow the steps below.
+
+```bash
+echo off  
+curl -fsSL https://downloads.arduino.cc/arduino-cli/arduino-cli_latest_Windows_64bit.zip --output arduinocli.zip
+tar -xf arduinocli.zip 
+set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
+.\arduino-cli lib install --git-url https://github.com/pu2clr/RDA5807
+```
+
+
 
 <BR>
 
