@@ -670,6 +670,7 @@ uint8_t RDA5807::getRdsFlagAB(void)
 uint16_t RDA5807::getRdsGroupType()
 {
     rds_blockb blkb;
+
     getStatusRegisters(); // TODO: Should be called just once and be processed by all RDS functions at a time.
     blkb.blockB = reg0d->RDSB; 
     return blkb.group0.groupType;
