@@ -92,7 +92,7 @@
  */
     typedef union {
     struct {
-        uint8_t CHIPID: 8; //!< Chip ifdef 
+        uint8_t CHIP_ID: 8; //!< Chip ifdef 
         uint8_t DUMMY: 8;
     } refined;
     uint16_t raw;
