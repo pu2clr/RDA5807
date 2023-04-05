@@ -83,11 +83,11 @@
 #define ENCODER_PIN_B 3
 
 // Buttons controllers
-#define VOLUME_UP 4     // Volume Up
-#define VOLUME_DOWN 5   // Volume Down
-#define SWITCH_STEREO 6 // Select Mono or Stereo
-#define SWITCH_RDS 7    // SDR ON or OFF
-#define SEEK_FUNCTION 14
+#define VOLUME_UP 4      // Volume Up
+#define VOLUME_DOWN 5    // Volume Down
+#define SWITCH_STEREO 6  // Select Mono or Stereo
+#define SWITCH_RDS 7     // SDR ON or OFF
+#define SEEK_FUNCTION 14 // Pin A0 / Digital 14
 
 #define POLLING_TIME  2000
 #define POLLING_RDS     80
