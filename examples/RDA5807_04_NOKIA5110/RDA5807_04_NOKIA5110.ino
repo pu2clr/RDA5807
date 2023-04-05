@@ -41,10 +41,10 @@
   |                           | Volume Down               |      5        |
   |                           | Stereo/Mono               |      6        |
   |                           | RDS ON/off                |      7        |
-  |                           | SEEK (encoder button)     |     12        |
+  |                           | SEEK (encoder button)     |     A0/14     |
   | --------------------------| --------------------------|---------------| 
   | Encoder                   |                           |               |
-  |                           | --------------------------|---------------| 
+  |                          | --------------------------|---------------| 
   |                           | A                         |       2       |
   |                           | B                         |       3       |
 
@@ -87,7 +87,7 @@
 #define VOLUME_DOWN 5   // Volume Down
 #define SWITCH_STEREO 6 // Select Mono or Stereo
 #define SWITCH_RDS 7    // SDR ON or OFF
-#define SEEK_FUNCTION 12
+#define SEEK_FUNCTION 14
 
 #define POLLING_TIME  2000
 #define POLLING_RDS     80
