@@ -463,6 +463,7 @@ typedef union
  * @see also https://en.wikipedia.org/wiki/Radio_Data_System
  */
 typedef union {
+    // using uint16_t instead uint8_t to avoid Crossing boundary 
     struct
     {
         uint16_t address : 2;            // Depends on Group Type and Version codes. If 0A or 0B it is the Text Segment Address.
@@ -502,7 +503,7 @@ typedef union {
  * This Structure uses blocks 2,3 and 5 (B,C,D)
  *
  * ATTENTION:
- * To make it compatible with 8, 16 and 32 bits platforms and avoid Crosses boundary, it was necessary to
+ * To make it compatible with 8, 16 and 32 bits platforms and avoid Crossing boundary, it was necessary to
  * split minute and hour representation.
  */
 typedef union {
@@ -510,10 +511,10 @@ typedef union {
     {
         uint8_t offset : 5;       // Local Time Offset
         uint8_t offset_sense : 1; // Local Offset Sign ( 0 = + , 1 = - )
-        uint8_t minute1 : 2;      // UTC Minutes - 2 bits less significant (void “Crosses boundary”).
-        uint8_t minute2 : 4;      // UTC Minutes - 4 bits  more significant  (void “Crosses boundary”)
-        uint8_t hour1 : 4;        // UTC Hours - 4 bits less significant (void “Crosses boundary”)
-        uint8_t hour2 : 1;        // UTC Hours - 4 bits more significant (void “Crosses boundary”)
+        uint8_t minute1 : 2;      // UTC Minutes - 2 bits less significant (avoid Crossing boundary”).
+        uint8_t minute2 : 4;      // UTC Minutes - 4 bits  more significant  (avoid Crossing boundary”)
+        uint8_t hour1 : 4;        // UTC Hours - 4 bits less significant (avoid Crossing boundary”)
+        uint8_t hour2 : 1;        // UTC Hours - 4 bits more significant (avoid Crossing boundary”)
         uint32_t mjd : 17;        // Modified Julian Day Code
     } refined;
     uint8_t raw[6];
