@@ -139,7 +139,7 @@ void setup()
   // Start the Nokia display device
   display.begin();  
   // ATTENTION: YOU MUST VERIFY THE BEST LAVEL FOR THE CONTRAST OF YOUR DISPLAY.
-  display.setContrast(60);    // You may need adjust this value for you Nokia 5110
+  display.setContrast(70);    // You may need adjust this value for you Nokia 5110
   showSplash();
   showTemplate();
 
