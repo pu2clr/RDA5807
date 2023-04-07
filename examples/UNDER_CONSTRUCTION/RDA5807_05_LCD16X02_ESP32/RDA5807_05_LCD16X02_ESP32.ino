@@ -1,13 +1,13 @@
 /*
   UNDER CONSTRUCTION ...
-  This sketch uses an Arduino Nano with NOKIA 5110display
+  This sketch uses an Arduino Nano with LCD16X02 DISPLAY
   It is also a FM receiver capable to tune your local FM stations.
   This sketch saves the latest status of the receiver into the Atmega328 eeprom.
   
-  ABOUT THE EEPROM:
+  ABOUT THE ATMEGA328 EEPROM and saving the receiver current information 
   ATMEL says the lifetime of an EEPROM memory position is about 100,000 writes.
   For this reason, this sketch tries to avoid save unnecessary writes into the eeprom.
-  So, the condition to store any status of the receiver is changing the frequency or volume and 10 seconds of inactivity.
+  This firmware saves the latest frequency or volume data 10 secounds after one of these information is changed.
   For example, if you switch the band and turn the receiver off immediately, no new information will be written into the eeprom.
   But you wait 10 seconds after changing anything, all new information will be written.
 
@@ -20,36 +20,25 @@
 
   | Device name               | Device Pin / Description  |  Arduino Pin  |
   | --------------------------| --------------------      | ------------  |
-  | NOKIA 5110                |                           |               |
-  | --------------------------| ------------------------- | ------------  |
-  |                           | (1) RST (RESET)           |     8         |
-  |                           | (2) CE or CS              |     9         |
-  |                           | (3) DC or DO              |    10         |
-  |                           | (4) DIN or DI or MOSI     |    11         |
-  |                           | (5) CLK                   |    13         |
-  |                           | (6) VCC  (3V-5V)          |    +VCC       |
-  |                           | (7) BL/DL/LIGHT           |    +VCC       |
-  |                           | (8) GND                   |    GND        |
+  |    LCD 16x2 or 20x4       |                           |               |
+  |                           | D4                        |  GPIO18       |
+  |                           | D5                        |  GPIO17       |
+  |                           | D6                        |  GPIO16       |
+  |                           | D7                        |  GPIO15       |
+  |                           | RS                        |  GPIO19       |
+  |                           | E/ENA                     |  GPIO23       |
+  |                           | RW & VSS & K (16)         |  GND          |
+  |                           | A (15) & VDD              |  +Vcc         |
   | --------------------------| ------------------------- | --------------|
   | RDA5807                   |                           |               | 
-  |                           | ------------------------- | --------------|
-  |                           | SDIO (pin 8)              |     A4        |
-  |                           | SCLK (pin 7)              |     A5        |
+  |                           | SDIO (pin 8)              |     GPIO21    |
+  |                           | SCLK (pin 7)              |     GPIO22    |
   | --------------------------| --------------------------| --------------|
-  | Buttons                   |                           |               |
-  |                           | Volume Up                 |      4        |
-  |                           | Volume Down               |      5        |
-  |                           | Stereo/Mono               |      6        |
-  |                           | RDS ON/off                |      7        |
-  |                           | SEEK (encoder button)     |     A0/14     |
-  | --------------------------| --------------------------|---------------| 
   | Encoder                   |                           |               |
-  |                          | --------------------------|---------------| 
-  |                           | A                         |       2       |
-  |                           | B                         |       3       |
-
-  About 77% of the space occupied by this sketch is due to the library for the TFT // display.
-
+  |                           | A                         |  GPIO13       |
+  |                           | B                         |  GPIO14       |
+  |                           | PUSH BUTTON (encoder)     |  GPIO27       |
+  | 
 
   Prototype documentation: https://pu2clr.github.io/RDA5807/
   PU2CLR RDA5807 API documentation: https://pu2clr.github.io/RDA5807/extras/apidoc/html/
@@ -59,38 +48,33 @@
 
 #include <RDA5807.h>
 #include <EEPROM.h>
-
-#include <Adafruit_GFX.h>     // Core graphics library
-#include <Adafruit_PCD8544.h> // See: https://www.electronoobs.com/eng_arduino_Adafruit_PCD8544.php
+#include <LiquidCrystal.h>
 #include <SPI.h>
 
 #include "Rotary.h"
 
-// NOKIA Display pin setup
-#define NOKIA_RST  8  // RESET
-#define NOKIA_CE   9  // Some NOKIA devices show CS
-#define NOKIA_DC  10  // 
-#define NOKIA_DIN 11  // MOSI
-#define NOKIA_CLK 13  // SCK
-#define NOKIA_LED  0  // 0 if wired to +3.3V directly
+/// LCD 16x02 or LCD20x4 PINs
+#define LCD_D7 15
+#define LCD_D6 16
+#define LCD_D5 17
+#define LCD_D4 18
+#define LCD_RS 19
+#define LCD_E  23
 
-
-#define COLOR_BLACK 0x0000
-#define COLOR_WHITE 0xFFFF
 
 // Enconder PINs
-#define ENCODER_PIN_A 2
-#define ENCODER_PIN_B 3
+#define ENCODER_PIN_A 13
+#define ENCODER_PIN_B 14
 
-// Buttons controllers
-#define VOLUME_UP 4      // Volume Up
-#define VOLUME_DOWN 5    // Volume Down
-#define SWITCH_STEREO 6  // Select Mono or Stereo
-#define SWITCH_RDS 7     // SDR ON or OFF
-#define SEEK_FUNCTION 14 // Pin A0 / Digital 14
+#define ESP32_SDA 21
+#define ESP32_CLK 22
+
+#define EEPROM_SIZE   512
+
+#define SEEK_FUNCTION 27
 
 #define POLLING_TIME  2000
-#define POLLING_RDS    80
+#define POLLING_RDS     80
 
 #define STORE_TIME 10000 // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
 
@@ -118,8 +102,8 @@ uint16_t previousFrequency;
 // Encoder control
 Rotary encoder = Rotary(ENCODER_PIN_A, ENCODER_PIN_B);
 
-// Nokia 5110 display
-Adafruit_PCD8544 display = Adafruit_PCD8544(NOKIA_DC, NOKIA_CE, NOKIA_RST);
+// LCD display 
+LiquidCrystal lcd(LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
 RDA5807 rx;
 
@@ -130,31 +114,19 @@ void setup()
   pinMode(ENCODER_PIN_B, INPUT_PULLUP);
 
   // Push button pin
-  pinMode(VOLUME_UP, INPUT_PULLUP);
-  pinMode(VOLUME_DOWN, INPUT_PULLUP);
-  pinMode(SWITCH_STEREO, INPUT_PULLUP);
-  pinMode(SWITCH_RDS, INPUT_PULLUP);
   pinMode(SEEK_FUNCTION, INPUT_PULLUP);
 
-  // Start the Nokia display device
-  display.begin();  
-  // ATTENTION: YOU MUST VERIFY THE BEST LAVEL FOR THE CONTRAST OF YOUR DISPLAY.
-  display.setContrast(60);    // You may need adjust this value for you Nokia 5110
+  // Start LCD display device
+  lcd.begin(16, 2);
   showSplash();
-  showTemplate();
-
 
   // If you want to reset the eeprom, keep the VOLUME_UP button pressed during statup
   if (digitalRead(SEEK_FUNCTION) == LOW)
   {
     EEPROM.write(eeprom_address, 0);
-    display.clearDisplay();
-    display.display();
-    display.setTextColor(BLACK);
-    display.setTextSize(2);
-    display.setCursor(0, 10);
-    display.print("RESET");  
-    display.display();
+    lcd.clear();
+    lcd.setCursor(0, 0);  
+    lcd.print("RESET");  
     delay(1500);
     showSplash();
   }
@@ -187,10 +159,12 @@ void setup()
 
 void saveAllReceiverInformation()
 {
-  EEPROM.update(eeprom_address, app_id);    
-  EEPROM.update(eeprom_address + 1, rx.getVolume());           // stores the current Volume
-  EEPROM.update(eeprom_address + 2, currentFrequency >> 8);   // stores the current Frequency HIGH byte for the band
-  EEPROM.update(eeprom_address + 3, currentFrequency & 0xFF);  // stores the current Frequency LOW byte for the band
+    EEPROM.begin(EEPROM_SIZE);
+  // The update function/method writes data only if the current data is not equal to the stored data. 
+  EEPROM.write(eeprom_address, app_id);    
+  EEPROM.write(eeprom_address + 1, rx.getVolume());          // stores the current Volume
+  EEPROM.write(eeprom_address + 2, currentFrequency >> 8);   // stores the current Frequency HIGH byte for the band
+  EEPROM.write(eeprom_address + 3, currentFrequency & 0xFF); // stores the current Frequency LOW byte for the band
 }
 
 void readAllReceiverInformation()
@@ -225,21 +199,12 @@ void rotaryEncoder()
 
 void showSplash()
 {
-  display.clearDisplay();
-  display.display();
-  display.setTextColor(BLACK);
-  // Splash - Change it by the your introduction text.
-  display.setCursor(0, 0);
-  display.setTextSize(2);
-  display.print("RDA5807");
-  display.setCursor(0, 15);
-  display.print("Arduino");
-  display.setCursor(0, 30);
-  display.print("Library");
-  display.display();
-  delay(2000);
-  display.clearDisplay();
-  display.display();  
+  lcd.setCursor(0, 0);
+  lcd.print("PU2CLR-RDA5807");
+  lcd.setCursor(0, 1);
+  lcd.print("Arduino Library");
+  lcd.display();
+  delay(1000);
 }
 
 /*
@@ -248,10 +213,6 @@ void showSplash()
 void showTemplate()
 {
 
-  maxX1 = display.width() - 2;
-  maxY1 = display.height() - 2;
-
-  // TO DO: The frame of the screen
 
 }
 
@@ -262,21 +223,17 @@ void showTemplate()
 void showFrequency()
 {
   char freq[10];
-
   currentFrequency = rx.getFrequency();
-  display.setTextSize(2);
   rx.convertToChar(currentFrequency,freq,5,3,',', true);
-  display.setCursor(3, 10);
-  display.print(freq);
-  display.display();
-
+  lcd.setCursor(4, 1);
+  lcd.print(freq);
+  lcd.display();
 }
 
 void showFrequencySeek()
 {
-  display.clearDisplay();
+  lcd.clear();
   showFrequency();
-  display.display();
 }
 
 /*
@@ -284,13 +241,11 @@ void showFrequencySeek()
 */
 void showStatus()
 {
-  display.clearDisplay();
-  display.setTextColor(BLACK);
+  lcd.clear();
   showFrequency();
   showStereoMono();
   showRSSI();
-  showRds();
-  display.display();
+  lcd.display();
 }
 
 /* *******************************
@@ -299,21 +254,18 @@ void showStatus()
 void showRSSI()
 {
   char rssi[12];
-  display.setTextSize(1);
   rx.convertToChar(rx.getRssi(),rssi,3,0,'.');
   strcat(rssi,"dB");
-  display.setCursor(53, 0);
-  display.print(rssi);
-
+  lcd.setCursor(13, 1);
+  lcd.print(rssi);
 }
 
 void showStereoMono() {
-  display.setTextSize(1);
-  display.setCursor(0, 2);
+  lcd.setCursor(14, 0);
   if (rx.isStereo() ) { 
-    display.print("ST");
+    lcd.print("ST");
   } else {
-    display.print("MO");
+    lcd.print("MO");
   }
 }
 
@@ -327,20 +279,14 @@ long stationNameElapsed = millis();
 long polling_rds = millis();
 long clear_fifo = millis();
 
-long pollingRdsMsg = millis();
-long pollingRdsTime = millis();
-long pollingRdsStation = millis(); 
-
 void showRDSMsg()
 {
   rdsMsg[22] = '\0';   // Truncate the message to fit on // display.  You can try scrolling
 
   // TO DO: show RDS message   
-  display.setTextSize(1);
-  display.setCursor(0, 30);  
-  display.print(rdsMsg);
-  display.display();
-  delay(500);
+  // lcd.setCursor(0,1);  
+  // lcd.print(rdsMsg);
+  // delay(100);
 }
 
 /**
@@ -350,21 +296,15 @@ void showRDSStation()
 {
 
   // TO DO 
-  display.setTextSize(1);
-  display.setCursor(0, 40);  
-  display.print(stationName);
-  display.display();
-  delay(500);
+
   
 }
 
 void showRDSTime()
 {
   // TO DO
-  display.setCursor(0, 40);  
-  display.print(rdsTime);  
-  display.display();
-  delay(500);
+
+  // delay(100);
 }
 
 
@@ -403,13 +343,15 @@ void checkRDS()
 
 void showRds() {
 
-  display.setCursor(25, 0);
+  /*
+  lcd.setCursor(25, 0);
   if ( bRds ) { 
-    display.print("RDS");
+    lcd.print("RDS");
   } else {
-    display.print("   ");
+    lcd.print("   ");
   }  
-  display.display();
+  lcd.display();
+  */
   // TO DO
   // checkRDS();
   
@@ -463,33 +405,12 @@ void loop()
     storeTime = millis();
   }
 
-  if (digitalRead(VOLUME_UP) == LOW) {
-    rx.setVolumeUp();
-    resetEepromDelay();
-  }
-  else if (digitalRead(VOLUME_DOWN) == LOW) {
-    rx.setVolumeDown();
-    resetEepromDelay();
-  }
-  else if (digitalRead(SWITCH_STEREO) == LOW)
-    doStereo();
-  else if (digitalRead(SWITCH_RDS) == LOW)
-    doRds();
-  else if (digitalRead(SEEK_FUNCTION) == LOW)
-    doSeek();
-
-  if ( (millis() - pollin_elapsed) > POLLING_TIME ) {
-    showStatus();
-    if ( bShow ) clearRds();
-    pollin_elapsed = millis();
-  }
-
-  // if ( (millis() - polling_rds) > POLLING_RDS) {
+  if ( (millis() - polling_rds) > POLLING_RDS) {
     if ( bRds ) {
-      checkRDS();
+      showRds();
     }
-  //   polling_rds = millis();
- // }
+    polling_rds = millis();
+  }
 
   // Show the current frequency only if it has changed
   if ((currentFrequency = rx.getFrequency()) != previousFrequency)
