@@ -60,19 +60,19 @@
 #include <RDA5807.h>
 #include <EEPROM.h>
 
-#include <Adafruit_GFX.h>     // Core graphics library
-#include <Adafruit_PCD8544.h> // See: https://www.electronoobs.com/eng_arduino_Adafruit_PCD8544.php
+#include <Adafruit_GFX.h>      // Core graphics library
+#include <Adafruit_PCD8544.h>  // See: https://www.electronoobs.com/eng_arduino_Adafruit_PCD8544.php
 #include <SPI.h>
 
 #include "Rotary.h"
 
 // NOKIA Display pin setup
-#define NOKIA_RST  8  // RESET
-#define NOKIA_CE   9  // Some NOKIA devices show CS
-#define NOKIA_DC  10  // 
+#define NOKIA_RST 8   // RESET
+#define NOKIA_CE 9    // Some NOKIA devices show CS
+#define NOKIA_DC 10   //
 #define NOKIA_DIN 11  // MOSI
 #define NOKIA_CLK 13  // SCK
-#define NOKIA_LED  0  // 0 if wired to +3.3V directly
+#define NOKIA_LED 0   // 0 if wired to +3.3V directly
 
 
 #define COLOR_BLACK 0x0000
@@ -83,19 +83,19 @@
 #define ENCODER_PIN_B 3
 
 // Buttons controllers
-#define VOLUME_UP 4      // Volume Up
-#define VOLUME_DOWN 5    // Volume Down
-#define SWITCH_STEREO 6  // Select Mono or Stereo
-#define SWITCH_RDS 7     // SDR ON or OFF
-#define SEEK_FUNCTION 14 // Pin A0 / Digital 14
+#define VOLUME_UP 4       // Volume Up
+#define VOLUME_DOWN 5     // Volume Down
+#define SWITCH_STEREO 6   // Select Mono or Stereo
+#define SWITCH_RDS 7      // SDR ON or OFF
+#define SEEK_FUNCTION 14  // Pin A0 / Digital 14
 
-#define POLLING_TIME  2000
-#define POLLING_RDS    80
+#define POLLING_TIME 2000
+#define POLLING_RDS 10
 
-#define STORE_TIME 10000 // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
+#define STORE_TIME 10000  // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
 
 
-const uint8_t app_id = 43; // Useful to check the EEPROM content before processing useful data
+const uint8_t app_id = 43;  // Useful to check the EEPROM content before processing useful data
 const int eeprom_address = 0;
 long storeTime = millis();
 
@@ -103,7 +103,7 @@ long storeTime = millis();
 bool bSt = true;
 bool bRds = false;
 bool bShow = false;
-uint8_t seekDirection = 1; // 0 = Down; 1 = Up. This value is set by the last encoder direction.
+uint8_t seekDirection = 1;  // 0 = Down; 1 = Up. This value is set by the last encoder direction.
 
 long pollin_elapsed = millis();
 
@@ -123,8 +123,7 @@ Adafruit_PCD8544 display = Adafruit_PCD8544(NOKIA_DC, NOKIA_CE, NOKIA_RST);
 
 RDA5807 rx;
 
-void setup()
-{
+void setup() {
 
   pinMode(ENCODER_PIN_A, INPUT_PULLUP);
   pinMode(ENCODER_PIN_B, INPUT_PULLUP);
@@ -137,23 +136,22 @@ void setup()
   pinMode(SEEK_FUNCTION, INPUT_PULLUP);
 
   // Start the Nokia display device
-  display.begin();  
+  display.begin();
   // ATTENTION: YOU MUST VERIFY THE BEST LAVEL FOR THE CONTRAST OF YOUR DISPLAY.
-  display.setContrast(60);    // You may need adjust this value for you Nokia 5110
+  display.setContrast(60);  // You may need adjust this value for you Nokia 5110
   showSplash();
   showTemplate();
 
 
   // If you want to reset the eeprom, keep the VOLUME_UP button pressed during statup
-  if (digitalRead(SEEK_FUNCTION) == LOW)
-  {
+  if (digitalRead(SEEK_FUNCTION) == LOW) {
     EEPROM.write(eeprom_address, 0);
     display.clearDisplay();
     display.display();
     display.setTextColor(BLACK);
     display.setTextSize(2);
     display.setCursor(0, 10);
-    display.print("RESET");  
+    display.print("RESET");
     display.display();
     delay(1500);
     showSplash();
@@ -166,38 +164,35 @@ void setup()
   rx.setup();
 
   // Checking the EEPROM content
-  if (EEPROM.read(eeprom_address) == app_id)
-  {
+  if (EEPROM.read(eeprom_address) == app_id) {
     readAllReceiverInformation();
   } else {
     // Default values
     rx.setVolume(6);
-    rx.setMono(false); // Force stereo
+    rx.setMono(false);  // Force stereo
     // rx.setRBDS(true);  //  set RDS and RBDS. See setRDS.
     rx.setRDS(true);
-    rx.setRdsFifo(true); 
+    rx.setRdsFifo(true);
     currentFrequency = previousFrequency = 10390;
   }
 
-  rx.setFrequency(currentFrequency); // It is the frequency you want to select in MHz multiplied by 100.
-  rx.setSeekThreshold(50); // Sets RSSI Seek Threshold (0 to 127)
+  rx.setFrequency(currentFrequency);  // It is the frequency you want to select in MHz multiplied by 100.
+  rx.setSeekThreshold(50);            // Sets RSSI Seek Threshold (0 to 127)
   showStatus();
 }
 
 
-void saveAllReceiverInformation()
-{
-  EEPROM.update(eeprom_address, app_id);    
+void saveAllReceiverInformation() {
+  EEPROM.update(eeprom_address, app_id);
   EEPROM.update(eeprom_address + 1, rx.getVolume());           // stores the current Volume
-  EEPROM.update(eeprom_address + 2, currentFrequency >> 8);   // stores the current Frequency HIGH byte for the band
+  EEPROM.update(eeprom_address + 2, currentFrequency >> 8);    // stores the current Frequency HIGH byte for the band
   EEPROM.update(eeprom_address + 3, currentFrequency & 0xFF);  // stores the current Frequency LOW byte for the band
 }
 
-void readAllReceiverInformation()
-{
+void readAllReceiverInformation() {
   rx.setVolume(EEPROM.read(eeprom_address + 1));
   currentFrequency = EEPROM.read(eeprom_address + 2) << 8;
-  currentFrequency |= EEPROM.read(eeprom_address +3);
+  currentFrequency |= EEPROM.read(eeprom_address + 3);
   previousFrequency = currentFrequency;
 }
 
@@ -205,8 +200,7 @@ void readAllReceiverInformation()
 /*
    To store any change into the EEPROM, it is needed at least STORE_TIME  milliseconds of inactivity.
 */
-void resetEepromDelay()
-{
+void resetEepromDelay() {
   storeTime = millis();
   previousFrequency = 0;
 }
@@ -216,15 +210,13 @@ void resetEepromDelay()
     Reads encoder via interrupt
     Use Rotary.h and  Rotary.cpp implementation to process encoder via interrupt
 */
-void rotaryEncoder()
-{ // rotary encoder events
+void rotaryEncoder() {  // rotary encoder events
   uint8_t encoderStatus = encoder.process();
   if (encoderStatus)
     encoderCount = (encoderStatus == DIR_CW) ? 1 : -1;
 }
 
-void showSplash()
-{
+void showSplash() {
   display.clearDisplay();
   display.display();
   display.setTextColor(BLACK);
@@ -239,41 +231,36 @@ void showSplash()
   display.display();
   delay(2000);
   display.clearDisplay();
-  display.display();  
+  display.display();
 }
 
 /*
    Shows the static content on  display
 */
-void showTemplate()
-{
+void showTemplate() {
 
   maxX1 = display.width() - 2;
   maxY1 = display.height() - 2;
 
   // TO DO: The frame of the screen
-
 }
 
 
 /*
    Shows frequency information on Display
 */
-void showFrequency()
-{
+void showFrequency() {
   char freq[10];
 
   currentFrequency = rx.getFrequency();
   display.setTextSize(2);
-  rx.convertToChar(currentFrequency,freq,5,3,',', true);
+  rx.convertToChar(currentFrequency, freq, 5, 3, ',', true);
   display.setCursor(3, 10);
   display.print(freq);
   display.display();
-
 }
 
-void showFrequencySeek()
-{
+void showFrequencySeek() {
   display.clearDisplay();
   showFrequency();
   display.display();
@@ -282,35 +269,38 @@ void showFrequencySeek()
 /*
     Show some basic information on display
 */
-void showStatus()
-{
+void showStatus() {
+
   display.clearDisplay();
   display.setTextColor(BLACK);
   showFrequency();
   showStereoMono();
   showRSSI();
   showRds();
+  if (bRds) {
+    showRDSMsg();
+    showRDSStation();
+    showRDSTime();
+  }
   display.display();
 }
 
 /* *******************************
    Shows RSSI status
 */
-void showRSSI()
-{
+void showRSSI() {
   char rssi[12];
   display.setTextSize(1);
-  rx.convertToChar(rx.getRssi(),rssi,3,0,'.');
-  strcat(rssi,"dB");
+  rx.convertToChar(rx.getRssi(), rssi, 3, 0, '.');
+  strcat(rssi, "dB");
   display.setCursor(53, 0);
   display.print(rssi);
-
 }
 
 void showStereoMono() {
   display.setTextSize(1);
   display.setCursor(0, 2);
-  if (rx.isStereo() ) { 
+  if (rx.isStereo()) {
     display.print("ST");
   } else {
     display.print("MO");
@@ -329,61 +319,63 @@ long clear_fifo = millis();
 
 long pollingRdsMsg = millis();
 long pollingRdsTime = millis();
-long pollingRdsStation = millis(); 
+long pollingRdsStation = millis();
 
-void showRDSMsg()
-{
-  rdsMsg[22] = '\0';   // Truncate the message to fit on // display.  You can try scrolling
+void showRDSMsg() {
 
-  // TO DO: show RDS message   
+  if (rdsMsg == NULL) return;
+
+  rdsMsg[25] = '.';
+  rdsMsg[26] = '.';
+  rdsMsg[27] = '.';
+  rdsMsg[28] = '\0';
   display.setTextSize(1);
-  display.setCursor(0, 30);  
+  display.setCursor(0, 27);
   display.print(rdsMsg);
   display.display();
-  delay(500);
+  delay(30);
 }
 
 /**
    TODO: process RDS Dynamic PS or Scrolling PS
 */
-void showRDSStation()
-{
+void showRDSStation() {
 
-  // TO DO 
+  if ( stationName ) return;
   display.setTextSize(1);
-  display.setCursor(0, 40);  
+  display.setCursor(0, 40);
   display.print(stationName);
   display.display();
-  delay(500);
-  
+  delay(30);
 }
 
-void showRDSTime()
-{
-  // TO DO
-  display.setCursor(0, 40);  
-  display.print(rdsTime);  
+void showRDSTime() {
+  if ( rdsTime ) return;
+  display.setCursor(0, 50);
+  display.print(rdsTime);
   display.display();
-  delay(500);
+  delay(30);
 }
 
 
 void clearRds() {
   bShow = false;
+  rdsMsg = NULL;
+  stationName = NULL;
+  rdsTime = NULL;
 }
 
-void checkRDS()
-{
+void checkRDS() {
   // check if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
-  if ( rx.hasRdsInfo() ) {
+  if (rx.hasRdsInfo()) {
     rdsMsg = rx.getRdsText2A();
     stationName = rx.getRdsText0A();
     rdsTime = rx.getRdsTime();
+    
     if (rdsMsg != NULL)
-      showRDSMsg();
+     showRDSMsg();
 
-    if ((millis() - stationNameElapsed) > 1000)
-    {
+    if ((millis() - stationNameElapsed) > 1000) {
       if (stationName != NULL)
         showRDSStation();
       stationNameElapsed = millis();
@@ -393,10 +385,9 @@ void checkRDS()
       showRDSTime();
   }
 
-  if ( (millis() - clear_fifo) > 10000 ) {
+  if ((millis() - clear_fifo) > 10000) {
     rx.clearRdsFifo();
     clear_fifo = millis();
-    
   }
   showStatus();
 }
@@ -404,15 +395,12 @@ void checkRDS()
 void showRds() {
 
   display.setCursor(25, 0);
-  if ( bRds ) { 
+  if (bRds) {
     display.print("RDS");
   } else {
     display.print("   ");
-  }  
+  }
   display.display();
-  // TO DO
-  // checkRDS();
-  
 }
 
 /*********************************************************
@@ -422,7 +410,7 @@ void showRds() {
 
 void doStereo() {
   rx.setMono((bSt = !bSt));
-  bShow =  true;
+  bShow = true;
   showStereoMono();
   delay(100);
 }
@@ -430,6 +418,7 @@ void doStereo() {
 void doRds() {
   rx.setRDS((bRds = !bRds));
   showRds();
+  delay(200);
 }
 
 /**
@@ -439,21 +428,18 @@ void doRds() {
 void doSeek() {
   rx.seek(RDA_SEEK_WRAP, seekDirection, showFrequencySeek);  // showFrequency will be called by the seek function during the process.
   delay(200);
-  bShow =  true;
+  bShow = true;
   showStatus();
 }
 
-void loop()
-{
+void loop() {
 
   // Check if the encoder has moved.
-  if (encoderCount != 0)
-  {
+  if (encoderCount != 0) {
     if (encoderCount == 1) {
       rx.setFrequencyUp();
       seekDirection = RDA_SEEK_UP;
-    }
-    else {
+    } else {
       rx.setFrequencyDown();
       seekDirection = RDA_SEEK_DOWN;
     }
@@ -466,41 +452,38 @@ void loop()
   if (digitalRead(VOLUME_UP) == LOW) {
     rx.setVolumeUp();
     resetEepromDelay();
-  }
-  else if (digitalRead(VOLUME_DOWN) == LOW) {
+  } else if (digitalRead(VOLUME_DOWN) == LOW) {
     rx.setVolumeDown();
     resetEepromDelay();
-  }
-  else if (digitalRead(SWITCH_STEREO) == LOW)
+  } else if (digitalRead(SWITCH_STEREO) == LOW)
     doStereo();
   else if (digitalRead(SWITCH_RDS) == LOW)
     doRds();
   else if (digitalRead(SEEK_FUNCTION) == LOW)
     doSeek();
 
-  if ( (millis() - pollin_elapsed) > POLLING_TIME ) {
+  if ((millis() - pollin_elapsed) > POLLING_TIME) {
     showStatus();
-    if ( bShow ) clearRds();
+    if (bShow) clearRds();
     pollin_elapsed = millis();
   }
 
-  // if ( (millis() - polling_rds) > POLLING_RDS) {
-    if ( bRds ) {
+  // if ((millis() - polling_rds) > POLLING_RDS) {
+    if (bRds) {
       checkRDS();
     }
-  //   polling_rds = millis();
- // }
+  //  polling_rds = millis();
+  // }
 
   // Show the current frequency only if it has changed
-  if ((currentFrequency = rx.getFrequency()) != previousFrequency)
-  {
-    if ((millis() - storeTime) > STORE_TIME)
-    {
+  if ((currentFrequency = rx.getFrequency()) != previousFrequency) {
+    clearRds();
+    if ((millis() - storeTime) > STORE_TIME) {
       saveAllReceiverInformation();
       storeTime = millis();
       previousFrequency = currentFrequency;
     }
   }
 
-  delay(50);
+  delay(5);
 }
