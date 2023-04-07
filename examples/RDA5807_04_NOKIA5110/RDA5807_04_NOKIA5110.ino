@@ -20,7 +20,6 @@
   | Device name               | Device Pin / Description  |  Arduino Pin  |
   | --------------------------| --------------------      | ------------  |
   | NOKIA 5110                |                           |               |
-  | --------------------------| ------------------------- | ------------  |
   |                           | (1) RST (RESET)           |     8         |
   |                           | (2) CE or CS              |     9         |
   |                           | (3) DC or DO              |    10         |
@@ -31,7 +30,6 @@
   |                           | (8) GND                   |    GND        |
   | --------------------------| ------------------------- | --------------|
   | RDA5807                   |                           |               | 
-  |                           | ------------------------- | --------------|
   |                           | SDIO (pin 8)              |     A4        |
   |                           | SCLK (pin 7)              |     A5        |
   | --------------------------| --------------------------| --------------|
@@ -43,7 +41,6 @@
   |                           | SEEK (encoder button)     |     A0/14     |
   | --------------------------| --------------------------|---------------| 
   | Encoder                   |                           |               |
-  |                          | --------------------------|---------------| 
   |                           | A                         |       2       |
   |                           | B                         |       3       |
 
@@ -92,7 +89,7 @@
 #define POLLING_RDS 20
 
 #define STORE_TIME 10000  // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
-
+#define PUSH_MIN_DELAY 300
 
 const uint8_t app_id = 43;  // Useful to check the EEPROM content before processing useful data
 const int eeprom_address = 0;
@@ -186,6 +183,9 @@ void saveAllReceiverInformation() {
   EEPROM.update(eeprom_address + 1, rx.getVolume());           // stores the current Volume
   EEPROM.update(eeprom_address + 2, currentFrequency >> 8);    // stores the current Frequency HIGH byte for the band
   EEPROM.update(eeprom_address + 3, currentFrequency & 0xFF);  // stores the current Frequency LOW byte for the band
+  EEPROM.update(eeprom_address + 4, (uint8_t) bRds);
+  EEPROM.update(eeprom_address + 5, (uint8_t) bSt);
+
 }
 
 void readAllReceiverInformation() {
@@ -193,6 +193,14 @@ void readAllReceiverInformation() {
   currentFrequency = EEPROM.read(eeprom_address + 2) << 8;
   currentFrequency |= EEPROM.read(eeprom_address + 3);
   previousFrequency = currentFrequency;
+
+  bRds = (bool) EEPROM.read(eeprom_address + 4);
+  rx.setRDS(bRds);
+  rx.setRdsFifo(bRds);
+
+  bSt = (bool) EEPROM.read(eeprom_address + 5);
+  rx.setMono(bSt);
+
 }
 
 
@@ -200,6 +208,7 @@ void readAllReceiverInformation() {
    To store any change into the EEPROM, it is needed at least STORE_TIME  milliseconds of inactivity.
 */
 void resetEepromDelay() {
+  delay(PUSH_MIN_DELAY);
   storeTime = millis();
   previousFrequency = 0;
 }
@@ -298,8 +307,8 @@ void showRSSI() {
 
 void showStereoMono() {
   display.setTextSize(1);
-  display.setCursor(0, 2);
-  if (rx.isStereo()) {
+  display.setCursor(0, 0);
+  if (bSt) {
     display.print("ST");
   } else {
     display.print("MO");
@@ -314,11 +323,7 @@ char *stationName;
 char *rdsTime;
 long stationNameElapsed = millis();
 long polling_rds = millis();
-long clear_fifo = millis();
 
-long pollingRdsMsg = millis();
-long pollingRdsTime = millis();
-long pollingRdsStation = millis();
 
 void showRDSMsg() {
 
@@ -368,24 +373,10 @@ void clearRds() {
 
 void checkRDS() {
   // check if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
-  if (rx.hasRdsInfo()) {
+  if ( rx.getRdsReady() &&  rx.hasRdsInfo()) {
     rdsMsg = rx.getRdsText2A();
     stationName = rx.getRdsText0A();
     rdsTime = rx.getRdsTime();
-
-    /* 
-    if (rdsMsg != NULL)
-      showRDSMsg();
-
-    // if ((millis() - stationNameElapsed) > 1000) {
-    if (stationName != NULL)
-      showRDSStation();
-    //   stationNameElapsed = millis();
-    // }
-
-    if (rdsTime != NULL)
-      showRDSTime();
-    */
   }
 }
 
@@ -410,13 +401,13 @@ void doStereo() {
   rx.setMono((bSt = !bSt));
   bShow = true;
   showStereoMono();
-  delay(100);
+  resetEepromDelay();
 }
 
 void doRds() {
   rx.setRDS((bRds = !bRds));
   showRds();
-  delay(200);
+  resetEepromDelay();
 }
 
 /**
@@ -425,7 +416,7 @@ void doRds() {
 */
 void doSeek() {
   rx.seek(RDA_SEEK_WRAP, seekDirection, showFrequencySeek);  // showFrequency will be called by the seek function during the process.
-  delay(200);
+  delay(PUSH_MIN_DELAY);
   bShow = true;
   showStatus();
 }
