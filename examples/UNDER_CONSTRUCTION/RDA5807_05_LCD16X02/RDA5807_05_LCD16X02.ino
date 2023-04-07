@@ -87,10 +87,10 @@
 #define SEEK_FUNCTION 14
 
 #define POLLING_TIME  2000
-#define POLLING_RDS     80
+#define POLLING_RDS     20
 
 #define STORE_TIME 10000 // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
-
+#define PUSH_MIN_DELAY 300
 
 const uint8_t app_id = 43; // Useful to check the EEPROM content before processing useful data
 const int eeprom_address = 0;
@@ -181,6 +181,9 @@ void saveAllReceiverInformation()
   EEPROM.update(eeprom_address + 1, rx.getVolume());          // stores the current Volume
   EEPROM.update(eeprom_address + 2, currentFrequency >> 8);   // stores the current Frequency HIGH byte for the band
   EEPROM.update(eeprom_address + 3, currentFrequency & 0xFF); // stores the current Frequency LOW byte for the band
+  EEPROM.update(eeprom_address + 4, (uint8_t) bRds);
+  EEPROM.update(eeprom_address + 5, (uint8_t) bSt);
+
 }
 
 void readAllReceiverInformation()
@@ -189,6 +192,14 @@ void readAllReceiverInformation()
   currentFrequency = EEPROM.read(eeprom_address + 2) << 8;
   currentFrequency |= EEPROM.read(eeprom_address +3);
   previousFrequency = currentFrequency;
+
+  bRds = (bool) EEPROM.read(eeprom_address + 4);
+  rx.setRDS(bRds);
+  rx.setRdsFifo(bRds);
+
+  bSt = (bool) EEPROM.read(eeprom_address + 5);
+  rx.setMono(bSt);
+
 }
 
 
@@ -197,6 +208,7 @@ void readAllReceiverInformation()
 */
 void resetEepromDelay()
 {
+  delay(PUSH_MIN_DELAY);
   storeTime = millis();
   previousFrequency = 0;
 }
@@ -261,6 +273,13 @@ void showStatus()
   showFrequency();
   showStereoMono();
   showRSSI();
+
+  if (bRds) {
+    showRDSMsg();
+    showRDSStation();
+    showRDSTime();
+  }
+
   lcd.display();
 }
 
@@ -291,9 +310,7 @@ void showStereoMono() {
 char *rdsMsg;
 char *stationName;
 char *rdsTime;
-long stationNameElapsed = millis();
-long polling_rds = millis();
-long clear_fifo = millis();
+
 
 void showRDSMsg()
 {
@@ -326,51 +343,33 @@ void showRDSTime()
 
 void clearRds() {
   bShow = false;
+  rdsMsg = NULL;
+  stationName = NULL;
+  rdsTime = NULL;
 }
 
 void checkRDS()
 {
   // check if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
-  if ( rx.hasRdsInfo() ) {
+  // check if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
+  if ( rx.getRdsReady() &&  rx.hasRdsInfo()) {
     rdsMsg = rx.getRdsText2A();
     stationName = rx.getRdsText0A();
     rdsTime = rx.getRdsTime();
-    if (rdsMsg != NULL)
-      showRDSMsg();
-
-    if ((millis() - stationNameElapsed) > 1000)
-    {
-      if (stationName != NULL)
-        showRDSStation();
-      stationNameElapsed = millis();
-    }
-
-    if (rdsTime != NULL)
-      showRDSTime();
   }
-
-  if ( (millis() - clear_fifo) > 10000 ) {
-    rx.clearRdsFifo();
-    clear_fifo = millis();
-    
-  }
-  showStatus();
 }
 
 void showRds() {
 
   /*
   lcd.setCursor(25, 0);
-  if ( bRds ) { 
-    lcd.print("RDS");
+  if (bRds) {
+    display.print("RDS");
   } else {
-    lcd.print("   ");
-  }  
+    display.print("   ");
+  }
   lcd.display();
   */
-  // TO DO
-  // checkRDS();
-  
 }
 
 /*********************************************************
@@ -380,14 +379,15 @@ void showRds() {
 
 void doStereo() {
   rx.setMono((bSt = !bSt));
-  bShow =  true;
+  bShow = true;
   showStereoMono();
-  delay(100);
+  resetEepromDelay();
 }
 
 void doRds() {
   rx.setRDS((bRds = !bRds));
   showRds();
+  resetEepromDelay();
 }
 
 /**
@@ -460,5 +460,5 @@ void loop()
     }
   }
 
-  delay(50);
+  delay(5);
 }
