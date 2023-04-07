@@ -1,0 +1,36 @@
+USER MANUAL
+
+
+Commands:
+
+1) SEEK STATION
+
+The seek direction is controlled by the encoder (clockwise or counter-clockwise. Press encoder push button for seeking  
+
+
+2) RDS
+
+Press the RDS button to enable or disable the RDS function.
+Some stations do not have RDS service. Please, be sure if the station you are tuning into has RDS service.
+
+3) Stereo
+
+Press the Stereo button to enable or disable the stereo feature.
+
+
+4) Volume
+
+You have two buttons: volume up and volume down for volume control.
+
+
+1) RESET EEPROM
+
+Turn your receiver on with the encoder push button pressed.
+
+This receiver saves its latest information into the internal EEPROM. You can reset the receiver by pressing the encoder push button and turning on the receiver.
+
+
+
+
+
+
