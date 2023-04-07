@@ -1,7 +1,6 @@
 /*
-  UNDER CONSTRUCTION ...
-  This sketch uses an Arduino Nano with NOKIA 5110display
-  It is also a FM receiver capable to tune your local FM stations.
+  This sketch uses an Arduino Nano with NOKIA 5110 display. 
+  It is a FM receiver with RDS feature capable to tune your local FM stations.
   This sketch saves the latest status of the receiver into the Atmega328 eeprom.
   
   ABOUT THE EEPROM:
@@ -90,7 +89,7 @@
 #define SEEK_FUNCTION 14  // Pin A0 / Digital 14
 
 #define POLLING_TIME 2000
-#define POLLING_RDS 10
+#define POLLING_RDS 20
 
 #define STORE_TIME 10000  // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
 
@@ -255,7 +254,7 @@ void showFrequency() {
   currentFrequency = rx.getFrequency();
   display.setTextSize(2);
   rx.convertToChar(currentFrequency, freq, 5, 3, ',', true);
-  display.setCursor(3, 10);
+  display.setCursor(3, 8);
   display.print(freq);
   display.display();
 }
@@ -330,7 +329,7 @@ void showRDSMsg() {
   rdsMsg[27] = '.';
   rdsMsg[28] = '\0';
   display.setTextSize(1);
-  display.setCursor(0, 27);
+  display.setCursor(0, 24);
   display.print(rdsMsg);
   display.display();
   delay(30);
@@ -341,7 +340,7 @@ void showRDSMsg() {
 */
 void showRDSStation() {
 
-  if ( stationName ) return;
+  if (stationName == NULL) return;
   display.setTextSize(1);
   display.setCursor(0, 40);
   display.print(stationName);
@@ -350,11 +349,13 @@ void showRDSStation() {
 }
 
 void showRDSTime() {
-  if ( rdsTime ) return;
-  display.setCursor(0, 50);
+  /*
+  if (rdsTime == NULL) return;
+  display.setCursor(0, 46);
   display.print(rdsTime);
   display.display();
   delay(30);
+  */
 }
 
 
@@ -371,26 +372,23 @@ void checkRDS() {
     rdsMsg = rx.getRdsText2A();
     stationName = rx.getRdsText0A();
     rdsTime = rx.getRdsTime();
-    
-    if (rdsMsg != NULL)
-     showRDSMsg();
 
-    if ((millis() - stationNameElapsed) > 1000) {
-      if (stationName != NULL)
-        showRDSStation();
-      stationNameElapsed = millis();
-    }
+    /* 
+    if (rdsMsg != NULL)
+      showRDSMsg();
+
+    // if ((millis() - stationNameElapsed) > 1000) {
+    if (stationName != NULL)
+      showRDSStation();
+    //   stationNameElapsed = millis();
+    // }
 
     if (rdsTime != NULL)
       showRDSTime();
+    */
   }
-
-  if ((millis() - clear_fifo) > 10000) {
-    rx.clearRdsFifo();
-    clear_fifo = millis();
-  }
-  showStatus();
 }
+
 
 void showRds() {
 
@@ -468,12 +466,12 @@ void loop() {
     pollin_elapsed = millis();
   }
 
-  // if ((millis() - polling_rds) > POLLING_RDS) {
+  if ((millis() - polling_rds) > POLLING_RDS) {
     if (bRds) {
       checkRDS();
     }
-  //  polling_rds = millis();
-  // }
+    polling_rds = millis();
+  }
 
   // Show the current frequency only if it has changed
   if ((currentFrequency = rx.getFrequency()) != previousFrequency) {
