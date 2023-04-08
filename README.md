@@ -263,7 +263,7 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 
 
 
-![Basic Nokia 5110 Schematic](./extras/images/circuit_nokia_5110.png)
+![Basic Nokia 5110 Schematic](./extras/images/RDA5807_NOKIA5110_01.png)
 
 
 
