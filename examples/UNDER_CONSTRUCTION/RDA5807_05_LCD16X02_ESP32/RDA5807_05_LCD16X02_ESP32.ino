@@ -46,6 +46,7 @@
   By PU2CLR, Ricardo,  Feb  2023.
 */
 
+
 #include <RDA5807.h>
 #include <EEPROM.h>
 #include <LiquidCrystal.h>
@@ -53,7 +54,7 @@
 
 #include "Rotary.h"
 
-/// LCD 16x02 or LCD20x4 PINs
+// LCD 16x02 or LCD20x4 PINs
 #define LCD_D7 15
 #define LCD_D6 16
 #define LCD_D5 17
@@ -62,22 +63,25 @@
 #define LCD_E  23
 
 
+#define COLOR_BLACK 0x0000
+#define COLOR_WHITE 0xFFFF
+
 // Enconder PINs
-#define ENCODER_PIN_A 13
-#define ENCODER_PIN_B 14
+#define ENCODER_PIN_A 2
+#define ENCODER_PIN_B 3
 
-#define ESP32_SDA 21
-#define ESP32_CLK 22
-
-#define EEPROM_SIZE   512
-
-#define SEEK_FUNCTION 27
+// Buttons controllers
+#define VOLUME_UP 32      // Volume Up
+#define VOLUME_DOWN 33    // Volume Down
+#define SWITCH_RDS 26     // SDR ON or OFF
+#define SEEK_FUNCTION 27  // Seek function 
 
 #define POLLING_TIME  2000
-#define POLLING_RDS     80
+#define RDS_MSG_TYPE_TIME 20000
+#define POLLING_RDS     20
 
 #define STORE_TIME 10000 // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
-
+#define PUSH_MIN_DELAY 300
 
 const uint8_t app_id = 43; // Useful to check the EEPROM content before processing useful data
 const int eeprom_address = 0;
@@ -85,7 +89,7 @@ long storeTime = millis();
 
 
 bool bSt = true;
-bool bRds = false;
+bool bRds = true;
 bool bShow = false;
 uint8_t seekDirection = 1; // 0 = Down; 1 = Up. This value is set by the last encoder direction.
 
@@ -114,6 +118,10 @@ void setup()
   pinMode(ENCODER_PIN_B, INPUT_PULLUP);
 
   // Push button pin
+  pinMode(VOLUME_UP, INPUT_PULLUP);
+  pinMode(VOLUME_DOWN, INPUT_PULLUP);
+  pinMode(SWITCH_STEREO, INPUT_PULLUP);
+  pinMode(SWITCH_RDS, INPUT_PULLUP);
   pinMode(SEEK_FUNCTION, INPUT_PULLUP);
 
   // Start LCD display device
@@ -159,12 +167,14 @@ void setup()
 
 void saveAllReceiverInformation()
 {
-    EEPROM.begin(EEPROM_SIZE);
   // The update function/method writes data only if the current data is not equal to the stored data. 
-  EEPROM.write(eeprom_address, app_id);    
-  EEPROM.write(eeprom_address + 1, rx.getVolume());          // stores the current Volume
-  EEPROM.write(eeprom_address + 2, currentFrequency >> 8);   // stores the current Frequency HIGH byte for the band
-  EEPROM.write(eeprom_address + 3, currentFrequency & 0xFF); // stores the current Frequency LOW byte for the band
+  EEPROM.update(eeprom_address, app_id);    
+  EEPROM.update(eeprom_address + 1, rx.getVolume());          // stores the current Volume
+  EEPROM.update(eeprom_address + 2, currentFrequency >> 8);   // stores the current Frequency HIGH byte for the band
+  EEPROM.update(eeprom_address + 3, currentFrequency & 0xFF); // stores the current Frequency LOW byte for the band
+  EEPROM.update(eeprom_address + 4, (uint8_t) bRds);
+  EEPROM.update(eeprom_address + 5, (uint8_t) bSt);
+
 }
 
 void readAllReceiverInformation()
@@ -173,6 +183,14 @@ void readAllReceiverInformation()
   currentFrequency = EEPROM.read(eeprom_address + 2) << 8;
   currentFrequency |= EEPROM.read(eeprom_address +3);
   previousFrequency = currentFrequency;
+
+  bRds = (bool) EEPROM.read(eeprom_address + 4);
+  rx.setRDS(bRds);
+  rx.setRdsFifo(bRds);
+
+  bSt = (bool) EEPROM.read(eeprom_address + 5);
+  rx.setMono(bSt);
+
 }
 
 
@@ -181,6 +199,7 @@ void readAllReceiverInformation()
 */
 void resetEepromDelay()
 {
+  delay(PUSH_MIN_DELAY);
   storeTime = millis();
   previousFrequency = 0;
 }
@@ -245,6 +264,11 @@ void showStatus()
   showFrequency();
   showStereoMono();
   showRSSI();
+
+  if (bRds) {
+   showRds();    
+  }
+
   lcd.display();
 }
 
@@ -261,8 +285,8 @@ void showRSSI()
 }
 
 void showStereoMono() {
-  lcd.setCursor(14, 0);
-  if (rx.isStereo() ) { 
+  lcd.setCursor(0, 2);
+  if ( bSt ) { 
     lcd.print("ST");
   } else {
     lcd.print("MO");
@@ -275,86 +299,93 @@ void showStereoMono() {
 char *rdsMsg;
 char *stationName;
 char *rdsTime;
-long stationNameElapsed = millis();
+int  currentMsgType = 0; 
 long polling_rds = millis();
-long clear_fifo = millis();
+long timeTextType = millis();  // controls the type of each text will be shown (Message, Station Name or time)
 
+int rdsMsgIndex = 0;  // controls the part of the rdsMsg text will be shown on LCD 16x2 Display
+
+
+/**
+  showRDSMsg - Shows the Program Information
+*/
 void showRDSMsg()
 {
-  rdsMsg[22] = '\0';   // Truncate the message to fit on // display.  You can try scrolling
+  char txtAux[17];
 
-  // TO DO: show RDS message   
-  // lcd.setCursor(0,1);  
-  // lcd.print(rdsMsg);
-  // delay(100);
+  if (rdsMsg == NULL) return;
+
+  rdsMsg[32] = '\0';   // Truncate the message to fit on display line
+  strncpy(txtAux,&rdsMsg[rdsMsgIndex],16);
+  txtAux[16] = '\0';
+  rdsMsgIndex++;
+  if (rdsMsgIndex > 31) rdsMsgIndex = 0;
+  lcd.setCursor(0,0);
+  lcd.print(txtAux);
 }
 
 /**
-   TODO: process RDS Dynamic PS or Scrolling PS
+   showRDSStation - Shows the 
 */
 void showRDSStation()
 {
+  char txtAux[17];
 
-  // TO DO 
+  if (stationName == NULL) return;
 
-  
+  stationName[16] = '\0';
+  strncpy(txtAux,stationName,16);
+  txtAux[16] = '\0';
+  lcd.setCursor(0,0);
+  lcd.print(txtAux);
 }
 
 void showRDSTime()
 {
-  // TO DO
+  char txtAux[17];
 
-  // delay(100);
+  if (rdsTime == NULL) return;
+
+  rdsTime[16] = '\0';
+  strncpy(txtAux,rdsTime,16);
+  txtAux[16] = '\0';
+  lcd.setCursor(0,0);
+  lcd.print(txtAux);
 }
 
 
 void clearRds() {
   bShow = false;
+  rdsMsg = NULL;
+  stationName = NULL;
+  rdsTime = NULL;
+  currentMsgType = currentMsgType = 0;
 }
 
 void checkRDS()
 {
   // check if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
-  if ( rx.hasRdsInfo() ) {
+  if ( rx.getRdsReady() &&  rx.hasRdsInfo()) {
     rdsMsg = rx.getRdsText2A();
     stationName = rx.getRdsText0A();
     rdsTime = rx.getRdsTime();
-    if (rdsMsg != NULL)
-      showRDSMsg();
-
-    if ((millis() - stationNameElapsed) > 1000)
-    {
-      if (stationName != NULL)
-        showRDSStation();
-      stationNameElapsed = millis();
-    }
-
-    if (rdsTime != NULL)
-      showRDSTime();
   }
-
-  if ( (millis() - clear_fifo) > 10000 ) {
-    rx.clearRdsFifo();
-    clear_fifo = millis();
-    
-  }
-  showStatus();
 }
 
 void showRds() {
 
-  /*
-  lcd.setCursor(25, 0);
-  if ( bRds ) { 
-    lcd.print("RDS");
-  } else {
-    lcd.print("   ");
-  }  
-  lcd.display();
-  */
-  // TO DO
-  // checkRDS();
-  
+    lcd.setCursor(2, 1);
+    if (bRds)
+       lcd.print(".");
+    else
+       lcd.print(" ");
+
+    if ( currentMsgType == 0)
+      showRDSMsg();
+    else if ( currentMsgType == 1)   
+      showRDSStation();
+    else if ( currentMsgType == 2)  
+      showRDSTime();
 }
 
 /*********************************************************
@@ -364,14 +395,16 @@ void showRds() {
 
 void doStereo() {
   rx.setMono((bSt = !bSt));
-  bShow =  true;
+  bShow = true;
   showStereoMono();
-  delay(100);
+  resetEepromDelay();
 }
 
 void doRds() {
   rx.setRDS((bRds = !bRds));
+  currentMsgType = currentMsgType = 0;
   showRds();
+  resetEepromDelay();
 }
 
 /**
@@ -405,16 +438,45 @@ void loop()
     storeTime = millis();
   }
 
+  if (digitalRead(VOLUME_UP) == LOW) {
+    rx.setVolumeUp();
+    resetEepromDelay();
+  }
+  else if (digitalRead(VOLUME_DOWN) == LOW) {
+    rx.setVolumeDown();
+    resetEepromDelay();
+  }
+  else if (digitalRead(SWITCH_STEREO) == LOW)
+    doStereo();
+  else if (digitalRead(SWITCH_RDS) == LOW)
+    doRds();
+  else if (digitalRead(SEEK_FUNCTION) == LOW)
+    doSeek();
+
+  if ( (millis() - pollin_elapsed) > POLLING_TIME ) {
+    showStatus();
+    if ( bShow ) clearRds();
+    pollin_elapsed = millis();
+  }
+
   if ( (millis() - polling_rds) > POLLING_RDS) {
     if ( bRds ) {
-      showRds();
+      checkRDS();
     }
     polling_rds = millis();
   }
 
+  if ( (millis() - timeTextType) > RDS_MSG_TYPE_TIME ) {
+    // Toggles the type of message to be shown - See showRds function
+    currentMsgType++; 
+    if ( currentMsgType > 2) currentMsgType = 0;
+    timeTextType = millis();
+  } 
+
   // Show the current frequency only if it has changed
   if ((currentFrequency = rx.getFrequency()) != previousFrequency)
   {
+    clearRds();
     if ((millis() - storeTime) > STORE_TIME)
     {
       saveAllReceiverInformation();
@@ -423,5 +485,5 @@ void loop()
     }
   }
 
-  delay(50);
+  delay(5);
 }

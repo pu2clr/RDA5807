@@ -172,6 +172,7 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 
 | RDA5807 / Description |  Arduino Pin  |
 | --------------------- | ------------  |
+| VCC                   |   3.3V        |
 | SDA / SDIO            |     A4        |
 | SCL / SCLK            |     A5        |
 
