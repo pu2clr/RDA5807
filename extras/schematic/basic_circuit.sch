@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -1004,6 +1004,7 @@ Audio_Jack_2.5MM
 <sheet>
 <plain>
 <text x="96.52" y="73.66" size="1.778" layer="91">RDA5807 breakout</text>
+<text x="83.82" y="58.42" size="1.778" layer="91">3.3V</text>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="101.6" y="71.12" smashed="yes"/>
@@ -1069,11 +1070,6 @@ Audio_Jack_2.5MM
 <pinref part="SUPPLY1" gate="G$1" pin="VCC"/>
 <wire x1="97.6" y1="57.12" x2="97.6" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="97.6" y1="55.88" x2="78.74" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="M1" gate="G$1" pin="VCC"/>
-<wire x1="55.88" y1="63.5" x2="71.12" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="63.5" x2="71.12" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="71.12" y1="55.88" x2="78.74" y2="55.88" width="0.1524" layer="91"/>
-<junction x="78.74" y="55.88"/>
 </segment>
 </net>
 <net name="N$3" class="0">
