@@ -1,5 +1,4 @@
 /*
-  UNDER CONSTRUCTION ...
   This sketch uses an Arduino Nano with LCD16X02 DISPLAY
   It is also a FM receiver capable to tune your local FM stations.
   This sketch saves the latest status of the receiver into the Atmega328 eeprom.
@@ -46,8 +45,6 @@
   |                           | --------------------------|---------------| 
   |                           | A                         |       2       |
   |                           | B                         |       3       |
-
-  About 77% of the space occupied by this sketch is due to the library for the TFT // display.
 
 
   Prototype documentation: https://pu2clr.github.io/RDA5807/
