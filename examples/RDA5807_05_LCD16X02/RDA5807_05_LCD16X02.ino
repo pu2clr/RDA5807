@@ -366,7 +366,7 @@ void clearRds() {
   rdsMsg = NULL;
   stationName = NULL;
   rdsTime = NULL;
-  currentMsgType = currentMsgType = 0;
+  rdsMsgIndex = currentMsgType = 0;
 }
 
 void checkRDS()
@@ -409,7 +409,7 @@ void doStereo() {
 
 void doRds() {
   rx.setRDS((bRds = !bRds));
-  currentMsgType = currentMsgType = 0;
+  rdsMsgIndex = currentMsgType = 0;
   showRds();
   resetEepromDelay();
 }

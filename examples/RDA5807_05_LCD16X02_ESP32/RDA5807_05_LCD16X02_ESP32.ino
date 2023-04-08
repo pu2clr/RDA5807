@@ -1,5 +1,5 @@
 /*
-  UNDER CONSTRUCTION ...
+
   This sketch uses an Arduino Nano with LCD16X02 DISPLAY
   It is also a FM receiver capable to tune your local FM stations.
   This sketch saves the latest status of the receiver into the Atmega328 eeprom.
@@ -33,6 +33,12 @@
   | RDA5807                   |                           |               | 
   |                           | SDIO (pin 8)              |     GPIO21    |
   |                           | SCLK (pin 7)              |     GPIO22    |
+  | Buttons                   |                           |               |
+  |                           | Volume Up                 |     32        |
+  |                           | Volume Down               |     33        |
+  |                           | Stereo/Mono               |     25        |
+  |                           | RDS ON/off                |     26        |
+  |                           | SEEK (encoder button)     |     27        |
   | --------------------------| --------------------------| --------------|
   | Encoder                   |                           |               |
   |                           | A                         |  GPIO13       |
@@ -67,13 +73,14 @@
 #define COLOR_WHITE 0xFFFF
 
 // Enconder PINs
-#define ENCODER_PIN_A 2
-#define ENCODER_PIN_B 3
+#define ENCODER_PIN_A 13
+#define ENCODER_PIN_B 14
 
 // Buttons controllers
 #define VOLUME_UP 32      // Volume Up
 #define VOLUME_DOWN 33    // Volume Down
-#define SWITCH_RDS 26     // SDR ON or OFF
+#define SWITCH_RDS 25     // SDR ON/OFF
+#define SWITCH_STEREO 26  // Stereo ON/OFF
 #define SEEK_FUNCTION 27  // Seek function 
 
 #define POLLING_TIME  2000
@@ -82,6 +89,8 @@
 
 #define STORE_TIME 10000 // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
 #define PUSH_MIN_DELAY 300
+
+#define EEPROM_SIZE        512
 
 const uint8_t app_id = 43; // Useful to check the EEPROM content before processing useful data
 const int eeprom_address = 0;
@@ -128,6 +137,8 @@ void setup()
   lcd.begin(16, 2);
   showSplash();
 
+   EEPROM.begin(EEPROM_SIZE);
+
   // If you want to reset the eeprom, keep the VOLUME_UP button pressed during statup
   if (digitalRead(SEEK_FUNCTION) == LOW)
   {
@@ -167,13 +178,17 @@ void setup()
 
 void saveAllReceiverInformation()
 {
+  EEPROM.begin(EEPROM_SIZE);
+  
   // The update function/method writes data only if the current data is not equal to the stored data. 
-  EEPROM.update(eeprom_address, app_id);    
-  EEPROM.update(eeprom_address + 1, rx.getVolume());          // stores the current Volume
-  EEPROM.update(eeprom_address + 2, currentFrequency >> 8);   // stores the current Frequency HIGH byte for the band
-  EEPROM.update(eeprom_address + 3, currentFrequency & 0xFF); // stores the current Frequency LOW byte for the band
-  EEPROM.update(eeprom_address + 4, (uint8_t) bRds);
-  EEPROM.update(eeprom_address + 5, (uint8_t) bSt);
+  EEPROM.write(eeprom_address, app_id);    
+  EEPROM.write(eeprom_address + 1, rx.getVolume());          // stores the current Volume
+  EEPROM.write(eeprom_address + 2, currentFrequency >> 8);   // stores the current Frequency HIGH byte for the band
+  EEPROM.write(eeprom_address + 3, currentFrequency & 0xFF); // stores the current Frequency LOW byte for the band
+  EEPROM.write(eeprom_address + 4, (uint8_t) bRds);
+  EEPROM.write(eeprom_address + 5, (uint8_t) bSt);
+
+  EEPROM.end();
 
 }
 
@@ -359,7 +374,7 @@ void clearRds() {
   rdsMsg = NULL;
   stationName = NULL;
   rdsTime = NULL;
-  currentMsgType = currentMsgType = 0;
+  rdsMsgIndex = currentMsgType = 0;
 }
 
 void checkRDS()
@@ -402,7 +417,7 @@ void doStereo() {
 
 void doRds() {
   rx.setRDS((bRds = !bRds));
-  currentMsgType = currentMsgType = 0;
+  rdsMsgIndex = currentMsgType = 0;
   showRds();
   resetEepromDelay();
 }
