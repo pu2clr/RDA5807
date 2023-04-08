@@ -1,5 +1,7 @@
 /*
 
+  ESP32 Dev Modeule
+
   This sketch uses an Arduino Nano with LCD16X02 DISPLAY
   It is also a FM receiver capable to tune your local FM stations.
   This sketch saves the latest status of the receiver into the Atmega328 eeprom.
@@ -16,7 +18,7 @@
 
   Read more on https://pu2clr.github.io/RDA5807/
 
-  Wire up on Arduino UNO, Nano or Pro mini
+  Wire up ESP32 Dev Module, RDA5807 and LCD16x02 or LCD16x04
 
   | Device name               | Device Pin / Description  |  Arduino Pin  |
   | --------------------------| --------------------      | ------------  |
@@ -31,8 +33,8 @@
   |                           | A (15) & VDD              |  +Vcc         |
   | --------------------------| ------------------------- | --------------|
   | RDA5807                   |                           |               | 
-  |                           | SDIO (pin 8)              |     GPIO21    |
-  |                           | SCLK (pin 7)              |     GPIO22    |
+  |                           | SDIO (pin 8)              |     21        |
+  |                           | SCLK (pin 7)              |     22        |
   | Buttons                   |                           |               |
   |                           | Volume Up                 |     32        |
   |                           | Volume Down               |     33        |
