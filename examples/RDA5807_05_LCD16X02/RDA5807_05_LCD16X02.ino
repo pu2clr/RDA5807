@@ -46,6 +46,7 @@
   |                           | A                         |       2       |
   |                           | B                         |       3       |
 
+  See user_manual.txt
 
   Prototype documentation: https://pu2clr.github.io/RDA5807/
   PU2CLR RDA5807 API documentation: https://pu2clr.github.io/RDA5807/extras/apidoc/html/
