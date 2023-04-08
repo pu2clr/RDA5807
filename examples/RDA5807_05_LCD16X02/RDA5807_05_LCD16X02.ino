@@ -293,7 +293,7 @@ void showRSSI()
 
 void showStereoMono() {
   lcd.setCursor(0, 2);
-  if (rx.isStereo() ) { 
+  if ( bSt ) { 
     lcd.print("ST");
   } else {
     lcd.print("MO");
@@ -366,6 +366,7 @@ void clearRds() {
   rdsMsg = NULL;
   stationName = NULL;
   rdsTime = NULL;
+  currentMsgType = currentMsgType = 0;
 }
 
 void checkRDS()
@@ -482,7 +483,7 @@ void loop()
   // Show the current frequency only if it has changed
   if ((currentFrequency = rx.getFrequency()) != previousFrequency)
   {
-    currentMsgType = currentMsgType = 0;
+    clearRds();
     if ((millis() - storeTime) > STORE_TIME)
     {
       saveAllReceiverInformation();
