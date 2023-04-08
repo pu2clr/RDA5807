@@ -1,6 +1,6 @@
 /*
 
-  ESP32 Dev Modeule
+  ESP32 Dev Modeule version.
 
   This sketch uses an Arduino Nano with LCD16X02 DISPLAY
   It is also a FM receiver capable to tune your local FM stations.
@@ -33,6 +33,7 @@
   |                           | A (15) & VDD              |  +Vcc         |
   | --------------------------| ------------------------- | --------------|
   | RDA5807                   |                           |               | 
+  |                           | VCC                       |   3.3V        |
   |                           | SDIO (pin 8)              |     21        |
   |                           | SCLK (pin 7)              |     22        |
   | Buttons                   |                           |               |
@@ -40,7 +41,6 @@
   |                           | Volume Down               |     33        |
   |                           | Stereo/Mono               |     25        |
   |                           | RDS ON/off                |     26        |
-  |                           | SEEK (encoder button)     |     27        |
   | --------------------------| --------------------------| --------------|
   | Encoder                   |                           |               |
   |                           | A                         |  GPIO13       |
@@ -332,11 +332,11 @@ void showRDSMsg()
 
   if (rdsMsg == NULL) return;
 
-  rdsMsg[32] = '\0';   // Truncate the message to fit on display line
+  rdsMsg[41] = '\0';   // Truncate the message to fit on display line
   strncpy(txtAux,&rdsMsg[rdsMsgIndex],16);
   txtAux[16] = '\0';
-  rdsMsgIndex++;
-  if (rdsMsgIndex > 31) rdsMsgIndex = 0;
+  rdsMsgIndex += 4;
+  if (rdsMsgIndex > 40) rdsMsgIndex = 0;
   lcd.setCursor(0,0);
   lcd.print(txtAux);
 }
