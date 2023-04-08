@@ -81,12 +81,13 @@
 
 // Buttons controllers
 #define VOLUME_UP 8       // Volume Up
-#define VOLUME_DOWN 8     // Volume Down
+#define VOLUME_DOWN 9    // Volume Down
 #define SWITCH_STEREO 10  // Select Mono or Stereo
 #define SWITCH_RDS 11     // SDR ON or OFF
 #define SEEK_FUNCTION 14
 
 #define POLLING_TIME  2000
+#define RDS_MSG_TYPE_TIME 20000
 #define POLLING_RDS     20
 
 #define STORE_TIME 10000 // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
@@ -98,7 +99,7 @@ long storeTime = millis();
 
 
 bool bSt = true;
-bool bRds = false;
+bool bRds = true;
 bool bShow = false;
 uint8_t seekDirection = 1; // 0 = Down; 1 = Up. This value is set by the last encoder direction.
 
@@ -275,9 +276,7 @@ void showStatus()
   showRSSI();
 
   if (bRds) {
-    showRDSMsg();
-    showRDSStation();
-    showRDSTime();
+   showRds();    
   }
 
   lcd.display();
@@ -296,7 +295,7 @@ void showRSSI()
 }
 
 void showStereoMono() {
-  lcd.setCursor(14, 0);
+  lcd.setCursor(0, 2);
   if (rx.isStereo() ) { 
     lcd.print("ST");
   } else {
@@ -310,34 +309,58 @@ void showStereoMono() {
 char *rdsMsg;
 char *stationName;
 char *rdsTime;
+int  currentMsgType = 0; 
+long polling_rds = millis();
+long timeTextType = millis();  // controls the type of each text will be shown (Message, Station Name or time)
+
+int rdsMsgIndex = 0;  // controls the part of the rdsMsg text will be shown on LCD 16x2 Display
 
 
+/**
+  showRDSMsg - Shows the Program Information
+*/
 void showRDSMsg()
 {
-  rdsMsg[22] = '\0';   // Truncate the message to fit on // display.  You can try scrolling
+  char txtAux[17];
 
-  // TO DO: show RDS message   
-  // lcd.setCursor(0,1);  
-  // lcd.print(rdsMsg);
-  // delay(100);
+  if (rdsMsg == NULL) return;
+
+  rdsMsg[32] = '\0';   // Truncate the message to fit on display line
+  strncpy(txtAux,&rdsMsg[rdsMsgIndex],16);
+  txtAux[16] = '\0';
+  rdsMsgIndex++;
+  if (rdsMsgIndex > 31) rdsMsgIndex = 0;
+  lcd.setCursor(0,0);
+  lcd.print(txtAux);
 }
 
 /**
-   TODO: process RDS Dynamic PS or Scrolling PS
+   showRDSStation - Shows the 
 */
 void showRDSStation()
 {
+  char txtAux[17];
 
-  // TO DO 
+  if (stationName == NULL) return;
 
-  
+  stationName[16] = '\0';
+  strncpy(txtAux,stationName,16);
+  txtAux[16] = '\0';
+  lcd.setCursor(0,0);
+  lcd.print(txtAux);
 }
 
 void showRDSTime()
 {
-  // TO DO
+  char txtAux[17];
 
-  // delay(100);
+  if (rdsTime == NULL) return;
+
+  rdsTime[16] = '\0';
+  strncpy(txtAux,rdsTime,16);
+  txtAux[16] = '\0';
+  lcd.setCursor(0,0);
+  lcd.print(txtAux);
 }
 
 
@@ -351,7 +374,6 @@ void clearRds() {
 void checkRDS()
 {
   // check if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
-  // check if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
   if ( rx.getRdsReady() &&  rx.hasRdsInfo()) {
     rdsMsg = rx.getRdsText2A();
     stationName = rx.getRdsText0A();
@@ -361,15 +383,18 @@ void checkRDS()
 
 void showRds() {
 
-  /*
-  lcd.setCursor(25, 0);
-  if (bRds) {
-    display.print("RDS");
-  } else {
-    display.print("   ");
-  }
-  lcd.display();
-  */
+    lcd.setCursor(2, 1);
+    if (bRds)
+       lcd.print(".");
+    else
+       lcd.print(" ");
+
+    if ( currentMsgType == 0)
+      showRDSMsg();
+    else if ( currentMsgType == 1)   
+      showRDSStation();
+    else if ( currentMsgType == 2)  
+      showRDSTime();
 }
 
 /*********************************************************
@@ -386,6 +411,7 @@ void doStereo() {
 
 void doRds() {
   rx.setRDS((bRds = !bRds));
+  currentMsgType = currentMsgType = 0;
   showRds();
   resetEepromDelay();
 }
@@ -444,14 +470,22 @@ void loop()
 
   if ( (millis() - polling_rds) > POLLING_RDS) {
     if ( bRds ) {
-      showRds();
+      checkRDS();
     }
     polling_rds = millis();
   }
 
+  if ( (millis() - timeTextType) > RDS_MSG_TYPE_TIME ) {
+    // Toggles the type of message to be shown - See showRds function
+    currentMsgType++; 
+    if ( currentMsgType > 2) currentMsgType = 0;
+    timeTextType = millis();
+  } 
+
   // Show the current frequency only if it has changed
   if ((currentFrequency = rx.getFrequency()) != previousFrequency)
   {
+    currentMsgType = currentMsgType = 0;
     if ((millis() - storeTime) > STORE_TIME)
     {
       saveAllReceiverInformation();
