@@ -1615,6 +1615,7 @@ Datasheet</description>
 <plain>
 <text x="157.48" y="91.44" size="1.778" layer="91">RDA5807 module</text>
 <text x="-7.62" y="66.04" size="1.778" layer="91">Encoder</text>
+<text x="137.16" y="73.66" size="1.778" layer="91">3.3V</text>
 </plain>
 <instances>
 <instance part="RE1" gate="G$1" x="-5.08" y="50.8" smashed="yes">
@@ -1753,13 +1754,10 @@ Datasheet</description>
 </net>
 <net name="VCC" class="0">
 <segment>
-<pinref part="M1" gate="G$1" pin="VCC"/>
 <pinref part="SUPPLY2" gate="G$1" pin="VCC"/>
-<wire x1="106.68" y1="71.12" x2="127" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="VCC"/>
 <wire x1="153.48" y1="74.9" x2="153.48" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="153.48" y1="71.12" x2="127" y2="71.12" width="0.1524" layer="91"/>
-<junction x="127" y="71.12"/>
 </segment>
 <segment>
 <pinref part="X1" gate="G$1" pin="K"/>

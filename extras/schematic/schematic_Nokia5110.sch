@@ -1547,6 +1547,7 @@ Audio_Jack_2.5MM
 <text x="-121.92" y="167.64" size="1.778" layer="91">RST</text>
 <text x="-27.94" y="149.86" size="1.778" layer="91">RDA5807</text>
 <text x="-147.32" y="195.58" size="1.778" layer="91">NOKIA 5110</text>
+<text x="-7.62" y="167.64" size="1.778" layer="91">3.3V</text>
 </plain>
 <instances>
 <instance part="SEEK" gate="A" x="-17.78" y="200.66" smashed="yes" rot="R180">
@@ -1598,10 +1599,11 @@ Audio_Jack_2.5MM
 <segment>
 <pinref part="SEEK" gate="SW" pin="E"/>
 <wire x1="10.16" y1="218.44" x2="-20.32" y2="218.44" width="0.1524" layer="91"/>
-<wire x1="10.16" y1="139.7" x2="10.16" y2="218.44" width="0.1524" layer="91"/>
-<pinref part="M1" gate="G$1" pin="D12/MISO"/>
-<wire x1="-96.52" y1="162.56" x2="-96.52" y2="139.7" width="0.1524" layer="91"/>
-<wire x1="-96.52" y1="139.7" x2="10.16" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="M1" gate="G$1" pin="A0"/>
+<wire x1="-58.42" y1="170.18" x2="-50.8" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="-50.8" y1="170.18" x2="-50.8" y2="175.26" width="0.1524" layer="91"/>
+<wire x1="-50.8" y1="175.26" x2="10.16" y2="175.26" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="175.26" x2="10.16" y2="218.44" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">

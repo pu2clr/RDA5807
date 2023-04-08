@@ -1405,6 +1405,7 @@ Audio_Jack_2.5MM
 <text x="66.04" y="33.02" size="1.778" layer="91" rot="R90">CLK</text>
 <text x="99.06" y="86.36" size="1.778" layer="91">RDA5807 module</text>
 <text x="-12.7" y="104.14" size="1.778" layer="91">Encoder</text>
+<text x="78.74" y="68.58" size="1.778" layer="91">3.3V</text>
 </plain>
 <instances>
 <instance part="RE1" gate="G$1" x="-10.16" y="88.9" smashed="yes">
@@ -1448,8 +1449,8 @@ Audio_Jack_2.5MM
 <instance part="GND6" gate="1" x="76.2" y="22.86" smashed="yes" rot="R270">
 <attribute name="VALUE" x="73.66" y="25.4" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SUPPLY3" gate="G$1" x="48.26" y="2.54" smashed="yes" rot="R90">
-<attribute name="VALUE" x="45.085" y="0.635" size="1.778" layer="96" rot="R90"/>
+<instance part="SUPPLY3" gate="G$1" x="48.26" y="0" smashed="yes" rot="R90">
+<attribute name="VALUE" x="45.085" y="-1.905" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="SUPPLY4" gate="G$1" x="76.2" y="17.78" smashed="yes" rot="R90">
 <attribute name="VALUE" x="73.025" y="15.875" size="1.778" layer="96" rot="R90"/>
@@ -1531,23 +1532,21 @@ Audio_Jack_2.5MM
 </net>
 <net name="VCC" class="0">
 <segment>
-<pinref part="M1" gate="G$1" pin="VCC"/>
 <pinref part="SUPPLY2" gate="G$1" pin="VCC"/>
-<wire x1="48.26" y1="66.04" x2="68.58" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="VCC"/>
 <wire x1="95.06" y1="69.82" x2="95.06" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="95.06" y1="66.04" x2="68.58" y2="66.04" width="0.1524" layer="91"/>
-<junction x="68.58" y="66.04"/>
-</segment>
-<segment>
-<pinref part="LCD1" gate="G$1" pin="VCC"/>
-<pinref part="SUPPLY3" gate="G$1" pin="VCC"/>
-<wire x1="78.74" y1="2.54" x2="50.8" y2="2.54" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="LCD1" gate="G$1" pin="LEDA"/>
 <pinref part="SUPPLY4" gate="G$1" pin="VCC"/>
 <junction x="78.74" y="17.78"/>
+</segment>
+<segment>
+<pinref part="LCD1" gate="G$1" pin="VCC"/>
+<pinref part="SUPPLY3" gate="G$1" pin="VCC"/>
+<wire x1="78.74" y1="2.54" x2="50.8" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="2.54" x2="50.8" y2="0" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -1639,12 +1638,12 @@ Audio_Jack_2.5MM
 </net>
 <net name="N$17" class="0">
 <segment>
-<wire x1="55.88" y1="7.62" x2="-5.08" y2="7.62" width="0.1524" layer="91"/>
 <pinref part="SEEK" gate="G$1" pin="P$2"/>
-<wire x1="-5.08" y1="7.62" x2="-5.08" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="M1" gate="G$1" pin="D12"/>
-<wire x1="48.26" y1="50.8" x2="55.88" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="55.88" y1="50.8" x2="55.88" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="5.08" x2="-5.08" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="M1" gate="G$1" pin="A0"/>
+<wire x1="48.26" y1="55.88" x2="53.34" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="55.88" x2="53.34" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="5.08" x2="-5.08" y2="5.08" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">

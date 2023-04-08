@@ -14,7 +14,8 @@
   |                           | CS  or SS                 |     10        |
   |                           | SDI                       |     11        |
   |                           | CLK                       |     13        |
-  |     RDA5807                |                           |              |
+  |     RDA5807               |                           |               |
+  |                           | VCC                       |   3.3V        |
   |                           | SDIO (pin 8)              |     A4        |
   |                           | SCLK (pin 7)              |     A5        |
   |     Buttons               |                           |               |
@@ -22,7 +23,7 @@
   |                           | Volume Down               |      5        |
   |                           | Stereo/Mono               |      6        |
   |                           | RDS ON/off                |      7        |
-  |                           | SEEK (encoder button)     |     12        |
+  |                           | SEEK (encoder button)     |     A0/14     |
   |    Encoder                |                           |               |
   |                           | A                         |       2       |
   |                           | B                         |       3       |
@@ -70,11 +71,11 @@
 #define ENCODER_PIN_B 3
 
 // Buttons controllers
-#define VOLUME_UP 4     // Volume Up
-#define VOLUME_DOWN 5   // Volume Down
-#define SWITCH_STEREO 6 // Select Mono or Stereo
-#define SWITCH_RDS 7    // SDR ON or OFF
-#define SEEK_FUNCTION 12
+#define VOLUME_UP 4       // Volume Up
+#define VOLUME_DOWN 5     // Volume Down
+#define SWITCH_STEREO 6   // Select Mono or Stereo
+#define SWITCH_RDS 7      // SDR ON or OFF
+#define SEEK_FUNCTION 14  // Pin A0 / D14
 
 #define POLLING_TIME  2000
 #define POLLING_RDS     80
