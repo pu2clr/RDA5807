@@ -19,6 +19,10 @@ Contact: __pu2clr@gmail.com__.
 5. [Source code - Arduino Sketches](https://github.com/pu2clr/RDA5807/tree/master/examples)
 
 
+## Attention
+* __The RDA5807 device can work from 2.7 to 3.3V. If you are not using a 3.3V Arduino board, that Arduino will send 5V signals to the RDA5807 device through the digital pins and the I2C bus. That configuration can make the system unstable or damage the RDA5807 device__. Preferably use an Arduino with 3.3V operating voltage. If you are not using a 3.3V version of Arduino, you must use a kind of 5V to 3.3V converter on RST, SCLK, SDIO and SEN (depending on your project).  In my experiments, I used an Arduino Nano (5V) and fed the RDA5807 with 3.3V (from the Nano. See the Pin 3.3V of the Arduino). It has worked. However, this is at your own risk.
+ 
+
 ## Preface 
 
 The RDA5807 is a FM DSP integrated circuit receiver (50 to 115MHz) with low noise amplifier support. This device requires very few external components if compared with other similar devices. It also supports RDS/RBDS functionalities, direct auto gain control (AGC) and real time adaptive noise cancellation function. The PU2CLR RDA5807 Arduino Library was developed to take the most functionalities of this device. Plese, check the [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html/) for more details. 
@@ -188,6 +192,7 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 |                   | SDI                       |     11        |
 |                   | CLK                       |     13        |
 |     RDA5807       |                           |               |
+|                   | VCC                       |     3.3V      | 
 |                   | SDIO (pin 8)              |     A4        |
 |                   | SCLK (pin 7)              |     A5        |
 |     Buttons       |                           |               |
@@ -195,7 +200,7 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 |                   | Volume Down               |      5        |
 |                   | Stereo/Mono               |      6        |
 |                   | RDS ON/off                |      7        |
-|                   | SEEK (encoder button)     |     12        |
+|                   | SEEK (encoder button)     |     A0/14     |
 |    Encoder        |                           |               |
 |                   | A                         |       2       |
 |                   | B                         |       3       |
@@ -231,7 +236,6 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 | Device name               | Nokia 5110                |  Arduino      |
 | --------------------------| --------------------      | ------------  |
 | NOKIA 5110                | Pin function              |  Nano Pin     |
-| --------------------------| ------------------------- | ------------  |
 |                           | (1) RST (RESET)           |     8         |
 |                           | (2) CE or CS              |     9         |
 |                           | (3) DC or DO              |    10         |
@@ -242,7 +246,7 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 |                           | (8) GND                   |    GND        |
 | --------------------------| ------------------------- | --------------|
 | RDA5807                   |       Pin Function        |               | 
-|                           | ------------------------- | --------------|
+|                           | VCC                       |   3.3V        | 
 |                           | SDIO (pin 8)              |     A4        |
 |                           | SCLK (pin 7)              |     A5        |
 | --------------------------| --------------------------| --------------|
@@ -251,10 +255,9 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 |                           | Volume Down               |      5        |
 |                           | Stereo/Mono               |      6        |
 |                           | RDS ON/off                |      7        |
-|                           | SEEK (encoder button)     |     12        |
+|                           | SEEK (encoder button)     |     A0/14     |
 | --------------------------| --------------------------|---------------| 
 | Encoder                   |                           |               |
-|                           | --------------------------|---------------| 
 |                           | A                         |       2       |
 |                           | B                         |       3       |
 
@@ -294,7 +297,7 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 |                           | A (15) & VDD              |    +Vcc       |
 | --------------------------| ------------------------- | --------------|
 | RDA5807                   |                           |               | 
-|                           | ------------------------- | --------------|
+|                           | VCC                       |   3.3V        | 
 |                           | SDIO (pin 8)              |     A4        |
 |                           | SCLK (pin 7)              |     A5        |
 | --------------------------| --------------------------| --------------|
@@ -306,7 +309,6 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 |                           | SEEK (encoder button)     |     D14/A0    |
 | --------------------------| --------------------------|---------------| 
 | Encoder                   |                           |               |
-|                           | --------------------------|---------------| 
 |                           | A                         |       2       |
 |                           | B                         |       3       |
 
