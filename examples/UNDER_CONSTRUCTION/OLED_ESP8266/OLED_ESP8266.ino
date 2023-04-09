@@ -53,10 +53,12 @@
 #define SEEK_FUNCTION 12  // SEEK Station
 
 #define POLLING_TIME 2000
+#define RDS_MSG_TYPE_TIME 20000
 #define POLLING_RDS 20
 
 #define STORE_TIME 10000  // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
 #define PUSH_MIN_DELAY 300
+#define EEPROM_SIZE        512
 
 const uint8_t app_id = 43;  // Useful to check the EEPROM content before processing useful data
 const int eeprom_address = 0;
@@ -248,7 +250,7 @@ void showFrequency()
   rx.convertToChar(currentFrequency,freq,5,3,',', true);
 
   display.setFont(&DSEG7_Classic_Regular_16);
-  display.clearDisplay();
+  // display.clearDisplay();
   display.setCursor(20, 24);
   display.print(freq);
   display.setCursor(90,15);
@@ -271,7 +273,7 @@ void showFrequencySeek()
 */
 void showStatus()
 {
-  lcd.clear();
+  display.clearDisplay();
   showFrequency();
   showStereoMono();
   showRSSI();
@@ -280,7 +282,7 @@ void showStatus()
    showRds();    
   }
 
-  lcd.display();
+  display.display();
 }
 
 /* *******************************
@@ -291,16 +293,16 @@ void showRSSI()
   char rssi[12];
   rx.convertToChar(rx.getRssi(),rssi,3,0,'.');
   strcat(rssi,"dB");
-  lcd.setCursor(13, 1);
-  lcd.print(rssi);
+  display.setCursor(13, 1);
+  display.print(rssi);
 }
 
 void showStereoMono() {
-  lcd.setCursor(0, 2);
+  display.setCursor(0, 2);
   if ( bSt ) { 
-    lcd.print("ST");
+    display.print("ST");
   } else {
-    lcd.print("MO");
+    display.print("MO");
   }
 }
 
@@ -331,8 +333,8 @@ void showRDSMsg()
   txtAux[16] = '\0';
   rdsMsgIndex += 4;
   if (rdsMsgIndex > 40) rdsMsgIndex = 0;
-  lcd.setCursor(0,0);
-  lcd.print(txtAux);
+  display.setCursor(0,0);
+  display.print(txtAux);
 }
 
 /**
@@ -347,8 +349,8 @@ void showRDSStation()
   stationName[16] = '\0';
   strncpy(txtAux,stationName,16);
   txtAux[16] = '\0';
-  lcd.setCursor(0,0);
-  lcd.print(txtAux);
+  display.setCursor(0,0);
+  display.print(txtAux);
 }
 
 void showRDSTime()
@@ -360,8 +362,8 @@ void showRDSTime()
   rdsTime[16] = '\0';
   strncpy(txtAux,rdsTime,16);
   txtAux[16] = '\0';
-  lcd.setCursor(0,0);
-  lcd.print(txtAux);
+  display.setCursor(0,0);
+  display.print(txtAux);
 }
 
 
@@ -385,11 +387,11 @@ void checkRDS()
 
 void showRds() {
 
-    lcd.setCursor(2, 1);
+    display.setCursor(2, 1);
     if (bRds)
-       lcd.print(".");
+       display.print(".");
     else
-       lcd.print(" ");
+       display.print(" ");
 
     if ( currentMsgType == 0)
       showRDSMsg();
