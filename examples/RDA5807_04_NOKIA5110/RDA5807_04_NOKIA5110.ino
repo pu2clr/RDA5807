@@ -141,7 +141,7 @@ void setup() {
   showTemplate();
 
 
-  // If you want to reset the eeprom, keep the VOLUME_UP button pressed during statup
+  // If you want to reset the eeprom, keep the ENCODER PUSH BUTTON  pressed during statup
   if (digitalRead(SEEK_FUNCTION) == LOW) {
     EEPROM.write(eeprom_address, 0);
     display.clearDisplay();

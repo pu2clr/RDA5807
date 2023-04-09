@@ -110,19 +110,19 @@ void setup()
   print(0, 0, NULL, 2, "PU2CLR");
   print(0, 15, NULL, 2, "ESP8266");
   display.display();
-  delay(2000);
+  delay(1500);
   display.clearDisplay();
   print(0, 0, NULL, 2, "RDA5807");
   print(0, 15, NULL, 2, "Arduino");
   display.display();
   // End Splash
 
-  delay(2000);
+  delay(1500);
   display.clearDisplay();
 
   EEPROM.begin(EEPROM_SIZE);
 
-  // If you want to reset the eeprom, keep the VOLUME_UP button pressed during statup
+  // If you want to reset the eeprom, keep the ENCODER PUSH BUTTON  pressed during statup
   if (digitalRead(SEEK_FUNCTION) == LOW)
   {
     EEPROM.write(eeprom_address, 0);
@@ -189,7 +189,7 @@ void saveAllReceiverInformation()
   EEPROM.write(eeprom_address + 3, currentFrequency & 0xFF); // stores the current Frequency LOW byte for the band
   EEPROM.write(eeprom_address + 4, (uint8_t) bRds);
   EEPROM.write(eeprom_address + 5, (uint8_t) bSt);
-
+  EEPROM.commit();
   EEPROM.end();
 
 }
