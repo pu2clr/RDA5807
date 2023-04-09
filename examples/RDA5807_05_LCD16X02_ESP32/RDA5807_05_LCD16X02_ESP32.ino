@@ -174,7 +174,7 @@ void saveAllReceiverInformation()
 {
   EEPROM.begin(EEPROM_SIZE);
   
-  // The update function/method writes data only if the current data is not equal to the stored data. 
+  // The write function/method writes data only if the current data is not equal to the stored data. 
   EEPROM.write(eeprom_address, app_id);    
   EEPROM.write(eeprom_address + 1, rx.getVolume());          // stores the current Volume
   EEPROM.write(eeprom_address + 2, currentFrequency >> 8);   // stores the current Frequency HIGH byte for the band
