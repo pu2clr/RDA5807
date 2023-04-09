@@ -1,7 +1,7 @@
 /*
   This sketch uses an Arduino Nano with NOKIA 5110 display. 
   It is a FM receiver with RDS feature capable to tune your local FM stations.
-  This sketch saves the latest status of the receiver into the Atmega328 eeprom.
+  This sketch saves the latest status of the receiver into the Atmega328 eeprom (frequency, RDS and Stereo setup).
   
   ABOUT THE EEPROM:
   ATMEL says the lifetime of an EEPROM memory position is about 100,000 writes.

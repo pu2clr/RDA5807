@@ -5,16 +5,8 @@
   This sketch uses an Arduino Nano with LCD16X02 DISPLAY
   It is also a FM receiver capable to tune your local FM stations.
   This sketch saves the latest status of the receiver into the Atmega328 eeprom.
-  
-  ABOUT THE ATMEGA328 EEPROM and saving the receiver current information 
-  ATMEL says the lifetime of an EEPROM memory position is about 100,000 writes.
-  For this reason, this sketch tries to avoid save unnecessary writes into the eeprom.
-  This firmware saves the latest frequency or volume data 10 secounds after one of these information is changed.
-  For example, if you switch the band and turn the receiver off immediately, no new information will be written into the eeprom.
-  But you wait 10 seconds after changing anything, all new information will be written.
 
   TO RESET the EEPROM: Turn your receiver on with the encoder push button pressed.
-
 
   Read more on https://pu2clr.github.io/RDA5807/
 

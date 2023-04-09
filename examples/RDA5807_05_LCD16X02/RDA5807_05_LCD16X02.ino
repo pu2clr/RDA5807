@@ -1,8 +1,9 @@
 /*
   This sketch uses an Arduino Nano with LCD16X02 DISPLAY
   It is also a FM receiver capable to tune your local FM stations.
-  This sketch saves the latest status of the receiver into the Atmega328 eeprom.
-  
+  This sketch saves the latest status of the receiver into the Atmega328 eeprom (frequency, RDS and Stereo setup).
+ 
+   
   ABOUT THE ATMEGA328 EEPROM and saving the receiver current information 
   ATMEL says the lifetime of an EEPROM memory position is about 100,000 writes.
   For this reason, this sketch tries to avoid save unnecessary writes into the eeprom.

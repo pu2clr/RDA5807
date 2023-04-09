@@ -1,5 +1,8 @@
 USER MANUAL
 
+This sketch saves the latest status of the receiver into the Atmega328 eeprom. So, the latest frequency,
+RDS and Stereo setup are written into and restored from eeprom. This way, when you turn the receiver on, 
+the last setup will be shown to the user. 
 
 Commands:
 
@@ -23,11 +26,9 @@ Press the Stereo button to enable or disable the stereo feature.
 You have two buttons: volume up and volume down for volume control.
 
 
-1) RESET EEPROM
+5) RESET EEPROM
 
-Turn your receiver on with the encoder push button pressed.
-
-This receiver saves its latest information into the internal EEPROM. You can reset the receiver by pressing the encoder push button and turning on the receiver.
+You can reset the receiver by pressing the encoder push button and turning on the receiver.
 
 
 
