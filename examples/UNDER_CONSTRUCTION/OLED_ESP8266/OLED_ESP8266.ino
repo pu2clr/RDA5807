@@ -1,4 +1,7 @@
 /*
+
+  UNDER CONSTRUCTION...
+  
   This sketch runs on ESP8266 device.
 
   ESP8266/ESP12F and components wire up.
