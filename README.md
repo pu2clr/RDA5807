@@ -331,6 +331,8 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 # Videos and projects about this library
 
 * [Receptor de FM SDR con RDA5807 - Spanish](https://youtu.be/6PAnqT2TrL8)
+* [RDA5807 Fm based radio - Portuguese](https://youtu.be/2g1KJkDFCaU)
+* 
 
 
 
