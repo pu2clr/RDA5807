@@ -6,6 +6,7 @@
 #            For example: if you use "--output-dir ~/Downloads", all the current content of the Downloads folder will be lost. 
 #                         if you use "--output-dir ~/Downloads/hex", all current content of the hex folder will be lost and the Downloads 
 #                         content will be preserved. 
+# Please, see the file config_libraries_and_boards.sh
 # Ricardo Lima Caratti Mar 2023
 
 # compiles POC
