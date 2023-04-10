@@ -40,6 +40,6 @@ arduino-cli compile --fqbn stm32duino:STM32F1:genericSTM32F103C ./RDA5807_01_SER
 
 
 # compiles ATTiny85
-echo "ATTINY84"
+# echo "ATTINY84"
 # arduino-cli board -b ATTinyCore:avr:attinyx4  details   
 # arduino-cli compile --fqbn ATTinyCore:avr:attinyx4:millis=enabled  ./RDA5807_03_attimy84 --output-dir ~/Downloads/hex/ATTIMY85/RDA5807_03_attimy84
