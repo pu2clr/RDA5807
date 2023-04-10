@@ -1,12 +1,12 @@
 # This script uses the arduino-cli to compile the arduino sketches using command line (without Arduino IDE).
 # It is very useful to check the library on multiple boards types  after bug fixes and improvments. 
-# It runs on a MacOS but you can port it to Linux o Windows easily.
+# It runs on a MacOS but you can port it to Linux or Windows easily.
 # Some compilation results (bin and hex files) will be stores in your Download directory (/Users/<username>/Downloads/hex)
 # ATTENTION: be careful with --output-dir arduino-cli option. Before compiling, this option removes all the contents of the last level folder. 
 #            For example: if you use "--output-dir ~/Downloads", all the current content of the Downloads folder will be lost. 
 #                         if you use "--output-dir ~/Downloads/hex", all current content of the hex folder will be lost and the Downloads 
 #                         content will be preserved. 
-# Ricardo Lima Caratti Mar 2022
+# Ricardo Lima Caratti Mar 2023
 
 # compiles POC
 echo "Arduino ATmega328 based board"
