@@ -25,8 +25,12 @@
 
  
   ATTENTION: Read the file user_manual.txt
+
+  References: 
   Prototype documentation: https://pu2clr.github.io/SI4735/
   PU2CLR Si47XX API documentation: https://pu2clr.github.io/SI4735/extras/apidoc/html/
+  ESP8266 pinout: https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/
+                  https://s3.amazonaws.com/randomnerdtutorials/jhdfsASDFJEWJjsdfajdsafJDAFSJafd/ESP8266_Pinout_Diagrams.pdf
 
   By PU2CLR, Ricardo, May  2021.
 */
@@ -47,7 +51,7 @@
 
 // Buttons controllers
 #define VOLUME_UP 1       // Volume Up
-#define VOLUME_DOWN 2     // Volume Down
+#define VOLUME_DOWN 3     // Volume Down
 #define SWITCH_STEREO 15  // Select Mono or Stereo
 #define SWITCH_RDS 16     // SDR ON or OFF
 #define SEEK_FUNCTION 12  // SEEK Station
