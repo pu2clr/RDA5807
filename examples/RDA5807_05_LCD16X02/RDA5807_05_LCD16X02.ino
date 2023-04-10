@@ -294,7 +294,7 @@ void showRSSI()
 }
 
 void showStereoMono() {
-  lcd.setCursor(0, 2);
+  lcd.setCursor(0, 1);
   if ( bSt ) { 
     lcd.print("ST");
   } else {
