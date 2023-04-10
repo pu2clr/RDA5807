@@ -72,9 +72,6 @@ uint8_t seekDirection = 1;  // 0 = Down; 1 = Up. This value is set by the last e
 
 long pollin_elapsed = millis();
 
-int maxX1;
-int maxY1;
-
 // Encoder control variables
 volatile int encoderCount = 0;
 uint16_t currentFrequency;
@@ -95,8 +92,8 @@ void setup()
   pinMode(SEEK_FUNCTION, INPUT_PULLUP);  
 
   // Push button pin
-  pinMode(VOLUME_UP, INPUT_PULLUP);
-  pinMode(VOLUME_DOWN, INPUT_PULLUP);
+  // pinMode(VOLUME_UP, INPUT_PULLUP);
+  // pinMode(VOLUME_DOWN, INPUT_PULLUP);
   pinMode(SWITCH_STEREO, INPUT_PULLUP);
   pinMode(SWITCH_RDS, INPUT_PULLUP);
 
@@ -166,6 +163,7 @@ void print(uint8_t col, uint8_t lin, const GFXfont *font, uint8_t textSize, cons
   display.setTextSize(textSize);
   display.setCursor(col,lin);
   display.print(msg);
+  display.display();
 }
 
 void printParam(const char *msg) {
@@ -251,12 +249,10 @@ void showFrequency()
 
   display.setFont(&DSEG7_Classic_Regular_16);
   // display.clearDisplay();
-  display.setCursor(20, 24);
+  display.setCursor(20, 27);
   display.print(freq);
-  display.setCursor(90,15);
   display.setFont(NULL);
   display.setTextSize(1);
-  display.print("Mhz");
   display.display();
 
 }
@@ -293,12 +289,12 @@ void showRSSI()
   char rssi[12];
   rx.convertToChar(rx.getRssi(),rssi,3,0,'.');
   strcat(rssi,"dB");
-  display.setCursor(13, 1);
+  display.setCursor(90, 0);
   display.print(rssi);
 }
 
 void showStereoMono() {
-  display.setCursor(0, 2);
+  display.setCursor(0, 0);
   if ( bSt ) { 
     display.print("ST");
   } else {
@@ -387,11 +383,11 @@ void checkRDS()
 
 void showRds() {
 
-    display.setCursor(2, 1);
+    display.setCursor(50, 0);
     if (bRds)
-       display.print(".");
+       display.print("Rds");
     else
-       display.print(" ");
+       display.print("   ");
 
     if ( currentMsgType == 0)
       showRDSMsg();
