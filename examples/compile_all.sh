@@ -29,6 +29,15 @@ echo "ESP32 LCD16x20"
 arduino-cli compile --fqbn esp32:esp32:esp32-poe-iso ./RDA5807_05_LCD16X02_ESP32 --output-dir ~/Downloads/hex/ESP32/DEVM/RDA5807_05_LCD16X02_ESP32
 
 
+# compile ESP8266
+echo "ESP8266 OLED"
+arduino-cli compile --fqbn esp8266:esp8266:generic  ./UNDER_CONSTRUCTION/OLED_ESP8266 --output-dir ~/Downloads/hex/ESP8266/OLED_ESP8266
+
+echo "STM32"
+# arduino-cli board -b stm32duino:STM32F1:genericSTM32F103C  details
+arduino-cli compile --fqbn stm32duino:STM32F1:genericSTM32F103C ./RDA5807_01_SERIAL_MONITOR/RDA5807_03_STM32 --output-dir ~/Downloads/hex/STM32/F1/RDA5807_03_STM32
+
+
 # compiles ATTiny85
 echo "ATTINY84"
 # arduino-cli board -b ATTinyCore:avr:attinyx4  details   
