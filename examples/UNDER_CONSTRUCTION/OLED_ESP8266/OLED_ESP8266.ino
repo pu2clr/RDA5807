@@ -53,17 +53,16 @@
 
 
 // Enconder PINs
-#define ENCODER_PIN_A 13           // GPIO13 
-#define ENCODER_PIN_B 14           // GPIO14 
+#define ENCODER_PIN_A 13  // GPIO13
+#define ENCODER_PIN_B 14  // GPIO14
+
 
 // Buttons controllers
-
-// Buttons controllers
-#define VOLUME_UP 1       // Volume Up
-#define VOLUME_DOWN 2     // Volume Down
-#define SWITCH_STEREO 15  // Select Mono or Stereo
-#define SWITCH_RDS 16     // SDR ON or OFF
-#define SEEK_FUNCTION 12  // SEEK Station
+#define VOLUME_UP 1             // Volume Up  - To be checked
+#define VOLUME_DOWN 2           // Volume Down - To be checked
+#define SWITCH_STEREO 15        // Select Mono or Stereo - To be checked
+#define SWITCH_RDS 16           // SDR ON or OFF - To be checked
+#define ENCODER_PUSH_BUTTON 12  // SEEK Station - Working well
 
 #define POLLING_TIME 2000
 #define RDS_MSG_TYPE_TIME 20000
@@ -71,7 +70,32 @@
 
 #define STORE_TIME 10000  // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
 #define PUSH_MIN_DELAY 300
-#define EEPROM_SIZE        512
+#define EEPROM_SIZE 512
+#define MIN_ELAPSED_TIME 300
+#define ELAPSED_COMMAND 2000  // time to turn off the last command controlled by encoder. Time to goes back to the FVO control
+#define ELAPSED_CLICK 1500    // time to check the double click commands
+
+// MENU CONTROL
+
+const char *menu[] = { "Volume", "RDS", "Stereo", "Step" };
+int8_t menuIdx = 0;
+const int lastMenu = 3;
+int8_t currentMenuCmd = -1;
+
+bool cmdVolume = false;
+bool cmdStep = false;
+bool cmdRds = false;
+bool cmdStereo = false;
+bool cmdMenu = false;
+
+
+long elapsedClick = millis();
+long elapsedCommand = millis();
+
+uint8_t countClick = 0;
+
+// END MENU CONTROL
+
 
 const uint8_t app_id = 43;  // Useful to check the EEPROM content before processing useful data
 const int eeprom_address = 0;
@@ -90,6 +114,10 @@ volatile int encoderCount = 0;
 uint16_t currentFrequency;
 uint16_t previousFrequency;
 
+int8_t step = 0;
+uint8_t tabStep[] = { 100, 200, 50, 25 };
+
+
 // Devices class declarations
 Rotary encoder = Rotary(ENCODER_PIN_A, ENCODER_PIN_B);
 
@@ -97,12 +125,11 @@ Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32, &Wire);
 
 RDA5807 rx;
 
-void setup()
-{
+void setup() {
   // Encoder pins
   pinMode(ENCODER_PIN_A, INPUT_PULLUP);
   pinMode(ENCODER_PIN_B, INPUT_PULLUP);
-  pinMode(SEEK_FUNCTION, INPUT_PULLUP);  
+  pinMode(ENCODER_PUSH_BUTTON, INPUT_PULLUP);
 
   // Push button pin
   // pinMode(VOLUME_UP, INPUT_PULLUP);
@@ -110,7 +137,7 @@ void setup()
   // pinMode(SWITCH_STEREO, INPUT_PULLUP);
   // pinMode(SWITCH_RDS, INPUT_PULLUP);
 
-  display.begin(SSD1306_SWITCHCAPVCC, 0x3C); // Address 0x3C for 128x32
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // Address 0x3C for 128x32
 
   display.display();
   display.setTextColor(SSD1306_WHITE);
@@ -133,8 +160,7 @@ void setup()
   EEPROM.begin(EEPROM_SIZE);
 
   // If you want to reset the eeprom, keep the ENCODER PUSH BUTTON  pressed during statup
-  if (digitalRead(SEEK_FUNCTION) == LOW)
-  {
+  if (digitalRead(ENCODER_PUSH_BUTTON) == LOW) {
     EEPROM.write(eeprom_address, 0);
     EEPROM.commit();
     print(0, 0, NULL, 2, "EEPROM RESETED");
@@ -164,8 +190,99 @@ void setup()
   rx.setFrequency(currentFrequency);  // It is the frequency you want to select in MHz multiplied by 100.
   rx.setSeekThreshold(50);            // Sets RSSI Seek Threshold (0 to 127)
   showStatus();
-
 }
+
+
+// MENU CONTROL IMPLEMENTATION
+/**
+    Set all command flags to false
+    When all flags are disabled (false), the encoder controls the frequency
+*/
+void disableCommands() {
+  cmdVolume = false;
+  cmdStep = false;
+  cmdRds = false;
+  cmdStereo = false;
+  cmdMenu = false;
+  countClick = 0;
+}
+
+
+/**
+ * Starts the MENU action process
+ * {"Volume", "RDS", "Stereo", "Step"};
+ */
+void doCurrentMenuCmd() {
+  disableCommands();
+  switch (currentMenuCmd) {
+    case 0:  // VOLUME
+      cmdVolume = true;
+      showVolume();
+      break;
+    case 1:  // RDS
+      cmdRds = true;
+      showRds();
+      break;
+    case 2:  // STEREO
+      cmdStereo = true;
+      showStereoStatus();
+      break;
+    case 3:  // STEP
+      cmdStep = true;
+      showStepStatus();
+    default:
+      showStatus();
+      break;
+  }
+  currentMenuCmd = -1;
+  elapsedCommand = millis();
+}
+
+/**
+ *  Menu options selection
+ */
+void doMenu(int8_t v) {
+  menuIdx = (v == 1) ? menuIdx + 1 : menuIdx - 1;
+  if (menuIdx > lastMenu)
+    menuIdx = 0;
+  else if (menuIdx < 0)
+    menuIdx = lastMenu;
+
+  showMenu();
+  delay(MIN_ELAPSED_TIME);  // waits a little more for releasing the button.
+  elapsedCommand = millis();
+}
+
+/**
+ * Returns true if the current status is Menu command
+ */
+bool isMenuMode() {
+  return (cmdMenu | cmdStep | cmdVolume | cmdRds | cmdStereo);
+}
+
+
+/**
+ * Show cmd on display. It means you are setting up something.  
+ */
+void showCommandStatus(char *currentCmd) {
+  display.fillRect(40, 0, 50, 8, SSD1306_BLACK);
+  display.setCursor(40, 0);
+  display.print(currentCmd);
+  display.display();
+}
+
+/**
+ * Show menu options
+ */
+void showMenu() {
+  display.clearDisplay();
+  display.setCursor(0, 10);
+  display.print(menu[menuIdx]);
+  display.display();
+  showCommandStatus((char *)"Menu");
+}
+
+// END MENU CONTROL IMPLEMENTATION
 
 
 /**
@@ -174,61 +291,61 @@ void setup()
 void print(uint8_t col, uint8_t lin, const GFXfont *font, uint8_t textSize, const char *msg) {
   display.setFont(font);
   display.setTextSize(textSize);
-  display.setCursor(col,lin);
+  display.setCursor(col, lin);
   display.print(msg);
   display.display();
 }
 
 void printParam(const char *msg) {
- display.fillRect(0, 10, 128, 10, SSD1306_BLACK); 
- print(0,10,NULL,1, msg);
- display.display(); 
+  display.fillRect(0, 10, 128, 10, SSD1306_BLACK);
+  print(0, 10, NULL, 1, msg);
+  display.display();
 }
 
 /*
    writes the conrrent receiver information into the eeprom.
    The EEPROM.write avoid write the same data in the same memory position. It will save unnecessary recording.
 */
-void saveAllReceiverInformation()
-{
+void saveAllReceiverInformation() {
   EEPROM.begin(EEPROM_SIZE);
-  
-  // The write function/method writes data only if the current data is not equal to the stored data. 
-  EEPROM.write(eeprom_address, app_id);    
-  EEPROM.write(eeprom_address + 1, rx.getVolume());          // stores the current Volume
-  EEPROM.write(eeprom_address + 2, currentFrequency >> 8);   // stores the current Frequency HIGH byte for the band
-  EEPROM.write(eeprom_address + 3, currentFrequency & 0xFF); // stores the current Frequency LOW byte for the band
-  EEPROM.write(eeprom_address + 4, (uint8_t) bRds);
-  EEPROM.write(eeprom_address + 5, (uint8_t) bSt);
+
+  // The write function/method writes data only if the current data is not equal to the stored data.
+  EEPROM.write(eeprom_address, app_id);
+  EEPROM.write(eeprom_address + 1, rx.getVolume());           // stores the current Volume
+  EEPROM.write(eeprom_address + 2, currentFrequency >> 8);    // stores the current Frequency HIGH byte for the band
+  EEPROM.write(eeprom_address + 3, currentFrequency & 0xFF);  // stores the current Frequency LOW byte for the band
+  EEPROM.write(eeprom_address + 4, (uint8_t)bRds);
+  EEPROM.write(eeprom_address + 5, (uint8_t)bSt);
+  EEPROM.write(eeprom_address + 6, step);
   EEPROM.commit();
   EEPROM.end();
-
 }
 
 /**
  * reads and set the last receiver status. 
  */
-void readAllReceiverInformation()
-{
+void readAllReceiverInformation() {
   rx.setVolume(EEPROM.read(eeprom_address + 1));
   currentFrequency = EEPROM.read(eeprom_address + 2) << 8;
-  currentFrequency |= EEPROM.read(eeprom_address +3);
+  currentFrequency |= EEPROM.read(eeprom_address + 3);
   previousFrequency = currentFrequency;
 
-  bRds = (bool) EEPROM.read(eeprom_address + 4);
+  bRds = (bool)EEPROM.read(eeprom_address + 4);  // Rescue RDS status (ON / OFF)
   rx.setRDS(bRds);
   rx.setRdsFifo(bRds);
 
-  bSt = (bool) EEPROM.read(eeprom_address + 5);
+  bSt = (bool)EEPROM.read(eeprom_address + 5);  // Rescue Stereo status (ON / OFF)
   rx.setMono(bSt);
+
+  step = EEPROM.read(eeprom_address + 6);  // Rescue step: 0 = 100; 1 = 200; 2 = 50; 3 = 25 (in kHz)
+  rx.setSpace(step);                       // See tabStep
 }
 
 
 /*
    To store any change into the EEPROM, it is needed at least STORE_TIME  milliseconds of inactivity.
 */
-void resetEepromDelay()
-{
+void resetEepromDelay() {
   delay(PUSH_MIN_DELAY);
   storeTime = millis();
   previousFrequency = 0;
@@ -243,8 +360,7 @@ void resetEepromDelay()
  * if you do not add ICACHE_RAM_ATTR declaration, the system will reboot during attachInterrupt call. 
  * With ICACHE_RAM_ATTR macro you put the function on the RAM.
  */
-ICACHE_RAM_ATTR void  rotaryEncoder()
-{ // rotary encoder events
+ICACHE_RAM_ATTR void rotaryEncoder() {  // rotary encoder events
   uint8_t encoderStatus = encoder.process();
   if (encoderStatus)
     encoderCount = (encoderStatus == DIR_CW) ? 1 : -1;
@@ -253,12 +369,11 @@ ICACHE_RAM_ATTR void  rotaryEncoder()
 /**
  * Shows frequency information on Display
  */
-void showFrequency()
-{
+void showFrequency() {
 
   char freq[10];
   currentFrequency = rx.getFrequency();
-  rx.convertToChar(currentFrequency,freq,5,3,',', true);
+  rx.convertToChar(currentFrequency, freq, 5, 3, ',', true);
 
   display.setFont(&DSEG7_Classic_Regular_16);
   // display.clearDisplay();
@@ -267,11 +382,9 @@ void showFrequency()
   display.setFont(NULL);
   display.setTextSize(1);
   display.display();
-
 }
 
-void showFrequencySeek()
-{
+void showFrequencySeek() {
   display.clearDisplay();
   showFrequency();
 }
@@ -280,40 +393,72 @@ void showFrequencySeek()
 /*
     Show some basic information on display
 */
-void showStatus()
-{
+void showStatus() {
   display.clearDisplay();
   showFrequency();
-  showStereoMono();
+  showStereoStatusMono();
   showRSSI();
 
   if (bRds) {
-   showRds();    
+    showRds();
   }
 
   display.display();
 }
 
+
+/*
+ *  Shows the volume level on LCD
+ */
+void showVolume() {
+  char volAux[12];
+  sprintf(volAux, "VOLUME: %2u", rx.getVolume());
+  printParam(volAux);
+}
+
+/**
+ *   Shows the current step
+ */
+void showStepStatus() {
+  char aux[12];
+  sprintf(aux, "STEP: %3u", tabStep[step]);
+  printParam(aux);
+}
+
+
+void showStereoStatus() {
+  char aux[12];
+  sprintf(aux, "STEREO: %s", (bSt) ? "ON" : "OFF");
+  printParam(aux);
+}
+
+void showRdsStatus() {
+  char aux[12];
+  sprintf(aux, "RDS: %s", (bRds) ? "ON" : "OFF");
+  printParam(aux);
+}
+
 /* *******************************
    Shows RSSI status
 */
-void showRSSI()
-{
+void showRSSI() {
   char rssi[12];
-  rx.convertToChar(rx.getRssi(),rssi,3,0,'.');
-  strcat(rssi,"dB");
+  rx.convertToChar(rx.getRssi(), rssi, 3, 0, '.');
+  strcat(rssi, "dB");
   display.setCursor(90, 0);
   display.print(rssi);
 }
 
-void showStereoMono() {
+void showStereoStatusMono() {
   display.setCursor(0, 0);
-  if ( bSt ) { 
+  if (bSt) {
     display.print("ST");
   } else {
     display.print("MO");
   }
 }
+
+
 
 /*********************************************************
    RDS
@@ -321,7 +466,7 @@ void showStereoMono() {
 char *rdsMsg;
 char *stationName;
 char *rdsTime;
-int  currentMsgType = 0; 
+int currentMsgType = 0;
 long polling_rds = millis();
 long timeTextType = millis();  // controls the type of each text will be shown (Message, Station Name or time)
 
@@ -331,47 +476,44 @@ int rdsMsgIndex = 0;  // controls the part of the rdsMsg text will be shown on L
 /**
   showRDSMsg - Shows the Program Information
 */
-void showRDSMsg()
-{
+void showRDSMsg() {
   char txtAux[17];
 
   if (rdsMsg == NULL) return;
 
-  rdsMsg[41] = '\0';   // Truncate the message to fit on display line
-  strncpy(txtAux,&rdsMsg[rdsMsgIndex],16);
+  rdsMsg[41] = '\0';  // Truncate the message to fit on display line
+  strncpy(txtAux, &rdsMsg[rdsMsgIndex], 16);
   txtAux[16] = '\0';
   rdsMsgIndex += 4;
   if (rdsMsgIndex > 40) rdsMsgIndex = 0;
-  display.setCursor(0,0);
+  display.setCursor(0, 0);
   display.print(txtAux);
 }
 
 /**
    showRDSStation - Shows the 
 */
-void showRDSStation()
-{
+void showRDSStation() {
   char txtAux[17];
 
   if (stationName == NULL) return;
 
   stationName[16] = '\0';
-  strncpy(txtAux,stationName,16);
+  strncpy(txtAux, stationName, 16);
   txtAux[16] = '\0';
-  display.setCursor(0,0);
+  display.setCursor(0, 0);
   display.print(txtAux);
 }
 
-void showRDSTime()
-{
+void showRDSTime() {
   char txtAux[17];
 
   if (rdsTime == NULL) return;
 
   rdsTime[16] = '\0';
-  strncpy(txtAux,rdsTime,16);
+  strncpy(txtAux, rdsTime, 16);
   txtAux[16] = '\0';
-  display.setCursor(0,0);
+  display.setCursor(0, 0);
   display.print(txtAux);
 }
 
@@ -384,10 +526,9 @@ void clearRds() {
   rdsMsgIndex = currentMsgType = 0;
 }
 
-void checkRDS()
-{
+void checkRDS() {
   // check if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
-  if ( rx.getRdsReady() &&  rx.hasRdsInfo()) {
+  if (rx.getRdsReady() && rx.hasRdsInfo()) {
     rdsMsg = rx.getRdsText2A();
     stationName = rx.getRdsText0A();
     rdsTime = rx.getRdsTime();
@@ -396,18 +537,18 @@ void checkRDS()
 
 void showRds() {
 
-    display.setCursor(50, 0);
-    if (bRds)
-       display.print("Rds");
-    else
-       display.print("   ");
+  display.setCursor(50, 0);
+  if (bRds)
+    display.print("Rds");
+  else
+    display.print("   ");
 
-    if ( currentMsgType == 0)
-      showRDSMsg();
-    else if ( currentMsgType == 1)   
-      showRDSStation();
-    else if ( currentMsgType == 2)  
-      showRDSTime();
+  if (currentMsgType == 0)
+    showRDSMsg();
+  else if (currentMsgType == 1)
+    showRDSStation();
+  else if (currentMsgType == 2)
+    showRDSTime();
 }
 
 /*********************************************************
@@ -415,17 +556,48 @@ void showRds() {
  *********************************************************/
 
 
-void doStereo() {
-  rx.setMono((bSt = !bSt));
-  bShow = true;
-  showStereoMono();
+/**
+ * Sets the audio volume
+ */
+void doVolume(int8_t v) {
+  if (v == 1)
+    rx.setVolumeUp();
+  else
+    rx.setVolumeDown();
+
+  showVolume();
   resetEepromDelay();
 }
 
-void doRds() {
-  rx.setRDS((bRds = !bRds));
+void doStep(int8_t v) {
+
+  if (v == 1)
+    step++;
+  else
+    step--;
+
+  if (step > 3)
+    step = 0;
+  else if (step < 0)
+    step = 3;
+
+  rx.setSpace((uint8_t)step);  // See tabStep: 0 = 100; 1 = 200; 2 = 50; 3 = 25 (in kHz)
+  showStepStatus();
+  resetEepromDelay();
+}
+
+void doStereo(int8_t v) {
+  bSt = (bool)v;
+  rx.setMono(bSt);
+  showStereoStatusMono();
+  resetEepromDelay();
+}
+
+void doRds(int8_t v) {
+  bRds = (bool)v;
+  rx.setRDS(bRds);
   rdsMsgIndex = currentMsgType = 0;
-  showRds();
+  showRdsStatus();
   resetEepromDelay();
 }
 
@@ -436,83 +608,100 @@ void doRds() {
 void doSeek() {
   rx.seek(RDA_SEEK_WRAP, seekDirection, showFrequencySeek);  // showFrequency will be called by the seek function during the process.
   delay(200);
-  bShow =  true;
+  bShow = true;
   showStatus();
 }
 
-void loop()
-{
+void loop() {
 
   // Check if the encoder has moved.
-  if (encoderCount != 0)
-  {
-    if (encoderCount == 1) {
-      rx.setFrequencyUp();
-      seekDirection = RDA_SEEK_UP;
-    }
+  if (encoderCount != 0) {
+    if (cmdMenu)
+      doMenu(encoderCount);
+    else if (cmdVolume)
+      doVolume(encoderCount);
+    else if (cmdStep)
+      doStep(encoderCount);
+    else if (cmdStereo)
+      doStereo(encoderCount);
+    else if (cmdRds)
+      doRds(encoderCount);
     else {
-      rx.setFrequencyDown();
-      seekDirection = RDA_SEEK_DOWN;
+      if (encoderCount == 1) {
+        rx.setFrequencyUp();
+        seekDirection = RDA_SEEK_UP;
+      } else {
+        rx.setFrequencyDown();
+        seekDirection = RDA_SEEK_DOWN;
+      }
+      // Show the current frequency only if it has changed
+      showStatus();
+      bShow = true;
+      encoderCount = 0;
+      storeTime = millis();
     }
+  }
+
+
+  if (digitalRead(ENCODER_PUSH_BUTTON) == LOW) {
+    countClick++;
+    if (cmdMenu) {
+      currentMenuCmd = menuIdx;
+      doCurrentMenuCmd();
+    } else if (countClick == 1) {  // If just one click, you can select the band by rotating the encoder
+      if (isMenuMode()) {
+        disableCommands();
+        showStatus();
+      }
+    } else {  // GO to MENU if more than one click in less than 1/2 seconds.
+      cmdMenu = !cmdMenu;
+      if (cmdMenu)
+        showMenu();
+    }
+    delay(MIN_ELAPSED_TIME);
+    elapsedCommand = millis();
+  }
+
+  if ((millis() - elapsedClick) > ELAPSED_CLICK) {
+    countClick = 0;
+    elapsedClick = millis();
+  }
+
+  if ((millis() - pollin_elapsed) > POLLING_TIME) {
     showStatus();
-    bShow = true;
-    encoderCount = 0;
-    storeTime = millis();
-  }
-
-
-  if (digitalRead(SEEK_FUNCTION) == LOW)
-    doSeek();
-
-
-  /*
-
-  if (digitalRead(VOLUME_UP) == LOW) {
-    rx.setVolumeUp();
-    resetEepromDelay();
-  }
-  else if (digitalRead(VOLUME_DOWN) == LOW) {
-    rx.setVolumeDown();
-    resetEepromDelay();
-  }
-  else if (digitalRead(SWITCH_STEREO) == LOW)
-    doStereo();
-  else if (digitalRead(SWITCH_RDS) == LOW)
-    doRds();
-  else if (digitalRead(SEEK_FUNCTION) == LOW)
-    doSeek();
- */
-  if ( (millis() - pollin_elapsed) > POLLING_TIME ) {
-    showStatus();
-    if ( bShow ) clearRds();
+    if (bShow) clearRds();
     pollin_elapsed = millis();
   }
 
-  if ( (millis() - polling_rds) > POLLING_RDS) {
-    if ( bRds ) {
+  if ((millis() - polling_rds) > POLLING_RDS) {
+    if (bRds) {
       checkRDS();
     }
     polling_rds = millis();
   }
 
-  if ( (millis() - timeTextType) > RDS_MSG_TYPE_TIME ) {
+  if ((millis() - timeTextType) > RDS_MSG_TYPE_TIME) {
     // Toggles the type of message to be shown - See showRds function
-    currentMsgType++; 
-    if ( currentMsgType > 2) currentMsgType = 0;
+    currentMsgType++;
+    if (currentMsgType > 2) currentMsgType = 0;
     timeTextType = millis();
-  } 
+  }
 
   // Show the current frequency only if it has changed
-  if ((currentFrequency = rx.getFrequency()) != previousFrequency)
-  {
+  if ((currentFrequency = rx.getFrequency()) != previousFrequency) {
     clearRds();
-    if ((millis() - storeTime) > STORE_TIME)
-    {
+    if ((millis() - storeTime) > STORE_TIME) {
       saveAllReceiverInformation();
       storeTime = millis();
       previousFrequency = currentFrequency;
     }
   }
 
+  // Disable commands control
+  if ((millis() - elapsedCommand) > ELAPSED_COMMAND) {
+    showStatus();
+    disableCommands();
+    elapsedCommand = millis();
+  }
   delay(5);
 }
