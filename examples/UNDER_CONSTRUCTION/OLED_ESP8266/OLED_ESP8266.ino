@@ -29,11 +29,17 @@
  
   ATTENTION: Read the file user_manual.txt
 
+
   References: 
   Prototype documentation: https://pu2clr.github.io/SI4735/
   PU2CLR Si47XX API documentation: https://pu2clr.github.io/SI4735/extras/apidoc/html/
   ESP8266 pinout: https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/
                   https://s3.amazonaws.com/randomnerdtutorials/jhdfsASDFJEWJjsdfajdsafJDAFSJafd/ESP8266_Pinout_Diagrams.pdf
+
+  ESP8266 Arduino Core’s documentation - https://arduino-esp8266.readthedocs.io/en/2.5.2/reference.html 
+  Digital pins 0—15 can be INPUT, OUTPUT, or INPUT_PULLUP.
+  Pin 16 can be INPUT, OUTPUT or INPUT_PULLDOWN_16. 
+  At startup, pins are configured as INPUT."                  
 
   By PU2CLR, Ricardo, May  2021.
 */
@@ -54,7 +60,7 @@
 
 // Buttons controllers
 #define VOLUME_UP 1       // Volume Up
-#define VOLUME_DOWN 3     // Volume Down
+#define VOLUME_DOWN 2     // Volume Down
 #define SWITCH_STEREO 15  // Select Mono or Stereo
 #define SWITCH_RDS 16     // SDR ON or OFF
 #define SEEK_FUNCTION 12  // SEEK Station
@@ -101,8 +107,8 @@ void setup()
   // Push button pin
   // pinMode(VOLUME_UP, INPUT_PULLUP);
   // pinMode(VOLUME_DOWN, INPUT_PULLUP);
-  pinMode(SWITCH_STEREO, INPUT_PULLUP);
-  pinMode(SWITCH_RDS, INPUT_PULLUP);
+  // pinMode(SWITCH_STEREO, INPUT_PULLUP);
+  // pinMode(SWITCH_RDS, INPUT_PULLUP);
 
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C); // Address 0x3C for 128x32
 
@@ -454,6 +460,13 @@ void loop()
     storeTime = millis();
   }
 
+
+  if (digitalRead(SEEK_FUNCTION) == LOW)
+    doSeek();
+
+
+  /*
+
   if (digitalRead(VOLUME_UP) == LOW) {
     rx.setVolumeUp();
     resetEepromDelay();
@@ -468,7 +481,7 @@ void loop()
     doRds();
   else if (digitalRead(SEEK_FUNCTION) == LOW)
     doSeek();
-
+ */
   if ( (millis() - pollin_elapsed) > POLLING_TIME ) {
     showStatus();
     if ( bShow ) clearRds();
