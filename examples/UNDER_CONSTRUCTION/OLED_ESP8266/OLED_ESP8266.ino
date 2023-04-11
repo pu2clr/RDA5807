@@ -635,31 +635,33 @@ void loop() {
         seekDirection = RDA_SEEK_DOWN;
       }
       // Show the current frequency only if it has changed
+      currentFrequency = rx.getFrequency();
       showStatus();
       bShow = true;
-      encoderCount = 0;
-      storeTime = millis();
     }
-  }
 
-
-  if (digitalRead(ENCODER_PUSH_BUTTON) == LOW) {
-    countClick++;
-    if (cmdMenu) {
-      currentMenuCmd = menuIdx;
-      doCurrentMenuCmd();
-    } else if (countClick == 1) {  // If just one click, you can select the band by rotating the encoder
-      if (isMenuMode()) {
-        disableCommands();
-        showStatus();
+    storeTime = millis();
+    encoderCount = 0;
+    
+  } else {
+    if (digitalRead(ENCODER_PUSH_BUTTON) == LOW) {
+      countClick++;
+      if (cmdMenu) {
+        currentMenuCmd = menuIdx;
+        doCurrentMenuCmd();
+      } else if (countClick == 1) {  // If just one click, you can select the band by rotating the encoder
+        if (isMenuMode()) {
+          disableCommands();
+          showStatus();
+        }
+      } else {  // GO to MENU if more than one click in less than 1/2 seconds.
+        cmdMenu = !cmdMenu;
+        if (cmdMenu)
+          showMenu();
       }
-    } else {  // GO to MENU if more than one click in less than 1/2 seconds.
-      cmdMenu = !cmdMenu;
-      if (cmdMenu)
-        showMenu();
+      delay(MIN_ELAPSED_TIME);
+      elapsedCommand = millis();
     }
-    delay(MIN_ELAPSED_TIME);
-    elapsedCommand = millis();
   }
 
   if ((millis() - elapsedClick) > ELAPSED_CLICK) {
