@@ -15,12 +15,6 @@
   |                           | +Vcc 3.3V [1]                 |   3.3V        |    
   |                           | SDIO (pin 8)                  |   GPIO4       |
   |                           | SCLK (pin 7)                  |   GPIO5       |
-  |    Buttons                |                               |               |
-  |                           | Volume Up                     |   GPIO01      |
-  |                           | Volume Down                   |   GPIO02      |
-  |                           | Stereo/Mono                   |   GPIO15      |
-  |                           | RDS ON/off                    |   GPIO16      |
-  |                           | SEEK (encoder button)         |   GPIO12      |
   |    Encoder                |                               |               |
   |                           | A                             |  GPIO 13      |
   |                           | B                             |  GPIO 14      |
@@ -57,11 +51,6 @@
 #define ENCODER_PIN_B 14  // GPIO14
 
 
-// Buttons controllers
-#define VOLUME_UP 1             // Volume Up  - To be checked
-#define VOLUME_DOWN 2           // Volume Down - To be checked
-#define SWITCH_STEREO 15        // Select Mono or Stereo - To be checked
-#define SWITCH_RDS 16           // SDR ON or OFF - To be checked
 #define ENCODER_PUSH_BUTTON 12  // SEEK Station - Working well
 
 #define POLLING_TIME 2000
@@ -130,12 +119,6 @@ void setup() {
   pinMode(ENCODER_PIN_A, INPUT_PULLUP);
   pinMode(ENCODER_PIN_B, INPUT_PULLUP);
   pinMode(ENCODER_PUSH_BUTTON, INPUT_PULLUP);
-
-  // Push button pin
-  // pinMode(VOLUME_UP, INPUT_PULLUP);
-  // pinMode(VOLUME_DOWN, INPUT_PULLUP);
-  // pinMode(SWITCH_STEREO, INPUT_PULLUP);
-  // pinMode(SWITCH_RDS, INPUT_PULLUP);
 
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // Address 0x3C for 128x32
 
@@ -702,12 +685,14 @@ void loop() {
       }
     }
 
-    // Disable commands control
-    if ((millis() - elapsedCommand) > ELAPSED_COMMAND) {
+  // Disable commands control
+  if ((millis() - elapsedCommand) > ELAPSED_COMMAND)
+  {
+     if (isMenuMode())
       showStatus();
-      disableCommands();
-      elapsedCommand = millis();
-    }
+    disableCommands();
+    elapsedCommand = millis();
+  }
 
     delay(5);
   }
