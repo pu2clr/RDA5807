@@ -72,8 +72,8 @@
 #define PUSH_MIN_DELAY 300
 #define EEPROM_SIZE 512
 #define MIN_ELAPSED_TIME 300
-#define ELAPSED_COMMAND 2000  // time to turn off the last command controlled by encoder. Time to goes back to the FVO control
-#define ELAPSED_CLICK 1500    // time to check the double click commands
+#define ELAPSED_COMMAND 5000  // time to turn off the last command controlled by encoder. Time to goes back to the FVO control
+#define ELAPSED_CLICK 1000    // time to check the double click commands
 
 // MENU CONTROL
 
@@ -230,6 +230,7 @@ void doCurrentMenuCmd() {
     case 3:  // STEP
       cmdStep = true;
       showStepStatus();
+      break;
     default:
       showStatus();
       break;
@@ -348,6 +349,7 @@ void readAllReceiverInformation() {
 void resetEepromDelay() {
   delay(PUSH_MIN_DELAY);
   storeTime = millis();
+  elapsedCommand = millis();
   previousFrequency = 0;
 }
 
@@ -641,69 +643,71 @@ void loop() {
     }
 
     storeTime = millis();
-    encoderCount = 0;
     
+    encoderCount = 0;
+
   } else {
     if (digitalRead(ENCODER_PUSH_BUTTON) == LOW) {
       countClick++;
       if (cmdMenu) {
         currentMenuCmd = menuIdx;
         doCurrentMenuCmd();
-      } else if (countClick == 1) {  // If just one click, you can select the band by rotating the encoder
+      } else  {  // If just one click, you can select the band by rotating the encoder
         if (isMenuMode()) {
           disableCommands();
           showStatus();
+        } else {  // GO to MENU if more than one click in less than 1/2 seconds.
+          cmdMenu = !cmdMenu;
+          if (cmdMenu)
+            showMenu();
         }
-      } else {  // GO to MENU if more than one click in less than 1/2 seconds.
-        cmdMenu = !cmdMenu;
-        if (cmdMenu)
-          showMenu();
+        delay(MIN_ELAPSED_TIME);
+        elapsedCommand = millis();
       }
-      delay(MIN_ELAPSED_TIME);
+    }
+  }
+
+    if ((millis() - elapsedClick) > ELAPSED_CLICK) {
+      countClick = 0;
+      elapsedClick = millis();
+    }
+
+    if ((millis() - pollin_elapsed) > POLLING_TIME) {
+      showStatus();
+      if (bShow) clearRds();
+      pollin_elapsed = millis();
+    }
+
+    if ((millis() - polling_rds) > POLLING_RDS) {
+      if (bRds) {
+        checkRDS();
+      }
+      polling_rds = millis();
+    }
+
+    if ((millis() - timeTextType) > RDS_MSG_TYPE_TIME) {
+      // Toggles the type of message to be shown - See showRds function
+      currentMsgType++;
+      if (currentMsgType > 2) currentMsgType = 0;
+      timeTextType = millis();
+    }
+
+    // Show the current frequency only if it has changed
+    if ((currentFrequency = rx.getFrequency()) != previousFrequency) {
+      clearRds();
+      if ((millis() - storeTime) > STORE_TIME) {
+        saveAllReceiverInformation();
+        storeTime = millis();
+        previousFrequency = currentFrequency;
+      }
+    }
+
+    // Disable commands control
+    if ((millis() - elapsedCommand) > ELAPSED_COMMAND) {
+      showStatus();
+      disableCommands();
       elapsedCommand = millis();
     }
-  }
 
-  if ((millis() - elapsedClick) > ELAPSED_CLICK) {
-    countClick = 0;
-    elapsedClick = millis();
+    delay(5);
   }
-
-  if ((millis() - pollin_elapsed) > POLLING_TIME) {
-    showStatus();
-    if (bShow) clearRds();
-    pollin_elapsed = millis();
-  }
-
-  if ((millis() - polling_rds) > POLLING_RDS) {
-    if (bRds) {
-      checkRDS();
-    }
-    polling_rds = millis();
-  }
-
-  if ((millis() - timeTextType) > RDS_MSG_TYPE_TIME) {
-    // Toggles the type of message to be shown - See showRds function
-    currentMsgType++;
-    if (currentMsgType > 2) currentMsgType = 0;
-    timeTextType = millis();
-  }
-
-  // Show the current frequency only if it has changed
-  if ((currentFrequency = rx.getFrequency()) != previousFrequency) {
-    clearRds();
-    if ((millis() - storeTime) > STORE_TIME) {
-      saveAllReceiverInformation();
-      storeTime = millis();
-      previousFrequency = currentFrequency;
-    }
-  }
-
-  // Disable commands control
-  if ((millis() - elapsedCommand) > ELAPSED_COMMAND) {
-    showStatus();
-    disableCommands();
-    elapsedCommand = millis();
-  }
-  delay(5);
-}
