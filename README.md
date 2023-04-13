@@ -44,10 +44,32 @@ The RDA5807 is a FM DSP integrated circuit receiver (50 to 115MHz) with low nois
 
 
 
+You can buy the RDA5807 device on AliExpress, eBay, Amazon etc. You will find two types of RDA5807: The RDA5807MS (breakout) and RDA5807FP (standalone IC).  
 
-The photo below shows a Breakout that uses the RDA5807. You can find it on eBay, AliExpress and Amazon. 
+### RDA5807MS breakout
+
+The photo below shows a Breakout that uses the RDA5807MS. 
 
 ![RDA5807 Breakout board](extras/images/breakout_01A.png)
+
+<BR>
+
+### RDA5807FP standalone IC
+
+The two photos below show the standalone RDA5807FP IC mounted on a homebrew board.
+
+
+![RDA5807 RDA5807FP setup 01](extras/images/RDA5807FP_setup_01.jpg)
+
+<BR>
+
+![RDA5807 RDA5807FP setup 02](extras/images/RDA5807FP_setup_02.jpg)
+
+
+
+
+
+
 
 
 ## RDA5807 features implemented by this library
