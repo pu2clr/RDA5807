@@ -80,7 +80,7 @@ The schematic below shows the basic RDA5807FP setup.
 | R3         |  10K   |
 | R4         |  10K   |
 | C1         |  1nF  (FMIN) |
-| C2 and C3  |  10uF tantalum capacitor |      
+| C2 and C3  |  10uF tantalum capacitor (stereo audio output) |      
 | Q1         |  32768 kHz passive crystal occilator |
 | J1         |  Audio stereo jack |
 
