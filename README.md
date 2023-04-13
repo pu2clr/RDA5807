@@ -66,12 +66,25 @@ The two photos below show the standalone RDA5807FP IC mounted on a homebrew boar
 ![RDA5807 RDA5807FP setup 02](extras/images/RDA5807FP_setup_02.jpg)
 
 
-The schematic below shows the RDA5807FP setup. 
+<BR> 
 
-![RDA5807 RDA5807FP setup 02](extras/images/RDA5807FP_SETUP.png)
+The schematic below shows the basic RDA5807FP setup. 
+
+![RDA5807 RDA5807FP basic schematic](extras/images/RDA5807FP_SETUP.png)
 
 
+| Components |  Value | 
+| ---------- | ------ |
+| R1         |  1K    |
+| R2         |  1K    |
+| R3         |  10K   |
+| R4         |  10K   |
+| C1 and C2  |  10uF tantalum capacitor |      
+| Q1         |  32768 kHz passive crystal occilator |
+| J1         |  Audio stereo jack |
 
+
+<BR>
 
 
 ## RDA5807 features implemented by this library
