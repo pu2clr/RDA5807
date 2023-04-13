@@ -77,6 +77,18 @@
 #define SH_REG0E 4 // Shadow array position for register 0x0E - RDS Block C
 #define SH_REG0F 5 // Shadow array position for register 0x0F - RDS Block D
 
+
+#define I2S_WS_STEP_48      0b1000 
+#define I2S_WS_STEP_44_1    0b0111
+#define I2S_WS_STEP_32      0b0110
+#define I2S_WS_STEP_24      0b0101      
+#define I2S_WS_STEP_22_05   0b0100  
+#define I2S_WS_STEP_16      0b0011  
+#define I2S_WS_STEP_12      0b0010  
+#define I2S_WS_STEP_11_025  0b0001 
+#define I2S_WS_STEP_8       0b0000       
+
+
 /**
  * @defgroup GA01 Union, Structure and Defined Data Types
  * @brief   rda Defined Data Types
@@ -688,6 +700,13 @@ class RDA5807 {
             uint8_t getBlockId();
             uint8_t getErrorBlockB();
             bool hasRdsInfo();
+
+            // I2S 
+            void setI2SOn(bool value);
+            void setI2SAllParameters(uint8_t R_DELY, uint8_t L_DELY, uint8_t SCLK_O_EDGE, uint8_t SW_O_EDGE, uint8_t I2S_SW_CNT, uint8_t WS_I_EDGE, uint8_t DATA_SIGNED, uint8_t SCLK_I_EDGE, uint8_t WS_LR, uint8_t SLAVE_MASTER, uint8_t OPEN_MODE );
+            void setI2SMaster(bool value);
+            void setI2SSpeed(uint8_t value);    
+            void setI2SDataSigned(bool value);
 
             // Tools (Helper)
             void convertToChar(uint16_t value, char *strValue, uint8_t len, uint8_t dot, uint8_t separator, bool remove_leading_zeros = true );

@@ -1080,3 +1080,83 @@ void RDA5807::convertToChar(uint16_t value, char *strValue, uint8_t len, uint8_t
         }
     }
 }
+
+
+/** 
+ * @defgroup GA06 I2S Functions
+ * @section GA06 I2S
+ */
+
+
+/**
+ * @ingroup G06 set I2S 
+ * @brief Configure all parameters for I2S
+ * 
+ * @param value  uint16_t
+ */
+void RDA5807::setI2SAllParameters(uint8_t R_DELY, uint8_t L_DELY, uint8_t SCLK_O_EDGE, uint8_t SW_O_EDGE, uint8_t I2S_SW_CNT, uint8_t WS_I_EDGE, uint8_t DATA_SIGNED, uint8_t SCLK_I_EDGE, uint8_t WS_LR, uint8_t SLAVE_MASTER, uint8_t OPEN_MODE ) {
+    reg06->refined.R_DELY = R_DELY;
+    reg06->refined.L_DELY = L_DELY;
+    reg06->refined.SCLK_O_EDGE = SCLK_O_EDGE;
+    reg06->refined.SW_O_EDGE = SW_O_EDGE;
+    reg06->refined.I2S_SW_CNT = I2S_SW_CNT;
+    reg06->refined.WS_I_EDGE = WS_I_EDGE;
+    reg06->refined.DATA_SIGNED = DATA_SIGNED;
+    reg06->refined.SCLK_I_EDGE = SCLK_I_EDGE;
+    reg06->refined.WS_LR = WS_LR;
+    reg06->refined.SLAVE_MASTER = SLAVE_MASTER; 
+    reg06->refined.OPEN_MODE = OPEN_MODE;   
+
+    setRegister(REG06,reg06->raw);
+}
+
+
+
+/**
+ * @ingroup G06 set I2S on or off
+ * @brief 
+ * 
+ * @param value  true or false
+ */
+void RDA5807::setI2SOn(bool value) {
+    reg04->refined.I2S_ENABLE = value;
+    setRegister(REG04,reg04->raw);
+}
+
+
+/**
+ * @ingroup G06 set I2S Slave or Master
+ * @brief 
+ * 
+ * @param value  true or false
+ */
+void RDA5807::setI2SMaster(bool value) {
+    reg06->refined.SLAVE_MASTER = !value; 
+    setRegister(REG06,reg06->raw);
+}
+
+
+
+/**
+ * @ingroup G06 set I2S STEP/SPEED
+ * @brief Sets the speed in kbps. You can use the predefined constantes: I2S_WS_STEP_48, I2S_WS_STEP_44_1, I2S_WS_STEP_32,
+ * @brief I2S_WS_STEP_24, I2S_WS_STEP_22_05, I2S_WS_STEP_16, I2S_WS_STEP_12, I2S_WS_STEP_11_025 or I2S_WS_STEP_8    
+ * 
+ * @param value value 
+ */
+void RDA5807::setI2SSpeed(uint8_t value) {
+    reg06->refined.I2S_SW_CNT = value;
+    setRegister(REG06,reg06->raw);
+}
+
+
+/**
+ * @ingroup G06 set I2S Data Signed
+ * @brief If 0, I2S output unsigned 16-bit audio data. If 1, I2S output signed 16-bit audio data.
+ * 
+ * @param value  true (1) or false (0)
+ */
+void RDA5807::setI2SDataSigned(bool value) {
+    reg06->refined.DATA_SIGNED = value; 
+    setRegister(REG06,reg06->raw);
+}
