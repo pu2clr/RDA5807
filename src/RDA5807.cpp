@@ -1091,8 +1091,22 @@ void RDA5807::convertToChar(uint16_t value, char *strValue, uint8_t len, uint8_t
 /**
  * @ingroup G06 set I2S 
  * @brief Configure all parameters for I2S
+ * @details I2S setup should be enabled 
+ * @details I2S_SW_CNT can be: I2S_WS_STEP_48, I2S_WS_STEP_44_1, I2S_WS_STEP_32, I2S_WS_STEP_24, I2S_WS_STEP_22_05, I2S_WS_STEP_16, I2S_WS_STEP_12, I2S_WS_STEP_11_025 or I2S_WS_STEP_8
  * 
- * @param value  uint16_t
+ * @param R_DELY If 1, R channel data delay 1T
+ * @param L_DELY If 1, L channel data delay 1T
+ * @param SCLK_O_EDGE If 1, invert sclk output when as master
+ * @param SW_O_EDGE If 1, invert ws output when as master
+ * @param I2S_SW_CNT Only valid in master mode. See table above
+ * @param WS_I_EDGE  If 0, use normal ws internally; If 1, inverte ws internally
+ * @param DATA_SIGNED If 0, I2S output unsigned 16-bit audio data. If 1, I2S output signed 16-bit audio data.
+ * @param SCLK_I_EDGE If 0, use normal sclk internally;If 1, inverte sclk internally
+ * @param WS_LR Ws relation to l/r channel; If 0, ws=0 ->r, ws=1 ->l; If 1, ws=0 ->l, ws=1 ->r
+ * @param SLAVE_MASTER I2S slave or master; 1 = slave; 0 = master
+ * @param OPEN_MODE Open reserved register mode;  11=open behind registers writing function others: only open behind registers reading function
+ * 
+ * @see setI2SOn
  */
 void RDA5807::setI2SAllParameters(uint8_t R_DELY, uint8_t L_DELY, uint8_t SCLK_O_EDGE, uint8_t SW_O_EDGE, uint8_t I2S_SW_CNT, uint8_t WS_I_EDGE, uint8_t DATA_SIGNED, uint8_t SCLK_I_EDGE, uint8_t WS_LR, uint8_t SLAVE_MASTER, uint8_t OPEN_MODE ) {
     reg06->refined.R_DELY = R_DELY;
