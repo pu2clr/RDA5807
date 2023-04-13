@@ -66,8 +66,7 @@ The two photos below show the standalone RDA5807FP IC mounted on a homebrew boar
 ![RDA5807 RDA5807FP setup 02](extras/images/RDA5807FP_setup_02.jpg)
 
 
-
-
+[More details about how to use the standalone RDA5807FP IC](https://hackaday.io/project/9009-arduino-radio-with-rds)
 
 
 
