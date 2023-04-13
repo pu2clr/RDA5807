@@ -25,14 +25,14 @@
   |                           | A (15) & VDD              |  +Vcc         |
   | --------------------------| ------------------------- | --------------|
   | RDA5807                   |                           |               | 
-  |                           | VCC                       |   3.3V        |
-  |                           | SDIO (pin 8)              |     21        |
-  |                           | SCLK (pin 7)              |     22        |
+  |                           | VCC                       |  3.3V         |
+  |                           | SDIO / SDA (pin 8)        |  GPIO21       |
+  |                           | SCLK (pin 7)              |  GPIO22       |
   | Buttons                   |                           |               |
-  |                           | Volume Up                 |     32        |
-  |                           | Volume Down               |     33        |
-  |                           | Stereo/Mono               |     25        |
-  |                           | RDS ON/off                |     26        |
+  |                           | Volume Up                 |  GPIO32       |
+  |                           | Volume Down               |  GPIO33       |
+  |                           | Stereo/Mono               |  GPIO25       |
+  |                           | RDS ON/off                |  GPIO26       |
   | --------------------------| --------------------------| --------------|
   | Encoder                   |                           |               |
   |                           | A                         |  GPIO13       |

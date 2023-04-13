@@ -66,7 +66,10 @@ The two photos below show the standalone RDA5807FP IC mounted on a homebrew boar
 ![RDA5807 RDA5807FP setup 02](extras/images/RDA5807FP_setup_02.jpg)
 
 
-[More details about how to use the standalone RDA5807FP IC](https://hackaday.io/project/9009-arduino-radio-with-rds)
+The schematic below shows the RDA5807FP setup. 
+
+![RDA5807 RDA5807FP setup 02](extras/images/RDA5807FP_SETUP.png)
+
 
 
 
@@ -333,6 +336,48 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 | Encoder                   |                           |               |
 |                           | A                         |       2       |
 |                           | B                         |       3       |
+
+
+
+
+### RDA5807FP setup, ESP32 and LCD16X02 display wireup
+
+
+![Basic LCD16X02 Schematic](./extras/images/RDA5807_LCD16X02_ESP32_RDA5807FP.png)
+
+<BR>
+
+Wire up ESP32 Dev Module, RDA5807 and LCD16x02 or LCD16x04
+
+| Device name               | Device Pin / Description  |  Arduino Pin  |
+| --------------------------| --------------------      | ------------  |
+|    LCD 16x2 or 20x4       |                           |               |
+|                           | D4                        |  GPIO18       |
+|                           | D5                        |  GPIO17       |
+|                           | D6                        |  GPIO16       |
+|                           | D7                        |  GPIO15       |
+|                           | RS                        |  GPIO19       |
+|                           | E/ENA                     |  GPIO23       |
+|                           | RW & VSS & K (16)         |  GND          |
+|                           | A (15) & VDD              |  +Vcc         |
+| --------------------------| ------------------------- | --------------|
+| RDA5807FP (See schematic) |                           |               | 
+|                           | VCC                       |  3.3V         |
+|                           | SDIO / SDA (pin 8)        |  GPIO21       |
+|                           | SCLK (pin 7)              |  GPIO22       |
+| Buttons                   |                           |               |
+|                           | Volume Up                 |  GPIO32       |
+|                           | Volume Down               |  GPIO33       |
+|                           | Stereo/Mono               |  GPIO25       |
+|                           | RDS On/Off                |  GPIO26       |
+| --------------------------| --------------------------| --------------|
+| Encoder                   |                           |               |
+|                           | A                         |  GPIO13       |
+|                           | B                         |  GPIO14       |
+|                           | PUSH BUTTON (encoder)     |  GPIO27       |
+
+
+ATTENTION: Be guided by the ESP32 IO/GPIO pins. 
 
 
 
