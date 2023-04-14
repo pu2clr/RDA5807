@@ -327,7 +327,7 @@ void showRDSMsg()
   rdsMsg[41] = '\0';   // Truncate the message to fit on display line
   strncpy(txtAux,&rdsMsg[rdsMsgIndex],16);
   txtAux[16] = '\0';
-  rdsMsgIndex += 4;
+  rdsMsgIndex++;
   if (rdsMsgIndex > 40) rdsMsgIndex = 0;
   lcd.setCursor(0,0);
   lcd.print(txtAux);
