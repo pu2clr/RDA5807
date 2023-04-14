@@ -464,5 +464,5 @@ void loop()
     polling_rds = millis();
   }
 
-  delay(100);
+  delay(5);
 }
