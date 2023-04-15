@@ -90,8 +90,8 @@
 #define POLLING_TIME 2000
 #define POLLING_RDS 20
 
-#define STORE_TIME 10000  // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
-#define PUSH_MIN_DELAY 300
+#define STORE_TIME 10000    // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
+#define PUSH_MIN_DELAY 300  // Minimum waiting time after an action
 
 const uint8_t app_id = 43;  // Useful to check the EEPROM content before processing useful data
 const int eeprom_address = 0;

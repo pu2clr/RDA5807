@@ -660,6 +660,7 @@ class RDA5807 {
 
             void setBand(uint8_t band = 1);
             void setSpace(uint8_t space = 0);
+            void setStep(uint8_t step = 100);
             int getRssi();
 
             void setSoftmute(bool value);

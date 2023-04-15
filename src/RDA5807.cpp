@@ -437,8 +437,38 @@ void RDA5807::setBand(uint8_t band)
 void RDA5807::setSpace(uint8_t space)
 {
     reg03->refined.SPACE = space;
+    this->currentFMSpace = space;
     setRegister(REG03, reg03->raw);
 }
+
+/**
+ * @ingroup GA03 - Frequency step
+ * @brief Sets the FM Step;
+ * @details Converts the step frequency (25, 50, 100 or 200 kHz) to Space. Invalid values will be converted to 0 (100 kHz) 
+ * @param step  25, 50, 100 or 200 kHz
+ */
+void RDA5807::setStep(uint8_t step)
+{
+    uint8_t space;
+    switch (step) {
+        case 100:
+        space = 0; // b00
+        break;
+        case 200: 
+        space = 1; // b01
+        break;
+        case 50:
+        space = 2; // b10
+        break;
+        case 25:
+        space = 3; // b11
+        break;
+        default:
+        space = 0; 
+    }
+    this->setSpace(space);
+}
+
 
 /**
  * @ingroup GA03
