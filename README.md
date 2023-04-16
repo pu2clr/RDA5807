@@ -58,6 +58,34 @@ The photo below shows a Breakout that uses the RDA5807MS.
 
 If you are using the standalone RDA5807FP you must add some parts to make it work.  In my opinion, there is no big  reasons to use the RDA5807FP instead of the RDA5807MS breakout. I think the most important thing is the possibility to use the digital audio configuration via I2S protocol. This library has function to deal with I2S.
 
+
+### RDA5807FP PINOUT
+
+
+![RDA5807 Breakout board](extras/images/RDA5807FP_PINOUT.png)
+
+
+|  PIN     |  Label    |  Description      |
+| -------- | --------- | ----------------- |
+|    1     |  GPIO1    | General purpose input/output (Stereo indicator, interrupt etc) | 
+|    2     |  GND_1    | Ground. Must be connected to ground |
+|    3     |  RFGND    | RF Ground. Must be connected to the ground or a special RF ground |
+|    4     |  FMIN     | FM signal imput - Antenna |
+|    5     |  GND_2    | Ground. Must be connected to ground | 
+|    6     |  GND_3    | Ground. Must be connected to ground |
+|    7     |  SCLK     | I2C clock | 
+|    8     |  SDA      | I2C SDA/SDIO |
+|    9     |  RCLK     | 32.768KHz pasive crystal | 
+|   10     |  VDD      | 3.3V power supply |
+|   11     |  GND_4    | Ground. Must be connected to ground |
+|   12     |  ROUT     | Right audio output |
+|   13     |  LOUT     | Left audio output |
+|   14     |  GND_5    | Ground. Must be connected to ground |
+|   15     |  GPIO3    | General purpose input/output  |
+|   16     |  GPIO2    | General purpose input/output  |
+
+
+
 The two photos below show the standalone RDA5807FP IC mounted on a homebrew board.
 
 
