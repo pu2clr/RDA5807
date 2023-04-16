@@ -1117,6 +1117,7 @@ void RDA5807::convertToChar(uint16_t value, char *strValue, uint8_t len, uint8_t
 /** 
  * @defgroup GA06 I2S Functions
  * @section GA06 I2S
+ * @todo Test the I2S with RDA5807FP device.
  */
 
 
