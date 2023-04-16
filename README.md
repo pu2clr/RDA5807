@@ -409,7 +409,7 @@ ATTENTION: Be guided by the ESP32 IO/GPIO pins.
 
 * RDS Improvments;
 * Example using OLED;
-* Add function to deal with I2S (RDA5807FP);
+* Check the functions/methods to deal with I2S (RDA5807FP);
 
 
 
