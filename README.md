@@ -79,7 +79,7 @@ If you are using the standalone RDA5807FP you must add some parts to make it wor
 |    6     |  GND_3    | Ground. Must be connected to ground |
 |    7     |  SCLK     | I2C clock | 
 |    8     |  SDA      | I2C SDA/SDIO |
-|    9     |  RCLK     | 32.768KHz pasive crystal | 
+|    9     |  RCLK     | 32.768kHz pasive crystal | 
 |   10     |  VDD      | 3.3V power supply |
 |   11     |  GND_4    | Ground. Must be connected to ground |
 |   12     |  ROUT     | Right audio output |
