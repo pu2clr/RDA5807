@@ -103,6 +103,11 @@ The photos below show the RDA5807FP setup on a Arduino Uno board adapter.
 
 
 
+{% include video04.html %}
+
+* [See the presentation video on youtube](https://youtu.be/I7-fCKPDF4Y) 
+
+
 
 <BR>
 
