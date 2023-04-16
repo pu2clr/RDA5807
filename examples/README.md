@@ -31,12 +31,24 @@ The [RDA5807_01_SERIAL_MONITOR](https://github.com/pu2clr/RDA5807/tree/master/ex
 ![Schematic - Arduino and TFT Display ](../extras/images/circuit_attiny84.png)
 
 
+{% include video01.html %}
+
+* [See the presentation video on youtube](https://youtu.be/eLWEWEjxM8U) 
+
+{% include video02.html %}
+
+* [See RDS and TFT Display example - youtube](https://youtu.be/PZsbqieeYns) 
+
 
 ### Arduino Nano and NOKIA5110 schematic
 
 
 ![Schematic -  Arduino Nano and NOKIA5110](../extras/images/RDA5807_NOKIA5110_01.png)
 
+
+{% include video03.html %}
+
+* [See RDS and Nokia 5110 Display example - youtube](https://youtu.be/jInacTWoF9Y) 
 
 
 ### Arduino Nano and LCD 16x02 
@@ -52,11 +64,22 @@ The [RDA5807_01_SERIAL_MONITOR](https://github.com/pu2clr/RDA5807/tree/master/ex
 ![Schematic -  ESP32 and LCD 16x02](../extras/images/RDA5807_LCD16X02_ESP32_RDA5807FP.png)
 
 
+{% include video05.html %}
+
+* [See RDS, ESP32 and LCD 16x02 on youtube](https://youtu.be/HgMEgd74SUk) 
+
+
+
 ### Arduino UNO and display module TM1638
 
 
 ![Schematic -  Arduino UNO and display module TM1638](../extras/images/TM1638_UNO_RDA5807FP.png)
 
+
+
+{% include video04.html %}
+
+* [See the presentation video about Arduino UNO and display module TM1638 on youtube](https://youtu.be/I7-fCKPDF4Y) 
 
 
 
