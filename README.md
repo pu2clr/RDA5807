@@ -62,6 +62,10 @@ If you are using the standalone RDA5807FP you must add some parts to make it wor
 ### RDA5807FP PINOUT
 
 
+![RDA5807 Breakout board](extras/images/RDA5807FP_ON_BOARD_ADAPTER.jpg) 
+
+
+
 ![RDA5807 Breakout board](extras/images/RDA5807FP_PINOUT.png)
 
 
