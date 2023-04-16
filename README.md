@@ -56,6 +56,8 @@ The photo below shows a Breakout that uses the RDA5807MS.
 
 ### RDA5807FP standalone IC
 
+If you are using the standalone RDA5807FP you must add some parts to make it working.  In my opinion, there is no big  reasons to use the RDA5807FP instead of the RDA5807MS breakout. I think the most important thing is the possibility to use the digital audio configuration via I2S protocol. This library has function to deal with I2S.
+
 The two photos below show the standalone RDA5807FP IC mounted on a homebrew board.
 
 
@@ -83,6 +85,23 @@ The schematic below shows the basic RDA5807FP setup.
 | C2 and C3  |  10uF tantalum capacitor (stereo audio output) |      
 | Q1         |  32768 kHz passive crystal occilator |
 | J1         |  Audio stereo jack |
+
+
+### The RDA5807FP on an Arduino Uno adapter
+
+
+The photos below show the RDA5807FP setup on a Arduino Uno board adapter.
+
+
+![RDA5807FP on Arduino Uno Adapter 01](extras/images/RDA5807FP_ON_UNO_ADAPTER_01.jpg)
+
+
+![RDA5807FP on Arduino Uno Adapter 02](extras/images/RDA5807FP_ON_UNO_ADAPTER_02.jpg)
+
+
+![RDA5807FP on Arduino Uno Adapter 03](extras/images/RDA5807FP_ON_UNO_ADAPTER_03.jpg)
+
+
 
 
 <BR>
