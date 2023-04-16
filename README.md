@@ -124,6 +124,7 @@ The photos below show the RDA5807FP setup on a Arduino Uno board adapter.
 8. Mute control
 9. Mono/Stereo control
 10. RDS/RBDS Processor (under construction)
+11. I2S Digital Audio (RDA5807FP)
 
 
 ### See also
