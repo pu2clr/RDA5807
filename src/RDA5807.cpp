@@ -433,6 +433,7 @@ void RDA5807::setBand(uint8_t band)
  * | 11    | 25KHz       | 
  * 
  * @param space FM channel space. See table above.
+ * @todo make the space 01 (200kHz) work.
  */
 void RDA5807::setSpace(uint8_t space)
 {
@@ -446,6 +447,7 @@ void RDA5807::setSpace(uint8_t space)
  * @brief Sets the FM Step;
  * @details Converts the step frequency (25, 50, 100 or 200 kHz) to Space. Invalid values will be converted to 0 (100 kHz) 
  * @param step  25, 50, 100 or 200 kHz
+ * @todo Make the step 200kHz work well
  */
 void RDA5807::setStep(uint8_t step)
 {
