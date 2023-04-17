@@ -445,12 +445,6 @@ ATTENTION: Be guided by the ESP32 IO/GPIO pins.
 
 
 
-# Videos and projects about this library
-
-* [Receptor de FM SDR con RDA5807 - Spanish](https://youtu.be/6PAnqT2TrL8)
-* [RDA5807 Fm based radio - Portuguese](https://youtu.be/2g1KJkDFCaU)
-* [Rádio FM RDA5807 com ESP32, Arduino etc - Portuguese](https://www.dobitaobyte.com.br/radio-fm-rda5807-com-esp32-arduino-etc/?amp)
-
 
 ### See also
 
@@ -475,6 +469,10 @@ Cordova provides an easy way to develop for iOS and Android.
 
 
 # References 
+
+* [Receptor de FM SDR con RDA5807 - Spanish](https://youtu.be/6PAnqT2TrL8)
+* [RDA5807 Fm based radio - Portuguese](https://youtu.be/2g1KJkDFCaU)
+* [Rádio FM RDA5807 com ESP32, Arduino etc - Portuguese](https://www.dobitaobyte.com.br/radio-fm-rda5807-com-esp32-arduino-etc/?amp)
 
 * [RDA5807M - SINGLE-CHIP BROADCAST FMRADIO TUNER](https://www.electrodragon.com/w/images/5/5f/RDA5807M_datasheet_v1.pdf)
 * [A small eagle library for popular RDA5807 Radio module](https://github.com/TigerBouli/RDA5807m-Module-)
