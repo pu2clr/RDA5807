@@ -3566,14 +3566,12 @@ Source: &lt;a href="https://retrocip.cz/files/tm1638.pdf"&gt; Datasheet &lt;/a&g
 <segment>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="104.14" y1="17.78" x2="86.36" y2="17.78" width="0.1524" layer="91"/>
-<junction x="76.2" y="17.78"/>
-<pinref part="B1" gate="G$1" pin="A5"/>
-<wire x1="86.36" y1="17.78" x2="76.2" y2="17.78" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="10.16" x2="73.66" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="73.66" y1="10.16" x2="73.66" y2="17.78" width="0.1524" layer="91"/>
-<wire x1="73.66" y1="17.78" x2="76.2" y2="17.78" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="86.36" y1="-2.54" x2="86.36" y2="17.78" width="0.1524" layer="91"/>
+<pinref part="B1" gate="G$1" pin="A5"/>
+<wire x1="66.04" y1="10.16" x2="78.74" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="10.16" x2="78.74" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="17.78" x2="86.36" y2="17.78" width="0.1524" layer="91"/>
 <junction x="86.36" y="17.78"/>
 </segment>
 </net>
@@ -3581,12 +3579,10 @@ Source: &lt;a href="https://retrocip.cz/files/tm1638.pdf"&gt; Datasheet &lt;/a&g
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="96.52" y1="12.7" x2="93.98" y2="12.7" width="0.1524" layer="91"/>
-<junction x="76.2" y="12.7"/>
-<pinref part="B1" gate="G$1" pin="A4"/>
-<wire x1="93.98" y1="12.7" x2="76.2" y2="12.7" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="12.7" x2="76.2" y2="12.7" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="2"/>
 <wire x1="93.98" y1="-2.54" x2="93.98" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="B1" gate="G$1" pin="A4"/>
+<wire x1="93.98" y1="12.7" x2="66.04" y2="12.7" width="0.1524" layer="91"/>
 <junction x="93.98" y="12.7"/>
 </segment>
 </net>
