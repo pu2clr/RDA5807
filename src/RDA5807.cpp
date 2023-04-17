@@ -236,7 +236,7 @@ void RDA5807::setChannel(uint16_t channel)
  */
 void RDA5807::setFrequency(uint16_t frequency)
 {
-    uint16_t channel = (frequency - this->startBand[currentFMBand] ) / (this->fmSpace[this->currentFMSpace] / 10.0);
+    uint16_t channel = (frequency - this->startBand[currentFMBand] ) / (this->fmSpace[this->currentFMSpace] );
     setChannel(channel);
     this->currentFrequency = frequency;
 }
@@ -249,7 +249,7 @@ void RDA5807::setFrequency(uint16_t frequency)
 void RDA5807::setFrequencyUp()
 {
     if (this->currentFrequency < this->endBand[this->currentFMBand])
-        this->currentFrequency += (this->fmSpace[currentFMSpace] / 10.0);
+        this->currentFrequency += (this->fmSpace[currentFMSpace] );
     else
         this->currentFrequency = this->startBand[this->currentFMBand];
 
@@ -264,7 +264,7 @@ void RDA5807::setFrequencyUp()
 void RDA5807::setFrequencyDown()
 {
     if (this->currentFrequency > this->startBand[this->currentFMBand])
-        this->currentFrequency -= (this->fmSpace[currentFMSpace] / 10.0);
+        this->currentFrequency -= (this->fmSpace[currentFMSpace] );
     else
         this->currentFrequency = this->endBand[this->currentFMBand];
 
@@ -313,7 +313,7 @@ uint16_t RDA5807::getRealChannel()
  * @return uint16_t
  */
 uint16_t RDA5807::getRealFrequency() {
-    return getRealChannel() * (this->fmSpace[this->currentFMSpace] / 10.0) + this->startBand[currentFMBand];
+    return getRealChannel() * (this->fmSpace[this->currentFMSpace]) + this->startBand[currentFMBand];
  }
 
 /**
