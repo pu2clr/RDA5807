@@ -658,7 +658,7 @@ class RDA5807 {
             void seek(uint8_t seek_mode, uint8_t direction, void (*showFunc)());
             void setSeekThreshold(uint8_t value);
 
-            void setBand(uint8_t band = 1);
+            void setBand(uint8_t band = 0);
             void setSpace(uint8_t space = 0);
             void setStep(uint8_t step = 100);
             int getRssi();
