@@ -13,37 +13,37 @@
 
 # compiles POC
 echo "Arduino ATmega328 based board"
-arduino-cli compile -b arduino:avr:nano ./RDA5807_00_CIRCUIT_TEST --output-dir ~/Downloads/hex/atmega/RDA5807_00_CIRCUIT_TEST -v --warnings all
-arduino-cli compile -b arduino:avr:nano ./RDA5807_02_TFT_display --output-dir ~/Downloads/hex/atmega/RDA5807_02_TFT_display -v --warnings all
-arduino-cli compile -b arduino:avr:nano ./RDA5807_04_NOKIA5110 --output-dir ~/Downloads/hex/atmega/RDA5807_04_NOKIA5110 -v --warnings all
-arduino-cli compile -b arduino:avr:nano ./RDA5807_05_LCD16X02 --output-dir ~/Downloads/hex/atmega/RDA5807_05_LCD16X02 -v --warnings all
+arduino-cli compile -b arduino:avr:nano ./RDA5807_00_CIRCUIT_TEST --output-dir ~/Downloads/hex/atmega/RDA5807_00_CIRCUIT_TEST  --warnings all
+arduino-cli compile -b arduino:avr:nano ./RDA5807_02_TFT_display --output-dir ~/Downloads/hex/atmega/RDA5807_02_TFT_display  --warnings all
+arduino-cli compile -b arduino:avr:nano ./RDA5807_04_NOKIA5110 --output-dir ~/Downloads/hex/atmega/RDA5807_04_NOKIA5110  --warnings all
+arduino-cli compile -b arduino:avr:nano ./RDA5807_05_LCD16X02 --output-dir ~/Downloads/hex/atmega/RDA5807_05_LCD16X02  --warnings all
 
-arduino-cli compile -b arduino:avr:uno ./RDA5807_06_UNO_TM1638 --output-dir ~/Downloads/hex/atmega/RDA5807_06_UNO_TM1638 -v --warnings all
+arduino-cli compile -b arduino:avr:uno ./RDA5807_06_UNO_TM1638 --output-dir ~/Downloads/hex/atmega/RDA5807_06_UNO_TM1638  --warnings all
 
 
 
 echo "Arduino LGT8FX based board"
-arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_00_CIRCUIT_TEST --output-dir ~/Downloads/hex/lgt8fx/RDA5807_00_CIRCUIT_TEST -v --warnings all
-arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_02_TFT_display --output-dir ~/Downloads/hex/lgt8fx/RDA5807_02_TFT_display -v --warnings all
-arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_04_NOKIA5110 --output-dir ~/Downloads/hex/lgt8fx/RDA5807_04_NOKIA5110 -v --warnings all
-arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_05_LCD16X02 --output-dir ~/Downloads/hex/lgt8fx/RDA5807_05_LCD16X02 -v --warnings all
-arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_06_UNO_TM1638 --output-dir ~/Downloads/hex/lgt8fx/RDA5807_06_UNO_TM1638 -v --warnings all
+arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_00_CIRCUIT_TEST --output-dir ~/Downloads/hex/lgt8fx/RDA5807_00_CIRCUIT_TEST  --warnings all
+arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_02_TFT_display --output-dir ~/Downloads/hex/lgt8fx/RDA5807_02_TFT_display  --warnings all
+arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_04_NOKIA5110 --output-dir ~/Downloads/hex/lgt8fx/RDA5807_04_NOKIA5110  --warnings all
+arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_05_LCD16X02 --output-dir ~/Downloads/hex/lgt8fx/RDA5807_05_LCD16X02  --warnings all
+arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_06_UNO_TM1638 --output-dir ~/Downloads/hex/lgt8fx/RDA5807_06_UNO_TM1638  --warnings all
 
 
 
 # compiles ESP32 LCD16x2_ALL_IN_ONE
 echo "ESP32"
 echo "ESP32 LCD16x20"
-arduino-cli compile --fqbn esp32:esp32:esp32-poe-iso ./RDA5807_05_LCD16X02_ESP32 --output-dir ~/Downloads/hex/ESP32/DEVM/RDA5807_05_LCD16X02_ESP32 -v --warnings all
+arduino-cli compile --fqbn esp32:esp32:esp32-poe-iso ./RDA5807_05_LCD16X02_ESP32 --output-dir ~/Downloads/hex/ESP32/DEVM/RDA5807_05_LCD16X02_ESP32  --warnings all
 
 
 # compile ESP8266
 echo "ESP8266 OLED"
-arduino-cli compile --fqbn esp8266:esp8266:generic  ./UNDER_CONSTRUCTION/OLED_ESP8266 --output-dir ~/Downloads/hex/ESP8266/OLED_ESP8266 -v --warnings all
+arduino-cli compile --fqbn esp8266:esp8266:generic  ./UNDER_CONSTRUCTION/OLED_ESP8266 --output-dir ~/Downloads/hex/ESP8266/OLED_ESP8266  --warnings all
 
 echo "STM32"
 # arduino-cli board -b stm32duino:STM32F1:genericSTM32F103C  details
-arduino-cli compile  --fqbn stm32duino:STM32F1:genericSTM32F103C ./RDA5807_01_SERIAL_MONITOR/RDA5807_03_STM32 --output-dir ~/Downloads/hex/STM32/F1/RDA5807_03_STM32 -v --warnings all
+arduino-cli compile  --fqbn stm32duino:STM32F1:genericSTM32F103C ./RDA5807_01_SERIAL_MONITOR/RDA5807_03_STM32 --output-dir ~/Downloads/hex/STM32/F1/RDA5807_03_STM32  --warnings all
 
 
 # compiles ATTiny85
