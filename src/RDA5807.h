@@ -581,7 +581,7 @@ class RDA5807 {
 
         uint16_t startBand[4] = {8700, 7600, 7600, 6500};
         uint16_t endBand[4] = {10800, 9100, 10800, 7600}; //!< End FM band limit
-        uint16_t fmSpace[4] = {10, 20, 5, 1};
+        uint16_t fmSpace[4] = {10, 20, 5, 1};  // Actually 100, 200, 50 and 25 kHz Channel Spacing. Just 100 and 50 kHz is working well.
 
         char rds_buffer2A[65]; //!<  RDS Radio Text buffer - Program Information
         char rds_buffer2B[33]; //!<  RDS Radio Text buffer - Station Informaation

@@ -5,8 +5,10 @@ RDA5807 rx;
 void setup() {
   
     Serial.begin(9600);
-   
+    Serial.print("\nStarting...\n");
     rx.setup(); // Stats the receiver with default valuses. Normal operation
+    Serial.print("\nDeviced Started\n");
+      
     rx.setVolume(4);
     rx.setFrequency(9550);  // Tune on 95.5 MHz
     delay(5000);
