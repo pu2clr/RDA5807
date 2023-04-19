@@ -88,12 +88,12 @@ void loop()
   }
  
   if (digitalRead(SEEK_UP) == LOW ) {
-    rx.seek(RDA_SEEK_WRAP,RDA_SEEK_UP);
+    rx.seek(RDA_SEEK_WRAP,RDA_SEEK_UP, showStatus);
     showStatus();
   }
   if (digitalRead(SEEK_DOWN) == LOW ) {
-    rx.seek(RDA_SEEK_WRAP,RDA_SEEK_DOWN);
+    rx.seek(RDA_SEEK_WRAP,RDA_SEEK_DOWN, showStatus);
     showStatus();
   }
-  deley(1);
+  delay(1);
  }

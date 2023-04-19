@@ -39,7 +39,7 @@ arduino-cli compile --fqbn esp32:esp32:esp32-poe-iso ./RDA5807_05_LCD16X02_ESP32
 
 # compile ESP8266
 echo "ESP8266 OLED"
-arduino-cli compile --fqbn esp8266:esp8266:generic  ./UNDER_CONSTRUCTION/OLED_ESP8266 --output-dir ~/Downloads/hex/ESP8266/OLED_ESP8266  --warnings all
+arduino-cli compile --fqbn esp8266:esp8266:generic  ./UNDER_CONSTRUCTION/RDA5807_06_ESP8266_OLED --output-dir ~/Downloads/hex/ESP8266/RDA5807_06_ESP8266_OLED  --warnings all
 
 echo "STM32"
 # arduino-cli board -b stm32duino:STM32F1:genericSTM32F103C  details
@@ -49,4 +49,4 @@ arduino-cli compile  --fqbn stm32duino:STM32F1:genericSTM32F103C ./RDA5807_01_SE
 # compiles ATTiny85
 # echo "ATTINY84"
 # arduino-cli board -b ATTinyCore:avr:attinyx4  details   
-# arduino-cli compile --fqbn ATTinyCore:avr:attinyx4:millis=enabled  ./RDA5807_03_attimy84 --output-dir ~/Downloads/hex/ATTIMY85/RDA5807_03_attimy84
+arduino-cli compile --fqbn ATTinyCore:avr:attinyx4:millis=enabled  ./RDA5807_03_attimy84 --output-dir ~/Downloads/hex/ATTIMY85/RDA5807_03_attimy84 --warnings all

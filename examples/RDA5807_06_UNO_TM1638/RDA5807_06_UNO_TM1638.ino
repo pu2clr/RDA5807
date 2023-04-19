@@ -30,8 +30,6 @@
 #include <RDA5807.h>
 #include <EEPROM.h>
 
-#include "Rotary.h"
-
 
 // TM1638 DISPLAY PINS
 #define TM1638_STB 4
