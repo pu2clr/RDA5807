@@ -35,6 +35,8 @@ arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_06_UNO_TM1638 --output-dir ~/Dow
 echo "ESP32"
 echo "ESP32 LCD16x20"
 arduino-cli compile --fqbn esp32:esp32:esp32-poe-iso ./RDA5807_05_LCD16X02_ESP32 --output-dir ~/Downloads/hex/ESP32/DEVM/RDA5807_05_LCD16X02_ESP32  --warnings all
+arduino-cli compile --fqbn esp32:esp32:esp32-poe-iso ./RDA5807_05_LCD16X02_ESP32_I2S --output-dir ~/Downloads/hex/ESP32/DEVM/RDA5807_05_LCD16X02_ESP32_I2S  --warnings all
+
 
 
 # compile ESP8266
