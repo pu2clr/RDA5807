@@ -2,7 +2,7 @@
 
   ESP32 Dev Modeule version.
 
-  This sketch uses an Arduino Nano with LCD16X02 DISPLAY
+  This sketch uses an ESP32 with LCD16X02 DISPLAY
   It is also a FM receiver capable to tune your local FM stations.
   This sketch saves the latest status of the receiver into the Atmega328 eeprom.
 

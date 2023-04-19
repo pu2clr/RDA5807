@@ -2,8 +2,7 @@
 
   ESP32 Dev Modeule version.
 
-  This sketch uses an Arduino Nano with LCD16X02 DISPLAY
-  It is also a FM receiver capable to tune your local FM stations.
+  This sketch uses an ESP32 with LCD16X02 DISPLAY and MAX98357A I2S setup
   This sketch saves the latest status of the receiver into the Atmega328 eeprom.
 
   TO RESET the EEPROM: Turn your receiver on with the encoder push button pressed.
