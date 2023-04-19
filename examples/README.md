@@ -69,6 +69,17 @@ The [RDA5807_01_SERIAL_MONITOR](https://github.com/pu2clr/RDA5807/tree/master/ex
 * [See RDS, ESP32 and LCD 16x02 on youtube](https://youtu.be/HgMEgd74SUk) 
 
 
+### I2S and RDA5807FP Setup 
+
+
+![Schematic -  ESP32 and LCD 16x02](../extras/images/RDA5807FP_I2S_MAX98357A.png)
+
+
+{% include video06.html %}
+
+* [Video about the RDA5807FP and I2S Digital Audio setup](https://youtu.be/07017sfMYdY) 
+
+
 
 ### Arduino UNO and display module TM1638
 
