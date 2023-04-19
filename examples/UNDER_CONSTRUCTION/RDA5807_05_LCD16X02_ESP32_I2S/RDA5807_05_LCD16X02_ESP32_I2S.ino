@@ -40,14 +40,15 @@
   |                           | PUSH BUTTON (encoder)     |  GPIO27       |
   | 
 
+  About I2S and RDA5807FP: 
+  When setting I2S_ENABLE (register 04) bit is high, the RDA5807FP you can get the output signals SCK, WS, SD signals 
+  from GPIO3, GPIO1 and  GPIO2 (I2S master). The table below shows the RDA5807FP and DAC MAX98357A 
 
-  The table below shows the RDA5807FP,  DAC MAX98357A and ESP32 wireup
-
-  | RDA5807FP    | Function  |  DAC MAX98357A  | ESP32                                 |
-  |--------------| ----------|-----------------|---------------------------------------|
-  | GPIO2        | DOUT/SD   |  DIN            |  SerialData / GPIO32                  |
-  | GPIO1        | DFS /WS   |  RC             |  WordSelect / GPIO25                  |
-  | GPIO3        | DCLK/SCK  |  BCLK           |  ContinuousSerialClock / GPIO33       |
+  | RDA5807FP    | DAC MAX98357A  |
+  |--------------| ---------------|
+  | GPIO2        | DIN            |  
+  | GPIO1        | RC             | 
+  | GPIO3        | BCLK           |  
 
 
   Prototype documentation: https://pu2clr.github.io/RDA5807/
