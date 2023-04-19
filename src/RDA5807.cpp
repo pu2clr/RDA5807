@@ -1116,7 +1116,8 @@ void RDA5807::convertToChar(uint16_t value, char *strValue, uint8_t len, uint8_t
 
 /** 
  * @defgroup GA06 I2S Functions
- * @section GA06 I2S
+ * @section  GA06 I2S
+ * @details  When setting I2S_ENABLE (register 04) bit is high, the RDA5807FP can get the output signals SCK, WS, SD signals from GPIO3, GPIO1 and GPIO2 (I2S master)
  * @todo Test the I2S with RDA5807FP device.
  */
 
