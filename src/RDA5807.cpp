@@ -22,9 +22,9 @@
  * @details For example: You can use these pins to control RDS and SEEK via interrupt. 
  * @details GPIOs are General Purpose I/O pin.  
  * @details GPIO setup
- * @details When gpioPin is 1; gpioSetup can be: 00 = High impedance; 01 = Reserved; 10 = Low; 11 = High
- * @details When gpioPin is 2; gpioSetup can be: 00 = High impedance; 01 = Interrupt (INT) 10 = Low; 11 = High
- * @details When gpioPin is 2; gpioSetup can be: 00 = High impedance; 01 = Mono/Stereo indicator (ST) = Low; 11 = High
+ * @details When GPIO1 (#1), gpioSetup can be: 00 = High impedance; 01 = Reserved; 10 = Low; 11 = High
+ * @details When GPIO2 (#2), gpioSetup can be: 00 = High impedance; 01 = Interrupt (INT) 10 = Low; 11 = High
+ * @details When GPIO3 (#3), gpioSetup can be: 00 = High impedance; 01 = Mono/Stereo indicator (ST) = Low; 11 = High
  * 
  * @param gpioPin   gpio number (1, 2 or 3)
  * @param gpioSetup See description above
@@ -1161,7 +1161,8 @@ void RDA5807::setI2SAllParameters(uint8_t R_DELY, uint8_t L_DELY, uint8_t SCLK_O
 
 /**
  * @ingroup G06 set I2S on or off
- * @brief 
+ * @brief Enable I2S setup
+ * @details  When setting I2S_ENABLE (register 04) bit is high, the RDA5807FP you can get the output signals SCK, WS, SD signals from GPIO3, GPIO1 and  GPIO2 (I2S master)
  * 
  * @param value  true or false
  */

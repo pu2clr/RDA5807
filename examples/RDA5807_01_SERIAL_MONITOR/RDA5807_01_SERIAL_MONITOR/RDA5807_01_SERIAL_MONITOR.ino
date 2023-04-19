@@ -51,8 +51,11 @@ void setup()
   Serial.print("\nTuning 106.5MHz");
   rx.setFrequency(10650); // It is the frequency you want to select in MHz multiplied by 100.
 
-  // Enables SDR
- 
+  // RDS setup
+  rx.setRDS(true);
+  rx.setRdsFifo(true);
+
+  rx.setGpio(3,1);  //  Mono/Stereo indicator. When Stereo, the GPIO03 (pin 15 of the RDA5807FP) becomes high 
   showHelp();
 
 }
