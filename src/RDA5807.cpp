@@ -1125,7 +1125,7 @@ void RDA5807::convertToChar(uint16_t value, char *strValue, uint8_t len, uint8_t
 /**
  * @ingroup GA06 set I2S 
  * @brief Configure all parameters for I2S
- * @details I2S setup should be enabled 
+ * @details I2S setup must be enabled 
  * @details I2S_SW_CNT can be: I2S_WS_STEP_48, I2S_WS_STEP_44_1, I2S_WS_STEP_32, I2S_WS_STEP_24, I2S_WS_STEP_22_05, I2S_WS_STEP_16, I2S_WS_STEP_12, I2S_WS_STEP_11_025 or I2S_WS_STEP_8
  * 
  * @param R_DELY If 1, R channel data delay 1T
