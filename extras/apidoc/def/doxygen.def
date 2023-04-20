@@ -1708,7 +1708,7 @@ _EnD_oF_dEf_TeXt_;
 Configure all parameters for I2S.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
- I2S setup should be enabled 
+ I2S setup must be enabled 
 \ilinebr\ilinebr I2S_SW_CNT can be: I2S_WS_STEP_48, I2S_WS_STEP_44_1, I2S_WS_STEP_32, I2S_WS_STEP_24, I2S_WS_STEP_22_05, I2S_WS_STEP_16, I2S_WS_STEP_12, I2S_WS_STEP_11_025 or I2S_WS_STEP_8
 
 @param R_DELY If 1, R channel data delay 1T
