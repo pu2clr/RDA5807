@@ -1119,12 +1119,11 @@ void RDA5807::convertToChar(uint16_t value, char *strValue, uint8_t len, uint8_t
  * @defgroup GA06 I2S Functions
  * @section  GA06 I2S
  * @details  When setting I2S_ENABLE (register 04) bit is high, the RDA5807FP can get the output signals SCK, WS, SD signals from GPIO3, GPIO1 and GPIO2 (I2S master)
- * @todo Test the I2S with RDA5807FP device.
  */
 
 
 /**
- * @ingroup G06 set I2S 
+ * @ingroup GA06 set I2S 
  * @brief Configure all parameters for I2S
  * @details I2S setup should be enabled 
  * @details I2S_SW_CNT can be: I2S_WS_STEP_48, I2S_WS_STEP_44_1, I2S_WS_STEP_32, I2S_WS_STEP_24, I2S_WS_STEP_22_05, I2S_WS_STEP_16, I2S_WS_STEP_12, I2S_WS_STEP_11_025 or I2S_WS_STEP_8
@@ -1162,7 +1161,7 @@ void RDA5807::setI2SAllParameters(uint8_t R_DELY, uint8_t L_DELY, uint8_t SCLK_O
 
 
 /**
- * @ingroup G06 set I2S on or off
+ * @ingroup GA06 set I2S on or off
  * @brief Enable I2S setup
  * @details  When setting I2S_ENABLE (register 04) bit is high, the RDA5807FP you can get the output signals SCK, WS, SD signals from GPIO3, GPIO1 and  GPIO2 (I2S master)
  * 
@@ -1175,7 +1174,7 @@ void RDA5807::setI2SOn(bool value) {
 
 
 /**
- * @ingroup G06 set I2S Slave or Master
+ * @ingroup GA06 set I2S Slave or Master
  * @brief 
  * 
  * @param value  true or false
@@ -1188,7 +1187,7 @@ void RDA5807::setI2SMaster(bool value) {
 
 
 /**
- * @ingroup G06 set I2S STEP/SPEED
+ * @ingroup GA06 set I2S STEP/SPEED
  * @brief Sets the speed in kbps. You can use the predefined constantes: I2S_WS_STEP_48, I2S_WS_STEP_44_1, I2S_WS_STEP_32,
  * @brief I2S_WS_STEP_24, I2S_WS_STEP_22_05, I2S_WS_STEP_16, I2S_WS_STEP_12, I2S_WS_STEP_11_025 or I2S_WS_STEP_8    
  * 
@@ -1201,7 +1200,7 @@ void RDA5807::setI2SSpeed(uint8_t value) {
 
 
 /**
- * @ingroup G06 set I2S Data Signed
+ * @ingroup GA06 set I2S Data Signed
  * @brief If 0, I2S output unsigned 16-bit audio data. If 1, I2S output signed 16-bit audio data.
  * 
  * @param value  true (1) or false (0)
