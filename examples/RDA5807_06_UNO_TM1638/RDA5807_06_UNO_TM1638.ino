@@ -1,7 +1,4 @@
 /*
-
-  UNDER CONSTRUCTION...
-
   This sketch drive the RDA5807 FM receiver and TM1638 (seven-segment display control)
   About TM1638 see: https://github.com/danja/TM1638lite
 
@@ -20,6 +17,20 @@
   |                           | SDIO (pin 18)                 |     A4        |
   |                           | SCLK (pin 17)                 |     A5        |
   |                           | SEN (pin 16)                  |    GND        |
+
+  The TM1638 painel controls
+
+  | TM1638 button |  Description                             | 
+  | ------------- | ---------------------------------------- |
+  | S1            | Increments the frequency (100kHz step)   |
+  | S2            | Decrements the frequency (100kHz Down)   |
+  | S3            | Seeks the next station available (The direction is defined by the last action of frequency changing) |
+  | S4            | Increments the audio volume |
+  | S5            | Decrements the audio volume |
+  | S6            | Turnn the audio On or Off |
+  | S7            | Sets the Stereo On or Off |
+  | S8            | Sets bass  On or Off |
+
 
 
   Prototype documentation: https://pu2clr.github.io/RDA5807/
@@ -45,7 +56,7 @@
 #define S5_VOL_UP 16      // S5 - Decrements the audio volume
 #define S6_AUDIO_MUTE 32    // S6 - Turnn the audio On or Off
 #define S7_AUDIO_STEREO 64  // S7 - Sets the Stereo On or Off
-#define S8_STEP 128         // S8 - Toggles frequency step (100 or 200 kHz)
+#define S8_BASS 128         // S8 - Toggles Bass on or off
 #define DEFAULT_VOLUME 6
 
 #define STORE_TIME 10000    // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
@@ -64,13 +75,14 @@ uint8_t seekDirection = 1;  // 0 = Down; 1 = Up. This value is set by the last e
 
 bool bSt = true;
 bool bMute = false;
+bool bBass = false;
 
 // Encoder control variables
 
 uint16_t currentFrequency;
 uint16_t previousFrequency;
 
-uint8_t currentStep = 100;
+
 
 uint8_t rssi = 0;
 uint8_t volume = DEFAULT_VOLUME;
@@ -114,6 +126,8 @@ void setup() {
   rx.setFrequency(currentFrequency);  // It is the frequency you want to select in MHz multiplied by 100.
   rx.setSeekThreshold(50);            // Sets RSSI Seek Threshold (0 to 127)
 
+  rx.setGpio(3,1);  //  Mono/Stereo indicator. When Stereo, the GPIO03 (pin 15 of the RDA5807FP) becomes high 
+ 
   showStatus();
 }
 
@@ -128,7 +142,7 @@ void saveAllReceiverInformation() {
   EEPROM.update(eeprom_address + 3, currentFrequency & 0xFF);  // stores the current Frequency LOW byte for the band
   EEPROM.update(eeprom_address + 4, (uint8_t)bMute);
   EEPROM.update(eeprom_address + 5, (uint8_t)bSt);
-  EEPROM.update(eeprom_address + 6, currentStep);
+  EEPROM.update(eeprom_address + 6, bBass);
 }
 
 /**
@@ -144,9 +158,9 @@ void readAllReceiverInformation() {
   rx.setMute(bMute);
 
   bSt = (bool)EEPROM.read(eeprom_address + 5);
-  rx.setMono(bSt);
+  rx.setMono(!bSt);
 
-  currentStep = EEPROM.read(eeprom_address + 6);
+  bBass = EEPROM.read(eeprom_address + 6);
 }
 
 
@@ -200,8 +214,9 @@ void showFrequencySeek() {
 void showStatus() {
   tm.reset();
   showFrequency();
-  tm.setLED(0, bSt);  // Turn On or Off the first LED of the TM1638 painel
+  tm.setLED(0, rx.isStereo());  // Turn On or Off the first LED of the TM1638 painel
   tm.setLED(1, bMute);  // Turn On or Off the secound LED of the TM1638 painel
+  tm.setLED(2, bBass); // 
   showRSSI();
   showVolume();
 }
@@ -286,10 +301,9 @@ void loop() {
       case S7_AUDIO_STEREO:
         rx.setMono(bSt = !bSt);
         break;
-      case S8_STEP:
-        // toggles between 100 and 200
-        currentStep = (currentStep == 100) ? 200 : 100;
-        rx.setStep(currentStep);
+      case S8_BASS:
+        // toggles bass on off
+        rx.setBass(bBass = !bBass);
         break;
     }
     // Something was changed

@@ -87,6 +87,34 @@ The [RDA5807_01_SERIAL_MONITOR](https://github.com/pu2clr/RDA5807/tree/master/ex
 ![Schematic -  Arduino UNO and display module TM1638](../extras/images/TM1638_UNO_RDA5807FP.png)
 
 
+  Wire up on Arduino UNO, RDA5807 and TM1638
+
+  | Device name               | Device Pin / Description      |  Arduino Pin  |
+  | ----------------          | ----------------------------- | ------------  |
+  |    TM1638                 |                               |               |
+  |                           | STB                           |    4          |
+  |                           | CLK                           |    5          |
+  |                           | DIO                           |    6          |
+  |                           | VCC                           |    3.3V       |
+  |                           | GND                           |    GND        |
+  |    RDA5807                |                               |               |
+  |                           | SDIO (pin 18)                 |     A4        |
+  |                           | SCLK (pin 17)                 |     A5        |
+  |                           | SEN (pin 16)                  |    GND        |
+
+  The TM1638 painel controls
+
+  | TM1638 button |  Description                             | 
+  | ------------- | ---------------------------------------- |
+  | S1            | Increments the frequency (100kHz step)   |
+  | S2            | Decrements the frequency (100kHz Down)   |
+  | S3            | Seeks the next station available (The direction is defined by the last action of frequency changing) |
+  | S4            | Increments the audio volume |
+  | S5            | Decrements the audio volume |
+  | S6            | Turnn the audio On or Off |
+  | S7            | Sets the Stereo On or Off |
+  | S8            | Toggles Bass on or off) |
+
 
 {% include video04.html %}
 
