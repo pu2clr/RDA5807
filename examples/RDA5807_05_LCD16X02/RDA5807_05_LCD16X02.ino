@@ -58,7 +58,7 @@
 #include <RDA5807.h>
 #include <EEPROM.h>
 #include <LiquidCrystal.h>
-#include <SPI.h>
+
 
 #include "Rotary.h"
 
