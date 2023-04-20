@@ -664,6 +664,12 @@ class RDA5807 {
             int getRssi();
 
             void setSoftmute(bool value);
+            /**
+             * @ingroup GA03
+             * @brief Gets the softmute status  
+             * @return true if enabled 
+             */
+            inline bool isSoftmuted() { return reg04->refined.SOFTMUTE_EN; };
 
             void setMono(bool value);
             void setBass(bool value);
@@ -672,6 +678,14 @@ class RDA5807 {
             uint8_t getDeviceId();
 
             void setMute(bool value);
+            /**
+             * @ingroup GA03
+             * @brief Gets Audio Mute Status
+             * @return True if muted
+             */
+            inline bool isMuted() {return reg02->refined.DMUTE;};
+
+
             void setVolume(uint8_t value);
             uint8_t getVolume();
             void setVolumeUp();
