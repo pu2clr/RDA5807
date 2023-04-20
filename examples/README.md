@@ -72,13 +72,20 @@ The [RDA5807_01_SERIAL_MONITOR](https://github.com/pu2clr/RDA5807/tree/master/ex
 ### I2S and RDA5807FP Setup 
 
 
-![Schematic -  ESP32 and LCD 16x02](../extras/images/RDA5807FP_I2S_MAX98357A.png)
+![Schematic -  I2S with MAX98357A and RDA5807FP Setup  ](../extras/images/RDA5807FP_I2S_MAX98357A.png)
 
 
 {% include video06.html %}
 
 * [Video about the RDA5807FP and I2S Digital Audio setup](https://youtu.be/07017sfMYdY) 
 
+
+The photo below show the DAC MAX98357A device
+
+![I2S DAC MAX98357A devices photos](../extras/images/MAX98357A_F01.jpg)
+
+The photo below show the CJMCU-1334 module
+![CJMCU-1334 module](../extras/images/CJMCU_I2S_MODULE.jpg)
 
 
 ### Arduino UNO and display module TM1638
