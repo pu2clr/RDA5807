@@ -50,3 +50,8 @@
 
 ![Schematic -  Arduino UNO and display module TM1638](./images/TM1638_UNO_RDA5807FP.png)
 
+
+### I2S and RDA5807FP Setup 
+
+
+![Schematic - I2S and RDA5807FP Setup ](./images/RDA5807FP_I2S_MAX98357A.png)
