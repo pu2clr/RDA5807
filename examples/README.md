@@ -84,6 +84,18 @@ The photo below show the DAC MAX98357A device
 
 ![I2S DAC MAX98357A devices photos](../extras/images/MAX98357A_F01.jpg)
 
+
+
+The table below shows the  MAX98357A device connected to the RDA5807FP.
+
+
+  | RDA5807FP    | DAC MAX98357A  |
+  |--------------| ---------------|
+  | GPIO2        | DIN            |  
+  | GPIO1        | RC             | 
+  | GPIO3        | BCLK           |  
+
+
 The photo below show the CJMCU-1334 module
 ![CJMCU-1334 module](../extras/images/CJMCU_I2S_MODULE.jpg)
 
