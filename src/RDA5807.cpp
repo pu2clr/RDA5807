@@ -3,6 +3,7 @@
  * @details RDA5807 Arduino Library implementation. This is an Arduino library for the RDA5807, BROADCAST RECEIVER.
  * @details It works with I2C protocol and can provide an easier interface to control the RDA5807 device.<br>
  * @details This library was built based on "RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015"
+ * @details and RDA microelectronics RDA5807FP - SINGLE-CHIP BROADCAST FM RADIO TUNER 
  * @details This library can be freely distributed using the MIT Free Software model.
  * @copyright Copyright (c) 2020 Ricardo Lima Caratti.
  * @author Ricardo LIma Caratti (pu2clr@gmail.com)
@@ -1139,6 +1140,8 @@ void RDA5807::convertToChar(uint16_t value, char *strValue, uint8_t len, uint8_t
  * @param WS_LR Ws relation to l/r channel; If 0, ws=0 ->r, ws=1 ->l; If 1, ws=0 ->l, ws=1 ->r
  * @param SLAVE_MASTER I2S slave or master; 1 = slave; 0 = master
  * @param OPEN_MODE Open reserved register mode;  11=open behind registers writing function others: only open behind registers reading function
+ * 
+ * @see RDA microelectronics RDA5807FP - SINGLE-CHIP BROADCAST FM RADIO TUNER pages 11 and 12 
  * 
  * @see setI2SOn
  */

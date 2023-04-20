@@ -4,6 +4,7 @@
  * @brief PU2CLR rda Arduino Library implementation. <br>
  * @details This library works with I2C protocol and can provide an easier interface for controlling the RDA5807M devices.<br>
  * @details This is an Arduino library was implemented based on RDA5807M - SINGLE-CHIP BROADCAST FMRADIO TUNER document from RDA microeletronics.
+ * @details and RDA microelectronics RDA5807FP - SINGLE-CHIP BROADCAST FM RADIO TUNER
  *
  * @details IMPORTANT: 
  * @details The RDA5807M can be accessed by using two I2C bus address.
