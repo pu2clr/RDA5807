@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"group___g_a01.html#structrds__blockb_8group0":[2,4,34],
 "group___g_a01.html#structrds__blockb_8group2":[2,4,35],
 "group___g_a01.html#structrds__blockb_8refined":[2,4,36],
 "group___g_a01.html#structrds__date__time_8refined":[2,4,37],
