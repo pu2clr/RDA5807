@@ -1,29 +1,29 @@
 /*
-  Under construction... 
+  Under construction...
   Test and validation of RDA5807 on UNO/NANO or other ATMEGA328 based device.
-  It is FM receiver with  
-  
-   Nano and RDA5807 wireup  
+  It is FM receiver with
+
+   Nano and RDA5807 wireup
 
   Wire up on Arduino UNO, Nano or Pro mini
 
   | Device name               | Device Pin / Description  |  Arduino Pin  |
   | --------------------------| --------------------      | ------------  |
   | OLED - I2C                |                           |               |
-  |                           |  SDA                      |     A4        | 
-  |                           |  SCLK                     |     A5        |  
+  |                           |  SDA                      |     A4        |
+  |                           |  SCLK                     |     A5        |
   | --------------------------| ------------------------- | --------------|
-  | RDA5807                   |                           |               | 
+  | RDA5807                   |                           |               |
   |                           | SDA/SDIO                  |     A4        |
   |                           | SCLK (Clock)              |     A5        |
   | --------------------------| --------------------------| --------------|
   | Buttons                   |                           |               |
   |                           | Volume Up                 |      8        |
   |                           | Volume Down               |      9        |
-  |                           | Mute                      |     10        | 
+  |                           | Mute                      |     10        |
   |                           | Bass                      |     11        |
   |                           | SEEK (encoder button)     |     D14/A0    |
-  | --------------------------| --------------------------|---------------| 
+  | --------------------------| --------------------------|---------------|
   | Encoder                   |                           |               |
   |                           | A                         |       2       |
   |                           | B                         |       3       |
@@ -35,20 +35,22 @@
 #include <Tiny4kOLED.h>
 #include "Rotary.h"
 
-// Please, check the ATtiny84 physical pins 
+// Please, check the ATtiny84 physical pins
 
-#define VOLUME_UP           8       
-#define VOLUME_DOWN         9
-#define AUDIO_MUTE         10
-#define AUDIO_BASS         11
-#define SEEK_STATION       14 // A0 = D14
+#define VOLUME_UP 8
+#define VOLUME_DOWN 9
+#define AUDIO_MUTE 10
+#define AUDIO_BASS 11
+#define SEEK_STATION 14 // A0 = D14
 
 // Enconder PINs
 #define ENCODER_PIN_A 2
 #define ENCODER_PIN_B 3
 
-volatile int encoderCount = 0;
+bool bBass = false;
 
+volatile int encoderCount = 0;
+uint8_t seekDirection = 1; // 0 = Down; 1 = Up. This value is set by the last encoder direction.
 long elapsedTimeEncoder = millis();
 
 // Encoder control
@@ -83,7 +85,6 @@ void setup()
   attachInterrupt(digitalPinToInterrupt(ENCODER_PIN_A), rotaryEncoder, CHANGE);
   attachInterrupt(digitalPinToInterrupt(ENCODER_PIN_B), rotaryEncoder, CHANGE);
 
-
   rx.setup();
   rx.setVolume(6);
   rx.setFrequency(10650); // It is the frequency you want to select in MHz multiplied by 100.
@@ -101,8 +102,8 @@ void rotaryEncoder()
     encoderCount = (encoderStatus == DIR_CW) ? 1 : -1;
 }
 
-
-void showStatus() {
+void showStatus()
+{
   oled.setCursor(0, 0);
   oled.print("FM ");
   oled.setCursor(38, 0);
@@ -115,7 +116,31 @@ void showStatus() {
 
 void loop()
 {
-
-
-  delay(1);
- }
+  // Check if the encoder has moved.
+  if (encoderCount != 0)
+  {
+    if (encoderCount == 1)
+    {
+      rx.setFrequencyUp();
+      seekDirection = RDA_SEEK_UP;
+    }
+    else
+    {
+      rx.setFrequencyDown();
+      seekDirection = RDA_SEEK_DOWN;
+    }
+    showStatus();
+    encoderCount = 0;
+  }
+  else if (digitalRead(VOLUME_UP) == LOW)
+    rx.setVolumeUp();
+  else if (digitalRead(VOLUME_DOWN) == LOW)
+    rx.setVolumeDown();
+  else if (digitalRead(SEEK_STATION) == LOW) {
+    rx.seek(RDA_SEEK_WRAP, seekDirection, showStatus); // showFrequency will be called by the seek function during the process.
+    delay(200);
+  }
+  else if (digitalRead(AUDIO_BASS) == LOW)
+    rx.setBass(bBass = !bBass);
+  delay(5);
+}
