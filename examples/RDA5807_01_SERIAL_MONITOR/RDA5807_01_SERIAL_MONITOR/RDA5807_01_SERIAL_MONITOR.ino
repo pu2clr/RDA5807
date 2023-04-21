@@ -56,6 +56,8 @@ void setup()
   rx.setRdsFifo(true);
 
   rx.setGpio(3,1);  //  Mono/Stereo indicator. When Stereo, the GPIO03 (pin 15 of the RDA5807FP) becomes high 
+  rx.setAFC(true);  // Sets Automatic Frequency Control
+  
   showHelp();
 
 }
