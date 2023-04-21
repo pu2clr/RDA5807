@@ -666,6 +666,20 @@ class RDA5807 {
             void setStep(uint8_t step = 100);
             int getRssi();
 
+            /**
+             * @ingroup GA03
+             * @brief Returns true if the current channel is a station.  
+             * @return true or false
+             */
+            inline bool isFmTrue() { return reg0b->refined.FM_TRUE;};
+
+            /**
+             * @ingroup GA03
+             * @brief Returns true if the FM is ready.  
+             * @return true or false
+             */
+            inline bool isFmReady() { return reg0b->refined.FM_READY;};    
+
             uint8_t getDeviceId();
 
             // Audio setup 
@@ -693,6 +707,7 @@ class RDA5807 {
 
 
             void setAudioOutputHighImpedance(bool value);  
+            void setSoftBlendEnable(bool value);
 
             void setVolume(uint8_t value);
             uint8_t getVolume();

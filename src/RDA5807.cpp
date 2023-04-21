@@ -192,6 +192,18 @@ void RDA5807::setNewDemodulateMethod(bool value) {
 
 /**
  * @ingroup GA03
+ * @brief Sets Soft Blend. 
+ * 
+ * @param value  true or false
+ */
+ void RDA5807::setSoftBlendEnable(bool value) {
+    reg07->refined.SOFTBLEND_EN = value;
+    setRegister(REG07,reg07->raw);
+ }
+
+
+/**
+ * @ingroup GA03
  * @brief Power the receiver off
  */
 void RDA5807::powerDown()
