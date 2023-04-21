@@ -14,6 +14,7 @@ var group___g_a03 =
     [ "RDA5807::powerUp", "group___g_a03.html#ga30d2b0c4662922df53bcef118663329c", null ],
     [ "RDA5807::setNewDemodulateMethod", "group___g_a03.html#gab97c1c8ad3ab0cd5d2852f712caee0a1", null ],
     [ "RDA5807::setSoftBlendEnable", "group___g_a03.html#ga6dd81b0cff50747906d7d05b127112de", null ],
+    [ "RDA5807::setAFC", "group___g_a03.html#ga965658767399e2f923852144e324805f", null ],
     [ "RDA5807::powerDown", "group___g_a03.html#ga214f631aef72ece69db73c99879c7c46", null ],
     [ "RDA5807::setup", "group___g_a03.html#gac79c1fec6c416c9993ff19362fe312cb", null ],
     [ "RDA5807::setChannel", "group___g_a03.html#gaa9cfaddbd43257e810bb3817b021fa8a", null ],

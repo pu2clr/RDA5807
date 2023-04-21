@@ -87,6 +87,7 @@ var group___g_a01 =
       [ "powerDown", "group___g_a03.html#ga214f631aef72ece69db73c99879c7c46", null ],
       [ "setup", "group___g_a03.html#gac79c1fec6c416c9993ff19362fe312cb", null ],
       [ "setNewDemodulateMethod", "group___g_a03.html#gab97c1c8ad3ab0cd5d2852f712caee0a1", null ],
+      [ "setAFC", "group___g_a03.html#ga965658767399e2f923852144e324805f", null ],
       [ "setFrequency", "group___g_a03.html#gad16a6afa9520b77498b17a72c226305a", null ],
       [ "getFrequency", "group___g_a03.html#ga59b981002d383a13731bd939482a5236", null ],
       [ "setFrequencyUp", "group___g_a03.html#ga4e8db177fea475ea00fa04e3d8f1f08c", null ],
