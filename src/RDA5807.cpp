@@ -160,7 +160,7 @@ void RDA5807::powerUp()
     reg02->refined.RDS_EN = 0;  // RDS disable
     reg02->refined.CLK_MODE = this->clockType;
     reg02->refined.RCLK_DIRECT_IN = this->oscillatorType;
-    reg02->refined.MONO = 1;    // Force mono
+    reg02->refined.MONO = 1;    // Force mono   
     reg02->refined.DMUTE = 1;   // Normal operation
     reg02->refined.DHIZ = 1;    // Normal operation
     reg02->refined.ENABLE = 1;
@@ -177,6 +177,17 @@ void RDA5807::powerUp()
     reg05->refined.VOLUME = 0;
 
     setRegister(REG05, reg05->raw);
+}
+
+/**
+ * @ingroup GA03
+ * @brief Sets new demodulate method. It can improve the receiver sensitivity about 1dB
+ * 
+ * @param value  true or false
+ */
+void RDA5807::setNewDemodulateMethod(bool value) {
+    reg02->refined.NEW_METHOD = value;
+    setRegister(REG02,reg02->raw);
 }
 
 /**
@@ -550,6 +561,18 @@ bool RDA5807::isStereo()
     return reg0a->refined.ST;
 }
 
+
+/**
+ * @ingroup GA03
+ * @brief Sets the audio output hight or low impedance 
+ * @details Useful to use the RDA5807 device with hight impedance speaker (headphone) 
+ * @details if 1 = normal operation and 0 = hight impedance
+ * @param value true = hight impedance; false = normal operation  
+ */
+void RDA5807::setAudioOutputHighImpedance( bool value) {
+    reg02->refined.DHIZ = !value; // invert the value 
+    setRegister(REG02, reg02->raw);
+}
 
 
 /**

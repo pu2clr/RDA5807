@@ -645,6 +645,8 @@ class RDA5807 {
 
             void setup(uint8_t clock_type = CLOCK_32K, uint8_t oscillator_type = OSCILLATOR_TYPE_CRYSTAL);
 
+            void setNewDemodulateMethod(bool value);
+
             void setFrequency(uint16_t frequency);
 
 
@@ -664,6 +666,10 @@ class RDA5807 {
             void setStep(uint8_t step = 100);
             int getRssi();
 
+            uint8_t getDeviceId();
+
+            // Audio setup 
+
             void setSoftmute(bool value);
             /**
              * @ingroup GA03
@@ -676,7 +682,6 @@ class RDA5807 {
             void setBass(bool value);
             bool isStereo();
 
-            uint8_t getDeviceId();
 
             void setMute(bool value);
             /**
@@ -686,6 +691,8 @@ class RDA5807 {
              */
             inline bool isMuted() {return reg02->refined.DMUTE;};
 
+
+            void setAudioOutputHighImpedance(bool value);  
 
             void setVolume(uint8_t value);
             uint8_t getVolume();
