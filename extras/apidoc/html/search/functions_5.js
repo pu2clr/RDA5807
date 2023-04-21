@@ -25,12 +25,13 @@ var searchData=
   ['setrdsfifo_22',['setRdsFifo',['../group___g_a04.html#gae27337170a5f3dedebf585aa19855ad6',1,'RDA5807']]],
   ['setregister_23',['setRegister',['../group___g_a03.html#ga3b581b82ab8c631cfec537a47008ddf3',1,'RDA5807']]],
   ['setseekthreshold_24',['setSeekThreshold',['../group___g_a03.html#ga41dbf6ea359175b3671072a3c382d42c',1,'RDA5807']]],
-  ['setsoftmute_25',['setSoftmute',['../group___g_a03.html#gadd2c2ab8b861ab0714fdeb99c774d656',1,'RDA5807']]],
-  ['setspace_26',['setSpace',['../group___g_a03.html#ga76f6c3400b038aef15ba7318592e1dd0',1,'RDA5807']]],
-  ['setstep_27',['setStep',['../group___g_a03.html#ga8bbf57aaeb92f226179579efa61cc846',1,'RDA5807']]],
-  ['setup_28',['setup',['../group___g_a03.html#gac79c1fec6c416c9993ff19362fe312cb',1,'RDA5807']]],
-  ['setvolume_29',['setVolume',['../group___g_a03.html#ga51bf4344ebeb44f7170265901df870f5',1,'RDA5807']]],
-  ['setvolumedown_30',['setVolumeDown',['../group___g_a03.html#ga910965f74897b0246a0b3bed39743d8c',1,'RDA5807']]],
-  ['setvolumeup_31',['setVolumeUp',['../group___g_a03.html#ga864af32df4d3365e03f8876703218283',1,'RDA5807']]],
-  ['softreset_32',['softReset',['../group___g_a03.html#ga3f6dace4c93f82ec66da5641e3e3fdaa',1,'RDA5807']]]
+  ['setsoftblendenable_25',['setSoftBlendEnable',['../group___g_a03.html#ga6dd81b0cff50747906d7d05b127112de',1,'RDA5807']]],
+  ['setsoftmute_26',['setSoftmute',['../group___g_a03.html#gadd2c2ab8b861ab0714fdeb99c774d656',1,'RDA5807']]],
+  ['setspace_27',['setSpace',['../group___g_a03.html#ga76f6c3400b038aef15ba7318592e1dd0',1,'RDA5807']]],
+  ['setstep_28',['setStep',['../group___g_a03.html#ga8bbf57aaeb92f226179579efa61cc846',1,'RDA5807']]],
+  ['setup_29',['setup',['../group___g_a03.html#gac79c1fec6c416c9993ff19362fe312cb',1,'RDA5807']]],
+  ['setvolume_30',['setVolume',['../group___g_a03.html#ga51bf4344ebeb44f7170265901df870f5',1,'RDA5807']]],
+  ['setvolumedown_31',['setVolumeDown',['../group___g_a03.html#ga910965f74897b0246a0b3bed39743d8c',1,'RDA5807']]],
+  ['setvolumeup_32',['setVolumeUp',['../group___g_a03.html#ga864af32df4d3365e03f8876703218283',1,'RDA5807']]],
+  ['softreset_33',['softReset',['../group___g_a03.html#ga3f6dace4c93f82ec66da5641e3e3fdaa',1,'RDA5807']]]
 ];
