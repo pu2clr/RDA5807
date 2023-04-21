@@ -106,6 +106,18 @@ The photo below show the CJMCU-1334 module
 ![Schematic -  Arduino UNO and display module TM1638](../extras/images/TM1638_UNO_RDA5807FP.png)
 
 
+
+![RDA5807FP on Arduino Uno Adapter 01](../extras/images/RDA5807FP_ON_UNO_ADAPTER_01.jpg)
+
+
+![RDA5807FP on Arduino Uno Adapter 02](../extras/images/RDA5807FP_ON_UNO_ADAPTER_02.jpg)
+
+
+![RDA5807FP on Arduino Uno Adapter 03](../extras/images/RDA5807FP_ON_UNO_ADAPTER_03.jpg)
+
+
+
+
   Wire up on Arduino UNO, RDA5807 and TM1638
 
   | Device name               | Device Pin / Description      |  Arduino Pin  |
