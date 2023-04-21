@@ -479,6 +479,7 @@ Cordova provides an easy way to develop for iOS and Android.
 * [A small eagle library for popular RDA5807 Radio module](https://github.com/TigerBouli/RDA5807m-Module-)
 * [RDA5807 fm chipset / arduino with a Nextion screen F5SWB@2021 / Version 1.18](https://github.com/f5swb/RDA5807)
   
-
+* [Breadboard FM Radio with RDA5807 and WIO Terminal](https://youtu.be/ONZBhaCEMVM)
+* [RDA5807 Real test demo](https://youtu.be/0PnV5YjpnV4)
 
 
