@@ -201,6 +201,16 @@ void RDA5807::setNewDemodulateMethod(bool value) {
     setRegister(REG07,reg07->raw);
  }
 
+/**
+ * @ingroup GA03
+ * @brief Sets AFC true or false
+ * 
+ * @param value  true or false
+ */
+void RDA5807::setAFC(bool value) {
+    reg04->refined.AFCD = value;
+    setRegister(REG04,reg04->raw);
+}
 
 /**
  * @ingroup GA03

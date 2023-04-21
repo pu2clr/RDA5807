@@ -647,7 +647,10 @@ class RDA5807 {
 
             void setNewDemodulateMethod(bool value);
 
+            void setAFC(bool value);
+
             void setFrequency(uint16_t frequency);
+
 
 
             uint16_t getFrequency();
