@@ -1,9 +1,11 @@
 # Extras
 
+Here you will find all schematics used by the examples sketches, the EAGLE files and photos. 
 
 
+
+## Some board photos 
 ![RDA5807 homebrew Boards](./images/RDA5807_BOARDS_01.jpg)
-
 
 
 ![RDA5807 Arduino UNO homebrew Board Adapters](./images/RDA5807_BOARDS_01.jpg)
