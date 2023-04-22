@@ -4,7 +4,8 @@
 
 
 
-## Schematic
+
+## All Schematics 
 
 
 ### Basic circuit (examples  RDA5807_00_CIRCUIT_TEST and RDA5807_01_SERIAL_MONITOR)
@@ -110,11 +111,45 @@ Arduino UNO, Nano or other based on Atmega328 and SPI TFT ST7735 1.8" wireup
 ![Schematic -  Arduino Nano and LCD 16x02](./images/RDA5807_LCD16X02.png)
 
 
+#### Wire up on Arduino UNO, Nano or Pro mini
+
+| Device name               | Device Pin / Description  |  Arduino Pin  |
+| --------------------------| --------------------      | ------------  |
+|    LCD 16x2 or 20x4       |                           |               |
+|                           | D4                        |     D7        |
+|                           | D5                        |     D6        |
+|                           | D6                        |     D5        |
+|                           | D7                        |     D4        |
+|                           | RS                        |     D12       |
+|                           | E/ENA                     |     D13       |
+|                           | RW & VSS & K (16)         |    GND        |
+|                           | A (15) & VDD              |    +Vcc       |
+| --------------------------| ------------------------- | --------------|
+| RDA5807                   |                           |               | 
+|                           | SDIO (pin 8)              |     A4        |
+|                           | SCLK (pin 7)              |     A5        |
+| --------------------------| --------------------------| --------------|
+| Buttons                   |                           |               |
+|                           | Volume Up                 |      8        |
+|                           | Volume Down               |      9        |
+|                           | Stereo/Mono               |     10        |
+|                           | RDS ON/off                |     11        |
+|                           | SEEK (encoder button)     |     D14/A0    |
+| --------------------------| --------------------------|---------------| 
+| Encoder                   |                           |               |
+|                           | A                         |       2       |
+|                           | B                         |       3       |
+
 
 ### ESP32 and LCD 16x02 
 
 
 ![Schematic -  ESP32 and LCD 16x02](./images/RDA5807_LCD16X02_ESP32_RDA5807FP.png)
+
+<BR>
+
+![ESP32 and LCD 16x02](./images/ESP32_CTRL_WITH_RDA5807FP_01.jpg)
+
 
 
 ### Arduino UNO and display module TM1638
@@ -122,8 +157,18 @@ Arduino UNO, Nano or other based on Atmega328 and SPI TFT ST7735 1.8" wireup
 
 ![Schematic -  Arduino UNO and display module TM1638](./images/TM1638_UNO_RDA5807FP.png)
 
+<BR>
+
+![Arduino UNO and display module TM1638](./images/UNO_RDA5807FP_7SEG_01.jpg)
+
+
+
 
 ### I2S and RDA5807FP Setup 
 
 
 ![Schematic - I2S and RDA5807FP Setup ](./images/RDA5807FP_I2S_MAX98357A.png)
+
+
+
+![RDA5807 RDA5807FP and I2S setup 01](./images/I2S_RDA5807FP_BOARD_01.jpg)
