@@ -14,11 +14,14 @@ Contact: __pu2clr@gmail.com__.
 
 1. [Preface](https://pu2clr.github.io/RDA5807#preface)
 2. [RDA5807 family devices and RDA5807 Arduino Library](https://pu2clr.github.io/RDA5807#rda5807-family-devices-and-rda5807-arduino-library)
-2. [Library Installation](https://pu2clr.github.io/RDA5807#library-installation)
-3. [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html)
-4. [Basic Schematic](https://pu2clr.github.io/RDA5807#schematic)
-5. [All Schematics](extras/)
-5. [Source code - Arduino Sketches](https://github.com/pu2clr/RDA5807/tree/master/examples)
+4. [Library Installation](https://pu2clr.github.io/RDA5807#library-installation)
+5. [RDA5807MS breakout](https://pu2clr.github.io/RDA5807#rda5807ms-breakout)
+6. [RDA5807FP standalone IC](https://pu2clr.github.io/RDA5807#rda5807fp-standalone-ic)
+7. [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html)
+8. [MIT License](https://pu2clr.github.io/RDA5807#mit-license)
+9. [Basic Schematic](https://pu2clr.github.io/RDA5807#schematic)
+10. [All Schematics](extras/)
+11. [Source code - Arduino Sketches](examples/)
 
 
 ## Attention
