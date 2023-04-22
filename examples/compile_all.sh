@@ -59,3 +59,6 @@ arduino-cli compile --fqbn esp8266:esp8266:generic  ./UNDER_CONSTRUCTION/RDA5807
 
 echo "UNO"
 arduino-cli compile -b arduino:avr:uno  ./UNDER_CONSTRUCTION/RDA5807_07_NANO_OLED --output-dir ~/Downloads/hex/ESP8266/RDA5807_07_NANO_OLED  --warnings all
+
+arduino-cli compile -b arduino:avr:uno  ./UNDER_CONSTRUCTION/RDA5807_TFT_TOUCH_SHIELD --output-dir ~/Downloads/hex/ESP8266/RDA5807_TFT_TOUCH_SHIELD  --warnings all
+
