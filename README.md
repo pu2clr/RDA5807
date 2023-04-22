@@ -146,16 +146,18 @@ The photo below shows a Breakout that uses the RDA5807MS.
 
 If you are using the standalone RDA5807FP you must add some parts to make it work.  In my opinion, there is no big  reasons to use the RDA5807FP instead of the RDA5807MS breakout. I think the most important thing is the possibility to use the digital audio configuration via I2S protocol. This library has function to deal with I2S.
 
-
-### RDA5807FP PINOUT
-
+The photo below shows the RDA5807FP on and SOP16 board adapter. 
 
 ![RDA5807 Breakout board](extras/images/RDA5807FP_ON_BOARD_ADAPTER.jpg) 
 
 
+### RDA5807FP PINOUT
+
+The image below shows the RDA5807FP pinout.     
 
 ![RDA5807 Breakout board](extras/images/RDA5807FP_PINOUT.png)
 
+<BR>
 
 |  PIN     |  Label    |  Description      |
 | -------- | --------- | ----------------- |
