@@ -15,7 +15,8 @@ Contact: __pu2clr@gmail.com__.
 1. [Preface](https://pu2clr.github.io/RDA5807#preface)
 2. [Library Installation](https://pu2clr.github.io/RDA5807#library-installation)
 3. [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html)
-4. [Schematic](https://pu2clr.github.io/RDA5807#schematic)
+4. [Basic Schematic](https://pu2clr.github.io/RDA5807#schematic)
+5. [All Schematics](extras/)
 5. [Source code - Arduino Sketches](https://github.com/pu2clr/RDA5807/tree/master/examples)
 
 
@@ -257,6 +258,9 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 
 
 ![Basic Schematic with TFT](./extras/images/circuit_tft.png)
+
+
+#### Arduino UNO, Nano or other based on Atmega328 and SPI TFT ST7735 1.8" wireup
 
 
 | Device name       | Device Pin / Description  |  Arduino Pin  |
