@@ -180,7 +180,7 @@ The image below shows the RDA5807FP pinout.
 
 
 
-The two photos below show the standalone RDA5807FP IC mounted on a homebrew board.
+The two photos below shows the standalone RDA5807FP IC mounted on a homebrew board.
 
 
 ![RDA5807 RDA5807FP setup 01](extras/images/RDA5807FP_setup_01.jpg)
