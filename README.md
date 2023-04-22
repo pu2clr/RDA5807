@@ -13,6 +13,7 @@ Contact: __pu2clr@gmail.com__.
 ## Contents
 
 1. [Preface](https://pu2clr.github.io/RDA5807#preface)
+2. [RDA5807 family devices and RDA5807 Arduino Library](https://pu2clr.github.io/RDA5807#rda5807-family-devices-and-rda5807-arduino-library)
 2. [Library Installation](https://pu2clr.github.io/RDA5807#library-installation)
 3. [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html)
 4. [Basic Schematic](https://pu2clr.github.io/RDA5807#schematic)
@@ -49,8 +50,86 @@ This library has been successfully tested on RDA5807M and RDA5807FP devices. The
 * [See RDS and Nokia 5110 Display example - youtube](https://youtu.be/jInacTWoF9Y) 
 
 
+## RDA5807 features implemented by this library
+
+1. 76–108 MHz
+2. Seek tuning
+3. Automatic frequency control (AFC)
+4. Automatic gain control (AGC)
+5. Programmable de-emphasis (50/75 μs)
+6. Adaptive noise suppression
+7. Volume control
+8. Mute control
+9. Mono/Stereo control
+10. RDS/RBDS Processor (under construction)
+11. I2S Digital Audio (RDA5807FP)
+
+
 
 You can buy the RDA5807 device on AliExpress, eBay, Amazon etc. You will find two types of RDA5807: The RDA5807MS (breakout) and RDA5807FP (standalone IC).  
+
+
+## Library Installation
+
+ The easiest method to install this library is via your Arduino IDE. All you have to do is:
+ 
+ 1. Select Tools menu;
+ 2. Select Manage Libraries option;
+ 3. In the text box (top windows), type PU2CLR or RDA5807;
+ 4. Select the PU2CLR RDA5807. 
+
+
+The images below show how you can install this library via your Arduino IDE from Manage Libraries tool.
+
+<BR>
+
+![Arduino IDE - Manage Libraries menu option](extras/images/RDA5807_install_01.png)
+
+<BR>
+
+![Arduino IDE - Looking for the library RDA5807](extras/images/RDA5807_install_02.png)
+
+
+### Installing via the repository 
+
+With this approach, you will have the __most current version__ of the library. However, __it may not be the most stable version__. This is because the current version is always in development. [Prefer releases](https://github.com/pu2clr/RDA5807/releases). Do you need some old version (release) of this library?  If yes, [check here](https://github.com/pu2clr/RDA5807/releases).
+
+
+First, you have to [download](https://github.com/pu2clr/RDA5807/archive/master.zip) this library in zip format.  
+After, unzip the RDA5807-master.zip file in your Arduino Library folder. 
+
+* On __Windows__: "My Documents\Arduino\libraries"
+* On __MAC OS__: ˜/Documents/Arduino/libraries
+* On __Linux__: ˜/home/Arduino/libraries
+
+
+### Installing the most current version via arduino-cli
+
+The commands below Install the latest version of the PU2CLR RDA5807 Arduino Library from github. 
+As said before, unlike a release (installed from Arduino IDE) this method installs the current version of the PU2CLR RDA5807 Arduino Library (latest modifications even if not yet released).
+
+
+#### On macOS or Linux
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
+export ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
+./bin/arduino-cli lib install --git-url https://github.com/pu2clr/RDA5807
+```
+
+#### On Windows 10 or 11
+
+Run the command shell (cmd / Command Prompt) and follow the steps below.
+
+```bash
+echo off  
+curl -fsSL https://downloads.arduino.cc/arduino-cli/arduino-cli_latest_Windows_64bit.zip --output arduinocli.zip
+tar -xf arduinocli.zip 
+set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
+.\arduino-cli lib install --git-url https://github.com/pu2clr/RDA5807
+```
+
+<BR>
 
 ### RDA5807MS breakout
 
@@ -150,22 +229,6 @@ The photos below show the RDA5807FP setup on a Arduino Uno board adapter.
 <BR>
 
 
-## RDA5807 features implemented by this library
-
-1. 76–108 MHz
-2. Seek tuning
-3. Automatic frequency control (AFC)
-4. Automatic gain control (AGC)
-5. Programmable de-emphasis (50/75 μs)
-6. Adaptive noise suppression
-7. Volume control
-8. Mute control
-9. Mono/Stereo control
-10. RDS/RBDS Processor (under construction)
-11. I2S Digital Audio (RDA5807FP)
-
-
-
 ## MIT License 
 
 Copyright (c) 2019 Ricardo Lima Caratti
@@ -177,65 +240,6 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE ARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-## Library Installation
-
- The easiest method to install this library is via your Arduino IDE. All you have to do is:
- 
- 1. Select Tools menu;
- 2. Select Manage Libraries option;
- 3. In the text box (top windows), type PU2CLR or RDA5807;
- 4. Select the PU2CLR RDA5807. 
-
-
-The images below show how you can install this library via your Arduino IDE from Manage Libraries tool.
-
-<BR>
-
-![Arduino IDE - Manage Libraries menu option](extras/images/RDA5807_install_01.png)
-
-<BR>
-
-![Arduino IDE - Looking for the library RDA5807](extras/images/RDA5807_install_02.png)
-
-
-### Installing via the repository 
-
-With this approach, you will have the __most current version__ of the library. However, __it may not be the most stable version__. This is because the current version is always in development. [Prefer releases](https://github.com/pu2clr/RDA5807/releases). Do you need some old version (release) of this library?  If yes, [check here](https://github.com/pu2clr/RDA5807/releases).
-
-
-First, you have to [download](https://github.com/pu2clr/RDA5807/archive/master.zip) this library in zip format.  
-After, unzip the RDA5807-master.zip file in your Arduino Library folder. 
-
-* On __Windows__: "My Documents\Arduino\libraries"
-* On __MAC OS__: ˜/Documents/Arduino/libraries
-* On __Linux__: ˜/home/Arduino/libraries
-
-
-### Installing the most current version via arduino-cli
-
-The commands below Install the latest version of the PU2CLR RDA5807 Arduino Library from github. 
-As said before, unlike a release (installed from Arduino IDE) this method installs the current version of the PU2CLR RDA5807 Arduino Library (latest modifications even if not yet released).
-
-
-#### On macOS or Linux
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
-export ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
-./bin/arduino-cli lib install --git-url https://github.com/pu2clr/RDA5807
-```
-
-#### On Windows 10 or 11
-
-Run the command shell (cmd / Command Prompt) and follow the steps below.
-
-```bash
-echo off  
-curl -fsSL https://downloads.arduino.cc/arduino-cli/arduino-cli_latest_Windows_64bit.zip --output arduinocli.zip
-tar -xf arduinocli.zip 
-set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
-.\arduino-cli lib install --git-url https://github.com/pu2clr/RDA5807
-```
 
 
 
