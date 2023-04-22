@@ -8,7 +8,7 @@ __This project is about a library to control the RDA5807 device and the focus of
 The examples stored in this folder are made to assist you to build your own sketch. Therefore, it is important to say that there was no care with the layout. This part of the project stays with you.
 
 
-The [RDA5807_01_SERIAL_MONITOR](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA_01_SERIAL_MONITOR) folder shows how you can check your circuit by using just the Arduino IDE Serial Monitor to control the receiver. Check the examples with Atmega328 and ESP32. __In the sketch you will find the wireup with Atmega328 or ESP32 and RDA5807 device__.  
+The [RDA5807_01_SERIAL_MONITOR](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR) folder shows how you can check your circuit by using just the Arduino IDE Serial Monitor to control the receiver. Check the examples with Atmega328 and ESP32. __In the sketch you will find the wireup with Atmega328 or ESP32 and RDA5807 device__.  
 
 
 ## Examples and Schematics
@@ -45,6 +45,10 @@ The [RDA5807_01_SERIAL_MONITOR](https://github.com/pu2clr/RDA5807/tree/master/ex
 
 ![Schematic -  Arduino Nano and NOKIA5110](../extras/images/RDA5807_NOKIA5110_01.png)
 
+<BR>
+
+[Source Code](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_04_NOKIA5110)
+
 
 {% include video03.html %}
 
@@ -56,12 +60,21 @@ The [RDA5807_01_SERIAL_MONITOR](https://github.com/pu2clr/RDA5807/tree/master/ex
 
 ![Schematic -  Arduino Nano and LCD 16x02](../extras/images/RDA5807_LCD16X02.png)
 
+<BR>
+
+[Source Code](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02)
+
 
 
 ### ESP32 and LCD 16x02 
 
 
 ![Schematic -  ESP32 and LCD 16x02](../extras/images/RDA5807_LCD16X02_ESP32_RDA5807FP.png)
+
+<BR>
+
+[Source Code](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02_ESP32)
+
 
 
 {% include video05.html %}
@@ -83,6 +96,10 @@ The [RDA5807_01_SERIAL_MONITOR](https://github.com/pu2clr/RDA5807/tree/master/ex
 The photo below show the DAC MAX98357A device
 
 ![I2S DAC MAX98357A devices photos](../extras/images/MAX98357A_F01.jpg)
+
+<BR>
+
+[Source Code](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02_ESP32_I2S)
 
 
 
