@@ -5,13 +5,19 @@ Here you will find all schematics used by the examples sketches, the EAGLE files
 
 
 ## Some board photos 
+
+
 ![RDA5807 homebrew Boards](./images/RDA5807_BOARDS_01.jpg)
 
+### Arduino UNO board adapters (Left RDA5707M and right RDA5807FP)
 
 ![RDA5807 Arduino UNO homebrew Board Adapters](./images/RDA5807_BOARDS_01.jpg)
 
+#### Arduino Uno and RDA5807M homebrew adapter board 
 
 ![RDA5807M Arduino UNO homebrew Board Adapters ](./images/UNO_ADAPTER_RDA5807M_01.jpg)
+
+
 
 
 
@@ -187,3 +193,17 @@ Arduino UNO, Nano or other based on Atmega328 and SPI TFT ST7735 1.8" wireup
 
 
 ![RDA5807 RDA5807FP and I2S setup 01](./images/I2S_RDA5807FP_BOARD_01.jpg)
+
+
+
+## Vídeos about this Library and projects
+
+* [FM RECEIVER AND I2S DIGITAL AUDIO WITH RDA5807FP AND MAX98357A](https://youtu.be/07017sfMYdY)
+* [FM receiver with RDA5807, Arduino UNO and TM1638 seven-segment module](https://youtu.be/I7-fCKPDF4Y)
+* [FM  / RDS receiver with RDA5807FP, ESP32  and LCD16x02](https://youtu.be/HgMEgd74SUk)
+* [FM / RDS receiver with RDA5807, Arduino Nano and Nokia 5110 display](https://youtu.be/jInacTWoF9Y)
+* [FM Receiver with PU2CLR RDA5807 Arduino Library and Nokia 5110](https://youtu.be/ZcgJT7MQdQc)
+* [FM Receiver with PU2CLR RDA5807 Arduino Library - RDS/RBDS first test](https://youtu.be/PZsbqieeYns)
+* [FM Receiver with RDA5807 Arduino Library by PU2CLR](https://youtu.be/eLWEWEjxM8U)
+
+
