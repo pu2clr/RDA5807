@@ -196,7 +196,7 @@ Arduino UNO, Nano or other based on Atmega328 and SPI TFT ST7735 1.8" wireup
 
 
 
-## Vídeos about this Library and projects
+## Vídeos about this Library and projects with RDA5807
 
 * [FM RECEIVER AND I2S DIGITAL AUDIO WITH RDA5807FP AND MAX98357A](https://youtu.be/07017sfMYdY)
 * [FM receiver with RDA5807, Arduino UNO and TM1638 seven-segment module](https://youtu.be/I7-fCKPDF4Y)
