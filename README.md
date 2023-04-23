@@ -138,7 +138,10 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 
 The photo below shows a Breakout that uses the RDA5807MS. 
 
-![RDA5807 Breakout board](extras/images/breakout_01A.png)
+![RDA5807 Breakout board side A](extras/images/breakout_01A.png)
+
+![RDA5807 Breakout board side B](extras/images/breakout_01B.png)
+
 
 * Judging by some documentations found on the Internet, some breakouts based on RDA5807M have GPIO2, GPIO3 and RCLK functions. Judiging by the "RDA microelectronics RDA5807MS - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015", the RDA5807MS pinout does not have these functions. These documentations is still not clear to the author of this library. So, if you want to use the GPIO features of the RDA5807 architecture, please, prefer the RDA5807FP device (see it below). 
 
