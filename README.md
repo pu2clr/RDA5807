@@ -172,7 +172,7 @@ The image below shows the RDA5807FP pinout.
 |    1     |  GPIO1    | General purpose input/output  | 
 |    2     |  GND_1    | Ground. Must be connected to ground |
 |    3     |  RFGND    | RF Ground. Must be connected to the ground or a special RF ground |
-|    4     |  FMIN     | FM signal imput - Antenna |
+|    4     |  FMIN     | FM signal input - Antenna |
 |    5     |  GND_2    | Ground. Must be connected to ground | 
 |    6     |  GND_3    | Ground. Must be connected to ground |
 |    7     |  SCLK     | I2C clock | 
