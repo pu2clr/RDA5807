@@ -20,12 +20,13 @@ var searchData=
   ['getrealchannel_17',['getRealChannel',['../group___g_a03.html#ga39480a49f7878fffe8c3ddf120aba2b0',1,'RDA5807']]],
   ['getrealfrequency_18',['getRealFrequency',['../group___g_a03.html#ga1476967ed4e1d9bc00e2ea8e3135520e',1,'RDA5807']]],
   ['getrssi_19',['getRssi',['../group___g_a03.html#ga4bd7597d4c9090b04486aec21a6a0a5d',1,'RDA5807']]],
-  ['getstatus_20',['getStatus',['../group___g_a03.html#ga1f4bc3d6f9d94171b2965dbb4e812f4f',1,'RDA5807']]],
-  ['getstatusregisters_21',['getStatusRegisters',['../group___g_a03.html#gab9e3a5584a6238f719e9c9e49435f5ce',1,'RDA5807']]],
-  ['getvolume_22',['getVolume',['../group___g_a03.html#ga743d91d820922b3feda10d06443bc8a9',1,'RDA5807']]],
-  ['gpio1control_23',['gpio1Control',['../group___g_a01.html#a022d3357b6bddf3477b3f26f2d78a75c',1,'RDA5807']]],
-  ['gpio2control_24',['gpio2Control',['../group___g_a01.html#ab6a9fc2bd5ca266079c3e7796b5025af',1,'RDA5807']]],
-  ['gpio3control_25',['gpio3Control',['../group___g_a01.html#ae6f2d5f535edc14951e75a03e46ebc01',1,'RDA5807']]],
-  ['group0_26',['group0',['../group___g_a01.html#ac5781cba2e954484c72ae3077e25afcf',1,'rds_blockb']]],
-  ['group2_27',['group2',['../group___g_a01.html#a0a430ac426505b17010fe872dba656a8',1,'rds_blockb']]]
+  ['getspace_20',['getSpace',['../group___g_a03.html#gab6cc94517eb6bc3325fbd6386bbffe15',1,'RDA5807']]],
+  ['getstatus_21',['getStatus',['../group___g_a03.html#ga1f4bc3d6f9d94171b2965dbb4e812f4f',1,'RDA5807']]],
+  ['getstatusregisters_22',['getStatusRegisters',['../group___g_a03.html#gab9e3a5584a6238f719e9c9e49435f5ce',1,'RDA5807']]],
+  ['getvolume_23',['getVolume',['../group___g_a03.html#ga743d91d820922b3feda10d06443bc8a9',1,'RDA5807']]],
+  ['gpio1control_24',['gpio1Control',['../group___g_a01.html#a022d3357b6bddf3477b3f26f2d78a75c',1,'RDA5807']]],
+  ['gpio2control_25',['gpio2Control',['../group___g_a01.html#ab6a9fc2bd5ca266079c3e7796b5025af',1,'RDA5807']]],
+  ['gpio3control_26',['gpio3Control',['../group___g_a01.html#ae6f2d5f535edc14951e75a03e46ebc01',1,'RDA5807']]],
+  ['group0_27',['group0',['../group___g_a01.html#ac5781cba2e954484c72ae3077e25afcf',1,'rds_blockb']]],
+  ['group2_28',['group2',['../group___g_a01.html#a0a430ac426505b17010fe872dba656a8',1,'rds_blockb']]]
 ];

@@ -1,6 +1,7 @@
 var group___g_a03 =
 [
     [ "RDA5807::setI2CBusAddrs", "group___g_a03.html#gadf634cb6733022e30d8f1a74a5946e78", null ],
+    [ "RDA5807::getSpace", "group___g_a03.html#gab6cc94517eb6bc3325fbd6386bbffe15", null ],
     [ "RDA5807::isFmTrue", "group___g_a03.html#ga85d1635f7bd51c740546d69133a97530", null ],
     [ "RDA5807::isFmReady", "group___g_a03.html#ga49ae7bc2ecf631c5391bab17b44df3fd", null ],
     [ "RDA5807::isSoftmuted", "group___g_a03.html#ga428ddd720c58c17273322d7526e51cbe", null ],

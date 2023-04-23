@@ -101,6 +101,7 @@ var group___g_a01 =
       [ "setBand", "group___g_a03.html#ga889cfe43f3f9c9ca92c9862261d5dbbf", null ],
       [ "setSpace", "group___g_a03.html#ga76f6c3400b038aef15ba7318592e1dd0", null ],
       [ "setStep", "group___g_a03.html#ga8bbf57aaeb92f226179579efa61cc846", null ],
+      [ "getSpace", "group___g_a03.html#gab6cc94517eb6bc3325fbd6386bbffe15", null ],
       [ "getRssi", "group___g_a03.html#ga4bd7597d4c9090b04486aec21a6a0a5d", null ],
       [ "isFmTrue", "group___g_a03.html#ga85d1635f7bd51c740546d69133a97530", null ],
       [ "isFmReady", "group___g_a03.html#ga49ae7bc2ecf631c5391bab17b44df3fd", null ],
