@@ -30,7 +30,17 @@ Contact: __pu2clr@gmail.com__.
 
 ## Preface 
 
-The RDA5807 is a FM DSP integrated circuit receiver (50 to 115MHz) with low noise amplifier support. This device requires very few external components if compared with other similar devices. It also supports RDS/RBDS functionalities, direct auto gain control (AGC) and real time adaptive noise cancellation function. The PU2CLR RDA5807 Arduino Library was developed to take the most functionalities of this device. Knowing the functioning aspects of this receiver and sharing this knowledge were the main motivation for the development of this library. I hope this work will be useful for electronics experimenters and hobbyists. Plese, check the [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html/) for more details. 
+The RDA5807 is a FM DSP integrated circuit receiver (50 to 115MHz) with low noise amplifier support. This device requires very few external components if compared with other similar devices. It also supports RDS/RBDS functionalities, direct auto gain control (AGC) and real time adaptive noise cancellation function. The PU2CLR RDA5807 Arduino Library was developed to take the most functionalities of this device. Knowing the functioning aspects of this receiver and sharing this knowledge were the main motivation for the development of this library. I hope this work will be useful for electronics experimenters and hobbyists. 
+
+This documentation exposes the understanding of the author of this library about the functioning of the IC RDA5807 family. That said, it is possible that some information is not correct. If you find any wrong or inaccurate information, please let me know.
+
+Plese, check the [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html/) for more details. 
+
+## Your support is important.
+
+If you want to support this library development, consider joining this project via Github. Alternatively, make suggestions on new features and report errors if you find them. Thank you!
+
+There is a __Facebook__ group called [__DSP receivers for hobbyists__](https://www.facebook.com/groups/2655942598067211) where the purpose is exchanging experiences with projects based on RDA5807 IC devices.
 
 
 ## RDA5807 family devices and RDA5807 Arduino Library
