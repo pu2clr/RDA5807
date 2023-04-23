@@ -136,10 +136,12 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 
 ### RDA5807M breakout
 
-The photo below shows a Breakout that uses the RDA5807MS. 
+The photos below show a Breakout that uses the RDA5807M. 
 
+##### Front side 
 ![RDA5807 Breakout board side A](extras/images/breakout_01A.png)
 
+##### Back side
 ![RDA5807 Breakout board side B](extras/images/breakout_01B.png)
 
 
