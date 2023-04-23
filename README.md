@@ -1,6 +1,6 @@
 # [RDA5807 Arduino Library](https://pu2clr.github.io/RDA5807/)
 
-It is a cross-platform Arduino Library for RDA5807 family device from RDA. You can use it with official Arduino boards, ATtiny, STM32 , ESP32 and more. It works with I2C protocol and can provide you an easier interface to control the RDA5807 device. This library was built based on "RDA microelectronics RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015" and RDA microelectronics RDA5807FP - SINGLE-CHIP BROADCAST FM RADIO TUNER
+It is a cross-platform Arduino Library for RDA5807 family device from RDA. You can use it with official Arduino boards, ATtiny, STM32 , ESP32 and more. It works with I2C protocol and can provide you an easier interface to control the RDA5807 device. This library was built based on "RDA microelectronics RDA5807MS - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015" and RDA microelectronics RDA5807FP - SINGLE-CHIP BROADCAST FM RADIO TUNER
 
 This library can be freely distributed using the MIT Free Software model. 
 
@@ -139,6 +139,9 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 The photo below shows a Breakout that uses the RDA5807MS. 
 
 ![RDA5807 Breakout board](extras/images/breakout_01A.png)
+
+* Judging by some documentations found on the Internet, some breakouts based on RDA5807M have GPIO2, GPIO3 and RCLK functions. Judiging by the "RDA microelectronics RDA5807MS - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015", the RDA5807MS pinout does not have these functions. These documentations is still not clear to the author of this library. So, if you want to use the GPIO features of the RDA5807 architecture, please, prefer the RDA5807FP device (see it below). 
+
 
 <BR>
 
@@ -489,7 +492,11 @@ Cordova provides an easy way to develop for iOS and Android.
 
 # References 
 
+[RDA5807FP -SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.2–April.2012](https://opendevices.ru/wp-content/uploads/2015/10/RDA5807FP.pdf)
+[RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015](https://datasheet.lcsc.com/szlcsc/RDA-Microelectronics-RDA5807MS_C167246.pdf)
 
+
+# Vedeos about RDA5807 and this Arduino Library 
 
 * [Receptor de FM SDR con RDA5807 - Spanish](https://youtu.be/6PAnqT2TrL8)
 * [RDA5807 Fm based radio - Portuguese](https://youtu.be/2g1KJkDFCaU)
