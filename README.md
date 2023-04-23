@@ -144,7 +144,7 @@ The photo below shows a Breakout that uses the RDA5807MS.
 
 ### RDA5807FP standalone IC
 
-If you are using the standalone RDA5807FP you must add some parts to make it work.  In my opinion, there is no big  reasons to use the RDA5807FP instead of the RDA5807MS breakout. I think the most important thing is the possibility to use the digital audio configuration via I2S protocol. This library has functions to deal with I2S.
+If you are using the standalone RDA5807FP you must add some parts to make it work.  In my opinion, there is no big  reasons to use the RDA5807FP instead of the RDA5807MS breakout. I think the most important thing is the possibility to use the digital audio configuration via I2S protocol. This library has function to deal with I2S.
 
 The photo below shows the RDA5807FP on and SOP16 board adapter. 
 
@@ -161,7 +161,7 @@ The image below shows the RDA5807FP pinout.
 
 |  PIN     |  Label    |  Description      |
 | -------- | --------- | ----------------- |
-|    1     |  GPIO1    | General purpose input/output (Stereo indicator, interrupt etc) | 
+|    1     |  GPIO1    | General purpose input/output  | 
 |    2     |  GND_1    | Ground. Must be connected to ground |
 |    3     |  RFGND    | RF Ground. Must be connected to the ground or a special RF ground |
 |    4     |  FMIN     | FM signal imput - Antenna |
@@ -175,7 +175,7 @@ The image below shows the RDA5807FP pinout.
 |   12     |  ROUT     | Right audio output |
 |   13     |  LOUT     | Left audio output |
 |   14     |  GND_5    | Ground. Must be connected to ground |
-|   15     |  GPIO3    | General purpose input/output  |
+|   15     |  GPIO3    | General purpose input/output and stereo indicator  |
 |   16     |  GPIO2    | General purpose input/output  |
 
 
