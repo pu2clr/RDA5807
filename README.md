@@ -15,7 +15,7 @@ Contact: __pu2clr@gmail.com__.
 1. [Preface](https://pu2clr.github.io/RDA5807#preface)
 2. [RDA5807 family devices and RDA5807 Arduino Library](https://pu2clr.github.io/RDA5807#rda5807-family-devices-and-rda5807-arduino-library)
 4. [Library Installation](https://pu2clr.github.io/RDA5807#library-installation)
-5. [RDA5807MS breakout](https://pu2clr.github.io/RDA5807#rda5807ms-breakout)
+5. [RDA5807M breakout](https://pu2clr.github.io/RDA5807#rda5807m-breakout)
 6. [RDA5807FP standalone IC](https://pu2clr.github.io/RDA5807#rda5807fp-standalone-ic)
 7. [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html)
 8. [MIT License](https://pu2clr.github.io/RDA5807#mit-license)
@@ -69,7 +69,7 @@ This library has been successfully tested on RDA5807M and RDA5807FP devices. The
 
 
 
-You can buy the RDA5807 device on AliExpress, eBay, Amazon etc. You will find two types of RDA5807: The RDA5807MS (breakout) and RDA5807FP (standalone IC).  
+You can buy the RDA5807 device on AliExpress, eBay, Amazon etc. You will find three types of RDA5807: The RDA5807MS, RDA5807M (breakout) and RDA5807FP (standalone IC).  
 
 
 ## Library Installation
@@ -134,7 +134,7 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 
 <BR>
 
-### RDA5807MS breakout
+### RDA5807M breakout
 
 The photo below shows a Breakout that uses the RDA5807MS. 
 
@@ -144,7 +144,7 @@ The photo below shows a Breakout that uses the RDA5807MS.
 
 ### RDA5807FP standalone IC
 
-If you are using the standalone RDA5807FP you must add some parts to make it work.  In my opinion, there is no big  reasons to use the RDA5807FP instead of the RDA5807MS breakout. I think the most important thing is the possibility to use the digital audio configuration via I2S protocol. This library has function to deal with I2S.
+If you are using the standalone RDA5807FP you must add some parts to make it work.  In my opinion, there is no big  reasons to use the RDA5807FP instead of the RDA5807M breakout. I think the most important thing is the possibility to use the digital audio configuration via I2S protocol. This library has function to deal with I2S.
 
 The photo below shows the RDA5807FP on and SOP16 board adapter. 
 
