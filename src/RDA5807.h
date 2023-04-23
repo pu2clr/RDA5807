@@ -667,6 +667,14 @@ class RDA5807 {
             void setBand(uint8_t band = 0);
             void setSpace(uint8_t space = 0);
             void setStep(uint8_t step = 100);
+            /**
+             * @ingroup GA03 
+             * @brief Returns the current Band Space
+             * @return uint8_t value (0 = 100kHz, 1 = 200kHz, 2 = 50kHz e 3 = 25kHz)
+             */
+            inline uint8_t getSpace() { return  reg03->refined.SPACE; };
+
+
             int getRssi();
 
             /**
