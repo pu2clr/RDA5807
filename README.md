@@ -20,7 +20,7 @@ Contact: __pu2clr@gmail.com__.
 7. [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html)
 8. [MIT License](https://pu2clr.github.io/RDA5807#mit-license)
 9. [Basic Schematic](https://pu2clr.github.io/RDA5807#schematic)
-10. [All Schematics](extras/)
+10. [All Schematics, photos and videos](extras/)
 11. [Source code - Arduino Sketches](examples/)
 
 
