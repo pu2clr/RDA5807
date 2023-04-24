@@ -27,52 +27,42 @@ void setup() {
 
   delay(500);
   
-
-
   if (!checkI2C())
   {
       Serial.println("\nCheck your circuit!");
       while(1);
   }
 
-
   rx.setup();
-
   showReceiverInfo();
-
   rx.setVolume(8);  
-
-  
   delay(500);
   //****
   Serial.print("\nEstacao 106.5MHz");
-  rx.setFrequency(10650); // The frequency you want to select in MHz multiplied by 100.
+  rx.setFrequency(10650); // Please, change it to your local FM station
   
-  Serial.print("\nCurrent Channel: ");
-  Serial.print(rx.getRealChannel());
+  sprintf(buffer,"\nCurrent Channel: %d, Real Frequency: %d, RSSI: %d\n", rx.getRealChannel(), rx.getRealFrequency(), rx.getRssi());
+  Serial.print(buffer);
   delay(500);
-
-  Serial.print("\nReal Frequency.: ");
-  Serial.print(rx.getRealFrequency());
-  
-  Serial.print("\nRSSI: ");
-  Serial.print(rx.getRssi());
-
   
   // Mute test
-  Serial.print("\nAfter 5s device will mute during 3s");
-  delay(5000);
+  Serial.print("\nAfter 4s device will mute during 3s");
+  delay(4000);
   rx.setMute(true);
   delay(3000);
   rx.setMute(false);
   Serial.print("\nMute test has finished.");
 
-
-  Serial.print("\nStation 106.5MHz");
-  rx.setFrequency(10650);
+  Serial.print("\nStation 9250Hz\n");
+  rx.setFrequency(9250); // Please, change it to another local FM station
+  
   delay(10000);
 
+  Serial.print("Set volume to 0");
+  rx.setVolume(0); 
   showReceiverInfo();
+  delay(3000);
+  rx.setVolume(6);
   rx.setMute(true);
   rx.setSoftmute(true);
   showReceiverInfo();
@@ -82,16 +72,22 @@ void setup() {
   rx.setAudioOutputHighImpedance(true);
   showReceiverInfo();
   
-  /*
+  Serial.print("\nResetting the system in 5s\n");
+  delay(5000);
+  rx.setup();
+  showReceiverInfo();
+  rx.setFrequency(8700);
+
   // Seek test
   Serial.print("\nSeek station");
   for (int i = 0; i < 10; i++ ) { 
     rx.seek(1,0);
     Serial.print("\nReal Frequency.: ");
-    Serial.print(rx.getRealFrequency());
+    Serial.println(rx.getRealFrequency());
+    showReceiverInfo();
     delay(5000);
+
   }
-  */
   
 }
 
