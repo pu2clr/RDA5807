@@ -710,7 +710,7 @@ class RDA5807 {
 
             void setMute(bool value);
             /**
-             * @ingroup GA03
+             * @ingroup GA07
              * @brief Gets Audio Mute Status
              * @return True if muted
              */
@@ -719,7 +719,7 @@ class RDA5807 {
             void setAudioOutputHighZ(bool value);    
 
             /**
-             * @ingroup GA03
+             * @ingroup GA07
              * @brief Gets true if the output audio impedance is high
              * @return True or false
              */

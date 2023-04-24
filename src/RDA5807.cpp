@@ -522,151 +522,6 @@ int RDA5807::getRssi()
     return reg0b->refined.RSSI;
 }
 
-/**
- * @ingroup GA03
- * @brief Sets Soft Mute Enable or disable 
- * @param value true = enable; false=disable
- */
-void RDA5807::setSoftmute(bool value)
-{
-    reg04->refined.SOFTMUTE_EN = value;
-    setRegister(REG04, reg04->raw);
-}
-
-
-
-
-/**
- * @ingroup GA03
- * @brief Sets Audio mute or unmute
- * @param value TRUE = mute; FALSE = unmute
- */
-void RDA5807::setMute(bool value)
-{
-    reg02->refined.SEEK = 0;    
-    reg02->refined.DMUTE = !value;  // 1 = Normal operation; 0 = Mute
-    setRegister(REG02,reg02->raw); 
-}
-
-/**
- * @ingroup GA03
- * @brief Sets audio output impedance high ow low
- * @param value TRUE = High; FALSE = Low 
- */
-void RDA5807::setAudioOutputHighZ(bool value)
-{
-    reg02->refined.SEEK = 0;    
-    reg02->refined.DHIZ = !value; // 0 = High impedance; 1 = Normal operation
-    setRegister(REG02,reg02->raw); 
-}
-
-
-
-/**
- * @ingroup GA03
- * @brief Sets audio Mono or stereo
- *
- * @param value TRUE = Mono; FALSE force stereo
- */
-void RDA5807::setMono(bool value)
-{
-    reg02->refined.SEEK = 0;
-    reg02->refined.MONO = value;
-    setRegister(REG02, reg02->raw);
-}
-
-/**
- * @ingroup GA03
- * @brief Sets Bass Boost
- *
- * @param value FALSE = Disable; TRUE = Enable
- */
-void RDA5807::setBass(bool value)
-{
-    reg02->refined.SEEK = 0;
-    reg02->refined.BASS = value;
-    setRegister(REG02, reg02->raw);
-}
-
-/**
- * @ingroup GA03
- * @brief Gets the current Stereo status
- *
- * @return TRUE if stereo; 
- */
-bool RDA5807::isStereo()
-{
-    getStatus(REG0A);
-    return reg0a->refined.ST;
-}
-
-
-/**
- * @ingroup GA03
- * @brief Sets the audio output hight or low impedance 
- * @details Useful to use the RDA5807 device with hight impedance speaker (headphone) 
- * @details if 1 = normal operation and 0 = hight impedance
- * @param value true = hight impedance; false = normal operation  
- */
-void RDA5807::setAudioOutputHighImpedance( bool value) {
-    reg02->refined.DHIZ = !value; // invert the value 
-    setRegister(REG02, reg02->raw);
-}
-
-
-/**
- * @ingroup GA03
- * @brief Sets the audio volume level
- *
- * @param value
- */
-void RDA5807::setVolume(uint8_t value)
-{
-    if ( value > 15 ) value = 15;
-
-    reg05->refined.VOLUME = this->currentVolume = value;
-    setRegister(REG05, reg05->raw);
-}
-
-/**
- * @ingroup GA03
- * @brief Gets the current audio volume level
- *
- * @return uint8_t  0 to 15
- */
-uint8_t RDA5807::getVolume()
-{
-    return this->currentVolume;
-}
-
-/**
- * @ingroup GA03
- * @brief Increments the audio volume
- *
- */
-void RDA5807::setVolumeUp()
-{
-    if (this->currentVolume < 15)
-    {
-        this->currentVolume++;
-        setVolume(this->currentVolume);
-    }
-}
-
-/**
- * @ingroup GA03
- * @brief Decrements the audio volume
- *
- */
-void RDA5807::setVolumeDown()
-{
-    if (this->currentVolume > 0)
-    {
-        this->currentVolume--;
-        setVolume(this->currentVolume);
-    }
-}
-
 
 /**
  * @ingroup GA03
@@ -1274,3 +1129,161 @@ void RDA5807::setI2SDataSigned(bool value) {
     reg06->refined.DATA_SIGNED = value; 
     setRegister(REG06,reg06->raw);
 }
+
+
+
+
+/** 
+ * @defgroup GA07 Audio Functions
+ * @section  GA07 Audio
+ */
+
+
+
+/**
+ * @ingroup GA07
+ * @brief Sets Soft Mute Enable or disable 
+ * @param value true = enable; false=disable
+ */
+void RDA5807::setSoftmute(bool value)
+{
+    reg04->refined.SOFTMUTE_EN = value;
+    setRegister(REG04, reg04->raw);
+}
+
+
+
+
+/**
+ * @ingroup GA07
+ * @brief Sets Audio mute or unmute
+ * @param value TRUE = mute; FALSE = unmute
+ */
+void RDA5807::setMute(bool value)
+{
+    reg02->refined.SEEK = 0;    
+    reg02->refined.DMUTE = !value;  // 1 = Normal operation; 0 = Mute
+    setRegister(REG02,reg02->raw); 
+}
+
+/**
+ * @ingroup GA07
+ * @brief Sets audio output impedance high ow low
+ * @param value TRUE = High; FALSE = Low 
+ */
+void RDA5807::setAudioOutputHighZ(bool value)
+{
+    reg02->refined.SEEK = 0;    
+    reg02->refined.DHIZ = !value; // 0 = High impedance; 1 = Normal operation
+    setRegister(REG02,reg02->raw); 
+}
+
+
+
+
+
+/**
+ * @ingroup GA07
+ * @brief Sets audio Mono or stereo
+ *
+ * @param value TRUE = Mono; FALSE force stereo
+ */
+void RDA5807::setMono(bool value)
+{
+    reg02->refined.SEEK = 0;
+    reg02->refined.MONO = value;
+    setRegister(REG02, reg02->raw);
+}
+
+/**
+ * @ingroup GA07
+ * @brief Sets Bass Boost
+ *
+ * @param value FALSE = Disable; TRUE = Enable
+ */
+void RDA5807::setBass(bool value)
+{
+    reg02->refined.SEEK = 0;
+    reg02->refined.BASS = value;
+    setRegister(REG02, reg02->raw);
+}
+
+/**
+ * @ingroup GA07
+ * @brief Gets the current Stereo status
+ *
+ * @return TRUE if stereo; 
+ */
+bool RDA5807::isStereo()
+{
+    getStatus(REG0A);
+    return reg0a->refined.ST;
+}
+
+
+/**
+ * @ingroup GA07
+ * @brief Sets the audio output hight or low impedance 
+ * @details Useful to use the RDA5807 device with hight impedance speaker (headphone) 
+ * @details if 1 = normal operation and 0 = hight impedance
+ * @param value true = hight impedance; false = normal operation  
+ */
+void RDA5807::setAudioOutputHighImpedance( bool value) {
+    reg02->refined.DHIZ = !value; // invert the value 
+    setRegister(REG02, reg02->raw);
+}
+
+
+/**
+ * @ingroup GA07
+ * @brief Sets the audio volume level
+ *
+ * @param value
+ */
+void RDA5807::setVolume(uint8_t value)
+{
+    if ( value > 15 ) value = 15;
+
+    reg05->refined.VOLUME = this->currentVolume = value;
+    setRegister(REG05, reg05->raw);
+}
+
+/**
+ * @ingroup GA07
+ * @brief Gets the current audio volume level
+ *
+ * @return uint8_t  0 to 15
+ */
+uint8_t RDA5807::getVolume()
+{
+    return this->currentVolume;
+}
+
+/**
+ * @ingroup GA07
+ * @brief Increments the audio volume
+ *
+ */
+void RDA5807::setVolumeUp()
+{
+    if (this->currentVolume < 15)
+    {
+        this->currentVolume++;
+        setVolume(this->currentVolume);
+    }
+}
+
+/**
+ * @ingroup GA07
+ * @brief Decrements the audio volume
+ *
+ */
+void RDA5807::setVolumeDown()
+{
+    if (this->currentVolume > 0)
+    {
+        this->currentVolume--;
+        setVolume(this->currentVolume);
+    }
+}
+
