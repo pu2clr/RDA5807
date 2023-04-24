@@ -277,21 +277,21 @@
 </deviceset>
 <deviceset name="RDA5707M">
 <gates>
-<gate name="G$1" symbol="RDA5807M" x="-10.16" y="15.24"/>
+<gate name="G$1" symbol="RDA5807M" x="-10.16" y="17.78"/>
 </gates>
 <devices>
 <device name="" package="RDA5807M">
 <connects>
-<connect gate="G$1" pin="GND0" pad="1"/>
 <connect gate="G$1" pin="FMIN" pad="2"/>
+<connect gate="G$1" pin="GND0" pad="1"/>
 <connect gate="G$1" pin="GND1" pad="3"/>
+<connect gate="G$1" pin="GND2" pad="8"/>
+<connect gate="G$1" pin="LOUT" pad="10"/>
+<connect gate="G$1" pin="RCLK" pad="6"/>
+<connect gate="G$1" pin="ROUT" pad="9"/>
 <connect gate="G$1" pin="SCLK" pad="4"/>
 <connect gate="G$1" pin="SDA" pad="5"/>
-<connect gate="G$1" pin="RCLK" pad="6"/>
 <connect gate="G$1" pin="VDD" pad="7"/>
-<connect gate="G$1" pin="GND2" pad="8"/>
-<connect gate="G$1" pin="ROUT" pad="9"/>
-<connect gate="G$1" pin="LOUT" pad="10"/>
 </connects>
 <technologies>
 <technology name=""/>
