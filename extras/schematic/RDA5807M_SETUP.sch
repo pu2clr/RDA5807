@@ -2653,16 +2653,16 @@ Audio_Jack_2.5MM
 <packages>
 <package name="RDA5807M">
 <rectangle x1="0" y1="-12" x2="11" y2="0" layer="21"/>
-<smd name="SDA" x="0" y="-1.5" dx="2.54" dy="1.27" layer="1"/>
-<smd name="SCL" x="0" y="-3.7" dx="2.54" dy="1.27" layer="1"/>
-<smd name="N/C" x="0" y="-5.9" dx="2.54" dy="1.27" layer="1"/>
-<smd name="N/C2" x="0" y="-8.1" dx="2.54" dy="1.27" layer="1"/>
-<smd name="VCC" x="0" y="-10.3" dx="2.54" dy="1.27" layer="1"/>
-<smd name="ANT" x="11" y="-1.5" dx="2.54" dy="1.27" layer="1"/>
-<smd name="RCK" x="11" y="-3.7" dx="2.54" dy="1.27" layer="1"/>
-<smd name="L" x="11" y="-5.9" dx="2.54" dy="1.27" layer="1"/>
-<smd name="R" x="11" y="-8.1" dx="2.54" dy="1.27" layer="1"/>
-<smd name="GND" x="11" y="-10.3" dx="2.54" dy="1.27" layer="1"/>
+<smd name="5" x="0" y="-1.5" dx="2.54" dy="1.27" layer="1"/>
+<smd name="4" x="0" y="-3.7" dx="2.54" dy="1.27" layer="1"/>
+<smd name="3" x="0" y="-5.9" dx="2.54" dy="1.27" layer="1"/>
+<smd name="8" x="0" y="-8.1" dx="2.54" dy="1.27" layer="1"/>
+<smd name="7" x="0" y="-10.3" dx="2.54" dy="1.27" layer="1"/>
+<smd name="2" x="11" y="-1.5" dx="2.54" dy="1.27" layer="1"/>
+<smd name="6" x="11" y="-3.7" dx="2.54" dy="1.27" layer="1"/>
+<smd name="10" x="11" y="-5.9" dx="2.54" dy="1.27" layer="1"/>
+<smd name="9" x="11" y="-8.1" dx="2.54" dy="1.27" layer="1"/>
+<smd name="1" x="11" y="-10.3" dx="2.54" dy="1.27" layer="1"/>
 </package>
 </packages>
 <symbols>
@@ -2693,16 +2693,16 @@ Audio_Jack_2.5MM
 <devices>
 <device name="" package="RDA5807M">
 <connects>
-<connect gate="G$1" pin="FMIN" pad="ANT"/>
-<connect gate="G$1" pin="GND0" pad="GND"/>
-<connect gate="G$1" pin="GND1" pad="N/C"/>
-<connect gate="G$1" pin="GND2" pad="N/C2"/>
-<connect gate="G$1" pin="LOUT" pad="L"/>
-<connect gate="G$1" pin="RCLK" pad="RCK"/>
-<connect gate="G$1" pin="ROUT" pad="R"/>
-<connect gate="G$1" pin="SCLK" pad="SCL"/>
-<connect gate="G$1" pin="SDA" pad="SDA"/>
-<connect gate="G$1" pin="VDD" pad="VCC"/>
+<connect gate="G$1" pin="FMIN" pad="2"/>
+<connect gate="G$1" pin="GND0" pad="1"/>
+<connect gate="G$1" pin="GND1" pad="3"/>
+<connect gate="G$1" pin="GND2" pad="8"/>
+<connect gate="G$1" pin="LOUT" pad="10"/>
+<connect gate="G$1" pin="RCLK" pad="6"/>
+<connect gate="G$1" pin="ROUT" pad="9"/>
+<connect gate="G$1" pin="SCLK" pad="4"/>
+<connect gate="G$1" pin="SDA" pad="5"/>
+<connect gate="G$1" pin="VDD" pad="7"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -2823,18 +2823,18 @@ Audio_Jack_2.5MM
 <net name="N$1" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
-<pinref part="U$1" gate="G$1" pin="SCLK"/>
 <wire x1="120.46" y1="16.94" x2="120.46" y2="17.78" width="0.1524" layer="91"/>
 <wire x1="120.46" y1="17.78" x2="114.3" y2="17.78" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="SCLK"/>
 </segment>
 </net>
 <net name="N$2" class="0">
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="106.68" y1="12.7" x2="116.84" y2="12.7" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="SDA"/>
 <wire x1="120.46" y1="13.94" x2="116.84" y2="13.94" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="13.94" x2="116.84" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="SDA"/>
 </segment>
 </net>
 <net name="N$9" class="0">
@@ -2846,17 +2846,17 @@ Audio_Jack_2.5MM
 <net name="N$3" class="0">
 <segment>
 <wire x1="149.86" y1="33.02" x2="160.02" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="LOUT"/>
 <wire x1="149.54" y1="25.94" x2="149.86" y2="25.94" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="25.94" x2="149.86" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="LOUT"/>
 </segment>
 </net>
 <net name="N$7" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="ROUT"/>
 <wire x1="149.54" y1="22.94" x2="157.48" y2="22.94" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="22.94" x2="157.48" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="22.94" x2="157.48" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="ROUT"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -2878,9 +2878,9 @@ Audio_Jack_2.5MM
 <pinref part="Q1" gate="G$1" pin="X2"/>
 <wire x1="152.4" y1="12.7" x2="157.48" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="12.7" x2="157.48" y2="10.16" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="RCLK"/>
 <wire x1="149.54" y1="13.94" x2="152.4" y2="13.94" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="13.94" x2="152.4" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="RCLK"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -2916,9 +2916,9 @@ Audio_Jack_2.5MM
 <wire x1="88.9" y1="-30.48" x2="180.34" y2="-30.48" width="0.1524" layer="91"/>
 <wire x1="180.34" y1="-30.48" x2="180.34" y2="17.78" width="0.1524" layer="91"/>
 <wire x1="180.34" y1="17.78" x2="152.4" y2="17.78" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="VDD"/>
 <wire x1="149.54" y1="16.94" x2="152.4" y2="16.94" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="16.94" x2="152.4" y2="17.78" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="VDD"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -2926,26 +2926,15 @@ Audio_Jack_2.5MM
 <wire x1="104.14" y1="25.48" x2="104.14" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="GND0" class="0">
-<segment>
-<pinref part="GND2" gate="1" pin="GND"/>
-<wire x1="119.38" y1="28.48" x2="119.38" y2="30.48" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="GND0"/>
-<wire x1="119.38" y1="30.48" x2="119.38" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="120.46" y1="25.94" x2="119.38" y2="25.94" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="25.94" x2="119.38" y2="28.48" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$11" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="FMIN"/>
 <wire x1="120.46" y1="22.94" x2="104.14" y2="22.94" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="22.94" x2="104.14" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="FMIN"/>
 </segment>
 </net>
 <net name="GND2" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="GND2"/>
 <wire x1="149.54" y1="19.94" x2="149.86" y2="19.94" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="19.94" x2="149.86" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="20.32" x2="172.72" y2="20.32" width="0.1524" layer="91"/>
@@ -2955,6 +2944,22 @@ Audio_Jack_2.5MM
 <wire x1="172.72" y1="27.94" x2="172.72" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="20.32" x2="172.72" y2="22.86" width="0.1524" layer="91"/>
 <junction x="172.72" y="22.86"/>
+<pinref part="U$1" gate="G$1" pin="GND2"/>
+</segment>
+</net>
+<net name="GND1" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="GND1"/>
+<wire x1="120.46" y1="19.94" x2="120.46" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="120.46" y1="20.32" x2="116.84" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="20.32" x2="116.84" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="25.4" x2="119.38" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="GND2" gate="1" pin="GND"/>
+<wire x1="119.38" y1="25.94" x2="119.38" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="120.46" y1="25.94" x2="119.38" y2="25.94" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="GND0"/>
+<wire x1="119.38" y1="25.4" x2="119.38" y2="35.56" width="0.1524" layer="91"/>
+<junction x="119.38" y="35.56"/>
 </segment>
 </net>
 </nets>

@@ -142,16 +142,16 @@
 </package>
 <package name="RDA5807M">
 <rectangle x1="0" y1="-12" x2="11" y2="0" layer="21"/>
-<smd name="SDA" x="0" y="-1.5" dx="2.54" dy="1.27" layer="1"/>
-<smd name="SCL" x="0" y="-3.7" dx="2.54" dy="1.27" layer="1"/>
-<smd name="N/C" x="0" y="-5.9" dx="2.54" dy="1.27" layer="1"/>
-<smd name="N/C2" x="0" y="-8.1" dx="2.54" dy="1.27" layer="1"/>
-<smd name="VCC" x="0" y="-10.3" dx="2.54" dy="1.27" layer="1"/>
-<smd name="ANT" x="11" y="-1.5" dx="2.54" dy="1.27" layer="1"/>
-<smd name="RCK" x="11" y="-3.7" dx="2.54" dy="1.27" layer="1"/>
-<smd name="L" x="11" y="-5.9" dx="2.54" dy="1.27" layer="1"/>
-<smd name="R" x="11" y="-8.1" dx="2.54" dy="1.27" layer="1"/>
-<smd name="GND" x="11" y="-10.3" dx="2.54" dy="1.27" layer="1"/>
+<smd name="5" x="0" y="-1.5" dx="2.54" dy="1.27" layer="1"/>
+<smd name="4" x="0" y="-3.7" dx="2.54" dy="1.27" layer="1"/>
+<smd name="3" x="0" y="-5.9" dx="2.54" dy="1.27" layer="1"/>
+<smd name="8" x="0" y="-8.1" dx="2.54" dy="1.27" layer="1"/>
+<smd name="7" x="0" y="-10.3" dx="2.54" dy="1.27" layer="1"/>
+<smd name="2" x="11" y="-1.5" dx="2.54" dy="1.27" layer="1"/>
+<smd name="6" x="11" y="-3.7" dx="2.54" dy="1.27" layer="1"/>
+<smd name="10" x="11" y="-5.9" dx="2.54" dy="1.27" layer="1"/>
+<smd name="9" x="11" y="-8.1" dx="2.54" dy="1.27" layer="1"/>
+<smd name="1" x="11" y="-10.3" dx="2.54" dy="1.27" layer="1"/>
 </package>
 <package name="SOIC127P1032X265-10N" urn="urn:adsk.eagle:footprint:40156262/1" locally_modified="yes">
 <description>10-SOIC, 1.27 mm pitch, 10.32 mm span, 12.80 X 7.50 X 2.65 mm body
@@ -282,16 +282,16 @@
 <devices>
 <device name="" package="RDA5807M">
 <connects>
-<connect gate="G$1" pin="FMIN" pad="ANT"/>
-<connect gate="G$1" pin="GND0" pad="GND"/>
-<connect gate="G$1" pin="GND1" pad="N/C"/>
-<connect gate="G$1" pin="GND2" pad="N/C2"/>
-<connect gate="G$1" pin="LOUT" pad="L"/>
-<connect gate="G$1" pin="RCLK" pad="RCK"/>
-<connect gate="G$1" pin="ROUT" pad="R"/>
-<connect gate="G$1" pin="SCLK" pad="SCL"/>
-<connect gate="G$1" pin="SDA" pad="SDA"/>
-<connect gate="G$1" pin="VDD" pad="VCC"/>
+<connect gate="G$1" pin="GND0" pad="1"/>
+<connect gate="G$1" pin="FMIN" pad="2"/>
+<connect gate="G$1" pin="GND1" pad="3"/>
+<connect gate="G$1" pin="SCLK" pad="4"/>
+<connect gate="G$1" pin="SDA" pad="5"/>
+<connect gate="G$1" pin="RCLK" pad="6"/>
+<connect gate="G$1" pin="VDD" pad="7"/>
+<connect gate="G$1" pin="GND2" pad="8"/>
+<connect gate="G$1" pin="ROUT" pad="9"/>
+<connect gate="G$1" pin="LOUT" pad="10"/>
 </connects>
 <technologies>
 <technology name=""/>
