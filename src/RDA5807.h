@@ -716,14 +716,12 @@ class RDA5807 {
              */
             inline bool isMuted() {return !reg02->refined.DMUTE;};
 
-            void setAudioOutputHighZ(bool value);    
-
             /**
              * @ingroup GA07
              * @brief Gets true if the output audio impedance is high
              * @return True or false
              */
-            inline bool isOutputAudioHighZ() {return !reg02->refined.DHIZ;};
+            inline bool isAudioOutputHighImpedance() {return !reg02->refined.DHIZ;};
 
 
             void setAudioOutputHighImpedance(bool value);  

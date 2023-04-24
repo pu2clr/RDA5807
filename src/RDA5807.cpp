@@ -1171,15 +1171,12 @@ void RDA5807::setMute(bool value)
  * @brief Sets audio output impedance high ow low
  * @param value TRUE = High; FALSE = Low 
  */
-void RDA5807::setAudioOutputHighZ(bool value)
+void RDA5807::setAudioOutputHighImpedance(bool value)
 {
     reg02->refined.SEEK = 0;    
     reg02->refined.DHIZ = !value; // 0 = High impedance; 1 = Normal operation
     setRegister(REG02,reg02->raw); 
 }
-
-
-
 
 
 /**
@@ -1220,18 +1217,6 @@ bool RDA5807::isStereo()
     return reg0a->refined.ST;
 }
 
-
-/**
- * @ingroup GA07
- * @brief Sets the audio output hight or low impedance 
- * @details Useful to use the RDA5807 device with hight impedance speaker (headphone) 
- * @details if 1 = normal operation and 0 = hight impedance
- * @param value true = hight impedance; false = normal operation  
- */
-void RDA5807::setAudioOutputHighImpedance( bool value) {
-    reg02->refined.DHIZ = !value; // invert the value 
-    setRegister(REG02, reg02->raw);
-}
 
 
 /**
