@@ -614,7 +614,7 @@ class RDA5807 {
             /**
              * @ingroup GA02
              * @brief Set the Delay After Crystal On (default 500ms)
-             *
+             * @details Minimum time required for the oscillator to become stable
              * @param ms_value  Value in milliseconds
              */
             inline void setDelayAfterCrystalOn(uint8_t ms_value) { maxDelayAftarCrystalOn = ms_value; };
