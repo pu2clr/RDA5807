@@ -1096,7 +1096,7 @@ _EnD_oF_dEf_TeXt_;
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
       sec-mem-desc-line = '726';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Gets true if the output audio impedance is hight.
+Gets true if the output audio impedance is high.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
 @return True or false
