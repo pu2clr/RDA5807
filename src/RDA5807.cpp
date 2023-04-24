@@ -541,7 +541,7 @@ int RDA5807::getRssi()
  */
 uint8_t RDA5807::getDeviceId()
 {
-    return 0;
+    return reg00->refined.CHIP_ID;
 }
 
 /**
