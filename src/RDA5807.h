@@ -720,7 +720,7 @@ class RDA5807 {
 
             /**
              * @ingroup GA03
-             * @brief Gets true if the output audio impedance is hight
+             * @brief Gets true if the output audio impedance is high
              * @return True or false
              */
             inline bool isOutputAudioHighZ() {return !reg02->refined.DHIZ;};
