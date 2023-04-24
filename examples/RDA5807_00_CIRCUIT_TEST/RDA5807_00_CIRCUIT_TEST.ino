@@ -18,6 +18,7 @@
 #include <RDA5807.h>
 
 RDA5807 rx; 
+char buffer[120];
 
 void setup() {
 
@@ -36,6 +37,9 @@ void setup() {
 
 
   rx.setup();
+
+  showReceiverInfo();
+
   rx.setVolume(8);  
 
   
@@ -64,10 +68,20 @@ void setup() {
   Serial.print("\nMute test has finished.");
 
 
-  Serial.print("\nEstacao 106.5MHz");
+  Serial.print("\nStation 106.5MHz");
   rx.setFrequency(10650);
   delay(10000);
 
+  showReceiverInfo();
+  rx.setMute(true);
+  rx.setSoftmute(true);
+  showReceiverInfo();
+  delay(2000);
+  rx.setMute(false);
+  delay(2000);
+  rx.setAudioOutputHighImpedance(true);
+  showReceiverInfo();
+  
   /*
   // Seek test
   Serial.print("\nSeek station");
@@ -79,6 +93,11 @@ void setup() {
   }
   */
   
+}
+
+void showReceiverInfo() {
+  sprintf(buffer,"\nID: %d, RSSI: %d, Band Space: %d, Volume: %d, Muted: %d, HighZ: %d, Soft Mute: %d \n", rx.getDeviceId(), rx.getRssi(), rx.getSpace(), rx.getVolume(), rx.isMuted(), rx.isOutputAudioHighZ(), rx.isSoftmuted() );
+  Serial.print(buffer);
 }
 
 void loop() {
