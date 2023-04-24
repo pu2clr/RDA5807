@@ -25,8 +25,7 @@ _EnD_oF_dEf_TeXt_;
 Set the Delay After Crystal On (default 500ms)
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 616 
-
+ Minimum time required for the oscillator to become stable
 @param ms_value  Value in milliseconds
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
