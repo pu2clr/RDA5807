@@ -544,7 +544,6 @@ void RDA5807::setSoftmute(bool value)
 void RDA5807::setMute(bool value)
 {
     reg02->refined.SEEK = 0;    
-    // reg02->refined.DHIZ = !value;
     reg02->refined.DMUTE = !value;  // 1 = Normal operation; 0 = Mute
     setRegister(REG02,reg02->raw); 
 }
