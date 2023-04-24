@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['i2s_20functions_0',['I2S Functions',['../group___g_a06.html',1,'']]]
+  ['basic_20functions_0',['Basic Functions',['../group___g_a03.html',1,'']]]
 ];

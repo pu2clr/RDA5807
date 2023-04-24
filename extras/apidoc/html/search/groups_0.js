@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['basic_20functions_0',['Basic Functions',['../group___g_a03.html',1,'']]]
+  ['audio_20functions_0',['Audio Functions',['../group___g_a07.html',1,'']]]
 ];

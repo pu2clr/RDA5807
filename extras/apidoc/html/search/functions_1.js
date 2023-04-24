@@ -23,5 +23,5 @@ var searchData=
   ['getspace_20',['getSpace',['../group___g_a03.html#gab6cc94517eb6bc3325fbd6386bbffe15',1,'RDA5807']]],
   ['getstatus_21',['getStatus',['../group___g_a03.html#ga1f4bc3d6f9d94171b2965dbb4e812f4f',1,'RDA5807']]],
   ['getstatusregisters_22',['getStatusRegisters',['../group___g_a03.html#gab9e3a5584a6238f719e9c9e49435f5ce',1,'RDA5807']]],
-  ['getvolume_23',['getVolume',['../group___g_a03.html#ga743d91d820922b3feda10d06443bc8a9',1,'RDA5807']]]
+  ['getvolume_23',['getVolume',['../group___g_a07.html#ga743d91d820922b3feda10d06443bc8a9',1,'RDA5807']]]
 ];
