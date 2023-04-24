@@ -58,7 +58,7 @@ void setup() {
   
   delay(10000);
 
-  Serial.print("Set volume to 0");
+  Serial.print("Setting volume to 0");
   rx.setVolume(0); 
   showReceiverInfo();
   delay(3000);
@@ -69,6 +69,7 @@ void setup() {
   delay(2000);
   rx.setMute(false);
   delay(2000);
+   Serial.print("Setting audio output impedance to high");
   rx.setAudioOutputHighImpedance(true);
   showReceiverInfo();
   
@@ -77,11 +78,11 @@ void setup() {
   rx.setup();
   showReceiverInfo();
   rx.setFrequency(8700);
-
+  rx.setVolume(8);
   // Seek test
-  Serial.print("\nSeek station");
+  Serial.print("\nSeek stations");
   for (int i = 0; i < 10; i++ ) { 
-    rx.seek(1,0);
+    rx.seek(1,1);
     Serial.print("\nReal Frequency.: ");
     Serial.println(rx.getRealFrequency());
     showReceiverInfo();
