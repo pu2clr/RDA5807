@@ -12,7 +12,7 @@
 #include <RDA5807.h>
 
 /**
- * @defgroup GA03 Basic Functions
+ * @defgroup GA02 Basic Functions
  * @section GA03 Basic
  */
 
@@ -55,7 +55,7 @@ void RDA5807::setGpio(uint8_t gpioPin, uint8_t gpioSetup, int mcuPin)
 }
 
 /**
- * @ingroup GA03
+ * @ingroup GA02
  * @brief Gets all current device status and RDS information registers (From 0x0A to 0x0F)
  * @see RDA5807M - SINGLE-CHIP BROADCAST FMRADIO TUNER; pages 5, 9, 12 and 13. 
  * @see rda_reg0a, rda_reg0b, rda_reg0c, rda_reg0d, rda_reg0e, rda_reg0f
@@ -76,7 +76,7 @@ void RDA5807::getStatusRegisters()
 }
 
 /**
- * @ingroup GA03
+ * @ingroup GA02
  * @brief Gets the register content of a given status register (from 0x0A to 0x0F) 
  * @details Useful when you need just a specific status register content.
  * @details This methos update the first element of the shadowStatusRegisters linked to the register
@@ -103,7 +103,7 @@ void *RDA5807::getStatus(uint8_t reg)
 
 
 /**
- * @ingroup GA03
+ * @ingroup GA02
  * @brief Sets a given value to a specific device register 
  *
  * @see RDA5807M - SINGLE-CHIP BROADCAST FMRADIO TUNER; pages 5, 9, 10 and 11. 
@@ -127,7 +127,7 @@ void RDA5807::setRegister(uint8_t reg, uint16_t value)
 }
 
 /**
- * @ingroup GA03
+ * @ingroup GA02
  * @brief Waits for Seek or Tune finish
  */
 void RDA5807::waitAndFinishTune()
@@ -138,7 +138,7 @@ void RDA5807::waitAndFinishTune()
 }
 
 /**
- * @ingroup GA03
+ * @ingroup GA02
  * @brief Resets the device
  * @details The RDA5807M is RESET itself When VIO is Power up. 
  * @details Also, it support soft reset by triggering the 0x02 register (rda_reg02) bit 1 from 0 to 1. 
@@ -150,7 +150,7 @@ void RDA5807::softReset()
 }
 
 /**
- * @ingroup GA03
+ * @ingroup GA02
  * @brief Powers the receiver on
  */
 void RDA5807::powerUp()
@@ -180,7 +180,7 @@ void RDA5807::powerUp()
 }
 
 /**
- * @ingroup GA03
+ * @ingroup GA02
  * @brief Sets new demodulate method. It can improve the receiver sensitivity about 1dB
  * 
  * @param value  true or false
@@ -189,6 +189,45 @@ void RDA5807::setNewDemodulateMethod(bool value) {
     reg02->refined.NEW_METHOD = value;
     setRegister(REG02,reg02->raw);
 }
+
+/**
+ * @ingroup GA02
+ * @brief Power the receiver off
+ */
+void RDA5807::powerDown()
+{
+    reg02->refined.SEEK = 0;
+    reg02->refined.ENABLE = 0;
+    setRegister(REG02, reg02->raw);
+}
+
+
+/**
+ * @ingroup GA02
+ * @brief Starts the device
+ * @details You can select the colck type and the frequency 
+ * @details Occilator type: OSCILLATOR_TYPE_CRYSTAL = passive crystal; OSCILLATOR_TYPE_REFCLK = active crystal or signal generator
+ * @details Clock type: CLOCK_32K, CLOCK_12M, CLOCK_13M, CLOCK_19_2M, CLOCK_24M, CLOCK_26M and CLOCK_38_4M  
+ * @param clock_type       Clock used.
+ * @param oscillator_type  optional. Sets the Oscillator type used (default: passive Crystal).
+ */
+void RDA5807::setup(uint8_t clock_type, uint8_t oscillator_type)
+{
+    this->oscillatorType = oscillator_type;
+    this->clockType = clock_type;
+
+    Wire.begin();
+    delay(1);
+    powerUp();
+
+}
+
+
+/**
+ * @defgroup GA03 FM Tune Functions
+ * @section GA03 FM Tune
+ */
+
 
 /**
  * @ingroup GA03
@@ -212,36 +251,7 @@ void RDA5807::setAFC(bool value) {
     setRegister(REG04,reg04->raw);
 }
 
-/**
- * @ingroup GA03
- * @brief Power the receiver off
- */
-void RDA5807::powerDown()
-{
-    reg02->refined.SEEK = 0;
-    reg02->refined.ENABLE = 0;
-    setRegister(REG02, reg02->raw);
-}
 
-/**
- * @ingroup GA03
- * @brief Starts the device
- * @details You can select the colck type and the frequency 
- * @details Occilator type: OSCILLATOR_TYPE_CRYSTAL = passive crystal; OSCILLATOR_TYPE_REFCLK = active crystal or signal generator
- * @details Clock type: CLOCK_32K, CLOCK_12M, CLOCK_13M, CLOCK_19_2M, CLOCK_24M, CLOCK_26M and CLOCK_38_4M  
- * @param clock_type       Clock used.
- * @param oscillator_type  optional. Sets the Oscillator type used (default: passive Crystal).
- */
-void RDA5807::setup(uint8_t clock_type, uint8_t oscillator_type)
-{
-    this->oscillatorType = oscillator_type;
-    this->clockType = clock_type;
-
-    Wire.begin();
-    delay(1);
-    powerUp();
-
-}
 
 /**
  * @ingroup GA03
