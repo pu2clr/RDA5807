@@ -113,6 +113,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gaef3ebf331e0646a67b6ebfa6d47c3a16"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#gaef3ebf331e0646a67b6ebfa6d47c3a16">RDA5807::isMuted</a> ()</td></tr>
 <tr class="memdesc:gaef3ebf331e0646a67b6ebfa6d47c3a16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets Audio Mute Status.  <a href="group___g_a03.html#gaef3ebf331e0646a67b6ebfa6d47c3a16">More...</a><br /></td></tr>
 <tr class="separator:gaef3ebf331e0646a67b6ebfa6d47c3a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5df4ad7a791fff2f12cfddeb61fd138a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#ga5df4ad7a791fff2f12cfddeb61fd138a">RDA5807::isOutputAudioHighZ</a> ()</td></tr>
+<tr class="memdesc:ga5df4ad7a791fff2f12cfddeb61fd138a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets true if the output audio impedance is hight.  <a href="group___g_a03.html#ga5df4ad7a791fff2f12cfddeb61fd138a">More...</a><br /></td></tr>
+<tr class="separator:ga5df4ad7a791fff2f12cfddeb61fd138a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga677eff1084b294696a32e3ca4dfe593b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#ga677eff1084b294696a32e3ca4dfe593b">RDA5807::setGpio</a> (uint8_t gpioPin, uint8_t gpioSetup=0, int mcuPin=-1)</td></tr>
 <tr class="memdesc:ga677eff1084b294696a32e3ca4dfe593b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Device GPIO pins.  <a href="group___g_a03.html#ga677eff1084b294696a32e3ca4dfe593b">More...</a><br /></td></tr>
 <tr class="separator:ga677eff1084b294696a32e3ca4dfe593b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -197,6 +200,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gafec3018913d735ee0684b88cf503c84a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#gafec3018913d735ee0684b88cf503c84a">RDA5807::setMute</a> (bool value)</td></tr>
 <tr class="memdesc:gafec3018913d735ee0684b88cf503c84a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets Audio mute or unmute.  <a href="group___g_a03.html#gafec3018913d735ee0684b88cf503c84a">More...</a><br /></td></tr>
 <tr class="separator:gafec3018913d735ee0684b88cf503c84a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5886b8bd2698756fb0d39f468d59a324"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#ga5886b8bd2698756fb0d39f468d59a324">RDA5807::setAudioOutputHighZ</a> (bool value)</td></tr>
+<tr class="memdesc:ga5886b8bd2698756fb0d39f468d59a324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets audio output impedance high ow low.  <a href="group___g_a03.html#ga5886b8bd2698756fb0d39f468d59a324">More...</a><br /></td></tr>
+<tr class="separator:ga5886b8bd2698756fb0d39f468d59a324"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad6e77ffbeb3f4dc885548130e09590d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#gad6e77ffbeb3f4dc885548130e09590d6">RDA5807::setMono</a> (bool value)</td></tr>
 <tr class="memdesc:gad6e77ffbeb3f4dc885548130e09590d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets audio Mono or stereo.  <a href="group___g_a03.html#gad6e77ffbeb3f4dc885548130e09590d6">More...</a><br /></td></tr>
 <tr class="separator:gad6e77ffbeb3f4dc885548130e09590d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -434,6 +440,36 @@ Basic</h1>
 
 </div>
 </div>
+<a id="ga5df4ad7a791fff2f12cfddeb61fd138a" name="ga5df4ad7a791fff2f12cfddeb61fd138a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5df4ad7a791fff2f12cfddeb61fd138a">&#9670;&nbsp;</a></span>isOutputAudioHighZ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RDA5807::isOutputAudioHighZ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets true if the output audio impedance is hight. </p>
+<dl class="section return"><dt>Returns</dt><dd>True or false </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8h_source.html#l00726">726</a> of file <a class="el" href="_r_d_a5807_8h_source.html">RDA5807.h</a>.</p>
+
+</div>
+</div>
 <a id="ga677eff1084b294696a32e3ca4dfe593b" name="ga677eff1084b294696a32e3ca4dfe593b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga677eff1084b294696a32e3ca4dfe593b">&#9670;&nbsp;</a></span>setGpio()</h2>
 
@@ -512,7 +548,7 @@ shadowStatusRegisters; </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00064">64</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_r_d_a5807_8cpp_source.html#l00738">RDA5807::getRdsFlagAB()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l00752">RDA5807::getRdsGroupType()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l00781">RDA5807::getRdsProgramType()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l00871">RDA5807::getRdsText()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l00897">RDA5807::getRdsText0A()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l00926">RDA5807::getRdsText2A()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l00955">RDA5807::getRdsText2B()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l00981">RDA5807::getRdsTime()</a>, and <a class="el" href="_r_d_a5807_8cpp_source.html#l00767">RDA5807::getRdsVersionCode()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_r_d_a5807_8cpp_source.html#l00752">RDA5807::getRdsFlagAB()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l00766">RDA5807::getRdsGroupType()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l00795">RDA5807::getRdsProgramType()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l00885">RDA5807::getRdsText()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l00911">RDA5807::getRdsText0A()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l00940">RDA5807::getRdsText2A()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l00969">RDA5807::getRdsText2B()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l00995">RDA5807::getRdsTime()</a>, and <a class="el" href="_r_d_a5807_8cpp_source.html#l00781">RDA5807::getRdsVersionCode()</a>.</p>
 
 </div>
 </div>
@@ -1326,6 +1362,34 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 
 </div>
 </div>
+<a id="ga5886b8bd2698756fb0d39f468d59a324" name="ga5886b8bd2698756fb0d39f468d59a324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5886b8bd2698756fb0d39f468d59a324">&#9670;&nbsp;</a></span>setAudioOutputHighZ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setAudioOutputHighZ </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets audio output impedance high ow low. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>TRUE = High; FALSE = Low </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00556">556</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+
+</div>
+</div>
 <a id="gad6e77ffbeb3f4dc885548130e09590d6" name="gad6e77ffbeb3f4dc885548130e09590d6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gad6e77ffbeb3f4dc885548130e09590d6">&#9670;&nbsp;</a></span>setMono()</h2>
 
@@ -1350,7 +1414,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00557">557</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00571">571</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -1378,7 +1442,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00570">570</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00584">584</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -1400,7 +1464,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <p>Gets the current Stereo status. </p>
 <dl class="section return"><dt>Returns</dt><dd>TRUE if stereo; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00583">583</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00597">597</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -1430,7 +1494,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00597">597</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00611">611</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -1458,7 +1522,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00609">609</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00623">623</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -1480,7 +1544,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <p>Gets the current audio volume level. </p>
 <dl class="section return"><dt>Returns</dt><dd>uint8_t 0 to 15 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00623">623</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00637">637</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -1501,7 +1565,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 
 <p>Increments the audio volume. </p>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00633">633</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00647">647</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -1522,7 +1586,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 
 <p>Decrements the audio volume. </p>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00647">647</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00661">661</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -1545,7 +1609,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd></dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>number </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00663">663</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00677">677</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -1574,7 +1638,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00675">675</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00689">689</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
