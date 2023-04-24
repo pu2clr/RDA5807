@@ -612,6 +612,7 @@ class RDA5807 {
         public :
 
             /**
+             * @ingroup GA02
              * @brief Set the Delay After Crystal On (default 500ms)
              *
              * @param ms_value  Value in milliseconds
@@ -619,7 +620,7 @@ class RDA5807 {
             inline void setDelayAfterCrystalOn(uint8_t ms_value) { maxDelayAftarCrystalOn = ms_value; };
 
             /**
-             * @ingroup GA03
+             * @ingroup GA02
              * @brief Sets alternatives I2C bus address 
              * @details You do not need use this function on RDA5807M
              * @param directAccess 
@@ -697,7 +698,7 @@ class RDA5807 {
 
             void setSoftmute(bool value);
             /**
-             * @ingroup GA03
+             * @ingroup GA07
              * @brief Gets the softmute status  
              * @return true if enabled 
              */
