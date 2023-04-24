@@ -1,5 +1,6 @@
 var group___g_a07 =
 [
+    [ "RDA5807::isSoftmuted", "group___g_a07.html#ga428ddd720c58c17273322d7526e51cbe", null ],
     [ "RDA5807::isMuted", "group___g_a07.html#gaef3ebf331e0646a67b6ebfa6d47c3a16", null ],
     [ "RDA5807::isAudioOutputHighImpedance", "group___g_a07.html#ga5195195da106c05f29218910b17f6f6b", null ],
     [ "RDA5807::setSoftmute", "group___g_a07.html#gadd2c2ab8b861ab0714fdeb99c774d656", null ],
