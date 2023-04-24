@@ -206,7 +206,7 @@ void RDA5807::powerDown()
  * @ingroup GA02
  * @brief Starts the device
  * @details You can select the colck type and the frequency 
- * @details Occilator type: OSCILLATOR_TYPE_CRYSTAL = passive crystal; OSCILLATOR_TYPE_REFCLK = active crystal or signal generator
+ * @details oscillator type: OSCILLATOR_TYPE_CRYSTAL = passive crystal; OSCILLATOR_TYPE_REFCLK = active crystal or signal generator
  * @details Clock type: CLOCK_32K, CLOCK_12M, CLOCK_13M, CLOCK_19_2M, CLOCK_24M, CLOCK_26M and CLOCK_38_4M  
  * @param clock_type       Clock used.
  * @param oscillator_type  optional. Sets the Oscillator type used (default: passive Crystal).

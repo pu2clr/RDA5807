@@ -373,7 +373,7 @@ Starts the device.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
  You can select the colck type and the frequency 
-\ilinebr\ilinebr Occilator type: OSCILLATOR_TYPE_CRYSTAL = passive crystal; OSCILLATOR_TYPE_REFCLK = active crystal or signal generator
+\ilinebr\ilinebr oscillator type: OSCILLATOR_TYPE_CRYSTAL = passive crystal; OSCILLATOR_TYPE_REFCLK = active crystal or signal generator
 \ilinebr\ilinebr Clock type: CLOCK_32K, CLOCK_12M, CLOCK_13M, CLOCK_19_2M, CLOCK_24M, CLOCK_26M and CLOCK_38_4M  <br>
 @param clock_type       Clock used.
 @param oscillator_type  optional. Sets the Oscillator type used (default: passive Crystal).
