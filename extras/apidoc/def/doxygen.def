@@ -25,6 +25,8 @@ _EnD_oF_dEf_TeXt_;
 Set the Delay After Crystal On (default 500ms)
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 615 
+
 @param ms_value  Value in milliseconds
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
@@ -188,6 +190,8 @@ _EnD_oF_dEf_TeXt_;
 Sets a given value to a specific device register.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 107 
+
 @see RDA5807M - SINGLE-CHIP BROADCAST FMRADIO TUNER; pages 5, 9, 10 and 11. 
 @see rda_reg02, rda_reg03, rda_reg04, rda_reg05, rda_reg06, rda_reg07
 
@@ -401,6 +405,8 @@ _EnD_oF_dEf_TeXt_;
 Sets new demodulate method. It can improve the receiver sensitivity about 1dB.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 184 
+
 @param value  true or false
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
@@ -425,6 +431,8 @@ _EnD_oF_dEf_TeXt_;
 Sets AFC true or false.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 206 
+
 @param value  true or false
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
@@ -550,6 +558,8 @@ _EnD_oF_dEf_TeXt_;
 Gets the current channel stored in 0x0A status register.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 323 
+
 @see setChannel, setFrequency, setBand, setSpace
 @see RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12. 
 
@@ -619,6 +629,8 @@ _EnD_oF_dEf_TeXt_;
 Seek function.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 358 
+
 @param seek_mode  if 0, wrap at the upper or lower band limit and continue seeking; 1 = stop seeking at the upper or lower band limit   <br>
 @param direction  if 0, seek down; if 1, seek up.
 _EnD_oF_dEf_TeXt_;
@@ -739,6 +751,8 @@ _EnD_oF_dEf_TeXt_;
 Sets the FM band. See table below.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 439 
+
 FM band table 
 
 <table class="markdownTable">
@@ -775,6 +789,8 @@ _EnD_oF_dEf_TeXt_;
 Sets the FM channel space.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 461 
+
 Channel space table
 
 <table class="markdownTable">
@@ -973,6 +989,8 @@ _EnD_oF_dEf_TeXt_;
 Sets audio Mono or stereo.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 567 
+
 @param value TRUE = Mono; FALSE force stereo
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
@@ -997,6 +1015,8 @@ _EnD_oF_dEf_TeXt_;
 Sets Bass Boost.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 580 
+
 @param value FALSE = Disable; TRUE = Enable
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
@@ -1015,6 +1035,8 @@ _EnD_oF_dEf_TeXt_;
 Gets the current Stereo status.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 593 
+
 @return TRUE if stereo; 
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
@@ -1149,6 +1171,8 @@ _EnD_oF_dEf_TeXt_;
 Sets Soft Blend.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 195 
+
 @param value  true or false
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
@@ -1173,6 +1197,8 @@ _EnD_oF_dEf_TeXt_;
 Sets the audio volume level.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 619 
+
 @param value
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
@@ -1191,6 +1217,8 @@ _EnD_oF_dEf_TeXt_;
 Gets the current audio volume level.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 633 
+
 @return uint8_t  0 to 15
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
@@ -1209,7 +1237,7 @@ _EnD_oF_dEf_TeXt_;
 Increments the audio volume.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-
+\iline 644 
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -1227,7 +1255,7 @@ _EnD_oF_dEf_TeXt_;
 Decrements the audio volume.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-
+\iline 658 
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -1329,6 +1357,8 @@ _EnD_oF_dEf_TeXt_;
 Sets RDS fifo mode enable.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 1107 
+
 @param value  If true, it makes the the fifo mode enable. 
 @return true  or false
 _EnD_oF_dEf_TeXt_;
@@ -1348,6 +1378,8 @@ _EnD_oF_dEf_TeXt_;
 Clear RDS fifo.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 1119 
+
 @param value  If true, it makes the the fifo mode enable. 
 @return true  or false
 _EnD_oF_dEf_TeXt_;
@@ -1444,6 +1476,8 @@ _EnD_oF_dEf_TeXt_;
 Return the group type.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 762 
+
 @return uint16_t 
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
@@ -1537,6 +1571,8 @@ _EnD_oF_dEf_TeXt_;
 Process data received from group 2A.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 842 
+
 @param c  char array reference to the "group  2A" text 
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
@@ -1603,7 +1639,7 @@ _EnD_oF_dEf_TeXt_;
 Gets the station name and other messages.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
- \xrefitem todo 5.
+ \xrefitem todo 5.\iline 906 
 
 @return char* should return a string with the station name. 
         However, some stations send other kind of messages
@@ -1641,7 +1677,7 @@ _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
 @ 
 
-
+\iline 936 
 
 @return char* string with the Text of the group A2  <br>
 _EnD_oF_dEf_TeXt_;
@@ -1766,6 +1802,8 @@ _EnD_oF_dEf_TeXt_;
 Get the current Status of block B.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 1074 
+
 Block Errors Level of RDS_DATA_1, and is always read as Errors Level of RDS BLOCK B (in RDS mode ) or E (in RBDS mode when ABCD_E flag is 1).
 <table class="markdownTable">
   <tr class="markdownTableHead">    <th class="markdownTableHeadNone"> value \ilinebr </th>    <th class="markdownTableHeadNone"> description \ilinebr </th>  </tr>
@@ -1998,6 +2036,8 @@ _EnD_oF_dEf_TeXt_;
 If 0, I2S output unsigned 16-bit audio data. If 1, I2S output signed 16-bit audio data.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 1269 
+
 @param value  true (1) or false (0)
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
@@ -2895,7 +2935,7 @@ _EnD_oF_dEf_TeXt_;
 Register 0x00.
 _EnD_oF_dEf_TeXt_;
   cp-documentation = <<_EnD_oF_dEf_TeXt_
-
+\iline 103 
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
@@ -4114,6 +4154,8 @@ _EnD_oF_dEf_TeXt_;
 Register 0x06.
 _EnD_oF_dEf_TeXt_;
   cp-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 267 
+
 I2S_SW_CNT values table
 
 <table class="markdownTable">
@@ -5552,7 +5594,9 @@ _EnD_oF_dEf_TeXt_;
 RDS Block B data type.
 _EnD_oF_dEf_TeXt_;
   cp-documentation = <<_EnD_oF_dEf_TeXt_
- For GCC on System-V ABI on 386-compatible (32-bit processors), the following stands:
+\iline 464 
+
+\ilinebr\ilinebr For GCC on System-V ABI on 386-compatible (32-bit processors), the following stands:
 
 1) Bit-fields are allocated from right to left (least to most significant).
 2) A bit-field must entirely reside in a storage unit appropriate for its declared type.
