@@ -2752,6 +2752,7 @@ Audio_Jack_2.5MM
 <text x="172.72" y="35.56" size="1.778" layer="91">Audio Amp.</text>
 <text x="66.04" y="10.16" size="1.778" layer="91">SDIO/SDA</text>
 <text x="66.04" y="15.24" size="1.778" layer="91">SCLK/CLOCK</text>
+<text x="66.04" y="50.8" size="1.778" layer="91">RDA5807M setup</text>
 </plain>
 <instances>
 <instance part="R1" gate="G$1" x="109.22" y="17.78" smashed="yes">
