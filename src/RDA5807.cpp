@@ -558,7 +558,6 @@ int RDA5807::getRssi()
 
 /**
  * @ingroup GA03
- * @todo 
  * @brief Gets the Device identification
  * @return number
  */
