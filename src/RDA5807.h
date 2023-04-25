@@ -12,7 +12,7 @@
  * @details If you need to access a set o register, use the 0x10 buss adress. 
  * 
  * @see RDA5807M - SINGLE-CHIP BROADCAST FMRADIO TUNER; page 5.
- * @see the methods setRegister, getRegister and getStatusRegisters
+ * @see the methods setRegister, getDirectRegister and getStatusRegisters
  *  
  * This library can be freely distributed using the MIT Free Software model.
  * Copyright(c) 2020 Ricardo Lima Caratti.
