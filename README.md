@@ -524,18 +524,16 @@ Cordova provides an easy way to develop for iOS and Android.
 * [RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015](https://datasheet.lcsc.com/szlcsc/RDA-Microelectronics-RDA5807MS_C167246.pdf)
 * [Arduino RDA5807 收音机](https://oshwhub.com/yeseqaq/arduino-rda5807)
 * [What is FM Receiver, How to build an Arduino FM Radio with RDA5807](https://www.seeedstudio.com/blog/2020/01/09/what-is-fm-receiver-how-to-build-an-arduino-fm-radio-with-rda5807/)
+* [A small eagle library for popular RDA5807 Radio module](https://github.com/TigerBouli/RDA5807m-Module-)
 
 
-# Vedeos about RDA5807 and this Arduino Library 
+
+# Videos about RDA5807 and this Arduino Library 
 
 * [Receptor de FM SDR con RDA5807 - Spanish](https://youtu.be/6PAnqT2TrL8)
 * [RDA5807 Fm based radio - Portuguese](https://youtu.be/2g1KJkDFCaU)
 * [Rádio FM RDA5807 com ESP32, Arduino etc - Portuguese](https://www.dobitaobyte.com.br/radio-fm-rda5807-com-esp32-arduino-etc/?amp)
-
-* [RDA5807M - SINGLE-CHIP BROADCAST FMRADIO TUNER](https://www.electrodragon.com/w/images/5/5f/RDA5807M_datasheet_v1.pdf)
-* [A small eagle library for popular RDA5807 Radio module](https://github.com/TigerBouli/RDA5807m-Module-)
-* [RDA5807 fm chipset / arduino with a Nextion screen F5SWB@2021 / Version 1.18](https://github.com/f5swb/RDA5807)
-  
+* [RDA5807 fm chipset / arduino with a Nextion screen F5SWB@2021 / Version 1.18](https://github.com/f5swb/RDA5807)  
 * [Breadboard FM Radio with RDA5807 and WIO Terminal](https://youtu.be/ONZBhaCEMVM)
 * [RDA5807 Real test demo](https://youtu.be/0PnV5YjpnV4)
 * [Receptor FM RDA5807 y Arduin. de 50 a 115 Mhz Experimental](https://youtu.be/g7dwFqzRjV0)
