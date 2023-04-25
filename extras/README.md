@@ -26,9 +26,9 @@ Here you will find all schematics used by the examples sketches, the EAGLE files
 ![RDA5807M Breakout setup](./images/RDA5807M_BREAKOUT_SETUP.png)
 
 
-### RDA5807M standalone IC setup (without brealout)
+### RDA5807M standalone IC setup (without breakout)
 
-![RDA5807M standalone IC setup (without brealout)](./images/RDA5807M_SETUP.png)
+![RDA5807M standalone IC setup (without breakout)](./images/RDA5807M_SETUP.png)
 
 
 ### RDA5807FP standalone IC setup 
