@@ -24,6 +24,21 @@ Here you will find all schematics used by the examples sketches, the EAGLE files
 ## All Schematics 
 
 
+### RDA5807M Breakout setup
+
+![RDA5807M Breakout setup](./images/RDA5807M_BREAKOUT_SETUP.png)
+
+
+### RDA5807M standalone IC setup (without brealout)
+
+![RDA5807M standalone IC setup (without brealout)](./images/RDA5807M_SETUP.png)
+
+
+### RDA5807FP standalone IC setup 
+
+![RDA5807FP standalone IC setup ](./images/RDA5807FP_SETUP.png)
+
+
 ### Basic circuit (examples  RDA5807_00_CIRCUIT_TEST and RDA5807_01_SERIAL_MONITOR)
 
 
