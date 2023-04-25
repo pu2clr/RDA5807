@@ -148,6 +148,8 @@ var group___g_a01 =
       [ "setI2SSpeed", "group___g_a06.html#ga3d5618cd755c0a56fea68ea589bb828f", null ],
       [ "setI2SDataSigned", "group___g_a06.html#gabeb9446fc371fe58e075bea7ebc51fdb", null ],
       [ "convertToChar", "group___g05.html#ga0f40d75452088ceeffb4d8969fb34999", null ],
+      [ "formatFrequency", "group___g05.html#gac1325d39257d019e7b89edc169990906", null ],
+      [ "checkI2C", "group___g05.html#ga16f6ef1f816a032fb07a91017c34bb50", null ],
       [ "deviceAddressDirectAccess", "group___g_a01.html#a18c3e5a103b683af7c46d8b9a3d47518", null ],
       [ "deviceAddressFullAccess", "group___g_a01.html#a81c00f45187f93be0698ef8c5bd80619", null ],
       [ "resetPin", "group___g_a01.html#a55c07acd68120f74f787999364fc92c9", null ],
