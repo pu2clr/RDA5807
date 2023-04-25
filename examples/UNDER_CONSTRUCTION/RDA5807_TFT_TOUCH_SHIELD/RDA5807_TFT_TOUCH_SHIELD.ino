@@ -80,7 +80,7 @@ volatile int encoderCount = 0;
 uint16_t currentFrequency;
 uint16_t previousFrequency;
 
-char buffer[255];
+char buffer[100];
 char bufferFreq[10];
 char bufferStereo[10];
 
@@ -146,18 +146,19 @@ void setup(void) {
   tft.fillScreen(BLACK);
 
   showTemplate();
-  while(1);
 
   // Atach Encoder pins interrupt
   attachInterrupt(digitalPinToInterrupt(ENCODER_PIN_A), rotaryEncoder, CHANGE);
   attachInterrupt(digitalPinToInterrupt(ENCODER_PIN_B), rotaryEncoder, CHANGE);
 
-  rx.setup();
+  rx.setup(); // Problem here. The A5 pin is used to reset the display shield. So, when the I2C starts the display stop working. 
+  rx.setFrequency(10650) ; 
 
   // Set up the radio for the current band (see index table variable bandIdx )
   currentFrequency = previousFrequency = rx.getFrequency();
   rx.setVolume(DEFAULT_VOLUME);
   tft.setFont(NULL);  // default font
+
 }
 
 /*
@@ -175,24 +176,6 @@ void rotaryEncoder() {  // rotary encoder events
   }
 }
 
-#if defined(ARDUINO_SAM_DUE)
-/*
-  dtostrf - Emulation for dtostrf function from avr-libc
-
-  The function below wil be compiled just on Arduino DUE board.
-
-  Copyright (c) 2015 Arduino LLC.  All rights reserved.
-  See: https://github.com/arduino/ArduinoCore-samd/blob/master/cores/arduino/avr/dtostrf.c
-*/
-char *dtostrf(double val, signed char width, unsigned char prec, char *sout) {
-  asm(".global _printf_float");
-
-  char fmt[20];
-  sprintf(fmt, "%%%d.%df", width, prec);
-  sprintf(sout, fmt, val);
-  return sout;
-}
-#endif
 
 /*
    Shows a text on a given position; with a given size and font, and with a given color
@@ -361,8 +344,8 @@ void showFrequency() {
 
   // showText(10, 10, 4, NULL, color, buffer);
   // showFrequencyValue(10, 10, bufferFreq, buffer, color);
-  tft.setFont(NULL);  // default font
-  strcpy(bufferFreq, buffer);
+  // tft.setFont(NULL);  // default font
+  // strcpy(bufferFreq, buffer);
 }
 
 // Will be used by seekStationProgress
@@ -475,12 +458,12 @@ void loop() {
 
   // SEEK Test
   if (bSeekUp.justPressed()) {
-
+    rx.seek(RDA_SEEK_WRAP, 1, showFrequencySeek);  // showFrequency will be called by the seek function during the process.
     showStatus();
   }
 
   if (bSeekDown.justPressed()) {
-
+    rx.seek(RDA_SEEK_WRAP, 0, showFrequencySeek);  // showFrequency will be called by the seek function during the process.
     showStatus();
   }
 
