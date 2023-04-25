@@ -79,8 +79,8 @@ void RDA5807::getStatusRegisters()
  * @ingroup GA02
  * @brief Gets the register content via direct access
  * @details this method is useful to deal with a specific register. 
- * @param uint8_t register number  
- * @return word16_to_bytes 
+ * @param uint8_t register number 
+ * @return word16_to_bytes register content
  * @see  word16_to_bytes datatype in RDA5807.h
  */
 word16_to_bytes RDA5807::getDirectRegister(uint8_t reg)
