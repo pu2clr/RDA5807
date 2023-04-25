@@ -18,9 +18,6 @@ Here you will find all schematics used by the examples sketches, the EAGLE files
 ![RDA5807M Arduino UNO homebrew Board Adapters ](./images/UNO_ADAPTER_RDA5807M_01.jpg)
 
 
-
-
-
 ## All Schematics 
 
 
