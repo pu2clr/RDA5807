@@ -286,10 +286,10 @@ The circuits below can help you to connect the arduino based board to the RDA580
 ![RDA5807FP standalone IC setup ](./extras/images/RDA5807FP_SETUP.png)
 
 
+### Wire up on Arduino UNO, Pro mini or other based on ATmega 328.
+
 ![Basic Schematic](./extras/images/circuit_basic.png)
 
-
-### Wire up on Arduino UNO, Pro mini or other based on ATmega 328.
 
 | RDA5807 / Description |  Arduino Pin  |
 | --------------------- | ------------  |
