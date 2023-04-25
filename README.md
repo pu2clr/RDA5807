@@ -270,7 +270,20 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## Schematic
 
- In general, the RDA5807 can be found in kit or breakout form. In this case, the circuit below can help you to connect the arduino to the RDA5807 shield. If you are using just the IC, you might want to check the  [RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015](https://datasheet.lcsc.com/szlcsc/RDA-Microelectronics-RDA5807MS_C167246.pdf); page 17.
+The circuits below can help you to connect the arduino based board to the RDA5807 version you are using.  In general, the RDA5807 can be found in kit or breakout form on Aliexpress, Amazon, eBay etc. 
+
+### RDA5807M Breakout setup
+
+![RDA5807M Breakout setup](./extras/images/RDA5807M_BREAKOUT_SETUP.png)
+
+
+### RDA5807M standalone IC setup (without breakout)
+
+![RDA5807M standalone IC setup (without breakout)](./extras/images/RDA5807M_SETUP.png)
+
+### RDA5807FP standalone IC setup 
+
+![RDA5807FP standalone IC setup ](./extras/images/RDA5807FP_SETUP.png)
 
 
 ![Basic Schematic](./extras/images/circuit_basic.png)
