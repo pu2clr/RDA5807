@@ -769,6 +769,20 @@ class RDA5807 {
 
             // Tools (Helper)
             void convertToChar(uint16_t value, char *strValue, uint8_t len, uint8_t dot, uint8_t separator, bool remove_leading_zeros = true );
+
+            /**
+            * @ingroup G05 Format the Frequency
+            * @brief Convert a numeric frequency to a formated string (char *) frequency 
+            * 
+            * @param uint16_t value  - Frequency to be formated
+            * @param char *strValue - Formated frequency (Exe: 103,90) - Array of char ( minimal 6 elements ) 
+            * @param char decimalSeparator - the symbol that separates the decimal part (Exe: . or ,) 
+            */
+            inline void formatFrequency(uint16_t value, char *strValue, char decimalSeparator) {
+                this->convertToChar(value, strValue, 5, 3, decimalSeparator, true);
+            };
+
+            int checkI2C(uint8_t *addressArray);
 };
 
 #endif // _RDA5807_H
