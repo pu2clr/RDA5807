@@ -77,6 +77,29 @@ void RDA5807::getStatusRegisters()
 
 /**
  * @ingroup GA02
+ * @brief Gets the register content via direct access
+ * @details this method is useful to deal with a specific register. 
+ * @param uint8_t register number  
+ * @return word16_to_bytes 
+ * @see  word16_to_bytes datatype in RDA5807.h
+ */
+word16_to_bytes RDA5807::getDirectRegister(uint8_t reg)
+{
+
+    word16_to_bytes aux;
+    Wire.beginTransmission(this->deviceAddressDirectAccess);
+    Wire.write(reg);
+    Wire.endTransmission(false);
+    Wire.requestFrom(this->deviceAddressDirectAccess, 2);
+    aux.refined.highByte = Wire.read();
+    aux.refined.lowByte = Wire.read();
+    Wire.endTransmission();
+
+    return aux;
+}
+
+/**
+ * @ingroup GA02
  * @brief Gets the register content of a given status register (from 0x0A to 0x0F) 
  * @details Useful when you need just a specific status register content.
  * @details This methos update the first element of the shadowStatusRegisters linked to the register
@@ -541,7 +564,10 @@ int RDA5807::getRssi()
  */
 uint8_t RDA5807::getDeviceId()
 {
-    return reg00->refined.CHIP_ID;
+    word16_to_bytes aux;
+    aux = getDirectRegister(0x0);
+    reg00->raw = aux.raw;
+    return reg00->refined.DUMMY;
 }
 
 /**

@@ -561,7 +561,7 @@ class RDA5807 {
         uint16_t shadowRegisters[9];       //!< shadow configuration registers
 
         // Shadow device configuration register references  (writable registers)
-        rda_reg00 *reg00 = (rda_reg00 *)&shadowRegisters[0]; // REG01;
+        rda_reg00 *reg00 = (rda_reg00 *)&shadowRegisters[0]; // REG00;
         rda_reg01 *reg01 = (rda_reg01 *)&shadowRegisters[1]; // REG01;
         rda_reg02 *reg02 = (rda_reg02 *)&shadowRegisters[2]; // REG02;
         rda_reg03 *reg03 = (rda_reg03 *)&shadowRegisters[3]; // REG03;
@@ -631,7 +631,9 @@ class RDA5807 {
                 this->deviceAddressFullAccess = fullAccess;
             }
 
+            
             void getStatusRegisters();
+            word16_to_bytes  getDirectRegister(uint8_t reg);
             void *getStatus(uint8_t reg);
             void setRegister(uint8_t reg, uint16_t value);
 

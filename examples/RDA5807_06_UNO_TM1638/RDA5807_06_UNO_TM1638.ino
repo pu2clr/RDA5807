@@ -49,11 +49,11 @@
 
 
 // TM1638 - Buttons controllers
-#define S1_FREQ_DOWN 1        // S1 - Increments the frequency (100kHz step)
-#define S2_FREQ_UP 2      // S2 - Decrements the frequency (100kHz Down)
+#define S1_FREQ_DOWN 1      // S1 - Increments the frequency (100kHz step)
+#define S2_FREQ_UP 2        // S2 - Decrements the frequency (100kHz Down)
 #define S3_SEEK_STATION 4   // S3 - Seeks the next station available (The direction is defined by the last action of frequency changing)
-#define S4_VOL_DOWN 8         // S4 - Increments the audio volume
-#define S5_VOL_UP 16      // S5 - Decrements the audio volume
+#define S4_VOL_DOWN 8       // S4 - Increments the audio volume
+#define S5_VOL_UP 16        // S5 - Decrements the audio volume
 #define S6_AUDIO_MUTE 32    // S6 - Turnn the audio On or Off
 #define S7_AUDIO_STEREO 64  // S7 - Sets the Stereo On or Off
 #define S8_BASS 128         // S8 - Toggles Bass on or off
