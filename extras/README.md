@@ -144,7 +144,7 @@ Arduino UNO, Nano or other based on Atmega328 and SPI TFT ST7735 1.8" wireup
 ![Schematic -  Arduino Nano and LCD 16x02](./images/RDA5807_LCD16X02.png)
 
 
-#### Wire up on Arduino UNO, Nano or Pro mini
+#### Arduino UNO, Nano or Pro mini wireup
 
 | Device name               | Device Pin / Description  |  Arduino Pin  |
 | --------------------------| --------------------      | ------------  |

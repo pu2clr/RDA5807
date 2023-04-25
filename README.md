@@ -286,7 +286,7 @@ The circuits below can help you to connect the arduino based board to the RDA580
 ![RDA5807FP standalone IC setup ](./extras/images/RDA5807FP_SETUP.png)
 
 
-### Wire up on Arduino UNO, Pro mini or other based on ATmega 328.
+### Arduino UNO, Pro mini or other based on ATmega 328 wireup.
 
 ![Basic Schematic](./extras/images/circuit_basic.png)
 
@@ -299,7 +299,7 @@ The circuits below can help you to connect the arduino based board to the RDA580
 
 
 
-### Wire up on Arduino, TFT7735 display and Push Buttons.
+### Arduino, TFT7735 display and Push Buttons wireup.
 
 
 ![Basic Schematic with TFT](./extras/images/circuit_tft.png)
