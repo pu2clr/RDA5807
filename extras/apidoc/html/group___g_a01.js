@@ -106,7 +106,7 @@ var group___g_a01 =
       [ "getRssi", "group___g_a03.html#ga4bd7597d4c9090b04486aec21a6a0a5d", null ],
       [ "isFmTrue", "group___g_a03.html#ga85d1635f7bd51c740546d69133a97530", null ],
       [ "isFmReady", "group___g_a03.html#ga49ae7bc2ecf631c5391bab17b44df3fd", null ],
-      [ "getDeviceId", "group___g_a03.html#ga53316e685a196bba1819f5b1fe2b42af", null ],
+      [ "getDeviceId", "group___g_a03.html#gad1d589d43adc89a93c5e07b2d4cb6a4c", null ],
       [ "setSoftmute", "group___g_a07.html#gadd2c2ab8b861ab0714fdeb99c774d656", null ],
       [ "isSoftmuted", "group___g_a07.html#ga428ddd720c58c17273322d7526e51cbe", null ],
       [ "setMono", "group___g_a07.html#gad6e77ffbeb3f4dc885548130e09590d6", null ],
@@ -163,8 +163,8 @@ var group___g_a01 =
       [ "maxDelayAftarCrystalOn", "group___g_a01.html#a8b9e02f7c7121cf57fc0006f4ff7162a", null ]
     ] ],
     [ "rda_reg00.refined", "group___g_a01.html#structrda__reg00_8refined", [
-      [ "CHIP_ID", "group___g_a01.html#a6d3696b0d5ad3a41eb16f863f2b1fcde", null ],
-      [ "DUMMY", "group___g_a01.html#abd2103035a8021942390a78a431ba0c4", null ]
+      [ "LOW_CHIP_ID", "group___g_a01.html#ab1408e92ecfc268499c1ff228bf815b2", null ],
+      [ "HIGH_CHIP_ID", "group___g_a01.html#ae9ab18e96e3a6f4d4f9ade0ea0501da4", null ]
     ] ],
     [ "rda_reg01.refined", "group___g_a01.html#structrda__reg01_8refined", [
       [ "lowByte", "group___g_a01.html#a51ab88497cad20027df936afa223b23d", null ],

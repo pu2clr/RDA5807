@@ -1,7 +1,7 @@
 var searchData=
 [
   ['getblockid_0',['getBlockId',['../group___g_a04.html#ga2e63d5c85cb1825492a5ba2ea3bef2c3',1,'RDA5807']]],
-  ['getdeviceid_1',['getDeviceId',['../group___g_a03.html#ga53316e685a196bba1819f5b1fe2b42af',1,'RDA5807']]],
+  ['getdeviceid_1',['getDeviceId',['../group___g_a03.html#gad1d589d43adc89a93c5e07b2d4cb6a4c',1,'RDA5807']]],
   ['getdirectregister_2',['getDirectRegister',['../group___g_a02.html#ga69981ef141e22ab00e4bde3f18f84964',1,'RDA5807']]],
   ['geterrorblockb_3',['getErrorBlockB',['../group___g_a04.html#gadcc73bed36f5dbad1b41a8777be575d9',1,'RDA5807']]],
   ['getfrequency_4',['getFrequency',['../group___g_a03.html#ga59b981002d383a13731bd939482a5236',1,'RDA5807']]],

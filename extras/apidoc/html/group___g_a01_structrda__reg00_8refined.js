@@ -1,5 +1,5 @@
 var group___g_a01_structrda__reg00_8refined =
 [
-    [ "CHIP_ID", "group___g_a01.html#a6d3696b0d5ad3a41eb16f863f2b1fcde", null ],
-    [ "DUMMY", "group___g_a01.html#abd2103035a8021942390a78a431ba0c4", null ]
+    [ "LOW_CHIP_ID", "group___g_a01.html#ab1408e92ecfc268499c1ff228bf815b2", null ],
+    [ "HIGH_CHIP_ID", "group___g_a01.html#ae9ab18e96e3a6f4d4f9ade0ea0501da4", null ]
 ];

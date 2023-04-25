@@ -31,7 +31,7 @@ var group___g_a01_class_r_d_a5807 =
     [ "getRssi", "group___g_a03.html#ga4bd7597d4c9090b04486aec21a6a0a5d", null ],
     [ "isFmTrue", "group___g_a03.html#ga85d1635f7bd51c740546d69133a97530", null ],
     [ "isFmReady", "group___g_a03.html#ga49ae7bc2ecf631c5391bab17b44df3fd", null ],
-    [ "getDeviceId", "group___g_a03.html#ga53316e685a196bba1819f5b1fe2b42af", null ],
+    [ "getDeviceId", "group___g_a03.html#gad1d589d43adc89a93c5e07b2d4cb6a4c", null ],
     [ "setSoftmute", "group___g_a07.html#gadd2c2ab8b861ab0714fdeb99c774d656", null ],
     [ "isSoftmuted", "group___g_a07.html#ga428ddd720c58c17273322d7526e51cbe", null ],
     [ "setMono", "group___g_a07.html#gad6e77ffbeb3f4dc885548130e09590d6", null ],

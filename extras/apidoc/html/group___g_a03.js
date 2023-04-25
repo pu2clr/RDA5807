@@ -20,6 +20,6 @@ var group___g_a03 =
     [ "RDA5807::setSpace", "group___g_a03.html#ga76f6c3400b038aef15ba7318592e1dd0", null ],
     [ "RDA5807::setStep", "group___g_a03.html#ga8bbf57aaeb92f226179579efa61cc846", null ],
     [ "RDA5807::getRssi", "group___g_a03.html#ga4bd7597d4c9090b04486aec21a6a0a5d", null ],
-    [ "RDA5807::getDeviceId", "group___g_a03.html#ga53316e685a196bba1819f5b1fe2b42af", null ],
+    [ "RDA5807::getDeviceId", "group___g_a03.html#gad1d589d43adc89a93c5e07b2d4cb6a4c", null ],
     [ "RDA5807::setFmDeemphasis", "group___g_a03.html#ga4f8fe00a561c39d2dc9a0a143b1866e9", null ]
 ];
