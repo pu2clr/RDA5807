@@ -526,5 +526,6 @@ Cordova provides an easy way to develop for iOS and Android.
 * [Breadboard FM Radio with RDA5807 and WIO Terminal](https://youtu.be/ONZBhaCEMVM)
 * [RDA5807 Real test demo](https://youtu.be/0PnV5YjpnV4)
 * [Receptor FM RDA5807 y Arduin. de 50 a 115 Mhz Experimental](https://youtu.be/g7dwFqzRjV0)
+* [[开源]基于Arduino nano和RDA5807的立体声收音机](https://www.bilibili.com/video/BV1yN411w7DC/)
 
 

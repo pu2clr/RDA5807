@@ -146,12 +146,14 @@ void setup(void) {
   tft.fillScreen(BLACK);
 
   showTemplate();
+  while(1);
 
   // Atach Encoder pins interrupt
   attachInterrupt(digitalPinToInterrupt(ENCODER_PIN_A), rotaryEncoder, CHANGE);
   attachInterrupt(digitalPinToInterrupt(ENCODER_PIN_B), rotaryEncoder, CHANGE);
 
   rx.setup();
+
   // Set up the radio for the current band (see index table variable bandIdx )
   currentFrequency = previousFrequency = rx.getFrequency();
   rx.setVolume(DEFAULT_VOLUME);
