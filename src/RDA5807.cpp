@@ -561,12 +561,12 @@ int RDA5807::getRssi()
  * @brief Gets the Device identification
  * @return number
  */
-uint8_t RDA5807::getDeviceId()
+uint16_t RDA5807::getDeviceId()
 {
     word16_to_bytes aux;
     aux = getDirectRegister(0x0);
     reg00->raw = aux.raw;
-    return reg00->refined.DUMMY;
+    return reg00->raw;
 }
 
 /**

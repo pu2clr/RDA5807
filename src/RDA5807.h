@@ -105,8 +105,8 @@
  */
     typedef union {
     struct {
-        uint8_t CHIP_ID: 8; //!< Chip ifdef 
-        uint8_t DUMMY: 8;
+        uint8_t LOW_CHIP_ID: 8; //!< Chip ifdef 
+        uint8_t HIGH_CHIP_ID: 8;
     } refined;
     uint16_t raw;
 } rda_reg00;
@@ -694,7 +694,7 @@ class RDA5807 {
              */
             inline bool isFmReady() { return reg0b->refined.FM_READY;};    
 
-            uint8_t getDeviceId();
+            uint16_t getDeviceId();
 
             // Audio setup 
 
