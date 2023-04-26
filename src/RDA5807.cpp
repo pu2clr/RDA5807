@@ -1096,7 +1096,7 @@ void RDA5807::convertToChar(uint16_t value, char *strValue, uint8_t len, uint8_t
  * @brief Check the I2C bus address 
  * 
  * @param uint8_t address Array - this array will be populated with the I2C bus addresses found (minimum three elements)
- * @return 0 if no i2c device is found; -1 if error is found or n > 0, where n is the number of I2C buss address found 
+ * @return 0 if no i2c device is found; -1 if error is found or n > 0, where n is the number of I2C bus address found 
  */
 int RDA5807::checkI2C(uint8_t *addressArray) {
   Wire.begin();
