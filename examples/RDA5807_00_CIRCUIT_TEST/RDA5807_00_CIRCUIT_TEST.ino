@@ -21,7 +21,7 @@
 
 
 #define WAEK_STATION    10270   // Please, change to your weakest station in your location 
-#define STRONG_STATION  10550   // Please, change to your strongest station in your location
+#define STRONG_STATION  10650   // Please, change to your strongest station in your location
 
 RDA5807 rx; 
 char bufferAux[160];
@@ -182,8 +182,9 @@ void setup() {
   showSeparator();
   // Seek test
   Serial.print(F("\n\nSeeking stations"));
-  for (int i = 0; i < 10; i++ ) { 
+  for (int i = 0; i < 15; i++ ) { 
     rx.seek(RDA_SEEK_STOP,RDA_SEEK_UP, showFrequency);
+    delay(200);
     showReceiverInfo();
     delay(5000);
   }
@@ -193,12 +194,15 @@ void setup() {
 
 void showFrequency() {
   char strFreq[10];
-  Serial.println(rx.formatFrequency(rx.getFrequency(), strFreq, ','));
+  Serial.print(rx.formatFrequency(rx.getFrequency(), strFreq, ','));
+  Serial.print(" ");
+  Serial.flush();
 }
 
 void showReceiverInfo() {
   char strFreq[10];
-  sprintf(bufferAux,"\nID: %x(HEX) | Freq: %sMHz | RSSI: %d | Band Space: %d | Volume: %d | Muted: %d | HighZ: %d | Soft Mute: %d | Lna Port: %d | Lna IC Sel: %d \n", rx.getDeviceId(), rx.formatFrequency(rx.getRealFrequency(), strFreq, ','), rx.getRssi(), rx.getSpace(), rx.getVolume(), rx.isMuted(), rx.isAudioOutputHighImpedance(), rx.isSoftmuted(), rx.getLnaPortSel(), rx.getLnaIcSel() );
+  int rssi = rx.getRssi();
+  sprintf(bufferAux,"\nID: %x(HEX) | Freq: %sMHz | RSSI: %d | Band Space: %d | Volume: %d | Muted: %d | HighZ: %d | Soft Mute: %d | Lna Port: %d | Lna IC Sel: %d \n", rx.getDeviceId(), rx.formatFrequency(rx.getRealFrequency(), strFreq, ','), rssi, rx.getSpace(), rx.getVolume(), rx.isMuted(), rx.isAudioOutputHighImpedance(), rx.isSoftmuted(), rx.getLnaPortSel(), rx.getLnaIcSel() );
   Serial.print(bufferAux);
 }
 
