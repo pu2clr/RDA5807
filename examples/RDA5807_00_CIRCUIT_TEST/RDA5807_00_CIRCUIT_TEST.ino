@@ -19,6 +19,10 @@
 
 #include <RDA5807.h>
 
+
+#define WAEK_STATION    10270   // Please, change to your weakest station in your location 
+#define STRONG_STATION  10550   // Please, change to your strongest station in your location
+
 RDA5807 rx; 
 char bufferAux[160];
 
@@ -55,9 +59,9 @@ void setup() {
   delay(5000);
 
   showSeparator();
-  Serial.print(F("\nTrying station at 106,5MHz\n"));
+  Serial.print(F("\nTrying to tune a strong station\n"));
   rx.setVolume(8); 
-  rx.setFrequency(10650); // Please, change it to your local FM station
+  rx.setFrequency(STRONG_STATION); 
   sprintf(bufferAux,"\nCurrent Channel: %d, Real Frequency: %d ( / 100), RSSI: %d\n", rx.getRealChannel(), rx.getRealFrequency(), rx.getRssi());
   Serial.print(bufferAux);
   delay(5000);
@@ -72,8 +76,8 @@ void setup() {
   Serial.print(F("\nMute test has finished."));
   showSeparator();
 
-  Serial.print(F("\nTrying station at 92,50MHz\n"));
-  rx.setFrequency(9250); // Please, change it to another local FM station
+  Serial.print(F("\nTrying to tune a weak station\n"));
+  rx.setFrequency(WAEK_STATION); // Please, change it to another local FM station
   sprintf(bufferAux,"\nCurrent Channel: %d, Real Frequency: %d ( / 100), RSSI: %d\n", rx.getRealChannel(), rx.getRealFrequency(), rx.getRssi());
   Serial.print(bufferAux);
   delay(5000);
@@ -100,6 +104,23 @@ void setup() {
   }
   Serial.print(F("\nSetting LNA IC Sel to default value (0)\n"));
   rx.setLnaIcSel(0); // Setting to default (0)
+  delay(3000);
+
+  showSeparator();
+  showReceiverInfo();
+  Serial.print(F("\n\nSetting New Demodulate Method. It can improve the receive sensitivity about 1dB."));
+  rx.setNewDemodulateMethod(true);
+  showReceiverInfo();
+  delay(5000);
+  showSeparator();
+  Serial.print(F("\n\nDisabling New Demodulate and change to teh STRONG station\n"));
+  rx.setNewDemodulateMethod(false);
+  rx.setFrequency(STRONG_STATION);
+  showReceiverInfo();
+  Serial.print(F("\n\nSetting New Demodulate Method again."));
+  rx.setNewDemodulateMethod(true);
+  showReceiverInfo();
+  delay(5000);
   showSeparator();
 
   Serial.print(F("\n\nChecking audio output setup.\n"));
@@ -161,29 +182,12 @@ void setup() {
   showSeparator();
   // Seek test
   Serial.print(F("\n\nSeeking stations"));
-  for (int i = 0; i < 7; i++ ) { 
+  for (int i = 0; i < 10; i++ ) { 
     rx.seek(RDA_SEEK_STOP,RDA_SEEK_UP, showFrequency);
     showReceiverInfo();
     delay(5000);
   }
   
-  showSeparator();
-  Serial.print(F("\n\nSetting New Demodulate Method. It can improve the receive sensitivity about 1dB."));
-  rx.setNewDemodulateMethod(true);
-  showReceiverInfo();
-  delay(3000);
-  showSeparator();
-  Serial.print(F("\nTrying to seek stations again\n"));
-  rx.setFrequencyToBeginBand();
-  delay(3000);
-  showSeparator();
-  // Seek test
-  Serial.print(F("\n\nSeeking stations"));
-  for (int i = 0; i < 7; i++ ) { 
-    rx.seek(RDA_SEEK_STOP,RDA_SEEK_UP, showFrequency);
-    showReceiverInfo();
-    delay(5000);
-  }
   Serial.println(F("\nTest finished!\n"));
 }
 
