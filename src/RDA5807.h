@@ -655,7 +655,7 @@ class RDA5807 {
             void setLnaIcSel(uint8_t value );
             void setLnaPortSel(uint8_t value );
             /**
-             * @ingroup GA03
+             * @ingroup GA08
              * @brief Gets  LNA_ICSEL_BIT current value
              * @details Lna working current bit: 0=1.8mA; 1=2.1mA; 2=2.5mA; 3=3.0mA (default 0). 
              * @return 0=1.8mA; 1=2.1mA; 2=2.5mA; 3=3.0mA
@@ -664,7 +664,7 @@ class RDA5807 {
              */
             inline uint8_t getLnaIcSel() {return reg05->refined.LNA_ICSEL_BIT;};
             /**
-             * @ingroup GA03
+             * @ingroup GA08
              * @brief Gets current vaue of the LNA input port selection bit 
              * @details Values: 0 = no input; 1 = LNAN; 2 = LNAP; 3: dual port input 
              * @return  0 = no input; 1 = LNAN; 2 = LNAP; 3: dual port input 

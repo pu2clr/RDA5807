@@ -13,7 +13,7 @@
 
 /**
  * @defgroup GA02 Basic Functions
- * @section GA03 Basic
+ * @section GA02 Basic Functions
  */
 
 /**
@@ -245,6 +245,19 @@ void RDA5807::setup(uint8_t clock_type, uint8_t oscillator_type)
 
 }
 
+/**
+ * @ingroup GA02
+ * @brief Gets the Device identification
+ * @return device number Id
+ */
+uint16_t RDA5807::getDeviceId()
+{
+    word16_to_bytes aux;
+    aux = getDirectRegister(0x0);
+    reg00->raw = aux.raw;
+    return reg00->raw;
+}
+
 
 /**
  * @defgroup GA03 FM Tune Functions
@@ -273,30 +286,6 @@ void RDA5807::setAFC(bool value) {
     reg04->refined.AFCD = value;
     setRegister(REG04,reg04->raw);
 }
-
-
-/**
- * @ingroup GA03
- * @brief Sets  LNA_ICSEL_BIT 
- * @details Lna working current bit: 0=1.8mA; 1=2.1mA; 2=2.5mA; 3=3.0mA (default 0). 
- * @param value  - 0=1.8mA; 1=2.1mA; 2=2.5mA; 3=3.0mA
- */
-void RDA5807::setLnaIcSel(uint8_t value ) {
-    reg05->refined.LNA_ICSEL_BIT = value;
-    setRegister(REG05,reg05->raw);
-}
-
-/**
- * @ingroup GA03
- * @brief Sets LNA input port selection bit 
- * @details YOu can select: 0 = no input; 1 = LNAN; 2 = LNAP; 3: dual port input 
- * @param value  - 0 = no input; 1 = LNAN; 2 = LNAP; 3: dual port input 
- */
-void RDA5807::setLnaPortSel(uint8_t value ) {
-    reg05->refined.LNA_PORT_SEL = value;
-    setRegister(REG05,reg05->raw);
-}
-
 
 
 /**
@@ -564,33 +553,6 @@ void RDA5807::setStep(uint8_t step)
     this->setSpace(space);
 }
 
-
-/**
- * @ingroup GA03
- * @brief Gets the current Rssi
- * @details RSSI; 000000 = min; 111111 = max; RSSI scale is logarithmic.
- *
- * @return int
- */
-int RDA5807::getRssi()
-{
-    getStatus(REG0B);
-    return reg0b->refined.RSSI;
-}
-
-
-/**
- * @ingroup GA03
- * @brief Gets the Device identification
- * @return number
- */
-uint16_t RDA5807::getDeviceId()
-{
-    word16_to_bytes aux;
-    aux = getDirectRegister(0x0);
-    reg00->raw = aux.raw;
-    return reg00->raw;
-}
 
 /**
  * @ingroup GA03
@@ -1357,3 +1319,46 @@ void RDA5807::setVolumeDown()
     }
 }
 
+
+
+
+/** 
+ * @defgroup GA08 LNA setup and Signal status
+ * @section  GA08 LNA and Signal
+ */
+
+/**
+ * @ingroup GA08
+ * @brief Sets  LNA_ICSEL_BIT 
+ * @details Lna working current bit: 0=1.8mA; 1=2.1mA; 2=2.5mA; 3=3.0mA (default 0). 
+ * @param value  - 0=1.8mA; 1=2.1mA; 2=2.5mA; 3=3.0mA
+ */
+void RDA5807::setLnaIcSel(uint8_t value ) {
+    reg05->refined.LNA_ICSEL_BIT = value;
+    setRegister(REG05,reg05->raw);
+}
+
+/**
+ * @ingroup GA08
+ * @brief Sets LNA input port selection bit 
+ * @details YOu can select: 0 = no input; 1 = LNAN; 2 = LNAP; 3: dual port input 
+ * @param value  - 0 = no input; 1 = LNAN; 2 = LNAP; 3: dual port input 
+ */
+void RDA5807::setLnaPortSel(uint8_t value ) {
+    reg05->refined.LNA_PORT_SEL = value;
+    setRegister(REG05,reg05->raw);
+}
+
+
+/**
+ * @ingroup GA03
+ * @brief Gets the current Rssi
+ * @details RSSI; 000000 = min; 111111 = max; RSSI scale is logarithmic.
+ *
+ * @return int
+ */
+int RDA5807::getRssi()
+{
+    getStatus(REG0B);
+    return reg0b->refined.RSSI;
+}
