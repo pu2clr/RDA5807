@@ -275,6 +275,29 @@ void RDA5807::setAFC(bool value) {
 }
 
 
+/**
+ * @ingroup GA03
+ * @brief Sets  LNA_ICSEL_BIT 
+ * @details Lna working current bit: 0=1.8mA; 1=2.1mA; 2=2.5mA; 3=3.0mA (default 0). 
+ * @param value  - 0=1.8mA; 1=2.1mA; 2=2.5mA; 3=3.0mA
+ */
+void RDA5807::setLnaIcSel(uint8_t value ) {
+    reg05->refined.LNA_ICSEL_BIT = value;
+    setRegister(REG05,reg05->raw);
+}
+
+/**
+ * @ingroup GA03
+ * @brief Sets LNA input port selection bit 
+ * @details YOu can select: 0 = no input; 1 = LNAN; 2 = LNAP; 3: dual port input 
+ * @param value  - 0 = no input; 1 = LNAN; 2 = LNAP; 3: dual port input 
+ */
+void RDA5807::setLnaPortSel(uint8_t value ) {
+    reg05->refined.LNA_PORT_SEL = value;
+    setRegister(REG05,reg05->raw);
+}
+
+
 
 /**
  * @ingroup GA03

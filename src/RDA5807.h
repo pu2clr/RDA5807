@@ -652,6 +652,9 @@ class RDA5807 {
 
             void setAFC(bool value);
 
+            void setLnaIcSel(uint8_t value );
+            void setLnaPortSel(uint8_t value );
+
             void setFrequency(uint16_t frequency);
 
 

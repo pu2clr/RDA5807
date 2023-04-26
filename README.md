@@ -525,6 +525,7 @@ Cordova provides an easy way to develop for iOS and Android.
 * [Arduino RDA5807 收音机](https://oshwhub.com/yeseqaq/arduino-rda5807)
 * [What is FM Receiver, How to build an Arduino FM Radio with RDA5807](https://www.seeedstudio.com/blog/2020/01/09/what-is-fm-receiver-how-to-build-an-arduino-fm-radio-with-rda5807/)
 * [A small eagle library for popular RDA5807 Radio module](https://github.com/TigerBouli/RDA5807m-Module-)
+* [FM Stereo Radio Module RDA5807M Wireless Module](https://epartners.co.nz/products/sp0806)
 
 
 

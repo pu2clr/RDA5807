@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="LOGO.png"/></td>
   <td id="projectalign">
-   <div id="projectname">PU2CLR RDA5807 Arduino Library<span id="projectnumber">&#160;1.1.1</span>
+   <div id="projectname">PU2CLR RDA5807 Arduino Library<span id="projectnumber">&#160;1.1.4</span>
    </div>
    <div id="projectbrief">Arduino Library for RDA5807 Devices - By Ricardo Lima Caratti</div>
   </td>
@@ -112,6 +112,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga965658767399e2f923852144e324805f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#ga965658767399e2f923852144e324805f">RDA5807::setAFC</a> (bool value)</td></tr>
 <tr class="memdesc:ga965658767399e2f923852144e324805f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets AFC true or false.  <a href="group___g_a03.html#ga965658767399e2f923852144e324805f">More...</a><br /></td></tr>
 <tr class="separator:ga965658767399e2f923852144e324805f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35428e147462af6490c382acdf769173"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#ga35428e147462af6490c382acdf769173">RDA5807::setLnaIcSel</a> (uint8_t value)</td></tr>
+<tr class="memdesc:ga35428e147462af6490c382acdf769173"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets LNA_ICSEL_BIT.  <a href="group___g_a03.html#ga35428e147462af6490c382acdf769173">More...</a><br /></td></tr>
+<tr class="separator:ga35428e147462af6490c382acdf769173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf595aab626e55ab733af8682674faa61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#gaf595aab626e55ab733af8682674faa61">RDA5807::setLnaPortSel</a> (uint8_t value)</td></tr>
+<tr class="memdesc:gaf595aab626e55ab733af8682674faa61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets LNA input port selection bit.  <a href="group___g_a03.html#gaf595aab626e55ab733af8682674faa61">More...</a><br /></td></tr>
+<tr class="separator:gaf595aab626e55ab733af8682674faa61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa9cfaddbd43257e810bb3817b021fa8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#gaa9cfaddbd43257e810bb3817b021fa8a">RDA5807::setChannel</a> (uint16_t channel)</td></tr>
 <tr class="memdesc:gaa9cfaddbd43257e810bb3817b021fa8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the channel.  <a href="group___g_a03.html#gaa9cfaddbd43257e810bb3817b021fa8a">More...</a><br /></td></tr>
 <tr class="separator:gaa9cfaddbd43257e810bb3817b021fa8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,7 +197,7 @@ Basic</h1>
 <p>Returns the current Band Space. </p>
 <dl class="section return"><dt>Returns</dt><dd>uint8_t value (0 = 100kHz, 1 = 200kHz, 2 = 50kHz e 3 = 25kHz) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8h_source.html#l00678">678</a> of file <a class="el" href="_r_d_a5807_8h_source.html">RDA5807.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8h_source.html#l00681">681</a> of file <a class="el" href="_r_d_a5807_8h_source.html">RDA5807.h</a>.</p>
 
 </div>
 </div>
@@ -222,7 +228,7 @@ Basic</h1>
  </p>
 <dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8h_source.html#l00688">688</a> of file <a class="el" href="_r_d_a5807_8h_source.html">RDA5807.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8h_source.html#l00691">691</a> of file <a class="el" href="_r_d_a5807_8h_source.html">RDA5807.h</a>.</p>
 
 </div>
 </div>
@@ -253,7 +259,7 @@ Basic</h1>
  </p>
 <dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8h_source.html#l00695">695</a> of file <a class="el" href="_r_d_a5807_8h_source.html">RDA5807.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8h_source.html#l00698">698</a> of file <a class="el" href="_r_d_a5807_8h_source.html">RDA5807.h</a>.</p>
 
 </div>
 </div>
@@ -367,6 +373,62 @@ Basic</h1>
 
 </div>
 </div>
+<a id="ga35428e147462af6490c382acdf769173" name="ga35428e147462af6490c382acdf769173"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga35428e147462af6490c382acdf769173">&#9670;&nbsp;</a></span>setLnaIcSel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setLnaIcSel </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets LNA_ICSEL_BIT. </p>
+<p >Lna working current bit: 0=1.8mA; 1=2.1mA; 2=2.5mA; 3=3.0mA (default 0). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>- 0=1.8mA; 1=2.1mA; 2=2.5mA; 3=3.0mA </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00284">284</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+
+</div>
+</div>
+<a id="gaf595aab626e55ab733af8682674faa61" name="gaf595aab626e55ab733af8682674faa61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf595aab626e55ab733af8682674faa61">&#9670;&nbsp;</a></span>setLnaPortSel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setLnaPortSel </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets LNA input port selection bit. </p>
+<p >YOu can select: 0 = no input; 1 = LNAN; 2 = LNAP; 3: dual port input </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>- 0 = no input; 1 = LNAN; 2 = LNAP; 3: dual port input </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00295">295</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+
+</div>
+</div>
 <a id="gaa9cfaddbd43257e810bb3817b021fa8a" name="gaa9cfaddbd43257e810bb3817b021fa8a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaa9cfaddbd43257e810bb3817b021fa8a">&#9670;&nbsp;</a></span>setChannel()</h2>
 
@@ -397,7 +459,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00291">291</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00314">314</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_r_d_a5807_8cpp_source.html#l00156">RDA5807::waitAndFinishTune()</a>.</p>
 
@@ -427,7 +489,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00307">307</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00330">330</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -449,7 +511,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <p>Increments the current frequency. </p>
 <p >The increment uses the band space as step. See array: uint16_t fmSpace[4] = {100/10, 200/10, 50/10, 25/10}; </p>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00319">319</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00342">342</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -471,7 +533,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <p>Decrements the current frequency. </p>
 <p >The drecrement uses the band space as step. See array: uint16_t fmSpace[4] = {20, 10, 5, 1}; </p>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00334">334</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00357">357</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -493,7 +555,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <p>Gets the current frequency. </p>
 <dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00349">349</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00372">372</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -518,7 +580,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>uint16_t current channel value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00363">363</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00386">386</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -555,7 +617,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00385">385</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00408">408</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -595,7 +657,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00396">396</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00419">419</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -663,7 +725,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00436">436</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00459">459</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_r_d_a5807_8cpp_source.html#l00156">RDA5807::waitAndFinishTune()</a>.</p>
 
@@ -693,7 +755,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00464">464</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00487">487</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -734,7 +796,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00485">485</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00508">508</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -776,7 +838,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 </dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>make the space 01 (200kHz) work. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00508">508</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00531">531</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -808,7 +870,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00522">522</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00545">545</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -831,7 +893,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <p >RSSI; 000000 = min; 111111 = max; RSSI scale is logarithmic.</p>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00552">552</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00575">575</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -853,7 +915,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <p>Gets the Device identification. </p>
 <dl class="section return"><dt>Returns</dt><dd>number </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00564">564</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00587">587</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -882,7 +944,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00579">579</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00602">602</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>

@@ -6,6 +6,8 @@ var group___g_a03 =
     [ "RDA5807::setGpio", "group___g_a03.html#ga677eff1084b294696a32e3ca4dfe593b", null ],
     [ "RDA5807::setSoftBlendEnable", "group___g_a03.html#ga6dd81b0cff50747906d7d05b127112de", null ],
     [ "RDA5807::setAFC", "group___g_a03.html#ga965658767399e2f923852144e324805f", null ],
+    [ "RDA5807::setLnaIcSel", "group___g_a03.html#ga35428e147462af6490c382acdf769173", null ],
+    [ "RDA5807::setLnaPortSel", "group___g_a03.html#gaf595aab626e55ab733af8682674faa61", null ],
     [ "RDA5807::setChannel", "group___g_a03.html#gaa9cfaddbd43257e810bb3817b021fa8a", null ],
     [ "RDA5807::setFrequency", "group___g_a03.html#gad16a6afa9520b77498b17a72c226305a", null ],
     [ "RDA5807::setFrequencyUp", "group___g_a03.html#ga4e8db177fea475ea00fa04e3d8f1f08c", null ],
