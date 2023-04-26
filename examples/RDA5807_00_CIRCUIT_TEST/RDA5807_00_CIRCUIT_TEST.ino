@@ -123,12 +123,28 @@ void setup() {
   delay(3000);
 
   showSeparator();
-  Serial.print(F("\n\nResetting the system in 5s\n"));
+  Serial.print(F("\n\nResetting the system via setup command in 5s\n"));
   delay(5000);
   rx.setup();
   Serial.print(F("\nSystema started again!"));
   showReceiverInfo();
   delay(3000);
+  
+  showSeparator();
+  Serial.print(F("\n\nResetting the system via softReset and starting with setup in 5s\n"));
+  delay(5000);
+  rx.softReset();
+  Serial.print(F("\nReseted!\n"));
+  showReceiverInfo();
+  rx.setup();
+  Serial.print("Started");
+  showReceiverInfo();
+  Serial.print(F("\nSystema reseted!"));
+  showReceiverInfo();
+  delay(3000);
+
+
+  showSeparator();
   Serial.print(F("\nTrying to seek stations\n"));
   rx.setFrequency(8700);
   rx.setVolume(8);
