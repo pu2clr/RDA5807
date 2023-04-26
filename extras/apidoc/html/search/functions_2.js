@@ -1,12 +1,12 @@
 var searchData=
 [
   ['getblockid_0',['getBlockId',['../group___g_a04.html#ga2e63d5c85cb1825492a5ba2ea3bef2c3',1,'RDA5807']]],
-  ['getdeviceid_1',['getDeviceId',['../group___g_a03.html#gad1d589d43adc89a93c5e07b2d4cb6a4c',1,'RDA5807']]],
+  ['getdeviceid_1',['getDeviceId',['../group___g_a02.html#gad1d589d43adc89a93c5e07b2d4cb6a4c',1,'RDA5807']]],
   ['getdirectregister_2',['getDirectRegister',['../group___g_a02.html#ga69981ef141e22ab00e4bde3f18f84964',1,'RDA5807']]],
   ['geterrorblockb_3',['getErrorBlockB',['../group___g_a04.html#gadcc73bed36f5dbad1b41a8777be575d9',1,'RDA5807']]],
   ['getfrequency_4',['getFrequency',['../group___g_a03.html#ga59b981002d383a13731bd939482a5236',1,'RDA5807']]],
-  ['getlnaicsel_5',['getLnaIcSel',['../group___g_a03.html#gacdf40b2507df37ef2f7cbed8c12c68f7',1,'RDA5807']]],
-  ['getlnaportsel_6',['getLnaPortSel',['../group___g_a03.html#gafa3762b30fbf95bd6bb04139faed47c6',1,'RDA5807']]],
+  ['getlnaicsel_5',['getLnaIcSel',['../group___g_a08.html#gacdf40b2507df37ef2f7cbed8c12c68f7',1,'RDA5807']]],
+  ['getlnaportsel_6',['getLnaPortSel',['../group___g_a08.html#gafa3762b30fbf95bd6bb04139faed47c6',1,'RDA5807']]],
   ['getnext2block_7',['getNext2Block',['../group___g_a04.html#ga6afb347f32121c480adea2a36032d56f',1,'RDA5807']]],
   ['getnext4block_8',['getNext4Block',['../group___g_a04.html#ga3ab713bb63978518d42a761b9db445c9',1,'RDA5807']]],
   ['getrdsflagab_9',['getRdsFlagAB',['../group___g_a04.html#ga04e5fe0cacbdcae620388a15630cf9c1',1,'RDA5807']]],

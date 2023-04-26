@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rds_20functions_0',['RDS Functions',['../group___g_a04.html',1,'']]]
+  ['lna_20setup_20and_20signal_20status_0',['LNA setup and Signal status',['../group___g_a08.html',1,'']]]
 ];

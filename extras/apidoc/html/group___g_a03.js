@@ -1,15 +1,11 @@
 var group___g_a03 =
 [
-    [ "RDA5807::getLnaIcSel", "group___g_a03.html#gacdf40b2507df37ef2f7cbed8c12c68f7", null ],
-    [ "RDA5807::getLnaPortSel", "group___g_a03.html#gafa3762b30fbf95bd6bb04139faed47c6", null ],
     [ "RDA5807::getSpace", "group___g_a03.html#gab6cc94517eb6bc3325fbd6386bbffe15", null ],
     [ "RDA5807::isFmTrue", "group___g_a03.html#ga85d1635f7bd51c740546d69133a97530", null ],
     [ "RDA5807::isFmReady", "group___g_a03.html#ga49ae7bc2ecf631c5391bab17b44df3fd", null ],
     [ "RDA5807::setGpio", "group___g_a03.html#ga677eff1084b294696a32e3ca4dfe593b", null ],
     [ "RDA5807::setSoftBlendEnable", "group___g_a03.html#ga6dd81b0cff50747906d7d05b127112de", null ],
     [ "RDA5807::setAFC", "group___g_a03.html#ga965658767399e2f923852144e324805f", null ],
-    [ "RDA5807::setLnaIcSel", "group___g_a03.html#ga35428e147462af6490c382acdf769173", null ],
-    [ "RDA5807::setLnaPortSel", "group___g_a03.html#gaf595aab626e55ab733af8682674faa61", null ],
     [ "RDA5807::setChannel", "group___g_a03.html#gaa9cfaddbd43257e810bb3817b021fa8a", null ],
     [ "RDA5807::setFrequency", "group___g_a03.html#gad16a6afa9520b77498b17a72c226305a", null ],
     [ "RDA5807::setFrequencyUp", "group___g_a03.html#ga4e8db177fea475ea00fa04e3d8f1f08c", null ],
@@ -23,7 +19,6 @@ var group___g_a03 =
     [ "RDA5807::setBand", "group___g_a03.html#ga889cfe43f3f9c9ca92c9862261d5dbbf", null ],
     [ "RDA5807::setSpace", "group___g_a03.html#ga76f6c3400b038aef15ba7318592e1dd0", null ],
     [ "RDA5807::setStep", "group___g_a03.html#ga8bbf57aaeb92f226179579efa61cc846", null ],
-    [ "RDA5807::getRssi", "group___g_a03.html#ga4bd7597d4c9090b04486aec21a6a0a5d", null ],
-    [ "RDA5807::getDeviceId", "group___g_a03.html#gad1d589d43adc89a93c5e07b2d4cb6a4c", null ],
-    [ "RDA5807::setFmDeemphasis", "group___g_a03.html#ga4f8fe00a561c39d2dc9a0a143b1866e9", null ]
+    [ "RDA5807::setFmDeemphasis", "group___g_a03.html#ga4f8fe00a561c39d2dc9a0a143b1866e9", null ],
+    [ "RDA5807::getRssi", "group___g_a03.html#ga4bd7597d4c9090b04486aec21a6a0a5d", null ]
 ];

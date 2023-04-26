@@ -11,5 +11,6 @@ var group___g_a02 =
     [ "RDA5807::powerUp", "group___g_a02.html#ga30d2b0c4662922df53bcef118663329c", null ],
     [ "RDA5807::setNewDemodulateMethod", "group___g_a02.html#gab97c1c8ad3ab0cd5d2852f712caee0a1", null ],
     [ "RDA5807::powerDown", "group___g_a02.html#ga214f631aef72ece69db73c99879c7c46", null ],
-    [ "RDA5807::setup", "group___g_a02.html#gac79c1fec6c416c9993ff19362fe312cb", null ]
+    [ "RDA5807::setup", "group___g_a02.html#gac79c1fec6c416c9993ff19362fe312cb", null ],
+    [ "RDA5807::getDeviceId", "group___g_a02.html#gad1d589d43adc89a93c5e07b2d4cb6a4c", null ]
 ];

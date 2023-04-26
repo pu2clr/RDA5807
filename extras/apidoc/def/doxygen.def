@@ -92,47 +92,47 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga04e5fe0cacbdcae620388a15630cf9c1';
-        sec-mem-ref-line = '665';
+        sec-mem-ref-line = '627';
         sec-mem-ref-name = 'getRdsFlagAB';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga32c361b9b996a5920519315aa86d174d';
-        sec-mem-ref-line = '679';
+        sec-mem-ref-line = '641';
         sec-mem-ref-name = 'getRdsGroupType';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1gae3bde947a89c6dadfc4dc22aea85b467';
-        sec-mem-ref-line = '708';
+        sec-mem-ref-line = '670';
         sec-mem-ref-name = 'getRdsProgramType';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga96152112619e139bd7e0ff523009a161';
-        sec-mem-ref-line = '798';
+        sec-mem-ref-line = '760';
         sec-mem-ref-name = 'getRdsText';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
-        sec-mem-ref-line = '824';
+        sec-mem-ref-line = '786';
         sec-mem-ref-name = 'getRdsText0A';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
-        sec-mem-ref-line = '853';
+        sec-mem-ref-line = '815';
         sec-mem-ref-name = 'getRdsText2A';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
-        sec-mem-ref-line = '882';
+        sec-mem-ref-line = '844';
         sec-mem-ref-name = 'getRdsText2B';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1gaef398d848e7378ec4897965b8e1b4441';
-        sec-mem-ref-line = '908';
+        sec-mem-ref-line = '870';
         sec-mem-ref-name = 'getRdsTime';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1gad85ccedd8baecd8bc2f42325a3ee8741';
-        sec-mem-ref-line = '694';
+        sec-mem-ref-line = '656';
         sec-mem-ref-name = 'getRdsVersionCode';
     };
     }; /* sec-member */
@@ -294,12 +294,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1gade55e697c7752811086300e710727397';
-        sec-mem-ref-line = '459';
+        sec-mem-ref-line = '448';
         sec-mem-ref-name = 'seek';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1gaa9cfaddbd43257e810bb3817b021fa8a';
-        sec-mem-ref-line = '314';
+        sec-mem-ref-line = '303';
         sec-mem-ref-name = 'setChannel';
     };
     }; /* sec-member */
@@ -458,7 +458,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga35428e147462af6490c382acdf769173';
+      sec-mem-id   = 'group___g_a08_1ga35428e147462af6490c382acdf769173';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -483,7 +483,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1gaf595aab626e55ab733af8682674faa61';
+      sec-mem-id   = 'group___g_a08_1gaf595aab626e55ab733af8682674faa61';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -508,7 +508,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1gacdf40b2507df37ef2f7cbed8c12c68f7';
+      sec-mem-id   = 'group___g_a08_1gacdf40b2507df37ef2f7cbed8c12c68f7';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -529,7 +529,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1gafa3762b30fbf95bd6bb04139faed47c6';
+      sec-mem-id   = 'group___g_a08_1gafa3762b30fbf95bd6bb04139faed47c6';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1012,7 +1012,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1gad1d589d43adc89a93c5e07b2d4cb6a4c';
+      sec-mem-id   = 'group___g_a02_1gad1d589d43adc89a93c5e07b2d4cb6a4c';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1025,7 +1025,7 @@ _EnD_oF_dEf_TeXt_;
 Gets the Device identification.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-@return number
+@return device number Id
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -1599,12 +1599,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
-        sec-mem-ref-line = '824';
+        sec-mem-ref-line = '786';
         sec-mem-ref-name = 'getRdsText0A';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
-        sec-mem-ref-line = '882';
+        sec-mem-ref-line = '844';
         sec-mem-ref-name = 'getRdsText2B';
     };
     }; /* sec-member */
@@ -1633,12 +1633,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga96152112619e139bd7e0ff523009a161';
-        sec-mem-ref-line = '798';
+        sec-mem-ref-line = '760';
         sec-mem-ref-name = 'getRdsText';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
-        sec-mem-ref-line = '853';
+        sec-mem-ref-line = '815';
         sec-mem-ref-name = 'getRdsText2A';
     };
     }; /* sec-member */
@@ -1666,7 +1666,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga3ab713bb63978518d42a761b9db445c9';
-        sec-mem-ref-line = '759';
+        sec-mem-ref-line = '721';
         sec-mem-ref-name = 'getNext4Block';
     };
       sec-mem-referenceto = {
@@ -1702,7 +1702,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga6afb347f32121c480adea2a36032d56f';
-        sec-mem-ref-line = '722';
+        sec-mem-ref-line = '684';
         sec-mem-ref-name = 'getNext2Block';
     };
       sec-mem-referenceto = {
@@ -1739,7 +1739,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga3ab713bb63978518d42a761b9db445c9';
-        sec-mem-ref-line = '759';
+        sec-mem-ref-line = '721';
         sec-mem-ref-name = 'getNext4Block';
     };
       sec-mem-referenceto = {
@@ -1772,7 +1772,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = '_r_d_a5807_8cpp_1ga6afb347f32121c480adea2a36032d56f';
-        sec-mem-ref-line = '722';
+        sec-mem-ref-line = '684';
         sec-mem-ref-name = 'getNext2Block';
     };
       sec-mem-referenceto = {
