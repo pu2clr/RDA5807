@@ -17,7 +17,7 @@
  */
 
 /**
- * @ingroup GA03
+ * @ingroup GA02
  * @brief Set the Device GPIO pins
  * @details This method is useful to add control to the system via GPIO RDA devive pins.
  * @details For example: You can use these pins to control RDS and SEEK via interrupt. 
