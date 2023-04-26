@@ -148,7 +148,7 @@ void setup() {
 }
 
 void showReceiverInfo() {
-  sprintf(buffer,"\nID: %x, Freq: %u, RSSI: %d, Band Space: %d, Volume: %d, Muted: %d, HighZ: %d, Soft Mute: %d, Lna Port: %d, Lna IC Sel: %d\n", rx.getDeviceId(), rx.getRealFrequency(), rx.getRssi(), rx.getSpace(), rx.getVolume(), rx.isMuted(), rx.isAudioOutputHighImpedance(), rx.isSoftmuted(), rx.getLnaPortSel(), rx.getLnaIcSel() );
+  sprintf(buffer,"\nID: %x, Freq: %u, RSSI: %d, Band Space: %d, Volume: %d, Muted: %d, HighZ: %d, Soft Mute: %d, Lna Port: %d, Lna IC Sel: %d \n", rx.getDeviceId(), rx.getRealFrequency(), rx.getRssi(), rx.getSpace(), rx.getVolume(), rx.isMuted(), rx.isAudioOutputHighImpedance(), rx.isSoftmuted(), rx.getLnaPortSel(), rx.getLnaIcSel() );
   Serial.print(buffer);
 }
 
