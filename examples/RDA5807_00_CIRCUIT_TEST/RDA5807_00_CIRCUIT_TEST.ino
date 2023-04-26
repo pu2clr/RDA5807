@@ -29,66 +29,98 @@ void setup() {
   
   if (!checkI2C())
   {
-      Serial.println("\nCheck your circuit!");
+      Serial.println("\nNo device was detected. Please, check your circuit!");
       while(1);
   }
 
   rx.setup();
+
   delay(200);
+  Serial.println("Some information just after the receiver starts - rx.setup();");
   showReceiverInfo();
-  rx.setVolume(8);  
-  delay(500);
-  //****
-  Serial.print("\nEstacao 106.5MHz");
-  rx.setFrequency(10650); // Please, change it to your local FM station
+  delay(5000);
   
+  Serial.print("\nTrying station at 106.5MHz\n");
+  rx.setVolume(8); 
+  rx.setFrequency(10650); // Please, change it to your local FM station
   sprintf(buffer,"\nCurrent Channel: %d, Real Frequency: %d, RSSI: %d\n", rx.getRealChannel(), rx.getRealFrequency(), rx.getRssi());
   Serial.print(buffer);
-  delay(500);
+  delay(5000);
   
   // Mute test
-  Serial.print("\nAfter 4s device will mute during 3s");
-  delay(4000);
+  Serial.print("\nChecking mute function. After 3s, the receiver will mute during 3s");
+  delay(3000);
   rx.setMute(true);
   delay(3000);
   rx.setMute(false);
   Serial.print("\nMute test has finished.");
 
-  Serial.print("\nStation 9250Hz\n");
+  Serial.print("\nTrying station at 9250MHz\n");
   rx.setFrequency(9250); // Please, change it to another local FM station
-  
-  delay(10000);
+  sprintf(buffer,"\nCurrent Channel: %d, Real Frequency: %d, RSSI: %d\n", rx.getRealChannel(), rx.getRealFrequency(), rx.getRssi());
+  Serial.print(buffer);
+  delay(5000);
 
-  Serial.print("Setting volume to 0");
+  for (uint8_t i = 0; i < 3; i++) {
+    sprintf(buffer,"\nSetting LNA PORT SETUP to %d\n",i); 
+    Serial.print(buffer);
+    rx.setLnaPortSel(i);
+    showReceiverInfo();
+    delay(5000);
+  }
+  Serial.print("\nBacking  LNA PORT SETUP to 2 (default value)\n");
+  rx.setLnaPortSel(2);
+  showReceiverInfo();
+  delay(5000);
+
+
+  for (uint8_t i = 0; i < 3; i++) {
+    sprintf(buffer,"\nSetting LNA IC Sel to %d\n",i); 
+    Serial.print(buffer);
+    rx.setLnaIcSel(i);
+    showReceiverInfo();
+    delay(5000);
+  }
+  Serial.print("\nSetting LNA IC Sel to default value (0)\n");
+  rx.setLnaIcSel(0); // Setting to default (0)
+
+  Serial.print("\nChecking audio output setup.\n");
+
+  Serial.print("Setting volume to 0\n");
   rx.setVolume(0); 
   showReceiverInfo();
   delay(3000);
+  Serial.print("Setting volume to 6, mute audio and setting Softmute to true\n");
   rx.setVolume(6);
   rx.setMute(true);
   rx.setSoftmute(true);
   showReceiverInfo();
-  delay(2000);
+  delay(3000);
+  Serial.print("Setting mute false\n");
   rx.setMute(false);
-  delay(2000);
-   Serial.print("Setting audio output impedance to high");
+  delay(3000);
+  Serial.print("Setting audio output impedance to high\n");
   rx.setAudioOutputHighImpedance(true);
   showReceiverInfo();
-  
+  delay(3000);
+
   Serial.print("\nResetting the system in 5s\n");
   delay(5000);
   rx.setup();
+  Serial.print("\nSystema started again!");
   showReceiverInfo();
+  delay(3000);
+  Serial.print("\nTrying to seek stations\n");
   rx.setFrequency(8700);
   rx.setVolume(8);
   // Seek test
-  Serial.print("\nSeek stations");
+  Serial.print("\nSeeking stations");
   for (int i = 0; i < 10; i++ ) { 
     rx.seek(1,1);
     Serial.print("\nReal Frequency.: ");
     Serial.println(rx.getRealFrequency());
     showReceiverInfo();
     delay(5000);
-
   }
   
 }
@@ -99,8 +131,6 @@ void showReceiverInfo() {
 }
 
 void loop() {
-
- 
 
 }
 
