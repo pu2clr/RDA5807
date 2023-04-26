@@ -1,5 +1,7 @@
 var group___g_a03 =
 [
+    [ "RDA5807::setFrequencyToBeginBand", "group___g_a03.html#gac879c84895fee9032c1b29638e209527", null ],
+    [ "RDA5807::setFrequencyToEndBand", "group___g_a03.html#ga8042f480c26abb7f74560a29c0fb2f46", null ],
     [ "RDA5807::getSpace", "group___g_a03.html#gab6cc94517eb6bc3325fbd6386bbffe15", null ],
     [ "RDA5807::isFmTrue", "group___g_a03.html#ga85d1635f7bd51c740546d69133a97530", null ],
     [ "RDA5807::isFmReady", "group___g_a03.html#ga49ae7bc2ecf631c5391bab17b44df3fd", null ],

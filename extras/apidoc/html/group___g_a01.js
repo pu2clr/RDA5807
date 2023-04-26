@@ -94,6 +94,8 @@ var group___g_a01 =
       [ "getLnaIcSel", "group___g_a08.html#gacdf40b2507df37ef2f7cbed8c12c68f7", null ],
       [ "getLnaPortSel", "group___g_a08.html#gafa3762b30fbf95bd6bb04139faed47c6", null ],
       [ "setFrequency", "group___g_a03.html#gad16a6afa9520b77498b17a72c226305a", null ],
+      [ "setFrequencyToBeginBand", "group___g_a03.html#gac879c84895fee9032c1b29638e209527", null ],
+      [ "setFrequencyToEndBand", "group___g_a03.html#ga8042f480c26abb7f74560a29c0fb2f46", null ],
       [ "getFrequency", "group___g_a03.html#ga59b981002d383a13731bd939482a5236", null ],
       [ "setFrequencyUp", "group___g_a03.html#ga4e8db177fea475ea00fa04e3d8f1f08c", null ],
       [ "setFrequencyDown", "group___g_a03.html#gadba771c864ace7a8373a76554b9d3e6a", null ],
