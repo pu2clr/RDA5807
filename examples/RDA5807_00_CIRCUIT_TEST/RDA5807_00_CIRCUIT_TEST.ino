@@ -161,14 +161,30 @@ void setup() {
   showSeparator();
   // Seek test
   Serial.print(F("\n\nSeeking stations"));
-  for (int i = 0; i < 15; i++ ) { 
+  for (int i = 0; i < 7; i++ ) { 
     rx.seek(RDA_SEEK_STOP,RDA_SEEK_UP, showFrequency);
     showReceiverInfo();
     delay(5000);
   }
   
+  showSeparator();
+  Serial.print(F("\n\nSetting New Demodulate Method. It can improve the receive sensitivity about 1dB."));
+  rx.setNewDemodulateMethod(true);
+  showReceiverInfo();
+  delay(3000);
+  showSeparator();
+  Serial.print(F("\nTrying to seek stations again\n"));
+  rx.setFrequencyToBeginBand();
+  delay(3000);
+  showSeparator();
+  // Seek test
+  Serial.print(F("\n\nSeeking stations"));
+  for (int i = 0; i < 7; i++ ) { 
+    rx.seek(RDA_SEEK_STOP,RDA_SEEK_UP, showFrequency);
+    showReceiverInfo();
+    delay(5000);
+  }
   Serial.println(F("\nTest finished!\n"));
-
 }
 
 void showFrequency() {
