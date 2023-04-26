@@ -29,11 +29,23 @@ void setup() {
 
   delay(500);
   
-  if (!checkI2C())
-  {
-      Serial.println("\nNo device was detected. Please, check your circuit!");
-      while(1);
-  }
+  uint8_t i2cAdd[5];
+  int i2cStatus;
+
+  i2cStatus = rx.checkI2C(i2cAdd); 
+
+  if (i2cStatus == -1)
+    showMsgHalt("\nError while try to access the device.\n"); 
+  else if (i2cStatus == 0) 
+    showMsgHalt("\nNo device was detected. Please, check your circuit!");
+  else { 
+    for (int i = 0; i < i2cStatus ; i++) {
+      sprintf(buffer,"Found I2C adress: %X (HEX)\n", i2cAdd[i]);
+      Serial.print(buffer);
+    }
+  }     
+
+  showSeparator();
 
   rx.setup();
 
@@ -41,13 +53,15 @@ void setup() {
   Serial.println("Some information just after the receiver starts - rx.setup();");
   showReceiverInfo();
   delay(5000);
-  
+
+  showSeparator();
   Serial.print("\nTrying station at 106.5MHz\n");
   rx.setVolume(8); 
   rx.setFrequency(10650); // Please, change it to your local FM station
   sprintf(buffer,"\nCurrent Channel: %d, Real Frequency: %d, RSSI: %d\n", rx.getRealChannel(), rx.getRealFrequency(), rx.getRssi());
   Serial.print(buffer);
   delay(5000);
+  showSeparator();
   
   // Mute test
   Serial.print("\nChecking mute function. After 3s, the receiver will mute during 3s");
@@ -56,14 +70,16 @@ void setup() {
   delay(3000);
   rx.setMute(false);
   Serial.print("\nMute test has finished.");
+  showSeparator();
 
   Serial.print("\nTrying station at 9250MHz\n");
   rx.setFrequency(9250); // Please, change it to another local FM station
   sprintf(buffer,"\nCurrent Channel: %d, Real Frequency: %d, RSSI: %d\n", rx.getRealChannel(), rx.getRealFrequency(), rx.getRssi());
   Serial.print(buffer);
   delay(5000);
-
-  for (uint8_t i = 0; i < 3; i++) {
+  showSeparator();
+  Serial.print("\n\nChecking LNA setup.\n");
+  for (uint8_t i = 0; i < 4; i++) {
     sprintf(buffer,"\nSetting LNA PORT SETUP to %d\n",i); 
     Serial.print(buffer);
     rx.setLnaPortSel(i);
@@ -75,8 +91,7 @@ void setup() {
   showReceiverInfo();
   delay(5000);
 
-
-  for (uint8_t i = 0; i < 3; i++) {
+  for (uint8_t i = 0; i < 4; i++) {
     sprintf(buffer,"\nSetting LNA IC Sel to %d\n",i); 
     Serial.print(buffer);
     rx.setLnaIcSel(i);
@@ -85,8 +100,9 @@ void setup() {
   }
   Serial.print("\nSetting LNA IC Sel to default value (0)\n");
   rx.setLnaIcSel(0); // Setting to default (0)
+  showSeparator();
 
-  Serial.print("\nChecking audio output setup.\n");
+  Serial.print("\n\nChecking audio output setup.\n");
 
   Serial.print("Setting volume to 0\n");
   rx.setVolume(0); 
@@ -106,7 +122,8 @@ void setup() {
   showReceiverInfo();
   delay(3000);
 
-  Serial.print("\nResetting the system in 5s\n");
+  showSeparator();
+  Serial.print("\n\nResetting the system in 5s\n");
   delay(5000);
   rx.setup();
   Serial.print("\nSystema started again!");
@@ -115,9 +132,10 @@ void setup() {
   Serial.print("\nTrying to seek stations\n");
   rx.setFrequency(8700);
   rx.setVolume(8);
+  showSeparator();
   // Seek test
-  Serial.print("\nSeeking stations");
-  for (int i = 0; i < 10; i++ ) { 
+  Serial.print("\n\nSeeking stations");
+  for (int i = 0; i < 15; i++ ) { 
     rx.seek(1,1);
     Serial.print("\nReal Frequency.: ");
     Serial.println(rx.getRealFrequency());
@@ -125,51 +143,28 @@ void setup() {
     delay(5000);
   }
   
+  Serial.println("\nTest finished!\n");
+
 }
 
 void showReceiverInfo() {
-  sprintf(buffer,"\nID: %x, RSSI: %d, Band Space: %d, Volume: %d, Muted: %d, HighZ: %d, Soft Mute: %d \n", rx.getDeviceId(), rx.getRssi(), rx.getSpace(), rx.getVolume(), rx.isMuted(), rx.isAudioOutputHighImpedance(), rx.isSoftmuted() );
+  sprintf(buffer,"\nID: %x, Freq: %u, RSSI: %d, Band Space: %d, Volume: %d, Muted: %d, HighZ: %d, Soft Mute: %d, Lna Port: %d, Lna IC Sel: %d\n", rx.getDeviceId(), rx.getRealFrequency(), rx.getRssi(), rx.getSpace(), rx.getVolume(), rx.isMuted(), rx.isAudioOutputHighImpedance(), rx.isSoftmuted(), rx.getLnaPortSel(), rx.getLnaIcSel() );
   Serial.print(buffer);
 }
+
+void showSeparator() {
+  Serial.print("\n------------------------------------\n\n");
+}
+
+void showMsgHalt(String msg) {
+  Serial.print("\n********************\n");
+  Serial.print(msg);
+  Serial.print("\n********************\n"); 
+  while(1);
+}
+
 
 void loop() {
 
 }
 
-/**
- * Returns true if device found
- */
-bool checkI2C() {
-  Wire.begin();
-  byte error, address;
-  int nDevices;
-  Serial.println("I2C bus Scanning...");
-  nDevices = 0;
-  for(address = 1; address < 127; address++ ) {
-    Wire.beginTransmission(address);
-    error = Wire.endTransmission();
-    if (error == 0) {
-      Serial.print("\nI2C device found at address 0x");
-      if (address<16) {
-        Serial.print("0");
-      }
-      Serial.println(address,HEX);
-      nDevices++;
-    }
-    else if (error==4) {
-      Serial.print("\nUnknow error at address 0x");
-      if (address<16) {
-        Serial.print("0");
-      }
-      Serial.println(address,HEX);
-    }    
-  }
-  if (nDevices == 0) {
-    Serial.println("No I2C devices found\n");
-    return false;
-  }
-  else {
-    Serial.println("done\n");
-    return true;
-  }
-}
