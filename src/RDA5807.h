@@ -675,6 +675,21 @@ class RDA5807 {
             void setFrequency(uint16_t frequency);
 
 
+            /**
+             * @ingroup GA03
+             * @brief Tunes the receiver at the first channel/frequency of the current band 
+             * @details If the current band is 0, the lowest frequency is 87Mhz (8700)
+             * @see startBand, setFrequency   
+             */
+            inline void setFrequencyToBeginBand() { this->setFrequency(startBand[currentFMBand]); };
+            
+            /**
+             * @ingroup GA03
+             * @brief Tunes the receiver at the last channel/frequency of the current band 
+             * @details If the current band is 0, the highest frequency is 108MHz (10800)
+             * @see endBand, setFrequency   
+             */            
+            inline void setFrequencyToEndBand(){this->setFrequency(endBand[currentFMBand]);};
 
             uint16_t getFrequency();
             void setFrequencyUp();

@@ -143,16 +143,26 @@ void setup() {
   showReceiverInfo();
   delay(3000);
 
+  showSeparator();
+  Serial.print(F("Going to the Lowest frequency of the band"));
+  rx.setFrequencyToBeginBand();
+  showReceiverInfo();
+  delay(3000);
+  Serial.print(F("Going to the Hihgest frequency of the band"));
+  rx.setFrequencyToEndBand();
+  showReceiverInfo();
+  delay(3000);
 
   showSeparator();
   Serial.print(F("\nTrying to seek stations\n"));
-  rx.setFrequency(8700);
+  rx.setFrequencyToBeginBand();
   rx.setVolume(8);
+  delay(3000);
   showSeparator();
   // Seek test
   Serial.print(F("\n\nSeeking stations"));
   for (int i = 0; i < 15; i++ ) { 
-    rx.seek(1,1, showFrequency);
+    rx.seek(RDA_SEEK_STOP,RDA_SEEK_UP, showFrequency);
     showReceiverInfo();
     delay(5000);
   }

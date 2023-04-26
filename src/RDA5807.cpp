@@ -353,6 +353,8 @@ void RDA5807::setFrequencyDown()
     setFrequency(this->currentFrequency);
 }
 
+
+
 /**
  * @ingroup GA03
  * @brief Gets the current frequency.
