@@ -1320,8 +1320,6 @@ void RDA5807::setVolumeDown()
 }
 
 
-
-
 /** 
  * @defgroup GA08 LNA setup and Signal status
  * @section  GA08 LNA and Signal
@@ -1351,7 +1349,7 @@ void RDA5807::setLnaPortSel(uint8_t value ) {
 
 
 /**
- * @ingroup GA03
+ * @ingroup GA08
  * @brief Gets the current Rssi
  * @details RSSI; 000000 = min; 111111 = max; RSSI scale is logarithmic.
  *
