@@ -176,6 +176,7 @@ void setup() {
 
   rx.setFrequency(currentFrequency);  // It is the frequency you want to select in MHz multiplied by 100.
   rx.setSeekThreshold(50);            // Sets RSSI Seek Threshold (0 to 127)
+  rx.setLnaPortSel(3);                // LNA setup
 
   showStatus();
 }
