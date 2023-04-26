@@ -1,18 +1,20 @@
 /*
-   Test and validation of the circuit.
-   This sketch will check the I2C communication bus and try to tune the receiver on a given frequency.
+  This sketch intend to check the circuit and functions implemented in the library
+  1) check the I2C communication bus 
+  2) try to tune some stations
+  3) check some functions. Exemples: audio volume, mute, audio output inpedance, tune functions, seek, LNA etc. (you can add more test to check more functions)
  
-   ATTENTION:  
-   Please, avoid using the computer connected to the mains during testing. Used just the battery of your computer. 
-   This sketch was tested on ATmega328 based board. If you are not using a ATmega328, please check the pins of your board.
+  ATTENTION:  
+  Please, avoid using the computer connected to the mains during testing. Used just the battery of your computer. 
+  This sketch was tested on ATmega328 based board. If you are not using a ATmega328, please check the pins of your board.
 
-   The main advantages of using this sketch are: 
+  The main advantages of using this sketch are: 
     1) It is a easy way to check if your circuit is working;
-    2) You do not need to connect any display device to make your radio works;
+    2) You do not need to connect any display device to make your radio work;
     3) You do not need connect any push buttons or encoders to change volume and frequency;
     4) The Arduino IDE is all you need to check your circuit.  
    
-    By Ricardo Lima Caratti, 2020.
+  By Ricardo Lima Caratti, 2020-2023
 */
 
 #include <RDA5807.h>
