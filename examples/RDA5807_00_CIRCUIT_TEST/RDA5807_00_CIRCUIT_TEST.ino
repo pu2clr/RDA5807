@@ -20,7 +20,7 @@
 #include <RDA5807.h>
 
 RDA5807 rx; 
-char buffer[120];
+char buffer[255];
 
 void setup() {
 
