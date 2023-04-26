@@ -795,7 +795,7 @@ class RDA5807 {
             * @brief Convert a numeric frequency to a formated string (char *) frequency 
             * 
             * @param uint16_t value  - Frequency to be formated
-            * @param char *strValue - Formated frequency (Exe: 103,90) - Array of char ( minimal 6 elements ) 
+            * @param char *strValue - Formated frequency (Exe: 103,90) - Array of char ( minimal 7 elements ) 
             * @param char decimalSeparator - the symbol that separates the decimal part (Exe: . or ,) 
             * @return point of strValue 
             */
