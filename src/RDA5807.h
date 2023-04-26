@@ -797,9 +797,11 @@ class RDA5807 {
             * @param uint16_t value  - Frequency to be formated
             * @param char *strValue - Formated frequency (Exe: 103,90) - Array of char ( minimal 6 elements ) 
             * @param char decimalSeparator - the symbol that separates the decimal part (Exe: . or ,) 
+            * @return point of strValue 
             */
-            inline void formatFrequency(uint16_t value, char *strValue, char decimalSeparator) {
+            inline char *formatFrequency(uint16_t value, char *strValue, char decimalSeparator) {
                 this->convertToChar(value, strValue, 5, 3, decimalSeparator, true);
+                return strValue;
             };
 
             int checkI2C(uint8_t *addressArray);
