@@ -225,7 +225,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga677eff1084b294696a32e3ca4dfe593b';
+      sec-mem-id   = 'group___g_a02_1ga677eff1084b294696a32e3ca4dfe593b';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_

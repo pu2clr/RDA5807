@@ -3,7 +3,6 @@ var group___g_a03 =
     [ "RDA5807::getSpace", "group___g_a03.html#gab6cc94517eb6bc3325fbd6386bbffe15", null ],
     [ "RDA5807::isFmTrue", "group___g_a03.html#ga85d1635f7bd51c740546d69133a97530", null ],
     [ "RDA5807::isFmReady", "group___g_a03.html#ga49ae7bc2ecf631c5391bab17b44df3fd", null ],
-    [ "RDA5807::setGpio", "group___g_a03.html#ga677eff1084b294696a32e3ca4dfe593b", null ],
     [ "RDA5807::setSoftBlendEnable", "group___g_a03.html#ga6dd81b0cff50747906d7d05b127112de", null ],
     [ "RDA5807::setAFC", "group___g_a03.html#ga965658767399e2f923852144e324805f", null ],
     [ "RDA5807::setChannel", "group___g_a03.html#gaa9cfaddbd43257e810bb3817b021fa8a", null ],

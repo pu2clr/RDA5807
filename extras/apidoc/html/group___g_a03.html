@@ -103,9 +103,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga49ae7bc2ecf631c5391bab17b44df3fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the FM is ready. <br  />
   <a href="group___g_a03.html#ga49ae7bc2ecf631c5391bab17b44df3fd">More...</a><br /></td></tr>
 <tr class="separator:ga49ae7bc2ecf631c5391bab17b44df3fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga677eff1084b294696a32e3ca4dfe593b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#ga677eff1084b294696a32e3ca4dfe593b">RDA5807::setGpio</a> (uint8_t gpioPin, uint8_t gpioSetup=0, int mcuPin=-1)</td></tr>
-<tr class="memdesc:ga677eff1084b294696a32e3ca4dfe593b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Device GPIO pins.  <a href="group___g_a03.html#ga677eff1084b294696a32e3ca4dfe593b">More...</a><br /></td></tr>
-<tr class="separator:ga677eff1084b294696a32e3ca4dfe593b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6dd81b0cff50747906d7d05b127112de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a03.html#ga6dd81b0cff50747906d7d05b127112de">RDA5807::setSoftBlendEnable</a> (bool value)</td></tr>
 <tr class="memdesc:ga6dd81b0cff50747906d7d05b127112de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets Soft Blend.  <a href="group___g_a03.html#ga6dd81b0cff50747906d7d05b127112de">More...</a><br /></td></tr>
 <tr class="separator:ga6dd81b0cff50747906d7d05b127112de"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,60 +245,6 @@ FM Tune</h1>
 <dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_r_d_a5807_8h_source.html#l00715">715</a> of file <a class="el" href="_r_d_a5807_8h_source.html">RDA5807.h</a>.</p>
-
-</div>
-</div>
-<a id="ga677eff1084b294696a32e3ca4dfe593b" name="ga677eff1084b294696a32e3ca4dfe593b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga677eff1084b294696a32e3ca4dfe593b">&#9670;&nbsp;</a></span>setGpio()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::setGpio </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>gpioPin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>gpioSetup</em> = <code>0</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>mcuPin</em> = <code>-1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the Device GPIO pins. </p>
-<p >This method is useful to add control to the system via GPIO RDA devive pins.</p>
-<p >For example: You can use these pins to control RDS and SEEK via interrupt.</p>
-<p >GPIOs are General Purpose I/O pin. <br  />
-</p>
-<p >GPIO setup</p>
-<p >When GPIO1 (#1), gpioSetup can be: 00 = High impedance; 01 = Reserved; 10 = Low; 11 = High</p>
-<p >When GPIO2 (#2), gpioSetup can be: 00 = High impedance; 01 = Interrupt (INT) 10 = Low; 11 = High</p>
-<p >When GPIO3 (#3), gpioSetup can be: 00 = High impedance; 01 = Mono/Stereo indicator (ST) = Low; 11 = High</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">gpioPin</td><td>gpio number (1, 2 or 3) </td></tr>
-    <tr><td class="paramname">gpioSetup</td><td>See description above </td></tr>
-    <tr><td class="paramname">mcuPip</td><td>MCU (Arduino) pin connected to the gpio </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00034">34</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>

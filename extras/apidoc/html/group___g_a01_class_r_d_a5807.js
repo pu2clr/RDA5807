@@ -6,7 +6,7 @@ var group___g_a01_class_r_d_a5807 =
     [ "getDirectRegister", "group___g_a02.html#ga69981ef141e22ab00e4bde3f18f84964", null ],
     [ "getStatus", "group___g_a02.html#ga1f4bc3d6f9d94171b2965dbb4e812f4f", null ],
     [ "setRegister", "group___g_a02.html#ga3b581b82ab8c631cfec537a47008ddf3", null ],
-    [ "setGpio", "group___g_a03.html#ga677eff1084b294696a32e3ca4dfe593b", null ],
+    [ "setGpio", "group___g_a02.html#ga677eff1084b294696a32e3ca4dfe593b", null ],
     [ "waitAndFinishTune", "group___g_a02.html#ga3fe1feed45d3290beba0efef491128e6", null ],
     [ "softReset", "group___g_a02.html#ga3f6dace4c93f82ec66da5641e3e3fdaa", null ],
     [ "powerUp", "group___g_a02.html#ga30d2b0c4662922df53bcef118663329c", null ],

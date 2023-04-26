@@ -11,7 +11,7 @@ var searchData=
   ['setfrequency_8',['setFrequency',['../group___g_a03.html#gad16a6afa9520b77498b17a72c226305a',1,'RDA5807']]],
   ['setfrequencydown_9',['setFrequencyDown',['../group___g_a03.html#gadba771c864ace7a8373a76554b9d3e6a',1,'RDA5807']]],
   ['setfrequencyup_10',['setFrequencyUp',['../group___g_a03.html#ga4e8db177fea475ea00fa04e3d8f1f08c',1,'RDA5807']]],
-  ['setgpio_11',['setGpio',['../group___g_a03.html#ga677eff1084b294696a32e3ca4dfe593b',1,'RDA5807']]],
+  ['setgpio_11',['setGpio',['../group___g_a02.html#ga677eff1084b294696a32e3ca4dfe593b',1,'RDA5807']]],
   ['seti2cbusaddrs_12',['setI2CBusAddrs',['../group___g_a02.html#gadf634cb6733022e30d8f1a74a5946e78',1,'RDA5807']]],
   ['seti2sallparameters_13',['setI2SAllParameters',['../group___g_a06.html#ga2070bff9af95a523a77ac304eee7b22f',1,'RDA5807']]],
   ['seti2sdatasigned_14',['setI2SDataSigned',['../group___g_a06.html#gabeb9446fc371fe58e075bea7ebc51fdb',1,'RDA5807']]],
