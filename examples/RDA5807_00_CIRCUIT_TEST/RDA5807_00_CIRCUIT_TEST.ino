@@ -57,11 +57,11 @@ void setup() {
   Serial.println(F("Some information just after the receiver starts - rx.setup();"));
   showReceiverInfo();
   delay(5000);
-
   showSeparator();
   Serial.print(F("\nTrying to tune a strong station\n"));
   rx.setVolume(8); 
   rx.setFrequency(STRONG_STATION); 
+  delay(200);
   sprintf(bufferAux,"\nCurrent Channel: %d, Real Frequency: %d ( / 100), RSSI: %d\n", rx.getRealChannel(), rx.getRealFrequency(), rx.getRssi());
   Serial.print(bufferAux);
   delay(5000);
@@ -78,6 +78,7 @@ void setup() {
 
   Serial.print(F("\nTrying to tune a weak station\n"));
   rx.setFrequency(WAEK_STATION); // Please, change it to another local FM station
+  delay(200);
   sprintf(bufferAux,"\nCurrent Channel: %d, Real Frequency: %d ( / 100), RSSI: %d\n", rx.getRealChannel(), rx.getRealFrequency(), rx.getRssi());
   Serial.print(bufferAux);
   delay(5000);
@@ -116,6 +117,7 @@ void setup() {
   Serial.print(F("\n\nDisabling New Demodulate and change to teh STRONG station\n"));
   rx.setNewDemodulateMethod(false);
   rx.setFrequency(STRONG_STATION);
+  delay(200);
   showReceiverInfo();
   Serial.print(F("\n\nSetting New Demodulate Method again."));
   rx.setNewDemodulateMethod(true);
@@ -167,10 +169,12 @@ void setup() {
   showSeparator();
   Serial.print(F("Going to the Lowest frequency of the band"));
   rx.setFrequencyToBeginBand();
+  delay(200);
   showReceiverInfo();
   delay(3000);
   Serial.print(F("Going to the Hihgest frequency of the band"));
   rx.setFrequencyToEndBand();
+  delay(200);
   showReceiverInfo();
   delay(3000);
 
