@@ -18,7 +18,7 @@
 
 /**
  * @ingroup GA02
- * @brief Set the Device GPIO pins
+ * @brief Sets the Device GPIO pins
  * @details This method is useful to add control to the system via GPIO RDA devive pins.
  * @details For example: You can use these pins to control RDS and SEEK via interrupt. 
  * @details GPIOs are General Purpose I/O pin.  
@@ -923,7 +923,7 @@ char *RDA5807::getRdsTime()
 
 /**
  * @ingroup GA04 
- * @brief Get the Rds Sync 
+ * @brief Gets the Rds Sync 
  * @details Returns true if RDS currently synchronized.
  * @return true or false
  */
@@ -935,7 +935,7 @@ bool RDA5807::getRdsSync()
 
 /**
  * @ingroup GA04 
- * @brief Get the current Block ID
+ * @brief Gets the current Block ID
  * @details 1= the block id of register 0cH,0dH,0eH,0fH is E
  * @details 0= the block id of register 0cH, 0dH, 0eH,0fH is A, B, C, D
  * @return  0= the block id of register 0cH, 0dH, 0eH,0fH is A, B, C, D; 1 = the block id of register 0cH,0dH,0eH,0fH is E
@@ -948,7 +948,7 @@ uint8_t RDA5807::getBlockId()
 
 /**
  * @ingroup GA04 
- * @brief Get the current Status of block B
+ * @brief Gets the current Status of block B
  * 
  * Block Errors Level of RDS_DATA_1, and is always read as Errors Level of RDS BLOCK B (in RDS mode ) or E (in RBDS mode when ABCD_E flag is 1).
  * | value | description |
@@ -1091,7 +1091,7 @@ int RDA5807::checkI2C(uint8_t *addressArray) {
 
 /**
  * @ingroup GA06 set I2S 
- * @brief Configure all parameters for I2S
+ * @brief Configures all parameters for I2S
  * @details I2S setup must be enabled 
  * @details I2S_SW_CNT can be: I2S_WS_STEP_48, I2S_WS_STEP_44_1, I2S_WS_STEP_32, I2S_WS_STEP_24, I2S_WS_STEP_22_05, I2S_WS_STEP_16, I2S_WS_STEP_12, I2S_WS_STEP_11_025 or I2S_WS_STEP_8
  * 
@@ -1131,7 +1131,7 @@ void RDA5807::setI2SAllParameters(uint8_t R_DELY, uint8_t L_DELY, uint8_t SCLK_O
 
 /**
  * @ingroup GA06 set I2S on or off
- * @brief Enable I2S setup
+ * @brief Enables I2S setup
  * @details  When setting I2S_ENABLE (register 04) bit is high, the RDA5807FP you can get the output signals SCK, WS, SD signals from GPIO3, GPIO1 and  GPIO2 (I2S master)
  * 
  * @param value  true or false
@@ -1143,7 +1143,7 @@ void RDA5807::setI2SOn(bool value) {
 
 
 /**
- * @ingroup GA06 set I2S Slave or Master
+ * @ingroup GA06 Sets I2S Slave or Master
  * @brief 
  * 
  * @param value  true or false
@@ -1156,7 +1156,7 @@ void RDA5807::setI2SMaster(bool value) {
 
 
 /**
- * @ingroup GA06 set I2S STEP/SPEED
+ * @ingroup GA06 Sets I2S STEP/SPEED
  * @brief Sets the speed in kbps. You can use the predefined constantes: I2S_WS_STEP_48, I2S_WS_STEP_44_1, I2S_WS_STEP_32,
  * @brief I2S_WS_STEP_24, I2S_WS_STEP_22_05, I2S_WS_STEP_16, I2S_WS_STEP_12, I2S_WS_STEP_11_025 or I2S_WS_STEP_8    
  * 
@@ -1169,7 +1169,7 @@ void RDA5807::setI2SSpeed(uint8_t value) {
 
 
 /**
- * @ingroup GA06 set I2S Data Signed
+ * @ingroup GA06 Sets I2S Data Signed
  * @brief If 0, I2S output unsigned 16-bit audio data. If 1, I2S output signed 16-bit audio data.
  * 
  * @param value  true (1) or false (0)
