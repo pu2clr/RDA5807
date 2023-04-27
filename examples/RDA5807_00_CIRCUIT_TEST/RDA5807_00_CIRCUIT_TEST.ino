@@ -179,7 +179,10 @@ void setup() {
   delay(3000);
 
   showSeparator();
-  Serial.print(F("\nTrying to seek stations\n"));
+
+  Serial.print(F("\nTrying to seek stations with LNA PORT 3 and New Demodulate Enebled\n"));
+  rx.setLnaPortSel(3);
+  rx.setNewDemodulateMethod(true);
   rx.setFrequencyToBeginBand();
   rx.setVolume(8);
   delay(3000);
@@ -190,9 +193,27 @@ void setup() {
     rx.seek(RDA_SEEK_STOP,RDA_SEEK_UP, showFrequency);
     delay(200);
     showReceiverInfo();
-    delay(5000);
+    delay(4000);
   }
   
+  showSeparator();
+
+  Serial.print(F("\nTrying to seek stations with LNA PORT 2 and New Demodulate Disabled\n"));
+  rx.setLnaPortSel(2);
+  rx.setNewDemodulateMethod(false);
+  rx.setFrequencyToBeginBand();
+  rx.setVolume(8);
+  delay(3000);
+  showSeparator();
+  // Seek test
+  Serial.print(F("\n\nSeeking stations"));
+  for (int i = 0; i < 15; i++ ) { 
+    rx.seek(RDA_SEEK_STOP,RDA_SEEK_UP, showFrequency);
+    delay(200);
+    showReceiverInfo();
+    delay(4000);
+  }
+
   Serial.println(F("\nTest finished!\n"));
 }
 
