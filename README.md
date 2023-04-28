@@ -142,6 +142,30 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 .\arduino-cli lib install --git-url https://github.com/pu2clr/RDA5807
 ```
 
+## How to use in your sketch 
+
+```cpp
+#include <RDA5807.h>
+
+RDA5807 rx;
+
+void setup() {
+    .
+    .
+    .
+    rx.setup();
+    rx.setVolume(6);
+    rx.setFrequency(some_frequency); // Example 10390 for 103,9 MHz
+}
+
+void loop() {
+    .
+    .
+    .
+}
+```
+
+
 <BR>
 
 ### RDA5807M breakout
