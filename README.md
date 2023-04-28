@@ -174,6 +174,58 @@ void loop() {
 }
 ```
 
+## Boards where this library has been tested
+
+This library can be useful to develop cross-platform software. So far, it has been successfully tested on the architectures shown below.    
+
+
+The table below shows the some boards where this library has been successfully tested.
+
+
+|    | Board | Need voltage converter | I²C Pins | Features |
+|--- | ----- | ---------------------- | -------- | --------- | -----  |
+|  1 | Arduino Pro Mini 3.3V 8MHz | No | A4 and A5 |  [More...](https://store.arduino.cc/usa/arduino-pro-mini) |
+|  2 | Mega 2560 Pro | Yes | 20 and 21 | [More...](https://store.arduino.cc/usa/mega-2560-r3)|
+|  3 | ESP WEMOS LOLIN32 | No | GPIO21 and GPIO22 [4] | [More...](https://docs.platformio.org/en/latest/boards/espressif32/lolin32.html) |
+|  4 | ESP32 Dev Module | No | GPIO21 and GPIO22 [4] |  [More...](https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf) |
+|  5 | ESP32 Wrover Module | No | GPIO21 and GPIO22 [4] |  [More...](https://www.espressif.com/sites/default/files/documentation/esp32-wrover_datasheet_en.pdf) |
+|  6 | ESP8266 | No | GPIO4 and GPIO5 |   [More...](https://docs.ai-thinker.com/_media/esp8266/docs/esp-12f_product_specification_en.pdf) |
+|  7 | Arduino UNO | Yes | A4 and A5 |  [More...](https://store.arduino.cc/usa/arduino-uno-rev3) |
+|  8 | Arduino NANO ATmega 328 | Yes | A4 and A5 | [More...](https://store.arduino.cc/usa/arduino-nano) |
+|  9 | Arduino NANO ATmega 168 | Yes | A4 and A5 | [More...](https://www.arduino.cc/en/uploads/Main/ArduinoNanoManual23.pdf) |
+| 10 | Arduino NANO 33 IoT | No [6] | A4 and A5 | [More...](https://www.arduino.cc/en/Guide/NANO33BLE) |
+| 11 | Arduino Yún / ATmega-32u4 | Yes | 2 and 3 | [More...](https://store.arduino.cc/usa/arduino-yun)|
+| 12 | ATtiny84 | No | 7 and 8 | 6 | [More...](http://ww1.microchip.com/downloads/en/devicedoc/Atmel-7701_Automotive-Microcontrollers-ATtiny24-44-84_Datasheet.pdf)|
+| 13 | ATtiny85 | No | 5 and 7 | [More...](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2586-AVR-8-bit-Microcontroller-ATtiny25-ATtiny45-ATtiny85_Datasheet.pdf)|
+| 14 | Arduino DUE | No | 2 and 3 |  [More...](https://store.arduino.cc/usa/due) |
+| 15 | BlueDuino 3.3V (ATmega-32u4) | No | 2 and 3 | [More...](https://wiki.aprbrother.com/en/BlueDuino_rev2.html) |
+| 16 | Arduino Mini Pro 5V 16Mhz | Yes | 2 and 3 |  [More...](https://store.arduino.cc/usa/arduino-pro-mini) |
+| 17 | STM32F746G-DISCO | No | - | - | [More...](https://www.st.com/en/evaluation-tools/32f746gdiscovery.html?fbclid=IwAR2D9OwhInHQ8WYxeflJQ7QV2aNscFbfcbeblaFcYq0angJIjCKmkQBPTBc) |
+| 18 | STM32F103 Series  |  No | PB6 (SCL) and PB7(SDA) |  [More...](https://circuitdigest.com/microcontroller-projects/getting-started-with-stm32-development-board-stm32f103c8-using-arduino-ide) |
+| 19 | STM32F411 Series  |  No | PB6 (SCL) and PB7(SDA) |  [More...](https://hackaday.com/2021/01/20/blue-pill-vs-black-pill-transitioning-from-stm32f103-to-stm32f411/) |
+| 20 | Raspberry Pi Pico  | No | GP0 (0) and GP1 (1) |  [More...](https://www.tomshardware.com/how-to/program-raspberry-pi-pico-with-arduino-ide) | 
+| 21 | WeAct Studio RP2040 Pico  | No | GP0 (0) and GP1 (1) |  [More...](https://productreview.click/shop/raspberry-pi-pico-board-rp2040-2mb-4mb-8mb-16mb-support-micropython-c-c、circuitpython/) | 
+| 22 | Seeeduino XIAO | No  | A4 and A5  |  [More...](https://wiki.seeedstudio.com/Seeeduino-XIAO/)  | 
+| 23 | Teensy 3.1     | No  | A4 and A5  |  [More...](https://www.pjrc.com/teensy/teensy31.html) | 
+| 24 | Teensy 4.1     | No  | A4 and A5  |  [More...](https://www.pjrc.com/store/teensy41.html) | 
+| 25 | Atmega8        | No  | PC4 and PC5 | [More...](https://github.com/MCUdude/MightyCore) |
+| 26 | Atmega32       | No  | PC1 and PC0 | [More...](https://github.com/MCUdude/MightyCore) |
+| 27 | Atmega128      | No  | PC1 and PC0 | [More...](https://ww1.microchip.com/downloads/en/DeviceDoc/doc2467.pdf) |
+| 28 | LGT8F328P      | No  |  A4 and A5 |  [More...](https://ett.co.th/prodAVR/NANO-F328-C/LGT8F328P.pdf) |
+| 29 | LUATOS ESP32C3 | No  |  GPIO4 and GPIO5 | [More...](https://templates.blakadder.com/luatos_CORE-ESP32.html) |
+
+
+
+1. More about ESP boards on [ESPRESSIF Development Boards](https://www.espressif.com/en/products/hardware/development-boards).
+2. More about BlueDuino on [Seed](https://www.seeedstudio.com/Blueduino-Rev2-Arduino-compatible-pius-BLE-CC2540-p-2550.html).
+3. On [Arduino.cc](https://www.arduino.cc/) you can see the technical specification about many board. 
+4. It seams that in some ESP32 board, the I²C bus is not configured properly by default. However, you can set almost any pin on ESP32 to setup I²C capabilities. All you have to do is call __Wire.begin(SDA, SCL);__ where SDA and SCL are the ESP32 GPIO pins. See the folder examples to check how to use ESP32 devices. 
+5. You can use the pin 12 too.  
+6. Arduino Nano 33 BLE only supports 3.3V I/Os and is NOT 5V tolerant so please make sure you are not directly connecting 5V
+signals to this board or it will be damaged. Also, as opposed to Arduino Nano boards that support 5V operation, the 5V pin does NOT
+supply voltage but is rather connected, through a jumper, to the USB power input.
+
+
 
 <BR>
 
