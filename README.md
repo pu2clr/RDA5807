@@ -145,7 +145,7 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 ## How to use in your sketch 
 
 The following source-code snippet shows a common way of using the RDA5807 library in your application.
-[Click here to learn about all the functions integrated in this library](https://pu2clr.github.io/RDA5807/extras/apidoc/html/modules.html).
+[Click here to know about all the functions integrated in this library](https://pu2clr.github.io/RDA5807/extras/apidoc/html/modules.html).
 
 ```cpp
 #include <RDA5807.h>
@@ -156,7 +156,7 @@ void setup() {
     .
     .
     .
-    // Start you receiver here
+    // Start your receiver here
     rx.setup();
     rx.setVolume(6);
     rx.setFrequency(some_frequency); // Example 10390 for 103,9 MHz
