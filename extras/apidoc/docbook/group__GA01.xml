@@ -1,0 +1,2099 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__GA01" xml:lang="en-US">
+<title>Union, Structure and Defined Data Types</title>
+<indexterm><primary>Union, Structure and Defined Data Types</primary></indexterm>
+<para>
+
+<para>rda Defined Data Types </para>
+ 
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>union <link linkend="_group__GA01_1unionrda__reg00">rda_reg00</link></para>
+
+<para>Register 0x00. </para>
+</listitem>
+            <listitem><para>union <link linkend="_group__GA01_1unionrda__reg01">rda_reg01</link></para>
+
+<para>Register 0x01 - Dummy. </para>
+</listitem>
+            <listitem><para>union <link linkend="_group__GA01_1unionrda__reg02">rda_reg02</link></para>
+
+<para>Register 0x02 - Basic setup: RESET configuration;. </para>
+</listitem>
+            <listitem><para>union <link linkend="_group__GA01_1unionrda__reg03">rda_reg03</link></para>
+
+<para>Register 0x03. </para>
+</listitem>
+            <listitem><para>union <link linkend="_group__GA01_1unionrda__reg04">rda_reg04</link></para>
+
+<para>Register 0x04. </para>
+</listitem>
+            <listitem><para>union <link linkend="_group__GA01_1unionrda__reg05">rda_reg05</link></para>
+
+<para>Register 0x05. </para>
+</listitem>
+            <listitem><para>union <link linkend="_group__GA01_1unionrda__reg06">rda_reg06</link></para>
+
+<para>Register 0x06. </para>
+</listitem>
+            <listitem><para>union <link linkend="_group__GA01_1unionrda__reg07">rda_reg07</link></para>
+
+<para>Register 0x07. </para>
+</listitem>
+            <listitem><para>union <link linkend="_group__GA01_1unionrda__reg08">rda_reg08</link></para>
+
+<para>Register 0x08 - Direct Frequency. </para>
+</listitem>
+            <listitem><para>union <link linkend="_group__GA01_1unionrda__reg0a">rda_reg0a</link></para>
+
+<para>Register 0x0A - Device current status. </para>
+</listitem>
+            <listitem><para>union <link linkend="_group__GA01_1unionrda__reg0b">rda_reg0b</link></para>
+
+<para>Register 0x0B. </para>
+</listitem>
+            <listitem><para>union <link linkend="_group__GA01_1unionrda__reg0c">rda_reg0c</link></para>
+
+<para>Register 0x0C. </para>
+</listitem>
+            <listitem><para>union <link linkend="_group__GA01_1unionrda__reg0d">rda_reg0d</link></para>
+
+<para>Register 0x0D. </para>
+</listitem>
+            <listitem><para>union <link linkend="_group__GA01_1unionrda__reg0e">rda_reg0e</link></para>
+
+<para>Register 0x0E. </para>
+</listitem>
+            <listitem><para>union <link linkend="_group__GA01_1unionrda__reg0f">rda_reg0f</link></para>
+
+<para>Register 0x0F. </para>
+</listitem>
+            <listitem><para>union <link linkend="_group__GA01_1unionrds__blockb">rds_blockb</link></para>
+
+<para>RDS Block B data type. </para>
+</listitem>
+            <listitem><para>union <link linkend="_group__GA01_1unionrds__date__time">rds_date_time</link></para>
+</listitem>
+            <listitem><para>union <link linkend="_group__GA01_1unionword16__to__bytes">word16_to_bytes</link></para>
+
+<para>Converts 16 bits word to two bytes. </para>
+</listitem>
+            <listitem><para>class <link linkend="_group__GA01_1classRDA5807">RDA5807</link></para>
+
+<para>KT0915 Class. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrda__reg00_8refined">rda_reg00.refined</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrda__reg01_8refined">rda_reg01.refined</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrda__reg02_8refined">rda_reg02.refined</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrda__reg03_8refined">rda_reg03.refined</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrda__reg04_8refined">rda_reg04.refined</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrda__reg05_8refined">rda_reg05.refined</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrda__reg06_8refined">rda_reg06.refined</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrda__reg07_8refined">rda_reg07.refined</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrda__reg08_8refined">rda_reg08.refined</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrda__reg0a_8refined">rda_reg0a.refined</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrda__reg0b_8refined">rda_reg0b.refined</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrda__reg0c_8refined">rda_reg0c.refined</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrda__reg0d_8refined">rda_reg0d.refined</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrda__reg0e_8refined">rda_reg0e.refined</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrda__reg0f_8refined">rda_reg0f.refined</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrds__blockb_8group0">rds_blockb.group0</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrds__blockb_8group2">rds_blockb.group2</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrds__blockb_8refined">rds_blockb.refined</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structrds__date__time_8refined">rds_date_time.refined</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_group__GA01_1structword16__to__bytes_8refined">word16_to_bytes.refined</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>rda Defined Data Types </para>
+
+<para>Defined Data Types is a way to represent the rda registers information</para>
+
+<para>The information shown here was extracted from Datasheet:</para>
+
+<para>rda stereo FM digital tuning radio documentation. </para>
+</section>
+<section>
+<title>Class Documentation</title>
+<indexterm><primary>rda_reg00</primary></indexterm>
+<section>
+<title>union rda_reg00</title>
+
+<para>Register 0x00. </para>
+
+
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1ac5a1a7191e10e3c1d300537387e6acbc"/>struct <link linkend="_group__GA01_1structrda__reg00_8refined">rda_reg00.refined</link></entry><entry>refined</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a4032484c615397b498d1af01aa1d1453"/>uint16_t</entry><entry>raw</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg01</primary></indexterm>
+</section>
+<section>
+<title>union rda_reg01</title>
+
+<para>Register 0x01 - Dummy. </para>
+
+
+
+<para>It is not documented by the RDA. </para>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a95db31874aa1c376e10041fbf4c04bd0"/>struct <link linkend="_group__GA01_1structrda__reg01_8refined">rda_reg01.refined</link></entry><entry>refined</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a5753f7265ef5b1291ff160c431ebe863"/>uint16_t</entry><entry>raw</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg02</primary></indexterm>
+</section>
+<section>
+<title>union rda_reg02</title>
+
+<para>Register 0x02 - Basic setup: RESET configuration;. </para>
+
+
+
+<para>Clock type configuration; seek operation; Sterio/Mono; Bass; and Audio configuration</para>
+
+<para>The RDA5807M is RESET itself when power up. You also can use soft reset by triggering SOFT_RESET bit to 1.</para>
+
+<para>Seek begins in the direction specified by SEEKUP and ends when a channel is found, or the entire band has been searched.</para>
+
+<para>The SEEK bit is set low and the STC bit is set high when the seek operation completes.</para>
+
+<para>RCLK NON-CALIBRATE MODE. if 0=RCLK clock is always supply; if 1=RCLK clock is not always supply when FM work ( when 1, RDA5807M can’t directly support -20 °C ~70 °C temperature.</para>
+
+<para>Only suppory ±20°C temperature swing from tune point).</para>
+
+<para>Clock CLK_MODE table</para>
+
+<para><informaltable frame="all">
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<thead>
+      <row  class='markdownTableHead'>
+<entry>
+<para>Value   </para>
+</entry><entry>
+<para>Clock    </para>
+</entry></row>
+</thead><tbody>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>000   </para>
+</entry><entry>
+<para>32.768kHz    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>001   </para>
+</entry><entry>
+<para>12Mhz    </para>
+</entry></row>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>101   </para>
+</entry><entry>
+<para>24Mhz    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>010   </para>
+</entry><entry>
+<para>13Mhz    </para>
+</entry></row>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>110   </para>
+</entry><entry>
+<para>26Mhz    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>011   </para>
+</entry><entry>
+<para>19.2Mhz    </para>
+</entry></row>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>111   </para>
+</entry><entry>
+<para>38.4Mhz   </para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</informaltable>
+</para>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a1809838a4ec469d3ff1eeb7dacb89252"/>struct <link linkend="_group__GA01_1structrda__reg02_8refined">rda_reg02.refined</link></entry><entry>refined</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a1a250acebf8f445cc5b685da35ae2b7a"/>uint16_t</entry><entry>raw</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg03</primary></indexterm>
+</section>
+<section>
+<title>union rda_reg03</title>
+
+<para>Register 0x03. </para>
+
+
+
+<para>Receiver configuratio</para>
+
+<para>The tune operation begins when the TUNE bit is set high. The STC bit is set high when the tune operation completes.</para>
+
+<para>The tune bit is reset to low automatically when the tune operation completes</para>
+
+<para>Channel space table</para>
+
+<para><informaltable frame="all">
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<thead>
+      <row  class='markdownTableHead'>
+<entry>
+<para>Value   </para>
+</entry><entry>
+<para>Description    </para>
+</entry></row>
+</thead><tbody>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>00   </para>
+</entry><entry>
+<para>100KHz    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>01   </para>
+</entry><entry>
+<para>200KHz    </para>
+</entry></row>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>10   </para>
+</entry><entry>
+<para>50KHz    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>11   </para>
+</entry><entry>
+<para>25KHz   </para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</informaltable>
+</para>
+
+<para>FM band table</para>
+
+<para><informaltable frame="all">
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<thead>
+      <row  class='markdownTableHead'>
+<entry>
+<para>Value   </para>
+</entry><entry>
+<para>Description    </para>
+</entry></row>
+</thead><tbody>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>00   </para>
+</entry><entry>
+<para>87–108 MHz (US/Europe)    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>01   </para>
+</entry><entry>
+<para>76–91 MHz (Japan)    </para>
+</entry></row>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>10   </para>
+</entry><entry>
+<para>76–108 MHz (world wide)    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>11   </para>
+</entry><entry>
+<para>65 –76 MHz (East Europe) or 50-65MHz (see bit 9 of gegister 0x06)   </para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</informaltable>
+</para>
+
+<para>Channel select table</para>
+
+<para><informaltable frame="all">
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<thead>
+      <row  class='markdownTableHead'>
+<entry>
+<para>BAND   </para>
+</entry><entry>
+<para>Description    </para>
+</entry></row>
+</thead><tbody>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>0   </para>
+</entry><entry>
+<para>Frequency = Channel Spacing (kHz) x CHAN+ 87.0 MHz    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>1 or 2   </para>
+</entry><entry>
+<para>Frequency = Channel Spacing (kHz) x CHAN + 76.0 MHz    </para>
+</entry></row>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>3   </para>
+</entry><entry>
+<para>Frequency = Channel Spacing (kHz) x CHAN + 65.0 MHz   </para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</informaltable>
+IMPORTANT: CHAN is updated after a seek operation. </para>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a8a7bf8e4ddb7f76cbafe53ba366d04ca"/>struct <link linkend="_group__GA01_1structrda__reg03_8refined">rda_reg03.refined</link></entry><entry>refined</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a896ca93bb7040c45cbf062396d40ebca"/>uint16_t</entry><entry>raw</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg04</primary></indexterm>
+</section>
+<section>
+<title>union rda_reg04</title>
+
+<para>Register 0x04. </para>
+
+
+
+<para>Receiver properties</para>
+
+<para>Volume scale is logarithmic When 0000, output mute and output impedance is very large</para>
+
+<para>Setting STCIEN = 1 will generate a low pulse on GPIO2 when the interrupt occurs. </para>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1af1c6e72539ee65749eb0f049303ad616"/>struct <link linkend="_group__GA01_1structrda__reg04_8refined">rda_reg04.refined</link></entry><entry>refined</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a5c872e111c0fbaf477625700a2076359"/>uint16_t</entry><entry>raw</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg05</primary></indexterm>
+</section>
+<section>
+<title>union rda_reg05</title>
+
+<para>Register 0x05. </para>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1ad2153e9e90608e267b44117ececc5783"/>struct <link linkend="_group__GA01_1structrda__reg05_8refined">rda_reg05.refined</link></entry><entry>refined</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1aaa18c311f81277e3d73436ea0b601bb1"/>uint16_t</entry><entry>raw</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg06</primary></indexterm>
+</section>
+<section>
+<title>union rda_reg06</title>
+
+<para>Register 0x06. </para>
+
+
+
+<para>I2S_SW_CNT values table</para>
+
+<para><informaltable frame="all">
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<thead>
+      <row  class='markdownTableHead'>
+<entry>
+<para>Value   </para>
+</entry><entry>
+<para>Description    </para>
+</entry></row>
+</thead><tbody>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>0b1000   </para>
+</entry><entry>
+<para>WS_STEP_48    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>0b0111   </para>
+</entry><entry>
+<para>WS_STEP=44.1kbps    </para>
+</entry></row>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>0b0110   </para>
+</entry><entry>
+<para>WS_STEP=32kbps    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>0b0101   </para>
+</entry><entry>
+<para>WS_STEP=24kbps    </para>
+</entry></row>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>0b0100   </para>
+</entry><entry>
+<para>WS_STEP=22.05kbps    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>0b0011   </para>
+</entry><entry>
+<para>WS_STEP=16kbps    </para>
+</entry></row>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>0b0010   </para>
+</entry><entry>
+<para>WS_STEP=12kbps    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>0b0001   </para>
+</entry><entry>
+<para>WS_STEP=11.025kbps    </para>
+</entry></row>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>0b0000   </para>
+</entry><entry>
+<para>WS_STEP=8kbps   </para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</informaltable>
+</para>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a360eecf942f40d3f51812293e76a0d67"/>struct <link linkend="_group__GA01_1structrda__reg06_8refined">rda_reg06.refined</link></entry><entry>refined</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a6821afdfb5ab6f0a279ef1c4fdeaa9e1"/>uint16_t</entry><entry>raw</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg07</primary></indexterm>
+</section>
+<section>
+<title>union rda_reg07</title>
+
+<para>Register 0x07. </para>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1ac5c4daceecb405708b96c79b477db70b"/>struct <link linkend="_group__GA01_1structrda__reg07_8refined">rda_reg07.refined</link></entry><entry>refined</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a2dacd798a51d8fc4effa015d9d16c1a0"/>uint16_t</entry><entry>raw</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg08</primary></indexterm>
+</section>
+<section>
+<title>union rda_reg08</title>
+
+<para>Register 0x08 - Direct Frequency. </para>
+
+
+
+<para>Valid when freq_mode = 1</para>
+
+<para>Freq = 7600(or 8700) kHz + freq_direct (08H) kHz.</para>
+
+<para>Value to be stores is frequency - 7600 or 8700 </para>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a6b901f2c85429c6822d5e8dc19d1c780"/>struct <link linkend="_group__GA01_1structrda__reg08_8refined">rda_reg08.refined</link></entry><entry>refined</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a2d961192507c9b5dcaa83bb2b41c1430"/>uint16_t</entry><entry>raw</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg0a</primary></indexterm>
+</section>
+<section>
+<title>union rda_reg0a</title>
+
+<para>Register 0x0A - Device current status. </para>
+
+
+
+<para>The seek fail flag (SF) is set when the seek operation fails to find a channel with an RSSI level greater than SEEKTH[5:0].</para>
+
+<para>The seek/tune complete (STC) flag is set when the seek or tune operation completes.</para>
+
+<para>Channel table</para>
+
+<para><informaltable frame="all">
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<thead>
+      <row  class='markdownTableHead'>
+<entry>
+<para>BAND   </para>
+</entry><entry>
+<para>Description    </para>
+</entry></row>
+</thead><tbody>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>0   </para>
+</entry><entry>
+<para>Frequency = Channel Spacing (kHz) x CHAN+ 87.0 MHz    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>1 or 2   </para>
+</entry><entry>
+<para>Frequency = Channel Spacing (kHz) x CHAN + 76.0 MHz    </para>
+</entry></row>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>3   </para>
+</entry><entry>
+<para>Frequency = Channel Spacing (kHz) x CHAN + 65.0 MHz   </para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</informaltable>
+</para>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1ac3a52ed2e4783d2bb7c1e82716c98af3"/>struct <link linkend="_group__GA01_1structrda__reg0a_8refined">rda_reg0a.refined</link></entry><entry>refined</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a4739c58f7e2dcffa54e2368e98716e99"/>uint16_t</entry><entry>raw</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg0b</primary></indexterm>
+</section>
+<section>
+<title>union rda_reg0b</title>
+
+<para>Register 0x0B. </para>
+
+
+
+<para>Current RDS and device status</para>
+
+<para>Errors Level table (Block Errors Level of RDS_DATA_0 and RDS_DATA_1. Always read as Errors Level of RDS BLOCKs A and B (in RDS mode ) or E (in RBDS mode when ABCD_E flag is 1).</para>
+
+<para><informaltable frame="all">
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<thead>
+      <row  class='markdownTableHead'>
+<entry>
+<para>Value   </para>
+</entry><entry>
+<para>Description    </para>
+</entry></row>
+</thead><tbody>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>00   </para>
+</entry><entry>
+<para>0 errors requiring correction    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>01   </para>
+</entry><entry>
+<para>1~2 errors requiring correction    </para>
+</entry></row>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>10   </para>
+</entry><entry>
+<para>3~5 errors requiring correction    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>10   </para>
+</entry><entry>
+<para>6+ errors or error in checkword, correction not possible   </para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</informaltable>
+</para>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a0eeacb17a43648ed4c922fb16253fa5c"/>struct <link linkend="_group__GA01_1structrda__reg0b_8refined">rda_reg0b.refined</link></entry><entry>refined</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a025a972ff39a3584183e12de290d0fb6"/>uint16_t</entry><entry>raw</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg0c</primary></indexterm>
+</section>
+<section>
+<title>union rda_reg0c</title>
+
+<para>Register 0x0C. </para>
+
+
+
+<para>BLOCK A ( in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1) </para>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1aa8b7d1851c44335e2380eb7a4468c093"/>struct <link linkend="_group__GA01_1structrda__reg0c_8refined">rda_reg0c.refined</link></entry><entry>refined</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1aa84daa949defa1d8459599e6a5f7774e"/>uint16_t</entry><entry>RDSA</entry><entry>
+<para>BLOCK A ( in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1) </para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg0d</primary></indexterm>
+</section>
+<section>
+<title>union rda_reg0d</title>
+
+<para>Register 0x0D. </para>
+
+
+
+<para>BLOCK B ( in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1) </para>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a28f1298327e3fc8309f38005be0b70a2"/>struct <link linkend="_group__GA01_1structrda__reg0d_8refined">rda_reg0d.refined</link></entry><entry>refined</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a8ea42352501defa20b4a586e146035d2"/>uint16_t</entry><entry>RDSB</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg0e</primary></indexterm>
+</section>
+<section>
+<title>union rda_reg0e</title>
+
+<para>Register 0x0E. </para>
+
+
+
+<para>BLOCK C ( in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1) </para>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a63c425b6b07f0604a43481f0312d3d59"/>struct <link linkend="_group__GA01_1structrda__reg0e_8refined">rda_reg0e.refined</link></entry><entry>refined</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a519e4146ff314e51a19f354ec7f07b8e"/>uint16_t</entry><entry>RDSC</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg0f</primary></indexterm>
+</section>
+<section>
+<title>union rda_reg0f</title>
+
+<para>Register 0x0F. </para>
+
+
+
+<para>BLOCK D ( in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1) </para>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a2277c8c28e92e2ad993af1c0c5fb4c94"/>struct <link linkend="_group__GA01_1structrda__reg0f_8refined">rda_reg0f.refined</link></entry><entry>refined</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a468a600809a23e18a9b40dadccfd3740"/>uint16_t</entry><entry>RDSD</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rds_blockb</primary></indexterm>
+</section>
+<section>
+<title>union rds_blockb</title>
+
+<para>RDS Block B data type. </para>
+
+
+
+<para>For GCC on System-V ABI on 386-compatible (32-bit processors), the following stands:</para>
+
+<para>1) Bit-fields are allocated from right to left (least to most significant). 2) A bit-field must entirely reside in a storage unit appropriate for its declared type. Thus a bit-field never crosses its unit boundary. 3) Bit-fields may share a storage unit with other struct/union members, including members that are not bit-fields. Of course, struct members occupy different parts of the storage unit. 4) Unnamed bit-fields&apos; types do not affect the alignment of a structure or union, although individual bit-fields&apos; member offsets obey the alignment constraints.</para>
+
+<para><formalpara><title>See also</title>
+
+<para>also <link xlink:href="https://en.wikipedia.org/wiki/Radio_Data_System">https://en.wikipedia.org/wiki/Radio_Data_System</link> </para>
+</formalpara>
+</para>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1ac5781cba2e954484c72ae3077e25afcf"/>struct <link linkend="_group__GA01_1structrds__blockb_8group0">rds_blockb.group0</link></entry><entry>group0</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a0a430ac426505b17010fe872dba656a8"/>struct <link linkend="_group__GA01_1structrds__blockb_8group2">rds_blockb.group2</link></entry><entry>group2</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1ab34c18f5ea4466a422f8370757d4fcbc"/>struct <link linkend="_group__GA01_1structrds__blockb_8refined">rds_blockb.refined</link></entry><entry>refined</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a5dae9f2b7edfd4dff7592ed38e403344"/>uint16_t</entry><entry>blockB</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rds_date_time</primary></indexterm>
+</section>
+<section>
+<title>union rds_date_time</title>
+
+<para>Group RDS type 4A ( RDS Date and Time) When group type 4A is used by the station, it shall be transmitted every minute according to EN 50067. This Structure uses blocks 2,3 and 5 (B,C,D)</para>
+
+<para>ATTENTION: To make it compatible with 8, 16 and 32 bits platforms and avoid Crossing boundary, it was necessary to split minute and hour representation. </para>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a9bcded0e419c611d9920953260c352cb"/>struct <link linkend="_group__GA01_1structrds__date__time_8refined">rds_date_time.refined</link></entry><entry>refined</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1abb6c459455299730ef24dc149a871202"/>uint8_t</entry><entry>raw[6]</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>word16_to_bytes</primary></indexterm>
+</section>
+<section>
+<title>union word16_to_bytes</title>
+
+<para>Converts 16 bits word to two bytes. </para>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1aac9f5d78f176c0422d073877cd65fe51"/>struct <link linkend="_group__GA01_1structword16__to__bytes_8refined">word16_to_bytes.refined</link></entry><entry>refined</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1abed44166b8c3d82c0c44fb317d3b650a"/>uint16_t</entry><entry>raw</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>RDA5807</primary></indexterm>
+</section>
+<section>
+<title>class RDA5807</title>
+
+<para>KT0915 Class. </para>
+
+
+
+<para>This class implements all functions that will help you to control the KT0915 devices.</para>
+
+<para><formalpara><title>Author</title>
+
+<para>PU2CLR - Ricardo Lima Caratti </para>
+</formalpara>
+</para>
+Public Member Functions        <itemizedlist>
+            <listitem><para>void <link linkend="_group__GA02_1ga1db36d126d26a553668c1b70de9b3823">setDelayAfterCrystalOn</link> (uint8_t ms_value)</para>
+
+<para>Set the Delay After Crystal On (default 500ms) </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA02_1gadf634cb6733022e30d8f1a74a5946e78">setI2CBusAddrs</link> (int directAccess, int fullAccess)</para>
+
+<para>Sets alternatives I2C bus address. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA02_1gab9e3a5584a6238f719e9c9e49435f5ce">getStatusRegisters</link> ()</para>
+
+<para>Gets all current device status and RDS information registers (From 0x0A to 0x0F) </para>
+</listitem>
+            <listitem><para><link linkend="_group__GA01_1unionword16__to__bytes">word16_to_bytes</link> <link linkend="_group__GA02_1ga69981ef141e22ab00e4bde3f18f84964">getDirectRegister</link> (uint8_t reg)</para>
+
+<para>Gets the register content via direct access. </para>
+</listitem>
+            <listitem><para>void * <link linkend="_group__GA02_1ga1f4bc3d6f9d94171b2965dbb4e812f4f">getStatus</link> (uint8_t reg)</para>
+
+<para>Gets the register content of a given status register (from 0x0A to 0x0F) </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA02_1ga3b581b82ab8c631cfec537a47008ddf3">setRegister</link> (uint8_t reg, uint16_t value)</para>
+
+<para>Sets a given value to a specific device register. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA02_1ga677eff1084b294696a32e3ca4dfe593b">setGpio</link> (uint8_t gpioPin, uint8_t gpioSetup=0, int mcuPin=-1)</para>
+
+<para>Sets the Device GPIO pins. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA02_1ga3fe1feed45d3290beba0efef491128e6">waitAndFinishTune</link> ()</para>
+
+<para>Waits for Seek or Tune finish. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA02_1ga3f6dace4c93f82ec66da5641e3e3fdaa">softReset</link> ()</para>
+
+<para>Resets the device. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA02_1ga30d2b0c4662922df53bcef118663329c">powerUp</link> ()</para>
+
+<para>Powers the receiver on. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA02_1ga214f631aef72ece69db73c99879c7c46">powerDown</link> ()</para>
+
+<para>Power the receiver off. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA02_1gac79c1fec6c416c9993ff19362fe312cb">setup</link> (uint8_t clock_type=<link linkend="_RDA5807_8h_1aaaa8a7748321c8739d938babeb67d8e9">CLOCK_32K</link>, uint8_t oscillator_type=<link linkend="_RDA5807_8h_1ad0763fd256db4ec1ecc62f84bbff56e2">OSCILLATOR_TYPE_CRYSTAL</link>)</para>
+
+<para>Starts the device. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA02_1gab97c1c8ad3ab0cd5d2852f712caee0a1">setNewDemodulateMethod</link> (bool value)</para>
+
+<para>Sets new demodulate method. It can improve the receiver sensitivity about 1dB. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga965658767399e2f923852144e324805f">setAFC</link> (bool value)</para>
+
+<para>Sets AFC true or false. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA08_1ga35428e147462af6490c382acdf769173">setLnaIcSel</link> (uint8_t value)</para>
+
+<para>Sets LNA_ICSEL_BIT. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA08_1gaf595aab626e55ab733af8682674faa61">setLnaPortSel</link> (uint8_t value)</para>
+
+<para>Sets LNA input port selection bit. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_group__GA08_1gacdf40b2507df37ef2f7cbed8c12c68f7">getLnaIcSel</link> ()</para>
+
+<para>Gets LNA_ICSEL_BIT current value. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_group__GA08_1gafa3762b30fbf95bd6bb04139faed47c6">getLnaPortSel</link> ()</para>
+
+<para>Gets current vaue of the LNA input port selection bit. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1gad16a6afa9520b77498b17a72c226305a">setFrequency</link> (uint16_t frequency)</para>
+
+<para>Sets the frequency. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1gac879c84895fee9032c1b29638e209527">setFrequencyToBeginBand</link> ()</para>
+
+<para>Tunes the receiver at the first channel/frequency of the current band. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga8042f480c26abb7f74560a29c0fb2f46">setFrequencyToEndBand</link> ()</para>
+
+<para>Tunes the receiver at the last channel/frequency of the current band. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_group__GA03_1ga59b981002d383a13731bd939482a5236">getFrequency</link> ()</para>
+
+<para>Gets the current frequency. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga4e8db177fea475ea00fa04e3d8f1f08c">setFrequencyUp</link> ()</para>
+
+<para>Increments the current frequency. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1gadba771c864ace7a8373a76554b9d3e6a">setFrequencyDown</link> ()</para>
+
+<para>Decrements the current frequency. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_group__GA03_1ga1476967ed4e1d9bc00e2ea8e3135520e">getRealFrequency</link> ()</para>
+
+<para>Gets the current frequency bases on the current channel. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_group__GA03_1ga39480a49f7878fffe8c3ddf120aba2b0">getRealChannel</link> ()</para>
+
+<para>Gets the current channel stored in 0x0A status register. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1gaa9cfaddbd43257e810bb3817b021fa8a">setChannel</link> (uint16_t channel)</para>
+
+<para>Sets the channel. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga87de696f0a40724c19c89b6b48766020">seek</link> (uint8_t seek_mode, uint8_t direction)</para>
+
+<para>Seek function. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1gade55e697c7752811086300e710727397">seek</link> (uint8_t seek_mode, uint8_t direction, void(*showFunc)())</para>
+
+<para>Seek function. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga41dbf6ea359175b3671072a3c382d42c">setSeekThreshold</link> (uint8_t value)</para>
+
+<para>Sets RSSI Seek Threshold. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga889cfe43f3f9c9ca92c9862261d5dbbf">setBand</link> (uint8_t band=0)</para>
+
+<para>Sets the FM band. See table below. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga76f6c3400b038aef15ba7318592e1dd0">setSpace</link> (uint8_t space=0)</para>
+
+<para>Sets the FM channel space. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga8bbf57aaeb92f226179579efa61cc846">setStep</link> (uint8_t step=100)</para>
+
+<para>Sets the FM Step;. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_group__GA03_1gab6cc94517eb6bc3325fbd6386bbffe15">getSpace</link> ()</para>
+
+<para>Returns the current Band Space. </para>
+</listitem>
+            <listitem><para>int <link linkend="_group__GA08_1ga4bd7597d4c9090b04486aec21a6a0a5d">getRssi</link> ()</para>
+
+<para>Gets the current Rssi. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_group__GA03_1ga85d1635f7bd51c740546d69133a97530">isFmTrue</link> ()</para>
+
+<para>Returns true if the current channel is a station. <?linebreak?> </para>
+</listitem>
+            <listitem><para>bool <link linkend="_group__GA03_1ga49ae7bc2ecf631c5391bab17b44df3fd">isFmReady</link> ()</para>
+
+<para>Returns true if the FM is ready. <?linebreak?> </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_group__GA02_1gad1d589d43adc89a93c5e07b2d4cb6a4c">getDeviceId</link> ()</para>
+
+<para>Gets the Device identification. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA07_1gadd2c2ab8b861ab0714fdeb99c774d656">setSoftmute</link> (bool value)</para>
+
+<para>Sets Soft Mute Enable or disable. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_group__GA07_1ga428ddd720c58c17273322d7526e51cbe">isSoftmuted</link> ()</para>
+
+<para>Gets the softmute status <?linebreak?> </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA07_1gad6e77ffbeb3f4dc885548130e09590d6">setMono</link> (bool value)</para>
+
+<para>Sets audio Mono or stereo. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA07_1ga8002bb394ef19db02e04a39de04dffc5">setBass</link> (bool value)</para>
+
+<para>Sets Bass Boost. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_group__GA07_1ga250ff3788a7831dae3c6200919b446dd">isStereo</link> ()</para>
+
+<para>Gets the current Stereo status. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA07_1gafec3018913d735ee0684b88cf503c84a">setMute</link> (bool value)</para>
+
+<para>Sets Audio mute or unmute. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_group__GA07_1gaef3ebf331e0646a67b6ebfa6d47c3a16">isMuted</link> ()</para>
+
+<para>Gets Audio Mute Status. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_group__GA07_1ga5195195da106c05f29218910b17f6f6b">isAudioOutputHighImpedance</link> ()</para>
+
+<para>Gets true if the output audio impedance is high. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA07_1gaabd554f39778bf6d81712df0ea72d0fa">setAudioOutputHighImpedance</link> (bool value)</para>
+
+<para>Sets audio output impedance high ow low. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga6dd81b0cff50747906d7d05b127112de">setSoftBlendEnable</link> (bool value)</para>
+
+<para>Sets Soft Blend. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA07_1ga51bf4344ebeb44f7170265901df870f5">setVolume</link> (uint8_t value)</para>
+
+<para>Sets the audio volume level. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_group__GA07_1ga743d91d820922b3feda10d06443bc8a9">getVolume</link> ()</para>
+
+<para>Gets the current audio volume level. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA07_1ga864af32df4d3365e03f8876703218283">setVolumeUp</link> ()</para>
+
+<para>Increments the audio volume. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA07_1ga910965f74897b0246a0b3bed39743d8c">setVolumeDown</link> ()</para>
+
+<para>Decrements the audio volume. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga4f8fe00a561c39d2dc9a0a143b1866e9">setFmDeemphasis</link> (uint8_t de)</para>
+
+<para>Sets De-emphasis. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA04_1ga4b741f1433eda57949bb40fa9e973732">setRDS</link> (bool value)</para>
+
+<para>Sets the RDS operation. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA04_1gaecbab42ef08c486b2eb1ab25649c921a">setRBDS</link> (bool value)</para>
+
+<para>Sets the RBDS operation. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA04_1gae27337170a5f3dedebf585aa19855ad6">setRdsFifo</link> (bool value)</para>
+
+<para>Sets RDS fifo mode enable. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA04_1gab3accd716dc5fe07d936b860b64d9e4e">clearRdsFifo</link> ()</para>
+
+<para>Clear RDS fifo. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_group__GA04_1gacfa48dfcf792a9bcee489658177aed90">getRdsReady</link> ()</para>
+
+<para>Returns true if RDS Ready. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_group__GA04_1ga04e5fe0cacbdcae620388a15630cf9c1">getRdsFlagAB</link> (void)</para>
+
+<para>Returns the current Text Flag A/B <?linebreak?> </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_group__GA04_1gad85ccedd8baecd8bc2f42325a3ee8741">getRdsVersionCode</link> (void)</para>
+
+<para>Gets the version code (extracted from the Block B) </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_group__GA04_1ga32c361b9b996a5920519315aa86d174d">getRdsGroupType</link> ()</para>
+
+<para>Return the group type. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_group__GA04_1gae3bde947a89c6dadfc4dc22aea85b467">getRdsProgramType</link> (void)</para>
+
+<para>Returns the Program Type (extracted from the Block B) </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA04_1ga6afb347f32121c480adea2a36032d56f">getNext2Block</link> (char *c)</para>
+
+<para>Process data received from group 2B. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA04_1ga3ab713bb63978518d42a761b9db445c9">getNext4Block</link> (char *c)</para>
+
+<para>Process data received from group 2A. </para>
+</listitem>
+            <listitem><para>char * <link linkend="_group__GA04_1ga96152112619e139bd7e0ff523009a161">getRdsText</link> (void)</para>
+
+<para>Gets the RDS Text when the message is of the Group Type 2 version A. </para>
+</listitem>
+            <listitem><para>char * <link linkend="_group__GA04_1ga5a26789f1910a5b2098919dbd50e6a3c">getRdsText0A</link> (void)</para>
+
+<para>Gets the station name and other messages. </para>
+</listitem>
+            <listitem><para>char * <link linkend="_group__GA04_1ga482098a64299cb8af976d4d10a460212">getRdsText2A</link> (void)</para>
+
+<para>Gets the Text processed for the 2A group. </para>
+</listitem>
+            <listitem><para>char * <link linkend="_group__GA04_1gacd6614bc7be99d55a3d9a17739ee7074">getRdsText2B</link> (void)</para>
+
+<para>Gets the Text processed for the 2B group. </para>
+</listitem>
+            <listitem><para>char * <link linkend="_group__GA04_1gaef398d848e7378ec4897965b8e1b4441">getRdsTime</link> ()</para>
+
+<para>Gets the RDS time and date when the Group type is 4. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_group__GA04_1ga25df690020bab4154b0737e7365ed8ea">getRdsSync</link> ()</para>
+
+<para>Gets the Rds Sync. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_group__GA04_1ga2e63d5c85cb1825492a5ba2ea3bef2c3">getBlockId</link> ()</para>
+
+<para>Gets the current Block ID. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_group__GA04_1gadcc73bed36f5dbad1b41a8777be575d9">getErrorBlockB</link> ()</para>
+
+<para>Gets the current Status of block B. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_group__GA04_1ga0d809c6cc2928e1fee006713f77b60e9">hasRdsInfo</link> ()</para>
+
+<para>Returns true when the RDS system has valid information. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA06_1gafe324014c135a510714e7d722f291273">setI2SOn</link> (bool value)</para>
+
+<para>Enables I2S setup. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA06_1ga2070bff9af95a523a77ac304eee7b22f">setI2SAllParameters</link> (uint8_t R_DELY, uint8_t L_DELY, uint8_t SCLK_O_EDGE, uint8_t SW_O_EDGE, uint8_t I2S_SW_CNT, uint8_t WS_I_EDGE, uint8_t DATA_SIGNED, uint8_t SCLK_I_EDGE, uint8_t WS_LR, uint8_t SLAVE_MASTER, uint8_t OPEN_MODE)</para>
+
+<para>Configures all parameters for I2S. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA06_1ga70f086ccb3be49c4c51133bae2e8b113">setI2SMaster</link> (bool value)</para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA06_1ga3d5618cd755c0a56fea68ea589bb828f">setI2SSpeed</link> (uint8_t value)</para>
+
+<para>Sets the speed in kbps. You can use the predefined constantes: I2S_WS_STEP_48, I2S_WS_STEP_44_1, I2S_WS_STEP_32,. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA06_1gabeb9446fc371fe58e075bea7ebc51fdb">setI2SDataSigned</link> (bool value)</para>
+
+<para>If 0, I2S output unsigned 16-bit audio data. If 1, I2S output signed 16-bit audio data. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__G05_1ga0f40d75452088ceeffb4d8969fb34999">convertToChar</link> (uint16_t value, char *strValue, uint8_t len, uint8_t dot, uint8_t separator, bool remove_leading_zeros=true)</para>
+
+<para>Converts a number to a char array. </para>
+</listitem>
+            <listitem><para>char * <link linkend="_group__G05_1ga2275869d5ec1bd0eaea2e278e2a70cc7">formatFrequency</link> (uint16_t value, char *strValue, char decimalSeparator)</para>
+
+<para>Convert a numeric frequency to a formated string (char *) frequency. </para>
+</listitem>
+            <listitem><para>int <link linkend="_group__G05_1ga16f6ef1f816a032fb07a91017c34bb50">checkI2C</link> (uint8_t *addressArray)</para>
+
+<para>Check the I2C bus address. </para>
+</listitem>
+        </itemizedlist>
+Protected Attributes        <itemizedlist>
+            <listitem><para>int <link linkend="_group__GA01_1a18c3e5a103b683af7c46d8b9a3d47518">deviceAddressDirectAccess</link> = <link linkend="_RDA5807_8h_1a391d926a92f7cd486866d16b53bf9bc8">I2C_ADDR_DIRECT_ACCESS</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_group__GA01_1a81c00f45187f93be0698ef8c5bd80619">deviceAddressFullAccess</link> = <link linkend="_RDA5807_8h_1acae259a7c57b67ef6c890c1c178dce00">I2C_ADDR_FULL_ACCESS</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_group__GA01_1a55c07acd68120f74f787999364fc92c9">resetPin</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_group__GA01_1a14040afdfd6c6cf486278c4e75c63927">currentFrequency</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_group__GA01_1aaf56888de5a078b5e5090a0b0dd6ae61">currentFMBand</link> = 0</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_group__GA01_1ae175c8602c76c5512c61b836de086620">currentFMSpace</link> = 0</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_group__GA01_1a33272a8f152f2307adc012072b8e0582">currentVolume</link> = 0</para>
+</listitem>
+            <listitem><para>int <link linkend="_group__GA01_1a022d3357b6bddf3477b3f26f2d78a75c">gpio1Control</link> = -1</para>
+
+<para>Can be used to add control to the system via GPIO1 pin. </para>
+</listitem>
+            <listitem><para>int <link linkend="_group__GA01_1ab6a9fc2bd5ca266079c3e7796b5025af">gpio2Control</link> = -1</para>
+
+<para>Can be used to add control to the system via GPIO2 pin. </para>
+</listitem>
+            <listitem><para>int <link linkend="_group__GA01_1ae6f2d5f535edc14951e75a03e46ebc01">gpio3Control</link> = -1</para>
+
+<para>Can be used to add control to the system via GPIO3 pin. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_group__GA01_1a70104fe05d727c5047975612599c9dca">clockType</link> = <link linkend="_RDA5807_8h_1aaaa8a7748321c8739d938babeb67d8e9">CLOCK_32K</link></para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_group__GA01_1a4c8780f2d28725d66850f9e3be14745a">oscillatorType</link> = <link linkend="_RDA5807_8h_1ad0763fd256db4ec1ecc62f84bbff56e2">OSCILLATOR_TYPE_CRYSTAL</link></para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_group__GA01_1a8b9e02f7c7121cf57fc0006f4ff7162a">maxDelayAftarCrystalOn</link> = <link linkend="_RDA5807_8h_1afb81dd661d531fa5c5422549fab7588f">MAX_DELAY_AFTER_OSCILLATOR</link></para>
+</listitem>
+        </itemizedlist>
+Private Attributes        <itemizedlist>
+            <listitem><para>uint16_t <link linkend="_group__GA01_1ae51bb0aaf958ee320da80866bb20ffb5">shadowStatusRegisters</link> [6]</para>
+
+<para>shadow status registers </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link> [9]</para>
+
+<para>shadow configuration registers </para>
+</listitem>
+            <listitem><para><link linkend="_group__GA01_1unionrda__reg00">rda_reg00</link> * <link linkend="_group__GA01_1af9cbd65bd00bce76f8b362159cf9d589">reg00</link> = (<link linkend="_group__GA01_1unionrda__reg00">rda_reg00</link> *)&amp;<link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link>[0]</para>
+</listitem>
+            <listitem><para><link linkend="_group__GA01_1unionrda__reg01">rda_reg01</link> * <link linkend="_group__GA01_1a63267deb8311ff567df5ae6202ffa3fb">reg01</link> = (<link linkend="_group__GA01_1unionrda__reg01">rda_reg01</link> *)&amp;<link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link>[1]</para>
+</listitem>
+            <listitem><para><link linkend="_group__GA01_1unionrda__reg02">rda_reg02</link> * <link linkend="_group__GA01_1a68804842ce8d8c4304bc260b6a386e12">reg02</link> = (<link linkend="_group__GA01_1unionrda__reg02">rda_reg02</link> *)&amp;<link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link>[2]</para>
+</listitem>
+            <listitem><para><link linkend="_group__GA01_1unionrda__reg03">rda_reg03</link> * <link linkend="_group__GA01_1a132aac1d76094cdc72e5b4b7db289c82">reg03</link> = (<link linkend="_group__GA01_1unionrda__reg03">rda_reg03</link> *)&amp;<link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link>[3]</para>
+</listitem>
+            <listitem><para><link linkend="_group__GA01_1unionrda__reg04">rda_reg04</link> * <link linkend="_group__GA01_1a62e2d8060258c3a4d3406831092d2072">reg04</link> = (<link linkend="_group__GA01_1unionrda__reg04">rda_reg04</link> *)&amp;<link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link>[4]</para>
+</listitem>
+            <listitem><para><link linkend="_group__GA01_1unionrda__reg05">rda_reg05</link> * <link linkend="_group__GA01_1a990456ae8b88efa66b0816010ee24244">reg05</link> = (<link linkend="_group__GA01_1unionrda__reg05">rda_reg05</link> *)&amp;<link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link>[5]</para>
+</listitem>
+            <listitem><para><link linkend="_group__GA01_1unionrda__reg06">rda_reg06</link> * <link linkend="_group__GA01_1af368d9ec82388831ddf4749f0a83a1b3">reg06</link> = (<link linkend="_group__GA01_1unionrda__reg06">rda_reg06</link> *)&amp;<link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link>[6]</para>
+</listitem>
+            <listitem><para><link linkend="_group__GA01_1unionrda__reg07">rda_reg07</link> * <link linkend="_group__GA01_1a35030e0df66225f165407b4848ec8921">reg07</link> = (<link linkend="_group__GA01_1unionrda__reg07">rda_reg07</link> *)&amp;<link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link>[7]</para>
+</listitem>
+            <listitem><para><link linkend="_group__GA01_1unionrda__reg08">rda_reg08</link> * <link linkend="_group__GA01_1a57b48edbf9ba4cef513cc45223c690d8">reg08</link> = (<link linkend="_group__GA01_1unionrda__reg08">rda_reg08</link> *)&amp;<link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link>[8]</para>
+</listitem>
+            <listitem><para><link linkend="_group__GA01_1unionrda__reg0a">rda_reg0a</link> * <link linkend="_group__GA01_1a249a8706a3b945522e2215e4eeea7407">reg0a</link> = (<link linkend="_group__GA01_1unionrda__reg0a">rda_reg0a</link> *)&amp;<link linkend="_group__GA01_1ae51bb0aaf958ee320da80866bb20ffb5">shadowStatusRegisters</link>[0]</para>
+</listitem>
+            <listitem><para><link linkend="_group__GA01_1unionrda__reg0b">rda_reg0b</link> * <link linkend="_group__GA01_1ab14d92c603d940e16e2f1fa6b179b74f">reg0b</link> = (<link linkend="_group__GA01_1unionrda__reg0b">rda_reg0b</link> *)&amp;<link linkend="_group__GA01_1ae51bb0aaf958ee320da80866bb20ffb5">shadowStatusRegisters</link>[1]</para>
+</listitem>
+            <listitem><para><link linkend="_group__GA01_1unionrda__reg0c">rda_reg0c</link> * <link linkend="_group__GA01_1a72a563279c17e5646a892ae77cfd8c1a">reg0c</link> = (<link linkend="_group__GA01_1unionrda__reg0c">rda_reg0c</link> *)&amp;<link linkend="_group__GA01_1ae51bb0aaf958ee320da80866bb20ffb5">shadowStatusRegisters</link>[2]</para>
+</listitem>
+            <listitem><para><link linkend="_group__GA01_1unionrda__reg0d">rda_reg0d</link> * <link linkend="_group__GA01_1a619559a0a083492f37527f5206a6c25d">reg0d</link> = (<link linkend="_group__GA01_1unionrda__reg0d">rda_reg0d</link> *)&amp;<link linkend="_group__GA01_1ae51bb0aaf958ee320da80866bb20ffb5">shadowStatusRegisters</link>[3]</para>
+</listitem>
+            <listitem><para><link linkend="_group__GA01_1unionrda__reg0e">rda_reg0e</link> * <link linkend="_group__GA01_1a61725075be18d3439886e1414a0ac119">reg0e</link> = (<link linkend="_group__GA01_1unionrda__reg0e">rda_reg0e</link> *)&amp;<link linkend="_group__GA01_1ae51bb0aaf958ee320da80866bb20ffb5">shadowStatusRegisters</link>[4]</para>
+</listitem>
+            <listitem><para><link linkend="_group__GA01_1unionrda__reg0f">rda_reg0f</link> * <link linkend="_group__GA01_1a1613897e42f69fadd07a6e0c713a4c6b">reg0f</link> = (<link linkend="_group__GA01_1unionrda__reg0f">rda_reg0f</link> *)&amp;<link linkend="_group__GA01_1ae51bb0aaf958ee320da80866bb20ffb5">shadowStatusRegisters</link>[5]</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_group__GA01_1acddb5bea9e4872e9aecf4dc9bd89a1e6">startBand</link> [4] = {8700, 7600, 7600, 6500}</para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_group__GA01_1aaede268d40e40776118adbc1a8400418">endBand</link> [4] = {10800, 9100, 10800, 7600}</para>
+
+<para>End FM band limit. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_group__GA01_1ad77c4ef4294d6de7b1711bac943ae97c">fmSpace</link> [4] = {10, 20, 5, 1}</para>
+</listitem>
+            <listitem><para>char <link linkend="_group__GA01_1af7eb4e812ca7b0883a3e9c7879a034d9">rds_buffer2A</link> [65]</para>
+
+<para>RDS Radio Text buffer - Program Information. </para>
+</listitem>
+            <listitem><para>char <link linkend="_group__GA01_1a81d7aaf8d628afb9cc268777fea95045">rds_buffer2B</link> [33]</para>
+
+<para>RDS Radio Text buffer - Station Informaation. </para>
+</listitem>
+            <listitem><para>char <link linkend="_group__GA01_1a01973fd833000d82609206bfbef62977">rds_buffer0A</link> [9]</para>
+
+<para>RDS Basic tuning and switching information (Type 0 groups) </para>
+</listitem>
+            <listitem><para>char <link linkend="_group__GA01_1aec9b51525f983cfd4b008c3c79b2b22c">rds_time</link> [20]</para>
+
+<para>RDS date time received information. </para>
+</listitem>
+        </itemizedlist>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_group__GA01_1ae51bb0aaf958ee320da80866bb20ffb5"/><section>
+    <title>shadowStatusRegisters</title>
+<indexterm><primary>shadowStatusRegisters</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>shadowStatusRegisters</secondary></indexterm>
+<para><computeroutput>uint16_t RDA5807::shadowStatusRegisters[6]<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>shadow status registers </para>
+</para>
+</section>
+<anchor xml:id="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d"/><section>
+    <title>shadowRegisters</title>
+<indexterm><primary>shadowRegisters</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>shadowRegisters</secondary></indexterm>
+<para><computeroutput>uint16_t RDA5807::shadowRegisters[9]<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>shadow configuration registers </para>
+</para>
+</section>
+<anchor xml:id="_group__GA01_1af9cbd65bd00bce76f8b362159cf9d589"/><section>
+    <title>reg00</title>
+<indexterm><primary>reg00</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>reg00</secondary></indexterm>
+<para><computeroutput><link linkend="_group__GA01_1unionrda__reg00">rda_reg00</link>* RDA5807::reg00 = (<link linkend="_group__GA01_1unionrda__reg00">rda_reg00</link> *)&amp;<link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link>[0]<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1a63267deb8311ff567df5ae6202ffa3fb"/><section>
+    <title>reg01</title>
+<indexterm><primary>reg01</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>reg01</secondary></indexterm>
+<para><computeroutput><link linkend="_group__GA01_1unionrda__reg01">rda_reg01</link>* RDA5807::reg01 = (<link linkend="_group__GA01_1unionrda__reg01">rda_reg01</link> *)&amp;<link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link>[1]<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1a68804842ce8d8c4304bc260b6a386e12"/><section>
+    <title>reg02</title>
+<indexterm><primary>reg02</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>reg02</secondary></indexterm>
+<para><computeroutput><link linkend="_group__GA01_1unionrda__reg02">rda_reg02</link>* RDA5807::reg02 = (<link linkend="_group__GA01_1unionrda__reg02">rda_reg02</link> *)&amp;<link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link>[2]<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1a132aac1d76094cdc72e5b4b7db289c82"/><section>
+    <title>reg03</title>
+<indexterm><primary>reg03</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>reg03</secondary></indexterm>
+<para><computeroutput><link linkend="_group__GA01_1unionrda__reg03">rda_reg03</link>* RDA5807::reg03 = (<link linkend="_group__GA01_1unionrda__reg03">rda_reg03</link> *)&amp;<link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link>[3]<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1a62e2d8060258c3a4d3406831092d2072"/><section>
+    <title>reg04</title>
+<indexterm><primary>reg04</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>reg04</secondary></indexterm>
+<para><computeroutput><link linkend="_group__GA01_1unionrda__reg04">rda_reg04</link>* RDA5807::reg04 = (<link linkend="_group__GA01_1unionrda__reg04">rda_reg04</link> *)&amp;<link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link>[4]<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1a990456ae8b88efa66b0816010ee24244"/><section>
+    <title>reg05</title>
+<indexterm><primary>reg05</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>reg05</secondary></indexterm>
+<para><computeroutput><link linkend="_group__GA01_1unionrda__reg05">rda_reg05</link>* RDA5807::reg05 = (<link linkend="_group__GA01_1unionrda__reg05">rda_reg05</link> *)&amp;<link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link>[5]<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1af368d9ec82388831ddf4749f0a83a1b3"/><section>
+    <title>reg06</title>
+<indexterm><primary>reg06</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>reg06</secondary></indexterm>
+<para><computeroutput><link linkend="_group__GA01_1unionrda__reg06">rda_reg06</link>* RDA5807::reg06 = (<link linkend="_group__GA01_1unionrda__reg06">rda_reg06</link> *)&amp;<link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link>[6]<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1a35030e0df66225f165407b4848ec8921"/><section>
+    <title>reg07</title>
+<indexterm><primary>reg07</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>reg07</secondary></indexterm>
+<para><computeroutput><link linkend="_group__GA01_1unionrda__reg07">rda_reg07</link>* RDA5807::reg07 = (<link linkend="_group__GA01_1unionrda__reg07">rda_reg07</link> *)&amp;<link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link>[7]<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1a57b48edbf9ba4cef513cc45223c690d8"/><section>
+    <title>reg08</title>
+<indexterm><primary>reg08</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>reg08</secondary></indexterm>
+<para><computeroutput><link linkend="_group__GA01_1unionrda__reg08">rda_reg08</link>* RDA5807::reg08 = (<link linkend="_group__GA01_1unionrda__reg08">rda_reg08</link> *)&amp;<link linkend="_group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d">shadowRegisters</link>[8]<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1a249a8706a3b945522e2215e4eeea7407"/><section>
+    <title>reg0a</title>
+<indexterm><primary>reg0a</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>reg0a</secondary></indexterm>
+<para><computeroutput><link linkend="_group__GA01_1unionrda__reg0a">rda_reg0a</link>* RDA5807::reg0a = (<link linkend="_group__GA01_1unionrda__reg0a">rda_reg0a</link> *)&amp;<link linkend="_group__GA01_1ae51bb0aaf958ee320da80866bb20ffb5">shadowStatusRegisters</link>[0]<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1ab14d92c603d940e16e2f1fa6b179b74f"/><section>
+    <title>reg0b</title>
+<indexterm><primary>reg0b</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>reg0b</secondary></indexterm>
+<para><computeroutput><link linkend="_group__GA01_1unionrda__reg0b">rda_reg0b</link>* RDA5807::reg0b = (<link linkend="_group__GA01_1unionrda__reg0b">rda_reg0b</link> *)&amp;<link linkend="_group__GA01_1ae51bb0aaf958ee320da80866bb20ffb5">shadowStatusRegisters</link>[1]<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1a72a563279c17e5646a892ae77cfd8c1a"/><section>
+    <title>reg0c</title>
+<indexterm><primary>reg0c</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>reg0c</secondary></indexterm>
+<para><computeroutput><link linkend="_group__GA01_1unionrda__reg0c">rda_reg0c</link>* RDA5807::reg0c = (<link linkend="_group__GA01_1unionrda__reg0c">rda_reg0c</link> *)&amp;<link linkend="_group__GA01_1ae51bb0aaf958ee320da80866bb20ffb5">shadowStatusRegisters</link>[2]<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1a619559a0a083492f37527f5206a6c25d"/><section>
+    <title>reg0d</title>
+<indexterm><primary>reg0d</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>reg0d</secondary></indexterm>
+<para><computeroutput><link linkend="_group__GA01_1unionrda__reg0d">rda_reg0d</link>* RDA5807::reg0d = (<link linkend="_group__GA01_1unionrda__reg0d">rda_reg0d</link> *)&amp;<link linkend="_group__GA01_1ae51bb0aaf958ee320da80866bb20ffb5">shadowStatusRegisters</link>[3]<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1a61725075be18d3439886e1414a0ac119"/><section>
+    <title>reg0e</title>
+<indexterm><primary>reg0e</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>reg0e</secondary></indexterm>
+<para><computeroutput><link linkend="_group__GA01_1unionrda__reg0e">rda_reg0e</link>* RDA5807::reg0e = (<link linkend="_group__GA01_1unionrda__reg0e">rda_reg0e</link> *)&amp;<link linkend="_group__GA01_1ae51bb0aaf958ee320da80866bb20ffb5">shadowStatusRegisters</link>[4]<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1a1613897e42f69fadd07a6e0c713a4c6b"/><section>
+    <title>reg0f</title>
+<indexterm><primary>reg0f</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>reg0f</secondary></indexterm>
+<para><computeroutput><link linkend="_group__GA01_1unionrda__reg0f">rda_reg0f</link>* RDA5807::reg0f = (<link linkend="_group__GA01_1unionrda__reg0f">rda_reg0f</link> *)&amp;<link linkend="_group__GA01_1ae51bb0aaf958ee320da80866bb20ffb5">shadowStatusRegisters</link>[5]<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1acddb5bea9e4872e9aecf4dc9bd89a1e6"/><section>
+    <title>startBand</title>
+<indexterm><primary>startBand</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>startBand</secondary></indexterm>
+<para><computeroutput>uint16_t RDA5807::startBand[4] = {8700, 7600, 7600, 6500}<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1aaede268d40e40776118adbc1a8400418"/><section>
+    <title>endBand</title>
+<indexterm><primary>endBand</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>endBand</secondary></indexterm>
+<para><computeroutput>uint16_t RDA5807::endBand[4] = {10800, 9100, 10800, 7600}<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>End FM band limit. </para>
+</para>
+</section>
+<anchor xml:id="_group__GA01_1ad77c4ef4294d6de7b1711bac943ae97c"/><section>
+    <title>fmSpace</title>
+<indexterm><primary>fmSpace</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>fmSpace</secondary></indexterm>
+<para><computeroutput>uint16_t RDA5807::fmSpace[4] = {10, 20, 5, 1}<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1af7eb4e812ca7b0883a3e9c7879a034d9"/><section>
+    <title>rds_buffer2A</title>
+<indexterm><primary>rds_buffer2A</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>rds_buffer2A</secondary></indexterm>
+<para><computeroutput>char RDA5807::rds_buffer2A[65]<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>RDS Radio Text buffer - Program Information. </para>
+</para>
+<para>
+Referenced by <link linkend="_l00762">getRdsText()</link>, and <link linkend="_l00817">getRdsText2A()</link>.</para>
+</section>
+<anchor xml:id="_group__GA01_1a81d7aaf8d628afb9cc268777fea95045"/><section>
+    <title>rds_buffer2B</title>
+<indexterm><primary>rds_buffer2B</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>rds_buffer2B</secondary></indexterm>
+<para><computeroutput>char RDA5807::rds_buffer2B[33]<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>RDS Radio Text buffer - Station Informaation. </para>
+</para>
+<para>
+Referenced by <link linkend="_l00846">getRdsText2B()</link>.</para>
+</section>
+<anchor xml:id="_group__GA01_1a01973fd833000d82609206bfbef62977"/><section>
+    <title>rds_buffer0A</title>
+<indexterm><primary>rds_buffer0A</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>rds_buffer0A</secondary></indexterm>
+<para><computeroutput>char RDA5807::rds_buffer0A[9]<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>RDS Basic tuning and switching information (Type 0 groups) </para>
+</para>
+<para>
+Referenced by <link linkend="_l00788">getRdsText0A()</link>.</para>
+</section>
+<anchor xml:id="_group__GA01_1aec9b51525f983cfd4b008c3c79b2b22c"/><section>
+    <title>rds_time</title>
+<indexterm><primary>rds_time</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>rds_time</secondary></indexterm>
+<para><computeroutput>char RDA5807::rds_time[20]<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>RDS date time received information. </para>
+</para>
+<para>
+Referenced by <link linkend="_l00872">getRdsTime()</link>.</para>
+</section>
+<anchor xml:id="_group__GA01_1a18c3e5a103b683af7c46d8b9a3d47518"/><section>
+    <title>deviceAddressDirectAccess</title>
+<indexterm><primary>deviceAddressDirectAccess</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>deviceAddressDirectAccess</secondary></indexterm>
+<para><computeroutput>int RDA5807::deviceAddressDirectAccess = <link linkend="_RDA5807_8h_1a391d926a92f7cd486866d16b53bf9bc8">I2C_ADDR_DIRECT_ACCESS</link><computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Referenced by <link linkend="_l00629">setI2CBusAddrs()</link>.</para>
+</section>
+<anchor xml:id="_group__GA01_1a81c00f45187f93be0698ef8c5bd80619"/><section>
+    <title>deviceAddressFullAccess</title>
+<indexterm><primary>deviceAddressFullAccess</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>deviceAddressFullAccess</secondary></indexterm>
+<para><computeroutput>int RDA5807::deviceAddressFullAccess = <link linkend="_RDA5807_8h_1acae259a7c57b67ef6c890c1c178dce00">I2C_ADDR_FULL_ACCESS</link><computeroutput>[protected]</computeroutput></computeroutput></para><para>
+Referenced by <link linkend="_l00629">setI2CBusAddrs()</link>.</para>
+</section>
+<anchor xml:id="_group__GA01_1a55c07acd68120f74f787999364fc92c9"/><section>
+    <title>resetPin</title>
+<indexterm><primary>resetPin</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>resetPin</secondary></indexterm>
+<para><computeroutput>int RDA5807::resetPin<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1a14040afdfd6c6cf486278c4e75c63927"/><section>
+    <title>currentFrequency</title>
+<indexterm><primary>currentFrequency</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>currentFrequency</secondary></indexterm>
+<para><computeroutput>uint16_t RDA5807::currentFrequency<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1aaf56888de5a078b5e5090a0b0dd6ae61"/><section>
+    <title>currentFMBand</title>
+<indexterm><primary>currentFMBand</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>currentFMBand</secondary></indexterm>
+<para><computeroutput>uint8_t RDA5807::currentFMBand = 0<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1ae175c8602c76c5512c61b836de086620"/><section>
+    <title>currentFMSpace</title>
+<indexterm><primary>currentFMSpace</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>currentFMSpace</secondary></indexterm>
+<para><computeroutput>uint8_t RDA5807::currentFMSpace = 0<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1a33272a8f152f2307adc012072b8e0582"/><section>
+    <title>currentVolume</title>
+<indexterm><primary>currentVolume</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>currentVolume</secondary></indexterm>
+<para><computeroutput>uint8_t RDA5807::currentVolume = 0<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1a022d3357b6bddf3477b3f26f2d78a75c"/><section>
+    <title>gpio1Control</title>
+<indexterm><primary>gpio1Control</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>gpio1Control</secondary></indexterm>
+<para><computeroutput>int RDA5807::gpio1Control = -1<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Can be used to add control to the system via GPIO1 pin. </para>
+</para>
+</section>
+<anchor xml:id="_group__GA01_1ab6a9fc2bd5ca266079c3e7796b5025af"/><section>
+    <title>gpio2Control</title>
+<indexterm><primary>gpio2Control</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>gpio2Control</secondary></indexterm>
+<para><computeroutput>int RDA5807::gpio2Control = -1<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Can be used to add control to the system via GPIO2 pin. </para>
+</para>
+</section>
+<anchor xml:id="_group__GA01_1ae6f2d5f535edc14951e75a03e46ebc01"/><section>
+    <title>gpio3Control</title>
+<indexterm><primary>gpio3Control</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>gpio3Control</secondary></indexterm>
+<para><computeroutput>int RDA5807::gpio3Control = -1<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+
+<para>Can be used to add control to the system via GPIO3 pin. </para>
+</para>
+</section>
+<anchor xml:id="_group__GA01_1a70104fe05d727c5047975612599c9dca"/><section>
+    <title>clockType</title>
+<indexterm><primary>clockType</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>clockType</secondary></indexterm>
+<para><computeroutput>uint8_t RDA5807::clockType = <link linkend="_RDA5807_8h_1aaaa8a7748321c8739d938babeb67d8e9">CLOCK_32K</link><computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1a4c8780f2d28725d66850f9e3be14745a"/><section>
+    <title>oscillatorType</title>
+<indexterm><primary>oscillatorType</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>oscillatorType</secondary></indexterm>
+<para><computeroutput>uint8_t RDA5807::oscillatorType = <link linkend="_RDA5807_8h_1ad0763fd256db4ec1ecc62f84bbff56e2">OSCILLATOR_TYPE_CRYSTAL</link><computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_group__GA01_1a8b9e02f7c7121cf57fc0006f4ff7162a"/><section>
+    <title>maxDelayAftarCrystalOn</title>
+<indexterm><primary>maxDelayAftarCrystalOn</primary><secondary>RDA5807</secondary></indexterm>
+<indexterm><primary>RDA5807</primary><secondary>maxDelayAftarCrystalOn</secondary></indexterm>
+<para><computeroutput>uint16_t RDA5807::maxDelayAftarCrystalOn = <link linkend="_RDA5807_8h_1afb81dd661d531fa5c5422549fab7588f">MAX_DELAY_AFTER_OSCILLATOR</link><computeroutput>[protected]</computeroutput></computeroutput></para><indexterm><primary>rda_reg00.refined</primary></indexterm>
+<section>
+<title>struct rda_reg00.refined</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1ab1408e92ecfc268499c1ff228bf815b2"/>uint8_t</entry><entry>LOW_CHIP_ID: 8</entry><entry>
+<para>Chip ifdef. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1ae9ab18e96e3a6f4d4f9ade0ea0501da4"/>uint8_t</entry><entry>HIGH_CHIP_ID: 8</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg01.refined</primary></indexterm>
+</section>
+<section>
+<title>struct rda_reg01.refined</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a51ab88497cad20027df936afa223b23d"/>uint8_t</entry><entry>lowByte</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a7b99e4a5dc723242645ede8c604610df"/>uint8_t</entry><entry>highByte</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg02.refined</primary></indexterm>
+</section>
+<section>
+<title>struct rda_reg02.refined</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1ab332708e4304e13c9b424e7465254954"/>uint8_t</entry><entry>ENABLE: 1</entry><entry>
+<para>Power Up Enable; 0 = Disabled; 1 = Enabled. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1afea1117fa1ab6be6c3b43d3df783cce0"/>uint8_t</entry><entry>SOFT_RESET: 1</entry><entry>
+<para>Soft reset; If 0, not reset; If 1, reset. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a60923301c913b155d020368e74200657"/>uint8_t</entry><entry>NEW_METHOD: 1</entry><entry>
+<para>New Demodulate Method Enable, can improve 0 the receive sensitivity about 1dB. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a1ede90c00f1a2c926163d5203ec3b75e"/>uint8_t</entry><entry>RDS_EN: 1</entry><entry>
+<para>RDS/RBDS enable; If 1, rds/rbds enable. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a7f2173081ed2422920d15baa1919e01b"/>uint8_t</entry><entry>CLK_MODE: 3</entry><entry>
+<para>See table above. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a3afc70c9a6693899b152ca51a42f07b7"/>uint8_t</entry><entry>SKMODE: 1</entry><entry>
+<para>Seek Mode; 0 = wrap at the upper or lower band limit and continue seeking; 1 = stop seeking at the upper or lower band limit. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a71fa98cecf9e896e77d11325dbe19dc6"/>uint8_t</entry><entry>SEEK: 1</entry><entry>
+<para>Seek; 0 = Disable stop seek; 1 = Enable;. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1aed8a1fd68dec9364930b51d020ba07d6"/>uint8_t</entry><entry>SEEKUP: 1</entry><entry>
+<para>Seek Up; 0 = Seek down; 1 = Seek up. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1ad1ec79cd81992e6bd3131ce076f78679"/>uint8_t</entry><entry>RCLK_DIRECT_IN: 1</entry><entry>
+<para>RCLK clock use the directly input mode. 1 = enable. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a253053953b1971ea97f782cc746e5e55"/>uint8_t</entry><entry>NON_CALIBRATE: 1</entry><entry>
+<para>0=RCLK clock is always supply; 1=RCLK clock is not always supply when FM work </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1ae1618eb6a84ac61faefe0a87d5649689"/>uint8_t</entry><entry>BASS: 1</entry><entry>
+<para>Bass Boost; 0 = Disabled; 1 = Bass boost enabled. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1af5f75f1b95652443e4398974b82c3f7c"/>uint8_t</entry><entry>MONO: 1</entry><entry>
+<para>Mono Select; 0 = Stereo; 1 = Force mono. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1af7dd74521218c605e3553fdeb618e6eb"/>uint8_t</entry><entry>DMUTE: 1</entry><entry>
+<para>Mute Disable; 0 = Mute; 1 = Normal operation. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1adec239f2597576f6182f387472c2272b"/>uint8_t</entry><entry>DHIZ: 1</entry><entry>
+<para>Audio Output High-Z Disable; 0 = High impedance; 1 = Normal operation. </para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg03.refined</primary></indexterm>
+</section>
+<section>
+<title>struct rda_reg03.refined</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a6506ae39fdca9845e3a6de3865183e57"/>uint16_t</entry><entry>SPACE: 2</entry><entry>
+<para>See Channel space table above. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1aa8a5bbeedca093b94b7f0d3f185b98f7"/>uint16_t</entry><entry>BAND: 2</entry><entry>
+<para>Seet band table above. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a05069c0e15b79590b44ff985487037b7"/>uint16_t</entry><entry>TUNE: 1</entry><entry>
+<para>Tune; 0 = Disable; 1 = Enable. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a799f81e68cf18ca017f69d9405267e41"/>uint16_t</entry><entry>DIRECT_MODE: 1</entry><entry>
+<para>Directly Control Mode, Only used when test. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1adf21771052967392286eeab054755423"/>uint16_t</entry><entry>CHAN: 10</entry><entry>
+<para>Channel Select. </para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg04.refined</primary></indexterm>
+</section>
+<section>
+<title>struct rda_reg04.refined</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a0ed149a12d2a87f1496cdc90c23bfb1c"/>uint8_t</entry><entry>GPIO1: 2</entry><entry>
+<para>General Purpose I/O 1. when gpio_sel=01; 00 = High impedance; 01 = Reserved; 10 = Low; 11 = High. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1ac8715973930ed16be4d52340ef11181b"/>uint8_t</entry><entry>GPIO2: 2</entry><entry>
+<para>General Purpose I/O 2. when gpio_sel=01; 00 = High impedance; 01 = Reserved; 10 = Low; 11 = High. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1af2d579fe9d83fc7fe6f55c570c02af38"/>uint8_t</entry><entry>GPIO3: 2</entry><entry>
+<para>General Purpose I/O 1. when gpio_sel=01; 00 = High impedance; 01 = Mono/Stereo indicator (ST); 10 = Low; 11 = High. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1aff7333bc2a0234725b53e4e4207e1915"/>uint8_t</entry><entry>I2S_ENABLE: 1</entry><entry>
+<para>I2S enable; 0 = disabled; 1 = enabled. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a1742cf1b14a750532e645aab85933d3c"/>uint8_t</entry><entry>RSVD1: 1</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1afddec52dd7b530641dc1ae72d27a429f"/>uint8_t</entry><entry>AFCD: 1</entry><entry>
+<para>AFC disable; If 0, afc work; If 1, afc disabled. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a7e06d843d0840990717eb42b3b7e554c"/>uint8_t</entry><entry>SOFTMUTE_EN: 1</entry><entry>
+<para>If 1, softmute enable. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a28055088ef40b9bdc9378b3809a21199"/>uint8_t</entry><entry>RDS_FIFO_CLR: 1</entry><entry>
+<para>1 = clear RDS fifo </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a3a52f3c22ed6fcde5bf696a6c02c9e73"/>uint8_t</entry><entry>DE: 1</entry><entry>
+<para>De-emphasis; 0 = 75 μs; 1 = 50 μs. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a39f20b8df74171b4ee31bab0b0680310"/>uint8_t</entry><entry>RDS_FIFO_EN: 1</entry><entry>
+<para>1 = RDS fifo mode enable. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a9acb1f82a2515f84bce0747ced06fed8"/>uint8_t</entry><entry>RBDS: 1</entry><entry>
+<para>1 = RBDS mode enable; 0 = RDS mode only </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1ab09bf67829bc4d5914945a87be624698"/>uint8_t</entry><entry>STCIEN: 1</entry><entry>
+<para>Seek/Tune Complete Interrupt Enable; 0 = Disable Interrupt; 1 = Enable Interrupt;. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a8d50eb6e30711e4eb7625e651ed1a11d"/>uint8_t</entry><entry>RSVD2: 1</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg05.refined</primary></indexterm>
+</section>
+<section>
+<title>struct rda_reg05.refined</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a730956af87021c351084317bbc63eea6"/>uint8_t</entry><entry>VOLUME: 4</entry><entry>
+<para>DAC Gain Control Bits (Volume); 0000 = min volume; 1111 = max volume. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a160505dce0d227e0f21232f52fef890f"/>uint8_t</entry><entry>LNA_ICSEL_BIT: 2</entry><entry>
+<para>Lna working current bit: 00=1.8mA; 01=2.1mA; 10=2.5mA; 11=3.0mA. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a11b8f14c44524bb37f0a89d4b5559a94"/>uint8_t</entry><entry>LNA_PORT_SEL: 2</entry><entry>
+<para>LNA input port selection bit: 00: no input; 01: LNAN; 10: LNAP; 11: dual port input. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a991f75a1bf4d56192acecdf31ad3db47"/>uint8_t</entry><entry>SEEKTH: 4</entry><entry>
+<para>Seek SNR Threshold value. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a8d50eb6e30711e4eb7625e651ed1a11d"/>uint8_t</entry><entry>RSVD2: 1</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1ac34168e070146678d72546abc1c8b236"/>uint8_t</entry><entry>SEEK_MODE: 2</entry><entry>
+<para>Default value is 00; When = 10, will add the RSSI seek mode. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a54e8dc27cd18af681fec547952404531"/>uint8_t</entry><entry>INT_MODE: 1</entry><entry>
+<para>If 0, generate 5ms interrupt; If 1, interrupt last until read reg0CH action occurs. </para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg06.refined</primary></indexterm>
+</section>
+<section>
+<title>struct rda_reg06.refined</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a575d0f8dbbda12d743c6cbd80436d8d2"/>uint8_t</entry><entry>R_DELY: 1</entry><entry>
+<para>If 1, R channel data delay 1T. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a4ce1c95146a332f39eb691cbc95ccbb2"/>uint8_t</entry><entry>L_DELY: 1</entry><entry>
+<para>If 1, L channel data delay 1T. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a3f5cd3a22eb13c67f7d20adcd15f1ad1"/>uint8_t</entry><entry>SCLK_O_EDGE: 1</entry><entry>
+<para>If 1, invert sclk output when as master. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a90f7e01cd9d2f78095b8d23a9dc1b18d"/>uint8_t</entry><entry>SW_O_EDGE: 1</entry><entry>
+<para>If 1, invert ws output when as master. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1afbff3a29529e5e3276e2bebab1f15a3f"/>uint8_t</entry><entry>I2S_SW_CNT: 4</entry><entry>
+<para>Only valid in master mode. See table above. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1ab5e655121ad945deced0a44ac51ad7c9"/>uint8_t</entry><entry>WS_I_EDGE: 1</entry><entry>
+<para>If 0, use normal ws internally; If 1, inverte ws internally. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1ac20607bab830e003f8aef1927f30da81"/>uint8_t</entry><entry>DATA_SIGNED: 1</entry><entry>
+<para>If 0, I2S output unsigned 16-bit audio data. If 1, I2S output signed 16-bit audio data. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1ab0a4aea0751fa685c79ed52660ad78fb"/>uint8_t</entry><entry>SCLK_I_EDGE: 1</entry><entry>
+<para>If 0, use normal sclk internally;If 1, inverte sclk internally. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a8f48ecc038b447fc3a713924344e8094"/>uint8_t</entry><entry>WS_LR: 1</entry><entry>
+<para>Ws relation to l/r channel; If 0, ws=0 -&gt;r, ws=1 -&gt;l; If 1, ws=0 -&gt;l, ws=1 -&gt;r. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a5b44678fa097828236f91b766d1bca94"/>uint8_t</entry><entry>SLAVE_MASTER: 1</entry><entry>
+<para>I2S slave or master; 1 = slave; 0 = master. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a6e2ac78f66cfafa9ecf1b7e62f037b43"/>uint8_t</entry><entry>OPEN_MODE: 2</entry><entry>
+<para>Open reserved register mode; 11=open behind registers writing function others: only open behind registers reading function. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1ae57526e5b56fb9372080178384f4c872"/>uint8_t</entry><entry>RSVD: 1</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg07.refined</primary></indexterm>
+</section>
+<section>
+<title>struct rda_reg07.refined</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1aad08cffd0c185c95ee8611afce73ec18"/>uint8_t</entry><entry>FREQ_MODE: 1</entry><entry>
+<para>If 1, then freq setting changed. Freq = 76000(or 87000) kHz + freq_direct (08H) kHz. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a6183fe98d5a6c9859da1f4d1bd75af33"/>uint8_t</entry><entry>SOFTBLEND_EN: 1</entry><entry>
+<para>If 1, Softblend enable. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a733877b31393b0f040b3a649004e8e5d"/>uint8_t</entry><entry>SEEK_TH_OLD: 6</entry><entry>
+<para>Seek threshold for old seek mode, Valid when Seek_Mode=001. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a1742cf1b14a750532e645aab85933d3c"/>uint8_t</entry><entry>RSVD1: 1</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a07e1e84799a0bd2c979bff75111e85d5"/>uint8_t</entry><entry>MODE_50_60: 1</entry><entry>
+<para>1 = 65~76 MHz; 0 = 50~76MHz </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a76b1c2c14aefb604449d3ff3f0ae80c4"/>uint8_t</entry><entry>TH_SOFRBLEND: 5</entry><entry>
+<para>Threshold for noise soft blend setting, unit 2dB (default 0b10000). </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a8d50eb6e30711e4eb7625e651ed1a11d"/>uint8_t</entry><entry>RSVD2: 1</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg08.refined</primary></indexterm>
+</section>
+<section>
+<title>struct rda_reg08.refined</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a51ab88497cad20027df936afa223b23d"/>uint8_t</entry><entry>lowByte</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a7b99e4a5dc723242645ede8c604610df"/>uint8_t</entry><entry>highByte</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg0a.refined</primary></indexterm>
+</section>
+<section>
+<title>struct rda_reg0a.refined</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1abe63df93c3d4af07359a55d5902f0f7a"/>uint16_t</entry><entry>READCHAN: 10</entry><entry>
+<para>See Channel table . See table above. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1aec8e57d71f07e31203035548b79d03c8"/>uint16_t</entry><entry>ST: 1</entry><entry>
+<para>Stereo Indicator; 0 = Mono; 1 = Stereo. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a3c723083c9b52fde34d2c4beb725942f"/>uint16_t</entry><entry>BLK_E: 1</entry><entry>
+<para>When RDS enable: 1 = Block E has been found; 0 = no Block E has been found. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a3928b702beefaf125960c8f1f7fceac7"/>uint16_t</entry><entry>RDSS: 1</entry><entry>
+<para>RDS Synchronization; 0 = RDS decoder not synchronized(default); 1 = RDS decoder synchronized; Available only in RDS Verbose mode. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a94a990462684a2fbb5dfc7fab1c8975d"/>uint16_t</entry><entry>SF: 1</entry><entry>
+<para>Seek Fail. 0 = Seek successful; 1 = Seek failure;. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a3a247d1d806ebfcd27b09041e3186b4e"/>uint16_t</entry><entry>STC: 1</entry><entry>
+<para>Seek/Tune Complete. 0 = Not complete; 1 = Complete;. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1accd030164321bb71a36d491b2e6cd424"/>uint16_t</entry><entry>RDSR: 1</entry><entry>
+<para>RDS ready; 0 = No RDS/RBDS group ready(default); 1 = New RDS/RBDS group ready. </para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg0b.refined</primary></indexterm>
+</section>
+<section>
+<title>struct rda_reg0b.refined</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1abf73094dcea591929f5c4ffe912d6750"/>uint8_t</entry><entry>BLERB: 2</entry><entry>
+<para>Block Errors Level of RDS_DATA_1. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a5cf5d2b056255cb2235ce6c52c0e9795"/>uint8_t</entry><entry>BLERA: 2</entry><entry>
+<para>Block Errors Level of RDS_DATA_0. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a297000d9caac4f06fe67d8972202b2f8"/>uint8_t</entry><entry>ABCD_E: 1</entry><entry>
+<para>1 = the block id of register 0cH,0dH,0eH,0fH is E; 0 = the block id of register 0cH, 0dH, 0eH,0fH is A, B, C, D </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a1742cf1b14a750532e645aab85933d3c"/>uint8_t</entry><entry>RSVD1: 2</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a7b86ad4e3ff3b175ed1b73968c43140f"/>uint8_t</entry><entry>FM_READY: 1</entry><entry>
+<para>1=ready; 0=not ready. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1aa792520704f786ade70d6a06b6b8ba34"/>uint8_t</entry><entry>FM_TRUE: 1</entry><entry>
+<para>1 = the current channel is a station; 0 = the current channel is not a station. </para>
+</entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a6833f5d3374c1679bea428b50dbad9cc"/>uint8_t</entry><entry>RSSI: 7</entry><entry>
+<para>RSSI; 000000 = min; 111111 = max; RSSI scale is logarithmic. </para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg0c.refined</primary></indexterm>
+</section>
+<section>
+<title>struct rda_reg0c.refined</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a51ab88497cad20027df936afa223b23d"/>uint8_t</entry><entry>lowByte</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a7b99e4a5dc723242645ede8c604610df"/>uint8_t</entry><entry>highByte</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg0d.refined</primary></indexterm>
+</section>
+<section>
+<title>struct rda_reg0d.refined</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a51ab88497cad20027df936afa223b23d"/>uint8_t</entry><entry>lowByte</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a7b99e4a5dc723242645ede8c604610df"/>uint8_t</entry><entry>highByte</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg0e.refined</primary></indexterm>
+</section>
+<section>
+<title>struct rda_reg0e.refined</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a51ab88497cad20027df936afa223b23d"/>uint8_t</entry><entry>lowByte</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a7b99e4a5dc723242645ede8c604610df"/>uint8_t</entry><entry>highByte</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rda_reg0f.refined</primary></indexterm>
+</section>
+<section>
+<title>struct rda_reg0f.refined</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a51ab88497cad20027df936afa223b23d"/>uint8_t</entry><entry>lowByte</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a7b99e4a5dc723242645ede8c604610df"/>uint8_t</entry><entry>highByte</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rds_blockb.group0</primary></indexterm>
+</section>
+<section>
+<title>struct rds_blockb.group0</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a884d9804999fc47a3c2694e49ad2536a"/>uint16_t</entry><entry>address: 2</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1aa1b1c0cd777edd2e5cfcaf8e2e7dcab8"/>uint16_t</entry><entry>DI: 1</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a7a663caea1b722a63dc2868158ed584d"/>uint16_t</entry><entry>MS: 1</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a890a10788493e3d572586e991cd43543"/>uint16_t</entry><entry>TA: 1</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a264bd2c2ca8c895803767b0d39ff4a09"/>uint16_t</entry><entry>programType: 5</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a59e69d63ce38754ea53c4461b5cba1e2"/>uint16_t</entry><entry>trafficProgramCode: 1</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a20583dcf173525a78f726ef45329c5ae"/>uint16_t</entry><entry>versionCode: 1</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a19223bd3731a4215ead3ba6a1eb8bbe8"/>uint16_t</entry><entry>groupType: 4</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rds_blockb.group2</primary></indexterm>
+</section>
+<section>
+<title>struct rds_blockb.group2</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a884d9804999fc47a3c2694e49ad2536a"/>uint16_t</entry><entry>address: 4</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a652bfdc159637b708ac6e6f92d7650bc"/>uint16_t</entry><entry>textABFlag: 1</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a264bd2c2ca8c895803767b0d39ff4a09"/>uint16_t</entry><entry>programType: 5</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a59e69d63ce38754ea53c4461b5cba1e2"/>uint16_t</entry><entry>trafficProgramCode: 1</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a20583dcf173525a78f726ef45329c5ae"/>uint16_t</entry><entry>versionCode: 1</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a19223bd3731a4215ead3ba6a1eb8bbe8"/>uint16_t</entry><entry>groupType: 4</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rds_blockb.refined</primary></indexterm>
+</section>
+<section>
+<title>struct rds_blockb.refined</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a9a0364b9e99bb480dd25e1f0284c8555"/>uint16_t</entry><entry>content: 4</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a652bfdc159637b708ac6e6f92d7650bc"/>uint16_t</entry><entry>textABFlag: 1</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a264bd2c2ca8c895803767b0d39ff4a09"/>uint16_t</entry><entry>programType: 5</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a59e69d63ce38754ea53c4461b5cba1e2"/>uint16_t</entry><entry>trafficProgramCode: 1</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a20583dcf173525a78f726ef45329c5ae"/>uint16_t</entry><entry>versionCode: 1</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a19223bd3731a4215ead3ba6a1eb8bbe8"/>uint16_t</entry><entry>groupType: 4</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>rds_date_time.refined</primary></indexterm>
+</section>
+<section>
+<title>struct rds_date_time.refined</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a7a86c157ee9713c34fbd7a1ee40f0c5a"/>uint8_t</entry><entry>offset: 5</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a5ba6e404c489ff4f757e7c77cb9fa310"/>uint8_t</entry><entry>offset_sense: 1</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a756bdae430708e155654a844c2bcc33b"/>uint8_t</entry><entry>minute1: 2</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a57b42af48e9b3407c002d157d89f50ad"/>uint8_t</entry><entry>minute2: 4</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a0351524e66b386b6638dd47c0d00de65"/>uint8_t</entry><entry>hour1: 4</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a38034b153ffba397eebfcd07b4a50414"/>uint8_t</entry><entry>hour2: 1</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a7f7685b39180278dd0fa69f523c7bd24"/>uint32_t</entry><entry>mjd: 17</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+<indexterm><primary>word16_to_bytes.refined</primary></indexterm>
+</section>
+<section>
+<title>struct word16_to_bytes.refined</title>
+<table frame="all">
+<title>Class Members</title>
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+      <colspec colname='c3'/>
+<tbody>
+<row><entry><anchor xml:id="_group__GA01_1a51ab88497cad20027df936afa223b23d"/>uint8_t</entry><entry>lowByte</entry><entry></entry></row>
+<row><entry><anchor xml:id="_group__GA01_1a7b99e4a5dc723242645ede8c604610df"/>uint8_t</entry><entry>highByte</entry><entry></entry></row>
+    </tbody>
+    </tgroup>
+</table>
+</section>
+</section>
+</section>
+</section>
+</section>

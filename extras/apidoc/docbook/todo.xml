@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_todo" xml:lang="en-US">
+
+<para><variablelist>
+<varlistentry><term>Module <link linkend="_group__GA04">GA04</link>  </term>
+<listitem>
+<para><anchor xml:id="_todo_1_todo000003"/>Need optimizing the method to get the RDS informastion - getStatusRegisters should be called just once at a cicle.  </para>
+</listitem></varlistentry>
+<varlistentry><term>Member <link linkend="_group__GA04_1ga5a26789f1910a5b2098919dbd50e6a3c">RDA5807::getRdsText0A</link>  (void)</term>
+<listitem>
+<para><anchor xml:id="_todo_1_todo000004"/>RDS Dynamic PS or Scrolling PS support  </para>
+</listitem></varlistentry>
+<varlistentry><term>Member <link linkend="_group__GA04_1gaef398d848e7378ec4897965b8e1b4441">RDA5807::getRdsTime</link>  ()</term>
+<listitem>
+<para><anchor xml:id="_todo_1_todo000005"/>Need to check. It is working on SI4735 and Si4703. Why not here?  </para>
+</listitem></varlistentry>
+<varlistentry><term>Member <link linkend="_group__GA03_1ga76f6c3400b038aef15ba7318592e1dd0">RDA5807::setSpace</link>  (uint8_t space=0)</term>
+<listitem>
+<para><anchor xml:id="_todo_1_todo000001"/>make the space 01 (200kHz) work.  </para>
+</listitem></varlistentry>
+<varlistentry><term>Member <link linkend="_group__GA03_1ga8bbf57aaeb92f226179579efa61cc846">RDA5807::setStep</link>  (uint8_t step=100)</term>
+<listitem>
+<para><anchor xml:id="_todo_1_todo000002"/>Make the step 200kHz work well </para>
+</listitem></varlistentry>
+</variablelist>
+</para>
+</section>

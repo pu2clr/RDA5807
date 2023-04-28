@@ -1,0 +1,350 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__GA07" xml:lang="en-US">
+<title>Audio Functions</title>
+<indexterm><primary>Audio Functions</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>bool <link linkend="_group__GA07_1ga428ddd720c58c17273322d7526e51cbe">RDA5807::isSoftmuted</link> ()</para>
+
+<para>Gets the softmute status <?linebreak?> </para>
+</listitem>
+            <listitem><para>bool <link linkend="_group__GA07_1gaef3ebf331e0646a67b6ebfa6d47c3a16">RDA5807::isMuted</link> ()</para>
+
+<para>Gets Audio Mute Status. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_group__GA07_1ga5195195da106c05f29218910b17f6f6b">RDA5807::isAudioOutputHighImpedance</link> ()</para>
+
+<para>Gets true if the output audio impedance is high. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA07_1gadd2c2ab8b861ab0714fdeb99c774d656">RDA5807::setSoftmute</link> (bool value)</para>
+
+<para>Sets Soft Mute Enable or disable. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA07_1gafec3018913d735ee0684b88cf503c84a">RDA5807::setMute</link> (bool value)</para>
+
+<para>Sets Audio mute or unmute. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA07_1gaabd554f39778bf6d81712df0ea72d0fa">RDA5807::setAudioOutputHighImpedance</link> (bool value)</para>
+
+<para>Sets audio output impedance high ow low. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA07_1gad6e77ffbeb3f4dc885548130e09590d6">RDA5807::setMono</link> (bool value)</para>
+
+<para>Sets audio Mono or stereo. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA07_1ga8002bb394ef19db02e04a39de04dffc5">RDA5807::setBass</link> (bool value)</para>
+
+<para>Sets Bass Boost. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_group__GA07_1ga250ff3788a7831dae3c6200919b446dd">RDA5807::isStereo</link> ()</para>
+
+<para>Gets the current Stereo status. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA07_1ga51bf4344ebeb44f7170265901df870f5">RDA5807::setVolume</link> (uint8_t value)</para>
+
+<para>Sets the audio volume level. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_group__GA07_1ga743d91d820922b3feda10d06443bc8a9">RDA5807::getVolume</link> ()</para>
+
+<para>Gets the current audio volume level. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA07_1ga864af32df4d3365e03f8876703218283">RDA5807::setVolumeUp</link> ()</para>
+
+<para>Increments the audio volume. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA07_1ga910965f74897b0246a0b3bed39743d8c">RDA5807::setVolumeDown</link> ()</para>
+
+<para>Decrements the audio volume. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<section xml:id="_group__GA07_1GA07">
+<title>Audio</title>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_group__GA07_1ga428ddd720c58c17273322d7526e51cbe"/><section>
+    <title>isSoftmuted()</title>
+<indexterm><primary>isSoftmuted</primary><secondary>Audio Functions</secondary></indexterm>
+<indexterm><primary>Audio Functions</primary><secondary>isSoftmuted</secondary></indexterm>
+<para><computeroutput>bool RDA5807::isSoftmuted ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gets the softmute status <?linebreak?> </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true if enabled </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_group__GA07_1gaef3ebf331e0646a67b6ebfa6d47c3a16"/><section>
+    <title>isMuted()</title>
+<indexterm><primary>isMuted</primary><secondary>Audio Functions</secondary></indexterm>
+<indexterm><primary>Audio Functions</primary><secondary>isMuted</secondary></indexterm>
+<para><computeroutput>bool RDA5807::isMuted ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gets Audio Mute Status. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>True if muted </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_group__GA07_1ga5195195da106c05f29218910b17f6f6b"/><section>
+    <title>isAudioOutputHighImpedance()</title>
+<indexterm><primary>isAudioOutputHighImpedance</primary><secondary>Audio Functions</secondary></indexterm>
+<indexterm><primary>Audio Functions</primary><secondary>isAudioOutputHighImpedance</secondary></indexterm>
+<para><computeroutput>bool RDA5807::isAudioOutputHighImpedance ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gets true if the output audio impedance is high. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>True or false </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_group__GA07_1gadd2c2ab8b861ab0714fdeb99c774d656"/><section>
+    <title>setSoftmute()</title>
+<indexterm><primary>setSoftmute</primary><secondary>Audio Functions</secondary></indexterm>
+<indexterm><primary>Audio Functions</primary><secondary>setSoftmute</secondary></indexterm>
+<para><computeroutput>void RDA5807::setSoftmute (bool value)</computeroutput></para><para>
+
+<para>Sets Soft Mute Enable or disable. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry>
+<para>true = enable; false=disable </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_group__GA07_1gafec3018913d735ee0684b88cf503c84a"/><section>
+    <title>setMute()</title>
+<indexterm><primary>setMute</primary><secondary>Audio Functions</secondary></indexterm>
+<indexterm><primary>Audio Functions</primary><secondary>setMute</secondary></indexterm>
+<para><computeroutput>void RDA5807::setMute (bool value)</computeroutput></para><para>
+
+<para>Sets Audio mute or unmute. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry>
+<para>TRUE = mute; FALSE = unmute </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_group__GA07_1gaabd554f39778bf6d81712df0ea72d0fa"/><section>
+    <title>setAudioOutputHighImpedance()</title>
+<indexterm><primary>setAudioOutputHighImpedance</primary><secondary>Audio Functions</secondary></indexterm>
+<indexterm><primary>Audio Functions</primary><secondary>setAudioOutputHighImpedance</secondary></indexterm>
+<para><computeroutput>void RDA5807::setAudioOutputHighImpedance (bool value)</computeroutput></para><para>
+
+<para>Sets audio output impedance high ow low. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry>
+<para>TRUE = High; FALSE = Low </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_group__GA07_1gad6e77ffbeb3f4dc885548130e09590d6"/><section>
+    <title>setMono()</title>
+<indexterm><primary>setMono</primary><secondary>Audio Functions</secondary></indexterm>
+<indexterm><primary>Audio Functions</primary><secondary>setMono</secondary></indexterm>
+<para><computeroutput>void RDA5807::setMono (bool value)</computeroutput></para><para>
+
+<para>Sets audio Mono or stereo. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry>
+<para>TRUE = Mono; FALSE force stereo </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_group__GA07_1ga8002bb394ef19db02e04a39de04dffc5"/><section>
+    <title>setBass()</title>
+<indexterm><primary>setBass</primary><secondary>Audio Functions</secondary></indexterm>
+<indexterm><primary>Audio Functions</primary><secondary>setBass</secondary></indexterm>
+<para><computeroutput>void RDA5807::setBass (bool value)</computeroutput></para><para>
+
+<para>Sets Bass Boost. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry>
+<para>FALSE = Disable; TRUE = Enable </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_group__GA07_1ga250ff3788a7831dae3c6200919b446dd"/><section>
+    <title>isStereo()</title>
+<indexterm><primary>isStereo</primary><secondary>Audio Functions</secondary></indexterm>
+<indexterm><primary>Audio Functions</primary><secondary>isStereo</secondary></indexterm>
+<para><computeroutput>bool RDA5807::isStereo ( )</computeroutput></para><para>
+
+<para>Gets the current Stereo status. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>TRUE if stereo; </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_group__GA07_1ga51bf4344ebeb44f7170265901df870f5"/><section>
+    <title>setVolume()</title>
+<indexterm><primary>setVolume</primary><secondary>Audio Functions</secondary></indexterm>
+<indexterm><primary>Audio Functions</primary><secondary>setVolume</secondary></indexterm>
+<para><computeroutput>void RDA5807::setVolume (uint8_t value)</computeroutput></para><para>
+
+<para>Sets the audio volume level. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_group__GA07_1ga743d91d820922b3feda10d06443bc8a9"/><section>
+    <title>getVolume()</title>
+<indexterm><primary>getVolume</primary><secondary>Audio Functions</secondary></indexterm>
+<indexterm><primary>Audio Functions</primary><secondary>getVolume</secondary></indexterm>
+<para><computeroutput>uint8_t RDA5807::getVolume ( )</computeroutput></para><para>
+
+<para>Gets the current audio volume level. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint8_t 0 to 15 </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_group__GA07_1ga864af32df4d3365e03f8876703218283"/><section>
+    <title>setVolumeUp()</title>
+<indexterm><primary>setVolumeUp</primary><secondary>Audio Functions</secondary></indexterm>
+<indexterm><primary>Audio Functions</primary><secondary>setVolumeUp</secondary></indexterm>
+<para><computeroutput>void RDA5807::setVolumeUp ( )</computeroutput></para><para>
+
+<para>Increments the audio volume. </para>
+</para>
+</section>
+<anchor xml:id="_group__GA07_1ga910965f74897b0246a0b3bed39743d8c"/><section>
+    <title>setVolumeDown()</title>
+<indexterm><primary>setVolumeDown</primary><secondary>Audio Functions</secondary></indexterm>
+<indexterm><primary>Audio Functions</primary><secondary>setVolumeDown</secondary></indexterm>
+<para><computeroutput>void RDA5807::setVolumeDown ( )</computeroutput></para><para>
+
+<para>Decrements the audio volume. </para>
+</para>
+</section>
+</section>
+</section>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['max_5fdelay_5fafter_5foscillator_0',['MAX_DELAY_AFTER_OSCILLATOR',['../_r_d_a5807_8h.html#afb81dd661d531fa5c5422549fab7588f',1,'RDA5807.h']]],
-  ['maxdelayaftarcrystalon_1',['maxDelayAftarCrystalOn',['../group___g_a01.html#a8b9e02f7c7121cf57fc0006f4ff7162a',1,'RDA5807']]]
+  ['lna_20setup_20and_20signal_20status_0',['LNA setup and Signal status',['../group__GA08.html',1,'']]]
 ];

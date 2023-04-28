@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__GA06" xml:lang="en-US">
+<title>I2S Functions</title>
+<indexterm><primary>I2S Functions</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_group__GA06_1ga2070bff9af95a523a77ac304eee7b22f">RDA5807::setI2SAllParameters</link> (uint8_t R_DELY, uint8_t L_DELY, uint8_t SCLK_O_EDGE, uint8_t SW_O_EDGE, uint8_t I2S_SW_CNT, uint8_t WS_I_EDGE, uint8_t DATA_SIGNED, uint8_t SCLK_I_EDGE, uint8_t WS_LR, uint8_t SLAVE_MASTER, uint8_t OPEN_MODE)</para>
+
+<para>Configures all parameters for I2S. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA06_1gafe324014c135a510714e7d722f291273">RDA5807::setI2SOn</link> (bool value)</para>
+
+<para>Enables I2S setup. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA06_1ga70f086ccb3be49c4c51133bae2e8b113">RDA5807::setI2SMaster</link> (bool value)</para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA06_1ga3d5618cd755c0a56fea68ea589bb828f">RDA5807::setI2SSpeed</link> (uint8_t value)</para>
+
+<para>Sets the speed in kbps. You can use the predefined constantes: I2S_WS_STEP_48, I2S_WS_STEP_44_1, I2S_WS_STEP_32,. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA06_1gabeb9446fc371fe58e075bea7ebc51fdb">RDA5807::setI2SDataSigned</link> (bool value)</para>
+
+<para>If 0, I2S output unsigned 16-bit audio data. If 1, I2S output signed 16-bit audio data. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<section xml:id="_group__GA06_1GA06">
+<title>I2S</title>
+
+<para>When setting I2S_ENABLE (register 04) bit is high, the RDA5807FP can get the output signals SCK, WS, SD signals from GPIO3, GPIO1 and GPIO2 (I2S master) </para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_group__GA06_1ga2070bff9af95a523a77ac304eee7b22f"/><section>
+    <title>setI2SAllParameters()</title>
+<indexterm><primary>setI2SAllParameters</primary><secondary>I2S Functions</secondary></indexterm>
+<indexterm><primary>I2S Functions</primary><secondary>setI2SAllParameters</secondary></indexterm>
+<para><computeroutput>void RDA5807::setI2SAllParameters (uint8_t R_DELY, uint8_t L_DELY, uint8_t SCLK_O_EDGE, uint8_t SW_O_EDGE, uint8_t I2S_SW_CNT, uint8_t WS_I_EDGE, uint8_t DATA_SIGNED, uint8_t SCLK_I_EDGE, uint8_t WS_LR, uint8_t SLAVE_MASTER, uint8_t OPEN_MODE)</computeroutput></para><para>
+
+<para>Configures all parameters for I2S. </para>
+</para>
+
+<para>I2S setup must be enabled</para>
+
+<para>I2S_SW_CNT can be: I2S_WS_STEP_48, I2S_WS_STEP_44_1, I2S_WS_STEP_32, I2S_WS_STEP_24, I2S_WS_STEP_22_05, I2S_WS_STEP_16, I2S_WS_STEP_12, I2S_WS_STEP_11_025 or I2S_WS_STEP_8</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>R_DELY</entry><entry>
+<para>If 1, R channel data delay 1T </para>
+</entry>
+                            </row>
+                            <row>
+<entry>L_DELY</entry><entry>
+<para>If 1, L channel data delay 1T </para>
+</entry>
+                            </row>
+                            <row>
+<entry>SCLK_O_EDGE</entry><entry>
+<para>If 1, invert sclk output when as master </para>
+</entry>
+                            </row>
+                            <row>
+<entry>SW_O_EDGE</entry><entry>
+<para>If 1, invert ws output when as master </para>
+</entry>
+                            </row>
+                            <row>
+<entry>I2S_SW_CNT</entry><entry>
+<para>Only valid in master mode. See table above </para>
+</entry>
+                            </row>
+                            <row>
+<entry>WS_I_EDGE</entry><entry>
+<para>If 0, use normal ws internally; If 1, inverte ws internally </para>
+</entry>
+                            </row>
+                            <row>
+<entry>DATA_SIGNED</entry><entry>
+<para>If 0, I2S output unsigned 16-bit audio data. If 1, I2S output signed 16-bit audio data. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>SCLK_I_EDGE</entry><entry>
+<para>If 0, use normal sclk internally;If 1, inverte sclk internally </para>
+</entry>
+                            </row>
+                            <row>
+<entry>WS_LR</entry><entry>
+<para>Ws relation to l/r channel; If 0, ws=0 -&gt;r, ws=1 -&gt;l; If 1, ws=0 -&gt;l, ws=1 -&gt;r </para>
+</entry>
+                            </row>
+                            <row>
+<entry>SLAVE_MASTER</entry><entry>
+<para>I2S slave or master; 1 = slave; 0 = master </para>
+</entry>
+                            </row>
+                            <row>
+<entry>OPEN_MODE</entry><entry>
+<para>Open reserved register mode; 11=open behind registers writing function others: only open behind registers reading function</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>See also</title>
+
+<para>RDA microelectronics RDA5807FP - SINGLE-CHIP BROADCAST FM RADIO TUNER pages 11 and 12</para>
+
+<para><link linkend="_group__GA06_1gafe324014c135a510714e7d722f291273">setI2SOn</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_group__GA06_1gafe324014c135a510714e7d722f291273"/><section>
+    <title>setI2SOn()</title>
+<indexterm><primary>setI2SOn</primary><secondary>I2S Functions</secondary></indexterm>
+<indexterm><primary>I2S Functions</primary><secondary>setI2SOn</secondary></indexterm>
+<para><computeroutput>void RDA5807::setI2SOn (bool value)</computeroutput></para><para>
+
+<para>Enables I2S setup. </para>
+</para>
+
+<para>When setting I2S_ENABLE (register 04) bit is high, the RDA5807FP you can get the output signals SCK, WS, SD signals from GPIO3, GPIO1 and GPIO2 (I2S master)</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry>
+<para>true or false </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_group__GA06_1ga70f086ccb3be49c4c51133bae2e8b113"/><section>
+    <title>setI2SMaster()</title>
+<indexterm><primary>setI2SMaster</primary><secondary>I2S Functions</secondary></indexterm>
+<indexterm><primary>I2S Functions</primary><secondary>setI2SMaster</secondary></indexterm>
+<para><computeroutput>void RDA5807::setI2SMaster (bool value)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry>
+<para>true or false </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_group__GA06_1ga3d5618cd755c0a56fea68ea589bb828f"/><section>
+    <title>setI2SSpeed()</title>
+<indexterm><primary>setI2SSpeed</primary><secondary>I2S Functions</secondary></indexterm>
+<indexterm><primary>I2S Functions</primary><secondary>setI2SSpeed</secondary></indexterm>
+<para><computeroutput>void RDA5807::setI2SSpeed (uint8_t value)</computeroutput></para><para>
+
+<para>Sets the speed in kbps. You can use the predefined constantes: I2S_WS_STEP_48, I2S_WS_STEP_44_1, I2S_WS_STEP_32,. </para>
+</para>
+
+<para>/</para>
+
+<para>I2S_WS_STEP_24, I2S_WS_STEP_22_05, I2S_WS_STEP_16, I2S_WS_STEP_12, I2S_WS_STEP_11_025 or I2S_WS_STEP_8 <?linebreak?></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry>
+<para>value </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_group__GA06_1gabeb9446fc371fe58e075bea7ebc51fdb"/><section>
+    <title>setI2SDataSigned()</title>
+<indexterm><primary>setI2SDataSigned</primary><secondary>I2S Functions</secondary></indexterm>
+<indexterm><primary>I2S Functions</primary><secondary>setI2SDataSigned</secondary></indexterm>
+<para><computeroutput>void RDA5807::setI2SDataSigned (bool value)</computeroutput></para><para>
+
+<para>If 0, I2S output unsigned 16-bit audio data. If 1, I2S output signed 16-bit audio data. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry>
+<para>true (1) or false (0) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+</section>

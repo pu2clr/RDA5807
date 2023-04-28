@@ -28,10 +28,10 @@ var NAVTREE =
     [ "RDA5807 Arduino Library implementation", "index.html", null ],
     [ "Todo List", "todo.html", null ],
     [ "Modules", "modules.html", "modules" ],
-    [ "Data Structures", "annotated.html", [
-      [ "Data Structures", "annotated.html", "annotated_dup" ],
-      [ "Data Structure Index", "classes.html", null ],
-      [ "Data Fields", "functions.html", [
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
+      [ "Class Index", "classes.html", null ],
+      [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ]
@@ -39,7 +39,7 @@ var NAVTREE =
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
-      [ "Globals", "globals.html", [
+      [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
@@ -49,8 +49,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_r_d_a5807_8cpp.html",
-"group___g_a01.html#structrda__reg0f_8refined"
+"RDA5807_8cpp.html",
+"group__GA01.html#af7dd74521218c605e3553fdeb618e6eb"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,0 +1,794 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__GA03" xml:lang="en-US">
+<title>FM Tune Functions</title>
+<indexterm><primary>FM Tune Functions</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_group__GA03_1gac879c84895fee9032c1b29638e209527">RDA5807::setFrequencyToBeginBand</link> ()</para>
+
+<para>Tunes the receiver at the first channel/frequency of the current band. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga8042f480c26abb7f74560a29c0fb2f46">RDA5807::setFrequencyToEndBand</link> ()</para>
+
+<para>Tunes the receiver at the last channel/frequency of the current band. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_group__GA03_1gab6cc94517eb6bc3325fbd6386bbffe15">RDA5807::getSpace</link> ()</para>
+
+<para>Returns the current Band Space. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_group__GA03_1ga85d1635f7bd51c740546d69133a97530">RDA5807::isFmTrue</link> ()</para>
+
+<para>Returns true if the current channel is a station. <?linebreak?> </para>
+</listitem>
+            <listitem><para>bool <link linkend="_group__GA03_1ga49ae7bc2ecf631c5391bab17b44df3fd">RDA5807::isFmReady</link> ()</para>
+
+<para>Returns true if the FM is ready. <?linebreak?> </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga6dd81b0cff50747906d7d05b127112de">RDA5807::setSoftBlendEnable</link> (bool value)</para>
+
+<para>Sets Soft Blend. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga965658767399e2f923852144e324805f">RDA5807::setAFC</link> (bool value)</para>
+
+<para>Sets AFC true or false. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1gaa9cfaddbd43257e810bb3817b021fa8a">RDA5807::setChannel</link> (uint16_t channel)</para>
+
+<para>Sets the channel. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1gad16a6afa9520b77498b17a72c226305a">RDA5807::setFrequency</link> (uint16_t frequency)</para>
+
+<para>Sets the frequency. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga4e8db177fea475ea00fa04e3d8f1f08c">RDA5807::setFrequencyUp</link> ()</para>
+
+<para>Increments the current frequency. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1gadba771c864ace7a8373a76554b9d3e6a">RDA5807::setFrequencyDown</link> ()</para>
+
+<para>Decrements the current frequency. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_group__GA03_1ga59b981002d383a13731bd939482a5236">RDA5807::getFrequency</link> ()</para>
+
+<para>Gets the current frequency. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_group__GA03_1ga39480a49f7878fffe8c3ddf120aba2b0">RDA5807::getRealChannel</link> ()</para>
+
+<para>Gets the current channel stored in 0x0A status register. </para>
+</listitem>
+            <listitem><para>uint16_t <link linkend="_group__GA03_1ga1476967ed4e1d9bc00e2ea8e3135520e">RDA5807::getRealFrequency</link> ()</para>
+
+<para>Gets the current frequency bases on the current channel. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga87de696f0a40724c19c89b6b48766020">RDA5807::seek</link> (uint8_t seek_mode, uint8_t direction)</para>
+
+<para>Seek function. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1gade55e697c7752811086300e710727397">RDA5807::seek</link> (uint8_t seek_mode, uint8_t direction, void(*showFunc)())</para>
+
+<para>Seek function. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga41dbf6ea359175b3671072a3c382d42c">RDA5807::setSeekThreshold</link> (uint8_t value)</para>
+
+<para>Sets RSSI Seek Threshold. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga889cfe43f3f9c9ca92c9862261d5dbbf">RDA5807::setBand</link> (uint8_t band=0)</para>
+
+<para>Sets the FM band. See table below. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga76f6c3400b038aef15ba7318592e1dd0">RDA5807::setSpace</link> (uint8_t space=0)</para>
+
+<para>Sets the FM channel space. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga8bbf57aaeb92f226179579efa61cc846">RDA5807::setStep</link> (uint8_t step=100)</para>
+
+<para>Sets the FM Step;. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA03_1ga4f8fe00a561c39d2dc9a0a143b1866e9">RDA5807::setFmDeemphasis</link> (uint8_t de)</para>
+
+<para>Sets De-emphasis. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<section xml:id="_group__GA03_1GA03">
+<title>FM Tune</title>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_group__GA03_1gac879c84895fee9032c1b29638e209527"/><section>
+    <title>setFrequencyToBeginBand()</title>
+<indexterm><primary>setFrequencyToBeginBand</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>setFrequencyToBeginBand</secondary></indexterm>
+<para><computeroutput>void RDA5807::setFrequencyToBeginBand ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Tunes the receiver at the first channel/frequency of the current band. </para>
+</para>
+
+<para>If the current band is 0, the lowest frequency is 87Mhz (8700) <formalpara><title>See also</title>
+
+<para><link linkend="_group__GA01_1acddb5bea9e4872e9aecf4dc9bd89a1e6">startBand</link>, <link linkend="_group__GA03_1gad16a6afa9520b77498b17a72c226305a">setFrequency</link> <?linebreak?> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_group__GA03_1ga8042f480c26abb7f74560a29c0fb2f46"/><section>
+    <title>setFrequencyToEndBand()</title>
+<indexterm><primary>setFrequencyToEndBand</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>setFrequencyToEndBand</secondary></indexterm>
+<para><computeroutput>void RDA5807::setFrequencyToEndBand ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Tunes the receiver at the last channel/frequency of the current band. </para>
+</para>
+
+<para>If the current band is 0, the highest frequency is 108MHz (10800) <formalpara><title>See also</title>
+
+<para><link linkend="_group__GA01_1aaede268d40e40776118adbc1a8400418">endBand</link>, <link linkend="_group__GA03_1gad16a6afa9520b77498b17a72c226305a">setFrequency</link> <?linebreak?> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_group__GA03_1gab6cc94517eb6bc3325fbd6386bbffe15"/><section>
+    <title>getSpace()</title>
+<indexterm><primary>getSpace</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>getSpace</secondary></indexterm>
+<para><computeroutput>uint8_t RDA5807::getSpace ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Returns the current Band Space. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint8_t value (0 = 100kHz, 1 = 200kHz, 2 = 50kHz e 3 = 25kHz) </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_group__GA03_1ga85d1635f7bd51c740546d69133a97530"/><section>
+    <title>isFmTrue()</title>
+<indexterm><primary>isFmTrue</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>isFmTrue</secondary></indexterm>
+<para><computeroutput>bool RDA5807::isFmTrue ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Returns true if the current channel is a station. <?linebreak?> </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true or false </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_group__GA03_1ga49ae7bc2ecf631c5391bab17b44df3fd"/><section>
+    <title>isFmReady()</title>
+<indexterm><primary>isFmReady</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>isFmReady</secondary></indexterm>
+<para><computeroutput>bool RDA5807::isFmReady ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Returns true if the FM is ready. <?linebreak?> </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true or false </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_group__GA03_1ga6dd81b0cff50747906d7d05b127112de"/><section>
+    <title>setSoftBlendEnable()</title>
+<indexterm><primary>setSoftBlendEnable</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>setSoftBlendEnable</secondary></indexterm>
+<para><computeroutput>void RDA5807::setSoftBlendEnable (bool value)</computeroutput></para><para>
+
+<para>Sets Soft Blend. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry>
+<para>true or false </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_group__GA03_1ga965658767399e2f923852144e324805f"/><section>
+    <title>setAFC()</title>
+<indexterm><primary>setAFC</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>setAFC</secondary></indexterm>
+<para><computeroutput>void RDA5807::setAFC (bool value)</computeroutput></para><para>
+
+<para>Sets AFC true or false. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry>
+<para>true or false </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_group__GA03_1gaa9cfaddbd43257e810bb3817b021fa8a"/><section>
+    <title>setChannel()</title>
+<indexterm><primary>setChannel</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>setChannel</secondary></indexterm>
+<para><computeroutput>void RDA5807::setChannel (uint16_t channel)</computeroutput></para><para>
+
+<para>Sets the channel. </para>
+</para>
+
+<para>This method tunes the rteceiver in a given channel.</para>
+
+<para>The channel can be calculated by using the follow formula</para>
+
+<para>channel = (desired frequency - start band frequency) / space channel in use / 10.0);</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_group__GA03_1gad16a6afa9520b77498b17a72c226305a">setFrequency</link>, <link linkend="_group__GA03_1ga889cfe43f3f9c9ca92c9862261d5dbbf">setBand</link>, <link linkend="_group__GA03_1ga76f6c3400b038aef15ba7318592e1dd0">setSpace</link> </para>
+
+<para>RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12.</para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>channel</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+References <link linkend="_l00156">RDA5807::waitAndFinishTune()</link>.</para>
+</section>
+<anchor xml:id="_group__GA03_1gad16a6afa9520b77498b17a72c226305a"/><section>
+    <title>setFrequency()</title>
+<indexterm><primary>setFrequency</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>setFrequency</secondary></indexterm>
+<para><computeroutput>void RDA5807::setFrequency (uint16_t frequency)</computeroutput></para><para>
+
+<para>Sets the frequency. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>frequency</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_group__GA03_1ga4e8db177fea475ea00fa04e3d8f1f08c"/><section>
+    <title>setFrequencyUp()</title>
+<indexterm><primary>setFrequencyUp</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>setFrequencyUp</secondary></indexterm>
+<para><computeroutput>void RDA5807::setFrequencyUp ( )</computeroutput></para><para>
+
+<para>Increments the current frequency. </para>
+</para>
+
+<para>The increment uses the band space as step. See array: uint16_t fmSpace[4] = {100/10, 200/10, 50/10, 25/10}; </para>
+</section>
+<anchor xml:id="_group__GA03_1gadba771c864ace7a8373a76554b9d3e6a"/><section>
+    <title>setFrequencyDown()</title>
+<indexterm><primary>setFrequencyDown</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>setFrequencyDown</secondary></indexterm>
+<para><computeroutput>void RDA5807::setFrequencyDown ( )</computeroutput></para><para>
+
+<para>Decrements the current frequency. </para>
+</para>
+
+<para>The drecrement uses the band space as step. See array: uint16_t fmSpace[4] = {20, 10, 5, 1}; </para>
+</section>
+<anchor xml:id="_group__GA03_1ga59b981002d383a13731bd939482a5236"/><section>
+    <title>getFrequency()</title>
+<indexterm><primary>getFrequency</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>getFrequency</secondary></indexterm>
+<para><computeroutput>uint16_t RDA5807::getFrequency ( )</computeroutput></para><para>
+
+<para>Gets the current frequency. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_group__GA03_1ga39480a49f7878fffe8c3ddf120aba2b0"/><section>
+    <title>getRealChannel()</title>
+<indexterm><primary>getRealChannel</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>getRealChannel</secondary></indexterm>
+<para><computeroutput>uint16_t RDA5807::getRealChannel ( )</computeroutput></para><para>
+
+<para>Gets the current channel stored in 0x0A status register. </para>
+</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_group__GA03_1gaa9cfaddbd43257e810bb3817b021fa8a">setChannel</link>, <link linkend="_group__GA03_1gad16a6afa9520b77498b17a72c226305a">setFrequency</link>, <link linkend="_group__GA03_1ga889cfe43f3f9c9ca92c9862261d5dbbf">setBand</link>, <link linkend="_group__GA03_1ga76f6c3400b038aef15ba7318592e1dd0">setSpace</link> </para>
+
+<para>RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12.</para>
+</formalpara>
+<formalpara><title>Returns</title>
+
+<para>uint16_t current channel value </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_group__GA03_1ga1476967ed4e1d9bc00e2ea8e3135520e"/><section>
+    <title>getRealFrequency()</title>
+<indexterm><primary>getRealFrequency</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>getRealFrequency</secondary></indexterm>
+<para><computeroutput>uint16_t RDA5807::getRealFrequency ( )</computeroutput></para><para>
+
+<para>Gets the current frequency bases on the current channel. </para>
+</para>
+
+<para>The current channel is stored in the 0x0A register. This value is updated after a tune or seek operation.</para>
+
+<para>The current frequency can be calculated by the formula below</para>
+
+<para><informaltable frame="all">
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<thead>
+      <row  class='markdownTableHead'>
+<entry>
+<para>Band   </para>
+</entry><entry>
+<para>Formula    </para>
+</entry></row>
+</thead><tbody>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>0   </para>
+</entry><entry>
+<para>Frequency = Channel Spacing (kHz) x READCHAN[9:0]+ 87.0 MHz    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>1 or 2   </para>
+</entry><entry>
+<para>Frequency = Channel Spacing (kHz) x READCHAN[9:0]+ 76.0 MHz    </para>
+</entry></row>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>3   </para>
+</entry><entry>
+<para>Frequency = Channel Spacing (kHz) x READCHAN[9:0]+ 65.0 MHz   </para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</informaltable>
+</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_group__GA03_1gaa9cfaddbd43257e810bb3817b021fa8a">setChannel</link>, <link linkend="_group__GA03_1gad16a6afa9520b77498b17a72c226305a">setFrequency</link>, <link linkend="_group__GA03_1ga889cfe43f3f9c9ca92c9862261d5dbbf">setBand</link>, <link linkend="_group__GA03_1ga76f6c3400b038aef15ba7318592e1dd0">setSpace</link> </para>
+
+<para>RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12. </para>
+</formalpara>
+<formalpara><title>Returns</title>
+
+<para>uint16_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_group__GA03_1ga87de696f0a40724c19c89b6b48766020"/><section>
+    <title>seek()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>seek</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>seek</secondary></indexterm>
+<para><computeroutput>void RDA5807::seek (uint8_t seek_mode, uint8_t direction)</computeroutput></para><para>
+
+<para>Seek function. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>seek_mode</entry><entry>
+<para>if 0, wrap at the upper or lower band limit and continue seeking; 1 = stop seeking at the upper or lower band limit <?linebreak?> </para>
+</entry>
+                            </row>
+                            <row>
+<entry>direction</entry><entry>
+<para>if 0, seek down; if 1, seek up. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_group__GA03_1gade55e697c7752811086300e710727397"/><section>
+    <title>seek()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>seek</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>seek</secondary></indexterm>
+<para><computeroutput>void RDA5807::seek (uint8_t seek_mode, uint8_t direction, void(*)() showFunc)</computeroutput></para><para>
+
+<para>Seek function. </para>
+</para>
+
+<para>Seeks a station up or down.</para>
+
+<para>Seek up or down a station and call a function defined by the user to show the frequency during the seek process.</para>
+
+<para>Seek begins at the current channel, and goes in the direction specified with the SEEKUP bit. Seek operation stops when a channel is qualified as valid according to the seek parameters, the entire band has been searched (SKMODE = 0), or the upper or lower band limit has been reached (SKMODE = 1).</para>
+
+<para>The STC bit is set high when the seek operation completes and/or the SF/BL bit is set high if the seek operation was unable to find a channel qualified as valid according to the seek parameters. The STC and SF/BL bits must be set low by setting the SEEK bit low before the next seek or tune may begin.</para>
+
+<para>The SEEK bit is set low and the STC bit is set high when the seek operation completes.</para>
+
+<para>It is important to say you have to implement a show frequency function. This function have to get the frequency via getFrequency function. <?linebreak?></para>
+
+<para>Example: <literallayout><computeroutput>SI470X&#32;rx;
+
+<emphasis role="keywordtype">void</emphasis>&#32;showFrequency()&#32;{
+&#32;&#32;&#32;uint16_t&#32;freq&#32;=&#32;rx.getFrequency();
+&#32;&#32;&#32;Serial.print(freq);&#32;
+&#32;&#32;&#32;Serial.println(<emphasis role="stringliteral">&quot;MHz&#32;&quot;</emphasis>);
+}
+
+<emphasis role="keywordtype">void</emphasis>&#32;loop()&#32;{
+&#32;.
+&#32;.
+&#32;&#32;&#32;&#32;&#32;rx.seek(SI470X_SEEK_WRAP,&#32;SI470X_SEEK_UP,&#32;showFrequency);&#32;<emphasis role="comment">//&#32;Seek&#32;Up</emphasis>
+&#32;.
+&#32;.
+}
+</computeroutput></literallayout> 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>seek_mode</entry><entry>
+<para>Seek Mode; 0 = Wrap at the upper or lower band limit and continue seeking (default); 1 = Stop seeking at the upper or lower band limit. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>direction</entry><entry>
+<para>Seek Direction; 0 = Seek down (default); 1 = Seek up. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>showFunc</entry><entry>
+<para>function that you have to implement to show the frequency during the seeking process. Set NULL if you do not want to show the progress. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+References <link linkend="_l00156">RDA5807::waitAndFinishTune()</link>.</para>
+</section>
+<anchor xml:id="_group__GA03_1ga41dbf6ea359175b3671072a3c382d42c"/><section>
+    <title>setSeekThreshold()</title>
+<indexterm><primary>setSeekThreshold</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>setSeekThreshold</secondary></indexterm>
+<para><computeroutput>void RDA5807::setSeekThreshold (uint8_t value)</computeroutput></para><para>
+
+<para>Sets RSSI Seek Threshold. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_group__GA03_1ga889cfe43f3f9c9ca92c9862261d5dbbf"/><section>
+    <title>setBand()</title>
+<indexterm><primary>setBand</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>setBand</secondary></indexterm>
+<para><computeroutput>void RDA5807::setBand (uint8_t band = <computeroutput>0</computeroutput>
+)</computeroutput></para><para>
+
+<para>Sets the FM band. See table below. </para>
+</para>
+
+<para>FM band table</para>
+
+<para><informaltable frame="all">
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<thead>
+      <row  class='markdownTableHead'>
+<entry>
+<para>Value   </para>
+</entry><entry>
+<para>Description    </para>
+</entry></row>
+</thead><tbody>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>00   </para>
+</entry><entry>
+<para>87–108 MHz (US/Europe)    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>01   </para>
+</entry><entry>
+<para>76–91 MHz (Japan)    </para>
+</entry></row>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>10   </para>
+</entry><entry>
+<para>76–108 MHz (world wide)    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>11   </para>
+</entry><entry>
+<para>65 –76 MHz (East Europe) or 50-65MHz (see bit 9 of gegister 0x06)   </para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</informaltable>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>band</entry><entry>
+<para>FM band index. See table above. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_group__GA03_1ga76f6c3400b038aef15ba7318592e1dd0"/><section>
+    <title>setSpace()</title>
+<indexterm><primary>setSpace</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>setSpace</secondary></indexterm>
+<para><computeroutput>void RDA5807::setSpace (uint8_t space = <computeroutput>0</computeroutput>
+)</computeroutput></para><para>
+
+<para>Sets the FM channel space. </para>
+</para>
+
+<para>Channel space table</para>
+
+<para><informaltable frame="all">
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<thead>
+      <row  class='markdownTableHead'>
+<entry>
+<para>Value   </para>
+</entry><entry>
+<para>Description    </para>
+</entry></row>
+</thead><tbody>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>00   </para>
+</entry><entry>
+<para>100KHz    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>01   </para>
+</entry><entry>
+<para>200KHz    </para>
+</entry></row>
+      <row  class='markdownTableRowOdd'>
+<entry>
+<para>10   </para>
+</entry><entry>
+<para>50KHz    </para>
+</entry></row>
+      <row  class='markdownTableRowEven'>
+<entry>
+<para>11   </para>
+</entry><entry>
+<para>25KHz   </para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</informaltable>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>space</entry><entry>
+<para>FM channel space. See table above. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <para><link linkend="_todo_1_todo000001">Todo</link> 
+<para>make the space 01 (200kHz) work. </para>
+</para></para>
+</section>
+<anchor xml:id="_group__GA03_1ga8bbf57aaeb92f226179579efa61cc846"/><section>
+    <title>setStep()</title>
+<indexterm><primary>setStep</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>setStep</secondary></indexterm>
+<para><computeroutput>void RDA5807::setStep (uint8_t step = <computeroutput>100</computeroutput>
+)</computeroutput></para><para>
+
+<para>Sets the FM Step;. </para>
+</para>
+
+<para><itemizedlist>
+<listitem>
+<para>Converts the step frequency (25, 50, 100 or 200 kHz) to Space. Invalid values will be converted to 0 (100 kHz) 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>step</entry><entry>
+<para>25, 50, 100 or 200 kHz </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <para><link linkend="_todo_1_todo000002">Todo</link> 
+<para>Make the step 200kHz work well </para>
+</para></para>
+</listitem></itemizedlist>
+</para>
+</section>
+<anchor xml:id="_group__GA03_1ga4f8fe00a561c39d2dc9a0a143b1866e9"/><section>
+    <title>setFmDeemphasis()</title>
+<indexterm><primary>setFmDeemphasis</primary><secondary>FM Tune Functions</secondary></indexterm>
+<indexterm><primary>FM Tune Functions</primary><secondary>setFmDeemphasis</secondary></indexterm>
+<para><computeroutput>void RDA5807::setFmDeemphasis (uint8_t de)</computeroutput></para><para>
+
+<para>Sets De-emphasis. </para>
+</para>
+
+<para>75 μs. Used in USA (default); 50 μs. Used in Europe, Australia, Japan.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>de</entry><entry>
+<para>0 = 75 μs; 1 = 50 μs </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+</section>

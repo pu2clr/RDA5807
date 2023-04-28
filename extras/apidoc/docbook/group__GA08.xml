@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group__GA08" xml:lang="en-US">
+<title>LNA setup and Signal status</title>
+<indexterm><primary>LNA setup and Signal status</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="_group__GA08_1gacdf40b2507df37ef2f7cbed8c12c68f7">RDA5807::getLnaIcSel</link> ()</para>
+
+<para>Gets LNA_ICSEL_BIT current value. </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_group__GA08_1gafa3762b30fbf95bd6bb04139faed47c6">RDA5807::getLnaPortSel</link> ()</para>
+
+<para>Gets current vaue of the LNA input port selection bit. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA08_1ga35428e147462af6490c382acdf769173">RDA5807::setLnaIcSel</link> (uint8_t value)</para>
+
+<para>Sets LNA_ICSEL_BIT. </para>
+</listitem>
+            <listitem><para>void <link linkend="_group__GA08_1gaf595aab626e55ab733af8682674faa61">RDA5807::setLnaPortSel</link> (uint8_t value)</para>
+
+<para>Sets LNA input port selection bit. </para>
+</listitem>
+            <listitem><para>int <link linkend="_group__GA08_1ga4bd7597d4c9090b04486aec21a6a0a5d">RDA5807::getRssi</link> ()</para>
+
+<para>Gets the current Rssi. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<section xml:id="_group__GA08_1GA08">
+<title>LNA and Signal</title>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_group__GA08_1gacdf40b2507df37ef2f7cbed8c12c68f7"/><section>
+    <title>getLnaIcSel()</title>
+<indexterm><primary>getLnaIcSel</primary><secondary>LNA setup and Signal status</secondary></indexterm>
+<indexterm><primary>LNA setup and Signal status</primary><secondary>getLnaIcSel</secondary></indexterm>
+<para><computeroutput>uint8_t RDA5807::getLnaIcSel ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gets LNA_ICSEL_BIT current value. </para>
+</para>
+
+<para>Lna working current bit: 0=1.8mA; 1=2.1mA; 2=2.5mA; 3=3.0mA (default 0). <formalpara><title>Returns</title>
+
+<para>0=1.8mA; 1=2.1mA; 2=2.5mA; 3=3.0mA</para>
+
+<para>uint8_t </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_group__GA08_1gafa3762b30fbf95bd6bb04139faed47c6"/><section>
+    <title>getLnaPortSel()</title>
+<indexterm><primary>getLnaPortSel</primary><secondary>LNA setup and Signal status</secondary></indexterm>
+<indexterm><primary>LNA setup and Signal status</primary><secondary>getLnaPortSel</secondary></indexterm>
+<para><computeroutput>uint8_t RDA5807::getLnaPortSel ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Gets current vaue of the LNA input port selection bit. </para>
+</para>
+
+<para>Values: 0 = no input; 1 = LNAN; 2 = LNAP; 3: dual port input <formalpara><title>Returns</title>
+
+<para>0 = no input; 1 = LNAN; 2 = LNAP; 3: dual port input </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_group__GA08_1ga35428e147462af6490c382acdf769173"/><section>
+    <title>setLnaIcSel()</title>
+<indexterm><primary>setLnaIcSel</primary><secondary>LNA setup and Signal status</secondary></indexterm>
+<indexterm><primary>LNA setup and Signal status</primary><secondary>setLnaIcSel</secondary></indexterm>
+<para><computeroutput>void RDA5807::setLnaIcSel (uint8_t value)</computeroutput></para><para>
+
+<para>Sets LNA_ICSEL_BIT. </para>
+</para>
+
+<para>Lna working current bit: 0=1.8mA; 1=2.1mA; 2=2.5mA; 3=3.0mA (default 0). 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry>
+<para>- 0=1.8mA; 1=2.1mA; 2=2.5mA; 3=3.0mA </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_group__GA08_1gaf595aab626e55ab733af8682674faa61"/><section>
+    <title>setLnaPortSel()</title>
+<indexterm><primary>setLnaPortSel</primary><secondary>LNA setup and Signal status</secondary></indexterm>
+<indexterm><primary>LNA setup and Signal status</primary><secondary>setLnaPortSel</secondary></indexterm>
+<para><computeroutput>void RDA5807::setLnaPortSel (uint8_t value)</computeroutput></para><para>
+
+<para>Sets LNA input port selection bit. </para>
+</para>
+
+<para>YOu can select: 0 = no input; 1 = LNAN; 2 = LNAP; 3: dual port input 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry>
+<para>- 0 = no input; 1 = LNAN; 2 = LNAP; 3: dual port input </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_group__GA08_1ga4bd7597d4c9090b04486aec21a6a0a5d"/><section>
+    <title>getRssi()</title>
+<indexterm><primary>getRssi</primary><secondary>LNA setup and Signal status</secondary></indexterm>
+<indexterm><primary>LNA setup and Signal status</primary><secondary>getRssi</secondary></indexterm>
+<para><computeroutput>int RDA5807::getRssi ( )</computeroutput></para><para>
+
+<para>Gets the current Rssi. </para>
+</para>
+
+<para>RSSI; 000000 = min; 111111 = max; RSSI scale is logarithmic.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>int </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>
