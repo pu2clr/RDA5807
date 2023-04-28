@@ -22,6 +22,7 @@ Contact: __pu2clr@gmail.com__.
 9. [Basic Schematic](https://pu2clr.github.io/RDA5807#schematic)
 10. [All Schematics, photos and videos](extras/)
 11. [Source code - Arduino Sketches](examples/)
+12. [https://pu2clr.github.io/RDA5807](https://pu2clr.github.io/RDA5807#videos-about-rda5807-and-this-arduino-library)
 
 
 ## Attention
@@ -565,6 +566,13 @@ Cordova provides an easy way to develop for iOS and Android.
 
 # Videos about RDA5807 and this Arduino Library 
 
+* [FM RECEIVER AND I2S DIGITAL AUDIO WITH RDA5807FP AND MAX98357A](https://youtu.be/07017sfMYdY)
+* [FM receiver with RDA5807, Arduino UNO and TM1638 seven-segment module](https://youtu.be/I7-fCKPDF4Y)
+* [FM  / RDS receiver with RDA5807FP, ESP32  and LCD16x02](https://youtu.be/HgMEgd74SUk)
+* [FM / RDS receiver with RDA5807, Arduino Nano and Nokia 5110 display](https://youtu.be/jInacTWoF9Y)
+* [FM Receiver with PU2CLR RDA5807 Arduino Library and Nokia 5110](https://youtu.be/ZcgJT7MQdQc)
+* [FM Receiver with PU2CLR RDA5807 Arduino Library - RDS/RBDS first test](https://youtu.be/PZsbqieeYns)
+* [FM Receiver with RDA5807 Arduino Library by PU2CLR](https://youtu.be/eLWEWEjxM8U)
 * [Receptor de FM SDR con RDA5807 - Spanish](https://youtu.be/6PAnqT2TrL8)
 * [RDA5807 Fm based radio - Portuguese](https://youtu.be/2g1KJkDFCaU)
 * [Rádio FM RDA5807 com ESP32, Arduino etc - Portuguese](https://www.dobitaobyte.com.br/radio-fm-rda5807-com-esp32-arduino-etc/?amp)
