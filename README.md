@@ -176,10 +176,7 @@ void loop() {
 
 ## Boards where this library has been tested
 
-This library can be useful to develop cross-platform software. So far, it has been successfully tested on the architectures shown below.    
-
-
-The table below shows the some boards where this library has been successfully tested.
+This library can be useful to develop cross-platform software. So far, it has been successfully tested on the architectures shown below.  Please, pay attention to the pins used for I2C communication.  
 
 
 |    | Board | Need voltage converter | I²C Pins | Features |
