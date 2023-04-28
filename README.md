@@ -143,7 +143,7 @@ set ARDUINO_LIBRARY_ENABLE_UNSAFE_INSTALL=true
 .\arduino-cli lib install --git-url https://github.com/pu2clr/RDA5807
 ```
 
-## How to use in your sketch 
+### How to use the RDA5807 Arduino Library in your sketch 
 
 The following source-code snippet shows a common way of using the RDA5807 library in your application.
 [Click here to know about all the functions integrated in this library](https://pu2clr.github.io/RDA5807/extras/apidoc/html/modules.html).
@@ -177,14 +177,14 @@ void loop() {
 
 <BR>
 
-### RDA5807M breakout
+## RDA5807M breakout
 
 The photos below show a Breakout that uses the RDA5807M. 
 
 ##### Front side 
 ![RDA5807 Breakout board side A](extras/images/breakout_01A.png)
 
-##### Back side
+### Back side
 ![RDA5807 Breakout board side B](extras/images/breakout_01B.png)
 
 
@@ -193,7 +193,7 @@ The photos below show a Breakout that uses the RDA5807M.
 
 <BR>
 
-### RDA5807FP standalone IC
+## RDA5807FP standalone IC
 
 If you are using the standalone RDA5807FP you must add some parts to make it work.  In my opinion, there is no big  reasons to use the RDA5807FP instead of the RDA5807M breakout in most applications. I think the most important situations are the possibility to use the digital audio configuration via I2S protocol or GPIO setup (Stereo indicator, interrupt etc). This library has function to deal with I2S and GPIO.
 
