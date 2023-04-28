@@ -183,7 +183,7 @@ The table below shows the some boards where this library has been successfully t
 
 
 |    | Board | Need voltage converter | I²C Pins | Features |
-|--- | ----- | ---------------------- | -------- | --------- | -----  |
+|--- | ----- | ---------------------- | -------- |  ------  |
 |  1 | Arduino Pro Mini 3.3V 8MHz | No | A4 and A5 |  [More...](https://store.arduino.cc/usa/arduino-pro-mini) |
 |  2 | Mega 2560 Pro | Yes | 20 and 21 | [More...](https://store.arduino.cc/usa/mega-2560-r3)|
 |  3 | ESP WEMOS LOLIN32 | No | GPIO21 and GPIO22 [4] | [More...](https://docs.platformio.org/en/latest/boards/espressif32/lolin32.html) |
