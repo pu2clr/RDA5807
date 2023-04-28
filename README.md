@@ -15,6 +15,7 @@ Contact: __pu2clr@gmail.com__.
 1. [Preface](https://pu2clr.github.io/RDA5807#preface)
 2. [RDA5807 family devices and RDA5807 Arduino Library](https://pu2clr.github.io/RDA5807#rda5807-family-devices-and-rda5807-arduino-library)
 4. [Library Installation](https://pu2clr.github.io/RDA5807#library-installation)
+5. [Boards where this library has been tested](https://pu2clr.github.io/RDA5807#boards-where-this-library-has-been-tested)
 5. [RDA5807M breakout](https://pu2clr.github.io/RDA5807#rda5807m-breakout)
 6. [RDA5807FP standalone IC](https://pu2clr.github.io/RDA5807#rda5807fp-standalone-ic)
 7. [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html)
