@@ -522,6 +522,7 @@ Cordova provides an easy way to develop for iOS and Android.
 
 * [RDA5807FP -SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.2–April.2012](https://opendevices.ru/wp-content/uploads/2015/10/RDA5807FP.pdf)
 * [RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015](https://datasheet.lcsc.com/szlcsc/RDA-Microelectronics-RDA5807MS_C167246.pdf)
+* [pu2clr/PU2CLR RDA5807 on PlatformIO](https://registry.platformio.org/libraries/pu2clr/PU2CLR%20RDA5807)
 * [Arduino RDA5807 收音机](https://oshwhub.com/yeseqaq/arduino-rda5807)
 * [What is FM Receiver, How to build an Arduino FM Radio with RDA5807](https://www.seeedstudio.com/blog/2020/01/09/what-is-fm-receiver-how-to-build-an-arduino-fm-radio-with-rda5807/)
 * [A small eagle library for popular RDA5807 Radio module](https://github.com/TigerBouli/RDA5807m-Module-)

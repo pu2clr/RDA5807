@@ -143,13 +143,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:gaef398d848e7378ec4897965b8e1b4441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the RDS time and date when the Group type is 4.  <br /></td></tr>
 <tr class="separator:gaef398d848e7378ec4897965b8e1b4441"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga25df690020bab4154b0737e7365ed8ea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a04.html#ga25df690020bab4154b0737e7365ed8ea">RDA5807::getRdsSync</a> ()</td></tr>
-<tr class="memdesc:ga25df690020bab4154b0737e7365ed8ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Rds Sync.  <br /></td></tr>
+<tr class="memdesc:ga25df690020bab4154b0737e7365ed8ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Rds Sync.  <br /></td></tr>
 <tr class="separator:ga25df690020bab4154b0737e7365ed8ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2e63d5c85cb1825492a5ba2ea3bef2c3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a04.html#ga2e63d5c85cb1825492a5ba2ea3bef2c3">RDA5807::getBlockId</a> ()</td></tr>
-<tr class="memdesc:ga2e63d5c85cb1825492a5ba2ea3bef2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current Block ID.  <br /></td></tr>
+<tr class="memdesc:ga2e63d5c85cb1825492a5ba2ea3bef2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current Block ID.  <br /></td></tr>
 <tr class="separator:ga2e63d5c85cb1825492a5ba2ea3bef2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadcc73bed36f5dbad1b41a8777be575d9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a04.html#gadcc73bed36f5dbad1b41a8777be575d9">RDA5807::getErrorBlockB</a> ()</td></tr>
-<tr class="memdesc:gadcc73bed36f5dbad1b41a8777be575d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current Status of block B.  <br /></td></tr>
+<tr class="memdesc:gadcc73bed36f5dbad1b41a8777be575d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current Status of block B.  <br /></td></tr>
 <tr class="separator:gadcc73bed36f5dbad1b41a8777be575d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0d809c6cc2928e1fee006713f77b60e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_a04.html#ga0d809c6cc2928e1fee006713f77b60e9">RDA5807::hasRdsInfo</a> ()</td></tr>
 <tr class="memdesc:ga0d809c6cc2928e1fee006713f77b60e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true when the RDS system has valid information.  <br /></td></tr>
@@ -555,7 +555,7 @@ false </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Get the Rds Sync. </p>
+<p>Gets the Rds Sync. </p>
 <p>Returns true if RDS currently synchronized. </p><dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00930">930</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
@@ -577,7 +577,7 @@ false </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Get the current Block ID. </p>
+<p>Gets the current Block ID. </p>
 <p>1= the block id of register 0cH,0dH,0eH,0fH is E</p>
 <p>0= the block id of register 0cH, 0dH, 0eH,0fH is A, B, C, D </p><dl class="section return"><dt>Returns</dt><dd>0= the block id of register 0cH, 0dH, 0eH,0fH is A, B, C, D; 1 = the block id of register 0cH,0dH,0eH,0fH is E </dd></dl>
 
@@ -600,7 +600,7 @@ false </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Get the current Status of block B. </p>
+<p>Gets the current Status of block B. </p>
 <p>Block Errors Level of RDS_DATA_1, and is always read as Errors Level of RDS BLOCK B (in RDS mode ) or E (in RBDS mode when ABCD_E flag is 1). </p><table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">value   </th><th class="markdownTableHeadNone">description    </th></tr>
