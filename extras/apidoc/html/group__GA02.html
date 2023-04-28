@@ -146,6 +146,142 @@ Functions</h2></td></tr>
 <h1><a class="anchor" id="GA02"></a>
 Basic Functions</h1>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="gad1d589d43adc89a93c5e07b2d4cb6a4c" name="gad1d589d43adc89a93c5e07b2d4cb6a4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad1d589d43adc89a93c5e07b2d4cb6a4c">&#9670;&#160;</a></span>getDeviceId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t RDA5807::getDeviceId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the Device identification. </p>
+<dl class="section return"><dt>Returns</dt><dd>device number Id </dd></dl>
+
+</div>
+</div>
+<a id="ga69981ef141e22ab00e4bde3f18f84964" name="ga69981ef141e22ab00e4bde3f18f84964"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga69981ef141e22ab00e4bde3f18f84964">&#9670;&#160;</a></span>getDirectRegister()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__GA01.html#unionword16__to__bytes">word16_to_bytes</a> RDA5807::getDirectRegister </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>reg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the register content via direct access. </p>
+<p>this method is useful to deal with a specific register. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uint8_t</td><td>register number </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__GA01.html#unionword16__to__bytes" title="Converts 16 bits word to two bytes.">word16_to_bytes</a> register content </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA01.html#unionword16__to__bytes" title="Converts 16 bits word to two bytes.">word16_to_bytes</a> datatype in <a class="el" href="RDA5807_8h.html">RDA5807.h</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga1f4bc3d6f9d94171b2965dbb4e812f4f" name="ga1f4bc3d6f9d94171b2965dbb4e812f4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1f4bc3d6f9d94171b2965dbb4e812f4f">&#9670;&#160;</a></span>getStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * RDA5807::getStatus </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>reg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the register content of a given status register (from 0x0A to 0x0F) </p>
+<p>Useful when you need just a specific status register content.</p>
+<p>This methos update the first element of the shadowStatusRegisters linked to the register </p><dl class="section return"><dt>Returns</dt><dd>rdax_reg0a the reference to current value of the 0x0A register. </dd></dl>
+
+</div>
+</div>
+<a id="gab9e3a5584a6238f719e9c9e49435f5ce" name="gab9e3a5584a6238f719e9c9e49435f5ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab9e3a5584a6238f719e9c9e49435f5ce">&#9670;&#160;</a></span>getStatusRegisters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::getStatusRegisters </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets all current device status and RDS information registers (From 0x0A to 0x0F) </p>
+<dl class="section see"><dt>See also</dt><dd>RDA5807M - SINGLE-CHIP BROADCAST FMRADIO TUNER; pages 5, 9, 12 and 13. </dd>
+<dd>
+<a class="el" href="group__GA01.html#unionrda__reg0a" title="Register 0x0A - Device current status.">rda_reg0a</a>, <a class="el" href="group__GA01.html#unionrda__reg0b" title="Register 0x0B.">rda_reg0b</a>, <a class="el" href="group__GA01.html#unionrda__reg0c" title="Register 0x0C.">rda_reg0c</a>, <a class="el" href="group__GA01.html#unionrda__reg0d" title="Register 0x0D.">rda_reg0d</a>, <a class="el" href="group__GA01.html#unionrda__reg0e" title="Register 0x0E.">rda_reg0e</a>, <a class="el" href="group__GA01.html#unionrda__reg0f" title="Register 0x0F.">rda_reg0f</a> </dd>
+<dd>
+<a class="el" href="group__GA01.html#ae51bb0aaf958ee320da80866bb20ffb5" title="shadow status registers">shadowStatusRegisters</a>; </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="#l00629">RDA5807::getRdsFlagAB()</a>, <a class="el" href="#l00643">RDA5807::getRdsGroupType()</a>, <a class="el" href="#l00672">RDA5807::getRdsProgramType()</a>, <a class="el" href="#l00762">RDA5807::getRdsText()</a>, <a class="el" href="#l00788">RDA5807::getRdsText0A()</a>, <a class="el" href="#l00817">RDA5807::getRdsText2A()</a>, <a class="el" href="#l00846">RDA5807::getRdsText2B()</a>, <a class="el" href="#l00872">RDA5807::getRdsTime()</a>, and <a class="el" href="#l00658">RDA5807::getRdsVersionCode()</a>.</p>
+
+</div>
+</div>
+<a id="ga214f631aef72ece69db73c99879c7c46" name="ga214f631aef72ece69db73c99879c7c46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga214f631aef72ece69db73c99879c7c46">&#9670;&#160;</a></span>powerDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::powerDown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Power the receiver off. </p>
+
+</div>
+</div>
+<a id="ga30d2b0c4662922df53bcef118663329c" name="ga30d2b0c4662922df53bcef118663329c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga30d2b0c4662922df53bcef118663329c">&#9670;&#160;</a></span>powerUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::powerUp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Powers the receiver on. </p>
+
+<p class="reference">Referenced by <a class="el" href="#l00237">RDA5807::setup()</a>.</p>
+
+</div>
+</div>
 <a id="ga1db36d126d26a553668c1b70de9b3823" name="ga1db36d126d26a553668c1b70de9b3823"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga1db36d126d26a553668c1b70de9b3823">&#9670;&#160;</a></span>setDelayAfterCrystalOn()</h2>
 
@@ -177,53 +313,6 @@ Basic Functions</h1>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="gadf634cb6733022e30d8f1a74a5946e78" name="gadf634cb6733022e30d8f1a74a5946e78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadf634cb6733022e30d8f1a74a5946e78">&#9670;&#160;</a></span>setI2CBusAddrs()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::setI2CBusAddrs </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>directAccess</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>fullAccess</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets alternatives I2C bus address. </p>
-<p>You do not need use this function on RDA5807M </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">directAccess</td><td></td></tr>
-    <tr><td class="paramname">fullAccess</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="reference">References <a class="el" href="#l00594">RDA5807::deviceAddressDirectAccess</a>, and <a class="el" href="#l00595">RDA5807::deviceAddressFullAccess</a>.</p>
 
 </div>
 </div>
@@ -279,79 +368,76 @@ Basic Functions</h1>
 
 </div>
 </div>
-<a id="gab9e3a5584a6238f719e9c9e49435f5ce" name="gab9e3a5584a6238f719e9c9e49435f5ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab9e3a5584a6238f719e9c9e49435f5ce">&#9670;&#160;</a></span>getStatusRegisters()</h2>
+<a id="gadf634cb6733022e30d8f1a74a5946e78" name="gadf634cb6733022e30d8f1a74a5946e78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadf634cb6733022e30d8f1a74a5946e78">&#9670;&#160;</a></span>setI2CBusAddrs()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void RDA5807::getStatusRegisters </td>
+          <td class="memname">void RDA5807::setI2CBusAddrs </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>directAccess</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets all current device status and RDS information registers (From 0x0A to 0x0F) </p>
-<dl class="section see"><dt>See also</dt><dd>RDA5807M - SINGLE-CHIP BROADCAST FMRADIO TUNER; pages 5, 9, 12 and 13. </dd>
-<dd>
-<a class="el" href="group__GA01.html#unionrda__reg0a" title="Register 0x0A - Device current status.">rda_reg0a</a>, <a class="el" href="group__GA01.html#unionrda__reg0b" title="Register 0x0B.">rda_reg0b</a>, <a class="el" href="group__GA01.html#unionrda__reg0c" title="Register 0x0C.">rda_reg0c</a>, <a class="el" href="group__GA01.html#unionrda__reg0d" title="Register 0x0D.">rda_reg0d</a>, <a class="el" href="group__GA01.html#unionrda__reg0e" title="Register 0x0E.">rda_reg0e</a>, <a class="el" href="group__GA01.html#unionrda__reg0f" title="Register 0x0F.">rda_reg0f</a> </dd>
-<dd>
-<a class="el" href="group__GA01.html#ae51bb0aaf958ee320da80866bb20ffb5" title="shadow status registers">shadowStatusRegisters</a>; </dd></dl>
-
-<p class="reference">Referenced by <a class="el" href="#l00629">RDA5807::getRdsFlagAB()</a>, <a class="el" href="#l00643">RDA5807::getRdsGroupType()</a>, <a class="el" href="#l00672">RDA5807::getRdsProgramType()</a>, <a class="el" href="#l00762">RDA5807::getRdsText()</a>, <a class="el" href="#l00788">RDA5807::getRdsText0A()</a>, <a class="el" href="#l00817">RDA5807::getRdsText2A()</a>, <a class="el" href="#l00846">RDA5807::getRdsText2B()</a>, <a class="el" href="#l00872">RDA5807::getRdsTime()</a>, and <a class="el" href="#l00658">RDA5807::getRdsVersionCode()</a>.</p>
-
-</div>
-</div>
-<a id="ga69981ef141e22ab00e4bde3f18f84964" name="ga69981ef141e22ab00e4bde3f18f84964"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga69981ef141e22ab00e4bde3f18f84964">&#9670;&#160;</a></span>getDirectRegister()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__GA01.html#unionword16__to__bytes">word16_to_bytes</a> RDA5807::getDirectRegister </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>reg</em></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fullAccess</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Gets the register content via direct access. </p>
-<p>this method is useful to deal with a specific register. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Sets alternatives I2C bus address. </p>
+<p>You do not need use this function on RDA5807M </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">uint8_t</td><td>register number </td></tr>
+    <tr><td class="paramname">directAccess</td><td></td></tr>
+    <tr><td class="paramname">fullAccess</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__GA01.html#unionword16__to__bytes" title="Converts 16 bits word to two bytes.">word16_to_bytes</a> register content </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA01.html#unionword16__to__bytes" title="Converts 16 bits word to two bytes.">word16_to_bytes</a> datatype in <a class="el" href="RDA5807_8h.html">RDA5807.h</a> </dd></dl>
+
+<p class="reference">References <a class="el" href="#l00594">RDA5807::deviceAddressDirectAccess</a>, and <a class="el" href="#l00595">RDA5807::deviceAddressFullAccess</a>.</p>
 
 </div>
 </div>
-<a id="ga1f4bc3d6f9d94171b2965dbb4e812f4f" name="ga1f4bc3d6f9d94171b2965dbb4e812f4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1f4bc3d6f9d94171b2965dbb4e812f4f">&#9670;&#160;</a></span>getStatus()</h2>
+<a id="gab97c1c8ad3ab0cd5d2852f712caee0a1" name="gab97c1c8ad3ab0cd5d2852f712caee0a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab97c1c8ad3ab0cd5d2852f712caee0a1">&#9670;&#160;</a></span>setNewDemodulateMethod()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void * RDA5807::getStatus </td>
+          <td class="memname">void RDA5807::setNewDemodulateMethod </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>reg</em></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gets the register content of a given status register (from 0x0A to 0x0F) </p>
-<p>Useful when you need just a specific status register content.</p>
-<p>This methos update the first element of the shadowStatusRegisters linked to the register </p><dl class="section return"><dt>Returns</dt><dd>rdax_reg0a the reference to current value of the 0x0A register. </dd></dl>
+<p>Sets new demodulate method. It can improve the receiver sensitivity about 1dB. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>true or false </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -397,114 +483,6 @@ Basic Functions</h1>
 
 </div>
 </div>
-<a id="ga3fe1feed45d3290beba0efef491128e6" name="ga3fe1feed45d3290beba0efef491128e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3fe1feed45d3290beba0efef491128e6">&#9670;&#160;</a></span>waitAndFinishTune()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::waitAndFinishTune </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Waits for Seek or Tune finish. </p>
-
-<p class="reference">Referenced by <a class="el" href="#l00450">RDA5807::seek()</a>, and <a class="el" href="#l00303">RDA5807::setChannel()</a>.</p>
-
-</div>
-</div>
-<a id="ga3f6dace4c93f82ec66da5641e3e3fdaa" name="ga3f6dace4c93f82ec66da5641e3e3fdaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3f6dace4c93f82ec66da5641e3e3fdaa">&#9670;&#160;</a></span>softReset()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::softReset </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Resets the device. </p>
-<p>The RDA5807M is RESET itself When VIO is Power up.</p>
-<p>Also, it support soft reset by triggering the 0x02 register (<a class="el" href="group__GA01.html#unionrda__reg02" title="Register 0x02 - Basic setup: RESET configuration;.">rda_reg02</a>) bit 1 from 0 to 1. </p>
-
-</div>
-</div>
-<a id="ga30d2b0c4662922df53bcef118663329c" name="ga30d2b0c4662922df53bcef118663329c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga30d2b0c4662922df53bcef118663329c">&#9670;&#160;</a></span>powerUp()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::powerUp </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Powers the receiver on. </p>
-
-<p class="reference">Referenced by <a class="el" href="#l00237">RDA5807::setup()</a>.</p>
-
-</div>
-</div>
-<a id="gab97c1c8ad3ab0cd5d2852f712caee0a1" name="gab97c1c8ad3ab0cd5d2852f712caee0a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab97c1c8ad3ab0cd5d2852f712caee0a1">&#9670;&#160;</a></span>setNewDemodulateMethod()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::setNewDemodulateMethod </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets new demodulate method. It can improve the receiver sensitivity about 1dB. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>true or false </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ga214f631aef72ece69db73c99879c7c46" name="ga214f631aef72ece69db73c99879c7c46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga214f631aef72ece69db73c99879c7c46">&#9670;&#160;</a></span>powerDown()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::powerDown </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Power the receiver off. </p>
-
-</div>
-</div>
 <a id="gac79c1fec6c416c9993ff19362fe312cb" name="gac79c1fec6c416c9993ff19362fe312cb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac79c1fec6c416c9993ff19362fe312cb">&#9670;&#160;</a></span>setup()</h2>
 
@@ -547,14 +525,14 @@ Basic Functions</h1>
 
 </div>
 </div>
-<a id="gad1d589d43adc89a93c5e07b2d4cb6a4c" name="gad1d589d43adc89a93c5e07b2d4cb6a4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad1d589d43adc89a93c5e07b2d4cb6a4c">&#9670;&#160;</a></span>getDeviceId()</h2>
+<a id="ga3f6dace4c93f82ec66da5641e3e3fdaa" name="ga3f6dace4c93f82ec66da5641e3e3fdaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3f6dace4c93f82ec66da5641e3e3fdaa">&#9670;&#160;</a></span>softReset()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t RDA5807::getDeviceId </td>
+          <td class="memname">void RDA5807::softReset </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -562,8 +540,30 @@ Basic Functions</h1>
       </table>
 </div><div class="memdoc">
 
-<p>Gets the Device identification. </p>
-<dl class="section return"><dt>Returns</dt><dd>device number Id </dd></dl>
+<p>Resets the device. </p>
+<p>The RDA5807M is RESET itself When VIO is Power up.</p>
+<p>Also, it support soft reset by triggering the 0x02 register (<a class="el" href="group__GA01.html#unionrda__reg02" title="Register 0x02 - Basic setup: RESET configuration;.">rda_reg02</a>) bit 1 from 0 to 1. </p>
+
+</div>
+</div>
+<a id="ga3fe1feed45d3290beba0efef491128e6" name="ga3fe1feed45d3290beba0efef491128e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3fe1feed45d3290beba0efef491128e6">&#9670;&#160;</a></span>waitAndFinishTune()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::waitAndFinishTune </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Waits for Seek or Tune finish. </p>
+
+<p class="reference">Referenced by <a class="el" href="#l00450">RDA5807::seek()</a>, and <a class="el" href="#l00303">RDA5807::setChannel()</a>.</p>
 
 </div>
 </div>

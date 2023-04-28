@@ -169,302 +169,6 @@ Functions</h2></td></tr>
 <h1><a class="anchor" id="GA03"></a>
 FM Tune</h1>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gac879c84895fee9032c1b29638e209527" name="gac879c84895fee9032c1b29638e209527"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac879c84895fee9032c1b29638e209527">&#9670;&#160;</a></span>setFrequencyToBeginBand()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::setFrequencyToBeginBand </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Tunes the receiver at the first channel/frequency of the current band. </p>
-<p>If the current band is 0, the lowest frequency is 87Mhz (8700) </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA01.html#acddb5bea9e4872e9aecf4dc9bd89a1e6">startBand</a>, <a class="el" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a" title="Sets the frequency.">setFrequency</a> <br  />
- </dd></dl>
-
-</div>
-</div>
-<a id="ga8042f480c26abb7f74560a29c0fb2f46" name="ga8042f480c26abb7f74560a29c0fb2f46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8042f480c26abb7f74560a29c0fb2f46">&#9670;&#160;</a></span>setFrequencyToEndBand()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::setFrequencyToEndBand </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Tunes the receiver at the last channel/frequency of the current band. </p>
-<p>If the current band is 0, the highest frequency is 108MHz (10800) </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA01.html#aaede268d40e40776118adbc1a8400418" title="End FM band limit.">endBand</a>, <a class="el" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a" title="Sets the frequency.">setFrequency</a> <br  />
- </dd></dl>
-
-</div>
-</div>
-<a id="gab6cc94517eb6bc3325fbd6386bbffe15" name="gab6cc94517eb6bc3325fbd6386bbffe15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab6cc94517eb6bc3325fbd6386bbffe15">&#9670;&#160;</a></span>getSpace()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t RDA5807::getSpace </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the current Band Space. </p>
-<dl class="section return"><dt>Returns</dt><dd>uint8_t value (0 = 100kHz, 1 = 200kHz, 2 = 50kHz e 3 = 25kHz) </dd></dl>
-
-</div>
-</div>
-<a id="ga85d1635f7bd51c740546d69133a97530" name="ga85d1635f7bd51c740546d69133a97530"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga85d1635f7bd51c740546d69133a97530">&#9670;&#160;</a></span>isFmTrue()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool RDA5807::isFmTrue </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns true if the current channel is a station. <br  />
- </p>
-<dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
-
-</div>
-</div>
-<a id="ga49ae7bc2ecf631c5391bab17b44df3fd" name="ga49ae7bc2ecf631c5391bab17b44df3fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga49ae7bc2ecf631c5391bab17b44df3fd">&#9670;&#160;</a></span>isFmReady()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool RDA5807::isFmReady </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns true if the FM is ready. <br  />
- </p>
-<dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
-
-</div>
-</div>
-<a id="ga6dd81b0cff50747906d7d05b127112de" name="ga6dd81b0cff50747906d7d05b127112de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6dd81b0cff50747906d7d05b127112de">&#9670;&#160;</a></span>setSoftBlendEnable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::setSoftBlendEnable </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets Soft Blend. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>true or false </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ga965658767399e2f923852144e324805f" name="ga965658767399e2f923852144e324805f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga965658767399e2f923852144e324805f">&#9670;&#160;</a></span>setAFC()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::setAFC </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets AFC true or false. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>true or false </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="gaa9cfaddbd43257e810bb3817b021fa8a" name="gaa9cfaddbd43257e810bb3817b021fa8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa9cfaddbd43257e810bb3817b021fa8a">&#9670;&#160;</a></span>setChannel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::setChannel </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>channel</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the channel. </p>
-<p>This method tunes the rteceiver in a given channel.</p>
-<p>The channel can be calculated by using the follow formula</p>
-<p>channel = (desired frequency - start band frequency) / space channel in use / 10.0);</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a" title="Sets the frequency.">setFrequency</a>, <a class="el" href="group__GA03.html#ga889cfe43f3f9c9ca92c9862261d5dbbf" title="Sets the FM band. See table below.">setBand</a>, <a class="el" href="group__GA03.html#ga76f6c3400b038aef15ba7318592e1dd0" title="Sets the FM channel space.">setSpace</a> </dd>
-<dd>
-RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">channel</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="reference">References <a class="el" href="#l00156">RDA5807::waitAndFinishTune()</a>.</p>
-
-</div>
-</div>
-<a id="gad16a6afa9520b77498b17a72c226305a" name="gad16a6afa9520b77498b17a72c226305a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad16a6afa9520b77498b17a72c226305a">&#9670;&#160;</a></span>setFrequency()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::setFrequency </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>frequency</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the frequency. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">frequency</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ga4e8db177fea475ea00fa04e3d8f1f08c" name="ga4e8db177fea475ea00fa04e3d8f1f08c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4e8db177fea475ea00fa04e3d8f1f08c">&#9670;&#160;</a></span>setFrequencyUp()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::setFrequencyUp </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Increments the current frequency. </p>
-<p>The increment uses the band space as step. See array: uint16_t fmSpace[4] = {100/10, 200/10, 50/10, 25/10}; </p>
-
-</div>
-</div>
-<a id="gadba771c864ace7a8373a76554b9d3e6a" name="gadba771c864ace7a8373a76554b9d3e6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadba771c864ace7a8373a76554b9d3e6a">&#9670;&#160;</a></span>setFrequencyDown()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::setFrequencyDown </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Decrements the current frequency. </p>
-<p>The drecrement uses the band space as step. See array: uint16_t fmSpace[4] = {20, 10, 5, 1}; </p>
-
-</div>
-</div>
 <a id="ga59b981002d383a13731bd939482a5236" name="ga59b981002d383a13731bd939482a5236"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga59b981002d383a13731bd939482a5236">&#9670;&#160;</a></span>getFrequency()</h2>
 
@@ -540,6 +244,92 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <dd>
 RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
+
+</div>
+</div>
+<a id="gab6cc94517eb6bc3325fbd6386bbffe15" name="gab6cc94517eb6bc3325fbd6386bbffe15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab6cc94517eb6bc3325fbd6386bbffe15">&#9670;&#160;</a></span>getSpace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t RDA5807::getSpace </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the current Band Space. </p>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t value (0 = 100kHz, 1 = 200kHz, 2 = 50kHz e 3 = 25kHz) </dd></dl>
+
+</div>
+</div>
+<a id="ga49ae7bc2ecf631c5391bab17b44df3fd" name="ga49ae7bc2ecf631c5391bab17b44df3fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga49ae7bc2ecf631c5391bab17b44df3fd">&#9670;&#160;</a></span>isFmReady()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RDA5807::isFmReady </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true if the FM is ready. <br  />
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
+
+</div>
+</div>
+<a id="ga85d1635f7bd51c740546d69133a97530" name="ga85d1635f7bd51c740546d69133a97530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga85d1635f7bd51c740546d69133a97530">&#9670;&#160;</a></span>isFmTrue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RDA5807::isFmTrue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true if the current channel is a station. <br  />
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
 
 </div>
 </div>
@@ -649,26 +439,26 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 
 </div>
 </div>
-<a id="ga41dbf6ea359175b3671072a3c382d42c" name="ga41dbf6ea359175b3671072a3c382d42c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga41dbf6ea359175b3671072a3c382d42c">&#9670;&#160;</a></span>setSeekThreshold()</h2>
+<a id="ga965658767399e2f923852144e324805f" name="ga965658767399e2f923852144e324805f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga965658767399e2f923852144e324805f">&#9670;&#160;</a></span>setAFC()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void RDA5807::setSeekThreshold </td>
+          <td class="memname">void RDA5807::setAFC </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets RSSI Seek Threshold. </p>
+<p>Sets AFC true or false. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td></td></tr>
+    <tr><td class="paramname">value</td><td>true or false </td></tr>
   </table>
   </dd>
 </dl>
@@ -708,6 +498,243 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">band</td><td>FM band index. See table above. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaa9cfaddbd43257e810bb3817b021fa8a" name="gaa9cfaddbd43257e810bb3817b021fa8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa9cfaddbd43257e810bb3817b021fa8a">&#9670;&#160;</a></span>setChannel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setChannel </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the channel. </p>
+<p>This method tunes the rteceiver in a given channel.</p>
+<p>The channel can be calculated by using the follow formula</p>
+<p>channel = (desired frequency - start band frequency) / space channel in use / 10.0);</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a" title="Sets the frequency.">setFrequency</a>, <a class="el" href="group__GA03.html#ga889cfe43f3f9c9ca92c9862261d5dbbf" title="Sets the FM band. See table below.">setBand</a>, <a class="el" href="group__GA03.html#ga76f6c3400b038aef15ba7318592e1dd0" title="Sets the FM channel space.">setSpace</a> </dd>
+<dd>
+RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="#l00156">RDA5807::waitAndFinishTune()</a>.</p>
+
+</div>
+</div>
+<a id="ga4f8fe00a561c39d2dc9a0a143b1866e9" name="ga4f8fe00a561c39d2dc9a0a143b1866e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4f8fe00a561c39d2dc9a0a143b1866e9">&#9670;&#160;</a></span>setFmDeemphasis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setFmDeemphasis </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>de</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets De-emphasis. </p>
+<p>75 μs. Used in USA (default); 50 μs. Used in Europe, Australia, Japan.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">de</td><td>0 = 75 μs; 1 = 50 μs </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gad16a6afa9520b77498b17a72c226305a" name="gad16a6afa9520b77498b17a72c226305a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad16a6afa9520b77498b17a72c226305a">&#9670;&#160;</a></span>setFrequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setFrequency </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>frequency</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the frequency. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frequency</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gadba771c864ace7a8373a76554b9d3e6a" name="gadba771c864ace7a8373a76554b9d3e6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadba771c864ace7a8373a76554b9d3e6a">&#9670;&#160;</a></span>setFrequencyDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setFrequencyDown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decrements the current frequency. </p>
+<p>The drecrement uses the band space as step. See array: uint16_t fmSpace[4] = {20, 10, 5, 1}; </p>
+
+</div>
+</div>
+<a id="gac879c84895fee9032c1b29638e209527" name="gac879c84895fee9032c1b29638e209527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac879c84895fee9032c1b29638e209527">&#9670;&#160;</a></span>setFrequencyToBeginBand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setFrequencyToBeginBand </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tunes the receiver at the first channel/frequency of the current band. </p>
+<p>If the current band is 0, the lowest frequency is 87Mhz (8700) </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA01.html#acddb5bea9e4872e9aecf4dc9bd89a1e6">startBand</a>, <a class="el" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a" title="Sets the frequency.">setFrequency</a> <br  />
+ </dd></dl>
+
+</div>
+</div>
+<a id="ga8042f480c26abb7f74560a29c0fb2f46" name="ga8042f480c26abb7f74560a29c0fb2f46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8042f480c26abb7f74560a29c0fb2f46">&#9670;&#160;</a></span>setFrequencyToEndBand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setFrequencyToEndBand </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tunes the receiver at the last channel/frequency of the current band. </p>
+<p>If the current band is 0, the highest frequency is 108MHz (10800) </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA01.html#aaede268d40e40776118adbc1a8400418" title="End FM band limit.">endBand</a>, <a class="el" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a" title="Sets the frequency.">setFrequency</a> <br  />
+ </dd></dl>
+
+</div>
+</div>
+<a id="ga4e8db177fea475ea00fa04e3d8f1f08c" name="ga4e8db177fea475ea00fa04e3d8f1f08c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4e8db177fea475ea00fa04e3d8f1f08c">&#9670;&#160;</a></span>setFrequencyUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setFrequencyUp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Increments the current frequency. </p>
+<p>The increment uses the band space as step. See array: uint16_t fmSpace[4] = {100/10, 200/10, 50/10, 25/10}; </p>
+
+</div>
+</div>
+<a id="ga41dbf6ea359175b3671072a3c382d42c" name="ga41dbf6ea359175b3671072a3c382d42c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga41dbf6ea359175b3671072a3c382d42c">&#9670;&#160;</a></span>setSeekThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setSeekThreshold </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets RSSI Seek Threshold. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga6dd81b0cff50747906d7d05b127112de" name="ga6dd81b0cff50747906d7d05b127112de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6dd81b0cff50747906d7d05b127112de">&#9670;&#160;</a></span>setSoftBlendEnable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setSoftBlendEnable </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets Soft Blend. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>true or false </td></tr>
   </table>
   </dd>
 </dl>
@@ -781,33 +808,6 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Make the step 200kHz work well </dd></dl>
 </li>
 </ul>
-
-</div>
-</div>
-<a id="ga4f8fe00a561c39d2dc9a0a143b1866e9" name="ga4f8fe00a561c39d2dc9a0a143b1866e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4f8fe00a561c39d2dc9a0a143b1866e9">&#9670;&#160;</a></span>setFmDeemphasis()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::setFmDeemphasis </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>de</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets De-emphasis. </p>
-<p>75 μs. Used in USA (default); 50 μs. Used in Europe, Australia, Japan.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">de</td><td>0 = 75 μs; 1 = 50 μs </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>

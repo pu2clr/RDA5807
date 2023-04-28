@@ -144,60 +144,23 @@ Functions</h2></td></tr>
 <h1><a class="anchor" id="GA07"></a>
 Audio</h1>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga428ddd720c58c17273322d7526e51cbe" name="ga428ddd720c58c17273322d7526e51cbe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga428ddd720c58c17273322d7526e51cbe">&#9670;&#160;</a></span>isSoftmuted()</h2>
+<a id="ga743d91d820922b3feda10d06443bc8a9" name="ga743d91d820922b3feda10d06443bc8a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga743d91d820922b3feda10d06443bc8a9">&#9670;&#160;</a></span>getVolume()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool RDA5807::isSoftmuted </td>
+          <td class="memname">uint8_t RDA5807::getVolume </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Gets the softmute status <br  />
- </p>
-<dl class="section return"><dt>Returns</dt><dd>true if enabled </dd></dl>
-
-</div>
-</div>
-<a id="gaef3ebf331e0646a67b6ebfa6d47c3a16" name="gaef3ebf331e0646a67b6ebfa6d47c3a16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaef3ebf331e0646a67b6ebfa6d47c3a16">&#9670;&#160;</a></span>isMuted()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool RDA5807::isMuted </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets Audio Mute Status. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if muted </dd></dl>
+<p>Gets the current audio volume level. </p>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t 0 to 15 </dd></dl>
 
 </div>
 </div>
@@ -229,55 +192,80 @@ Audio</h1>
 
 </div>
 </div>
-<a id="gadd2c2ab8b861ab0714fdeb99c774d656" name="gadd2c2ab8b861ab0714fdeb99c774d656"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadd2c2ab8b861ab0714fdeb99c774d656">&#9670;&#160;</a></span>setSoftmute()</h2>
+<a id="gaef3ebf331e0646a67b6ebfa6d47c3a16" name="gaef3ebf331e0646a67b6ebfa6d47c3a16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaef3ebf331e0646a67b6ebfa6d47c3a16">&#9670;&#160;</a></span>isMuted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RDA5807::isMuted </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets Audio Mute Status. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if muted </dd></dl>
+
+</div>
+</div>
+<a id="ga428ddd720c58c17273322d7526e51cbe" name="ga428ddd720c58c17273322d7526e51cbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga428ddd720c58c17273322d7526e51cbe">&#9670;&#160;</a></span>isSoftmuted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RDA5807::isSoftmuted </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the softmute status <br  />
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>true if enabled </dd></dl>
+
+</div>
+</div>
+<a id="ga250ff3788a7831dae3c6200919b446dd" name="ga250ff3788a7831dae3c6200919b446dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga250ff3788a7831dae3c6200919b446dd">&#9670;&#160;</a></span>isStereo()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void RDA5807::setSoftmute </td>
+          <td class="memname">bool RDA5807::isStereo </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets Soft Mute Enable or disable. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>true = enable; false=disable </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="gafec3018913d735ee0684b88cf503c84a" name="gafec3018913d735ee0684b88cf503c84a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafec3018913d735ee0684b88cf503c84a">&#9670;&#160;</a></span>setMute()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::setMute </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets Audio mute or unmute. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>TRUE = mute; FALSE = unmute </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Gets the current Stereo status. </p>
+<dl class="section return"><dt>Returns</dt><dd>TRUE if stereo; </dd></dl>
 
 </div>
 </div>
@@ -301,32 +289,6 @@ Audio</h1>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>TRUE = High; FALSE = Low </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="gad6e77ffbeb3f4dc885548130e09590d6" name="gad6e77ffbeb3f4dc885548130e09590d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad6e77ffbeb3f4dc885548130e09590d6">&#9670;&#160;</a></span>setMono()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::setMono </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets audio Mono or stereo. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>TRUE = Mono; FALSE force stereo </td></tr>
   </table>
   </dd>
 </dl>
@@ -359,23 +321,81 @@ Audio</h1>
 
 </div>
 </div>
-<a id="ga250ff3788a7831dae3c6200919b446dd" name="ga250ff3788a7831dae3c6200919b446dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga250ff3788a7831dae3c6200919b446dd">&#9670;&#160;</a></span>isStereo()</h2>
+<a id="gad6e77ffbeb3f4dc885548130e09590d6" name="gad6e77ffbeb3f4dc885548130e09590d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad6e77ffbeb3f4dc885548130e09590d6">&#9670;&#160;</a></span>setMono()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool RDA5807::isStereo </td>
+          <td class="memname">void RDA5807::setMono </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gets the current Stereo status. </p>
-<dl class="section return"><dt>Returns</dt><dd>TRUE if stereo; </dd></dl>
+<p>Sets audio Mono or stereo. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>TRUE = Mono; FALSE force stereo </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gafec3018913d735ee0684b88cf503c84a" name="gafec3018913d735ee0684b88cf503c84a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafec3018913d735ee0684b88cf503c84a">&#9670;&#160;</a></span>setMute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setMute </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets Audio mute or unmute. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>TRUE = mute; FALSE = unmute </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gadd2c2ab8b861ab0714fdeb99c774d656" name="gadd2c2ab8b861ab0714fdeb99c774d656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadd2c2ab8b861ab0714fdeb99c774d656">&#9670;&#160;</a></span>setSoftmute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setSoftmute </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets Soft Mute Enable or disable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>true = enable; false=disable </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -405,14 +425,14 @@ Audio</h1>
 
 </div>
 </div>
-<a id="ga743d91d820922b3feda10d06443bc8a9" name="ga743d91d820922b3feda10d06443bc8a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga743d91d820922b3feda10d06443bc8a9">&#9670;&#160;</a></span>getVolume()</h2>
+<a id="ga910965f74897b0246a0b3bed39743d8c" name="ga910965f74897b0246a0b3bed39743d8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga910965f74897b0246a0b3bed39743d8c">&#9670;&#160;</a></span>setVolumeDown()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t RDA5807::getVolume </td>
+          <td class="memname">void RDA5807::setVolumeDown </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -420,8 +440,7 @@ Audio</h1>
       </table>
 </div><div class="memdoc">
 
-<p>Gets the current audio volume level. </p>
-<dl class="section return"><dt>Returns</dt><dd>uint8_t 0 to 15 </dd></dl>
+<p>Decrements the audio volume. </p>
 
 </div>
 </div>
@@ -441,25 +460,6 @@ Audio</h1>
 </div><div class="memdoc">
 
 <p>Increments the audio volume. </p>
-
-</div>
-</div>
-<a id="ga910965f74897b0246a0b3bed39743d8c" name="ga910965f74897b0246a0b3bed39743d8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga910965f74897b0246a0b3bed39743d8c">&#9670;&#160;</a></span>setVolumeDown()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RDA5807::setVolumeDown </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Decrements the audio volume. </p>
 
 </div>
 </div>

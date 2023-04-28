@@ -112,56 +112,30 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A set of functions used to support other functions </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga2275869d5ec1bd0eaea2e278e2a70cc7" name="ga2275869d5ec1bd0eaea2e278e2a70cc7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2275869d5ec1bd0eaea2e278e2a70cc7">&#9670;&#160;</a></span>formatFrequency()</h2>
+<a id="ga16f6ef1f816a032fb07a91017c34bb50" name="ga16f6ef1f816a032fb07a91017c34bb50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga16f6ef1f816a032fb07a91017c34bb50">&#9670;&#160;</a></span>checkI2C()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char * RDA5807::formatFrequency </td>
+          <td class="memname">int RDA5807::checkI2C </td>
           <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>addressArray</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>strValue</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>decimalSeparator</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Convert a numeric frequency to a formated string (char *) frequency. </p>
+<p>Check the I2C bus address. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">uint16_t</td><td>value - Frequency to be formated </td></tr>
-    <tr><td class="paramname">char</td><td>*strValue - Formated frequency (Exe: 103,90) - Array of char ( minimal 7 elements ) </td></tr>
-    <tr><td class="paramname">char</td><td>decimalSeparator - the symbol that separates the decimal part (Exe: . or ,) </td></tr>
+    <tr><td class="paramname">uint8_t</td><td>address Array - this array will be populated with the I2C bus addresses found (minimum three elements) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>point of strValue </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if no i2c device is found; -1 if error is found or n &gt; 0, where n is the number of I2C bus address found </dd></dl>
 
 </div>
 </div>
@@ -233,30 +207,56 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga16f6ef1f816a032fb07a91017c34bb50" name="ga16f6ef1f816a032fb07a91017c34bb50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga16f6ef1f816a032fb07a91017c34bb50">&#9670;&#160;</a></span>checkI2C()</h2>
+<a id="ga2275869d5ec1bd0eaea2e278e2a70cc7" name="ga2275869d5ec1bd0eaea2e278e2a70cc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2275869d5ec1bd0eaea2e278e2a70cc7">&#9670;&#160;</a></span>formatFrequency()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int RDA5807::checkI2C </td>
+          <td class="memname">char * RDA5807::formatFrequency </td>
           <td>(</td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>addressArray</em></td><td>)</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>strValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>decimalSeparator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Check the I2C bus address. </p>
+<p>Convert a numeric frequency to a formated string (char *) frequency. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">uint8_t</td><td>address Array - this array will be populated with the I2C bus addresses found (minimum three elements) </td></tr>
+    <tr><td class="paramname">uint16_t</td><td>value - Frequency to be formated </td></tr>
+    <tr><td class="paramname">char</td><td>*strValue - Formated frequency (Exe: 103,90) - Array of char ( minimal 7 elements ) </td></tr>
+    <tr><td class="paramname">char</td><td>decimalSeparator - the symbol that separates the decimal part (Exe: . or ,) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 if no i2c device is found; -1 if error is found or n &gt; 0, where n is the number of I2C bus address found </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>point of strValue </dd></dl>
 
 </div>
 </div>
