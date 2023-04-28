@@ -36,7 +36,7 @@ The RDA5807 is a FM DSP integrated circuit receiver (50 to 115MHz) with low nois
 
 This documentation exposes the understanding of the author of this library about the functioning of the IC RDA5807 family. That said, it is possible that some information is not correct. If you find any wrong or inaccurate information, please let me know.
 
-Plese, check the [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html/) for more details. 
+Please, check the [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html/) for more details. 
 
 ## Your support is important.
 
