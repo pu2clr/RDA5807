@@ -57,19 +57,19 @@
 #define RDA_SEEK_DOWN  0     //!< Seek Up
 #define RDA_SEEK_UP    1     //!< Seek Down
 
-#define REG00 0x00
-#define REG02 0x02
-#define REG03 0x03
-#define REG04 0x04
-#define REG05 0x05
-#define REG06 0x06
-#define REG07 0x07
-#define REG0A 0x0A
-#define REG0B 0x0B
-#define REG0C 0x0C
-#define REG0D 0x0D
-#define REG0E 0x0E
-#define REG0F 0x0F
+#define REG00 0x00  //!< Register 0x00 
+#define REG02 0x02  //!< Register 0x02 
+#define REG03 0x03  //!< Register 0x03 
+#define REG04 0x04  //!< Register 0x04 
+#define REG05 0x05  //!< Register 0x05 
+#define REG06 0x06  //!< Register 0x06 
+#define REG07 0x07  //!< Register 0x07 
+#define REG0A 0x0A  //!< Register 0x0A 
+#define REG0B 0x0B  //!< Register 0x0B 
+#define REG0C 0x0C  //!< Register 0x0C 
+#define REG0D 0x0D  //!< Register 0x0D 
+#define REG0E 0x0E  //!< Register 0x0E 
+#define REG0F 0x0F  //!< Register 0x0F 
 
 #define SH_REG0A 0 //!< Shadow array position for register 0x0A
 #define SH_REG0B 1 //!< Shadow array position for register 0x0B
