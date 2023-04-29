@@ -71,23 +71,23 @@
 #define REG0E 0x0E
 #define REG0F 0x0F
 
-#define SH_REG0A 0 // Shadow array position for register 0x0A
-#define SH_REG0B 1 // Shadow array position for register 0x0B
-#define SH_REG0C 2 // Shadow array position for register 0x0C - RDS Block A
-#define SH_REG0D 3 // Shadow array position for register 0x0D - RDS Block B
-#define SH_REG0E 4 // Shadow array position for register 0x0E - RDS Block C
-#define SH_REG0F 5 // Shadow array position for register 0x0F - RDS Block D
+#define SH_REG0A 0 //!< Shadow array position for register 0x0A
+#define SH_REG0B 1 //!< Shadow array position for register 0x0B
+#define SH_REG0C 2 //!< Shadow array position for register 0x0C - RDS Block A
+#define SH_REG0D 3 //!< Shadow array position for register 0x0D - RDS Block B
+#define SH_REG0E 4 //!< Shadow array position for register 0x0E - RDS Block C
+#define SH_REG0F 5 //!< Shadow array position for register 0x0F - RDS Block D
 
 
-#define I2S_WS_STEP_48      0b1000 
-#define I2S_WS_STEP_44_1    0b0111
-#define I2S_WS_STEP_32      0b0110
-#define I2S_WS_STEP_24      0b0101      
-#define I2S_WS_STEP_22_05   0b0100  
-#define I2S_WS_STEP_16      0b0011  
-#define I2S_WS_STEP_12      0b0010  
-#define I2S_WS_STEP_11_025  0b0001 
-#define I2S_WS_STEP_8       0b0000       
+#define I2S_WS_STEP_48      0b1000 //<! 48 kbps 
+#define I2S_WS_STEP_44_1    0b0111 //<! 41.1 kbps
+#define I2S_WS_STEP_32      0b0110 //<! 32 kbps
+#define I2S_WS_STEP_24      0b0101 //<! 24 kbps    
+#define I2S_WS_STEP_22_05   0b0100 //<! 22.05 kbps
+#define I2S_WS_STEP_16      0b0011 //<! 16 kbps
+#define I2S_WS_STEP_12      0b0010 //<! 12 kbps
+#define I2S_WS_STEP_11_025  0b0001 //<! 11.025 kbps
+#define I2S_WS_STEP_8       0b0000 //<! 8 kbps      
 
 
 /**
