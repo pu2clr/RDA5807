@@ -26,15 +26,17 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-#define MAX_DELAY_AFTER_OSCILLATOR 500  // Max delay after the crystal oscilator becomes active
+#define MAX_DELAY_AFTER_OSCILLATOR 100  // Max delay after the crystal oscilator becomes active
 
 
 #define I2C_ADDR_DIRECT_ACCESS  0x11    //!< Can be used to access a given register at a time.
 #define I2C_ADDR_FULL_ACCESS    0x10    //!< Can be used to access a set of register at a time.
 
 
-#define OSCILLATOR_TYPE_CRYSTAL  0  //!< Crystal
-#define OSCILLATOR_TYPE_REFCLK   1  //!< Reference clock
+#define OSCILLATOR_TYPE_CRYSTAL  0  //!< Same OSCILLATOR_TYPE_PASSIVE (Legacy)
+#define OSCILLATOR_TYPE_PASSIVE  0  //!< Passive Crystal
+#define OSCILLATOR_TYPE_REFCLK   1  //!< Same OSCILLATOR_TYPE_ACTIVE (Lagacy)
+#define OSCILLATOR_TYPE_ACTIVE   1  //!< Reference clock (active crystal oscillator or signal generator)
 
 #define CLOCK_32K                0  //!< 32.768kHz
 #define CLOCK_12M                1  //!< 12Mhz
@@ -604,8 +606,8 @@ class RDA5807 {
         int gpio2Control = -1;      //!< Can be used to add control to the  system via GPIO2 pin
         int gpio3Control = -1;      //!< Can be used to add control to the  system via GPIO3 pin
 
-        uint8_t clockType = CLOCK_32K;
-        uint8_t oscillatorType = OSCILLATOR_TYPE_CRYSTAL;
+        uint8_t clockFrequency = CLOCK_32K;
+        uint8_t oscillatorType = OSCILLATOR_TYPE_PASSIVE;
 
         uint16_t maxDelayAftarCrystalOn = MAX_DELAY_AFTER_OSCILLATOR;
 
@@ -646,7 +648,7 @@ class RDA5807 {
             void powerUp();
             void powerDown();
 
-            void setup(uint8_t clock_type = CLOCK_32K, uint8_t oscillator_type = OSCILLATOR_TYPE_CRYSTAL);
+            void setup(uint8_t clock_frequency = CLOCK_32K, uint8_t oscillator_type = OSCILLATOR_TYPE_PASSIVE);
 
             void setNewDemodulateMethod(bool value);
 

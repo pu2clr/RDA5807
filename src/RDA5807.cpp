@@ -181,7 +181,7 @@ void RDA5807::powerUp()
     reg02->raw = 0;
     reg02->refined.NEW_METHOD = 0;
     reg02->refined.RDS_EN = 0;  // RDS disable
-    reg02->refined.CLK_MODE = this->clockType;
+    reg02->refined.CLK_MODE = this->clockFrequency;
     reg02->refined.RCLK_DIRECT_IN = this->oscillatorType;
     reg02->refined.MONO = 1;    // Force mono   
     reg02->refined.DMUTE = 1;   // Normal operation
@@ -231,18 +231,19 @@ void RDA5807::powerDown()
  * @details You can select the colck type and the frequency 
  * @details oscillator type: OSCILLATOR_TYPE_CRYSTAL = passive crystal; OSCILLATOR_TYPE_REFCLK = active crystal or signal generator
  * @details Clock type: CLOCK_32K, CLOCK_12M, CLOCK_13M, CLOCK_19_2M, CLOCK_24M, CLOCK_26M and CLOCK_38_4M  
- * @param clock_type       Clock used.
+ * @param clock_type       Clock used. Passive or Cctive 
  * @param oscillator_type  optional. Sets the Oscillator type used (default: passive Crystal).
  */
-void RDA5807::setup(uint8_t clock_type, uint8_t oscillator_type)
+void RDA5807::setup(uint8_t clock_frequency, uint8_t oscillator_type)
 {
     this->oscillatorType = oscillator_type;
-    this->clockType = clock_type;
+    this->clockFrequency = clock_frequency;
 
     Wire.begin();
-    delay(1);
-    powerUp();
 
+    delay(10);
+    powerUp();
+    delay(this->maxDelayAftarCrystalOn);
 }
 
 /**
