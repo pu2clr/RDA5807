@@ -51,7 +51,12 @@ void setup() {
 
   showSeparator();
 
-  rx.setup();
+  rx.setup();  // 32.768kHz passive crystal
+  // rx.setup(CLOCK_32K, OSCILLATOR_TYPE_ACTIVE); // 32.768kHz Active Crystal
+  // rx.setup(CLOCK_12M, OSCILLATOR_TYPE_PASSIVE);
+  // rx.setup(CLOCK_38_4M, OSCILLATOR_TYPE_PASSIVE);
+
+
 
   delay(200);
   Serial.println(F("Some information just after the receiver starts - rx.setup();"));
