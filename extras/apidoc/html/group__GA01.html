@@ -1236,9 +1236,9 @@ refined</td>
 <tr class="memitem:a01973fd833000d82609206bfbef62977"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a01973fd833000d82609206bfbef62977">rds_buffer0A</a> [9]</td></tr>
 <tr class="memdesc:a01973fd833000d82609206bfbef62977"><td class="mdescLeft">&#160;</td><td class="mdescRight">RDS Basic tuning and switching information (Type 0 groups)  <br /></td></tr>
 <tr class="separator:a01973fd833000d82609206bfbef62977"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec9b51525f983cfd4b008c3c79b2b22c"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#aec9b51525f983cfd4b008c3c79b2b22c">rds_time</a> [20]</td></tr>
-<tr class="memdesc:aec9b51525f983cfd4b008c3c79b2b22c"><td class="mdescLeft">&#160;</td><td class="mdescRight">RDS date time received information.  <br /></td></tr>
-<tr class="separator:aec9b51525f983cfd4b008c3c79b2b22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d9eae606a7de8a650611eaf1f9a8482"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a3d9eae606a7de8a650611eaf1f9a8482">rds_time</a> [25]</td></tr>
+<tr class="memdesc:a3d9eae606a7de8a650611eaf1f9a8482"><td class="mdescLeft">&#160;</td><td class="mdescRight">RDS date time received information.  <br /></td></tr>
+<tr class="separator:a3d9eae606a7de8a650611eaf1f9a8482"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h4 class="groupheader">Member Data Documentation</h4>
 <a id="af0c39d19376c30217eeb6bf17b398e46" name="af0c39d19376c30217eeb6bf17b398e46"></a>
@@ -1371,7 +1371,7 @@ refined</td>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00634">setI2CBusAddrs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00632">setI2CBusAddrs()</a>.</p>
 
 </div>
 </div>
@@ -1395,7 +1395,7 @@ refined</td>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00634">setI2CBusAddrs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00632">setI2CBusAddrs()</a>.</p>
 
 </div>
 </div>
@@ -1639,8 +1639,8 @@ refined</td>
 
 </div>
 </div>
-<a id="aec9b51525f983cfd4b008c3c79b2b22c" name="aec9b51525f983cfd4b008c3c79b2b22c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec9b51525f983cfd4b008c3c79b2b22c">&#9670;&#160;</a></span>rds_time</h2>
+<a id="a3d9eae606a7de8a650611eaf1f9a8482" name="a3d9eae606a7de8a650611eaf1f9a8482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d9eae606a7de8a650611eaf1f9a8482">&#9670;&#160;</a></span>rds_time</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1649,7 +1649,7 @@ refined</td>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char RDA5807::rds_time[20]</td>
+          <td class="memname">char RDA5807::rds_time[25]</td>
         </tr>
       </table>
   </td>
@@ -3070,27 +3070,15 @@ versionCode: 1</td>
 <div class="textblock"></div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
-<a id="a0351524e66b386b6638dd47c0d00de65" name="a0351524e66b386b6638dd47c0d00de65"></a>uint8_t</td>
+<a id="a896c55cc5e46fab38ce9f51ebf7bfcd3" name="a896c55cc5e46fab38ce9f51ebf7bfcd3"></a>uint32_t</td>
 <td class="fieldname">
-hour1: 4</td>
+hour: 5</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a38034b153ffba397eebfcd07b4a50414" name="a38034b153ffba397eebfcd07b4a50414"></a>uint8_t</td>
+<a id="a0a7d55be9d12a369a6a8da0fb517fba4" name="a0a7d55be9d12a369a6a8da0fb517fba4"></a>uint32_t</td>
 <td class="fieldname">
-hour2: 1</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a756bdae430708e155654a844c2bcc33b" name="a756bdae430708e155654a844c2bcc33b"></a>uint8_t</td>
-<td class="fieldname">
-minute1: 2</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a57b42af48e9b3407c002d157d89f50ad" name="a57b42af48e9b3407c002d157d89f50ad"></a>uint8_t</td>
-<td class="fieldname">
-minute2: 4</td>
+minute: 6</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
@@ -3100,13 +3088,13 @@ mjd: 17</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a7a86c157ee9713c34fbd7a1ee40f0c5a" name="a7a86c157ee9713c34fbd7a1ee40f0c5a"></a>uint8_t</td>
+<a id="a7a86c157ee9713c34fbd7a1ee40f0c5a" name="a7a86c157ee9713c34fbd7a1ee40f0c5a"></a>uint32_t</td>
 <td class="fieldname">
 offset: 5</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a5ba6e404c489ff4f757e7c77cb9fa310" name="a5ba6e404c489ff4f757e7c77cb9fa310"></a>uint8_t</td>
+<a id="a5ba6e404c489ff4f757e7c77cb9fa310" name="a5ba6e404c489ff4f757e7c77cb9fa310"></a>uint32_t</td>
 <td class="fieldname">
 offset_sense: 1</td>
 <td class="fielddoc">

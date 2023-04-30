@@ -98,7 +98,7 @@ var group__GA01_classRDA5807 =
     [ "rds_buffer0A", "group__GA01.html#a01973fd833000d82609206bfbef62977", null ],
     [ "rds_buffer2A", "group__GA01.html#af7eb4e812ca7b0883a3e9c7879a034d9", null ],
     [ "rds_buffer2B", "group__GA01.html#a81d7aaf8d628afb9cc268777fea95045", null ],
-    [ "rds_time", "group__GA01.html#aec9b51525f983cfd4b008c3c79b2b22c", null ],
+    [ "rds_time", "group__GA01.html#a3d9eae606a7de8a650611eaf1f9a8482", null ],
     [ "reg00", "group__GA01.html#af9cbd65bd00bce76f8b362159cf9d589", null ],
     [ "reg01", "group__GA01.html#a63267deb8311ff567df5ae6202ffa3fb", null ],
     [ "reg02", "group__GA01.html#a68804842ce8d8c4304bc260b6a386e12", null ],
