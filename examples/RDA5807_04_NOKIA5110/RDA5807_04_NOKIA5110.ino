@@ -87,8 +87,8 @@
 #define SWITCH_RDS 7      // SDR ON or OFF
 #define SEEK_FUNCTION 14  // Pin A0 / Digital 14
 
-#define POLLING_TIME 2000
-#define POLLING_RDS 20
+#define POLLING_TIME 3000
+#define POLLING_RDS 50
 
 #define STORE_TIME 10000    // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
 #define PUSH_MIN_DELAY 300  // Minimum waiting time after an action
@@ -360,13 +360,11 @@ void showRDSStation() {
 }
 
 void showRDSTime() {
-  /*
   if (rdsTime == NULL) return;
-  display.setCursor(0, 46);
+  display.setCursor(50, 40);
   display.print(rdsTime);
   display.display();
   delay(30);
-  */
 }
 
 
