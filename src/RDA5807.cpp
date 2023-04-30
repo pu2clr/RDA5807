@@ -909,17 +909,24 @@ char *RDA5807::getRdsTime()
         dt.raw[0] = blk_d.refined.lowByte;
         dt.raw[1] = blk_d.refined.highByte;
 
-        // Unfortunately it was necessary to wotk well on the GCC compiler on 32-bit
-        // platforms. See si47x_rds_date_time (typedef union) and CGG “Crosses boundary” issue/features.
-        // Now it is working on Atmega328, STM32, Arduino DUE, ESP32 and more.
-        minute = (dt.refined.minute2 << 2) | dt.refined.minute1;
-        hour = (dt.refined.hour2 << 4) | dt.refined.hour1;
+        minute =  dt.refined.minute;
+        hour = dt.refined.hour;
 
         offset_sign = (dt.refined.offset_sense == 1) ? '+' : '-';
         offset_h = (dt.refined.offset * 30) / 60;
         offset_m = (dt.refined.offset * 30) - (offset_h * 60);
 
-        sprintf(rds_time, "%02u:%02u %c%02u:%02u", hour, minute, offset_sign, offset_h, offset_m);
+        // sprintf(rds_time, "%02u:%02u %c%02u:%02u", hour, minute, offset_sign, offset_h, offset_m);
+        this->convertToChar(hour, rds_time, 2, 0, ' ', false);
+        rds_time[2] = ':';
+        this->convertToChar(minute, &rds_time[3], 2, 0, ' ', false);
+        rds_time[5] = ' ';
+        rds_time[6] = offset_sign;
+        this->convertToChar(offset_h, &rds_time[7], 2, 0, ' ', false);
+        rds_time[9] = ':';
+        this->convertToChar(offset_m, &rds_time[10], 2, 0, ' ', false);
+        rds_time[12] = '\0';
+
 
         return rds_time;
     }
