@@ -149,6 +149,7 @@ void setup()
   attachInterrupt(digitalPinToInterrupt(ENCODER_PIN_B), rotaryEncoder, CHANGE);
 
   rx.setup();
+  delay(100);
 
   // Checking the EEPROM content
   if (EEPROM.read(eeprom_address) == app_id)
@@ -163,7 +164,7 @@ void setup()
     rx.setRdsFifo(true); 
     currentFrequency = previousFrequency = 10390;
   }
-
+  rx.setAFC(true);
   rx.setFrequency(currentFrequency); // It is the frequency you want to select in MHz multiplied by 100.
   rx.setSeekThreshold(50); // Sets RSSI Seek Threshold (0 to 127)
   showStatus();
