@@ -1,6 +1,13 @@
 /*
 
     Test RDS functions  using Serial Monitor.
+    This sketch is useful to check how the RDS work and how the local stations provide this service.
+    For example: I have noticed in my location that some stations send wrong time information. So, for these stations, 
+    the RDS time functions implemented by this library seem do not work fine
+
+    To use this aplication, please select the Arduino IDE Serial Monitor. 
+    Type ? to see the instructions. 
+
 
     Arduino Pro Mini and RDA5807 wire up
 
