@@ -37,14 +37,16 @@
 #define OSCILLATOR_TYPE_PASSIVE  0  //!< Passive Crystal
 #define OSCILLATOR_TYPE_REFCLK   1  //!< Same OSCILLATOR_TYPE_ACTIVE (Lagacy)
 #define OSCILLATOR_TYPE_ACTIVE   1  //!< Reference clock (active crystal oscillator or signal generator)
+#define RLCK_NO_CALIBRATE_MODE_ON   1
+#define RLCK_NO_CALIBRATE_MODE_OFF  0   
 
-#define CLOCK_32K                0  //!< 32.768kHz
-#define CLOCK_12M                1  //!< 12Mhz
-#define CLOCK_13M                2  //!< 13Mhz
-#define CLOCK_19_2M              3  //!< 19.2Mhz
-#define CLOCK_24M                5  //!< 24Mhz 
-#define CLOCK_26M                6  //!< 26Mhz 
-#define CLOCK_38_4M              7  //!< 38.4Mhz 
+#define CLOCK_32K                0b000  //!< 32.768kHz
+#define CLOCK_12M                0b001  //!< 12Mhz
+#define CLOCK_13M                0b010  //!< 13Mhz
+#define CLOCK_19_2M              0b011  //!< 19.2Mhz
+#define CLOCK_24M                0b101  //!< 24Mhz 
+#define CLOCK_26M                0b110  //!< 26Mhz 
+#define CLOCK_38_4M              0b111  //!< 38.4Mhz 
 
 #define RDS_STANDARD     0  //!< RDS Mode.
 #define RDS_VERBOSE      1  //!< RDS Mode.
@@ -608,6 +610,7 @@ class RDA5807 {
 
         uint8_t clockFrequency = CLOCK_32K;
         uint8_t oscillatorType = OSCILLATOR_TYPE_PASSIVE;
+        uint8_t rlckNoCalibrate = RLCK_NO_CALIBRATE_MODE_OFF; //!<  Default is 0
 
         uint16_t maxDelayAftarCrystalOn = MAX_DELAY_AFTER_OSCILLATOR;
 
@@ -648,7 +651,7 @@ class RDA5807 {
             void powerUp();
             void powerDown();
 
-            void setup(uint8_t clock_frequency = CLOCK_32K, uint8_t oscillator_type = OSCILLATOR_TYPE_PASSIVE);
+            void setup(uint8_t clock_frequency = CLOCK_32K, uint8_t oscillator_type = OSCILLATOR_TYPE_PASSIVE, uint8_t rlck_no_calibrate = RLCK_NO_CALIBRATE_MODE_OFF);
 
             void setNewDemodulateMethod(bool value);
 
