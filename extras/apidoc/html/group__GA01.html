@@ -937,9 +937,9 @@ refined</td>
 <tr class="memitem:ga214f631aef72ece69db73c99879c7c46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA02.html#ga214f631aef72ece69db73c99879c7c46">powerDown</a> ()</td></tr>
 <tr class="memdesc:ga214f631aef72ece69db73c99879c7c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power the receiver off.  <br /></td></tr>
 <tr class="separator:ga214f631aef72ece69db73c99879c7c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac79c1fec6c416c9993ff19362fe312cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA02.html#gac79c1fec6c416c9993ff19362fe312cb">setup</a> (uint8_t clock_type=<a class="el" href="RDA5807_8h.html#aaaa8a7748321c8739d938babeb67d8e9">CLOCK_32K</a>, uint8_t oscillator_type=<a class="el" href="RDA5807_8h.html#ad0763fd256db4ec1ecc62f84bbff56e2">OSCILLATOR_TYPE_CRYSTAL</a>)</td></tr>
-<tr class="memdesc:gac79c1fec6c416c9993ff19362fe312cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the device.  <br /></td></tr>
-<tr class="separator:gac79c1fec6c416c9993ff19362fe312cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga272444216a784ea5317c83783eb2bfe7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA02.html#ga272444216a784ea5317c83783eb2bfe7">setup</a> (uint8_t clock_frequency=<a class="el" href="RDA5807_8h.html#aaaa8a7748321c8739d938babeb67d8e9">CLOCK_32K</a>, uint8_t oscillator_type=<a class="el" href="RDA5807_8h.html#a0941eab712587842e5513eb6cd562717">OSCILLATOR_TYPE_PASSIVE</a>, uint8_t rlck_no_calibrate=<a class="el" href="RDA5807_8h.html#acf26b27b8292674e78e04908e3c27bff">RLCK_NO_CALIBRATE_MODE_OFF</a>)</td></tr>
+<tr class="memdesc:ga272444216a784ea5317c83783eb2bfe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the device.  <br /></td></tr>
+<tr class="separator:ga272444216a784ea5317c83783eb2bfe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab97c1c8ad3ab0cd5d2852f712caee0a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA02.html#gab97c1c8ad3ab0cd5d2852f712caee0a1">setNewDemodulateMethod</a> (bool value)</td></tr>
 <tr class="memdesc:gab97c1c8ad3ab0cd5d2852f712caee0a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets new demodulate method. It can improve the receiver sensitivity about 1dB.  <br /></td></tr>
 <tr class="separator:gab97c1c8ad3ab0cd5d2852f712caee0a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1174,10 +1174,13 @@ refined</td>
 <tr class="memitem:ae6f2d5f535edc14951e75a03e46ebc01"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#ae6f2d5f535edc14951e75a03e46ebc01">gpio3Control</a> = -1</td></tr>
 <tr class="memdesc:ae6f2d5f535edc14951e75a03e46ebc01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be used to add control to the system via GPIO3 pin.  <br /></td></tr>
 <tr class="separator:ae6f2d5f535edc14951e75a03e46ebc01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70104fe05d727c5047975612599c9dca"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a70104fe05d727c5047975612599c9dca">clockType</a> = <a class="el" href="RDA5807_8h.html#aaaa8a7748321c8739d938babeb67d8e9">CLOCK_32K</a></td></tr>
-<tr class="separator:a70104fe05d727c5047975612599c9dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c8780f2d28725d66850f9e3be14745a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a4c8780f2d28725d66850f9e3be14745a">oscillatorType</a> = <a class="el" href="RDA5807_8h.html#ad0763fd256db4ec1ecc62f84bbff56e2">OSCILLATOR_TYPE_CRYSTAL</a></td></tr>
+<tr class="memitem:af0c39d19376c30217eeb6bf17b398e46"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#af0c39d19376c30217eeb6bf17b398e46">clockFrequency</a> = <a class="el" href="RDA5807_8h.html#aaaa8a7748321c8739d938babeb67d8e9">CLOCK_32K</a></td></tr>
+<tr class="separator:af0c39d19376c30217eeb6bf17b398e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c8780f2d28725d66850f9e3be14745a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a4c8780f2d28725d66850f9e3be14745a">oscillatorType</a> = <a class="el" href="RDA5807_8h.html#a0941eab712587842e5513eb6cd562717">OSCILLATOR_TYPE_PASSIVE</a></td></tr>
 <tr class="separator:a4c8780f2d28725d66850f9e3be14745a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3714ff155c783961b0d097000837ee5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#ac3714ff155c783961b0d097000837ee5">rlckNoCalibrate</a> = <a class="el" href="RDA5807_8h.html#acf26b27b8292674e78e04908e3c27bff">RLCK_NO_CALIBRATE_MODE_OFF</a></td></tr>
+<tr class="memdesc:ac3714ff155c783961b0d097000837ee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default is 0.  <br /></td></tr>
+<tr class="separator:ac3714ff155c783961b0d097000837ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b9e02f7c7121cf57fc0006f4ff7162a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a8b9e02f7c7121cf57fc0006f4ff7162a">maxDelayAftarCrystalOn</a> = <a class="el" href="RDA5807_8h.html#afb81dd661d531fa5c5422549fab7588f">MAX_DELAY_AFTER_OSCILLATOR</a></td></tr>
 <tr class="separator:a8b9e02f7c7121cf57fc0006f4ff7162a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><h3>Private Attributes</h3></td></tr>
@@ -1238,8 +1241,8 @@ refined</td>
 <tr class="separator:aec9b51525f983cfd4b008c3c79b2b22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h4 class="groupheader">Member Data Documentation</h4>
-<a id="a70104fe05d727c5047975612599c9dca" name="a70104fe05d727c5047975612599c9dca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70104fe05d727c5047975612599c9dca">&#9670;&#160;</a></span>clockType</h2>
+<a id="af0c39d19376c30217eeb6bf17b398e46" name="af0c39d19376c30217eeb6bf17b398e46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0c39d19376c30217eeb6bf17b398e46">&#9670;&#160;</a></span>clockFrequency</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1248,7 +1251,7 @@ refined</td>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t RDA5807::clockType = <a class="el" href="RDA5807_8h.html#aaaa8a7748321c8739d938babeb67d8e9">CLOCK_32K</a></td>
+          <td class="memname">uint8_t RDA5807::clockFrequency = <a class="el" href="RDA5807_8h.html#aaaa8a7748321c8739d938babeb67d8e9">CLOCK_32K</a></td>
         </tr>
       </table>
   </td>
@@ -1368,7 +1371,7 @@ refined</td>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00629">setI2CBusAddrs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00634">setI2CBusAddrs()</a>.</p>
 
 </div>
 </div>
@@ -1392,7 +1395,7 @@ refined</td>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00629">setI2CBusAddrs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00634">setI2CBusAddrs()</a>.</p>
 
 </div>
 </div>
@@ -1546,7 +1549,7 @@ refined</td>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t RDA5807::oscillatorType = <a class="el" href="RDA5807_8h.html#ad0763fd256db4ec1ecc62f84bbff56e2">OSCILLATOR_TYPE_CRYSTAL</a></td>
+          <td class="memname">uint8_t RDA5807::oscillatorType = <a class="el" href="RDA5807_8h.html#a0941eab712587842e5513eb6cd562717">OSCILLATOR_TYPE_PASSIVE</a></td>
         </tr>
       </table>
   </td>
@@ -1580,7 +1583,7 @@ refined</td>
 
 <p>RDS Basic tuning and switching information (Type 0 groups) </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00788">getRdsText0A()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00794">getRdsText0A()</a>.</p>
 
 </div>
 </div>
@@ -1606,7 +1609,7 @@ refined</td>
 
 <p>RDS Radio Text buffer - Program Information. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00762">getRdsText()</a>, and <a class="el" href="#l00817">getRdsText2A()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00768">getRdsText()</a>, and <a class="el" href="#l00823">getRdsText2A()</a>.</p>
 
 </div>
 </div>
@@ -1632,7 +1635,7 @@ refined</td>
 
 <p>RDS Radio Text buffer - Station Informaation. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00846">getRdsText2B()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00852">getRdsText2B()</a>.</p>
 
 </div>
 </div>
@@ -1658,7 +1661,7 @@ refined</td>
 
 <p>RDS date time received information. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00872">getRdsTime()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00878">getRdsTime()</a>.</p>
 
 </div>
 </div>
@@ -2011,6 +2014,30 @@ refined</td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac3714ff155c783961b0d097000837ee5" name="ac3714ff155c783961b0d097000837ee5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3714ff155c783961b0d097000837ee5">&#9670;&#160;</a></span>rlckNoCalibrate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t RDA5807::rlckNoCalibrate = <a class="el" href="RDA5807_8h.html#acf26b27b8292674e78e04908e3c27bff">RLCK_NO_CALIBRATE_MODE_OFF</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default is 0. </p>
 
 </div>
 </div>

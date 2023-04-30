@@ -135,9 +135,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga214f631aef72ece69db73c99879c7c46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA02.html#ga214f631aef72ece69db73c99879c7c46">RDA5807::powerDown</a> ()</td></tr>
 <tr class="memdesc:ga214f631aef72ece69db73c99879c7c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power the receiver off.  <br /></td></tr>
 <tr class="separator:ga214f631aef72ece69db73c99879c7c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac79c1fec6c416c9993ff19362fe312cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA02.html#gac79c1fec6c416c9993ff19362fe312cb">RDA5807::setup</a> (uint8_t clock_type=<a class="el" href="RDA5807_8h.html#aaaa8a7748321c8739d938babeb67d8e9">CLOCK_32K</a>, uint8_t oscillator_type=<a class="el" href="RDA5807_8h.html#ad0763fd256db4ec1ecc62f84bbff56e2">OSCILLATOR_TYPE_CRYSTAL</a>)</td></tr>
-<tr class="memdesc:gac79c1fec6c416c9993ff19362fe312cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the device.  <br /></td></tr>
-<tr class="separator:gac79c1fec6c416c9993ff19362fe312cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga272444216a784ea5317c83783eb2bfe7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA02.html#ga272444216a784ea5317c83783eb2bfe7">RDA5807::setup</a> (uint8_t clock_frequency=<a class="el" href="RDA5807_8h.html#aaaa8a7748321c8739d938babeb67d8e9">CLOCK_32K</a>, uint8_t oscillator_type=<a class="el" href="RDA5807_8h.html#a0941eab712587842e5513eb6cd562717">OSCILLATOR_TYPE_PASSIVE</a>, uint8_t rlck_no_calibrate=<a class="el" href="RDA5807_8h.html#acf26b27b8292674e78e04908e3c27bff">RLCK_NO_CALIBRATE_MODE_OFF</a>)</td></tr>
+<tr class="memdesc:ga272444216a784ea5317c83783eb2bfe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the device.  <br /></td></tr>
+<tr class="separator:ga272444216a784ea5317c83783eb2bfe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad1d589d43adc89a93c5e07b2d4cb6a4c"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA02.html#gad1d589d43adc89a93c5e07b2d4cb6a4c">RDA5807::getDeviceId</a> ()</td></tr>
 <tr class="memdesc:gad1d589d43adc89a93c5e07b2d4cb6a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Device identification.  <br /></td></tr>
 <tr class="separator:gad1d589d43adc89a93c5e07b2d4cb6a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -238,7 +238,7 @@ Basic Functions</h1>
 <dd>
 <a class="el" href="group__GA01.html#ae51bb0aaf958ee320da80866bb20ffb5" title="shadow status registers">shadowStatusRegisters</a>; </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="#l00629">RDA5807::getRdsFlagAB()</a>, <a class="el" href="#l00643">RDA5807::getRdsGroupType()</a>, <a class="el" href="#l00672">RDA5807::getRdsProgramType()</a>, <a class="el" href="#l00762">RDA5807::getRdsText()</a>, <a class="el" href="#l00788">RDA5807::getRdsText0A()</a>, <a class="el" href="#l00817">RDA5807::getRdsText2A()</a>, <a class="el" href="#l00846">RDA5807::getRdsText2B()</a>, <a class="el" href="#l00872">RDA5807::getRdsTime()</a>, and <a class="el" href="#l00658">RDA5807::getRdsVersionCode()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00635">RDA5807::getRdsFlagAB()</a>, <a class="el" href="#l00649">RDA5807::getRdsGroupType()</a>, <a class="el" href="#l00678">RDA5807::getRdsProgramType()</a>, <a class="el" href="#l00768">RDA5807::getRdsText()</a>, <a class="el" href="#l00794">RDA5807::getRdsText0A()</a>, <a class="el" href="#l00823">RDA5807::getRdsText2A()</a>, <a class="el" href="#l00852">RDA5807::getRdsText2B()</a>, <a class="el" href="#l00878">RDA5807::getRdsTime()</a>, and <a class="el" href="#l00664">RDA5807::getRdsVersionCode()</a>.</p>
 
 </div>
 </div>
@@ -278,7 +278,7 @@ Basic Functions</h1>
 
 <p>Powers the receiver on. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00237">RDA5807::setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00241">RDA5807::setup()</a>.</p>
 
 </div>
 </div>
@@ -411,7 +411,7 @@ Basic Functions</h1>
   </dd>
 </dl>
 
-<p class="reference">References <a class="el" href="#l00594">RDA5807::deviceAddressDirectAccess</a>, and <a class="el" href="#l00595">RDA5807::deviceAddressFullAccess</a>.</p>
+<p class="reference">References <a class="el" href="#l00598">RDA5807::deviceAddressDirectAccess</a>, and <a class="el" href="#l00599">RDA5807::deviceAddressFullAccess</a>.</p>
 
 </div>
 </div>
@@ -483,8 +483,8 @@ Basic Functions</h1>
 
 </div>
 </div>
-<a id="gac79c1fec6c416c9993ff19362fe312cb" name="gac79c1fec6c416c9993ff19362fe312cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac79c1fec6c416c9993ff19362fe312cb">&#9670;&#160;</a></span>setup()</h2>
+<a id="ga272444216a784ea5317c83783eb2bfe7" name="ga272444216a784ea5317c83783eb2bfe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga272444216a784ea5317c83783eb2bfe7">&#9670;&#160;</a></span>setup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -493,13 +493,19 @@ Basic Functions</h1>
           <td class="memname">void RDA5807::setup </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>clock_type</em> = <code><a class="el" href="RDA5807_8h.html#aaaa8a7748321c8739d938babeb67d8e9">CLOCK_32K</a></code>, </td>
+          <td class="paramname"><em>clock_frequency</em> = <code><a class="el" href="RDA5807_8h.html#aaaa8a7748321c8739d938babeb67d8e9">CLOCK_32K</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>oscillator_type</em> = <code><a class="el" href="RDA5807_8h.html#ad0763fd256db4ec1ecc62f84bbff56e2">OSCILLATOR_TYPE_CRYSTAL</a></code>&#160;</td>
+          <td class="paramname"><em>oscillator_type</em> = <code><a class="el" href="RDA5807_8h.html#a0941eab712587842e5513eb6cd562717">OSCILLATOR_TYPE_PASSIVE</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>rlck_no_calibrate</em> = <code><a class="el" href="RDA5807_8h.html#acf26b27b8292674e78e04908e3c27bff">RLCK_NO_CALIBRATE_MODE_OFF</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -515,11 +521,15 @@ Basic Functions</h1>
 <p>Clock type: CLOCK_32K, CLOCK_12M, CLOCK_13M, CLOCK_19_2M, CLOCK_24M, CLOCK_26M and CLOCK_38_4M <br  />
  </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">clock_type</td><td>Clock used. </td></tr>
-    <tr><td class="paramname">oscillator_type</td><td>optional. Sets the Oscillator type used (default: passive Crystal). </td></tr>
+    <tr><td class="paramname">clock_frequency</td><td>optional; Clock frequency. Default 32.768 kHz. </td></tr>
+    <tr><td class="paramname">oscillator_type</td><td>optional; Sets the Oscillator type (passive or active crystal); default: passive Crystal. </td></tr>
+    <tr><td class="paramname">rlck_no_calibrate</td><td>optional; if 0=RCLK clock is always supply; 1=RCLK clock is not always supply when FM work </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="RDA5807_8h.html#a0941eab712587842e5513eb6cd562717" title="Passive Crystal.">OSCILLATOR_TYPE_PASSIVE</a>, <a class="el" href="RDA5807_8h.html#a6231498726197328216bb70c6dfc21aa" title="Reference clock (active crystal oscillator or signal generator)">OSCILLATOR_TYPE_ACTIVE</a>, <a class="el" href="RDA5807_8h.html#a0bc18a7036f4f2571abdb66daa63c918">RLCK_NO_CALIBRATE_MODE_ON</a>, <a class="el" href="RDA5807_8h.html#acf26b27b8292674e78e04908e3c27bff">RLCK_NO_CALIBRATE_MODE_OFF</a> </dd>
+<dd>
+<a class="el" href="group__GA02.html#ga30d2b0c4662922df53bcef118663329c" title="Powers the receiver on.">powerUp</a>, <a class="el" href="group__GA01.html#unionrda__reg02" title="Register 0x02 - Basic setup: RESET configuration;.">rda_reg02</a> </dd></dl>
 
 <p class="reference">References <a class="el" href="#l00179">RDA5807::powerUp()</a>.</p>
 
@@ -563,7 +573,7 @@ Basic Functions</h1>
 
 <p>Waits for Seek or Tune finish. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00450">RDA5807::seek()</a>, and <a class="el" href="#l00303">RDA5807::setChannel()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00456">RDA5807::seek()</a>, and <a class="el" href="#l00309">RDA5807::setChannel()</a>.</p>
 
 </div>
 </div>

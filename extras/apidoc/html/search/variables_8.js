@@ -25,5 +25,6 @@ var searchData=
   ['reg0d_22',['reg0d',['../group__GA01.html#a619559a0a083492f37527f5206a6c25d',1,'RDA5807']]],
   ['reg0e_23',['reg0e',['../group__GA01.html#a61725075be18d3439886e1414a0ac119',1,'RDA5807']]],
   ['reg0f_24',['reg0f',['../group__GA01.html#a1613897e42f69fadd07a6e0c713a4c6b',1,'RDA5807']]],
-  ['resetpin_25',['resetPin',['../group__GA01.html#a55c07acd68120f74f787999364fc92c9',1,'RDA5807']]]
+  ['resetpin_25',['resetPin',['../group__GA01.html#a55c07acd68120f74f787999364fc92c9',1,'RDA5807']]],
+  ['rlcknocalibrate_26',['rlckNoCalibrate',['../group__GA01.html#ac3714ff155c783961b0d097000837ee5',1,'RDA5807']]]
 ];

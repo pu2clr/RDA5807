@@ -22,5 +22,7 @@ var searchData=
   ['reg0c_19',['REG0C',['../RDA5807_8h.html#a0e3b6e600782d453f87223f87784c54d',1,'RDA5807.h']]],
   ['reg0d_20',['REG0D',['../RDA5807_8h.html#a41b7a4f7b9e629eb87dba4152995a616',1,'RDA5807.h']]],
   ['reg0e_21',['REG0E',['../RDA5807_8h.html#a1a5322c7bc447986d2d3b4d13de95315',1,'RDA5807.h']]],
-  ['reg0f_22',['REG0F',['../RDA5807_8h.html#a949846d6974a39c871614c2f15ee0691',1,'RDA5807.h']]]
+  ['reg0f_22',['REG0F',['../RDA5807_8h.html#a949846d6974a39c871614c2f15ee0691',1,'RDA5807.h']]],
+  ['rlck_5fno_5fcalibrate_5fmode_5foff_23',['RLCK_NO_CALIBRATE_MODE_OFF',['../RDA5807_8h.html#acf26b27b8292674e78e04908e3c27bff',1,'RDA5807.h']]],
+  ['rlck_5fno_5fcalibrate_5fmode_5fon_24',['RLCK_NO_CALIBRATE_MODE_ON',['../RDA5807_8h.html#a0bc18a7036f4f2571abdb66daa63c918',1,'RDA5807.h']]]
 ];

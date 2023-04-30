@@ -9,7 +9,7 @@ var searchData=
   ['clock_5f26m_6',['CLOCK_26M',['../RDA5807_8h.html#aab44e9c9586b2d6ca816e20dd04bc7b4',1,'RDA5807.h']]],
   ['clock_5f32k_7',['CLOCK_32K',['../RDA5807_8h.html#aaaa8a7748321c8739d938babeb67d8e9',1,'RDA5807.h']]],
   ['clock_5f38_5f4m_8',['CLOCK_38_4M',['../RDA5807_8h.html#a99d478076fadfab2791d09e00ed1a780',1,'RDA5807.h']]],
-  ['clocktype_9',['clockType',['../group__GA01.html#a70104fe05d727c5047975612599c9dca',1,'RDA5807']]],
+  ['clockfrequency_9',['clockFrequency',['../group__GA01.html#af0c39d19376c30217eeb6bf17b398e46',1,'RDA5807']]],
   ['converttochar_10',['convertToChar',['../group__G05.html#ga0f40d75452088ceeffb4d8969fb34999',1,'RDA5807']]],
   ['currentfmband_11',['currentFMBand',['../group__GA01.html#aaf56888de5a078b5e5090a0b0dd6ae61',1,'RDA5807']]],
   ['currentfmspace_12',['currentFMSpace',['../group__GA01.html#ae175c8602c76c5512c61b836de086620',1,'RDA5807']]],

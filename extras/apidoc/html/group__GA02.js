@@ -11,7 +11,7 @@ var group__GA02 =
     [ "RDA5807::setI2CBusAddrs", "group__GA02.html#gadf634cb6733022e30d8f1a74a5946e78", null ],
     [ "RDA5807::setNewDemodulateMethod", "group__GA02.html#gab97c1c8ad3ab0cd5d2852f712caee0a1", null ],
     [ "RDA5807::setRegister", "group__GA02.html#ga3b581b82ab8c631cfec537a47008ddf3", null ],
-    [ "RDA5807::setup", "group__GA02.html#gac79c1fec6c416c9993ff19362fe312cb", null ],
+    [ "RDA5807::setup", "group__GA02.html#ga272444216a784ea5317c83783eb2bfe7", null ],
     [ "RDA5807::softReset", "group__GA02.html#ga3f6dace4c93f82ec66da5641e3e3fdaa", null ],
     [ "RDA5807::waitAndFinishTune", "group__GA02.html#ga3fe1feed45d3290beba0efef491128e6", null ]
 ];

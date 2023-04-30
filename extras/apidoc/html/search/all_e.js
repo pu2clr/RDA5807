@@ -34,7 +34,7 @@ var searchData=
   ['setsoftmute_31',['setSoftmute',['../group__GA07.html#gadd2c2ab8b861ab0714fdeb99c774d656',1,'RDA5807']]],
   ['setspace_32',['setSpace',['../group__GA03.html#ga76f6c3400b038aef15ba7318592e1dd0',1,'RDA5807']]],
   ['setstep_33',['setStep',['../group__GA03.html#ga8bbf57aaeb92f226179579efa61cc846',1,'RDA5807']]],
-  ['setup_34',['setup',['../group__GA02.html#gac79c1fec6c416c9993ff19362fe312cb',1,'RDA5807']]],
+  ['setup_34',['setup',['../group__GA02.html#ga272444216a784ea5317c83783eb2bfe7',1,'RDA5807']]],
   ['setvolume_35',['setVolume',['../group__GA07.html#ga51bf4344ebeb44f7170265901df870f5',1,'RDA5807']]],
   ['setvolumedown_36',['setVolumeDown',['../group__GA07.html#ga910965f74897b0246a0b3bed39743d8c',1,'RDA5807']]],
   ['setvolumeup_37',['setVolumeUp',['../group__GA07.html#ga864af32df4d3365e03f8876703218283',1,'RDA5807']]],
