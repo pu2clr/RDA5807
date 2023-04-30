@@ -159,7 +159,9 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(ENCODER_PIN_A), rotaryEncoder, CHANGE);
   attachInterrupt(digitalPinToInterrupt(ENCODER_PIN_B), rotaryEncoder, CHANGE);
 
-  rx.setup();
+  rx.setup();  // 32.768 kHz passive crystal
+  // rx.setup(CLOCK_32K,OSCILLATOR_TYPE_ACTIVE, RLCK_NO_CALIBRATE_MODE_OFF); // 32.768 kHz active crystal / signal generator
+  // rx.setLnaPortSel(3);
   
   // Checking the EEPROM content
   if (EEPROM.read(eeprom_address) == app_id) {
