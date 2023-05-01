@@ -616,6 +616,7 @@ Cordova provides an easy way to develop for iOS and Android.
 * [A small eagle library for popular RDA5807 Radio module](https://github.com/TigerBouli/RDA5807m-Module-)
 * [FM Stereo Radio Module RDA5807M Wireless Module](https://epartners.co.nz/products/sp0806)
 * [kandi X-RAY  RDA5807 Summary](https://kandi.openweaver.com/html/pu2clr/RDA5807)
+* [ワイドFM　DSPラジオ （RDA5807M）を作ってみた](https://www.himeport.co.jp/private_blog/ワイドfm%E3%80%80dspラジオ-（rda5807m）を作ってみた/)
 
 
 
