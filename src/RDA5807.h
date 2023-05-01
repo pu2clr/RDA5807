@@ -712,7 +712,7 @@ class RDA5807 {
              * @see FM Band table
              * @return uint8_t 
              */
-            inline uint8_t RDA5807::getBand() { return reg03->refined.BAND; };
+            inline uint8_t getBand() { return reg03->refined.BAND; };
 
             void setSpace(uint8_t space = 0);
             void setStep(uint8_t step = 100);
