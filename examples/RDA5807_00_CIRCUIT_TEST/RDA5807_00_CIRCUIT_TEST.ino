@@ -1,5 +1,5 @@
 /*
-  This sketch intend to check the circuit and functions implemented in the library
+  This sketch intends to check the circuit and functions implemented in the library
   1) check the I2C communication bus 
   2) try to tune some stations
   3) check some functions. Exemples: audio volume, mute, audio output inpedance, tune functions, seek, LNA etc. (you can add more test to check more functions)

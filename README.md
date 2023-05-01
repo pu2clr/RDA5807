@@ -184,7 +184,49 @@ void loop() {
 }
 ```
 
+### Minimal receiver implementation with this library
+
+The following code illustrates a minimalist implementation of a receiver based on RDA5807 and this library.
+For this receiver, the user has two pushbuttons to tune a station (Seek Up and Seek Down).
+Check the [basic schematic (circuit)](https://pu2clr.github.io/RDA5807#schematic) to build this receiver.
+
+```cpp
+#include <RDA5807.h> // It is a minimal receicer with two push buttons (ATmega328 - Uno, Nano etc)
+RDA5807 rx; 
+void setup() {
+  pinMode(4, INPUT_PULLUP); // Arduino pin 4 - Seek station down
+  pinMode(5, INPUT_PULLUP); // Arduino pin 5 - Seek station up
+  rx.setup(); // Starts the receiver with default parameters
+  rx.setFrequency(10390); // Tunes in 103.9 MHz  - Switch to your local favorite station
+}
+void loop() {
+  if (digitalRead(4) == LOW) rx.seek(RDA_SEEK_WRAP,RDA_SEEK_DOWN);
+  if (digitalRead(5) == LOW) rx.seek(RDA_SEEK_WRAP,RDA_SEEK_UP);
+  delay(200);
+}
+```
+
+
 <BR>
+
+### Examples summary
+
+The following table show the main examples implemented in this library. These examples can guide you to build your own receiver.
+
+| Sketch Name                     |  Description |
+| ------------------------------- | ------------ |
+| [RDA5807_00_CIRCUIT_TEST](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_00_CIRCUIT_TEST) | Useful to check the circuit and many functions implemented in this library |
+| [RDA5807_00_MINIMAL_RECEIVER](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_00_MINIMAL_RECEIVER) | It is a minimal receicer with two push buttons (ATmega328 - Uno, Nano etc) |
+| [RDA5807_01_SERIAL_MONITOR/RDA5807_01_ALL_TEST_SERIAL_MONITOR](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_01_ALL_TEST_SERIAL_MONITOR) | Tune, Volume, Seek and RDS feature |
+| [RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS_TEST_SERIAL_MONITOR/](https://github.com/pu2clr/RDA5807/blob/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS_TEST_SERIAL_MONITOR/RDA5807_01_RDS_TEST_SERIAL_MONITOR.ino) | Test RDS functions  using Serial Monitor |
+| [RDA5807_01_SERIAL_MONITOR/RDA5807_02_ESP32/](https://github.com/pu2clr/RDA5807/blob/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_02_ESP32/RDA5807_02_ESP32.ino) | Test and validation of RDA5807 on ESP32 board |
+| [RDA5807_01_SERIAL_MONITOR/RDA5807_03_STM32/](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_03_STM32) | Test and validation of RDA5807 on STM32 board |
+| [RDA5807_02_TFT_display](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_02_TFT_display) |  This sketch uses an Arduino Pro Mini, 3.3V (8MZ) with a SPI TFT ST7735 1.8 |
+| [RDA5807_03_attimy84](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_03_attimy84) | Test and validation of RDA5807 on ATtiny84 device |
+| [RDA5807_05_LCD16X02](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02) | This sketch uses an Arduino Nano with LCD16X02 DISPLAY |
+| [RDA5807_05_LCD16X02_ESP32](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02_ESP32) | This sketch uses an ESP32 with LCD16X02 DISPLAY|
+| [RDA5807_05_LCD16X02_ESP32_I2S](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02_ESP32_I2S) | I2S setup - This sketch uses an ESP32 with LCD16X02 DISPLAY and MAX98357A I2S setup |
+| [RDA5807_06_UNO_TM1638](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_06_UNO_TM1638) | This sketch drive the RDA5807 FM receiver and TM1638 (seven-segment display control) |
 
 [See the folder examples do know more](https://github.com/pu2clr/RDA5807/tree/master/examples)
 
