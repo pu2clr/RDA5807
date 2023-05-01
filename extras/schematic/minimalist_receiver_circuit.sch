@@ -1705,8 +1705,9 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <plain>
 <text x="109.22" y="73.66" size="1.778" layer="91">RDA5807 breakout</text>
 <text x="96.52" y="58.42" size="1.778" layer="91">3.3V</text>
-<text x="48.26" y="91.44" size="1.778" layer="91">Atmega Based Board</text>
+<text x="45.72" y="91.44" size="1.778" layer="91">ATmega328 Based Board</text>
 <text x="71.12" y="106.68" size="1.778" layer="91">Minimalist Receiver based on RDA5807</text>
+<text x="53.34" y="93.98" size="1.778" layer="91">Arduino</text>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="114.3" y="71.12" smashed="yes"/>
