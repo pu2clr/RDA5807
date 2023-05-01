@@ -225,7 +225,7 @@ You can use the scheck above with the circuit shown below.
 
 {% include video07.html %}
 
-* [Vídeo about MINIMALIST RECEIVER WITH RDA5807 ARDUINO LIBRARY](https://youtu.be/C-wlpbgniLY) 
+* [Video about MINIMALIST RECEIVER WITH RDA5807 ARDUINO LIBRARY](https://youtu.be/C-wlpbgniLY) 
 
 
 
