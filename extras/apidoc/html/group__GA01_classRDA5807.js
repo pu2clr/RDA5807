@@ -4,6 +4,7 @@ var group__GA01_classRDA5807 =
     [ "clearRdsFifo", "group__GA04.html#gab3accd716dc5fe07d936b860b64d9e4e", null ],
     [ "convertToChar", "group__G05.html#ga0f40d75452088ceeffb4d8969fb34999", null ],
     [ "formatFrequency", "group__G05.html#ga2275869d5ec1bd0eaea2e278e2a70cc7", null ],
+    [ "getBand", "group__GA03.html#gac6ace7da84074b90d8ecf075d14c7bfe", null ],
     [ "getBlockId", "group__GA04.html#ga2e63d5c85cb1825492a5ba2ea3bef2c3", null ],
     [ "getDeviceId", "group__GA02.html#gad1d589d43adc89a93c5e07b2d4cb6a4c", null ],
     [ "getDirectRegister", "group__GA02.html#ga69981ef141e22ab00e4bde3f18f84964", null ],

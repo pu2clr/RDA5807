@@ -1,5 +1,6 @@
 var group__GA03 =
 [
+    [ "RDA5807::getBand", "group__GA03.html#gac6ace7da84074b90d8ecf075d14c7bfe", null ],
     [ "RDA5807::getFrequency", "group__GA03.html#ga59b981002d383a13731bd939482a5236", null ],
     [ "RDA5807::getRealChannel", "group__GA03.html#ga39480a49f7878fffe8c3ddf120aba2b0", null ],
     [ "RDA5807::getRealFrequency", "group__GA03.html#ga1476967ed4e1d9bc00e2ea8e3135520e", null ],
