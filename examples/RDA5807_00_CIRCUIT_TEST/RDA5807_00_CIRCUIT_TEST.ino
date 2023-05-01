@@ -57,11 +57,17 @@ void setup() {
   // rx.setup(CLOCK_38_4M, OSCILLATOR_TYPE_PASSIVE);
 
 
-
   delay(200);
   Serial.println(F("Some information just after the receiver starts - rx.setup();"));
   showReceiverInfo();
   delay(5000);
+
+
+  showSeparator();
+  Serial.println(F("Setting band to 76–108 MHz (world wide)"));
+  rx.setBand(2); // Sets band: 76–108 MHz (world wide)  
+  delay(3000);
+
   showSeparator();
   Serial.print(F("\nTrying to tune a strong station\n"));
   rx.setVolume(8); 
@@ -192,6 +198,11 @@ void setup() {
   rx.setVolume(8);
   delay(3000);
   showSeparator();
+
+  Serial.println(F("Setting band to 87–108 MHz (US/Europe)"));
+  rx.setBand(0); 
+  delay(3000);
+
   // Seek test
   Serial.print(F("\n\nSeeking stations"));
   for (int i = 0; i < 15; i++ ) { 
