@@ -1,6 +1,6 @@
 /*
    
-   Test of RDA5807 Tune, Volume, Seek and RDS feature.
+   Test of RDA5807 Tune, Volume, Seek and RDS features.
 
     Arduino Pro Mini and RDA5807 wire up
 
