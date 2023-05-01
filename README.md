@@ -218,7 +218,7 @@ You can use the scheck above with the circuit shown below.
 
 <BR> 
 
-[See also other schematics with RDA5807](https://pu2clr.github.io/RDA5807#schematic) to build this receiver.
+[See also other schematics with RDA5807](https://pu2clr.github.io/RDA5807#schematic).
 
 <BR>
 
