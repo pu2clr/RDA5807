@@ -58,8 +58,8 @@
 
 #define RDA_SEEK_WRAP  0     //!< Wrap at the upper or lower band limit and continue seeking
 #define RDA_SEEK_STOP  1     //!< Stop seeking at the upper or lower band limit
-#define RDA_SEEK_DOWN  0     //!< Seek Up
-#define RDA_SEEK_UP    1     //!< Seek Down
+#define RDA_SEEK_DOWN  0     //!< Seek Down
+#define RDA_SEEK_UP    1     //!< Seek UP
 
 #define REG00 0x00  //!< Register 0x00 
 #define REG02 0x02  //!< Register 0x02 
