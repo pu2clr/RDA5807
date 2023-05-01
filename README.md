@@ -87,8 +87,10 @@ This library has been successfully tested on RDA5807M and RDA5807FP devices. The
 
 <BR>
 
+* The [Sketch RDA5807_00_CIRCUIT_TEST uses the main functions implemented in this library](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_00_CIRCUIT_TEST)
+* The [examples](https://github.com/pu2clr/RDA5807/tree/master/examples) folder can guide you in building your own receiver
 * See [API documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html/)
-* The [examples](https://github.com/pu2clr/RDA5807/tree/master/examples) folder will guide you.
+
 
 
 ## Library Installation
