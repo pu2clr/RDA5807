@@ -65,19 +65,27 @@ This library has been successfully tested on RDA5807M and RDA5807FP devices. The
 * [See RDS and Nokia 5110 Display example - youtube](https://youtu.be/jInacTWoF9Y) 
 
 
-## RDA5807 features implemented by this library
+## RDA5807 main features implemented by this library
 
-1. 76–108 MHz
-2. Seek tuning
-3. Automatic frequency control (AFC)
-4. Automatic gain control (AGC)
-5. Programmable de-emphasis (50/75 μs)
-6. Adaptive noise suppression
-7. Volume control
-8. Mute control
-9. Mono/Stereo control
-10. RDS/RBDS Processor (under construction)
-11. I2S Digital Audio (RDA5807FP)
+1. [76–108 MHz](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA03.html) 
+2. [Seek tuning](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA03.html) 
+3. [Automatic frequency control (AFC)](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA03.html)  
+4. Automatic gain control (AGC) 
+5. [Programmable de-emphasis (50/75 μs)](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA03.html#ga4f8fe00a561c39d2dc9a0a143b1866e9)
+6. Adaptive noise suppression 
+7. [Volume control](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA07.html)
+8. [Bass](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA07.html)
+9. [Mute control](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA07.html)
+10. Mono/Stereo control
+11. [RDS/RBDS Processor](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA06.html) 
+12. [I2S Digital Audio (RDA5807FP)](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA04.html) 
+13. [LNA (Low Noise Amplifiers Amplificadores)](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA08.html) 
+14. [Softmute](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA07.html) 
+15. [Stereo / Mono](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA07.html)
+16. [Step](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA03.html) 
+
+
+
 
 
 
