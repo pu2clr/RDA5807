@@ -511,6 +511,19 @@ void RDA5807::setBand(uint8_t band)
 
 /**
  * @ingroup GA03
+ * @brief Returns the current band 
+ * @see FM Band table
+ * @return uint8_t 
+ */
+uint8_t RDA5807::getBand()
+{
+    return reg03->refined.BAND;
+}
+
+
+
+/**
+ * @ingroup GA03
  * @brief Sets the FM channel space.
  * 
  * Channel space table
