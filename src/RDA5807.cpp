@@ -509,18 +509,6 @@ void RDA5807::setBand(uint8_t band)
     setRegister(REG03,reg03->raw);
 }
 
-/**
- * @ingroup GA03
- * @brief Returns the current band 
- * @see FM Band table
- * @return uint8_t 
- */
-uint8_t RDA5807::getBand()
-{
-    return reg03->refined.BAND;
-}
-
-
 
 /**
  * @ingroup GA03

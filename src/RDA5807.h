@@ -706,7 +706,14 @@ class RDA5807 {
             void setSeekThreshold(uint8_t value);
 
             void setBand(uint8_t band = 0);
-            uint8_t getBand();
+            /**
+             * @ingroup GA03
+             * @brief Returns the current band 
+             * @see FM Band table
+             * @return uint8_t 
+             */
+            inline uint8_t RDA5807::getBand() { return reg03->refined.BAND; };
+
             void setSpace(uint8_t space = 0);
             void setStep(uint8_t step = 100);
             /**
