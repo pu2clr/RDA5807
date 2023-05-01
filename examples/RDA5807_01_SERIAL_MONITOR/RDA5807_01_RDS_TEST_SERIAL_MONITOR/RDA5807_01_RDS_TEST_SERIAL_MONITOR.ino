@@ -48,7 +48,7 @@ void setup()
   Serial.begin(9600);
   while (!Serial)
     ;
-  Serial.println("\nPU2CLR RDA5807 Arduino Library.");
+  Serial.println(F("\nPU2CLR RDA5807 Arduino Library."));
 
   rx.setup();
 
@@ -59,7 +59,7 @@ void setup()
   delay(500);
 
   // Select a station with RDS service in your place
-  Serial.print("\nTuning at the FM local station with good RDS service (see: STATION_WITH_RDS_SERVICE");
+  Serial.print(F("\nTuning at the FM local station with good RDS service (see: STATION_WITH_RDS_SERVICE"));
   rx.setFrequency(STATION_WITH_RDS_SERVICE); 
 
   // RDS setup
@@ -73,15 +73,15 @@ void setup()
 
 void showHelp()
 {
-  Serial.println("Type U to increase and D to decrease the frequency");
-  Serial.println("     S or s to seek station Up or Down");
-  Serial.println("     + or - to volume Up or Down");
-  Serial.println("     0 to show current status");
-  Serial.println("     1 to show RDS Station");
-  Serial.println("     2 to show RDS Message");
-  Serial.println("     3 to show RDS Time");
-  Serial.println("     ? to this help.");
-  Serial.println("==================================================");
+  Serial.println(F("Type U to increase and D to decrease the frequency"));
+  Serial.println(F("     S or s to seek station Up or Down"));
+  Serial.println(F("     + or - to volume Up or Down"));
+  Serial.println(F("     0 to show current status"));
+  Serial.println(F("     1 to show RDS Station"));
+  Serial.println(F("     2 to show RDS Message"));
+  Serial.println(F("     3 to show RDS Time"));
+  Serial.println(F("     ? to this help."));
+  Serial.println(F("=================================================="));
   delay(5000);
 }
 
@@ -163,6 +163,7 @@ void loop()
       break;
     case '2':
       showrRdsInfo = 2;
+      break;
     case '3':
       showrRdsInfo = 3;      
       break;
