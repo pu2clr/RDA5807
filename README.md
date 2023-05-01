@@ -86,7 +86,9 @@ This library has been successfully tested on RDA5807M and RDA5807FP devices. The
 
 
 <BR>
-See [API documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html/)
+
+* See [API documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html/)
+* The [examples](https://github.com/pu2clr/RDA5807/tree/master/examples) folder will guide you.
 
 
 ## Library Installation
