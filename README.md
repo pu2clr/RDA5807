@@ -638,15 +638,6 @@ ATTENTION: Be guided by the ESP32 IO/GPIO pins.
 * I would like to thanks to __Dimitri, F5SWB__, for sharing his project based on RDA5807 (RDA5807 fm chipset / arduino with a Nextion screen F5SWB@2021 / Version 1.18). See [RDA5807](https://github.com/f5swb/RDA5807) 
 
 
-# TO DO
-
-* RDS Improvments;
-* Example using OLED;
-* Check the functions/methods to deal with I2S (RDA5807FP);
-* Fix the problem with 200 kHz frequency step
-
-
-
 
 ### See also
 
