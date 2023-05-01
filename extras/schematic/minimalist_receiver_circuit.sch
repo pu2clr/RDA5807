@@ -1695,8 +1695,8 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="AUDIO_JACK_2.5MM" device="SPECIAL_POGO_PINS" package3d_urn="urn:adsk.eagle:package:38005/1"/>
 <part name="ANT1" library="discrete" library_urn="urn:adsk.eagle:library:211" deviceset="ANTENNA" device="" package3d_urn="urn:adsk.eagle:package:12928/1"/>
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="SEEKD_UP" library="SparkFun-Switches" deviceset="MOMENTARY-SWITCH-SPST" device="-PTH-6.0MM"/>
-<part name="SEEK_DOWN" library="SparkFun-Switches" deviceset="MOMENTARY-SWITCH-SPST" device="-PTH-6.0MM"/>
+<part name="SEEKD_DOWN" library="SparkFun-Switches" deviceset="MOMENTARY-SWITCH-SPST" device="-PTH-6.0MM"/>
+<part name="SEEK_UP" library="SparkFun-Switches" deviceset="MOMENTARY-SWITCH-SPST" device="-PTH-6.0MM"/>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 </parts>
@@ -1731,10 +1731,10 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <instance part="GND2" gate="1" x="78.74" y="25.4" smashed="yes">
 <attribute name="VALUE" x="76.2" y="22.86" size="1.778" layer="96"/>
 </instance>
-<instance part="SEEKD_UP" gate="G$1" x="12.7" y="55.88" smashed="yes">
+<instance part="SEEKD_DOWN" gate="G$1" x="12.7" y="55.88" smashed="yes">
 <attribute name="NAME" x="12.7" y="57.404" size="1.778" layer="95" font="vector" align="bottom-center"/>
 </instance>
-<instance part="SEEK_DOWN" gate="G$1" x="12.7" y="48.26" smashed="yes">
+<instance part="SEEK_UP" gate="G$1" x="12.7" y="48.26" smashed="yes">
 <attribute name="NAME" x="12.7" y="49.784" size="1.778" layer="95" font="vector" align="bottom-center"/>
 </instance>
 <instance part="GND3" gate="1" x="2.54" y="35.56" smashed="yes">
@@ -1783,11 +1783,11 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <wire x1="78.74" y1="33.02" x2="78.74" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="SEEKD_UP" gate="G$1" pin="1"/>
+<pinref part="SEEKD_DOWN" gate="G$1" pin="1"/>
 <wire x1="7.62" y1="55.88" x2="2.54" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 <wire x1="2.54" y1="55.88" x2="2.54" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="SEEK_DOWN" gate="G$1" pin="1"/>
+<pinref part="SEEK_UP" gate="G$1" pin="1"/>
 <wire x1="2.54" y1="48.26" x2="2.54" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="7.62" y1="48.26" x2="2.54" y2="48.26" width="0.1524" layer="91"/>
 <junction x="2.54" y="48.26"/>
@@ -1834,14 +1834,14 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 </net>
 <net name="N$7" class="0">
 <segment>
-<pinref part="SEEKD_UP" gate="G$1" pin="2"/>
+<pinref part="SEEKD_DOWN" gate="G$1" pin="2"/>
 <pinref part="M1" gate="G$1" pin="D4"/>
 <wire x1="17.78" y1="55.88" x2="40.64" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$8" class="0">
 <segment>
-<pinref part="SEEK_DOWN" gate="G$1" pin="2"/>
+<pinref part="SEEK_UP" gate="G$1" pin="2"/>
 <wire x1="17.78" y1="48.26" x2="25.4" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="25.4" y1="48.26" x2="25.4" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="M1" gate="G$1" pin="D5"/>
