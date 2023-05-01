@@ -85,11 +85,8 @@ This library has been successfully tested on RDA5807M and RDA5807FP devices. The
 16. [Step](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA03.html) 
 
 
-
-
-
-
-You can buy the RDA5807 device on AliExpress, eBay, Amazon etc. You will find three types of RDA5807: The RDA5807MS, RDA5807M (breakout) and RDA5807FP (standalone IC).  
+<BR>
+See [API documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html/)
 
 
 ## Library Installation
