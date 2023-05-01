@@ -190,7 +190,7 @@ void loop() {
 
 The following code illustrates a minimalist implementation of a receiver based on RDA5807 and this library.
 For this receiver, the user has two pushbuttons to tune a station (Seek Up and Seek Down).
-Check the [basic schematic (circuit)](https://pu2clr.github.io/RDA5807#schematic) to build this receiver.
+
 
 ```cpp
 #include <RDA5807.h> // It is a minimal receicer with two push buttons (ATmega328 - Uno, Nano etc)
@@ -208,6 +208,17 @@ void loop() {
 }
 ```
 
+<BR>
+
+You can use the scheck above with the circuit shown below. 
+
+<BR>
+
+![Minimalist receiver based on RDA5807](extras/images/minimalist_receiver_circuit.png)
+
+<BR> 
+
+[See also other schematics with RDA5807](https://pu2clr.github.io/RDA5807#schematic) to build this receiver.
 
 <BR>
 
