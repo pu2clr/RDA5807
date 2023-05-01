@@ -63,7 +63,7 @@ void loop() {
 
 #### Minimalist receiver based on RDA5807 circuit
 
-![Minimalist receiver based on RDA5807](extras/images/minimalist_receiver_circuit.png)
+![Minimalist receiver based on RDA5807](../extras/images/minimalist_receiver_circuit.png)
 
 
 ### TFT Display (example RDA5807_02_TFT_display)
