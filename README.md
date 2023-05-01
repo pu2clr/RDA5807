@@ -232,7 +232,7 @@ You can use the scheck above with the circuit shown below.
 
 ### Examples summary
 
-The following table show the main examples implemented in this library. These examples can guide you to build your own receiver.
+The following table shows the main examples implemented in this library. These examples can guide you to build your own receiver.
 
 | Sketch Name                     |  Description |
 | ------------------------------- | ------------ |
