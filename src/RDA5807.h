@@ -724,6 +724,7 @@ class RDA5807 {
             inline uint8_t getSpace() { return  reg03->refined.SPACE; };
 
             void setBand3_50_65_Mode(uint8_t band3Mode);
+            uint8_t getBand3Status();
 
             int getRssi();
 

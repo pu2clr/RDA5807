@@ -265,6 +265,8 @@ uint16_t RDA5807::getDeviceId()
 }
 
 
+
+
 /**
  * @defgroup GA03 FM Tune Functions
  * @section GA03 FM Tune
@@ -523,6 +525,20 @@ void RDA5807::setBand3_50_65_Mode(uint8_t band3Mode)
     setRegister(REG07,reg07->raw);
 }
 
+
+/**
+ * @ingroup GA03
+ * @brief Gets the status of the Band3 
+ * @details Gets the status of the Band3 
+ * @return 1 if setup is 65 to 76 MHz; 0 if setup is 50 to 65 MHz
+ */
+uint8_t RDA5807::getBand3Status() {
+    word16_to_bytes aux;
+    rda_reg07 tmp;
+    aux = getDirectRegister(0x07);
+    tmp.raw = aux.raw;
+    return tmp.refined.MODE_50_60;
+}
 
 /**
  * @ingroup GA03
