@@ -210,7 +210,7 @@ void loop() {
 
 <BR>
 
-You can use the scheck above with the circuit shown below. 
+You can use the sketch above with the circuit shown below. 
 
 <BR>
 
