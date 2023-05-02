@@ -512,7 +512,8 @@ void RDA5807::setBand(uint8_t band)
  * @ingroup GA03
  * @brief Sets the band 3 mode: 50 to 65 MHZ or 65 to 76 MHz
  * @details It works only for Band 3. So if are on band 3 (default 65 – 76 MHz East Europe) you can change the range to 50-65MHz.
- * 
+ * @details ATTENTION: The functions setFrequencyToBeginBand and setFrequencyToEnBand do not work for 50-65MHz setup. You have to control it by yourself.
+ * @details ATTENTION: Also, you must control the band limits from 50 to 65 MHz. The setFrequencyUp and setFrequencyDown do not work properly. 
  * @param band3Mode if 1, 65 – 76 MHz;  if 0, 50-65MHz
  */
 void RDA5807::setBand3_50_65_Mode(uint8_t band3Mode)

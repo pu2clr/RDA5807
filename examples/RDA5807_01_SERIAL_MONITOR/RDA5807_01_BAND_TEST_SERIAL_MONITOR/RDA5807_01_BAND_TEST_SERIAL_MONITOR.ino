@@ -43,7 +43,8 @@ uint8_t showrRdsInfo = 3; // Default: show RDS time.
 char *bandTable[] = { (char *) "0 - 87–108 MHz (US/Europe)", 
                       (char *) "1 - 76–91 MHz (Japan)", 
                       (char *) "2 - 76–108 MHz (world wide)",
-                      (char *) "3 - 65 –76 MHz (East Europe) or 50-65MHz (see bit 9 of gegister 0x06)"};
+                      (char *) "3 - 65 –76 MHz (East Europe)",
+                      (char *) "3 - 50 - 65 MHz"};
 
 RDA5807 rx;
 
@@ -79,7 +80,8 @@ void showHelp()
   Serial.println(F("     0 to use 87–108 MHz (US/Europe)"));
   Serial.println(F("     1 to use 76–91 MHz (Japan)"));
   Serial.println(F("     2 to use 76–108 MHz (world wide)"));
-  Serial.println(F("     3 to use 65 –76 MHz (East Europe) or 50-65MHz (see bit 9 of gegister 0x06)"));
+  Serial.println(F("     3 to use 65–76 MHz (East Europe) or 50-65MHz (see bit 9 of gegister 0x06)"));
+  Serial.println(F("     4 to use 50–65 MHz"));
   Serial.println(F("     ? to this help."));
   Serial.println(F("=================================================="));
   delay(5000);
@@ -134,9 +136,18 @@ void loop()
     case '2':
     case '3':
       rx.setBand( key - 48 );
+      rx.setFrequencyToBeginBand();
       Serial.print(F("\n**** Switching to band: "));
       Serial.print(rx.getBand());
       break;
+    case '4': 
+      // ATTENTION: The functions setFrequencyToBeginBand and setFrequencyToEnBand do not work for 50-65MHz setup. You have to control it by yourself.
+      //            Also, you must control the band limits from 50 to 65 MHz. The setFrequencyUp and setFrequencyDown do not work properly. 
+      rx.setBand(3);
+      rx.setBand3_50_65_Mode(0);
+      rx.setFrequency(5500); // 55 Mhz;
+      Serial.print(F("\n**** Switching to band: 3 from 50 to 65 MHz) "));
+      break;      
     case '?':
       showHelp();
       break;
