@@ -90,10 +90,10 @@ void showHelp()
 // Show current frequency
 void showStatus()
 {
-  char aux[80];
+  char aux[120];
   sprintf(aux,"\nCurrent band is:  %s", bandTable[rx.getBand()] );
   Serial.print(aux);
-  sprintf(aux, "\nYou are tuned on %u MHz | RSSI: %3.3u dbUv | Vol: %2.2u | Stereo: %s\n", rx.getFrequency(), rx.getRssi(), rx.getVolume(), (rx.isStereo()) ? "Yes" : "No");
+  sprintf(aux, "\nYou are tuned on %u MHz | RSSI: %3.3u dbUv | Vol: %2.2u | Stereo: %s | Band Status: %d\n", rx.getFrequency(), rx.getRssi(), rx.getVolume(), (rx.isStereo()) ? "Yes" : "No", rx.getBand3Status());
   Serial.print(aux);
   status_elapsed = millis();
 }
@@ -136,6 +136,7 @@ void loop()
     case '2':
     case '3':
       rx.setBand( key - 48 );
+      rx.setBand3_50_65_Mode(1); // Band 3 will work from  65 to 76 MHz;
       rx.setFrequencyToBeginBand();
       Serial.print(F("\n**** Switching to band: "));
       Serial.print(rx.getBand());
@@ -144,8 +145,8 @@ void loop()
       // ATTENTION: The functions setFrequencyToBeginBand and setFrequencyToEnBand do not work for 50-65MHz setup. You have to control it by yourself.
       //            Also, you must control the band limits from 50 to 65 MHz. The setFrequencyUp and setFrequencyDown do not work properly. 
       rx.setBand(3);
-      rx.setBand3_50_65_Mode(0);
-      rx.setFrequency(5500); // 55 Mhz;
+      rx.setBand3_50_65_Mode(0); // Band 3 will work from  50 to 65 MHz;
+      rx.setFrequency(5500); // 55 Mhz; rx.setFrequencyToBeginBand() and rx.setFrequencyToEndBand() do not work for this setup;
       Serial.print(F("\n**** Switching to band: 3 from 50 to 65 MHz) "));
       break;      
     case '?':
