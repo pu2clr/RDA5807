@@ -161,6 +161,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga13f6c6e974c768a9456c049645434ca1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA03.html#ga13f6c6e974c768a9456c049645434ca1">RDA5807::setBand3_50_65_Mode</a> (uint8_t band3Mode)</td></tr>
 <tr class="memdesc:ga13f6c6e974c768a9456c049645434ca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the band 3 mode: 50 to 65 MHZ or 65 to 76 MHz.  <br /></td></tr>
 <tr class="separator:ga13f6c6e974c768a9456c049645434ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaea595cf077e2a709bf927deddf8a63ba"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA03.html#gaea595cf077e2a709bf927deddf8a63ba">RDA5807::getBand3Status</a> ()</td></tr>
+<tr class="memdesc:gaea595cf077e2a709bf927deddf8a63ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the status of the Band3.  <br /></td></tr>
+<tr class="separator:gaea595cf077e2a709bf927deddf8a63ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga76f6c3400b038aef15ba7318592e1dd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA03.html#ga76f6c3400b038aef15ba7318592e1dd0">RDA5807::setSpace</a> (uint8_t space=0)</td></tr>
 <tr class="memdesc:ga76f6c3400b038aef15ba7318592e1dd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the FM channel space.  <br /></td></tr>
 <tr class="separator:ga76f6c3400b038aef15ba7318592e1dd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -201,6 +204,26 @@ FM Tune</h1>
 <p>Returns the current band. </p>
 <dl class="section see"><dt>See also</dt><dd>FM Band table </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>uint8_t </dd></dl>
+
+</div>
+</div>
+<a id="gaea595cf077e2a709bf927deddf8a63ba" name="gaea595cf077e2a709bf927deddf8a63ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaea595cf077e2a709bf927deddf8a63ba">&#9670;&#160;</a></span>getBand3Status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t RDA5807::getBand3Status </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the status of the Band3. </p>
+<p>Gets the status of the Band3 </p><dl class="section return"><dt>Returns</dt><dd>1 if setup is 65 to 76 MHz; 0 if setup is 50 to 65 MHz </dd></dl>
 
 </div>
 </div>
@@ -557,7 +580,8 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 
 <p>Sets the band 3 mode: 50 to 65 MHZ or 65 to 76 MHz. </p>
 <p>It works only for Band 3. So if are on band 3 (default 65 – 76 MHz East Europe) you can change the range to 50-65MHz.</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>ATTENTION: The functions setFrequencyToBeginBand and setFrequencyToEnBand do not work for 50-65MHz setup. You have to control it by yourself.</p>
+<p>ATTENTION: Also, you must control the band limits from 50 to 65 MHz. The setFrequencyUp and setFrequencyDown do not work properly. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">band3Mode</td><td>if 1, 65 – 76 MHz; if 0, 50-65MHz </td></tr>
   </table>
