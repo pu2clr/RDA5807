@@ -1,6 +1,6 @@
 /*
    
-   Test of RDA5807 Tune, Volume, Seek and RDS feature.
+   Test of RDA5807 Tune, Volume, Seek and RDS features.
 
     Arduino Pro Mini and RDA5807 wire up
 
@@ -36,7 +36,7 @@ void setup()
 
   Serial.begin(9600);
   while (!Serial) ;
-  Serial.println("\nPU2CLR RDA5807 Arduino Library.");
+  Serial.println(F("\nPU2CLR RDA5807 Arduino Library."));
 
 
   rx.setup();
@@ -48,7 +48,7 @@ void setup()
   delay(500);
 
   // Select a station with RDS service in your place
-  Serial.print("\nTuning 106.5MHz");
+  Serial.print(F("\nTuning 106.5MHz"));
   rx.setFrequency(10650); // It is the frequency you want to select in MHz multiplied by 100.
 
   // RDS setup
@@ -64,12 +64,12 @@ void setup()
 
 void showHelp()
 {
-  Serial.println("Type U to increase and D to decrease the frequency");
-  Serial.println("Type S or s to seek station Up or Down");
-  Serial.println("Type + or - to volume Up or Down");
-  Serial.println("Type 0 to show current status");
-  Serial.println("Type ? to this help.");
-  Serial.println("==================================================");
+  Serial.println(F("Type U to increase and D to decrease the frequency"));
+  Serial.println(F("Type S or s to seek station Up or Down"));
+  Serial.println(F("Type + or - to volume Up or Down"));
+  Serial.println(F("Type 0 to show current status"));
+  Serial.println(F("Type ? to this help."));
+  Serial.println(F("=================================================="));
   delay(5000);
 }
 

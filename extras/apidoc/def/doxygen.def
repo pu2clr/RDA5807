@@ -7256,7 +7256,7 @@ _EnD_oF_dEf_TeXt_;
       define-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
       define-mem-desc-line = '61';
       define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Seek Up.
+Seek Down.
 _EnD_oF_dEf_TeXt_;
       define-mem-documentation = <<_EnD_oF_dEf_TeXt_
 
@@ -7274,7 +7274,7 @@ _EnD_oF_dEf_TeXt_;
       define-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
       define-mem-desc-line = '62';
       define-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Seek Down.
+Seek UP.
 _EnD_oF_dEf_TeXt_;
       define-mem-documentation = <<_EnD_oF_dEf_TeXt_
 

@@ -1,5 +1,5 @@
 /*
-  This sketch drive the RDA5807 FM receiver and TM1638 (seven-segment display control)
+  This sketch drives the RDA5807 FM receiver and TM1638 (seven-segment display control)
   About TM1638 see: https://github.com/danja/TM1638lite
 
 

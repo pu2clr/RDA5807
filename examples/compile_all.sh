@@ -19,9 +19,9 @@ arduino-cli compile -b arduino:avr:nano ./RDA5807_04_NOKIA5110 --output-dir ~/Do
 arduino-cli compile -b arduino:avr:nano ./RDA5807_05_LCD16X02 --output-dir ~/Downloads/hex/atmega/RDA5807_05_LCD16X02  --warnings all
 
 arduino-cli compile -b arduino:avr:uno ./RDA5807_06_UNO_TM1638 --output-dir ~/Downloads/hex/atmega/RDA5807_06_UNO_TM1638  --warnings all
-arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_SERIAL_MONITOR --output-dir ~/Downloads/hex/atmega/RDA5807_01_SERIAL_MONITOR  --warnings all
+arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_ALL_TEST_SERIAL_MONITOR --output-dir ~/Downloads/hex/atmega/RDA5807_01_ALL_TEST_SERIAL_MONITOR  --warnings all
 arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_BAND_TEST_SERIAL_MONITOR --output-dir ~/Downloads/hex/atmega/RDA5807_01_BAND_TEST_SERIAL_MONITOR  --warnings all
-
+arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS_TEST_SERIAL_MONITOR --output-dir ~/Downloads/hex/atmega/RDA5807_01_RDS_TEST_SERIAL_MONITOR  --warnings all
 
 echo "Arduino LGT8FX based board"
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_00_CIRCUIT_TEST --output-dir ~/Downloads/hex/lgt8fx/RDA5807_00_CIRCUIT_TEST  --warnings all
@@ -29,6 +29,11 @@ arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_02_TFT_display --output-dir ~/Do
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_04_NOKIA5110 --output-dir ~/Downloads/hex/lgt8fx/RDA5807_04_NOKIA5110  --warnings all
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_05_LCD16X02 --output-dir ~/Downloads/hex/lgt8fx/RDA5807_05_LCD16X02  --warnings all
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_06_UNO_TM1638 --output-dir ~/Downloads/hex/lgt8fx/RDA5807_06_UNO_TM1638  --warnings all
+
+arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_ALL_TEST_SERIAL_MONITOR --output-dir ~/Downloads/hex/lgt8fx/RDA5807_01_ALL_TEST_SERIAL_MONITOR  --warnings all
+arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_BAND_TEST_SERIAL_MONITOR --output-dir ~/Downloads/hex/lgt8fx/RDA5807_01_BAND_TEST_SERIAL_MONITOR  --warnings all
+arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS_TEST_SERIAL_MONITOR --output-dir ~/Downloads/hex/lgt8fx/RDA5807_01_RDS_TEST_SERIAL_MONITOR  --warnings all
+
 
 
 
