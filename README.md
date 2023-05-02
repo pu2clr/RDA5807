@@ -24,7 +24,7 @@ Contact: __pu2clr@gmail.com__.
 8. [MIT License](https://pu2clr.github.io/RDA5807#mit-license)
 9. [Basic Schematic](https://pu2clr.github.io/RDA5807#schematic)
 10. [All Schematics, photos and videos](extras/)
-11. [Storing data into the EEPROM](https://github.com/pu2clr/RDA5807#storing-data-into-the-eeprom)
+11. [Storing data into the EEPROM](https://pu2clr.github.io/RDA5807#storing-data-into-the-eeprom)
 11. [Source code - Arduino Sketches](examples/)
 12. [Videos about this library](https://pu2clr.github.io/RDA5807#videos-about-rda5807-and-this-arduino-library)
 
