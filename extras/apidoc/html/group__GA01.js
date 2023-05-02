@@ -121,6 +121,7 @@ var group__GA01 =
       [ "setAFC", "group__GA03.html#ga965658767399e2f923852144e324805f", null ],
       [ "setAudioOutputHighImpedance", "group__GA07.html#gaabd554f39778bf6d81712df0ea72d0fa", null ],
       [ "setBand", "group__GA03.html#ga889cfe43f3f9c9ca92c9862261d5dbbf", null ],
+      [ "setBand3_50_65_Mode", "group__GA03.html#ga13f6c6e974c768a9456c049645434ca1", null ],
       [ "setBass", "group__GA07.html#ga8002bb394ef19db02e04a39de04dffc5", null ],
       [ "setChannel", "group__GA03.html#gaa9cfaddbd43257e810bb3817b021fa8a", null ],
       [ "setDelayAfterCrystalOn", "group__GA02.html#ga1db36d126d26a553668c1b70de9b3823", null ],

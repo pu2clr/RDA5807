@@ -11,6 +11,7 @@ var group__GA03 =
     [ "RDA5807::seek", "group__GA03.html#gade55e697c7752811086300e710727397", null ],
     [ "RDA5807::setAFC", "group__GA03.html#ga965658767399e2f923852144e324805f", null ],
     [ "RDA5807::setBand", "group__GA03.html#ga889cfe43f3f9c9ca92c9862261d5dbbf", null ],
+    [ "RDA5807::setBand3_50_65_Mode", "group__GA03.html#ga13f6c6e974c768a9456c049645434ca1", null ],
     [ "RDA5807::setChannel", "group__GA03.html#gaa9cfaddbd43257e810bb3817b021fa8a", null ],
     [ "RDA5807::setFmDeemphasis", "group__GA03.html#ga4f8fe00a561c39d2dc9a0a143b1866e9", null ],
     [ "RDA5807::setFrequency", "group__GA03.html#gad16a6afa9520b77498b17a72c226305a", null ],

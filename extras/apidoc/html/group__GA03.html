@@ -158,6 +158,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga889cfe43f3f9c9ca92c9862261d5dbbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA03.html#ga889cfe43f3f9c9ca92c9862261d5dbbf">RDA5807::setBand</a> (uint8_t band=0)</td></tr>
 <tr class="memdesc:ga889cfe43f3f9c9ca92c9862261d5dbbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the FM band. See table below.  <br /></td></tr>
 <tr class="separator:ga889cfe43f3f9c9ca92c9862261d5dbbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga13f6c6e974c768a9456c049645434ca1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA03.html#ga13f6c6e974c768a9456c049645434ca1">RDA5807::setBand3_50_65_Mode</a> (uint8_t band3Mode)</td></tr>
+<tr class="memdesc:ga13f6c6e974c768a9456c049645434ca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the band 3 mode: 50 to 65 MHZ or 65 to 76 MHz.  <br /></td></tr>
+<tr class="separator:ga13f6c6e974c768a9456c049645434ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga76f6c3400b038aef15ba7318592e1dd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA03.html#ga76f6c3400b038aef15ba7318592e1dd0">RDA5807::setSpace</a> (uint8_t space=0)</td></tr>
 <tr class="memdesc:ga76f6c3400b038aef15ba7318592e1dd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the FM channel space.  <br /></td></tr>
 <tr class="separator:ga76f6c3400b038aef15ba7318592e1dd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -525,11 +528,38 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">10   </td><td class="markdownTableBodyNone">76–108 MHz (world wide)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">11   </td><td class="markdownTableBodyNone">65 –76 MHz (East Europe) or 50-65MHz (see bit 9 of gegister 0x06)   </td></tr>
+<td class="markdownTableBodyNone">11   </td><td class="markdownTableBodyNone">65 –76 MHz (East Europe) or 50-65MHz (see bit 9 of gegister 0x07)   </td></tr>
 </table>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">band</td><td>FM band index. See table above. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga13f6c6e974c768a9456c049645434ca1" name="ga13f6c6e974c768a9456c049645434ca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga13f6c6e974c768a9456c049645434ca1">&#9670;&#160;</a></span>setBand3_50_65_Mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setBand3_50_65_Mode </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>band3Mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the band 3 mode: 50 to 65 MHZ or 65 to 76 MHz. </p>
+<p>It works only for Band 3. So if are on band 3 (default 65 – 76 MHz East Europe) you can change the range to 50-65MHz.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">band3Mode</td><td>if 1, 65 – 76 MHz; if 0, 50-65MHz </td></tr>
   </table>
   </dd>
 </dl>
