@@ -498,7 +498,7 @@ void RDA5807::setSeekThreshold(uint8_t value)
  * | 00    | 87–108 MHz (US/Europe)      |
  * | 01    | 76–91 MHz (Japan)           | 
  * | 10    | 76–108 MHz (world wide)     | 
- * | 11    | 65 –76 MHz (East Europe) or 50-65MHz (see bit 9 of gegister 0x06) |
+ * | 11    | 65 –76 MHz (East Europe) or 50-65MHz (see bit 9 of gegister 0x07) |
  * 
  * @param band FM band index. See table above. 
  */

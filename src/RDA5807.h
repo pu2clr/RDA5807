@@ -54,7 +54,7 @@
 #define RDA_FM_BAND_USA_EU       0  //!< 87.5–108 MHz (US / Europe, Default)
 #define RDA_FM_BAND_JAPAN_WIDE   1  //!< 76–91 MHz (Japan wide band)
 #define RDA_FM_BAND_WORLD        2  //!< 76–108 MHz (world wide)
-#define RDA_FM_BAND_SPECIAL      3  //!< 65 –76 MHz(East Europe) or 50 - 65MHz(see bit 9 of gegister 0x06)
+#define RDA_FM_BAND_SPECIAL      3  //!< 65 –76 MHz(East Europe) or 50 - 65MHz(see bit 9 of gegister 0x07)
 
 #define RDA_SEEK_WRAP  0     //!< Wrap at the upper or lower band limit and continue seeking
 #define RDA_SEEK_STOP  1     //!< Stop seeking at the upper or lower band limit
@@ -315,7 +315,7 @@ typedef union {
         uint8_t SEEK_TH_OLD : 6;  //!< Seek threshold for old seek mode, Valid when Seek_Mode=001
         uint8_t RSVD1 : 1;
         uint8_t MODE_50_60 : 1;   //!< 1 = 65~76 MHz;  0 = 50~76MHz
-        uint8_t TH_SOFRBLEND : 5; //!< Threshold for noise soft blend setting, unit 2dB (default 0b10000). Default 1.
+        uint8_t TH_SOFRBLEND : 5; //!< Threshold for noise soft blend setting, unit 2dB (default 0b10000). 
         uint8_t RSVD2 : 1;
     } refined;
     uint16_t raw;
