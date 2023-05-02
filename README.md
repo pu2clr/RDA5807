@@ -757,7 +757,7 @@ void loop() {
 The sketches below use the Arduino board internal EEPROM to save data.
 
 
-The following table shows the main examples implemented in this library. These examples can guide you to build your own receiver.
+The following table shows some examples that implement functions that save and restore data using the Arduino based board EEPROM and ESP32. 
 
 | Sketch Name                     |  Description |
 | ------------------------------- | ------------ |
