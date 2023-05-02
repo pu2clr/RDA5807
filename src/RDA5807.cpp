@@ -509,6 +509,20 @@ void RDA5807::setBand(uint8_t band)
     setRegister(REG03,reg03->raw);
 }
 
+/**
+ * @ingroup GA03
+ * @brief Sets the band 3 mode: 50 to 65 MHZ or 65 to 76 MHz
+ * @details It works only for Band 3. So if are on band 3 (65 – 76 MHz East Europe) you can change the range to 50-65MHz.
+ * 
+ * @param band3Mode if - 65 – 76 MHz;  if 0 - 50-65MHz
+ */
+void RDA5807::setBand3_50_65_Mode(uint8_t band3Mode)
+{
+    if ( this->currentFMBand != 3) return; // Do not do anything if the current band is not 3
+    reg07->refined.MODE_50_60 = band3Mode; 
+    setRegister(REG07,reg07->raw);
+}
+
 
 /**
  * @ingroup GA03

@@ -315,7 +315,7 @@ typedef union {
         uint8_t SEEK_TH_OLD : 6;  //!< Seek threshold for old seek mode, Valid when Seek_Mode=001
         uint8_t RSVD1 : 1;
         uint8_t MODE_50_60 : 1;   //!< 1 = 65~76 MHz;  0 = 50~76MHz
-        uint8_t TH_SOFRBLEND : 5; //!< Threshold for noise soft blend setting, unit 2dB (default 0b10000).
+        uint8_t TH_SOFRBLEND : 5; //!< Threshold for noise soft blend setting, unit 2dB (default 0b10000). Default 1.
         uint8_t RSVD2 : 1;
     } refined;
     uint16_t raw;
@@ -723,6 +723,7 @@ class RDA5807 {
              */
             inline uint8_t getSpace() { return  reg03->refined.SPACE; };
 
+            void setBand3_50_65_Mode(uint8_t band3Mode);
 
             int getRssi();
 
