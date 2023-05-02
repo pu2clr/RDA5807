@@ -502,7 +502,11 @@ void RDA5807::setSeekThreshold(uint8_t value)
  * | 10    | 76–108 MHz (world wide)     | 
  * | 11    | 65 –76 MHz (East Europe) or 50-65MHz (see bit 9 of gegister 0x07) |
  * 
- * @param band FM band index. See table above. 
+ * @details if you are using the band 3 with 50 to 65 MHz setup, the setFrequencyUp, setFrequencyDown, setFrequencyToBeginBand and setFrequencyToEndBand 
+ * @details will not work properly. In this case, you have control the limits of the band by yourself.
+ * 
+ * @param band FM band index. See table above.
+ * @see  setBand3_50_65_Mode, getBand3Status
  */
 void RDA5807::setBand(uint8_t band)
 {
@@ -533,10 +537,9 @@ void RDA5807::setBand3_50_65_Mode(uint8_t band3Mode)
  * @return 1 if setup is 65 to 76 MHz; 0 if setup is 50 to 65 MHz
  */
 uint8_t RDA5807::getBand3Status() {
-    word16_to_bytes aux;
     rda_reg07 tmp;
-    aux = getDirectRegister(0x07);
-    tmp.raw = aux.raw;
+     getDirectRegister(0x07);
+    tmp.raw = getDirectRegister(0x07).raw;
     return tmp.refined.MODE_50_60;
 }
 

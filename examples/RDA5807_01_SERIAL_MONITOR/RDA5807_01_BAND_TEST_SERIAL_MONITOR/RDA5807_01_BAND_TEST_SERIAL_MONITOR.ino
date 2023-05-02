@@ -146,7 +146,7 @@ void loop()
       //            Also, you must control the band limits from 50 to 65 MHz. The setFrequencyUp and setFrequencyDown do not work properly. 
       rx.setBand(3);
       rx.setBand3_50_65_Mode(0); // Band 3 will work from  50 to 65 MHz;
-      rx.setFrequency(5500); // 55 Mhz; rx.setFrequencyToBeginBand() and rx.setFrequencyToEndBand() do not work for this setup;
+      rx.setFrequency(5500); // 55 Mhz; rx.setFrequencyDown and rx.setFrequencyUP, rx.setFrequencyToBeginBand() and rx.setFrequencyToEndBand() do not work properly for this setup;
       Serial.print(F("\n**** Switching to band: 3 from 50 to 65 MHz) "));
       break;      
     case '?':
