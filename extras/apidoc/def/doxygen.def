@@ -1062,7 +1062,7 @@ _EnD_oF_dEf_TeXt_;
 Sets the band 3 mode: 50 to 65 MHZ or 65 to 76 MHz.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
- It works only for Band 3. So if are on band 3 (default 65 – 76 MHz East Europe) you can change the range to 50-65MHz.
+ It works only for Band 3. So if you are on band 3 (default 65 – 76 MHz East Europe) you can change the range to 50-65MHz.
 \ilinebr\ilinebr ATTENTION: The functions setFrequencyToBeginBand and setFrequencyToEnBand do not work for 50-65MHz setup. You have to control it by yourself.
 \ilinebr\ilinebr ATTENTION: Also, you must control the band limits from 50 to 65 MHz. The setFrequencyUp and setFrequencyDown do not work properly. 
 @param band3Mode if 1, 65 – 76 MHz;  if 0, 50-65MHz
