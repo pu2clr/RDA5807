@@ -23,6 +23,7 @@ The following table shows the main examples implemented in this library. These e
 | [RDA5807_01_SERIAL_MONITOR/ <BR> RDA5807_03_STM32](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_03_STM32) | Test and validation of RDA5807 on STM32 board |
 | [RDA5807_02_TFT_display](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_02_TFT_display) |  This sketch uses an Arduino Pro Mini, 3.3V (8MZ) with a SPI TFT ST7735 1.8 |
 | [RDA5807_03_attimy84](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_03_attimy84) | Test and validation of RDA5807 on ATtiny84 device |
+| [RDA5807_04_NOKIA5110](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_04_NOKIA5110) | This sketch uses an Arduino Nano with NOKIA 5110 display | 
 | [RDA5807_05_LCD16X02](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02) | This sketch uses an Arduino Nano with LCD16X02 DISPLAY |
 | [RDA5807_05_LCD16X02_ESP32](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02_ESP32) | This sketch uses an ESP32 with LCD16X02 DISPLAY|
 | [RDA5807_05_LCD16X02_ESP32_I2S](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02_ESP32_I2S) | I2S setup - This sketch uses an ESP32 with LCD16X02 DISPLAY and MAX98357A I2S setup |

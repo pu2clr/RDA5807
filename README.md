@@ -244,6 +244,7 @@ The following table shows the main examples implemented in this library. These e
 | [RDA5807_01_SERIAL_MONITOR/ <BR> RDA5807_03_STM32](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_03_STM32) | Test and validation of RDA5807 on STM32 board |
 | [RDA5807_02_TFT_display](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_02_TFT_display) |  This sketch uses an Arduino Pro Mini, 3.3V (8MZ) with a SPI TFT ST7735 1.8 |
 | [RDA5807_03_attimy84](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_03_attimy84) | Test and validation of RDA5807 on ATtiny84 device |
+| [RDA5807_04_NOKIA5110](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_04_NOKIA5110) | This sketch uses an Arduino Nano with NOKIA 5110 display. | 
 | [RDA5807_05_LCD16X02](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02) | This sketch uses an Arduino Nano with LCD16X02 DISPLAY |
 | [RDA5807_05_LCD16X02_ESP32](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02_ESP32) | This sketch uses an ESP32 with LCD16X02 DISPLAY|
 | [RDA5807_05_LCD16X02_ESP32_I2S](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02_ESP32_I2S) | I2S setup - This sketch uses an ESP32 with LCD16X02 DISPLAY and MAX98357A I2S setup |
@@ -666,6 +667,133 @@ ATTENTION: Be guided by the ESP32 IO/GPIO pins.
 * [Android and iOS Bluetooth Remote Control for PU2CLR Arduino Library DSP receivers](https://pu2clr.github.io/bluetooth_remote_control/). This project is an extension of the Arduino library projects for: [SI4735](https://pu2clr.github.io/SI4735/); [AKC6959](https://pu2clr.github.io/AKC695X/) and [KT0915](https://pu2clr.github.io/KT0915/). It is a simple example that shows a way to use your smartphone as a remote control via Bluetooth. In order to follow the steps presented here, I am assuming that you have some knowledge in development for mobile devices. Also, you will need to be familiar with the Javascript programming language. The development environment used by this project is the [Apache Cordova](https://cordova.apache.org/docs/en/latest/guide/overview/index.html). Cordova is a open-source mobile development framework that allows you to develop cross-platform applications. That means you can code once and deploy the application in many system, including iOS and Android. 
 Cordova provides an easy way to develop for iOS and Android.  
 * [Band Pass Filter controlled by Arduino](https://pu2clr.github.io/auto_bpf_arduino/). It is a HF band pass filter controlled by Arduino. It is designed for HF receivers. With this project, you can use a set of up to four HF bandpass filters that can be selected by Arduino. To do that you will need just two digital Arduino pins.
+
+
+
+## Storing data into the EEPROM
+
+The EEPROM has a lifetime around 100,000 write/erase cycles. The "Atmel" DATASHEET, page 19, you will find "The Atmel® ATmega328P contains 1Kbyte of data EEPROM memory. It is organized as a separate data space, in which single bytes can be read and written. The EEPROM has an endurance of at least 100,000 write/erase cycles". Therefore, writing data to eeprom with each system status change could give an application a very short life. To mitigate this problem, some approaches can be used to save recordings on the EEPROM.
+
+The following approach stores data every time when some important status changes. The idea is to store data only if it is necessary.
+
+Steps:
+
+* Select the data you want to keep into the EEPROM;
+* Add the code to monitor the data in your sketch;
+* Add code to save the data. In this case, you need to define the criteria that will be used to perform a recording on the EEPROM. In general, a good criteria is:  any change of useful data AND elapsed time. It will depend on your application;
+* Consider using the method EEPROM.update instead EEPROM.write. It will not write information if it is the same stored before. The ESP32 and other MCU, the EEPROM.write implementation works like  EEPROM.update;
+* Add the code to restore data from EEPROM;
+* Add the code to check if exist useful data stored into EEPROM. It can be a single byte indicating that exist valid information for the system. Use an identification number (ID) that will be understood as valid data by the system.
+* Add code to erase the information in EEPROM. All you have to do is erasing the identification number. Actually just change the ID value. In other words, you do not need erease all data stored into EEPROM to reset the data to the system.
+* Add code to RESET the system. At system startup check if a given button is pressed and then erase the ID;
+
+
+#### The code below can guide you to deal with the RDA5807 data and Arduino Board EEPROM
+
+```cpp
+
+#define STORE_TIME 10000  	// Time of inactivity to make the current receiver status writable (10 seconds).
+
+const uint8_t app_id = 35; 	// Application ID. Any value from 1 to 255.  It will be useful to check the EEPROM content before processing useful data
+const int eeprom_address = 0;  // Address where the data will be stored into EEPROM
+long storeTime = millis(); 	// elapsed time control
+
+RDA5807 rx.
+
+void setup() {
+
+  .
+  .
+  .
+
+  // If you want to reset the eeprom, keep the  button pressed during statup
+  if (digitalRead(GIVEN_BUTTON) == LOW)
+  {
+	EEPROM.write(eeprom_address, 0); // Changes the application ID. It invalidates all stotred information.
+	delay(2000);
+  }
+
+  .
+  .
+  .
+
+  rx.setup();
+
+  // Checking the EEPROM content and read if it has valid information
+  if (EEPROM.read(eeprom_address) == app_id)
+  {
+	readAllReceiverInformation();
+  }
+
+  .
+  .
+  .
+
+}
+
+
+void saveAllReceiverInformation()
+{
+  EEPROM.update(eeprom_address, app_id);                  	// stores the app id;
+  EEPROM.update(eeprom_address + 1, rx.getVolume());  	// stores the current Volume
+  EEPROM.update(eeprom_address + 3, currentFrequency >> 8);   // Store the current frequency
+  EEPROM.update(eeprom_address + 4, currentFrequency & 0XFF);
+  .
+  .
+  .
+
+}
+
+
+void readAllReceiverInformation()
+{
+  volume = EEPROM.read(eeprom_address + 1);             	// Gets the stored volume;
+  currentFrequency = EEPROM.read(eeprom_address + 3) << 8;  // Gets the stored frequency
+  currentFrequency |= EEPROM.read(eeprom_address + 4);
+  .
+  .
+  .
+}
+
+
+void loop() {
+  .
+  .
+  .
+  // Monitor your data and set statusChanged variable to true if any useful data has changed.
+  .
+  .
+  .
+
+  // check if some status was changed
+  if ( statusChanged )
+  {
+	// If the status has changed and the elapsed time is less than minimal time, wait a bit more for saving new data.
+	if ((millis() - storeTime) > STORE_TIME)
+	{
+  	saveAllReceiverInformation();
+  	storeTime = millis();
+  	statusChanged = false;
+	}
+  }
+
+}
+
+```
+
+The sketches below use the Arduino board internal EEPROM to save data.
+
+
+The following table shows the main examples implemented in this library. These examples can guide you to build your own receiver.
+
+| Sketch Name                     |  Description |
+| ------------------------------- | ------------ |
+| [RDA5807_04_NOKIA5110](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_04_NOKIA5110) | This sketch uses an Arduino Nano with NOKIA 5110 display | 
+| [RDA5807_05_LCD16X02](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02) | This sketch uses an Arduino Nano with LCD16X02 DISPLAY |
+| [RDA5807_05_LCD16X02_ESP32](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02_ESP32) | This sketch uses an ESP32 with LCD16X02 DISPLAY|
+| [RDA5807_06_UNO_TM1638](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_06_UNO_TM1638) | This sketch drives the RDA5807 FM receiver and TM1638 (seven-segment display control) |
+
+
 
 
 
