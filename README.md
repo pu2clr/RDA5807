@@ -870,7 +870,7 @@ void loop() {
 If you use that approach, all you have to do is download the current version of PU2CLR RDA5807 Arduino Library. Instead of using the PU2CLR RDA5807 Arduino Library class directly, you can use your own class that extends the original class. This way, you always have the current version of the library customized for your needs. So, no extra work will be needed when you update the PU2CLR RDA5807 Arduino Library. In other words, your custom code will always be synchronized with the PU2CLR RDA5807 Arduino Library code.
 
 
-Please, see the Sketches [RDA5807_90_EXTENDING_CLASS](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_90_EXTENDING_CLASS) and [RDA5807_91_EXTENDING_CLASS](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_91_EXTENDING_CLASS)for more details.
+Please, see the Sketches [RDA5807_90_EXTENDING_CLASS](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_90_EXTENDING_CLASS) and [RDA5807_91_EXTENDING_CLASS](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_91_EXTENDING_CLASS) for more details.
 
 
 See also:
