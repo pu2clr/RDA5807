@@ -24,7 +24,7 @@ public:
   }
 
   // Overwriting parent method setFrequencyUp
-  void setFrequencyUP() {
+  void setFrequencyUp() {
     uint16_t up_limit, down_limit;
     uint8_t b3 = this->getBand3Status();
     if (b3 == 0) {
@@ -78,16 +78,19 @@ void setup() {
 }
 
 void loop() {
-  radio.setFrequency(5000);
-  radio.setFrequencyDown();
-  delay(2000);
-  Serial.print(radio.getFrequency());
-  radio.setFrequencyUp();
-  delay(2000);
+
   radio.setFrequency(6500);
-  radio.setFrequencyUp();
-  Serial.print(radio.getFrequency());
+  Serial.println(radio.getFrequency());
   delay(2000);
-  radio.setFrequencyDown();
+  radio.setFrequencyUp(); // Go to 50 MHz
+  Serial.println(radio.getFrequency());
   delay(2000);
+
+  radio.setFrequency(5000);
+  Serial.println(radio.getFrequency());
+  delay(2000);
+  radio.setFrequencyDown(); // Go to 65 MHz
+  Serial.println(radio.getFrequency());
+  delay(2000);
+
 }
