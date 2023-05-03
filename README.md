@@ -786,7 +786,7 @@ public:
     return 1;
   }
 
-  // Overwriting parent method setCurrencyUp
+  // Overwriting parent method setFrequencyUp
   void setFrequencyUP() {
     uint16_t up_limit, down_limit;
     uint8_t b3 = this->getBand3Status();
