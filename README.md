@@ -204,7 +204,7 @@ void loop() {
 }
 ```
 
-### A minimalist receiver implementation with two pushbuttoins
+### A minimalist receiver implementation with two pushbuttons
 
 The following code illustrates a minimalist implementation of a receiver based on RDA5807 and this library.
 For this receiver, the user has two pushbuttons to tune station (Seek Up and Seek Down).
