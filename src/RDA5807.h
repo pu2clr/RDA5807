@@ -557,7 +557,7 @@ typedef union {
  */
 class RDA5807 {
 
-    private:
+    protected:
 
         uint16_t shadowStatusRegisters[6]; //!< shadow status registers
         uint16_t shadowRegisters[9];       //!< shadow configuration registers
