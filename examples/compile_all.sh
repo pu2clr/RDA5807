@@ -12,7 +12,9 @@
 # Ricardo Lima Caratti Mar 2023
 
 # compiles POC
+echo "********************"
 echo "Arduino ATmega328 based board"
+echo "********************"
 arduino-cli compile -b arduino:avr:nano ./RDA5807_00_CIRCUIT_TEST --output-dir ~/Downloads/hex/atmega/RDA5807_00_CIRCUIT_TEST  --warnings all
 arduino-cli compile -b arduino:avr:nano ./RDA5807_02_TFT_display --output-dir ~/Downloads/hex/atmega/RDA5807_02_TFT_display  --warnings all
 arduino-cli compile -b arduino:avr:nano ./RDA5807_04_NOKIA5110 --output-dir ~/Downloads/hex/atmega/RDA5807_04_NOKIA5110  --warnings all
@@ -23,7 +25,10 @@ arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_AL
 arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_BAND_TEST_SERIAL_MONITOR --output-dir ~/Downloads/hex/atmega/RDA5807_01_BAND_TEST_SERIAL_MONITOR  --warnings all
 arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS_TEST_SERIAL_MONITOR --output-dir ~/Downloads/hex/atmega/RDA5807_01_RDS_TEST_SERIAL_MONITOR  --warnings all
 
+echo "********************"
 echo "Arduino LGT8FX based board"
+echo "********************"
+
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_00_CIRCUIT_TEST --output-dir ~/Downloads/hex/lgt8fx/RDA5807_00_CIRCUIT_TEST  --warnings all
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_02_TFT_display --output-dir ~/Downloads/hex/lgt8fx/RDA5807_02_TFT_display  --warnings all
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_04_NOKIA5110 --output-dir ~/Downloads/hex/lgt8fx/RDA5807_04_NOKIA5110  --warnings all
@@ -34,19 +39,19 @@ arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_ALL
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_BAND_TEST_SERIAL_MONITOR --output-dir ~/Downloads/hex/lgt8fx/RDA5807_01_BAND_TEST_SERIAL_MONITOR  --warnings all
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS_TEST_SERIAL_MONITOR --output-dir ~/Downloads/hex/lgt8fx/RDA5807_01_RDS_TEST_SERIAL_MONITOR  --warnings all
 
-
-
-
 # compiles ESP32 LCD16x2_ALL_IN_ONE
+echo "********************"
 echo "ESP32"
 echo "ESP32 LCD16x20"
+echo "********************"
 arduino-cli compile --fqbn esp32:esp32:esp32-poe-iso ./RDA5807_05_LCD16X02_ESP32 --output-dir ~/Downloads/hex/ESP32/DEVM/RDA5807_05_LCD16X02_ESP32  --warnings all
 arduino-cli compile --fqbn esp32:esp32:esp32-poe-iso ./RDA5807_05_LCD16X02_ESP32_I2S --output-dir ~/Downloads/hex/ESP32/DEVM/RDA5807_05_LCD16X02_ESP32_I2S  --warnings all
 
 
 
-
+echo "********************"
 echo "STM32"
+echo "********************"
 # arduino-cli board -b stm32duino:STM32F1:genericSTM32F103C  details
 arduino-cli compile  --fqbn stm32duino:STM32F1:genericSTM32F103C ./RDA5807_01_SERIAL_MONITOR/RDA5807_03_STM32 --output-dir ~/Downloads/hex/STM32/F1/RDA5807_03_STM32  --warnings all
 
@@ -64,8 +69,16 @@ echo "ESP8266 OLED"
 arduino-cli compile --fqbn esp8266:esp8266:generic  ./UNDER_CONSTRUCTION/RDA5807_06_ESP8266_OLED --output-dir ~/Downloads/hex/ESP8266/RDA5807_06_ESP8266_OLED  --warnings all
 
 # compile UNO
+echo "********************"
 echo "UNO"
+echo "********************"
 arduino-cli compile -b arduino:avr:uno  ./UNDER_CONSTRUCTION/RDA5807_07_NANO_OLED --output-dir ~/Downloads/hex/ESP8266/RDA5807_07_NANO_OLED  --warnings all
 
 arduino-cli compile -b arduino:avr:uno  ./UNDER_CONSTRUCTION/RDA5807_TFT_TOUCH_SHIELD --output-dir ~/Downloads/hex/ESP8266/RDA5807_TFT_TOUCH_SHIELD  --warnings all
+
+
+echo "********************"
+echo "Extending RDA5807 class example" 
+echo "********************"
+arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_90_EXTENDING_CLASS --output-dir ~/Downloads/hex/atmega/RDA5807_90_EXTENDING_CLASS  --warnings all
 
