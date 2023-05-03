@@ -1,3 +1,7 @@
+/*
+  MyRDA5807 implementation
+*/
+
 #include "MyRDA5807.h"
 
 void MyRDA5807::getBandLimits() {
