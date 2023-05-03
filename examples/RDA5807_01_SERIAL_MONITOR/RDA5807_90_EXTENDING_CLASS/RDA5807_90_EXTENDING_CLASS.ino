@@ -73,6 +73,7 @@ void setup() {
   radio.setFrequency(10390);
   Serial.println(radio.methodA());
   Serial.println(radio.methodB());
+  radio.setBand(3);
   radio.setBand3_50_65_Mode(0);
 }
 

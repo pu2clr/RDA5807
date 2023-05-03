@@ -830,13 +830,14 @@ MyCustomRDA5807 radio;  // the instance of your custom class based on SI4735 cla
 
 void setup() {
   Serial.begin(9600);
-  while (!Serial)
-    ;
+  while (!Serial);
   Serial.println("Customizing RDA5807 class example.");
   radio.setup();
   radio.setFrequency(10390);
   Serial.println(radio.methodA());
   Serial.println(radio.methodB());
+  radio.setBand(3);
+  radio.setBand3_50_65_Mode(0);
 }
 
 void loop() {
