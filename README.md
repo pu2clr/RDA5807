@@ -190,6 +190,22 @@ void loop() {
 
 ### Minimal receiver implementation with this library
 
+The code below shows the minimal implementation using this library.  
+
+```cpp
+#include <RDA5807.h> 
+RDA5807 rx; 
+void setup() {
+  rx.setup(); // Starts the receiver with default parameters
+  rx.setFrequency(10390); // Tunes in 103.9 MHz  - Switch to your local favorite station
+}
+void loop() {
+
+}
+```
+
+### A minimalist receiver implementation with two pushbuttoins
+
 The following code illustrates a minimalist implementation of a receiver based on RDA5807 and this library.
 For this receiver, the user has two pushbuttons to tune station (Seek Up and Seek Down).
 
