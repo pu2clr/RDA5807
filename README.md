@@ -25,6 +25,7 @@ Contact: __pu2clr@gmail.com__.
 9. [Basic Schematic](https://pu2clr.github.io/RDA5807#schematic)
 10. [All Schematics, photos and videos](extras/)
 11. [Storing data into the EEPROM](https://pu2clr.github.io/RDA5807#storing-data-into-the-eeprom)
+12. [Extending RDA5807 class](https://pu2clr.github.io/RDA5807#extending-the-rda5807-arduino-library-by-exteding-rda5807-class)
 11. [Source code - Arduino Sketches](examples/)
 12. [Videos about this library](https://pu2clr.github.io/RDA5807#videos-about-rda5807-and-this-arduino-library)
 
