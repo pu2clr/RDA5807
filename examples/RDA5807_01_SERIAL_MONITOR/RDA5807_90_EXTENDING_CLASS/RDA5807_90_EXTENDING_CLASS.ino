@@ -13,47 +13,49 @@ By Ricardo Lima Caratti, 2023.
 */
 #include <RDA5807.h>
 class MyCustomRDA5807 : public RDA5807 {  // extending the original class RDA5807
-public:
-  // New functions / methods
-  int methodA() {  // some RDA5807 command that PU2CLR RDA5807 Arduino Library does not implement
-    return 0;
-  }
 
-  int methodB() {  // another RDA5807 command that PU2CLR RDA5807 Arduino Library does not implement
-    return 1;
-  }
+private: 
+  // Implements some specifics members and methods to the new class if necessary
+  uint16_t up_limit, down_limit;
 
-  // Overwriting parent method setFrequencyUp
-  void setFrequencyUp() {
-    uint16_t up_limit, down_limit;
-    uint8_t b3 = this->getBand3Status();
-    if (b3 == 0) {
+  void getBandLimits() {
+    if (this->getBand3Status() == 0) {
       up_limit = 6500;
       down_limit = 5000;
     } else {
       up_limit = this->endBand[this->currentFMBand];
       down_limit = this->startBand[this->currentFMBand];
     }
+  }
+
+public:
+  // Implements some new members functions to the new class
+  int getSoftBlendEnable() {  // some RDA5807 command that PU2CLR RDA5807 Arduino Library does not implement
+    rda_reg07 tmp;
+    tmp.raw = this->getDirectRegister(0x07).raw;
+    return tmp.refined.SOFTBLEND_EN;
+  }
+
+  uint16_t getDeviceInfo() {  // another RDA5807 command that PU2CLR RDA5807 Arduino Library does not implement
+      rda_reg00 tmp;
+      tmp.raw = this->getDirectRegister(0x00).raw;
+      return tmp.refined.HIGH_CHIP_ID;
+  }
+
+  // Overwriting parent method setFrequencyUp
+  void setFrequencyUp() {
+    getBandLimits();
     if (this->currentFrequency < up_limit)
       this->currentFrequency += (this->fmSpace[currentFMSpace]);
     else
       this->currentFrequency = down_limit;
-    ;
 
     setFrequency(this->currentFrequency);
   }
 
   // Overwriting parent method setFrequencyDown
   void setFrequencyDown() {
-    uint16_t up_limit, down_limit;
-    uint8_t b3 = this->getBand3Status();
-    if (b3 == 0) {
-      up_limit = 6500;
-      down_limit = 5000;
-    } else {
-      up_limit = this->endBand[this->currentFMBand];
-      down_limit = this->startBand[this->currentFMBand];
-    }
+    getBandLimits();
     if (this->currentFrequency > down_limit)
       this->currentFrequency -= (this->fmSpace[currentFMSpace]);
     else
@@ -71,8 +73,8 @@ void setup() {
   Serial.println("Customizing RDA5807 class example.");
   radio.setup();
   radio.setFrequency(10390);
-  Serial.println(radio.methodA());
-  Serial.println(radio.methodB());
+  Serial.println(radio.getSoftBlendEnable());
+  Serial.println(radio.getDeviceInfo());
   radio.setBand(3);
   radio.setBand3_50_65_Mode(0);
 }
@@ -82,15 +84,10 @@ void loop() {
   radio.setFrequency(6500);
   Serial.println(radio.getFrequency());
   delay(2000);
-  radio.setFrequencyUp(); // Go to 50 MHz
+  radio.setFrequencyUp();  // Go to 50 MHz
   Serial.println(radio.getFrequency());
   delay(2000);
-
-  radio.setFrequency(5000);
+  radio.setFrequencyDown();  // Go to 65 MHz
   Serial.println(radio.getFrequency());
   delay(2000);
-  radio.setFrequencyDown(); // Go to 65 MHz
-  Serial.println(radio.getFrequency());
-  delay(2000);
-
 }
