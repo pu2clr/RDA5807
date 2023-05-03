@@ -769,19 +769,30 @@ The following table shows some examples that implement functions that save and r
 
 
 
-#### Extending the RDA5807 Arduino Library by exteding RDA5807 class
+## Extending the RDA5807 Arduino Library by exteding RDA5807 class
 
-The best way to customize the PU2CLR RDA5807 Arduino Library for your needs is extending the current version of the library by using C++ OOP approach.  For example: 
+The best way to customize the PU2CLR RDA5807 Arduino Library for your needs is extending the current version of the library by using C++ OOP approach.  
+
+### When should you extend the RDA5807 class?  
+
+You have at least two great reasons to extend the RDA5807 class: 
+
+1. you need a function that has not yet been implemented in RDA5807;
+2. you want to change the behavior of an already implemented function.
+
+
+The code below shows these tow situations.
+
 
 ```cpp
 #include <RDA5807.h>
 class MyCustomRDA5807 : public RDA5807 {  // extending the original class RDA5807
 
 private: 
-  // Implements some specifics members and methods to the new class if necessary
+  // Implements some specific members and methods to the new class if necessary
   uint16_t up_limit, down_limit;
 
-  void getBandLimits() {
+  void getBandLimits() { 
     if (this->getBand3Status() == 0) {
       up_limit = 6500;
       down_limit = 5000;
@@ -793,7 +804,7 @@ private:
 
 public:
   // Implements some new members functions to the new class
-  int getSoftBlendEnable() {  // some RDA5807 command that PU2CLR RDA5807 Arduino Library does not implement
+  int getSoftBlendEnable() {  // A RDA5807 command that PU2CLR RDA5807 Arduino Library does not implement
     rda_reg07 tmp;
     tmp.raw = this->getDirectRegister(0x07).raw;
     return tmp.refined.SOFTBLEND_EN;
@@ -805,7 +816,7 @@ public:
       return tmp.refined.HIGH_CHIP_ID;
   }
 
-  // Overwriting parent method setFrequencyUp
+  // Overwriting parent method setFrequencyUp - Chenging the behavior of the setFrequencyUp function
   void setFrequencyUp() {
     getBandLimits();
     if (this->currentFrequency < up_limit)
@@ -816,7 +827,7 @@ public:
     setFrequency(this->currentFrequency);
   }
 
-  // Overwriting parent method setFrequencyDown
+  // Overwriting parent method setFrequencyDown - Chenging the behavior of the setFrequencyDown function
   void setFrequencyDown() {
     getBandLimits();
     if (this->currentFrequency > down_limit)
@@ -828,7 +839,7 @@ public:
   }
 };
 
-MyCustomRDA5807 radio;  // the instance of your custom class based on SI4735 class
+MyCustomRDA5807 radio;  // the instance of your custom class based on RDA5807 class
 
 void setup() {
   Serial.begin(9600);
@@ -857,6 +868,9 @@ void loop() {
 ```
 
 If you use that approach, all you have to do is download the current version of PU2CLR RDA5807 Arduino Library. Instead of using the PU2CLR RDA5807 Arduino Library class directly, you can use your own class that extends the original class. This way, you always have the current version of the library customized for your needs. So, no extra work will be needed when you update the PU2CLR RDA5807 Arduino Library. In other words, your custom code will always be synchronized with the PU2CLR RDA5807 Arduino Library code.
+
+
+Please, see the Sketch [RDA5807_90_EXTENDING_CLASS](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_90_EXTENDING_CLASS) for more details.
 
 
 See also:

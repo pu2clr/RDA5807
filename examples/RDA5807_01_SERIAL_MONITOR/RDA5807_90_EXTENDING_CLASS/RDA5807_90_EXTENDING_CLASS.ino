@@ -8,6 +8,15 @@ This way, you always have the current version of the library customized for your
 So, no extra work will be needed when you update the PU2CLR RDA5807 Arduino Library. 
 In other words, your custom code will always be synchronized with the PU2CLR RDA5807 Arduino Library code.
 
+When should you extend the RDA5807 class?  
+
+You have at least two great reasons to extend the RDA5807 class: 
+
+1. you need a function that has not yet been implemented in RDA5807;
+2. you want to change the behavior of an already implemented function.
+
+
+
 By Ricardo Lima Caratti, 2023.
 
 */
@@ -30,7 +39,7 @@ private:
 
 public:
   // Implements some new members functions to the new class
-  int getSoftBlendEnable() {  // some RDA5807 command that PU2CLR RDA5807 Arduino Library does not implement
+  int getSoftBlendEnable() {  // A RDA5807 command that PU2CLR RDA5807 Arduino Library does not implement
     rda_reg07 tmp;
     tmp.raw = this->getDirectRegister(0x07).raw;
     return tmp.refined.SOFTBLEND_EN;
@@ -42,7 +51,7 @@ public:
       return tmp.refined.HIGH_CHIP_ID;
   }
 
-  // Overwriting parent method setFrequencyUp
+  // Overwriting parent method setFrequencyUp - Chenging the behavior of the setFrequencyUp function
   void setFrequencyUp() {
     getBandLimits();
     if (this->currentFrequency < up_limit)
@@ -53,7 +62,7 @@ public:
     setFrequency(this->currentFrequency);
   }
 
-  // Overwriting parent method setFrequencyDown
+  // Overwriting parent method setFrequencyDown - Chenging the behavior of the setFrequencyDown function
   void setFrequencyDown() {
     getBandLimits();
     if (this->currentFrequency > down_limit)
@@ -65,7 +74,7 @@ public:
   }
 };
 
-MyCustomRDA5807 radio;  // the instance of your custom class based on SI4735 class
+MyCustomRDA5807 radio;  // the instance of your custom class based on RDA5807 class
 
 void setup() {
   Serial.begin(9600);
