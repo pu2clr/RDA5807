@@ -5,7 +5,7 @@ LilyGO/T-Embed  is a panel that uses the ESP32S, an rotary encoder with push but
 
 ## Preface
 
-This document is about the LilyGo T-Embed device as a receiver based on the RDA5807 IC family. The main parts of the sketch used here was written by [Volos](https://github.com/VolosR/TEmbedFMRadio). The Volos' project is a receiver based on the TEA5767 device and his work  has adapted to RDA5807 device. 
+This document is about the LilyGo T-Embed device as a receiver based on the RDA5807 IC family. The main parts of the sketch used here was written by [Volos](https://github.com/VolosR/TEmbedFMRadio). The Volos' project is a receiver based on the TEA5767 device and his work  has adapted to RDA5807 device by the author of this library. 
 
 All you have to know to use this project with your LilyGo T-Embed panel can be found here. 
 
