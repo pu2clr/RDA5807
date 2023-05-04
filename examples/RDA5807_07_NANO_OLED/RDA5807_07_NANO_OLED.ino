@@ -48,6 +48,7 @@
 #define ENCODER_PIN_B 3
 
 bool bBass = false;
+bool bMute = false;
 
 volatile int encoderCount = 0;
 uint8_t seekDirection = 1; // 0 = Down; 1 = Up. This value is set by the last encoder direction.
@@ -136,11 +137,13 @@ void loop()
     rx.setVolumeUp();
   else if (digitalRead(VOLUME_DOWN) == LOW)
     rx.setVolumeDown();
+  else if (digitalRead(AUDIO_MUTE) == LOW)
+    rx.setMute(bMute = !bMute);  
   else if (digitalRead(SEEK_STATION) == LOW) {
     rx.seek(RDA_SEEK_WRAP, seekDirection, showStatus); // showFrequency will be called by the seek function during the process.
     delay(200);
   }
   else if (digitalRead(AUDIO_BASS) == LOW)
     rx.setBass(bBass = !bBass);
-  delay(5);
+  delay(50);
 }
