@@ -1,9 +1,7 @@
 /*
-  Under construction...
-  Test and validation of RDA5807 on UNO/NANO or other ATMEGA328 based device.
-  It is FM receiver with
+  This sketch works on Atmega328 and LGT8FX based board.
 
-   Nano and RDA5807 wireup
+  Nano/LGT8FX and RDA5807 wireup
 
   Wire up on Arduino UNO, Nano or Pro mini
 
@@ -27,6 +25,7 @@
   | Encoder                   |                           |               |
   |                           | A                         |       2       |
   |                           | B                         |       3       |
+
 
    By Ricardo Lima Caratti, 2020.
 */
