@@ -83,4 +83,5 @@ echo "Extending RDA5807 class example"
 echo "********************"
 
 arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_90_EXTENDING_CLASS --output-dir ~/Downloads/hex/atmega/RDA5807_90_EXTENDING_CLASS  --warnings all
+arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_01_SERIAL_MONITOR/RDA5807_91_EXTENDING_CLASS --output-dir ~/Downloads/hex/lgt8fx/RDA5807_91_EXTENDING_CLASS  --warnings all
 
