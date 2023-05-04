@@ -208,6 +208,13 @@ Arduino UNO, Nano or other based on Atmega328 and SPI TFT ST7735 1.8" wireup
 
 
 
+### OLED I2C DISPLAY AND ARDUINO NANO SETUP
+
+![Schematic - I2S and RDA5807FP Setup ](./images/OLED_NANO_SCHEMATIC.png)
+
+
+
+
 ## Vídeos about this Library and projects with RDA5807
 
 * [FM RECEIVER AND I2S DIGITAL AUDIO WITH RDA5807FP AND MAX98357A](https://youtu.be/07017sfMYdY)
