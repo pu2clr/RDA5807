@@ -4,7 +4,7 @@ Here you will find all schematics used by the examples sketches, the EAGLE files
 
 
 
-## Some board photos 
+## Some homebrew boards 
 
 
 ![RDA5807 homebrew Boards](./images/RDA5807_BOARDS_01.jpg)
