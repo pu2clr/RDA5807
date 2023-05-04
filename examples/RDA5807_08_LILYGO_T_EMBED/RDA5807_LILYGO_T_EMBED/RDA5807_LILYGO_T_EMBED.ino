@@ -90,6 +90,8 @@ void setup()
 
   radio.setup();
   delay(200);
+  radio.setFrequency(10390);
+  
   freq = radio.getFrequency() / 100.0;
 
   radio.setVolume(58);
