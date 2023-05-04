@@ -11,7 +11,7 @@ Here you will find all schematics used by the examples sketches, the EAGLE files
 
 ### Arduino UNO board adapters (Left RDA5707M and right RDA5807FP)
 
-![RDA5807 Arduino UNO homebrew Board Adapters](./images/RDA5807_BOARDS_01.jpg)
+![RDA5807 Arduino UNO homebrew Board Adapters](./images/RDA5807_BOARDS_X01.jpg)
 
 #### Arduino Uno and RDA5807M homebrew adapter board 
 
