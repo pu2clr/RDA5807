@@ -1,4 +1,4 @@
-# LilyGO/T-Embed setup
+# LilyGO/T-Embed and RDA5807 setup
 
 LilyGO/T-Embed  is a panel that uses the ESP32S, an rotary encoder with push button, and a TFT ST7789 display, all together,  for application development. The picture below shows LilyGO/T-Embed.
 
