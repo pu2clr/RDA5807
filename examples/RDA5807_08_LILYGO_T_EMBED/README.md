@@ -99,7 +99,6 @@ The table and pictures below show the LilyGo T-Embed and RDA5807 devices connect
 |  SCLK     | SCLK   |  8 (SCL / GPIO8)   |
 
 
-
 <BR>
 
 
@@ -111,8 +110,6 @@ The table and pictures below show the LilyGo T-Embed and RDA5807 devices connect
 ![LilyGo and RDA5807 connection 01](./images/lily02.jpg)
 
 <BR>
-
-
 
  ### LilyGo T-Embed and ESP32 internal PINS (GPIO) and functions
 
