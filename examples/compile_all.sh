@@ -25,6 +25,9 @@ arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_AL
 arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_BAND_TEST_SERIAL_MONITOR --output-dir ~/Downloads/hex/atmega/RDA5807_01_BAND_TEST_SERIAL_MONITOR  --warnings all
 arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS_TEST_SERIAL_MONITOR --output-dir ~/Downloads/hex/atmega/RDA5807_01_RDS_TEST_SERIAL_MONITOR  --warnings all
 
+arduino-cli compile -b arduino:avr:uno ./RDA5807_07_NANO_OLED --output-dir ~/Downloads/hex/lgt8fx/NANO_OLED  --warnings all 
+
+
 echo "********************"
 echo "Arduino LGT8FX based board"
 echo "********************"
@@ -68,17 +71,12 @@ arduino-cli compile --fqbn ATTinyCore:avr:attinyx4:millis=enabled  ./RDA5807_03_
 echo "ESP8266 OLED"
 arduino-cli compile --fqbn esp8266:esp8266:generic  ./UNDER_CONSTRUCTION/RDA5807_06_ESP8266_OLED --output-dir ~/Downloads/hex/ESP8266/RDA5807_06_ESP8266_OLED  --warnings all
 
-# compile UNO
-echo "********************"
-echo "UNO"
-echo "********************"
-arduino-cli compile -b arduino:avr:uno  ./UNDER_CONSTRUCTION/RDA5807_07_NANO_OLED --output-dir ~/Downloads/hex/ESP8266/RDA5807_07_NANO_OLED  --warnings all
-
 arduino-cli compile -b arduino:avr:uno  ./UNDER_CONSTRUCTION/RDA5807_TFT_TOUCH_SHIELD --output-dir ~/Downloads/hex/ESP8266/RDA5807_TFT_TOUCH_SHIELD  --warnings all
 
 
 echo "********************"
 echo "Extending RDA5807 class example" 
 echo "********************"
+
 arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_90_EXTENDING_CLASS --output-dir ~/Downloads/hex/atmega/RDA5807_90_EXTENDING_CLASS  --warnings all
 
