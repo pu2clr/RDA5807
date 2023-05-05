@@ -60,14 +60,15 @@ This library has been successfully tested on RDA5807M and RDA5807FP devices. The
 * [See the presentation video on youtube](https://youtu.be/eLWEWEjxM8U) 
 
 
+{% include video03.html %}
+
+* [See RDS and Nokia 5110 Display example - youtube](https://youtu.be/jInacTWoF9Y) 
+
+
 {% include video02.html %}
 
 * [See RDS and TFT Display example - youtube](https://youtu.be/PZsbqieeYns) 
 
-
-{% include video03.html %}
-
-* [See RDS and Nokia 5110 Display example - youtube](https://youtu.be/jInacTWoF9Y) 
 
 
 ## RDA5807 main features implemented by this library
