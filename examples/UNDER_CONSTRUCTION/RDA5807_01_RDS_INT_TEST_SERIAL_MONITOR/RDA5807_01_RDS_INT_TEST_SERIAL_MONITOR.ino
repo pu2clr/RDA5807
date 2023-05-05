@@ -1,5 +1,7 @@
 /*
 
+    Under construction...
+
     Test RDS functions  using Serial Monitor.
     This sketch is useful to check how the RDS work and how the local stations provide this service.
     For example: I have noticed in my location that some stations send wrong time information. So, for these stations, 
