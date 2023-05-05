@@ -263,11 +263,14 @@ The following table shows the main examples implemented in this library. These e
 | [RDA5807_01_SERIAL_MONITOR/ <BR> RDA5807_03_STM32](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_03_STM32) | Test and validation of RDA5807 on STM32 board |
 | [RDA5807_02_TFT_display](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_02_TFT_display) |  This sketch uses an Arduino Pro Mini, 3.3V (8MZ) with a SPI TFT ST7735 1.8 |
 | [RDA5807_03_attimy84](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_03_attimy84) | Test and validation of RDA5807 on ATtiny84 device |
-| [RDA5807_04_NOKIA5110](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_04_NOKIA5110) | This sketch uses an Arduino Nano with NOKIA 5110 display. | 
+| [RDA5807_04_NOKIA5110](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_04_NOKIA5110) | This sketch uses an Arduino Nano with NOKIA 5110 display | 
 | [RDA5807_05_LCD16X02](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02) | This sketch uses an Arduino Nano with LCD16X02 DISPLAY |
 | [RDA5807_05_LCD16X02_ESP32](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02_ESP32) | This sketch uses an ESP32 with LCD16X02 DISPLAY|
 | [RDA5807_05_LCD16X02_ESP32_I2S](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02_ESP32_I2S) | I2S setup - This sketch uses an ESP32 with LCD16X02 DISPLAY and MAX98357A I2S setup |
 | [RDA5807_06_UNO_TM1638](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_06_UNO_TM1638) | This sketch drives the RDA5807 FM receiver and TM1638 (seven-segment display control) |
+| [Arduino Nano and OLED with Tiny4kOLED library](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_07_NANO_OLED)|  Nano and OLED implementation V1 | 
+| [Arduino Nano and OLED (Adafruit_GFX and Adafruit_SSD1306)](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_07_NANO_OLED_V2) | This sketch works on Atmega328 and LGT8FX based board. It is a I2C OLED setup  | 
+| [LilyGO/T-Embed and RDA5807 setup](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_08_LILYGO_T_EMBED)| This sketch was an adaptation of the Volos's sketch and uses PU2CLR RDA5807 Arduino Library with LilyGO T-Embed.  |
 
 [See the folder examples do know more](https://github.com/pu2clr/RDA5807/tree/master/examples)
 
