@@ -936,6 +936,7 @@ Cordova provides an easy way to develop for iOS and Android.
 * [FM Stereo Radio Module RDA5807M Wireless Module](https://epartners.co.nz/products/sp0806)
 * [kandi X-RAY  RDA5807 Summary](https://kandi.openweaver.com/html/pu2clr/RDA5807)
 * [ワイドFM　DSPラジオ （RDA5807M）を作ってみた](https://www.himeport.co.jp/private_blog/ワイドfm%E3%80%80dspラジオ-（rda5807m）を作ってみた/)
+* [What is the method to mute sound during seek on RDA5807 FM?](https://electronics.stackexchange.com/questions/633747/what-is-the-method-to-mute-sound-during-seek-on-rda5807-fm)
 
 
 
