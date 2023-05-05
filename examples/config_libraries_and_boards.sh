@@ -43,7 +43,7 @@ https://www.pjrc.com/teensy/package_teensy_index.json
 arduino-cli core update-index
 
 echo "This may take several minutes or hours. Please wait!"
-echo "Installing the libraries"
+echo "Installing the libraries used by the examples implemented in this Library"
 #uncomment the lines if you and to include more libraries 
 arduino-cli lib install "Adafruit BusIO"
 arduino-cli lib install "Adafruit SH110X"
@@ -56,13 +56,12 @@ arduino-cli lib install "Adafruit PCD8544 Nokia 5110 LCD library"
 # arduino-cli lib install "Etherkit Si5351"
 # arduino-cli lib install "FlashStorage_SAMD"
 arduino-cli lib install "LiquidCrystal"
-arduino-cli lib install "LiquidCrystal I2C"
+# arduino-cli lib install "LiquidCrystal I2C"
 arduino-cli lib install "MCUFRIEND_kbv"
 arduino-cli lib install "TFT_22_ILI9225"
 # arduino-cli lib install "TFT_eSPI_ES32Lab"
 arduino-cli lib install "Tiny4kOLED"
 arduino-cli lib install "TinyOLED-Fonts"
-arduino-cli lib install "TM1638lite"
 arduino-cli lib install "FastLED"
 arduino-cli lib install "RotaryEncoder"
 echo "----------------------------------------------------"
@@ -77,15 +76,15 @@ arduino-cli core install arduino:avr
 arduino-cli core install lgt8fx:avr
 arduino-cli core install MiniCore:avr
 arduino-cli core install arduino:sam
-# arduino-cli core install esp32:esp32
-# arduino-cli core install esp8266:esp8266
-# arduino-cli core install stm32duino:STM32F1
+arduino-cli core install esp32:esp32
+arduino-cli core install esp8266:esp8266
+arduino-cli core install stm32duino:STM32F1
 # arduino-cli core install stm32duino:STM32F4
-# arduino-cli core install STM32:stm32
+arduino-cli core install STM32:stm32
 # arduino-cli core install STMicroelectronics:stm32
 # arduino-cli core install rp2040:rp2040
 # arduino-cli core install Seeeduino:samd
-# arduino-cli core install ATTinyCore:avr
+arduino-cli core install ATTinyCore:avr
 # arduino-cli core install MegaCore:avr
 # arduino-cli core install MightyCore:avr
 # arduino-cli core install teensy:avr
