@@ -56,6 +56,25 @@ void RDA5807::setGpio(uint8_t gpioPin, uint8_t gpioSetup, int mcuPin)
 
 /**
  * @ingroup GA02
+ * @brief Sets InterruptMode 
+ * @details If 0, generate 5ms interrupt;
+ * @details If 1, interrupt last until read reg0CH action occurs.
+ * @details When 1, it can be used to Interact with RDS - BLOCK A ( in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1)
+ * @details In this case, use the GPIO2 to interrupt setup with the MCU  (microcontroller)
+ * @details ATTENTION: This function affects the behavior of the GPIO2 pin. The register 0x04 GPIO2 attribute will be setted to 1  
+ * @param value  0 or 1
+ * @see setGpio
+ */
+void RDA5807::setInterruptMode(uint8_t value) {
+    reg05->refined.INT_MODE = value; // 0 - generate 5ms interrupt; 1 - interrupt last until read reg0CH action occurs.
+    setRegister(REG05, reg05->raw);
+
+    reg04->refined.GPIO2 = value;  // 0 - Hight impedance or 1 - Interrupt (INT)
+    setRegister(REG04,reg04->raw);
+}
+
+/**
+ * @ingroup GA02
  * @brief Gets all current device status and RDS information registers (From 0x0A to 0x0F)
  * @see RDA5807M - SINGLE-CHIP BROADCAST FMRADIO TUNER; pages 5, 9, 12 and 13. 
  * @see rda_reg0a, rda_reg0b, rda_reg0c, rda_reg0d, rda_reg0e, rda_reg0f

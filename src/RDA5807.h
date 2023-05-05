@@ -641,6 +641,7 @@ class RDA5807 {
             void setRegister(uint8_t reg, uint16_t value);
 
             void setGpio(uint8_t gpioPin, uint8_t gpioSetup = 0, int mcuPin = -1);
+            void setInterruptMode(uint8_t value); 
 
             void waitAndFinishTune();
 
