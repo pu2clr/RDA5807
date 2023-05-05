@@ -9,6 +9,7 @@ var group__GA02 =
     [ "RDA5807::setDelayAfterCrystalOn", "group__GA02.html#ga1db36d126d26a553668c1b70de9b3823", null ],
     [ "RDA5807::setGpio", "group__GA02.html#ga677eff1084b294696a32e3ca4dfe593b", null ],
     [ "RDA5807::setI2CBusAddrs", "group__GA02.html#gadf634cb6733022e30d8f1a74a5946e78", null ],
+    [ "RDA5807::setInterruptMode", "group__GA02.html#gabd676c0e4ad20c6152a68f8daba64cb3", null ],
     [ "RDA5807::setNewDemodulateMethod", "group__GA02.html#gab97c1c8ad3ab0cd5d2852f712caee0a1", null ],
     [ "RDA5807::setRegister", "group__GA02.html#ga3b581b82ab8c631cfec537a47008ddf3", null ],
     [ "RDA5807::setup", "group__GA02.html#ga272444216a784ea5317c83783eb2bfe7", null ],

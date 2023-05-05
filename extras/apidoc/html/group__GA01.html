@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="LOGO.png"/></td>
   <td id="projectalign">
-   <div id="projectname">PU2CLR RDA5807 Arduino Library<span id="projectnumber">&#160;1.1.5</span>
+   <div id="projectname">PU2CLR RDA5807 Arduino Library<span id="projectnumber">&#160;1.1.6</span>
    </div>
    <div id="projectbrief">Arduino Library for RDA5807 Devices - By Ricardo Lima Caratti</div>
   </td>
@@ -925,6 +925,9 @@ refined</td>
 <tr class="memitem:ga677eff1084b294696a32e3ca4dfe593b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA02.html#ga677eff1084b294696a32e3ca4dfe593b">setGpio</a> (uint8_t gpioPin, uint8_t gpioSetup=0, int mcuPin=-1)</td></tr>
 <tr class="memdesc:ga677eff1084b294696a32e3ca4dfe593b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Device GPIO pins.  <br /></td></tr>
 <tr class="separator:ga677eff1084b294696a32e3ca4dfe593b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabd676c0e4ad20c6152a68f8daba64cb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA02.html#gabd676c0e4ad20c6152a68f8daba64cb3">setInterruptMode</a> (uint8_t value)</td></tr>
+<tr class="memdesc:gabd676c0e4ad20c6152a68f8daba64cb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets InterruptMode.  <br /></td></tr>
+<tr class="separator:gabd676c0e4ad20c6152a68f8daba64cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3fe1feed45d3290beba0efef491128e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA02.html#ga3fe1feed45d3290beba0efef491128e6">waitAndFinishTune</a> ()</td></tr>
 <tr class="memdesc:ga3fe1feed45d3290beba0efef491128e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for Seek or Tune finish.  <br /></td></tr>
 <tr class="separator:ga3fe1feed45d3290beba0efef491128e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1160,39 +1163,6 @@ refined</td>
 <tr class="memdesc:ga16f6ef1f816a032fb07a91017c34bb50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the I2C bus address.  <br /></td></tr>
 <tr class="separator:ga16f6ef1f816a032fb07a91017c34bb50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><h3>Protected Attributes</h3></td></tr>
-<tr class="memitem:a18c3e5a103b683af7c46d8b9a3d47518"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a18c3e5a103b683af7c46d8b9a3d47518">deviceAddressDirectAccess</a> = <a class="el" href="RDA5807_8h.html#a391d926a92f7cd486866d16b53bf9bc8">I2C_ADDR_DIRECT_ACCESS</a></td></tr>
-<tr class="separator:a18c3e5a103b683af7c46d8b9a3d47518"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81c00f45187f93be0698ef8c5bd80619"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a81c00f45187f93be0698ef8c5bd80619">deviceAddressFullAccess</a> = <a class="el" href="RDA5807_8h.html#acae259a7c57b67ef6c890c1c178dce00">I2C_ADDR_FULL_ACCESS</a></td></tr>
-<tr class="separator:a81c00f45187f93be0698ef8c5bd80619"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55c07acd68120f74f787999364fc92c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a55c07acd68120f74f787999364fc92c9">resetPin</a></td></tr>
-<tr class="separator:a55c07acd68120f74f787999364fc92c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14040afdfd6c6cf486278c4e75c63927"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a14040afdfd6c6cf486278c4e75c63927">currentFrequency</a></td></tr>
-<tr class="separator:a14040afdfd6c6cf486278c4e75c63927"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf56888de5a078b5e5090a0b0dd6ae61"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#aaf56888de5a078b5e5090a0b0dd6ae61">currentFMBand</a> = 0</td></tr>
-<tr class="separator:aaf56888de5a078b5e5090a0b0dd6ae61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae175c8602c76c5512c61b836de086620"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#ae175c8602c76c5512c61b836de086620">currentFMSpace</a> = 0</td></tr>
-<tr class="separator:ae175c8602c76c5512c61b836de086620"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33272a8f152f2307adc012072b8e0582"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a33272a8f152f2307adc012072b8e0582">currentVolume</a> = 0</td></tr>
-<tr class="separator:a33272a8f152f2307adc012072b8e0582"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a022d3357b6bddf3477b3f26f2d78a75c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a022d3357b6bddf3477b3f26f2d78a75c">gpio1Control</a> = -1</td></tr>
-<tr class="memdesc:a022d3357b6bddf3477b3f26f2d78a75c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be used to add control to the system via GPIO1 pin.  <br /></td></tr>
-<tr class="separator:a022d3357b6bddf3477b3f26f2d78a75c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6a9fc2bd5ca266079c3e7796b5025af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#ab6a9fc2bd5ca266079c3e7796b5025af">gpio2Control</a> = -1</td></tr>
-<tr class="memdesc:ab6a9fc2bd5ca266079c3e7796b5025af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be used to add control to the system via GPIO2 pin.  <br /></td></tr>
-<tr class="separator:ab6a9fc2bd5ca266079c3e7796b5025af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6f2d5f535edc14951e75a03e46ebc01"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#ae6f2d5f535edc14951e75a03e46ebc01">gpio3Control</a> = -1</td></tr>
-<tr class="memdesc:ae6f2d5f535edc14951e75a03e46ebc01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be used to add control to the system via GPIO3 pin.  <br /></td></tr>
-<tr class="separator:ae6f2d5f535edc14951e75a03e46ebc01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0c39d19376c30217eeb6bf17b398e46"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#af0c39d19376c30217eeb6bf17b398e46">clockFrequency</a> = <a class="el" href="RDA5807_8h.html#aaaa8a7748321c8739d938babeb67d8e9">CLOCK_32K</a></td></tr>
-<tr class="separator:af0c39d19376c30217eeb6bf17b398e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c8780f2d28725d66850f9e3be14745a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a4c8780f2d28725d66850f9e3be14745a">oscillatorType</a> = <a class="el" href="RDA5807_8h.html#a0941eab712587842e5513eb6cd562717">OSCILLATOR_TYPE_PASSIVE</a></td></tr>
-<tr class="separator:a4c8780f2d28725d66850f9e3be14745a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3714ff155c783961b0d097000837ee5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#ac3714ff155c783961b0d097000837ee5">rlckNoCalibrate</a> = <a class="el" href="RDA5807_8h.html#acf26b27b8292674e78e04908e3c27bff">RLCK_NO_CALIBRATE_MODE_OFF</a></td></tr>
-<tr class="memdesc:ac3714ff155c783961b0d097000837ee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default is 0.  <br /></td></tr>
-<tr class="separator:ac3714ff155c783961b0d097000837ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b9e02f7c7121cf57fc0006f4ff7162a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a8b9e02f7c7121cf57fc0006f4ff7162a">maxDelayAftarCrystalOn</a> = <a class="el" href="RDA5807_8h.html#afb81dd661d531fa5c5422549fab7588f">MAX_DELAY_AFTER_OSCILLATOR</a></td></tr>
-<tr class="separator:a8b9e02f7c7121cf57fc0006f4ff7162a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><h3>Private Attributes</h3></td></tr>
 <tr class="memitem:ae51bb0aaf958ee320da80866bb20ffb5"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#ae51bb0aaf958ee320da80866bb20ffb5">shadowStatusRegisters</a> [6]</td></tr>
 <tr class="memdesc:ae51bb0aaf958ee320da80866bb20ffb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">shadow status registers  <br /></td></tr>
 <tr class="separator:ae51bb0aaf958ee320da80866bb20ffb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1248,6 +1218,38 @@ refined</td>
 <tr class="memitem:a3d9eae606a7de8a650611eaf1f9a8482"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a3d9eae606a7de8a650611eaf1f9a8482">rds_time</a> [25]</td></tr>
 <tr class="memdesc:a3d9eae606a7de8a650611eaf1f9a8482"><td class="mdescLeft">&#160;</td><td class="mdescRight">RDS date time received information.  <br /></td></tr>
 <tr class="separator:a3d9eae606a7de8a650611eaf1f9a8482"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18c3e5a103b683af7c46d8b9a3d47518"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a18c3e5a103b683af7c46d8b9a3d47518">deviceAddressDirectAccess</a> = <a class="el" href="RDA5807_8h.html#a391d926a92f7cd486866d16b53bf9bc8">I2C_ADDR_DIRECT_ACCESS</a></td></tr>
+<tr class="separator:a18c3e5a103b683af7c46d8b9a3d47518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81c00f45187f93be0698ef8c5bd80619"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a81c00f45187f93be0698ef8c5bd80619">deviceAddressFullAccess</a> = <a class="el" href="RDA5807_8h.html#acae259a7c57b67ef6c890c1c178dce00">I2C_ADDR_FULL_ACCESS</a></td></tr>
+<tr class="separator:a81c00f45187f93be0698ef8c5bd80619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55c07acd68120f74f787999364fc92c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a55c07acd68120f74f787999364fc92c9">resetPin</a></td></tr>
+<tr class="separator:a55c07acd68120f74f787999364fc92c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14040afdfd6c6cf486278c4e75c63927"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a14040afdfd6c6cf486278c4e75c63927">currentFrequency</a></td></tr>
+<tr class="separator:a14040afdfd6c6cf486278c4e75c63927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf56888de5a078b5e5090a0b0dd6ae61"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#aaf56888de5a078b5e5090a0b0dd6ae61">currentFMBand</a> = 0</td></tr>
+<tr class="separator:aaf56888de5a078b5e5090a0b0dd6ae61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae175c8602c76c5512c61b836de086620"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#ae175c8602c76c5512c61b836de086620">currentFMSpace</a> = 0</td></tr>
+<tr class="separator:ae175c8602c76c5512c61b836de086620"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33272a8f152f2307adc012072b8e0582"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a33272a8f152f2307adc012072b8e0582">currentVolume</a> = 0</td></tr>
+<tr class="separator:a33272a8f152f2307adc012072b8e0582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a022d3357b6bddf3477b3f26f2d78a75c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a022d3357b6bddf3477b3f26f2d78a75c">gpio1Control</a> = -1</td></tr>
+<tr class="memdesc:a022d3357b6bddf3477b3f26f2d78a75c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be used to add control to the system via GPIO1 pin.  <br /></td></tr>
+<tr class="separator:a022d3357b6bddf3477b3f26f2d78a75c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6a9fc2bd5ca266079c3e7796b5025af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#ab6a9fc2bd5ca266079c3e7796b5025af">gpio2Control</a> = -1</td></tr>
+<tr class="memdesc:ab6a9fc2bd5ca266079c3e7796b5025af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be used to add control to the system via GPIO2 pin.  <br /></td></tr>
+<tr class="separator:ab6a9fc2bd5ca266079c3e7796b5025af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6f2d5f535edc14951e75a03e46ebc01"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#ae6f2d5f535edc14951e75a03e46ebc01">gpio3Control</a> = -1</td></tr>
+<tr class="memdesc:ae6f2d5f535edc14951e75a03e46ebc01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be used to add control to the system via GPIO3 pin.  <br /></td></tr>
+<tr class="separator:ae6f2d5f535edc14951e75a03e46ebc01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0c39d19376c30217eeb6bf17b398e46"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#af0c39d19376c30217eeb6bf17b398e46">clockFrequency</a> = <a class="el" href="RDA5807_8h.html#aaaa8a7748321c8739d938babeb67d8e9">CLOCK_32K</a></td></tr>
+<tr class="separator:af0c39d19376c30217eeb6bf17b398e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c8780f2d28725d66850f9e3be14745a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a4c8780f2d28725d66850f9e3be14745a">oscillatorType</a> = <a class="el" href="RDA5807_8h.html#a0941eab712587842e5513eb6cd562717">OSCILLATOR_TYPE_PASSIVE</a></td></tr>
+<tr class="separator:a4c8780f2d28725d66850f9e3be14745a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3714ff155c783961b0d097000837ee5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#ac3714ff155c783961b0d097000837ee5">rlckNoCalibrate</a> = <a class="el" href="RDA5807_8h.html#acf26b27b8292674e78e04908e3c27bff">RLCK_NO_CALIBRATE_MODE_OFF</a></td></tr>
+<tr class="memdesc:ac3714ff155c783961b0d097000837ee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default is 0.  <br /></td></tr>
+<tr class="separator:ac3714ff155c783961b0d097000837ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b9e02f7c7121cf57fc0006f4ff7162a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA01.html#a8b9e02f7c7121cf57fc0006f4ff7162a">maxDelayAftarCrystalOn</a> = <a class="el" href="RDA5807_8h.html#afb81dd661d531fa5c5422549fab7588f">MAX_DELAY_AFTER_OSCILLATOR</a></td></tr>
+<tr class="separator:a8b9e02f7c7121cf57fc0006f4ff7162a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h4 class="groupheader">Member Data Documentation</h4>
 <a id="af0c39d19376c30217eeb6bf17b398e46" name="af0c39d19376c30217eeb6bf17b398e46"></a>
@@ -1423,7 +1425,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1447,7 +1449,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1585,14 +1587,14 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>RDS Basic tuning and switching information (Type 0 groups) </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00828">getRdsText0A()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00847">getRdsText0A()</a>.</p>
 
 </div>
 </div>
@@ -1611,14 +1613,14 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>RDS Radio Text buffer - Program Information. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00802">getRdsText()</a>, and <a class="el" href="#l00857">getRdsText2A()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00821">getRdsText()</a>, and <a class="el" href="#l00876">getRdsText2A()</a>.</p>
 
 </div>
 </div>
@@ -1637,14 +1639,14 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>RDS Radio Text buffer - Station Informaation. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00886">getRdsText2B()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00905">getRdsText2B()</a>.</p>
 
 </div>
 </div>
@@ -1663,14 +1665,14 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>RDS date time received information. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00912">getRdsTime()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00931">getRdsTime()</a>.</p>
 
 </div>
 </div>
@@ -1689,7 +1691,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1711,7 +1713,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1733,7 +1735,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1755,7 +1757,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1777,7 +1779,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1799,7 +1801,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1821,7 +1823,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1843,7 +1845,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1865,7 +1867,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1887,7 +1889,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1909,7 +1911,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1931,7 +1933,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1953,7 +1955,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1975,7 +1977,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1997,7 +1999,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2065,7 +2067,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2089,7 +2091,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2113,7 +2115,7 @@ refined</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

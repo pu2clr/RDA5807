@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="LOGO.png"/></td>
   <td id="projectalign">
-   <div id="projectname">PU2CLR RDA5807 Arduino Library<span id="projectnumber">&#160;1.1.5</span>
+   <div id="projectname">PU2CLR RDA5807 Arduino Library<span id="projectnumber">&#160;1.1.6</span>
    </div>
    <div id="projectbrief">Arduino Library for RDA5807 Devices - By Ricardo Lima Caratti</div>
   </td>
@@ -270,7 +270,7 @@ RDS/RBDS</h1>
   </dd>
 </dl>
 
-<p class="reference">Referenced by <a class="el" href="#l00828">RDA5807::getRdsText0A()</a>, and <a class="el" href="#l00886">RDA5807::getRdsText2B()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00847">RDA5807::getRdsText0A()</a>, and <a class="el" href="#l00905">RDA5807::getRdsText2B()</a>.</p>
 
 </div>
 </div>
@@ -298,7 +298,7 @@ RDS/RBDS</h1>
   </dd>
 </dl>
 
-<p class="reference">Referenced by <a class="el" href="#l00802">RDA5807::getRdsText()</a>, and <a class="el" href="#l00857">RDA5807::getRdsText2A()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00821">RDA5807::getRdsText()</a>, and <a class="el" href="#l00876">RDA5807::getRdsText2A()</a>.</p>
 
 </div>
 </div>
@@ -323,7 +323,7 @@ RDS/RBDS</h1>
 <dl class="section return"><dt>Returns</dt><dd>uint8_t current Text Flag A/B <br  />
  </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00064">RDA5807::getStatusRegisters()</a>.</p>
+<p class="reference">References <a class="el" href="#l00083">RDA5807::getStatusRegisters()</a>.</p>
 
 </div>
 </div>
@@ -345,7 +345,7 @@ RDS/RBDS</h1>
 <p>Return the group type. </p>
 <dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00064">RDA5807::getStatusRegisters()</a>.</p>
+<p class="reference">References <a class="el" href="#l00083">RDA5807::getStatusRegisters()</a>.</p>
 
 </div>
 </div>
@@ -369,7 +369,7 @@ RDS/RBDS</h1>
 <p>&lt;&gt; </p><dl class="section see"><dt>See also</dt><dd><a href="https://en.wikipedia.org/wiki/Radio_Data_System">https://en.wikipedia.org/wiki/Radio_Data_System</a> </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>program type (an integer betwenn 0 and 31) </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00064">RDA5807::getStatusRegisters()</a>.</p>
+<p class="reference">References <a class="el" href="#l00083">RDA5807::getStatusRegisters()</a>.</p>
 
 </div>
 </div>
@@ -435,7 +435,7 @@ false </dd></dl>
 <p>Gets the RDS Text when the message is of the Group Type 2 version A. </p>
 <dl class="section return"><dt>Returns</dt><dd>char* The string (char array) with the content (Text) received from group 2A </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00763">RDA5807::getNext4Block()</a>, <a class="el" href="#l00064">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00589">RDA5807::rds_buffer2A</a>.</p>
+<p class="reference">References <a class="el" href="#l00782">RDA5807::getNext4Block()</a>, <a class="el" href="#l00083">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00589">RDA5807::rds_buffer2A</a>.</p>
 
 </div>
 </div>
@@ -459,7 +459,7 @@ false </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>RDS Dynamic PS or Scrolling PS support </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>char* should return a string with the station name. However, some stations send other kind of messages </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00726">RDA5807::getNext2Block()</a>, <a class="el" href="#l00064">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00591">RDA5807::rds_buffer0A</a>.</p>
+<p class="reference">References <a class="el" href="#l00745">RDA5807::getNext2Block()</a>, <a class="el" href="#l00083">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00591">RDA5807::rds_buffer0A</a>.</p>
 
 </div>
 </div>
@@ -484,7 +484,7 @@ false </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>char* string with the Text of the group A2 <br  />
  </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00763">RDA5807::getNext4Block()</a>, <a class="el" href="#l00064">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00589">RDA5807::rds_buffer2A</a>.</p>
+<p class="reference">References <a class="el" href="#l00782">RDA5807::getNext4Block()</a>, <a class="el" href="#l00083">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00589">RDA5807::rds_buffer2A</a>.</p>
 
 </div>
 </div>
@@ -508,7 +508,7 @@ false </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>char* string with the Text of the group AB <br  />
  </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00726">RDA5807::getNext2Block()</a>, <a class="el" href="#l00064">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00590">RDA5807::rds_buffer2B</a>.</p>
+<p class="reference">References <a class="el" href="#l00745">RDA5807::getNext2Block()</a>, <a class="el" href="#l00083">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00590">RDA5807::rds_buffer2B</a>.</p>
 
 </div>
 </div>
@@ -531,7 +531,7 @@ false </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>Need to check. It is working on SI4735 and Si4703. Why not here? </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>char* a string with hh:mm +/- offset </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00064">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00592">RDA5807::rds_time</a>.</p>
+<p class="reference">References <a class="el" href="#l00083">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00592">RDA5807::rds_time</a>.</p>
 
 </div>
 </div>
@@ -554,7 +554,7 @@ false </dd></dl>
 <p>Gets the version code (extracted from the Block B) </p>
 <dl class="section return"><dt>Returns</dt><dd>0=A or 1=B </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00064">RDA5807::getStatusRegisters()</a>.</p>
+<p class="reference">References <a class="el" href="#l00083">RDA5807::getStatusRegisters()</a>.</p>
 
 </div>
 </div>
