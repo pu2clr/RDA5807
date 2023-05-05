@@ -57,7 +57,7 @@ This library has been successfully tested on RDA5807M and RDA5807FP devices. The
 
 {% include video01.html %}
 
-* [See the presentation video on youtube](https://youtu.be/eLWEWEjxM8U) 
+* [See FM receiver based on RDA5807 and LilyGO/T-Embed panel](https://youtu.be/eLWEWEjxM8U) 
 
 
 {% include video03.html %}
