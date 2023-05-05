@@ -1,5 +1,4 @@
 /*
-  Under construction...
   Test and validation of RDA5807 on UNO/NANO or other ATMEGA328 based device.
   It is FM receiver with
 
