@@ -46,7 +46,7 @@ Here you will find all schematics used by the examples sketches, the EAGLE files
 
 ![Schematic - Arduino and TFT Display ](./images/circuit_tft.png)
 
-![Basic Schematic with TFT](./extras/images/circuit_tft.png)
+![Basic Schematic with TFT](./images/circuit_tft.png)
 
 
 Arduino UNO, Nano or other based on Atmega328 and SPI TFT ST7735 1.8" wireup
