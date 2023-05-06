@@ -77,9 +77,15 @@ void loop() {
 
 
 
-### Attiny84 (example RDA5807_03_attimy84)
+### Attiny84 with OLED setup
 
-![Schematic - Arduino and TFT Display ](../extras/images/circuit_attiny84.png)
+![Schematic - Attiny84 with oled setup ](../extras/images/circuit_attiny84.png)
+
+
+### Attiny85 with OLED setup
+
+![Schematic - Attiny85 with oled setup ](../extras/images/circuit_attiny85.png)
+
 
 
 {% include video01.html %}
