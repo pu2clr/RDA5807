@@ -33,9 +33,9 @@ void setup()
   oled.on();
   oled.setFont(FONT8X16);
   oled.setCursor(0, 0);
-  oled.print("RDA5807-Attiny85");
+  oled.print(F("RDA5807-Attiny85"));
   oled.setCursor(0, 2);
-  oled.print("   By PU2CLR   ");
+  oled.print(F("   By PU2CLR   "));
   delay(3000);
   oled.clear();
 
@@ -49,13 +49,13 @@ void setup()
 void showStatus() {
   char faux[7];
   oled.setCursor(0, 0);
-  oled.print("FM ");
+  oled.print(F("FM "));
   oled.setCursor(38, 0);
-  oled.print("      ");
+  oled.print(F("      "));
   oled.setCursor(38, 0);
   oled.print(rx.formatFrequency(rx.getRealFrequency(), faux, ','));
   oled.setCursor(95, 0);
-  oled.print("MHz");
+  oled.print(F("MHz"));
 }
 
 void loop()
