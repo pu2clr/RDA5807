@@ -1,6 +1,7 @@
 /*
    Test and validation of RDA5807 on ATtiny85 device.
-   It is a FM receiver with mini OLED and and two push buttons  
+   It is a FM receiver with mini OLED and and two push buttons.
+   This sketch implements FM RDS function.  
    
    ATtiny85 and RDA5807 wireup  
 
@@ -22,8 +23,6 @@
 #define SEEK_DOWN PB4    
 
 char *stationName;
-
-
 RDA5807 rx;
 
 void setup()
@@ -45,12 +44,9 @@ void setup()
   rx.setup();
   // rx.setVolume(8);   // Use it if necessary.
   rx.setFrequency(10390); 
-
   rx.setRDS(true);
   rx.setRdsFifo(true);
-
   showStatus();
- 
 }
 
 void showStatus() {
@@ -67,28 +63,27 @@ void showStatus() {
   oled.clearToEOL();
 }
 
+
 void loop()
 {
-  uint8_t key;
-  key = digitalRead(SEEK_UP) << 1;
-  key = key | digitalRead(SEEK_DOWN);
-  switch
-  if (digitalRead(SEEK_UP) == LOW ) {
-    rx.seek(RDA_SEEK_WRAP,RDA_SEEK_UP, showStatus);
+  uint8_t bkey;
+  bkey = digitalRead(SEEK_UP) << 1;     // Checks Seek Up push button
+  bkey = bkey | digitalRead(SEEK_DOWN); // Checks Seek Down push button
+  if ( bkey != 0b11) { // if one of them is pressed
+    if (bkey == 0b01) 
+      rx.seek(RDA_SEEK_WRAP,RDA_SEEK_UP, showStatus);
+    else
+      rx.seek(RDA_SEEK_WRAP,RDA_SEEK_DOWN, showStatus);
     showStatus();
+    delay(200);
   }
-  if (digitalRead(SEEK_DOWN) == LOW ) {
-    rx.seek(RDA_SEEK_WRAP,RDA_SEEK_DOWN, showStatus);
-    showStatus();
-  }
-  if ( rx.getRdsReady() &&  rx.hasRdsInfo() && !rx.getErrorBlockB()) {
+  if ( rx.getRdsReady() &&  rx.hasRdsInfo() && !rx.getErrorBlockB() )  {
     stationName = rx.getRdsText0A();
     oled.setCursor(0, 2);
-    if ( stationName != NULL ) {
-        oled.print(stationName);  
-    } else {
+    if ( stationName != NULL ) 
+        oled.print(stationName); 
+    else 
       oled.clearToEOL();
-    }
     delay(80);
   }
   delay(5);
