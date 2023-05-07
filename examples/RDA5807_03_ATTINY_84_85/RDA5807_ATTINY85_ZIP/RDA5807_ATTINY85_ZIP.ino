@@ -1,10 +1,11 @@
 /*
    Test and validation of RDA5807 on ATtiny85 device.
-   It is a FM receiver with mini OLED and and two push buttons  
+   It is a FM receiver without visual interface. 
+   This sketch uses two buttons to find stations.
    
    ATtiny85 and RDA5807 wireup  
 
-    | RDA5807 pin      | Attiny85 REF pin | Physical pin  | 
+    | RDA5807 pin      | Attiny85 REF pin | Physical pin | 
     | ----------------| -----------------| ------------- | 
     | SEEK_UP         |     PB1          |     6         | 
     | SEEK_DOWN       |     PB4          |     3         |
