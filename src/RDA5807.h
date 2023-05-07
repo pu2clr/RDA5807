@@ -683,7 +683,8 @@ class RDA5807 {
              * @ingroup GA03
              * @brief Tunes the receiver at the first channel/frequency of the current band 
              * @details If the current band is 0, the lowest frequency is 87Mhz (8700)
-             * @see startBand, setFrequency   
+             * @see  setFrequency, getFrequency, setFrequencyToEndBand, getRealFrequency, getMaximunFrequencyOfTheBand, getMinimumFrequencyOfTheBand   
+ 
              */
             inline void setFrequencyToBeginBand() { this->setFrequency(startBand[currentFMBand]); };
             
@@ -691,9 +692,26 @@ class RDA5807 {
              * @ingroup GA03
              * @brief Tunes the receiver at the last channel/frequency of the current band 
              * @details If the current band is 0, the highest frequency is 108MHz (10800)
-             * @see endBand, setFrequency   
+             * @see  setFrequency, getFrequency, setFrequencyToBeginBand, getRealFrequency, getMaximunFrequencyOfTheBand, getMinimumFrequencyOfTheBand   
              */            
             inline void setFrequencyToEndBand(){this->setFrequency(endBand[currentFMBand]);};
+
+            /**
+             * @ingroup GA03
+             * @brief gets the maximun frequency of the current band
+             * @return the last valid frequency of the current band
+             * @see  setFrequency, getFrequency, setFrequencyToBeginBand, setFrequencyToEndBand, getRealFrequency, getMaximunFrequencyOfTheBand, getMinimumFrequencyOfTheBand   
+             */         
+            inline uint16_t getMaximunFrequencyOfTheBand() {return endBand[currentFMBand];}; 
+
+            /**
+             * @ingroup GA03
+             * @brief gets the minimum frequency of the current band
+             * @return the first valid frequency of the current band
+             * @see  setFrequency, getFrequency, setFrequencyToBeginBand, setFrequencyToEndBand, getRealFrequency, getMaximunFrequencyOfTheBand, getMinimumFrequencyOfTheBand   
+             */         
+            inline uint16_t getMinimumFrequencyOfTheBand() {return startBand[currentFMBand];}; 
+
 
             uint16_t getFrequency();
             void setFrequencyUp();
