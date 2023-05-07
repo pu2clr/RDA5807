@@ -36,10 +36,8 @@
 | SCLK / CLK      |     SCL          |     7         |
    
 
-The ATtiny core board/plataform can be installed using the Arduino IDE boards manager. Insert the URL http://drazzy.com/package_drazzy.com_index.json on board manager.
-
-On menu Preferences, enter the above URL in "Additional Boards Manager URLs;
-To setup ATtiny85 on Arduino IDE, go to Tools Menu, Board, Board Manager and install "ATTinyCore by Spence Konde". 
+The ATtiny core board/plataform can be installed using the Arduino IDE boards manager. 
+Inserts the URL http://drazzy.com/package_drazzy.com_index.json on board manager. To do that, go to Preferences, enter the above URL in "Additional Boards Manager URLs. To setup ATtiny85 on Arduino IDE, go to Tools Menu, Board, Board Manager and install "ATTinyCore by Spence Konde". 
 
 See [ATTiny Core - 1634, x313, x4, x41, x5, x61, x7, x8 and 828 for Arduino](https://github.com/SpenceKonde/ATTinyCore).
 
