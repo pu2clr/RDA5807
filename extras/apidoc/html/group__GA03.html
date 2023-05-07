@@ -105,6 +105,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga8042f480c26abb7f74560a29c0fb2f46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA03.html#ga8042f480c26abb7f74560a29c0fb2f46">RDA5807::setFrequencyToEndBand</a> ()</td></tr>
 <tr class="memdesc:ga8042f480c26abb7f74560a29c0fb2f46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tunes the receiver at the last channel/frequency of the current band.  <br /></td></tr>
 <tr class="separator:ga8042f480c26abb7f74560a29c0fb2f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9e17e0a2176967ca812933fb57ccfa78"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA03.html#ga9e17e0a2176967ca812933fb57ccfa78">RDA5807::getMaximunFrequencyOfTheBand</a> ()</td></tr>
+<tr class="memdesc:ga9e17e0a2176967ca812933fb57ccfa78"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets the maximun frequency of the current band  <br /></td></tr>
+<tr class="separator:ga9e17e0a2176967ca812933fb57ccfa78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga67d6e95313dd3b27d719af06cbcac813"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA03.html#ga67d6e95313dd3b27d719af06cbcac813">RDA5807::getMinimumFrequencyOfTheBand</a> ()</td></tr>
+<tr class="memdesc:ga67d6e95313dd3b27d719af06cbcac813"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets the minimum frequency of the current band  <br /></td></tr>
+<tr class="separator:ga67d6e95313dd3b27d719af06cbcac813"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac6ace7da84074b90d8ecf075d14c7bfe"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA03.html#gac6ace7da84074b90d8ecf075d14c7bfe">RDA5807::getBand</a> ()</td></tr>
 <tr class="memdesc:gac6ace7da84074b90d8ecf075d14c7bfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current band.  <br /></td></tr>
 <tr class="separator:gac6ace7da84074b90d8ecf075d14c7bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -244,6 +250,66 @@ FM Tune</h1>
 
 <p>Gets the current frequency. </p>
 <dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
+
+</div>
+</div>
+<a id="ga9e17e0a2176967ca812933fb57ccfa78" name="ga9e17e0a2176967ca812933fb57ccfa78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9e17e0a2176967ca812933fb57ccfa78">&#9670;&#160;</a></span>getMaximunFrequencyOfTheBand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t RDA5807::getMaximunFrequencyOfTheBand </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>gets the maximun frequency of the current band </p>
+<dl class="section return"><dt>Returns</dt><dd>the last valid frequency of the current band </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a" title="Sets the frequency.">setFrequency</a>, <a class="el" href="group__GA03.html#ga59b981002d383a13731bd939482a5236" title="Gets the current frequency.">getFrequency</a>, <a class="el" href="group__GA03.html#gac879c84895fee9032c1b29638e209527" title="Tunes the receiver at the first channel/frequency of the current band.">setFrequencyToBeginBand</a>, <a class="el" href="group__GA03.html#ga8042f480c26abb7f74560a29c0fb2f46" title="Tunes the receiver at the last channel/frequency of the current band.">setFrequencyToEndBand</a>, <a class="el" href="group__GA03.html#ga1476967ed4e1d9bc00e2ea8e3135520e" title="Gets the current frequency bases on the current channel.">getRealFrequency</a>, <a class="el" href="group__GA03.html#ga9e17e0a2176967ca812933fb57ccfa78" title="gets the maximun frequency of the current band">getMaximunFrequencyOfTheBand</a>, <a class="el" href="group__GA03.html#ga67d6e95313dd3b27d719af06cbcac813" title="gets the minimum frequency of the current band">getMinimumFrequencyOfTheBand</a> <br  />
+ </dd></dl>
+
+</div>
+</div>
+<a id="ga67d6e95313dd3b27d719af06cbcac813" name="ga67d6e95313dd3b27d719af06cbcac813"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga67d6e95313dd3b27d719af06cbcac813">&#9670;&#160;</a></span>getMinimumFrequencyOfTheBand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t RDA5807::getMinimumFrequencyOfTheBand </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>gets the minimum frequency of the current band </p>
+<dl class="section return"><dt>Returns</dt><dd>the first valid frequency of the current band </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a" title="Sets the frequency.">setFrequency</a>, <a class="el" href="group__GA03.html#ga59b981002d383a13731bd939482a5236" title="Gets the current frequency.">getFrequency</a>, <a class="el" href="group__GA03.html#gac879c84895fee9032c1b29638e209527" title="Tunes the receiver at the first channel/frequency of the current band.">setFrequencyToBeginBand</a>, <a class="el" href="group__GA03.html#ga8042f480c26abb7f74560a29c0fb2f46" title="Tunes the receiver at the last channel/frequency of the current band.">setFrequencyToEndBand</a>, <a class="el" href="group__GA03.html#ga1476967ed4e1d9bc00e2ea8e3135520e" title="Gets the current frequency bases on the current channel.">getRealFrequency</a>, <a class="el" href="group__GA03.html#ga9e17e0a2176967ca812933fb57ccfa78" title="gets the maximun frequency of the current band">getMaximunFrequencyOfTheBand</a>, <a class="el" href="group__GA03.html#ga67d6e95313dd3b27d719af06cbcac813" title="gets the minimum frequency of the current band">getMinimumFrequencyOfTheBand</a> <br  />
+ </dd></dl>
 
 </div>
 </div>
@@ -724,7 +790,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 </div><div class="memdoc">
 
 <p>Tunes the receiver at the first channel/frequency of the current band. </p>
-<p>If the current band is 0, the lowest frequency is 87Mhz (8700) </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA01.html#acddb5bea9e4872e9aecf4dc9bd89a1e6">startBand</a>, <a class="el" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a" title="Sets the frequency.">setFrequency</a> <br  />
+<p>If the current band is 0, the lowest frequency is 87Mhz (8700) </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a" title="Sets the frequency.">setFrequency</a>, <a class="el" href="group__GA03.html#ga59b981002d383a13731bd939482a5236" title="Gets the current frequency.">getFrequency</a>, <a class="el" href="group__GA03.html#ga8042f480c26abb7f74560a29c0fb2f46" title="Tunes the receiver at the last channel/frequency of the current band.">setFrequencyToEndBand</a>, <a class="el" href="group__GA03.html#ga1476967ed4e1d9bc00e2ea8e3135520e" title="Gets the current frequency bases on the current channel.">getRealFrequency</a>, <a class="el" href="group__GA03.html#ga9e17e0a2176967ca812933fb57ccfa78" title="gets the maximun frequency of the current band">getMaximunFrequencyOfTheBand</a>, <a class="el" href="group__GA03.html#ga67d6e95313dd3b27d719af06cbcac813" title="gets the minimum frequency of the current band">getMinimumFrequencyOfTheBand</a> <br  />
  </dd></dl>
 
 </div>
@@ -753,7 +819,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 </div><div class="memdoc">
 
 <p>Tunes the receiver at the last channel/frequency of the current band. </p>
-<p>If the current band is 0, the highest frequency is 108MHz (10800) </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA01.html#aaede268d40e40776118adbc1a8400418" title="End FM band limit.">endBand</a>, <a class="el" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a" title="Sets the frequency.">setFrequency</a> <br  />
+<p>If the current band is 0, the highest frequency is 108MHz (10800) </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a" title="Sets the frequency.">setFrequency</a>, <a class="el" href="group__GA03.html#ga59b981002d383a13731bd939482a5236" title="Gets the current frequency.">getFrequency</a>, <a class="el" href="group__GA03.html#gac879c84895fee9032c1b29638e209527" title="Tunes the receiver at the first channel/frequency of the current band.">setFrequencyToBeginBand</a>, <a class="el" href="group__GA03.html#ga1476967ed4e1d9bc00e2ea8e3135520e" title="Gets the current frequency bases on the current channel.">getRealFrequency</a>, <a class="el" href="group__GA03.html#ga9e17e0a2176967ca812933fb57ccfa78" title="gets the maximun frequency of the current band">getMaximunFrequencyOfTheBand</a>, <a class="el" href="group__GA03.html#ga67d6e95313dd3b27d719af06cbcac813" title="gets the minimum frequency of the current band">getMinimumFrequencyOfTheBand</a> <br  />
  </dd></dl>
 
 </div>

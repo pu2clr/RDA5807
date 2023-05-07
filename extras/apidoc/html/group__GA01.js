@@ -88,6 +88,8 @@ var group__GA01 =
       [ "getFrequency", "group__GA03.html#ga59b981002d383a13731bd939482a5236", null ],
       [ "getLnaIcSel", "group__GA08.html#gacdf40b2507df37ef2f7cbed8c12c68f7", null ],
       [ "getLnaPortSel", "group__GA08.html#gafa3762b30fbf95bd6bb04139faed47c6", null ],
+      [ "getMaximunFrequencyOfTheBand", "group__GA03.html#ga9e17e0a2176967ca812933fb57ccfa78", null ],
+      [ "getMinimumFrequencyOfTheBand", "group__GA03.html#ga67d6e95313dd3b27d719af06cbcac813", null ],
       [ "getNext2Block", "group__GA04.html#ga6afb347f32121c480adea2a36032d56f", null ],
       [ "getNext4Block", "group__GA04.html#ga3ab713bb63978518d42a761b9db445c9", null ],
       [ "getRdsFlagAB", "group__GA04.html#ga04e5fe0cacbdcae620388a15630cf9c1", null ],

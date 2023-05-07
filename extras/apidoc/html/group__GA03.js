@@ -3,6 +3,8 @@ var group__GA03 =
     [ "RDA5807::getBand", "group__GA03.html#gac6ace7da84074b90d8ecf075d14c7bfe", null ],
     [ "RDA5807::getBand3Status", "group__GA03.html#gaea595cf077e2a709bf927deddf8a63ba", null ],
     [ "RDA5807::getFrequency", "group__GA03.html#ga59b981002d383a13731bd939482a5236", null ],
+    [ "RDA5807::getMaximunFrequencyOfTheBand", "group__GA03.html#ga9e17e0a2176967ca812933fb57ccfa78", null ],
+    [ "RDA5807::getMinimumFrequencyOfTheBand", "group__GA03.html#ga67d6e95313dd3b27d719af06cbcac813", null ],
     [ "RDA5807::getRealChannel", "group__GA03.html#ga39480a49f7878fffe8c3ddf120aba2b0", null ],
     [ "RDA5807::getRealFrequency", "group__GA03.html#ga1476967ed4e1d9bc00e2ea8e3135520e", null ],
     [ "RDA5807::getSpace", "group__GA03.html#gab6cc94517eb6bc3325fbd6386bbffe15", null ],
