@@ -2,6 +2,7 @@ var group__GA04 =
 [
     [ "RDA5807::clearRdsFifo", "group__GA04.html#gab3accd716dc5fe07d936b860b64d9e4e", null ],
     [ "RDA5807::getBlockId", "group__GA04.html#ga2e63d5c85cb1825492a5ba2ea3bef2c3", null ],
+    [ "RDA5807::getErrorBlockA", "group__GA04.html#ga24e26921d1b0931681ae4cf9c23742d4", null ],
     [ "RDA5807::getErrorBlockB", "group__GA04.html#gadcc73bed36f5dbad1b41a8777be575d9", null ],
     [ "RDA5807::getNext2Block", "group__GA04.html#ga6afb347f32121c480adea2a36032d56f", null ],
     [ "RDA5807::getNext4Block", "group__GA04.html#ga3ab713bb63978518d42a761b9db445c9", null ],

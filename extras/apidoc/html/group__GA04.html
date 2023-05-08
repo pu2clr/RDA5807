@@ -148,6 +148,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga2e63d5c85cb1825492a5ba2ea3bef2c3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#ga2e63d5c85cb1825492a5ba2ea3bef2c3">RDA5807::getBlockId</a> ()</td></tr>
 <tr class="memdesc:ga2e63d5c85cb1825492a5ba2ea3bef2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current Block ID.  <br /></td></tr>
 <tr class="separator:ga2e63d5c85cb1825492a5ba2ea3bef2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga24e26921d1b0931681ae4cf9c23742d4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#ga24e26921d1b0931681ae4cf9c23742d4">RDA5807::getErrorBlockA</a> ()</td></tr>
+<tr class="memdesc:ga24e26921d1b0931681ae4cf9c23742d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current Status of block A.  <br /></td></tr>
+<tr class="separator:ga24e26921d1b0931681ae4cf9c23742d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadcc73bed36f5dbad1b41a8777be575d9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#gadcc73bed36f5dbad1b41a8777be575d9">RDA5807::getErrorBlockB</a> ()</td></tr>
 <tr class="memdesc:gadcc73bed36f5dbad1b41a8777be575d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current Status of block B.  <br /></td></tr>
 <tr class="separator:gadcc73bed36f5dbad1b41a8777be575d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,6 +213,40 @@ RDS/RBDS</h1>
 <p>Gets the current Block ID. </p>
 <p>1= the block id of register 0cH,0dH,0eH,0fH is E</p>
 <p>0= the block id of register 0cH, 0dH, 0eH,0fH is A, B, C, D </p><dl class="section return"><dt>Returns</dt><dd>0= the block id of register 0cH, 0dH, 0eH,0fH is A, B, C, D; 1 = the block id of register 0cH,0dH,0eH,0fH is E </dd></dl>
+
+</div>
+</div>
+<a id="ga24e26921d1b0931681ae4cf9c23742d4" name="ga24e26921d1b0931681ae4cf9c23742d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga24e26921d1b0931681ae4cf9c23742d4">&#9670;&#160;</a></span>getErrorBlockA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t RDA5807::getErrorBlockA </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the current Status of block A. </p>
+<p>Block Errors Level of RDS_DATA_0, and is always read as Errors Level of RDS BLOCK A (in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1)</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">value   </th><th class="markdownTableHeadNone">description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">00   </td><td class="markdownTableBodyNone">0 errors requiring correction    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">01   </td><td class="markdownTableBodyNone">1~2 errors requiring correction    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">10   </td><td class="markdownTableBodyNone">3~5 errors requiring correction    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">11   </td><td class="markdownTableBodyNone">6+ errors or error in checkword, correction not possible   </td></tr>
+</table>
+<p><b>Available only in RDS Verbose mode</b></p>
+<dl class="section return"><dt>Returns</dt><dd>value See table above. </dd></dl>
 
 </div>
 </div>
