@@ -824,6 +824,7 @@ class RDA5807 {
             char *getRdsTime();
             bool getRdsSync();
             uint8_t getBlockId();
+            uint8_t getErrorBlockA();
             uint8_t getErrorBlockB();
             bool hasRdsInfo();
 
