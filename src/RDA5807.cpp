@@ -1013,6 +1013,31 @@ uint8_t RDA5807::getBlockId()
     return reg0b->refined.ABCD_E;
 }
 
+
+/**
+ * @ingroup GA04 
+ * @brief Gets the current Status of block A
+ *
+ * Block Errors Level of RDS_DATA_0, and is always read as Errors Level of RDS BLOCK A (in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1) 
+ * 
+ * | value | description |
+ * | ----- | ----------- |
+ * |  00   | 0 errors requiring correction |
+ * |  01   | 1~2 errors requiring correction |
+ * |  10   | 3~5 errors requiring correction |
+ * |  11   | 6+ errors or error in checkword, correction not possible |
+ * 
+ *  **Available only in RDS Verbose mode** 
+ * 
+ * @return  value See table above.
+ */
+uint8_t RDA5807::getErrorBlockA()
+{
+    getStatus(REG0B);
+    return reg0b->refined.BLERA;
+}
+
+
 /**
  * @ingroup GA04 
  * @brief Gets the current Status of block B
@@ -1034,6 +1059,7 @@ uint8_t RDA5807::getErrorBlockB()
     getStatus(REG0B);
     return reg0b->refined.BLERB;
 }
+
 
 /**
  * @ingroup GA04 
