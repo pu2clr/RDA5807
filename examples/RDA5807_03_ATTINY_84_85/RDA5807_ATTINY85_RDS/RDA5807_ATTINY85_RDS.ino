@@ -77,8 +77,8 @@ void loop()
     showStatus();
     delay(200);
   }
-  if ( rx.getRdsReady() &&  rx.hasRdsInfo() && !rx.getErrorBlockB() )  {
-    stationName = rx.getRdsText0A();
+  stationName = rx.getRdsText0A();
+  if ( rx.getRdsReady() &&  rx.hasRdsInfo() && rx.getErrorBlockA() == 0 )  {
     oled.setCursor(0, 2);
     if ( stationName != NULL ) 
         oled.print(stationName); 
