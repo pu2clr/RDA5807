@@ -841,13 +841,27 @@ class RDA5807 {
             * @ingroup G05 Format the Frequency
             * @brief Convert a numeric frequency to a formated string (char *) frequency 
             * 
-            * @param uint16_t value  - Frequency to be formated
+            * @param uint16_t value  - Given frequency to be formated
             * @param char *strValue - Formated frequency (Exe: 103,90) - Array of char ( minimal 7 elements ) 
             * @param char decimalSeparator - the symbol that separates the decimal part (Exe: . or ,) 
             * @return point of strValue 
             */
             inline char *formatFrequency(uint16_t value, char *strValue, char decimalSeparator) {
                 this->convertToChar(value, strValue, 5, 3, decimalSeparator, true);
+                return strValue;
+            };
+
+            /**
+            * @ingroup G05 Format the Frequency
+            * @brief Convert the current frequency to a formated string (char *) frequency 
+            * @details The current frequency is the latest setted frequency by setFrequency, seek, setFrequencyUp and setFrequencyDown.  
+            * @param char *strValue - Formated frequency (Exe: 103,90) - Array of char ( minimal 7 elements ) 
+            * @param char decimalSeparator - the symbol that separates the decimal part (Exe: . or ,) 
+            * @return point of strValue 
+            * @see setFrequency, seek, setFrequencyUp and setFrequencyDown
+            */
+            inline char *formatCurrentFrequency(char *strValue, char decimalSeparator) {
+                this->convertToChar(this->currentFrequency, strValue, 5, 3, decimalSeparator, true);
                 return strValue;
             };
 
