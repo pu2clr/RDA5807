@@ -42,7 +42,7 @@ void setup()
   oled.clear();
 
   rx.setup();
-  // rx.setVolume(8);   // Use it if necessary.
+  rx.setVolume(8);  
   rx.setFrequency(10390); 
   rx.setRDS(true);
   rx.setRdsFifo(true);
@@ -84,7 +84,7 @@ void loop()
         oled.print(stationName); 
     else 
       oled.clearToEOL();
-    delay(80);
+    delay(70);
   }
   delay(5);
 }
