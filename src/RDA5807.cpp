@@ -925,7 +925,7 @@ char *RDA5807::getRdsText2B(void)
 
 /**
  * @ingroup GA04 
- * @todo Need to check. It is working on SI4735 and Si4703. Why not here?
+ * @todo Need to check. 
  * @brief Gets the RDS time and date when the Group type is 4 
  * @return char* a string with hh:mm +/- offset
  */
