@@ -13,7 +13,7 @@
     | SCLK / CLK      |     SCL          |     7         |
    
 
-   By Ricardo Lima Caratti, 2020.
+   By Ricardo Lima Caratti, 2023.
 */
 
 #include <RDA5807.h>
@@ -39,6 +39,8 @@ void setup()
   oled.clear();
   oled.on();
   oled.setFont(FONT8X16);
+  // Remove the Splash if you want.
+  // Begin Splash
   oled.setCursor(0, 0);
   oled.print(F("RDA5807-Attiny85"));
   oled.setCursor(0, 2);
@@ -46,10 +48,11 @@ void setup()
   delay(3000);
   oled.clear();
 
+  // End Splash
   rx.setup();
   rx.setVolume(8);  
 
-  // Restore the lastest frequency saved into the EEPROM
+  // Restore the latest frequency saved into the EEPROM
   if (EEPROM.read(0) == VALID_DATA ) {
     currentFrequency = EEPROM.read(1) << 8;
     currentFrequency |= EEPROM.read(2);
@@ -69,7 +72,7 @@ void showStatus() {
   oled.setCursor(38, 0);
   oled.clearToEOL();
   oled.setCursor(38, 0);
-  oled.print(rx.formatCurrentFrequency(faux, ','));
+  oled.print(rx.formatCurrentFrequency(faux, ',')); 
   oled.setCursor(95, 0);
   oled.print(F("MHz"));
   oled.setCursor(0, 2);
@@ -89,11 +92,11 @@ void loop()
       rx.seek(RDA_SEEK_WRAP,RDA_SEEK_DOWN, showStatus);
     showStatus();
     delay(200);
-
+    // Saves the current frequency if it has changed. 
     currentFrequency = rx.getFrequency();
-    EEPROM.update(0, VALID_DATA); // Says that a valid data will be saved  
-    EEPROM.update(1, currentFrequency  >> 8);   // stores the current Frequency HIGH byte for the band (only if it has changed)
-    EEPROM.update(2, currentFrequency & 0xFF);  // stores the current Frequency LOW byte for the band (only if it has changed)
+    EEPROM.update(0, VALID_DATA); // Says that a valid frequency will be saved  
+    EEPROM.update(1, currentFrequency  >> 8);   // stores the current Frequency HIGH byte 
+    EEPROM.update(2, currentFrequency & 0xFF);  // stores the current Frequency LOW byte 
   }
   stationName = rx.getRdsText0A();
   if ( rx.getRdsReady() &&  rx.hasRdsInfo() )  {
