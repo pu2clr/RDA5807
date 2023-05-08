@@ -56,7 +56,7 @@ void showStatus() {
   oled.setCursor(38, 0);
   oled.clearToEOL();
   oled.setCursor(38, 0);
-  oled.print(rx.formatFrequency(rx.getRealFrequency(), faux, ','));
+  oled.print(rx.formatCurrentFrequency(faux, ','));
   oled.setCursor(95, 0);
   oled.print(F("MHz"));
   oled.setCursor(0, 2);
@@ -78,7 +78,7 @@ void loop()
     delay(200);
   }
   stationName = rx.getRdsText0A();
-  if ( rx.getRdsReady() &&  rx.hasRdsInfo() && rx.getErrorBlockA() == 0 )  {
+  if ( rx.getRdsReady() &&  rx.hasRdsInfo() )  {
     oled.setCursor(0, 2);
     if ( stationName != NULL ) 
         oled.print(stationName); 
