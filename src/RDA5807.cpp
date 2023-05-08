@@ -1091,9 +1091,9 @@ void RDA5807::setRdsFifo(bool value) {
  * @param value  If true, it makes the the fifo mode enable. 
  * @return true  or false
  */
-void RDA5807::clearRdsFifo()
+void RDA5807::clearRdsFifo(bool value)
 {
-    reg04->refined.RDS_FIFO_CLR = 1;
+    reg04->refined.RDS_FIFO_CLR = value;
     setRegister(REG04, reg04->raw);
 }
 

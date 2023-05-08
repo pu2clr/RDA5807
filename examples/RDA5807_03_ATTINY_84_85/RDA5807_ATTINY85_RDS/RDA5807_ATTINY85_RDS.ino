@@ -12,6 +12,14 @@
     | SDIO / SDA      |     SDA          |     5         |
     | SCLK / CLK      |     SCL          |     7         |
    
+    Compiling and uploading: 
+    1) Install the ATtiny Core in Arduino IDE - Insert the URL http://drazzy.com/package_drazzy.com_index.json on board manager. 
+                                                To do that, go to Preferences, enter the above URL in "Additional Boards Manager URLs. 
+                                                To setup ATtiny85 on Arduino IDE, go to Tools Menu, Board, Board Manager and install 
+                                                "ATTinyCore by Spence Konde". 
+    2) Setup: Chip: ATtiny85;  Clock Source: 4MHz (Internal); LTO Enabled; millis() / macros() Enabled; 
+
+    ATTENTION: if you select Clock source 8 MHz for some reason the system will work very slow. Maybe a bug. 
 
    By Ricardo Lima Caratti, 2023.
 */
@@ -45,7 +53,7 @@ void setup()
   oled.print(F("RDA5807-Attiny85"));
   oled.setCursor(0, 2);
   oled.print(F("   By PU2CLR   "));
-  delay(3000);
+  delay(2000);
   oled.clear();
 
   // End Splash
@@ -98,8 +106,9 @@ void loop()
     EEPROM.update(1, currentFrequency  >> 8);   // stores the current Frequency HIGH byte 
     EEPROM.update(2, currentFrequency & 0xFF);  // stores the current Frequency LOW byte 
   }
-  stationName = rx.getRdsText0A();
-  if ( rx.getRdsReady() &&  rx.hasRdsInfo() )  {
+
+  if ( rx.getRdsReady() &&  rx.hasRdsInfo() && rx.getRdsFlagAB() == 0 )  {
+    stationName = rx.getRdsText0A();
     oled.setCursor(0, 2);
     if ( stationName != NULL ) 
         oled.print(stationName); 

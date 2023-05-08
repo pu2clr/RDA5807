@@ -808,7 +808,7 @@ class RDA5807 {
             void setRDS(bool value);
             void setRBDS(bool value);
             void setRdsFifo(bool value);
-            void clearRdsFifo();
+            void clearRdsFifo(bool value = 1);
 
             bool getRdsReady();
             uint8_t getRdsFlagAB(void);

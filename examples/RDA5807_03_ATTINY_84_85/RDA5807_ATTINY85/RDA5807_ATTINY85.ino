@@ -13,6 +13,14 @@
    
   See the RDA5807_ATTINY85_RDS  
 
+  1) Install the ATtiny Core in Arduino IDE - Insert the URL http://drazzy.com/package_drazzy.com_index.json on board manager. 
+                                               To do that, go to Preferences, enter the above URL in "Additional Boards Manager URLs. 
+                                               To setup ATtiny85 on Arduino IDE, go to Tools Menu, Board, Board Manager and install 
+                                               "ATTinyCore by Spence Konde". 
+  Board setup: Select Chip = ATtiny85;  Clock Source = 4MHz (Internal); LTO = Enabled; millis() / macros() = Enabled; 
+  ATTENTION: if you select Clock source 8 MHz, for some reason, the system will work very slow. Maybe a bug. Not sure. 
+
+
   By Ricardo Lima Caratti, 2023.
 */
 
