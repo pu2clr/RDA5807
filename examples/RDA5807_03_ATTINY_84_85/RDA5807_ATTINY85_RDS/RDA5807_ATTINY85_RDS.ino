@@ -17,12 +17,17 @@
 */
 
 #include <RDA5807.h>
+#include <EEPROM.h>
 #include <Tiny4kOLED.h>
 
 #define SEEK_UP   PB1     
 #define SEEK_DOWN PB4    
 
+#define VALID_DATA 85
+
 char *stationName;
+uint16_t currentFrequency;
+
 RDA5807 rx;
 
 void setup()
@@ -43,14 +48,22 @@ void setup()
 
   rx.setup();
   rx.setVolume(8);  
-  rx.setFrequency(10390); 
+
+  // Restore the lastest frequency saved into the EEPROM
+  if (EEPROM.read(0) == VALID_DATA ) {
+    currentFrequency = EEPROM.read(1) << 8;
+    currentFrequency |= EEPROM.read(2);
+  } else {
+    currentFrequency = 10390; // default value
+  } 
+  rx.setFrequency(currentFrequency); 
   rx.setRDS(true);
   rx.setRdsFifo(true);
   showStatus();
 }
 
 void showStatus() {
-  char faux[7];
+  char faux[8];
   oled.setCursor(0, 0);
   oled.print(F("FM "));
   oled.setCursor(38, 0);
@@ -76,6 +89,11 @@ void loop()
       rx.seek(RDA_SEEK_WRAP,RDA_SEEK_DOWN, showStatus);
     showStatus();
     delay(200);
+
+    currentFrequency = rx.getFrequency();
+    EEPROM.update(0, VALID_DATA); // Says that a valid data will be saved  
+    EEPROM.update(1, currentFrequency  >> 8);   // stores the current Frequency HIGH byte for the band (only if it has changed)
+    EEPROM.update(2, currentFrequency & 0xFF);  // stores the current Frequency LOW byte for the band (only if it has changed)
   }
   stationName = rx.getRdsText0A();
   if ( rx.getRdsReady() &&  rx.hasRdsInfo() )  {
