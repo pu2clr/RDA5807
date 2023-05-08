@@ -9,7 +9,7 @@
   | SEEK_DOWN       |     PB4          |     3         |
   | SDIO / SDA      |     SDA          |     5         |
   | SCLK / CLK      |     SCL          |     7         |
-  
+
    By Ricardo Lima Caratti, 2020.
 */
 
