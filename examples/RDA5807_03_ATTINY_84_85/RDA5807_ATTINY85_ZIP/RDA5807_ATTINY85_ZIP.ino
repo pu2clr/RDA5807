@@ -1,18 +1,15 @@
 /*
-   Test and validation of RDA5807 on ATtiny85 device.
-   It is a FM receiver without visual interface. 
-   This sketch uses two buttons to find stations.
+  This sketch uses two buttons to find stations. It is a FM receiver without visual interface. 
    
-   ATtiny85 and RDA5807 wireup  
+  ATtiny85 and RDA5807 wireup  
 
-    | RDA5807 pin      | Attiny85 REF pin | Physical pin | 
-    | ----------------| -----------------| ------------- | 
-    | SEEK_UP         |     PB1          |     6         | 
-    | SEEK_DOWN       |     PB4          |     3         |
-    | SDIO / SDA      |     SDA          |     5         |
-    | SCLK / CLK      |     SCL          |     7         |
-   
-
+  | RDA5807 pin      | Attiny85 REF pin | Physical pin | 
+  | ----------------| -----------------| ------------- | 
+  | SEEK_UP         |     PB1          |     6         | 
+  | SEEK_DOWN       |     PB4          |     3         |
+  | SDIO / SDA      |     SDA          |     5         |
+  | SCLK / CLK      |     SCL          |     7         |
+  
    By Ricardo Lima Caratti, 2020.
 */
 
