@@ -941,6 +941,8 @@ Cordova provides an easy way to develop for iOS and Android.
 * [kandi X-RAY  RDA5807 Summary](https://kandi.openweaver.com/html/pu2clr/RDA5807)
 * [ワイドFM　DSPラジオ （RDA5807M）を作ってみた](https://www.himeport.co.jp/private_blog/ワイドfm%E3%80%80dspラジオ-（rda5807m）を作ってみた/)
 * [What is the method to mute sound during seek on RDA5807 FM?](https://electronics.stackexchange.com/questions/633747/what-is-the-method-to-mute-sound-during-seek-on-rda5807-fm)
+* [RDA5807M FM Radyo Modülü ve Arduino ile Basit Bir Radyo ](http://elektronikdevrelerprojeler.blogspot.com/2022/10/FMRadioRDA5807M.html)
+* [Arduino Radio using RDA5807M module. (아두이노 라디오 키트 만들기)](https://blog.naver.com/mk1017sh/222640295419)
 
 
 
@@ -963,5 +965,7 @@ Cordova provides an easy way to develop for iOS and Android.
 * [RDA5807 Real test demo](https://youtu.be/0PnV5YjpnV4)
 * [Receptor FM RDA5807 y Arduin. de 50 a 115 Mhz Experimental](https://youtu.be/g7dwFqzRjV0)
 * [[开源]基于Arduino nano和RDA5807的立体声收音机](https://www.bilibili.com/video/BV1yN411w7DC/)
+* [Arduino ve RDA5807M ile Stereo Radyo Yapımı](https://youtu.be/G1nYj1LCkEw)
+* [아두이노 라디오 만들기 1차 완성작](https://www.youtube.com/watch?v=BEaMZbysNOI&t=4s)
 
 
