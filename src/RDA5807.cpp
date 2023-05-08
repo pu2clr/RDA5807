@@ -440,6 +440,7 @@ void RDA5807::seek(uint8_t seek_mode, uint8_t direction)
      reg02->refined.SKMODE = seek_mode;
      reg02->refined.SEEKUP = direction;
      setRegister(REG02,reg02->raw);
+     setFrequency(getRealFrequency());
 }
 
 /**
