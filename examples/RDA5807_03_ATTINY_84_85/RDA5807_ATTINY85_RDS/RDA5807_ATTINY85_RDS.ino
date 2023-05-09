@@ -108,7 +108,7 @@ void loop()
     EEPROM.update(0, VALID_DATA); // Says that a valid frequency will be saved  
     EEPROM.update(1, currentFrequency  >> 8);   // stores the current Frequency HIGH byte 
     EEPROM.update(2, currentFrequency & 0xFF);  // stores the current Frequency LOW byte 
-    EEPROM.update(3, rx.isMuted());
+    EEPROM.update(3, rx.isMuted()); // Stores the current audio mute status
   }
 
   if ( rx.getRdsReady() &&  rx.hasRdsInfo() && rx.getRdsFlagAB() == 0 )  {
