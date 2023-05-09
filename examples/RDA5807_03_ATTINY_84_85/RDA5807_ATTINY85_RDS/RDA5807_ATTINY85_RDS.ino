@@ -1,7 +1,7 @@
 /*
    Test and validation of RDA5807 on ATtiny85 device.
    It is a FM receiver with mini OLED and and two push buttons.
-   This sketch implements FM RDS function.  
+   This sketch implements FM RDS and latest frequency stored in EEPROM.  
    
    ATtiny85 and RDA5807 wireup  
 
@@ -19,7 +19,7 @@
                                                 "ATTinyCore by Spence Konde". 
     2) Setup: Chip: ATtiny85;  Clock Source: 4MHz (Internal); LTO Enabled; millis() / macros() Enabled; 
 
-    ATTENTION: if you select Clock source 8 MHz for some reason the system will work very slow. Maybe a bug. 
+    ATTENTION: if you select Clock source 8 MHz, for some reason, the system will work very slow. Maybe a bug. 
 
    By Ricardo Lima Caratti, 2023.
 */
