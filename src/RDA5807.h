@@ -859,7 +859,7 @@ class RDA5807 {
             * @brief Convert the current frequency to a formated string (char *) frequency 
             * @details The current frequency is the latest setted frequency by setFrequency, seek, setFrequencyUp and setFrequencyDown.  
             * @param char decimalSeparator - the symbol that separates the decimal part (Exe: . or ,) 
-            * @return point of strValue 
+            * @return point char string strFrequency (member variable) 
             * @see setFrequency, seek, setFrequencyUp and setFrequencyDown
             */
             inline char *formatCurrentFrequency(char decimalSeparator = ',') {
