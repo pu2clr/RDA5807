@@ -827,7 +827,7 @@ class RDA5807 {
             uint8_t getErrorBlockA();
             uint8_t getErrorBlockB();
             bool hasRdsInfo();
-            bool hasRdsInfoAB();
+            bool hasRdsInfoAB(); // Temporary (Test)
 
             // I2S 
             void setI2SOn(bool value);
