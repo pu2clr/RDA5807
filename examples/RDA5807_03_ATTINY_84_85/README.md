@@ -40,6 +40,8 @@
    
 <BR>
 
+#### ATtiny85 pinout
+
 ![Schematic - Attiny85 pinout](../../extras/images/attiny85_pinout.jpg)
 
 
