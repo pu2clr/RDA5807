@@ -144,3 +144,13 @@ See [ATtiny Core - 1634, x313, x4, x41, x5, x61, x7, x8 and 828 for Arduino](htt
 See also [ATtiny85 pinout](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2586-AVR-8-bit-Microcontroller-ATtiny25-ATtiny45-ATtiny85_Datasheet.pdf).
 
 
+# References 
+
+* [ ATTinyCore](https://github.com/SpenceKonde/ATTinyCore)
+* [How To Program ATtiny13/ATtiny13a using Arduino IDE](https://www.electronics-lab.com/project/how-to-program-attiny13attiny13a-using-arduino-ide/)
+* [](https://github.com/SpenceKonde/ATTinyCore)
+
+
+
+
+
