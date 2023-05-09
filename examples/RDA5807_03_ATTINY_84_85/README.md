@@ -94,7 +94,7 @@ void showStatus() {
 void loop()
 {
   uint8_t  bkey;
-  bkey = ((digitalRead(SEEK_UP) << 2) | (digitalRead(SEEK_DOWN) << 1)) | digitalRead(AUDIO_MUTE); // 3, 5 or 6 (Pressed = 0 - considering just one button pressed)  
+  bkey = ((digitalRead(SEEK_UP) << 2) | (digitalRead(SEEK_DOWN) << 1)) | digitalRead(AUDIO_MUTE); // 3, 5 or 6 (considering just one button pressed)  
   if ( bkey != 0b111) { // if none of them is pressed (not igual to 0b011, 0b101 or 0b110) then do nothing.
     if (bkey == 0b011) // 3 
       rx.seek(RDA_SEEK_WRAP,RDA_SEEK_UP, showStatus);
