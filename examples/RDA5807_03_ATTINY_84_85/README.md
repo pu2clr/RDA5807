@@ -40,6 +40,8 @@
    
 <BR>
 
+![Schematic - Attiny85 pinout](../../extras/images/attiny85_pinout.jpg)
+
 
 #### The example below implements an FM receiver with RDS and audio mute functions.
 
