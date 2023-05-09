@@ -102,9 +102,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga2275869d5ec1bd0eaea2e278e2a70cc7"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__G05.html#ga2275869d5ec1bd0eaea2e278e2a70cc7">RDA5807::formatFrequency</a> (uint16_t value, char *strValue, char decimalSeparator)</td></tr>
 <tr class="memdesc:ga2275869d5ec1bd0eaea2e278e2a70cc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a numeric frequency to a formated string (char *) frequency.  <br /></td></tr>
 <tr class="separator:ga2275869d5ec1bd0eaea2e278e2a70cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga78f64afce1ca75c26dc60c5d9bd9091c"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__G05.html#ga78f64afce1ca75c26dc60c5d9bd9091c">RDA5807::formatCurrentFrequency</a> (char *strValue, char decimalSeparator)</td></tr>
-<tr class="memdesc:ga78f64afce1ca75c26dc60c5d9bd9091c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the current frequency to a formated string (char *) frequency.  <br /></td></tr>
-<tr class="separator:ga78f64afce1ca75c26dc60c5d9bd9091c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga43c6c86481dd1fdba0fc14438bc8e18e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__G05.html#ga43c6c86481dd1fdba0fc14438bc8e18e">RDA5807::formatCurrentFrequency</a> (char decimalSeparator=',')</td></tr>
+<tr class="memdesc:ga43c6c86481dd1fdba0fc14438bc8e18e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the current frequency to a formated string (char *) frequency.  <br /></td></tr>
+<tr class="separator:ga43c6c86481dd1fdba0fc14438bc8e18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0f40d75452088ceeffb4d8969fb34999"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__G05.html#ga0f40d75452088ceeffb4d8969fb34999">RDA5807::convertToChar</a> (uint16_t value, char *strValue, uint8_t len, uint8_t dot, uint8_t separator, bool remove_leading_zeros=true)</td></tr>
 <tr class="memdesc:ga0f40d75452088ceeffb4d8969fb34999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a number to a char array.  <br /></td></tr>
 <tr class="separator:ga0f40d75452088ceeffb4d8969fb34999"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,8 +210,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga78f64afce1ca75c26dc60c5d9bd9091c" name="ga78f64afce1ca75c26dc60c5d9bd9091c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga78f64afce1ca75c26dc60c5d9bd9091c">&#9670;&#160;</a></span>formatCurrentFrequency()</h2>
+<a id="ga43c6c86481dd1fdba0fc14438bc8e18e" name="ga43c6c86481dd1fdba0fc14438bc8e18e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga43c6c86481dd1fdba0fc14438bc8e18e">&#9670;&#160;</a></span>formatCurrentFrequency()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -222,19 +222,9 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">char * RDA5807::formatCurrentFrequency </td>
           <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>strValue</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>decimalSeparator</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>decimalSeparator</em> = <code>','</code></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -248,13 +238,14 @@ Functions</h2></td></tr>
 <p>The current frequency is the latest setted frequency by setFrequency, seek, setFrequencyUp and setFrequencyDown. <br  />
  </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">char</td><td>*strValue - Formated frequency (Exe: 103,90) - Array of char ( minimal 7 elements ) </td></tr>
     <tr><td class="paramname">char</td><td>decimalSeparator - the symbol that separates the decimal part (Exe: . or ,) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>point of strValue </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a" title="Sets the frequency.">setFrequency</a>, <a class="el" href="group__GA03.html#ga87de696f0a40724c19c89b6b48766020" title="Seek function.">seek</a>, <a class="el" href="group__GA03.html#ga4e8db177fea475ea00fa04e3d8f1f08c" title="Increments the current frequency.">setFrequencyUp</a> and <a class="el" href="group__GA03.html#gadba771c864ace7a8373a76554b9d3e6a" title="Decrements the current frequency.">setFrequencyDown</a> </dd></dl>
+
+<p class="reference">References <a class="el" href="#l00594">RDA5807::strFrequency</a>.</p>
 
 </div>
 </div>

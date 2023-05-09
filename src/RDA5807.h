@@ -591,6 +591,7 @@ class RDA5807 {
         char rds_buffer0A[9];  //!<  RDS Basic tuning and switching information (Type 0 groups)
         char rds_time[25];     //!<  RDS date time received information
 
+        char strFrequency[8];  // Used to store formated frequency
 
     protected:
         int deviceAddressDirectAccess = I2C_ADDR_DIRECT_ACCESS;
@@ -857,14 +858,13 @@ class RDA5807 {
             * @ingroup G05 Format the Frequency
             * @brief Convert the current frequency to a formated string (char *) frequency 
             * @details The current frequency is the latest setted frequency by setFrequency, seek, setFrequencyUp and setFrequencyDown.  
-            * @param char *strValue - Formated frequency (Exe: 103,90) - Array of char ( minimal 7 elements ) 
             * @param char decimalSeparator - the symbol that separates the decimal part (Exe: . or ,) 
             * @return point of strValue 
             * @see setFrequency, seek, setFrequencyUp and setFrequencyDown
             */
-            inline char *formatCurrentFrequency(char *strValue, char decimalSeparator) {
-                this->convertToChar(this->currentFrequency, strValue, 5, 3, decimalSeparator, true);
-                return strValue;
+            inline char *formatCurrentFrequency(char decimalSeparator = ',') {
+                this->convertToChar(this->currentFrequency, this->strFrequency, 5, 3, decimalSeparator, true);
+                return this->strFrequency;
             };
 
             int checkI2C(uint8_t *addressArray);

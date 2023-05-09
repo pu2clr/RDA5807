@@ -1,9 +1,9 @@
 var group__GA01_classRDA5807 =
 [
     [ "checkI2C", "group__G05.html#ga16f6ef1f816a032fb07a91017c34bb50", null ],
-    [ "clearRdsFifo", "group__GA04.html#gab3accd716dc5fe07d936b860b64d9e4e", null ],
+    [ "clearRdsFifo", "group__GA04.html#ga196b453f68b2a23d2e6b2515c6412ee2", null ],
     [ "convertToChar", "group__G05.html#ga0f40d75452088ceeffb4d8969fb34999", null ],
-    [ "formatCurrentFrequency", "group__G05.html#ga78f64afce1ca75c26dc60c5d9bd9091c", null ],
+    [ "formatCurrentFrequency", "group__G05.html#ga43c6c86481dd1fdba0fc14438bc8e18e", null ],
     [ "formatFrequency", "group__G05.html#ga2275869d5ec1bd0eaea2e278e2a70cc7", null ],
     [ "getBand", "group__GA03.html#gac6ace7da84074b90d8ecf075d14c7bfe", null ],
     [ "getBand3Status", "group__GA03.html#gaea595cf077e2a709bf927deddf8a63ba", null ],
@@ -38,6 +38,7 @@ var group__GA01_classRDA5807 =
     [ "getStatusRegisters", "group__GA02.html#gab9e3a5584a6238f719e9c9e49435f5ce", null ],
     [ "getVolume", "group__GA07.html#ga743d91d820922b3feda10d06443bc8a9", null ],
     [ "hasRdsInfo", "group__GA04.html#ga0d809c6cc2928e1fee006713f77b60e9", null ],
+    [ "hasRdsInfoAB", "group__GA04.html#gac6b8c39c1134700ce3e2a9e5216a5325", null ],
     [ "isAudioOutputHighImpedance", "group__GA07.html#ga5195195da106c05f29218910b17f6f6b", null ],
     [ "isFmReady", "group__GA03.html#ga49ae7bc2ecf631c5391bab17b44df3fd", null ],
     [ "isFmTrue", "group__GA03.html#ga85d1635f7bd51c740546d69133a97530", null ],
@@ -126,5 +127,6 @@ var group__GA01_classRDA5807 =
     [ "rlckNoCalibrate", "group__GA01.html#ac3714ff155c783961b0d097000837ee5", null ],
     [ "shadowRegisters", "group__GA01.html#ae9572809d64fc5c82f95d4f26d5c308d", null ],
     [ "shadowStatusRegisters", "group__GA01.html#ae51bb0aaf958ee320da80866bb20ffb5", null ],
-    [ "startBand", "group__GA01.html#acddb5bea9e4872e9aecf4dc9bd89a1e6", null ]
+    [ "startBand", "group__GA01.html#acddb5bea9e4872e9aecf4dc9bd89a1e6", null ],
+    [ "strFrequency", "group__GA01.html#a7f1dad9330a21ce952c91d55ef8e2ad0", null ]
 ];

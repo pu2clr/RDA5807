@@ -1,7 +1,7 @@
 var searchData=
 [
   ['checki2c_0',['checkI2C',['../group__G05.html#ga16f6ef1f816a032fb07a91017c34bb50',1,'RDA5807']]],
-  ['clearrdsfifo_1',['clearRdsFifo',['../group__GA04.html#gab3accd716dc5fe07d936b860b64d9e4e',1,'RDA5807']]],
+  ['clearrdsfifo_1',['clearRdsFifo',['../group__GA04.html#ga196b453f68b2a23d2e6b2515c6412ee2',1,'RDA5807']]],
   ['clock_5f12m_2',['CLOCK_12M',['../RDA5807_8h.html#a7161794919bf15d59a7266f4f4286345',1,'RDA5807.h']]],
   ['clock_5f13m_3',['CLOCK_13M',['../RDA5807_8h.html#abc1ed9bc20cc60e460427165671eedbe',1,'RDA5807.h']]],
   ['clock_5f19_5f2m_4',['CLOCK_19_2M',['../RDA5807_8h.html#a7e2e33a05c45d29254940aa2e6787881',1,'RDA5807.h']]],

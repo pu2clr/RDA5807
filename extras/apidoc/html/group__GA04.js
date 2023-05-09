@@ -1,6 +1,6 @@
 var group__GA04 =
 [
-    [ "RDA5807::clearRdsFifo", "group__GA04.html#gab3accd716dc5fe07d936b860b64d9e4e", null ],
+    [ "RDA5807::clearRdsFifo", "group__GA04.html#ga196b453f68b2a23d2e6b2515c6412ee2", null ],
     [ "RDA5807::getBlockId", "group__GA04.html#ga2e63d5c85cb1825492a5ba2ea3bef2c3", null ],
     [ "RDA5807::getErrorBlockA", "group__GA04.html#ga24e26921d1b0931681ae4cf9c23742d4", null ],
     [ "RDA5807::getErrorBlockB", "group__GA04.html#gadcc73bed36f5dbad1b41a8777be575d9", null ],
@@ -18,6 +18,7 @@ var group__GA04 =
     [ "RDA5807::getRdsTime", "group__GA04.html#gaef398d848e7378ec4897965b8e1b4441", null ],
     [ "RDA5807::getRdsVersionCode", "group__GA04.html#gad85ccedd8baecd8bc2f42325a3ee8741", null ],
     [ "RDA5807::hasRdsInfo", "group__GA04.html#ga0d809c6cc2928e1fee006713f77b60e9", null ],
+    [ "RDA5807::hasRdsInfoAB", "group__GA04.html#gac6b8c39c1134700ce3e2a9e5216a5325", null ],
     [ "RDA5807::setRBDS", "group__GA04.html#gaecbab42ef08c486b2eb1ab25649c921a", null ],
     [ "RDA5807::setRDS", "group__GA04.html#ga4b741f1433eda57949bb40fa9e973732", null ],
     [ "RDA5807::setRdsFifo", "group__GA04.html#gae27337170a5f3dedebf585aa19855ad6", null ]

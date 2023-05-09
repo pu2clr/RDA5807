@@ -157,20 +157,23 @@ Functions</h2></td></tr>
 <tr class="memitem:ga0d809c6cc2928e1fee006713f77b60e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#ga0d809c6cc2928e1fee006713f77b60e9">RDA5807::hasRdsInfo</a> ()</td></tr>
 <tr class="memdesc:ga0d809c6cc2928e1fee006713f77b60e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true when the RDS system has valid information.  <br /></td></tr>
 <tr class="separator:ga0d809c6cc2928e1fee006713f77b60e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac6b8c39c1134700ce3e2a9e5216a5325"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#gac6b8c39c1134700ce3e2a9e5216a5325">RDA5807::hasRdsInfoAB</a> ()</td></tr>
+<tr class="memdesc:gac6b8c39c1134700ce3e2a9e5216a5325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true when the RDS system has valid Station Name information.  <br /></td></tr>
+<tr class="separator:gac6b8c39c1134700ce3e2a9e5216a5325"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae27337170a5f3dedebf585aa19855ad6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#gae27337170a5f3dedebf585aa19855ad6">RDA5807::setRdsFifo</a> (bool value)</td></tr>
 <tr class="memdesc:gae27337170a5f3dedebf585aa19855ad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets RDS fifo mode enable.  <br /></td></tr>
 <tr class="separator:gae27337170a5f3dedebf585aa19855ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab3accd716dc5fe07d936b860b64d9e4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#gab3accd716dc5fe07d936b860b64d9e4e">RDA5807::clearRdsFifo</a> ()</td></tr>
-<tr class="memdesc:gab3accd716dc5fe07d936b860b64d9e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear RDS fifo.  <br /></td></tr>
-<tr class="separator:gab3accd716dc5fe07d936b860b64d9e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga196b453f68b2a23d2e6b2515c6412ee2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#ga196b453f68b2a23d2e6b2515c6412ee2">RDA5807::clearRdsFifo</a> (bool value=1)</td></tr>
+<tr class="memdesc:ga196b453f68b2a23d2e6b2515c6412ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear RDS fifo.  <br /></td></tr>
+<tr class="separator:ga196b453f68b2a23d2e6b2515c6412ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h1><a class="anchor" id="GA04"></a>
 RDS/RBDS</h1>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>Need optimizing the method to get the RDS informastion - getStatusRegisters should be called just once at a cicle. </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gab3accd716dc5fe07d936b860b64d9e4e" name="gab3accd716dc5fe07d936b860b64d9e4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab3accd716dc5fe07d936b860b64d9e4e">&#9670;&#160;</a></span>clearRdsFifo()</h2>
+<a id="ga196b453f68b2a23d2e6b2515c6412ee2" name="ga196b453f68b2a23d2e6b2515c6412ee2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga196b453f68b2a23d2e6b2515c6412ee2">&#9670;&#160;</a></span>clearRdsFifo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,7 +181,8 @@ RDS/RBDS</h1>
         <tr>
           <td class="memname">void RDA5807::clearRdsFifo </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em> = <code>1</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -612,6 +616,26 @@ false </dd></dl>
 
 <p>Returns true when the RDS system has valid information. </p>
 <p>Returns true if RDS currently synchronized; the information are A, B, C and D blocks; and no errors </p><dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
+
+</div>
+</div>
+<a id="gac6b8c39c1134700ce3e2a9e5216a5325" name="gac6b8c39c1134700ce3e2a9e5216a5325"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac6b8c39c1134700ce3e2a9e5216a5325">&#9670;&#160;</a></span>hasRdsInfoAB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RDA5807::hasRdsInfoAB </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true when the RDS system has valid Station Name information. </p>
+<dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
 
 </div>
 </div>
