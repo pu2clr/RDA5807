@@ -25,7 +25,7 @@
 */
 
 #include <RDA5807.h>
-#include <EEPROM.h>
+#include <EEPROM.h> // The ATtiny85 contains 512 bytes of data EEPROM memory. The EEPROM has an endurance of at least 100,000 write/erase cycles.
 #include <Tiny4kOLED.h>
 
 #define SEEK_UP   PB1     
