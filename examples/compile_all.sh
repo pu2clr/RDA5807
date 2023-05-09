@@ -77,9 +77,6 @@ arduino-cli compile --fqbn ATTinyCore:avr:attinyx5:millis=enabled  ./RDA5807_03_
 arduino-cli compile --fqbn ATTinyCore:avr:attinyx5:millis=enabled  ./RDA5807_03_ATTINY_84_85/RDA5807_ATTINY85_RDS --output-dir ~/Downloads/hex/ATTIMY85/RDA5807_ATTINY85_RDS --warnings all
 
 
-
-
-
 # UNDER CONSTRUCTION...
 
 # compile ESP8266
