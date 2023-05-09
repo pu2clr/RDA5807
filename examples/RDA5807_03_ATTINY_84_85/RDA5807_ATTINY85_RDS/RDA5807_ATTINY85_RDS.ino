@@ -111,7 +111,7 @@ void loop()
     EEPROM.update(3, rx.isMuted()); // Stores the current audio mute status
   }
 
-  if ( rx.getRdsReady() &&  rx.hasRdsInfo() && rx.getRdsFlagAB() == 0 )  {
+  if ( rx.getRdsReady() &&  rx.hasRdsInfoAB()  && rx.getRdsFlagAB() == 0 )  {
     stationName = rx.getRdsText0A();
     oled.setCursor(0, 2);
     if ( stationName != NULL ) 

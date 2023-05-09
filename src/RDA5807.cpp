@@ -1074,6 +1074,16 @@ bool RDA5807::hasRdsInfo() {
 
 /**
  * @ingroup GA04 
+ * @brief Returns true when the RDS system has valid Station Name information 
+ * @return  true or false
+ */
+bool RDA5807::hasRdsInfoAB() {
+    getStatus(REG0B);
+    return  (reg0a->refined.RDSS && reg0b->refined.ABCD_E == 0 && reg0b->refined.BLERA  == 0 && reg0b->refined.BLERA == 0 );
+}
+
+/**
+ * @ingroup GA04 
  * @brief Sets RDS fifo mode enable
  * 
  * @param value  If true, it makes the the fifo mode enable. 
