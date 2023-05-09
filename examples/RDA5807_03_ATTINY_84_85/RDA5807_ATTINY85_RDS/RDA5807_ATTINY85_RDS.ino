@@ -9,7 +9,7 @@
     | ----------------| -----------------| ------------- | 
     | SEEK_UP         |     PB1          |     6         | 
     | SEEK_DOWN       |     PB4          |     3         |
-    | AUDIO_MUTE      |     PB3          |     2.        | 
+    | AUDIO_MUTE      |     PB3          |     2         | 
     | SDIO / SDA      |     SDA          |     5         |
     | SCLK / CLK      |     SCL          |     7         |
    
@@ -58,12 +58,11 @@ void setup()
   oled.print(F("   By PU2CLR   "));
   delay(2000);
   oled.clear();
-
   // End Splash
   rx.setup();
   rx.setVolume(8);  
 
-  // Restore the latest frequency saved into the EEPROM
+  // Restores the latest frequency and audio mute statis saved into the EEPROM
   if (EEPROM.read(0) == VALID_DATA ) {
     currentFrequency = EEPROM.read(1) << 8;
     currentFrequency |= EEPROM.read(2);
@@ -94,9 +93,7 @@ void showStatus() {
 void loop()
 {
   uint8_t  bkey;
-
   bkey = ((digitalRead(SEEK_UP) << 2) | (digitalRead(SEEK_DOWN) << 1)) | digitalRead(AUDIO_MUTE); // 3, 5 or 6 (Pressed = 0 - considering just one button pressed)  
-  
   if ( bkey != 0b111) { // if none of them is pressed (not igual to 0b011, 0b101 or 0b110) then do nothing.
     if (bkey == 0b011) // 3 
       rx.seek(RDA_SEEK_WRAP,RDA_SEEK_UP, showStatus);
