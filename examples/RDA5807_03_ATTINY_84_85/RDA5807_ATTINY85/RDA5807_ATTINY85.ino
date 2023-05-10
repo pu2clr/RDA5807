@@ -56,13 +56,12 @@ void setup()
 }
 
 void showStatus() {
-  char faux[7];
   oled.setCursor(0, 0);
   oled.print(F("FM "));
   oled.setCursor(38, 0);
   oled.print(F("      "));
   oled.setCursor(38, 0);
-  oled.print(rx.formatFrequency(rx.getRealFrequency(), faux, ','));
+  oled.print(rx.formatCurrentFrequency());
   oled.setCursor(95, 0);
   oled.print(F("MHz"));
 }

@@ -2533,7 +2533,7 @@ _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
  The current frequency is the latest setted frequency by setFrequency, seek, setFrequencyUp and setFrequencyDown.  <br>
 @param char decimalSeparator - the symbol that separates the decimal part (Exe: . or ,) 
-@return point of strValue 
+@return point char string strFrequency (member variable) 
 @see setFrequency, seek, setFrequencyUp and setFrequencyDown
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
