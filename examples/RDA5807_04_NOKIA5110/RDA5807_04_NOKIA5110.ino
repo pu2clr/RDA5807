@@ -264,13 +264,10 @@ void showTemplate() {
    Shows frequency information on Display
 */
 void showFrequency() {
-  char freq[10];
-
   currentFrequency = rx.getFrequency();
   display.setTextSize(2);
-  rx.convertToChar(currentFrequency, freq, 5, 3, ',', true);
   display.setCursor(3, 8);
-  display.print(freq);
+  display.print(rx.formatCurrentFrequency());
   display.display();
 }
 

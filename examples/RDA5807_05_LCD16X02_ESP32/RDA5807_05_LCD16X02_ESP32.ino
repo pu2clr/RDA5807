@@ -251,11 +251,9 @@ void showTemplate()
 */
 void showFrequency()
 {
-  char freq[10];
   currentFrequency = rx.getFrequency();
-  rx.convertToChar(currentFrequency,freq,5,3,',', true);
   lcd.setCursor(4, 1);
-  lcd.print(freq);
+  lcd.print(rx.formatCurrentFrequency());
   lcd.display();
 }
 

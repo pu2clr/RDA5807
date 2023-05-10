@@ -83,7 +83,7 @@ arduino-cli compile --fqbn ATTinyCore:avr:attinyx5:millis=enabled  ./RDA5807_03_
 echo "ESP8266 OLED"
 arduino-cli compile --fqbn esp8266:esp8266:generic  ./UNDER_CONSTRUCTION/RDA5807_06_ESP8266_OLED --output-dir ~/Downloads/hex/ESP8266/RDA5807_06_ESP8266_OLED  --warnings all
 
-arduino-cli compile -b arduino:avr:uno  ./UNDER_CONSTRUCTION/RDA5807_TFT_TOUCH_SHIELD --output-dir ~/Downloads/hex/ESP8266/RDA5807_TFT_TOUCH_SHIELD  --warnings all
+arduino-cli compile -b arduino:avr:uno  ./UNDER_CONSTRUCTION/RDA5807_TFT_TOUCH_SHIELD --output-dir ~/Downloads/hex/ESP8266/RDA5807_TFT_TOUCH_SHIELD  
 
 
 echo "********************"

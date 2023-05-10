@@ -144,11 +144,9 @@ void showStatus()
 
 void showFrequency()
 {
-  char freq[10];
-  rx.convertToChar(rx.getFrequency(), freq, 5, 3, '.', true);
   oled.setFont(&DSEG7_Classic_Regular_16);
   oled.setCursor(20, 27);
-  oled.print(freq);
+  oled.print(rx.formatCurrentFrequency());
   oled.setFont(NULL);
   oled.setTextSize(1);
   oled.display();
