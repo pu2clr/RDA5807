@@ -277,9 +277,7 @@ void RDA5807::setup(uint8_t clock_frequency, uint8_t oscillator_type, uint8_t rl
  */
 uint16_t RDA5807::getDeviceId()
 {
-    word16_to_bytes aux;
-    aux = getDirectRegister(0x0);
-    reg00->raw = aux.raw;
+    reg00->raw = getDirectRegister(0x0).raw;
     return reg00->raw;
 }
 
@@ -558,7 +556,6 @@ void RDA5807::setBand3_50_65_Mode(uint8_t band3Mode)
  */
 uint8_t RDA5807::getBand3Status() {
     rda_reg07 tmp;
-     getDirectRegister(0x07);
     tmp.raw = getDirectRegister(0x07).raw;
     return tmp.refined.MODE_50_60;
 }
