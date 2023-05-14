@@ -10,19 +10,18 @@ The examples stored in this folder are made to assist you to build your own sket
 
 The [RDA5807_01_SERIAL_MONITOR](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR) folder shows how you can check your circuit by using just the Arduino IDE Serial Monitor to control the receiver. Check the examples with Atmega328 and ESP32. __In the sketch you will find the wireup with Atmega328 or ESP32 and RDA5807 device__.  
 
-
 The following table shows the main examples implemented in this library. These examples can guide you to build your own receiver.
 
 | Sketch Name                     |  Description |
 | ------------------------------- | ------------ |
-| [RDA5807_00_CIRCUIT_TEST](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_00_CIRCUIT_TEST) | Useful to check the circuit and many functions implemented in this library |
-| [RDA5807_00_MINIMAL_RECEIVER](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_00_MINIMAL_RECEIVER) | It is a minimal receicer with two push buttons (ATmega328 - Uno, Nano etc) |
+| [RDA5807_00_CIRCUIT_TEST](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_00_CIRCUIT_TEST) | Useful to check the circuit and many functions implemented in this library |
+| [RDA5807_00_MINIMAL_RECEIVER](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_02_MINIMAL_RECEIVER) | It is a minimal receicer with two push buttons (ATmega328 - Uno, Nano etc) |
 | [RDA5807_01_SERIAL_MONITOR/ <BR> RDA5807_01_ALL_TEST_SERIAL_MONITOR](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_01_ALL_TEST_SERIAL_MONITOR) | More about Tune, Volume, Seek and RDS features |
 | [RDA5807_01_SERIAL_MONITOR/ <BR> RDA5807_01_RDS_TEST_SERIAL_MONITOR](https://github.com/pu2clr/RDA5807/blob/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS_TEST_SERIAL_MONITOR/RDA5807_01_RDS_TEST_SERIAL_MONITOR.ino) | Test RDS functions  using Serial Monitor |
 | [RDA5807_01_SERIAL_MONITOR/ <BR> RDA5807_02_ESP32](https://github.com/pu2clr/RDA5807/blob/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_02_ESP32/RDA5807_02_ESP32.ino) | Test and validation of RDA5807 on ESP32 board |
 | [RDA5807_01_SERIAL_MONITOR/ <BR> RDA5807_03_STM32](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_03_STM32) | Test and validation of RDA5807 on STM32 board |
 | [RDA5807_02_TFT_display](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_02_TFT_display) |  This sketch uses an Arduino Pro Mini, 3.3V (8MZ) with a SPI TFT ST7735 1.8 |
-| [RDA5807_03_ATTINY_84_85](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_03_ATTINY_84_85) | Test and validation of RDA5807 on ATTiny84 and ATTiny85 devices |
+| [RDA5807_03_ATTINY_84_85](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_03_ATTINY_84_85) | Test and validation of RDA5807 on ATtiny84 device |
 | [RDA5807_04_NOKIA5110](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_04_NOKIA5110) | This sketch uses an Arduino Nano with NOKIA 5110 display | 
 | [RDA5807_05_LCD16X02](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02) | This sketch uses an Arduino Nano with LCD16X02 DISPLAY |
 | [RDA5807_05_LCD16X02_ESP32](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_05_LCD16X02_ESP32) | This sketch uses an ESP32 with LCD16X02 DISPLAY|
@@ -31,7 +30,6 @@ The following table shows the main examples implemented in this library. These e
 | [Arduino Nano and OLED with Tiny4kOLED library](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_07_NANO_OLED)|  Nano and OLED implementation V1 | 
 | [Arduino Nano and OLED (Adafruit_GFX and Adafruit_SSD1306)](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_07_NANO_OLED_V2) | This sketch works on Atmega328 and LGT8FX based board. It is a I2C OLED setup  | 
 | [LilyGO/T-Embed and RDA5807 setup](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_08_LILYGO_T_EMBED)| This sketch was an adaptation of the Volos's sketch and uses PU2CLR RDA5807 Arduino Library with LilyGO T-Embed.  |
-
 
 
 

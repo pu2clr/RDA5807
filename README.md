@@ -256,8 +256,8 @@ The following table shows the main examples implemented in this library. These e
 
 | Sketch Name                     |  Description |
 | ------------------------------- | ------------ |
-| [RDA5807_00_CIRCUIT_TEST](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_00_CIRCUIT_TEST) | Useful to check the circuit and many functions implemented in this library |
-| [RDA5807_00_MINIMAL_RECEIVER](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_00_MINIMAL_RECEIVER) | It is a minimal receicer with two push buttons (ATmega328 - Uno, Nano etc) |
+| [RDA5807_00_CIRCUIT_TEST](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_00_CIRCUIT_TEST) | Useful to check the circuit and many functions implemented in this library |
+| [RDA5807_00_MINIMAL_RECEIVER](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_02_MINIMAL_RECEIVER) | It is a minimal receicer with two push buttons (ATmega328 - Uno, Nano etc) |
 | [RDA5807_01_SERIAL_MONITOR/ <BR> RDA5807_01_ALL_TEST_SERIAL_MONITOR](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_01_ALL_TEST_SERIAL_MONITOR) | More about Tune, Volume, Seek and RDS features |
 | [RDA5807_01_SERIAL_MONITOR/ <BR> RDA5807_01_RDS_TEST_SERIAL_MONITOR](https://github.com/pu2clr/RDA5807/blob/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS_TEST_SERIAL_MONITOR/RDA5807_01_RDS_TEST_SERIAL_MONITOR.ino) | Test RDS functions  using Serial Monitor |
 | [RDA5807_01_SERIAL_MONITOR/ <BR> RDA5807_02_ESP32](https://github.com/pu2clr/RDA5807/blob/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_02_ESP32/RDA5807_02_ESP32.ino) | Test and validation of RDA5807 on ESP32 board |
