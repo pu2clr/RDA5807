@@ -137,6 +137,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gad16a6afa9520b77498b17a72c226305a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a">RDA5807::setFrequency</a> (uint16_t frequency)</td></tr>
 <tr class="memdesc:gad16a6afa9520b77498b17a72c226305a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the frequency.  <br /></td></tr>
 <tr class="separator:gad16a6afa9520b77498b17a72c226305a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4b15ce7408d1d38989d9afdb6483b1f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA03.html#ga4b15ce7408d1d38989d9afdb6483b1f4">RDA5807::setDirectFrequency</a> (uint16_t frequency)</td></tr>
+<tr class="memdesc:ga4b15ce7408d1d38989d9afdb6483b1f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the frequency using the reg08 (direct frequency)  <br /></td></tr>
+<tr class="separator:ga4b15ce7408d1d38989d9afdb6483b1f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae0c05586e7230063b0c42fd5f4b24906"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA03.html#gae0c05586e7230063b0c42fd5f4b24906">RDA5807::setFrequencyMode</a> (uint8_t value)</td></tr>
+<tr class="memdesc:gae0c05586e7230063b0c42fd5f4b24906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the frequency mode. If 1, then freq setting changed.  <br /></td></tr>
+<tr class="separator:gae0c05586e7230063b0c42fd5f4b24906"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4e8db177fea475ea00fa04e3d8f1f08c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA03.html#ga4e8db177fea475ea00fa04e3d8f1f08c">RDA5807::setFrequencyUp</a> ()</td></tr>
 <tr class="memdesc:ga4e8db177fea475ea00fa04e3d8f1f08c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments the current frequency.  <br /></td></tr>
 <tr class="separator:ga4e8db177fea475ea00fa04e3d8f1f08c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -693,6 +699,32 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 
 </div>
 </div>
+<a id="ga4b15ce7408d1d38989d9afdb6483b1f4" name="ga4b15ce7408d1d38989d9afdb6483b1f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4b15ce7408d1d38989d9afdb6483b1f4">&#9670;&#160;</a></span>setDirectFrequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setDirectFrequency </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>frequency</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the frequency using the reg08 (direct frequency) </p>
+<p>valid when frequency mode is 1 </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frequency</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ga4f8fe00a561c39d2dc9a0a143b1866e9" name="ga4f8fe00a561c39d2dc9a0a143b1866e9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga4f8fe00a561c39d2dc9a0a143b1866e9">&#9670;&#160;</a></span>setFmDeemphasis()</h2>
 
@@ -763,6 +795,32 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 
 <p>Decrements the current frequency. </p>
 <p>The drecrement uses the band space as step. See array: uint16_t fmSpace[4] = {20, 10, 5, 1}; </p>
+
+</div>
+</div>
+<a id="gae0c05586e7230063b0c42fd5f4b24906" name="gae0c05586e7230063b0c42fd5f4b24906"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae0c05586e7230063b0c42fd5f4b24906">&#9670;&#160;</a></span>setFrequencyMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RDA5807::setFrequencyMode </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the frequency mode. If 1, then freq setting changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>( default = 0 or 1) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

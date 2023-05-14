@@ -33,7 +33,7 @@ var group__GA01 =
       [ "refined", "group__GA01.html#ac5c4daceecb405708b96c79b477db70b", null ]
     ] ],
     [ "rda_reg08", "group__GA01.html#unionrda__reg08", [
-      [ "raw", "group__GA01.html#a2d961192507c9b5dcaa83bb2b41c1430", null ],
+      [ "directFrequency", "group__GA01.html#a7ca80902d2748f8f0dca2edafafdeebe", null ],
       [ "refined", "group__GA01.html#a6b901f2c85429c6822d5e8dc19d1c780", null ]
     ] ],
     [ "rda_reg0a", "group__GA01.html#unionrda__reg0a", [
@@ -131,9 +131,11 @@ var group__GA01 =
       [ "setBass", "group__GA07.html#ga8002bb394ef19db02e04a39de04dffc5", null ],
       [ "setChannel", "group__GA03.html#gaa9cfaddbd43257e810bb3817b021fa8a", null ],
       [ "setDelayAfterCrystalOn", "group__GA02.html#ga1db36d126d26a553668c1b70de9b3823", null ],
+      [ "setDirectFrequency", "group__GA03.html#ga4b15ce7408d1d38989d9afdb6483b1f4", null ],
       [ "setFmDeemphasis", "group__GA03.html#ga4f8fe00a561c39d2dc9a0a143b1866e9", null ],
       [ "setFrequency", "group__GA03.html#gad16a6afa9520b77498b17a72c226305a", null ],
       [ "setFrequencyDown", "group__GA03.html#gadba771c864ace7a8373a76554b9d3e6a", null ],
+      [ "setFrequencyMode", "group__GA03.html#gae0c05586e7230063b0c42fd5f4b24906", null ],
       [ "setFrequencyToBeginBand", "group__GA03.html#gac879c84895fee9032c1b29638e209527", null ],
       [ "setFrequencyToEndBand", "group__GA03.html#ga8042f480c26abb7f74560a29c0fb2f46", null ],
       [ "setFrequencyUp", "group__GA03.html#ga4e8db177fea475ea00fa04e3d8f1f08c", null ],

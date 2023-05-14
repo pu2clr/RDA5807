@@ -17,12 +17,13 @@ var searchData=
   ['reg05_14',['REG05',['../RDA5807_8h.html#a848ac333ddfea97bc1f16a2e69eaf953',1,'RDA5807.h']]],
   ['reg06_15',['REG06',['../RDA5807_8h.html#ac5641e8e0c3254714bcd533a4b0111ca',1,'RDA5807.h']]],
   ['reg07_16',['REG07',['../RDA5807_8h.html#a2a41df49654ae321f569bfabfa74de24',1,'RDA5807.h']]],
-  ['reg0a_17',['REG0A',['../RDA5807_8h.html#a5ec596211175cecd682755f5e996b6dd',1,'RDA5807.h']]],
-  ['reg0b_18',['REG0B',['../RDA5807_8h.html#a76c73d8e23848f8d73679450c2d7264b',1,'RDA5807.h']]],
-  ['reg0c_19',['REG0C',['../RDA5807_8h.html#a0e3b6e600782d453f87223f87784c54d',1,'RDA5807.h']]],
-  ['reg0d_20',['REG0D',['../RDA5807_8h.html#a41b7a4f7b9e629eb87dba4152995a616',1,'RDA5807.h']]],
-  ['reg0e_21',['REG0E',['../RDA5807_8h.html#a1a5322c7bc447986d2d3b4d13de95315',1,'RDA5807.h']]],
-  ['reg0f_22',['REG0F',['../RDA5807_8h.html#a949846d6974a39c871614c2f15ee0691',1,'RDA5807.h']]],
-  ['rlck_5fno_5fcalibrate_5fmode_5foff_23',['RLCK_NO_CALIBRATE_MODE_OFF',['../RDA5807_8h.html#acf26b27b8292674e78e04908e3c27bff',1,'RDA5807.h']]],
-  ['rlck_5fno_5fcalibrate_5fmode_5fon_24',['RLCK_NO_CALIBRATE_MODE_ON',['../RDA5807_8h.html#a0bc18a7036f4f2571abdb66daa63c918',1,'RDA5807.h']]]
+  ['reg08_17',['REG08',['../RDA5807_8h.html#a96f1c217ac648e08bc64dd3b9086612c',1,'RDA5807.h']]],
+  ['reg0a_18',['REG0A',['../RDA5807_8h.html#a5ec596211175cecd682755f5e996b6dd',1,'RDA5807.h']]],
+  ['reg0b_19',['REG0B',['../RDA5807_8h.html#a76c73d8e23848f8d73679450c2d7264b',1,'RDA5807.h']]],
+  ['reg0c_20',['REG0C',['../RDA5807_8h.html#a0e3b6e600782d453f87223f87784c54d',1,'RDA5807.h']]],
+  ['reg0d_21',['REG0D',['../RDA5807_8h.html#a41b7a4f7b9e629eb87dba4152995a616',1,'RDA5807.h']]],
+  ['reg0e_22',['REG0E',['../RDA5807_8h.html#a1a5322c7bc447986d2d3b4d13de95315',1,'RDA5807.h']]],
+  ['reg0f_23',['REG0F',['../RDA5807_8h.html#a949846d6974a39c871614c2f15ee0691',1,'RDA5807.h']]],
+  ['rlck_5fno_5fcalibrate_5fmode_5foff_24',['RLCK_NO_CALIBRATE_MODE_OFF',['../RDA5807_8h.html#acf26b27b8292674e78e04908e3c27bff',1,'RDA5807.h']]],
+  ['rlck_5fno_5fcalibrate_5fmode_5fon_25',['RLCK_NO_CALIBRATE_MODE_ON',['../RDA5807_8h.html#a0bc18a7036f4f2571abdb66daa63c918',1,'RDA5807.h']]]
 ];

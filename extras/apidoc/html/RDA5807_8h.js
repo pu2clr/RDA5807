@@ -40,6 +40,7 @@ var RDA5807_8h =
     [ "REG05", "RDA5807_8h.html#a848ac333ddfea97bc1f16a2e69eaf953", null ],
     [ "REG06", "RDA5807_8h.html#ac5641e8e0c3254714bcd533a4b0111ca", null ],
     [ "REG07", "RDA5807_8h.html#a2a41df49654ae321f569bfabfa74de24", null ],
+    [ "REG08", "RDA5807_8h.html#a96f1c217ac648e08bc64dd3b9086612c", null ],
     [ "REG0A", "RDA5807_8h.html#a5ec596211175cecd682755f5e996b6dd", null ],
     [ "REG0B", "RDA5807_8h.html#a76c73d8e23848f8d73679450c2d7264b", null ],
     [ "REG0C", "RDA5807_8h.html#a0e3b6e600782d453f87223f87784c54d", null ],

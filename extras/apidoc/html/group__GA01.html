@@ -556,9 +556,9 @@ refined</td>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
-<a id="a2d961192507c9b5dcaa83bb2b41c1430" name="a2d961192507c9b5dcaa83bb2b41c1430"></a>uint16_t</td>
+<a id="a7ca80902d2748f8f0dca2edafafdeebe" name="a7ca80902d2748f8f0dca2edafafdeebe"></a>uint16_t</td>
 <td class="fieldname">
-raw</td>
+directFrequency</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
@@ -985,6 +985,12 @@ refined</td>
 <tr class="memitem:gadba771c864ace7a8373a76554b9d3e6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA03.html#gadba771c864ace7a8373a76554b9d3e6a">setFrequencyDown</a> ()</td></tr>
 <tr class="memdesc:gadba771c864ace7a8373a76554b9d3e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrements the current frequency.  <br /></td></tr>
 <tr class="separator:gadba771c864ace7a8373a76554b9d3e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4b15ce7408d1d38989d9afdb6483b1f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA03.html#ga4b15ce7408d1d38989d9afdb6483b1f4">setDirectFrequency</a> (uint16_t frequency)</td></tr>
+<tr class="memdesc:ga4b15ce7408d1d38989d9afdb6483b1f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the frequency using the reg08 (direct frequency)  <br /></td></tr>
+<tr class="separator:ga4b15ce7408d1d38989d9afdb6483b1f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae0c05586e7230063b0c42fd5f4b24906"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA03.html#gae0c05586e7230063b0c42fd5f4b24906">setFrequencyMode</a> (uint8_t value)</td></tr>
+<tr class="memdesc:gae0c05586e7230063b0c42fd5f4b24906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the frequency mode. If 1, then freq setting changed.  <br /></td></tr>
+<tr class="separator:gae0c05586e7230063b0c42fd5f4b24906"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1476967ed4e1d9bc00e2ea8e3135520e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA03.html#ga1476967ed4e1d9bc00e2ea8e3135520e">getRealFrequency</a> ()</td></tr>
 <tr class="memdesc:ga1476967ed4e1d9bc00e2ea8e3135520e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current frequency bases on the current channel.  <br /></td></tr>
 <tr class="separator:ga1476967ed4e1d9bc00e2ea8e3135520e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1399,7 +1405,7 @@ refined</td>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00633">setI2CBusAddrs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00634">setI2CBusAddrs()</a>.</p>
 
 </div>
 </div>
@@ -1423,7 +1429,7 @@ refined</td>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00633">setI2CBusAddrs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00634">setI2CBusAddrs()</a>.</p>
 
 </div>
 </div>
@@ -1611,7 +1617,7 @@ refined</td>
 
 <p>RDS Basic tuning and switching information (Type 0 groups) </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00848">getRdsText0A()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00871">getRdsText0A()</a>.</p>
 
 </div>
 </div>
@@ -1637,7 +1643,7 @@ refined</td>
 
 <p>RDS Radio Text buffer - Program Information. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00822">getRdsText()</a>, and <a class="el" href="#l00877">getRdsText2A()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00845">getRdsText()</a>, and <a class="el" href="#l00900">getRdsText2A()</a>.</p>
 
 </div>
 </div>
@@ -1663,7 +1669,7 @@ refined</td>
 
 <p>RDS Radio Text buffer - Station Informaation. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00906">getRdsText2B()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00929">getRdsText2B()</a>.</p>
 
 </div>
 </div>
@@ -1689,7 +1695,7 @@ refined</td>
 
 <p>RDS date time received information. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00932">getRdsTime()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00955">getRdsTime()</a>.</p>
 
 </div>
 </div>
@@ -2159,7 +2165,7 @@ refined</td>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00865">formatCurrentFrequency()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00869">formatCurrentFrequency()</a>.</p>
 
 </div>
 </div>
