@@ -332,9 +332,7 @@ void showRDSMsg() {
 
   if (rdsMsg == NULL) return;
 
-  rdsMsg[25] = '.';
-  rdsMsg[26] = '.';
-  rdsMsg[27] = '.';
+  rdsMsg[27] = '>';
   rdsMsg[28] = '\0';
   display.setTextSize(1);
   display.setCursor(0, 24);
@@ -377,7 +375,7 @@ void checkRDS() {
   if ( rx.getRdsReady() &&  rx.hasRdsInfo() && !rx.isNewRdsFlagAB() ) {
     rdsMsg = rx.getRdsText2A();
     stationName = rx.getRdsText0A();
-    rdsTime = rx.getRdsTime();
+    rdsTime = rx.getRdsTime(); // Gets the UTC Time. Check the getRdsTime documentation for more details. Some stations do not broadcast the right time.
   }
 }
 

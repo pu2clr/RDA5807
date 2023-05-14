@@ -78,7 +78,7 @@
 #define SEEK_FUNCTION 27  // Seek function 
 
 #define POLLING_TIME  2000
-#define RDS_MSG_TYPE_TIME 20000
+#define RDS_MSG_TYPE_TIME 30000
 #define POLLING_RDS     20
 
 #define STORE_TIME 10000 // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
@@ -323,11 +323,11 @@ void showRDSMsg()
 
   if (rdsMsg == NULL) return;
 
-  rdsMsg[41] = '\0';   // Truncate the message to fit on display line
+  rdsMsg[61] = '\0';   // Truncate the message to fit on display line
   strncpy(txtAux,&rdsMsg[rdsMsgIndex],16);
   txtAux[16] = '\0';
-  rdsMsgIndex++;
-  if (rdsMsgIndex > 40) rdsMsgIndex = 0;
+  rdsMsgIndex+=3;
+  if (rdsMsgIndex > 60) rdsMsgIndex = 0;
   lcd.setCursor(0,0);
   lcd.print(txtAux);
 }
@@ -373,7 +373,7 @@ void clearRds() {
 void checkRDS()
 {
   // check if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
-  if ( rx.getRdsReady() &&  rx.hasRdsInfo()) {
+  if ( rx.getRdsReady() &&  rx.hasRdsInfo() && !rx.isNewRdsFlagAB() ) {
     rdsMsg = rx.getRdsText2A();
     stationName = rx.getRdsText0A();
     rdsTime = rx.getRdsTime();
@@ -477,6 +477,7 @@ void loop()
   if ( (millis() - timeTextType) > RDS_MSG_TYPE_TIME ) {
     // Toggles the type of message to be shown - See showRds function
     currentMsgType++; 
+    rdsMsgIndex = 0;
     if ( currentMsgType > 2) currentMsgType = 0;
     timeTextType = millis();
   } 

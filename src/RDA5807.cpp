@@ -733,6 +733,7 @@ bool RDA5807::isNewRdsFlagAB(void)
     if ( blkb.refined.textABFlag != this->oldTextABFlag) {
         this->oldTextABFlag = blkb.refined.textABFlag;  // saves the latest value
         memset(rds_buffer0A, 0, sizeof(rds_buffer0A));  
+        memset(rds_buffer2A, 0, sizeof(rds_buffer2A));  
         return true;   
     }   
     return false;
