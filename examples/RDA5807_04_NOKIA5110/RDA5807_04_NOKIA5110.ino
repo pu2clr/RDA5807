@@ -374,7 +374,7 @@ void clearRds() {
 
 void checkRDS() {
   // check if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
-  if ( rx.getRdsReady() &&  rx.hasRdsInfo()) {
+  if ( rx.getRdsReady() &&  rx.hasRdsInfo() && !rx.isNewRdsFlagAB() ) {
     rdsMsg = rx.getRdsText2A();
     stationName = rx.getRdsText0A();
     rdsTime = rx.getRdsTime();
