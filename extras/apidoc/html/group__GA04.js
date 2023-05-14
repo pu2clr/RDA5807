@@ -19,6 +19,7 @@ var group__GA04 =
     [ "RDA5807::getRdsVersionCode", "group__GA04.html#gad85ccedd8baecd8bc2f42325a3ee8741", null ],
     [ "RDA5807::hasRdsInfo", "group__GA04.html#ga0d809c6cc2928e1fee006713f77b60e9", null ],
     [ "RDA5807::hasRdsInfoAB", "group__GA04.html#gac6b8c39c1134700ce3e2a9e5216a5325", null ],
+    [ "RDA5807::isNewRdsFlagAB", "group__GA04.html#gad602518e28efa9abb8319f1f25480551", null ],
     [ "RDA5807::setRBDS", "group__GA04.html#gaecbab42ef08c486b2eb1ab25649c921a", null ],
     [ "RDA5807::setRDS", "group__GA04.html#ga4b741f1433eda57949bb40fa9e973732", null ],
     [ "RDA5807::setRdsFifo", "group__GA04.html#gae27337170a5f3dedebf585aa19855ad6", null ]

@@ -112,6 +112,9 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga04e5fe0cacbdcae620388a15630cf9c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current Text Flag A/B <br  />
   <br /></td></tr>
 <tr class="separator:ga04e5fe0cacbdcae620388a15630cf9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad602518e28efa9abb8319f1f25480551"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#gad602518e28efa9abb8319f1f25480551">RDA5807::isNewRdsFlagAB</a> (void)</td></tr>
+<tr class="memdesc:gad602518e28efa9abb8319f1f25480551"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the Text Flag A/B has changed.  <br /></td></tr>
+<tr class="separator:gad602518e28efa9abb8319f1f25480551"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga32c361b9b996a5920519315aa86d174d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#ga32c361b9b996a5920519315aa86d174d">RDA5807::getRdsGroupType</a> ()</td></tr>
 <tr class="memdesc:ga32c361b9b996a5920519315aa86d174d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the group type.  <br /></td></tr>
 <tr class="separator:ga32c361b9b996a5920519315aa86d174d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -311,7 +314,7 @@ RDS/RBDS</h1>
   </dd>
 </dl>
 
-<p class="reference">Referenced by <a class="el" href="#l00871">RDA5807::getRdsText0A()</a>, and <a class="el" href="#l00929">RDA5807::getRdsText2B()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00893">RDA5807::getRdsText0A()</a>, and <a class="el" href="#l00951">RDA5807::getRdsText2B()</a>.</p>
 
 </div>
 </div>
@@ -339,7 +342,7 @@ RDS/RBDS</h1>
   </dd>
 </dl>
 
-<p class="reference">Referenced by <a class="el" href="#l00845">RDA5807::getRdsText()</a>, and <a class="el" href="#l00900">RDA5807::getRdsText2A()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00867">RDA5807::getRdsText()</a>, and <a class="el" href="#l00922">RDA5807::getRdsText2A()</a>.</p>
 
 </div>
 </div>
@@ -476,7 +479,7 @@ false </dd></dl>
 <p>Gets the RDS Text when the message is of the Group Type 2 version A. </p>
 <dl class="section return"><dt>Returns</dt><dd>char* The string (char array) with the content (Text) received from group 2A </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00806">RDA5807::getNext4Block()</a>, <a class="el" href="#l00083">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00590">RDA5807::rds_buffer2A</a>.</p>
+<p class="reference">References <a class="el" href="#l00828">RDA5807::getNext4Block()</a>, <a class="el" href="#l00083">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00590">RDA5807::rds_buffer2A</a>.</p>
 
 </div>
 </div>
@@ -500,7 +503,7 @@ false </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>RDS Dynamic PS or Scrolling PS support </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>char* should return a string with the station name. However, some stations send other kind of messages </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00769">RDA5807::getNext2Block()</a>, <a class="el" href="#l00083">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00592">RDA5807::rds_buffer0A</a>.</p>
+<p class="reference">References <a class="el" href="#l00791">RDA5807::getNext2Block()</a>, <a class="el" href="#l00083">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00592">RDA5807::rds_buffer0A</a>.</p>
 
 </div>
 </div>
@@ -525,7 +528,7 @@ false </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>char* string with the Text of the group A2 <br  />
  </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00806">RDA5807::getNext4Block()</a>, <a class="el" href="#l00083">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00590">RDA5807::rds_buffer2A</a>.</p>
+<p class="reference">References <a class="el" href="#l00828">RDA5807::getNext4Block()</a>, <a class="el" href="#l00083">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00590">RDA5807::rds_buffer2A</a>.</p>
 
 </div>
 </div>
@@ -549,7 +552,7 @@ false </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>char* string with the Text of the group AB <br  />
  </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00769">RDA5807::getNext2Block()</a>, <a class="el" href="#l00083">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00591">RDA5807::rds_buffer2B</a>.</p>
+<p class="reference">References <a class="el" href="#l00791">RDA5807::getNext2Block()</a>, <a class="el" href="#l00083">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00591">RDA5807::rds_buffer2B</a>.</p>
 
 </div>
 </div>
@@ -636,6 +639,31 @@ false </dd></dl>
 
 <p>Returns true when the RDS system has valid Station Name information. </p>
 <dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
+
+</div>
+</div>
+<a id="gad602518e28efa9abb8319f1f25480551" name="gad602518e28efa9abb8319f1f25480551"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad602518e28efa9abb8319f1f25480551">&#9670;&#160;</a></span>isNewRdsFlagAB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RDA5807::isNewRdsFlagAB </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true if the Text Flag A/B has changed. </p>
+<p>This function returns true if a new FlagAB has chenged. Also it clears the Station Name buffer in that condition.</p>
+<p>It is useful to check and show the RDS Text in your application. <br  />
+ </p><dl class="section return"><dt>Returns</dt><dd>True or false </dd></dl>
+
+<p class="reference">References <a class="el" href="#l00083">RDA5807::getStatusRegisters()</a>, and <a class="el" href="#l00592">RDA5807::rds_buffer0A</a>.</p>
 
 </div>
 </div>
