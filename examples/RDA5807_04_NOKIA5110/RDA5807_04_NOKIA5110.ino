@@ -88,7 +88,7 @@
 #define SEEK_FUNCTION 14  // Pin A0 / Digital 14
 
 #define POLLING_TIME 3000
-#define POLLING_RDS 50
+#define POLLING_RDS 20
 
 #define STORE_TIME 10000    // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
 #define PUSH_MIN_DELAY 300  // Minimum waiting time after an action
@@ -372,7 +372,7 @@ void clearRds() {
 
 void checkRDS() {
   // check if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
-  if ( rx.getRdsReady() &&  rx.hasRdsInfo() && !rx.isNewRdsFlagAB() ) {
+  if ( rx.getRdsReady() &&  rx.hasRdsInfo() /* && !rx.isNewRdsFlagAB() */ ) {
     rdsMsg = rx.getRdsText2A();
     stationName = rx.getRdsText0A();
     rdsTime = rx.getRdsTime(); // Gets the UTC Time. Check the getRdsTime documentation for more details. Some stations do not broadcast the right time.
