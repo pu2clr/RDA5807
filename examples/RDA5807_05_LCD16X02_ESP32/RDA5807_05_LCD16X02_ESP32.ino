@@ -77,8 +77,8 @@
 #define SWITCH_STEREO 26  // Stereo ON/OFF
 #define SEEK_FUNCTION 27  // Seek function 
 
-#define POLLING_TIME  2000
-#define RDS_MSG_TYPE_TIME 30000
+#define POLLING_TIME  4000
+#define RDS_MSG_TYPE_TIME 25000
 #define POLLING_RDS     20
 
 #define STORE_TIME 10000 // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
