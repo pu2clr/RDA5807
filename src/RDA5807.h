@@ -68,6 +68,7 @@
 #define REG05 0x05  //!< Register 0x05 
 #define REG06 0x06  //!< Register 0x06 
 #define REG07 0x07  //!< Register 0x07 
+#define REG08 0x08  //!< Register 0x08
 #define REG0A 0x0A  //!< Register 0x0A 
 #define REG0B 0x0B  //!< Register 0x0B 
 #define REG0C 0x0C  //!< Register 0x0C 
@@ -335,7 +336,7 @@ typedef union
       uint8_t lowByte;
       uint8_t highByte;   
     } refined;
-    uint16_t raw;
+    uint16_t directFrequency;
 } rda_reg08;
 
 
@@ -717,6 +718,9 @@ class RDA5807 {
             uint16_t getFrequency();
             void setFrequencyUp();
             void setFrequencyDown();
+
+            void setDirectFrequency(uint16_t frequency);
+            void setFrequencyMode(uint8_t value);
 
             uint16_t getRealFrequency();
             uint16_t getRealChannel();

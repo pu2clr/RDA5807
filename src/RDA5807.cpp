@@ -350,6 +350,32 @@ void RDA5807::setFrequency(uint16_t frequency)
 
 /**
  * @ingroup GA03
+ * @brief Sets the frequency using the reg08 (direct frequency)
+ * @details valid when frequency mode is 1
+ * @param frequency
+ */
+void RDA5807::setDirectFrequency(uint16_t frequency)
+{
+    reg08->directFrequency = frequency;
+    setRegister(REG08, reg08->directFrequency);
+    this->currentFrequency = frequency;
+}
+
+
+/**
+ * @ingroup GA03
+ * @brief Sets the frequency mode.  If 1, then freq setting changed. 
+ * @param value ( default = 0 or 1)
+ */
+void RDA5807::setFrequencyMode(uint8_t value)
+{
+    reg07->refined.FREQ_MODE = value;
+    setRegister(REG07, reg07->raw);
+}
+
+
+/**
+ * @ingroup GA03
  * @brief Increments the current frequency
  * @details The increment uses the band space as step. See array: uint16_t fmSpace[4] = {100/10, 200/10, 50/10, 25/10};
  */
