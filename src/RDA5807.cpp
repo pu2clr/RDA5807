@@ -666,7 +666,7 @@ void RDA5807::setFmDeemphasis(uint8_t de) {
  */
 void RDA5807::setRDS(bool value)
 {
-    reg02->refined.SEEK = 0;
+    this->oldTextABFlag = reg02->refined.SEEK =  0;
     reg02->refined.RDS_EN = value;
     setRegister(REG02, reg02->raw);
 }
@@ -680,7 +680,7 @@ void RDA5807::setRDS(bool value)
  */
 void RDA5807::setRBDS(bool value)
 {
-    reg02->refined.SEEK = 0;
+    this->oldTextABFlag = reg02->refined.SEEK = 0;
     reg02->refined.RDS_EN = 1;
     setRegister(REG02, reg02->raw);
     reg04->refined.RBDS = value;
@@ -716,6 +716,28 @@ uint8_t RDA5807::getRdsFlagAB(void)
     blkb.blockB = reg0d->RDSB;  
     return blkb.refined.textABFlag;
 }
+
+/**
+ * @ingroup GA04
+ * 
+ * @brief Returns true if the Text Flag A/B  has changed
+ * @details This function returns true if a new FlagAB has chenged. Also it clears the Station Name buffer in that condition.
+ * @details It is useful to check and show the RDS Text in your application.  
+ * @return True or false
+ */
+bool RDA5807::isNewRdsFlagAB(void)
+{
+    rds_blockb blkb;
+    getStatusRegisters(); 
+    blkb.blockB = reg0d->RDSB; 
+    if ( blkb.refined.textABFlag != this->oldTextABFlag) {
+        this->oldTextABFlag = blkb.refined.textABFlag;  // saves the latest value
+        memset(rds_buffer0A, 0, sizeof(rds_buffer0A));  
+        return true;   
+    }   
+    return false;
+}
+
 
 /**
  * @ingroup GA04

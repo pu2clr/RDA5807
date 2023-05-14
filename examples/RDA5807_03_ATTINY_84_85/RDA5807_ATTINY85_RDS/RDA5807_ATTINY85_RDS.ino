@@ -110,14 +110,12 @@ void loop()
     EEPROM.update(3, rx.isMuted()); // Stores the current audio mute status
   }
 
-  if ( rx.getRdsReady() &&  rx.hasRdsInfoAB()  && rx.getRdsFlagAB() == 0 )  {
+  if ( rx.getRdsReady() &&  rx.hasRdsInfoAB()  && !rx.isNewRdsFlagAB() )  {
     stationName = rx.getRdsText0A();
     oled.setCursor(0, 2);
     if ( stationName != NULL ) 
         oled.print(stationName); 
-    else 
-      oled.clearToEOL();
     delay(70);
-  }
+  } 
   delay(5);
 }
