@@ -1099,9 +1099,15 @@ refined</td>
 <tr class="memitem:ga196b453f68b2a23d2e6b2515c6412ee2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#ga196b453f68b2a23d2e6b2515c6412ee2">clearRdsFifo</a> (bool value=1)</td></tr>
 <tr class="memdesc:ga196b453f68b2a23d2e6b2515c6412ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear RDS fifo.  <br /></td></tr>
 <tr class="separator:ga196b453f68b2a23d2e6b2515c6412ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga22c43e0f08a650bd32446eef6cd8f550"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#ga22c43e0f08a650bd32446eef6cd8f550">clearRdsBuffer</a> ()</td></tr>
+<tr class="memdesc:ga22c43e0f08a650bd32446eef6cd8f550"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear RDS Information (Station Name, Station Information, Program Information and Time)  <br /></td></tr>
+<tr class="separator:ga22c43e0f08a650bd32446eef6cd8f550"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacfa48dfcf792a9bcee489658177aed90"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#gacfa48dfcf792a9bcee489658177aed90">getRdsReady</a> ()</td></tr>
 <tr class="memdesc:gacfa48dfcf792a9bcee489658177aed90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if RDS Ready.  <br /></td></tr>
 <tr class="separator:gacfa48dfcf792a9bcee489658177aed90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa2f71ce870525b429f302ec957d5be0d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#gaa2f71ce870525b429f302ec957d5be0d">getRdsAllData</a> (char *stationName, char *stationInformation, char *programInformation, char *utcTime)</td></tr>
+<tr class="memdesc:gaa2f71ce870525b429f302ec957d5be0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets Station Name, Station Information, Program Information and utcTime.  <br /></td></tr>
+<tr class="separator:gaa2f71ce870525b429f302ec957d5be0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga04e5fe0cacbdcae620388a15630cf9c1"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#ga04e5fe0cacbdcae620388a15630cf9c1">getRdsFlagAB</a> (void)</td></tr>
 <tr class="memdesc:ga04e5fe0cacbdcae620388a15630cf9c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current Text Flag A/B.  <br /></td></tr>
 <tr class="separator:ga04e5fe0cacbdcae620388a15630cf9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1123,18 +1129,25 @@ refined</td>
 <tr class="memitem:ga3ab713bb63978518d42a761b9db445c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#ga3ab713bb63978518d42a761b9db445c9">getNext4Block</a> (char *c)</td></tr>
 <tr class="memdesc:ga3ab713bb63978518d42a761b9db445c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process data received from group 2A.  <br /></td></tr>
 <tr class="separator:ga3ab713bb63978518d42a761b9db445c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga96152112619e139bd7e0ff523009a161"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#ga96152112619e139bd7e0ff523009a161">getRdsText</a> (void)</td></tr>
-<tr class="memdesc:ga96152112619e139bd7e0ff523009a161"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the RDS Text when the message is of the Group Type 2 version A.  <br /></td></tr>
-<tr class="separator:ga96152112619e139bd7e0ff523009a161"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5a26789f1910a5b2098919dbd50e6a3c"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#ga5a26789f1910a5b2098919dbd50e6a3c">getRdsText0A</a> (void)</td></tr>
 <tr class="memdesc:ga5a26789f1910a5b2098919dbd50e6a3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the station name and other messages.  <br /></td></tr>
 <tr class="separator:ga5a26789f1910a5b2098919dbd50e6a3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac2defc3812e1900ccd1ac719268abe2e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#gac2defc3812e1900ccd1ac719268abe2e">getRdsStationName</a> (void)</td></tr>
+<tr class="memdesc:gac2defc3812e1900ccd1ac719268abe2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Station Name.  <br /></td></tr>
+<tr class="separator:gac2defc3812e1900ccd1ac719268abe2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga482098a64299cb8af976d4d10a460212"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#ga482098a64299cb8af976d4d10a460212">getRdsText2A</a> (void)</td></tr>
-<tr class="memdesc:ga482098a64299cb8af976d4d10a460212"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Text processed for the 2A group.  <br /></td></tr>
+<tr class="memdesc:ga482098a64299cb8af976d4d10a460212"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Program Information.  <br /></td></tr>
 <tr class="separator:ga482098a64299cb8af976d4d10a460212"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73610b1372a8bdaa959862881eae05fb"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#ga73610b1372a8bdaa959862881eae05fb">getRdsProgramInformation</a> (void)</td></tr>
+<tr class="memdesc:ga73610b1372a8bdaa959862881eae05fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Program Information.  <br /></td></tr>
+<tr class="separator:ga73610b1372a8bdaa959862881eae05fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacd6614bc7be99d55a3d9a17739ee7074"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#gacd6614bc7be99d55a3d9a17739ee7074">getRdsText2B</a> (void)</td></tr>
-<tr class="memdesc:gacd6614bc7be99d55a3d9a17739ee7074"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Text processed for the 2B group.  <br /></td></tr>
+<tr class="memdesc:gacd6614bc7be99d55a3d9a17739ee7074"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Station Information. <br  />
+  <br /></td></tr>
 <tr class="separator:gacd6614bc7be99d55a3d9a17739ee7074"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2e78c58aca2f5121306d2e5ceb98effd"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#ga2e78c58aca2f5121306d2e5ceb98effd">getRdsStationInformation</a> (void)</td></tr>
+<tr class="memdesc:ga2e78c58aca2f5121306d2e5ceb98effd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Station Information.  <br /></td></tr>
+<tr class="separator:ga2e78c58aca2f5121306d2e5ceb98effd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaef398d848e7378ec4897965b8e1b4441"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#gaef398d848e7378ec4897965b8e1b4441">getRdsTime</a> ()</td></tr>
 <tr class="memdesc:gaef398d848e7378ec4897965b8e1b4441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the RDS time and date when the Group type is 4.  <br /></td></tr>
 <tr class="separator:gaef398d848e7378ec4897965b8e1b4441"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1643,7 +1656,7 @@ refined</td>
 
 <p>RDS Basic tuning and switching information (Type 0 groups) </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00891">getRdsText0A()</a>, and <a class="el" href="#l00725">isNewRdsFlagAB()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l01152">clearRdsBuffer()</a>, <a class="el" href="#l00891">getRdsText0A()</a>, and <a class="el" href="#l00727">isNewRdsFlagAB()</a>.</p>
 
 </div>
 </div>
@@ -1669,7 +1682,7 @@ refined</td>
 
 <p>RDS Radio Text buffer - Program Information. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00865">getRdsText()</a>, <a class="el" href="#l00920">getRdsText2A()</a>, and <a class="el" href="#l00725">isNewRdsFlagAB()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l01152">clearRdsBuffer()</a>, and <a class="el" href="#l00919">getRdsText2A()</a>.</p>
 
 </div>
 </div>
@@ -1695,7 +1708,7 @@ refined</td>
 
 <p>RDS Radio Text buffer - Station Informaation. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00949">getRdsText2B()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l01152">clearRdsBuffer()</a>, and <a class="el" href="#l00946">getRdsText2B()</a>.</p>
 
 </div>
 </div>
@@ -1721,7 +1734,7 @@ refined</td>
 
 <p>RDS date time received information. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00975">getRdsTime()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l01152">clearRdsBuffer()</a>, and <a class="el" href="#l00971">getRdsTime()</a>.</p>
 
 </div>
 </div>
@@ -2191,7 +2204,7 @@ refined</td>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l00873">formatCurrentFrequency()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00901">formatCurrentFrequency()</a>.</p>
 
 </div>
 </div>
