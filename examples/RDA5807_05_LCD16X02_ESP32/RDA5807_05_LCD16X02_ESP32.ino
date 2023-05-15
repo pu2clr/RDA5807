@@ -79,7 +79,7 @@
 
 #define POLLING_TIME  4000
 #define RDS_MSG_TYPE_TIME 25000
-#define POLLING_RDS     20
+#define POLLING_RDS     51
 
 #define STORE_TIME 10000 // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
 #define PUSH_MIN_DELAY 300
