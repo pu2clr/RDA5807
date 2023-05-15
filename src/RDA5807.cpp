@@ -734,7 +734,6 @@ bool RDA5807::isNewRdsFlagAB(void)
         memset(rds_buffer0A, 0, sizeof(rds_buffer0A));
         memset(rds_buffer2A, 0, sizeof(rds_buffer2A));
         memset(rds_buffer2B, 0, sizeof(rds_buffer2B));
-
         return true;
     }
     return false;
