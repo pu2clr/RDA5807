@@ -162,7 +162,7 @@ void setup() {
   rx.setup();  // 32.768 kHz passive crystal
   // rx.setup(CLOCK_32K,OSCILLATOR_TYPE_ACTIVE, RLCK_NO_CALIBRATE_MODE_OFF); // 32.768 kHz active crystal / signal generator
   // rx.setLnaPortSel(3);
-  
+
   // Checking the EEPROM content
   if (EEPROM.read(eeprom_address) == app_id) {
     readAllReceiverInformation();
@@ -189,9 +189,8 @@ void saveAllReceiverInformation() {
   EEPROM.update(eeprom_address + 1, rx.getVolume());           // stores the current Volume
   EEPROM.update(eeprom_address + 2, currentFrequency >> 8);    // stores the current Frequency HIGH byte for the band
   EEPROM.update(eeprom_address + 3, currentFrequency & 0xFF);  // stores the current Frequency LOW byte for the band
-  EEPROM.update(eeprom_address + 4, (uint8_t) bRds);
-  EEPROM.update(eeprom_address + 5, (uint8_t) bSt);
-
+  EEPROM.update(eeprom_address + 4, (uint8_t)bRds);
+  EEPROM.update(eeprom_address + 5, (uint8_t)bSt);
 }
 
 void readAllReceiverInformation() {
@@ -200,13 +199,12 @@ void readAllReceiverInformation() {
   currentFrequency |= EEPROM.read(eeprom_address + 3);
   previousFrequency = currentFrequency;
 
-  bRds = (bool) EEPROM.read(eeprom_address + 4);
+  bRds = (bool)EEPROM.read(eeprom_address + 4);
   rx.setRDS(bRds);
   rx.setRdsFifo(bRds);
 
-  bSt = (bool) EEPROM.read(eeprom_address + 5);
+  bSt = (bool)EEPROM.read(eeprom_address + 5);
   rx.setMono(bSt);
-
 }
 
 
@@ -371,11 +369,13 @@ void clearRds() {
 }
 
 void checkRDS() {
-  // check if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
-  if ( rx.getRdsReady() &&  rx.hasRdsInfo() /* && !rx.isNewRdsFlagAB() */ ) {
-    rdsMsg = rx.getRdsText2A();
-    stationName = rx.getRdsText0A();
-    rdsTime = rx.getRdsTime(); // Gets the UTC Time. Check the getRdsTime documentation for more details. Some stations do not broadcast the right time.
+  // You must call getRdsReady before calling any RDS query function. 
+  if (rx.getRdsReady()) {
+    if (rx.hasRdsInfo() /* && !rx.isNewRdsFlagAB() */) {
+      rdsMsg = rx.getRdsText2A();
+      stationName = rx.getRdsText0A();
+      rdsTime = rx.getRdsTime();  // Gets the UTC Time. Check the getRdsTime documentation for more details. Some stations do not broadcast the right time.
+    }
   }
 }
 

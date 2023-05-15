@@ -690,12 +690,14 @@ void RDA5807::setRBDS(bool value)
  * @brief Returns true if RDS Ready
  * @details Read address 0Ah and check the bit RDSR.
  * @details When using the polling method, it is best not to poll continuously. The data will appear in intervals.
+ * @details ATTENTION: You must call this function before calling any RDS query
  * @return true
  * @return false
  */
 bool RDA5807::getRdsReady()
 {
     getStatus(REG0A);
+    getStatusRegisters();
 
     return reg0a->refined.RDSR;
 }
@@ -709,7 +711,6 @@ bool RDA5807::getRdsReady()
 uint8_t RDA5807::getRdsFlagAB(void)
 {
     rds_blockb blkb;
-    getStatusRegisters(); // TODO: Should be called just once and be processed by all RDS functions at a time.
     blkb.blockB = reg0d->RDSB;
     return blkb.refined.textABFlag;
 }
@@ -725,7 +726,6 @@ uint8_t RDA5807::getRdsFlagAB(void)
 bool RDA5807::isNewRdsFlagAB(void)
 {
     rds_blockb blkb;
-    getStatusRegisters();
     blkb.blockB = reg0d->RDSB;
     if (blkb.refined.textABFlag != this->oldTextABFlag)
     {
@@ -739,6 +739,34 @@ bool RDA5807::isNewRdsFlagAB(void)
 
 /**
  * @ingroup GA04
+ * @todo It is under construction...
+ * @brief Gets Station Name, Station Information, Program Information and utcTime
+ * @details This function populates four char pointers with the following contents (Arguments/parameters must be pointers to char).
+ * @details You must call  setRDS(true), setRdsFifo(true) before calling getRdsAllData(...) 
+ * @param stationName  - if NOT NULL,  point to Name of the Station (char array -  9 bytes)
+ * @param stationInformation - if NOT NULL, point to Station information (char array - 33 bytes)
+ * @param programInformation - if NOT NULL, point to program information (char array - 65 nytes)
+ * @param utcTime - if NOT NULL, point to char array containing the current UTC time (format HH:MM:SS +HH:MM)
+ * @return True if found at least one valid data 
+ * @see setRDS, setRdsFifo, getRdsAllData
+ */
+bool RDA5807::getRdsAllData(char *stationName, char *stationInformation, char *programInformation, char *utcTime) {
+
+    if ( !this->getRdsReady() ) return false;
+    if ( !this->hasRdsInfoAB() ) return false;
+    if (  this->isNewRdsFlagAB() ) return false; 
+    // Process data
+    stationName = this->getRdsText0A(); // returns NULL if no information
+    stationInformation = this->getRdsText2B(); // returns NULL if no information
+    programInformation = this->getRdsText2A(); // returns NULL if no information
+    utcTime = this->getRdsTime(); // returns NULL if no information
+
+    return (bool)stationName | (bool)stationInformation | (bool) programInformation | (bool) utcTime;
+}
+
+
+/**
+ * @ingroup GA04
  * @brief Return the group type
  *
  * @return uint16_t
@@ -746,8 +774,6 @@ bool RDA5807::isNewRdsFlagAB(void)
 uint16_t RDA5807::getRdsGroupType()
 {
     rds_blockb blkb;
-
-    getStatusRegisters(); // TODO: Should be called just once and be processed by all RDS functions at a time.
     blkb.blockB = reg0d->RDSB;
     return blkb.group0.groupType;
 }
@@ -761,7 +787,6 @@ uint16_t RDA5807::getRdsGroupType()
 uint8_t RDA5807::getRdsVersionCode(void)
 {
     rds_blockb blkb;
-    getStatusRegisters(); // TODO: Should be called just once and be processed by all RDS functions at a time.
     blkb.blockB = reg0d->RDSB;
     return blkb.refined.versionCode;
 }
@@ -775,7 +800,6 @@ uint8_t RDA5807::getRdsVersionCode(void)
 uint8_t RDA5807::getRdsProgramType(void)
 {
     rds_blockb blkb;
-    getStatusRegisters(); // TODO: Should be called just once and be processed by all RDS functions at a time.
     blkb.blockB = reg0d->RDSB;
     return blkb.refined.programType;
 }
@@ -856,29 +880,6 @@ void RDA5807::getNext4Block(char *c)
     }
 }
 
-/**
- * @ingroup GA04
- *
- * @brief Gets the RDS Text when the message is of the Group Type 2 version A
- * @return char*  The string (char array) with the content (Text) received from group 2A
- */
-char *RDA5807::getRdsText(void)
-{
-    static int rdsTextAdress2A;
-    rds_blockb blkb;
-
-    getStatusRegisters();
-
-    blkb.blockB = reg0d->RDSB;
-    rdsTextAdress2A = blkb.group2.address;
-
-    if (rdsTextAdress2A >= 16)
-        rdsTextAdress2A = 0;
-
-    getNext4Block(&rds_buffer2A[rdsTextAdress2A * 4]);
-    rdsTextAdress2A += 4;
-    return rds_buffer2A;
-}
 
 /**
  * @ingroup GA04
@@ -893,7 +894,6 @@ char *RDA5807::getRdsText0A(void)
     static int rdsTextAdress0A;
     rds_blockb blkb;
 
-    getStatusRegisters();
     blkb.blockB = reg0d->RDSB;
 
     if (blkb.group0.groupType == 0)
@@ -922,8 +922,6 @@ char *RDA5807::getRdsText2A(void)
     static int rdsTextAdress2A;
     rds_blockb blkb;
 
-    getStatusRegisters();
-
     blkb.blockB = reg0d->RDSB;
     rdsTextAdress2A = blkb.group2.address;
 
@@ -951,7 +949,6 @@ char *RDA5807::getRdsText2B(void)
     static int rdsTextAdress2B;
     rds_blockb blkb;
 
-    getStatusRegisters();
     blkb.blockB = reg0d->RDSB;
     if (blkb.group2.groupType == 2)
     {
@@ -979,8 +976,6 @@ char *RDA5807::getRdsTime()
     rds_date_time dt;
     word16_to_bytes blk_b, blk_c, blk_d;
     rds_blockb blkb;
-
-    getStatusRegisters();
 
     blk_b.raw = blkb.blockB = reg0d->RDSB;
     blk_c.raw = reg0e->RDSC;
