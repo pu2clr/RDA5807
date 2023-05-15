@@ -26,12 +26,12 @@
 */
 
 #include <RDA5807.h>
-#include <EEPROM.h> // The ATtiny85 contains 512 bytes of data EEPROM memory. The EEPROM has an endurance of at least 100,000 write/erase cycles.
+#include <EEPROM.h>  // The ATtiny85 contains 512 bytes of data EEPROM memory. The EEPROM has an endurance of at least 100,000 write/erase cycles.
 #include <Tiny4kOLED.h>
 
-#define SEEK_UP   PB1     
-#define SEEK_DOWN PB4  
-#define AUDIO_MUTE PB3  
+#define SEEK_UP PB1
+#define SEEK_DOWN PB4
+#define AUDIO_MUTE PB3
 
 #define VALID_DATA 85
 
@@ -40,8 +40,7 @@ uint16_t currentFrequency;
 
 RDA5807 rx;
 
-void setup()
-{
+void setup() {
   pinMode(SEEK_UP, INPUT_PULLUP);
   pinMode(SEEK_DOWN, INPUT_PULLUP);
   pinMode(AUDIO_MUTE, INPUT_PULLUP);
@@ -60,17 +59,17 @@ void setup()
   oled.clear();
   // End Splash
   rx.setup();
-  rx.setVolume(8);  
+  rx.setVolume(8);
 
   // Restores the latest frequency and audio mute statis saved into the EEPROM
-  if (EEPROM.read(0) == VALID_DATA ) {
+  if (EEPROM.read(0) == VALID_DATA) {
     currentFrequency = EEPROM.read(1) << 8;
     currentFrequency |= EEPROM.read(2);
     rx.setMute(EEPROM.read(3));
   } else {
-    currentFrequency = 10390; // default value
-  } 
-  rx.setFrequency(currentFrequency); 
+    currentFrequency = 10390;  // default value
+  }
+  rx.setFrequency(currentFrequency);
   rx.setRDS(true);
   rx.setRdsFifo(true);
   showStatus();
@@ -82,40 +81,42 @@ void showStatus() {
   oled.setCursor(38, 0);
   oled.clearToEOL();
   oled.setCursor(38, 0);
-  oled.print(rx.formatCurrentFrequency()); 
+  oled.print(rx.formatCurrentFrequency());
   oled.setCursor(95, 0);
   oled.print(F("MHz"));
   oled.setCursor(0, 2);
   oled.clearToEOL();
 }
 
-void loop()
-{
-  uint8_t  bkey;
-  bkey = ((digitalRead(SEEK_UP) << 2) | (digitalRead(SEEK_DOWN) << 1)) | digitalRead(AUDIO_MUTE); // 3, 5 or 6 (Pressed = 0 - considering just one button pressed)  
-  if ( bkey != 0b111) { // if none of them is pressed (not igual to 0b011, 0b101 or 0b110) then do nothing.
-    if (bkey == 0b011) // 3 
-      rx.seek(RDA_SEEK_WRAP,RDA_SEEK_UP, showStatus);
-    else if ( bkey == 0b101) // 5
-      rx.seek(RDA_SEEK_WRAP,RDA_SEEK_DOWN, showStatus);
-    else // 6 
-      rx.setMute(!rx.isMuted()); // inverts the audio mute status  
+void loop() {
+  uint8_t bkey;
+  bkey = ((digitalRead(SEEK_UP) << 2) | (digitalRead(SEEK_DOWN) << 1)) | digitalRead(AUDIO_MUTE);  // 3, 5 or 6 (Pressed = 0 - considering just one button pressed)
+  if (bkey != 0b111) {                                                                             // if none of them is pressed (not igual to 0b011, 0b101 or 0b110) then do nothing.
+    if (bkey == 0b011)                                                                             // 3
+      rx.seek(RDA_SEEK_WRAP, RDA_SEEK_UP, showStatus);
+    else if (bkey == 0b101)  // 5
+      rx.seek(RDA_SEEK_WRAP, RDA_SEEK_DOWN, showStatus);
+    else                          // 6
+      rx.setMute(!rx.isMuted());  // inverts the audio mute status
     showStatus();
     delay(200);
-    // Saves the current frequency if it has changed. 
+    // Saves the current frequency if it has changed.
     currentFrequency = rx.getFrequency();
-    EEPROM.update(0, VALID_DATA); // Says that a valid frequency will be saved  
-    EEPROM.update(1, currentFrequency  >> 8);   // stores the current Frequency HIGH byte 
-    EEPROM.update(2, currentFrequency & 0xFF);  // stores the current Frequency LOW byte 
-    EEPROM.update(3, rx.isMuted()); // Stores the current audio mute status
+    EEPROM.update(0, VALID_DATA);               // Says that a valid frequency will be saved
+    EEPROM.update(1, currentFrequency >> 8);    // stores the current Frequency HIGH byte
+    EEPROM.update(2, currentFrequency & 0xFF);  // stores the current Frequency LOW byte
+    EEPROM.update(3, rx.isMuted());             // Stores the current audio mute status
   }
 
-  if ( rx.getRdsReady() &&  rx.hasRdsInfoAB()  && !rx.isNewRdsFlagAB() )  {
-    stationName = rx.getRdsText0A();
-    oled.setCursor(0, 2);
-    if ( stationName != NULL ) 
-        oled.print(stationName); 
-    delay(70);
-  } 
+  if (rx.getRdsReady()) {
+    if (rx.hasRdsInfoAB() && !rx.isNewRdsFlagAB()) {
+      stationName = rx.getRdsText0A();
+      // stationName =rx.getRdsText2A();
+      oled.setCursor(0, 2);
+      if (stationName != NULL)
+        oled.print(stationName);
+      delay(70);
+    }
+  }
   delay(5);
 }
