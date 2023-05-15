@@ -108,10 +108,10 @@ void loop() {
     EEPROM.update(3, rx.isMuted());             // Stores the current audio mute status
   }
 
+  // You must call getRdsReady before calling any RDS query function/method
   if (rx.getRdsReady()) {
     if (rx.hasRdsInfoAB() && !rx.isNewRdsFlagAB()) {
-      stationName = rx.getRdsText0A();
-      // stationName =rx.getRdsText2A();
+      stationName = rx.getRdsStationName();
       oled.setCursor(0, 2);
       if (stationName != NULL)
         oled.print(stationName);

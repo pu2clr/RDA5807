@@ -732,8 +732,7 @@ bool RDA5807::isNewRdsFlagAB(void)
     {
         this->oldTextABFlag = blkb.refined.textABFlag; // saves the latest value
         memset(rds_buffer0A, 0, sizeof(rds_buffer0A));
-        memset(rds_buffer2A, 0, sizeof(rds_buffer2A));
-        memset(rds_buffer2B, 0, sizeof(rds_buffer2B));
+
         return true;
     }
     return false;
@@ -756,8 +755,6 @@ bool RDA5807::getRdsAllData(char *stationName, char *stationInformation, char *p
 
     if ( !this->getRdsReady() ) return false;
     if ( !this->hasRdsInfoAB() ) return false;
-    if (  this->isNewRdsFlagAB() ) return false; 
-    // Process data
     stationName = this->getRdsText0A(); // returns NULL if no information
     stationInformation = this->getRdsText2B(); // returns NULL if no information
     programInformation = this->getRdsText2A(); // returns NULL if no information
@@ -915,9 +912,9 @@ char *RDA5807::getRdsText0A(void)
 /**
  * @ingroup @ingroup GA04
  *
- * @brief Gets the Text processed for the 2A group
- *
- * @return char* string with the Text of the group A2
+ * @brief Gets the Program Information
+ * @details Process the program information data. 
+ * @return char array with the program information (63 bytes) 
  */
 char *RDA5807::getRdsText2A(void)
 {
@@ -943,8 +940,8 @@ char *RDA5807::getRdsText2A(void)
 
 /**
  * @ingroup GA04
- * @brief Gets the Text processed for the 2B group
- * @return char* string with the Text of the group AB
+ * @brief Gets the Station Information.  
+ * @return char array with the Text of Station Information (33 bytes)
  */
 char *RDA5807::getRdsText2B(void)
 {
@@ -1145,6 +1142,22 @@ void RDA5807::clearRdsFifo(bool value)
     reg04->refined.RDS_FIFO_CLR = value;
     setRegister(REG04, reg04->raw);
 }
+
+
+/**
+ * @ingroup GA04
+ * @brief Clear RDS Information (Station Name, Station Information, Program Information and Time)
+ * @details Clear the buffer with latest RDS information
+ */
+void RDA5807::clearRdsBuffer()
+{
+    memset(rds_buffer0A, 0, sizeof(rds_buffer0A));
+    memset(rds_buffer2A , 0, sizeof(rds_buffer2A));
+    memset(rds_buffer2B, 0, sizeof(rds_buffer2B));
+    memset(rds_time, 0, sizeof(rds_time));
+}
+
+
 
 /** @defgroup G05 Tools method
  * @details A set of functions used to support other functions

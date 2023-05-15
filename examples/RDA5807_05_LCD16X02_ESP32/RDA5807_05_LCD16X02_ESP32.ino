@@ -287,14 +287,14 @@ void showStereoMono() {
 /*********************************************************
    RDS
  *********************************************************/
-char *rdsMsg;
+char *programInfo;
 char *stationName;
 char *rdsTime;
 int currentMsgType = 0;
 long polling_rds = millis();
 long timeTextType = millis();  // controls the type of each text will be shown (Message, Station Name or time)
 
-int rdsMsgIndex = 0;  // controls the part of the rdsMsg text will be shown on LCD 16x2 Display
+int progInfoIndex = 0;  // controls the part of the rdsMsg text will be shown on LCD 16x2 Display
 
 
 /**
@@ -303,13 +303,13 @@ int rdsMsgIndex = 0;  // controls the part of the rdsMsg text will be shown on L
 void showRDSMsg() {
   char txtAux[17];
 
-  if (rdsMsg == NULL) return;
+  if (programInfo == NULL) return;
 
-  rdsMsg[61] = '\0';  // Truncate the message to fit on display line
-  strncpy(txtAux, &rdsMsg[rdsMsgIndex], 16);
+  programInfo[61] = '\0';  // Truncate the message to fit on display line
+  strncpy(txtAux, &programInfo[progInfoIndex], 16);
   txtAux[16] = '\0';
-  rdsMsgIndex += 3;
-  if (rdsMsgIndex > 60) rdsMsgIndex = 0;
+  progInfoIndex += 3;
+  if (progInfoIndex > 60) progInfoIndex = 0;
   lcd.setCursor(0, 0);
   lcd.print(txtAux);
 }
@@ -318,15 +318,9 @@ void showRDSMsg() {
    showRDSStation - Shows the 
 */
 void showRDSStation() {
-  char txtAux[17];
-
   if (stationName == NULL) return;
-
-  stationName[16] = '\0';
-  strncpy(txtAux, stationName, 16);
-  txtAux[16] = '\0';
   lcd.setCursor(0, 0);
-  lcd.print(txtAux);
+  lcd.print(stationName);
 }
 
 void showRDSTime() {
@@ -344,18 +338,19 @@ void showRDSTime() {
 
 void clearRds() {
   bShow = false;
-  rdsMsg = NULL;
+  programInfo = NULL;
   stationName = NULL;
   rdsTime = NULL;
-  rdsMsgIndex = currentMsgType = 0;
+  progInfoIndex = currentMsgType = 0;
+  rx.clearRdsBuffer();
 }
 
 void checkRDS() {
   // You must call getRdsReady before calling any RDS query function.
   if (rx.getRdsReady()) {
-    if (rx.hasRdsInfo() /* && !rx.isNewRdsFlagAB() */) {
-      rdsMsg = rx.getRdsText2A();
-      stationName = rx.getRdsText0A();
+    if (rx.hasRdsInfo() ) {
+      programInfo = rx.getRdsProgramInformation();
+      stationName = rx.getRdsStationName();
       rdsTime = rx.getRdsTime();
     }
   }
@@ -391,7 +386,7 @@ void doStereo() {
 
 void doRds() {
   rx.setRDS((bRds = !bRds));
-  rdsMsgIndex = currentMsgType = 0;
+  progInfoIndex = currentMsgType = 0;
   showRds();
   resetEepromDelay();
 }
@@ -453,7 +448,7 @@ void loop() {
   if ((millis() - timeTextType) > RDS_MSG_TYPE_TIME) {
     // Toggles the type of message to be shown - See showRds function
     currentMsgType++;
-    rdsMsgIndex = 0;
+    progInfoIndex = 0;
     if (currentMsgType > 2) currentMsgType = 0;
     timeTextType = millis();
   }

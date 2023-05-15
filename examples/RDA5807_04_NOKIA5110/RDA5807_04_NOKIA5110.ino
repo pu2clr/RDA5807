@@ -371,9 +371,9 @@ void clearRds() {
 void checkRDS() {
   // You must call getRdsReady before calling any RDS query function. 
   if (rx.getRdsReady()) {
-    if (rx.hasRdsInfo() /* && !rx.isNewRdsFlagAB() */) {
-      rdsMsg = rx.getRdsText2A();
-      stationName = rx.getRdsText0A();
+    if (rx.hasRdsInfo() ) {
+      rdsMsg = rx.getRdsProgramInformation();
+      stationName = rx.getRdsStationName();
       rdsTime = rx.getRdsTime();  // Gets the UTC Time. Check the getRdsTime documentation for more details. Some stations do not broadcast the right time.
     }
   }

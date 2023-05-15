@@ -302,8 +302,8 @@ void checkRDS()
 {
   // check if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
   if ( rx.hasRdsInfo() ) {
-    rdsMsg = rx.getRdsText2A();
-    stationName = rx.getRdsText0A();
+    rdsMsg = rx.getRdsProgramInformation();
+    stationName = rx.getRdsStationName();
     rdsTime = rx.getRdsTime();
     if (rdsMsg != NULL)
       showRDSMsg();
@@ -319,8 +319,9 @@ void checkRDS()
       showRDSTime();
   }
 
-  if ( (millis() - clear_fifo) > 10000 ) {
+  if ( (millis() - clear_fifo) > 60000 ) {
     rx.clearRdsFifo();
+    rx.clearRdsBuffer();
     clear_fifo = millis();
     
   }

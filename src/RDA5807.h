@@ -816,6 +816,7 @@ public:
     void setRBDS(bool value);
     void setRdsFifo(bool value);
     void clearRdsFifo(bool value = 1);
+    void clearRdsBuffer();
 
     bool getRdsReady();
     bool getRdsAllData(char *stationName, char *stationInformation, char *programInformation, char *utcTime);
@@ -826,11 +827,37 @@ public:
     uint8_t getRdsProgramType(void);
     void getNext2Block(char *c);
     void getNext4Block(char *c);
-    char *getRdsText(void);
+
     char *getRdsText0A(void);
+    /**
+     * @ingroup GA04
+     * @brief Gets the Station Name
+     * @details Alias for getRdsText0A
+     * @return char* should return a string with the station name. However, some stations send other kind of messages
+     * @see getRdsText0A
+     */
+    inline char *getRdsStationName(void) { return getRdsText0A(); };
+
     char *getRdsText2A(void);
+    /**
+     * @ingroup @ingroup GA04
+     * @brief Gets the Program Information
+     * @details Process the program information data. Same getRdsText2A(). It is a alias for getRdsText2A.
+     * @return char array with the program information (63 bytes)
+     * @see getRdsText2A
+     */
+    inline char *getRdsProgramInformation(void) { return getRdsText2A(); };
+
     char *getRdsText2B(void);
+    /**
+     * @ingroup GA04
+     * @brief Gets the Station Information.
+     * @return char array with the Text of Station Information (33 bytes)
+     */
+    inline char *getRdsStationInformation(void) { return getRdsText2B(); };
+
     char *getRdsTime();
+
     bool getRdsSync();
     uint8_t getBlockId();
     uint8_t getErrorBlockA();
