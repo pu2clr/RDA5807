@@ -721,6 +721,7 @@ uint8_t RDA5807::getRdsFlagAB(void)
  * @brief Returns true if the Text Flag A/B  has changed
  * @details This function returns true if a new FlagAB has chenged. Also it clears the Station Name buffer in that condition.
  * @details It is useful to check and show the RDS Text in your application.
+ * 
  * @return True or false
  */
 bool RDA5807::isNewRdsFlagAB(void)
@@ -732,6 +733,8 @@ bool RDA5807::isNewRdsFlagAB(void)
         this->oldTextABFlag = blkb.refined.textABFlag; // saves the latest value
         memset(rds_buffer0A, 0, sizeof(rds_buffer0A));
         memset(rds_buffer2A, 0, sizeof(rds_buffer2A));
+        memset(rds_buffer2B, 0, sizeof(rds_buffer2B));
+
         return true;
     }
     return false;
