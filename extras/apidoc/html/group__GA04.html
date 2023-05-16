@@ -348,7 +348,7 @@ RDS/RBDS</h1>
   </dd>
 </dl>
 
-<p class="reference">Referenced by <a class="el" href="#l00891">RDA5807::getRdsText0A()</a>, and <a class="el" href="#l00946">RDA5807::getRdsText2B()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00901">RDA5807::getRdsText0A()</a>, and <a class="el" href="#l00956">RDA5807::getRdsText2B()</a>.</p>
 
 </div>
 </div>
@@ -376,7 +376,7 @@ RDS/RBDS</h1>
   </dd>
 </dl>
 
-<p class="reference">Referenced by <a class="el" href="#l00919">RDA5807::getRdsText2A()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00929">RDA5807::getRdsText2A()</a>.</p>
 
 </div>
 </div>
@@ -433,7 +433,7 @@ RDS/RBDS</h1>
 <dl class="section return"><dt>Returns</dt><dd>True if found at least one valid data </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA04.html#ga4b741f1433eda57949bb40fa9e973732" title="Sets the RDS operation.">setRDS</a>, <a class="el" href="group__GA04.html#gae27337170a5f3dedebf585aa19855ad6" title="Sets RDS fifo mode enable.">setRdsFifo</a>, <a class="el" href="group__GA04.html#gaa2f71ce870525b429f302ec957d5be0d" title="Gets Station Name, Station Information, Program Information and utcTime.">getRdsAllData</a> </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00697">RDA5807::getRdsReady()</a>, <a class="el" href="#l00891">RDA5807::getRdsText0A()</a>, <a class="el" href="#l00919">RDA5807::getRdsText2A()</a>, <a class="el" href="#l00946">RDA5807::getRdsText2B()</a>, <a class="el" href="#l00971">RDA5807::getRdsTime()</a>, and <a class="el" href="#l01114">RDA5807::hasRdsInfoAB()</a>.</p>
+<p class="reference">References <a class="el" href="#l00707">RDA5807::getRdsReady()</a>, <a class="el" href="#l00901">RDA5807::getRdsText0A()</a>, <a class="el" href="#l00929">RDA5807::getRdsText2A()</a>, <a class="el" href="#l00956">RDA5807::getRdsText2B()</a>, <a class="el" href="#l00981">RDA5807::getRdsTime()</a>, and <a class="el" href="#l01124">RDA5807::hasRdsInfoAB()</a>.</p>
 
 </div>
 </div>
@@ -507,7 +507,7 @@ RDS/RBDS</h1>
 <p>Process the program information data. Same <a class="el" href="group__GA04.html#ga482098a64299cb8af976d4d10a460212" title="Gets the Program Information.">getRdsText2A()</a>. It is a alias for getRdsText2A. </p><dl class="section return"><dt>Returns</dt><dd>char array with the program information (63 bytes) </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA04.html#ga482098a64299cb8af976d4d10a460212" title="Gets the Program Information.">getRdsText2A</a> </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00919">RDA5807::getRdsText2A()</a>.</p>
+<p class="reference">References <a class="el" href="#l00929">RDA5807::getRdsText2A()</a>.</p>
 
 </div>
 </div>
@@ -551,13 +551,20 @@ RDS/RBDS</h1>
 <p>Returns true if RDS Ready. </p>
 <p>Read address 0Ah and check the bit RDSR.</p>
 <p>When using the polling method, it is best not to poll continuously. The data will appear in intervals.</p>
-<p>ATTENTION: You must call this function before calling any RDS query </p><dl class="section return"><dt>Returns</dt><dd>true </dd>
+<p>ATTENTION: You must call this function before calling any RDS query </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (rx.getRdsReady()) {</div>
+<div class="line">   <span class="keywordflow">if</span> (rx.hasRdsInfo() ) {</div>
+<div class="line">     rdsMsg = rx.getRdsProgramInformation();</div>
+<div class="line">     stationName = rx.getRdsStationName();</div>
+<div class="line">     rdsTime = rx.getRdsTime();  <span class="comment">// Gets the UTC Time. Check the getRdsTime documentation for more details. Some stations do not broadcast the right time.</span></div>
+<div class="line">   }</div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>true </dd>
 <dd>
 false </dd></dl>
 
 <p class="reference">References <a class="el" href="#l00084">RDA5807::getStatusRegisters()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#l00754">RDA5807::getRdsAllData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00764">RDA5807::getRdsAllData()</a>.</p>
 
 </div>
 </div>
@@ -588,7 +595,7 @@ false </dd></dl>
 <p>Gets the Station Information. </p>
 <dl class="section return"><dt>Returns</dt><dd>char array with the Text of Station Information (33 bytes) </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00946">RDA5807::getRdsText2B()</a>.</p>
+<p class="reference">References <a class="el" href="#l00956">RDA5807::getRdsText2B()</a>.</p>
 
 </div>
 </div>
@@ -620,7 +627,7 @@ false </dd></dl>
 <p>Alias for getRdsText0A </p><dl class="section return"><dt>Returns</dt><dd>char* should return a string with the station name. However, some stations send other kind of messages </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA04.html#ga5a26789f1910a5b2098919dbd50e6a3c" title="Gets the station name and other messages.">getRdsText0A</a> </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00891">RDA5807::getRdsText0A()</a>.</p>
+<p class="reference">References <a class="el" href="#l00901">RDA5807::getRdsText0A()</a>.</p>
 
 </div>
 </div>
@@ -664,9 +671,9 @@ false </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>RDS Dynamic PS or Scrolling PS support </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>char* should return a string with the station name. However, some stations send other kind of messages </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00812">RDA5807::getNext2Block()</a>, and <a class="el" href="#l00599">RDA5807::rds_buffer0A</a>.</p>
+<p class="reference">References <a class="el" href="#l00822">RDA5807::getNext2Block()</a>, and <a class="el" href="#l00599">RDA5807::rds_buffer0A</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#l00754">RDA5807::getRdsAllData()</a>, and <a class="el" href="#l00839">RDA5807::getRdsStationName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00764">RDA5807::getRdsAllData()</a>, and <a class="el" href="#l00839">RDA5807::getRdsStationName()</a>.</p>
 
 </div>
 </div>
@@ -690,9 +697,9 @@ false </dd></dl>
 <p>@</p>
 <p>Process the program information data. </p><dl class="section return"><dt>Returns</dt><dd>char array with the program information (63 bytes) </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00849">RDA5807::getNext4Block()</a>, and <a class="el" href="#l00597">RDA5807::rds_buffer2A</a>.</p>
+<p class="reference">References <a class="el" href="#l00859">RDA5807::getNext4Block()</a>, and <a class="el" href="#l00597">RDA5807::rds_buffer2A</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#l00754">RDA5807::getRdsAllData()</a>, and <a class="el" href="#l00849">RDA5807::getRdsProgramInformation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00764">RDA5807::getRdsAllData()</a>, and <a class="el" href="#l00849">RDA5807::getRdsProgramInformation()</a>.</p>
 
 </div>
 </div>
@@ -716,9 +723,9 @@ false </dd></dl>
  </p>
 <dl class="section return"><dt>Returns</dt><dd>char array with the Text of Station Information (33 bytes) </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00812">RDA5807::getNext2Block()</a>, and <a class="el" href="#l00598">RDA5807::rds_buffer2B</a>.</p>
+<p class="reference">References <a class="el" href="#l00822">RDA5807::getNext2Block()</a>, and <a class="el" href="#l00598">RDA5807::rds_buffer2B</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#l00754">RDA5807::getRdsAllData()</a>, and <a class="el" href="#l00857">RDA5807::getRdsStationInformation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00764">RDA5807::getRdsAllData()</a>, and <a class="el" href="#l00857">RDA5807::getRdsStationInformation()</a>.</p>
 
 </div>
 </div>
@@ -743,7 +750,7 @@ false </dd></dl>
 
 <p class="reference">References <a class="el" href="#l00600">RDA5807::rds_time</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#l00754">RDA5807::getRdsAllData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00764">RDA5807::getRdsAllData()</a>.</p>
 
 </div>
 </div>
@@ -806,7 +813,7 @@ false </dd></dl>
 <p>Returns true when the RDS system has valid Station Name information. </p>
 <dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="#l00754">RDA5807::getRdsAllData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00764">RDA5807::getRdsAllData()</a>.</p>
 
 </div>
 </div>
