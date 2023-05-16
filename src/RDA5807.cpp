@@ -263,7 +263,7 @@ void RDA5807::powerDown()
  *    // rx.setup(CLOCK_32K, OSCILLATOR_TYPE_ACTIVE);  // 32.768kHz Active Crystal
  *    // rx.setup(CLOCK_12M, OSCILLATOR_TYPE_PASSIVE); // 12MHz passive crystal 
  *    // rx.setup(CLOCK_38_4M, OSCILLATOR_TYPE_PASSIVE); // 38.4 MHz passive crystal
- *    rx.setFrequency(10390); // Tunes in 103.9 MHz  
+ *    rx.setFrequency(10390); // Tunes at 103.9 MHz  
  * }
  * void loop() {
  * }
@@ -354,7 +354,20 @@ void RDA5807::setChannel(uint16_t channel)
 /**
  * @ingroup GA03
  * @brief Sets the frequency
- * @param frequency
+ * @details Tunes the receiver at a given frequency. Example:
+ * @code {.cpp}
+ * #include <RDA5807.h>
+ * RDA5807 rx;
+ * void setup() {
+ *  rx.setup();
+ *  rx.setFrequency(10390); // Tunes at 103.9 MHz
+ * }
+ * void loop() {
+ * }
+ * @endcode
+ * 
+ * @param frequency - an integer with the frequency value (Example: 7600=76MHz, 10790 = 107,90MHz)
+ * @see setFrequencyUp, setFrequencyDown, getFrequency
  */
 void RDA5807::setFrequency(uint16_t frequency)
 {
@@ -398,7 +411,7 @@ void RDA5807::setFrequencyMode(uint8_t value)
  *  pinMode(4, INPUT_PULLUP); // Arduino pin 4 - Frequency Up
  *  pinMode(5, INPUT_PULLUP); // Arduino pin 5 - Frequency Down
  *  rx.setup(); 
- *  rx.setFrequency(10390); // Tunes in 103.9 MHz 
+ *  rx.setFrequency(10390); // Tunes at 103.9 MHz 
  * }
  * void loop() {
  *  if (digitalRead(4) == LOW) rx.setFrequencyUp();
@@ -490,7 +503,7 @@ uint16_t RDA5807::getRealFrequency()
  *    pinMode(4, INPUT_PULLUP); // Arduino pin 4 - Seek station down
  *    pinMode(5, INPUT_PULLUP); // Arduino pin 5 - Seek station up
  *    rx.setup(); // Starts the receiver with default parameters
- *    rx.setFrequency(10390); // Tunes in 103.9 MHz  - Switch to your local favorite station
+ *    rx.setFrequency(10390); // Tunes at 103.9 MHz  - Switch to your local favorite station
  * }
  * void loop() {
  *   if (digitalRead(4) == LOW) rx.seek(RDA_SEEK_WRAP,RDA_SEEK_DOWN);
@@ -534,7 +547,7 @@ void RDA5807::seek(uint8_t seek_mode, uint8_t direction)
  * void loop() {
  *  .
  *  .
- *      rx.seek(SI470X_SEEK_WRAP, SI470X_SEEK_UP, showFrequency); // Seek Up
+ *      rx.seek(RDA_SEEK_WRAP, RDA_SEEK_UP, showFrequency); // Seek Up
  *  .
  *  .
  * }
@@ -662,7 +675,7 @@ uint8_t RDA5807::getBand3Status()
  *  pinMode(5, INPUT_PULLUP); // Arduino pin 5 - Frequency Down
  *  rx.setup();
  *  rx.setBandSpace(2); // 50 kHz Step
- *  rx.setFrequency(10390); // Tunes in 103.9 MHz
+ *  rx.setFrequency(10390); // Tunes at 103.9 MHz
  * }
  * void loop() {
  *  if (digitalRead(4) == LOW) rx.setFrequencyUp();   // Up 50 kHz
@@ -721,7 +734,7 @@ void RDA5807::setStep(uint8_t step)
  * RDA5807 rx;
  * void setup() {
  *  rx.setup();
- *  rx.setFrequency(10390); // Tunes in 103.9 MHz
+ *  rx.setFrequency(10390); // Tunes at 103.9 MHz
  *  rx.setFmDeemphasis(1); // Sets to 50 μs. Used in Europe, Australia, Japan.
  * }
  * void loop() {
