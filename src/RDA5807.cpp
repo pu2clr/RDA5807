@@ -691,6 +691,16 @@ void RDA5807::setRBDS(bool value)
  * @details Read address 0Ah and check the bit RDSR.
  * @details When using the polling method, it is best not to poll continuously. The data will appear in intervals.
  * @details ATTENTION: You must call this function before calling any RDS query
+ * @code {.cpp}
+ * if (rx.getRdsReady()) {
+ *    if (rx.hasRdsInfo() ) {
+ *      rdsMsg = rx.getRdsProgramInformation();
+ *      stationName = rx.getRdsStationName();
+ *      rdsTime = rx.getRdsTime();  // Gets the UTC Time. Check the getRdsTime documentation for more details. Some stations do not broadcast the right time.
+ *    }
+ * }
+ * @endcode
+ * 
  * @return true
  * @return false
  */
