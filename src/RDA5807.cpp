@@ -260,6 +260,9 @@ void RDA5807::powerDown()
  * RDA5807 rx; 
  * void setup() {
  *    rx.setup(); // Starts the receiver with default parameters
+ *    // rx.setup(CLOCK_32K, OSCILLATOR_TYPE_ACTIVE);  // 32.768kHz Active Crystal
+ *    // rx.setup(CLOCK_12M, OSCILLATOR_TYPE_PASSIVE); // 12MHz passive crystal 
+ *    // rx.setup(CLOCK_38_4M, OSCILLATOR_TYPE_PASSIVE); // 38.4 MHz passive crystal
  *    rx.setFrequency(10390); // Tunes in 103.9 MHz  
  * }
  * void loop() {
@@ -388,6 +391,22 @@ void RDA5807::setFrequencyMode(uint8_t value)
  * @ingroup GA03
  * @brief Increments the current frequency
  * @details The increment uses the band space as step. See array: uint16_t fmSpace[4] = {100/10, 200/10, 50/10, 25/10};
+ * @code {.cpp}
+ * #include <RDA5807.h> 
+ * RDA5807 rx; 
+ * void setup() {
+ *  pinMode(4, INPUT_PULLUP); // Arduino pin 4 - Frequency Up
+ *  pinMode(5, INPUT_PULLUP); // Arduino pin 5 - Frequency Down
+ *  rx.setup(); 
+ *  rx.setFrequency(10390); // Tunes in 103.9 MHz 
+ * }
+ * void loop() {
+ *  if (digitalRead(4) == LOW) rx.setFrequencyUp();
+ *  if (digitalRead(5) == LOW) rx.setFrequencyDown();
+ *  delay(200);
+ * }
+ * @endcode
+ * @see setFrequency, getFrequency
  */
 void RDA5807::setFrequencyUp()
 {
@@ -562,16 +581,27 @@ void RDA5807::setSeekThreshold(uint8_t value)
  *
  * FM band table
  *
- * | Value | Description                 |
- * | ----- | --------------------------- |
- * | 00    | 87–108 MHz (US/Europe)      |
- * | 01    | 76–91 MHz (Japan)           |
- * | 10    | 76–108 MHz (world wide)     |
- * | 11    | 65 –76 MHz (East Europe) or 50-65MHz (see bit 9 of gegister 0x07) |
+ * | Value | Decimal | Description                 |
+ * | ----- | ------- | --------------------------- |
+ * | 00    | 0       | 87–108 MHz (US/Europe)      |
+ * | 01    | 1       | 76–91 MHz (Japan)           |
+ * | 10    | 2       | 76–108 MHz (world wide)     |
+ * | 11    | 3       | 65 –76 MHz (East Europe) or 50-65MHz (see bit 9 of gegister 0x07) |
  *
  * @details if you are using the band 3 with 50 to 65 MHz setup, the setFrequencyUp, setFrequencyDown, setFrequencyToBeginBand and setFrequencyToEndBand
  * @details will not work properly. In this case, you have control the limits of the band by yourself.
- *
+ * @code {.cpp}
+ * #include <RDA5807.h>
+ * RDA5807 rx;
+ * void setup() {
+ *   rx.setup();
+ *   rx.setBand(2); // Sets band: 76–108 MHz (world wide)  
+ *   rx.setFrequency(10390); // Tunes at 103.9 MHz
+ * }
+ * void loop() {
+ * }
+ * @endcode
+ * 
  * @param band FM band index. See table above.
  * @see  setBand3_50_65_Mode, getBand3Status
  */
@@ -612,19 +642,38 @@ uint8_t RDA5807::getBand3Status()
 
 /**
  * @ingroup GA03
- * @brief Sets the FM channel space.
- *
+ * @brief Sets the FM channel space. 
+ * @details You can define the frequency step in kHz (see table below)
+ * 
  * Channel space table
+ * 
+ * | Value | Decimal | Description                 |
+ * | ----- | ------- | --------------------------- |
+ * | 00    |    0    | 100KHz      |
+ * | 01    |    1    | 200KHz      |
+ * | 10    |    2    | 50KHz       |
+ * | 11    |    3    | 25KHz       |
  *
- * | Value | Description |
- * | ----- | ----------- |
- * | 00    | 100KHz      |
- * | 01    | 200KHz      |
- * | 10    | 50KHz       |
- * | 11    | 25KHz       |
+ * @code {.cpp}
+ * #include <RDA5807.h>
+ * RDA5807 rx;
+ * void setup() {
+ *  pinMode(4, INPUT_PULLUP); // Arduino pin 4 - Frequency Up
+ *  pinMode(5, INPUT_PULLUP); // Arduino pin 5 - Frequency Down
+ *  rx.setup();
+ *  rx.setBandSpace(2); // 50 kHz Step
+ *  rx.setFrequency(10390); // Tunes in 103.9 MHz
+ * }
+ * void loop() {
+ *  if (digitalRead(4) == LOW) rx.setFrequencyUp();   // Up 50 kHz
+ *  if (digitalRead(5) == LOW) rx.setFrequencyDown(); // Down 50 kHz
+ *  delay(200);
+ * }
+ * @endcode
  *
  * @param space FM channel space. See table above.
  * @todo make the space 01 (200kHz) work.
+ * @see setStep
  */
 void RDA5807::setSpace(uint8_t space)
 {
@@ -666,8 +715,19 @@ void RDA5807::setStep(uint8_t step)
 /**
  * @ingroup GA03
  * @brief Sets De-emphasis.
- * @details 75 μs. Used in USA (default); 50 μs. Used in Europe, Australia, Japan.
- *
+ * @details Default is 75 μs (used in USA); 50 μs is used in Europe, Australia, Japan.
+ * @code {.cpp}
+ * #include <RDA5807.h>
+ * RDA5807 rx;
+ * void setup() {
+ *  rx.setup();
+ *  rx.setFrequency(10390); // Tunes in 103.9 MHz
+ *  rx.setFmDeemphasis(1); // Sets to 50 μs. Used in Europe, Australia, Japan.
+ * }
+ * void loop() {
+ * }
+ * @endcode
+ * 
  * @param de  0 = 75 μs; 1 = 50 μs
  */
 void RDA5807::setFmDeemphasis(uint8_t de)
@@ -1457,8 +1517,26 @@ bool RDA5807::isStereo()
 /**
  * @ingroup GA07
  * @brief Sets the audio volume level
- *
- * @param value
+ * @details You can use values between 0 and 15. 
+ * @code {.cpp}
+ * #include <RDA5807.h>
+ * RDA5807 rx;
+ * void setup() {
+ *   pinMode(4, INPUT_PULLUP); // Arduino pin 4 - Volume Up
+ *   pinMode(5, INPUT_PULLUP); // Arduino pin 5 - Volume Down
+ *   rx.setup();
+ *   rx.setFrequency(10390); // Tunes at 103.9 MHz
+ *   rx.setVolume(7);
+ * }
+ * void loop() {
+ *   if (digitalRead(4) == LOW) rx.setVolumeUp();
+ *   if (digitalRead(5) == LOW) rx.setVolumeDown();
+ *   delay(200);
+ * }
+ * @endcode
+ * 
+ * @param value (from 0 to 15)
+ * @see setVolumeUp, setVolumeDown, setMute, getVolume
  */
 void RDA5807::setVolume(uint8_t value)
 {
