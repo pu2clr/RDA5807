@@ -595,9 +595,9 @@ protected:
     uint16_t fmSpace[4] = {10, 20, 5, 1};             // Actually 100, 200, 50 and 25 kHz Channel Spacing. Just 100 and 50 kHz is working well.
 
     char rds_buffer2A[65]; //!<  RDS Radio Text buffer - Program Information
-    char rds_buffer2B[33]; //!<  RDS Radio Text buffer - Station Informaation
-    char rds_buffer0A[9];  //!<  RDS Basic tuning and switching information (Type 0 groups)
-    char rds_time[25];     //!<  RDS date time received information
+    char rds_buffer2B[33]; //!<  RDS Radio Text buffer - Station Information
+    char rds_buffer0A[9];  //!<  RDS Basic tuning and switching information (Type 0 groups) - Station Name
+    char rds_time[25];     //!<  RDS date time received information - UTC Time
     uint8_t oldTextABFlag; //!<  Saves the latest value of the textABFlag. Useful to check chanhes.
 
     char strFrequency[8]; // Used to store formated frequency
