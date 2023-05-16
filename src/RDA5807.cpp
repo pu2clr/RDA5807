@@ -255,6 +255,17 @@ void RDA5807::powerDown()
  * @details You can select the colck type and the frequency
  * @details oscillator type: OSCILLATOR_TYPE_CRYSTAL = passive crystal; OSCILLATOR_TYPE_REFCLK = active crystal or signal generator
  * @details Clock type: CLOCK_32K, CLOCK_12M, CLOCK_13M, CLOCK_19_2M, CLOCK_24M, CLOCK_26M and CLOCK_38_4M
+ * @code {.cpp}
+ * #include <RDA5807.h> 
+ * RDA5807 rx; 
+ * void setup() {
+ *    rx.setup(); // Starts the receiver with default parameters
+ *    rx.setFrequency(10390); // Tunes in 103.9 MHz  
+ * }
+ * void loop() {
+ * }
+ * @endcode
+ * 
  * @param clock_frequency    optional; Clock frequency. Default 32.768 kHz.
  * @param oscillator_type    optional; Sets the Oscillator type (passive or active crystal); default: passive Crystal.
  * @param rlck_no_calibrate  optional; if 0=RCLK clock is always supply; 1=RCLK clock is not always supply when FM work
@@ -452,7 +463,23 @@ uint16_t RDA5807::getRealFrequency()
 /**
  * @ingroup GA03
  * @brief Seek function
- *
+ * @details look for next or previous station available. Example:
+ * @code {.cpp}
+ * #include <RDA5807.h> 
+ * RDA5807 rx; 
+ * void setup() {
+ *    pinMode(4, INPUT_PULLUP); // Arduino pin 4 - Seek station down
+ *    pinMode(5, INPUT_PULLUP); // Arduino pin 5 - Seek station up
+ *    rx.setup(); // Starts the receiver with default parameters
+ *    rx.setFrequency(10390); // Tunes in 103.9 MHz  - Switch to your local favorite station
+ * }
+ * void loop() {
+ *   if (digitalRead(4) == LOW) rx.seek(RDA_SEEK_WRAP,RDA_SEEK_DOWN);
+ *   if (digitalRead(5) == LOW) rx.seek(RDA_SEEK_WRAP,RDA_SEEK_UP);
+ *   delay(200);
+ * }
+ * @endcode
+ * 
  * @param seek_mode  if 0, wrap at the upper or lower band limit and continue seeking; 1 = stop seeking at the upper or lower band limit
  * @param direction  if 0, seek down; if 1, seek up.
  */
@@ -659,8 +686,19 @@ void RDA5807::setFmDeemphasis(uint8_t de)
  * @ingroup GA04
  * @brief Sets the RDS operation
  * @details Enable or Disable the RDS
- *
+ * @details You must call this function before stating deal with RDS.   
+ * @code {.cpp}
+ * #include <RDA5807.h> 
+ * RDA5807 rx; 
+ * void setup()
+ *   rx.setup(); // Starts the receiver with default parameters
+ *   rx.setRDS(true);
+ *   rx.setRdsFifo(true);
+ *   rx.setFrequency(10390); // Station with RDS service
+ * }
+ * @endcode
  * @param true = turns the RDS ON; false  = turns the RDS OFF
+ * @see setRdsFifo
  */
 void RDA5807::setRDS(bool value)
 {
