@@ -92,7 +92,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gacfa48dfcf792a9bcee489658177aed90';
-        sec-mem-ref-line = '818';
+        sec-mem-ref-line = '823';
         sec-mem-ref-name = 'getRdsReady';
     };
     }; /* sec-member */
@@ -286,7 +286,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gade55e697c7752811086300e710727397';
-        sec-mem-ref-line = '559';
+        sec-mem-ref-line = '564';
         sec-mem-ref-name = 'seek';
     };
       sec-mem-referencedby = {
@@ -591,13 +591,18 @@ _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
  Tunes the receiver at a given frequency. Example:
 @code {.cpp}
-#include <RDA5807.h>
-RDA5807 rx;
+#include <RDA5807.h> 
+RDA5807 rx; 
 void setup() {
- rx.setup();
- rx.setFrequency(10390); // Tunes at 103.9 MHz
+ pinMode(4, INPUT_PULLUP); // Arduino pin 4 - Frequency Up
+ pinMode(5, INPUT_PULLUP); // Arduino pin 5 - Frequency Down
+ rx.setup(); 
+ rx.setFrequency(10390); // Tunes at 103.9 MHz 
 }
 void loop() {
+ if (digitalRead(4) == LOW) rx.setFrequencyUp();
+ if (digitalRead(5) == LOW) rx.setFrequencyDown();
+ delay(200);
 }
 @endcode
 
@@ -844,7 +849,7 @@ _EnD_oF_dEf_TeXt_;
 Gets the current channel stored in 0x0A status register.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 461 
+\iline 466 
 
 @see setChannel, setFrequency, setBand, setSpace
 @see RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12.
@@ -1052,7 +1057,7 @@ _EnD_oF_dEf_TeXt_;
 Sets the FM band. See table below.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 593 
+\iline 598 
 
 FM band table
 
@@ -1387,7 +1392,7 @@ _EnD_oF_dEf_TeXt_;
 Sets audio Mono or stereo.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1494 
+\iline 1499 
 
 @param value TRUE = Mono; FALSE force stereo
 _EnD_oF_dEf_TeXt_;
@@ -1413,7 +1418,7 @@ _EnD_oF_dEf_TeXt_;
 Sets Bass Boost.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1507 
+\iline 1512 
 
 @param value FALSE = Disable; TRUE = Enable
 _EnD_oF_dEf_TeXt_;
@@ -1433,7 +1438,7 @@ _EnD_oF_dEf_TeXt_;
 Gets the current Stereo status.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1520 
+\iline 1525 
 
 @return TRUE if stereo;
 _EnD_oF_dEf_TeXt_;
@@ -1606,7 +1611,7 @@ _EnD_oF_dEf_TeXt_;
 Gets the current audio volume level.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1565 
+\iline 1570 
 
 @return uint8_t  0 to 15
 _EnD_oF_dEf_TeXt_;
@@ -1626,7 +1631,7 @@ _EnD_oF_dEf_TeXt_;
 Increments the audio volume.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1576 
+\iline 1581 
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -1644,7 +1649,7 @@ _EnD_oF_dEf_TeXt_;
 Decrements the audio volume.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1590 
+\iline 1595 
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -1768,7 +1773,7 @@ _EnD_oF_dEf_TeXt_;
 Sets RDS fifo mode enable.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1243 
+\iline 1248 
 
 @param value  If true, it makes the the fifo mode enable.
 @return true  or false
@@ -1798,7 +1803,7 @@ _EnD_oF_dEf_TeXt_;
 Clear RDS fifo.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1256 
+\iline 1261 
 
 @param value  If true, it makes the the fifo mode enable.
 @return true  or false
@@ -1880,7 +1885,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gaa2f71ce870525b429f302ec957d5be0d';
-        sec-mem-ref-line = '875';
+        sec-mem-ref-line = '880';
         sec-mem-ref-name = 'getRdsAllData';
     };
     }; /* sec-member */
@@ -1934,32 +1939,32 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gacfa48dfcf792a9bcee489658177aed90';
-        sec-mem-ref-line = '818';
+        sec-mem-ref-line = '823';
         sec-mem-ref-name = 'getRdsReady';
     };
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
-        sec-mem-ref-line = '1012';
+        sec-mem-ref-line = '1017';
         sec-mem-ref-name = 'getRdsText0A';
     };
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
-        sec-mem-ref-line = '1040';
+        sec-mem-ref-line = '1045';
         sec-mem-ref-name = 'getRdsText2A';
     };
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
-        sec-mem-ref-line = '1067';
+        sec-mem-ref-line = '1072';
         sec-mem-ref-name = 'getRdsText2B';
     };
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gaef398d848e7378ec4897965b8e1b4441';
-        sec-mem-ref-line = '1092';
+        sec-mem-ref-line = '1097';
         sec-mem-ref-name = 'getRdsTime';
     };
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gac6b8c39c1134700ce3e2a9e5216a5325';
-        sec-mem-ref-line = '1235';
+        sec-mem-ref-line = '1240';
         sec-mem-ref-name = 'hasRdsInfoAB';
     };
     }; /* sec-member */
@@ -2055,7 +2060,7 @@ _EnD_oF_dEf_TeXt_;
 Return the group type.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 890 
+\iline 895 
 
 @return uint16_t
 _EnD_oF_dEf_TeXt_;
@@ -2109,12 +2114,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
-        sec-mem-ref-line = '1012';
+        sec-mem-ref-line = '1017';
         sec-mem-ref-name = 'getRdsText0A';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
-        sec-mem-ref-line = '1067';
+        sec-mem-ref-line = '1072';
         sec-mem-ref-name = 'getRdsText2B';
     };
     }; /* sec-member */
@@ -2139,13 +2144,13 @@ _EnD_oF_dEf_TeXt_;
 Process data received from group 2A.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 966 
+\iline 971 
 
 @param c  char array reference to the "group  2A" text
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
-        sec-mem-ref-line = '1040';
+        sec-mem-ref-line = '1045';
         sec-mem-ref-name = 'getRdsText2A';
     };
     }; /* sec-member */
@@ -2169,14 +2174,14 @@ _EnD_oF_dEf_TeXt_;
 Gets the station name and other messages.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
- \xrefitem todo 5.\iline 1007 
+ \xrefitem todo 5.\iline 1012 
 
 @return char* should return a string with the station name.
         However, some stations send other kind of messages
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga6afb347f32121c480adea2a36032d56f';
-        sec-mem-ref-line = '933';
+        sec-mem-ref-line = '938';
         sec-mem-ref-name = 'getNext2Block';
     };
       sec-mem-referenceto = {
@@ -2186,7 +2191,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gaa2f71ce870525b429f302ec957d5be0d';
-        sec-mem-ref-line = '875';
+        sec-mem-ref-line = '880';
         sec-mem-ref-name = 'getRdsAllData';
     };
       sec-mem-referencedby = {
@@ -2221,7 +2226,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
-        sec-mem-ref-line = '1012';
+        sec-mem-ref-line = '1017';
         sec-mem-ref-name = 'getRdsText0A';
     };
     }; /* sec-member */
@@ -2252,7 +2257,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga3ab713bb63978518d42a761b9db445c9';
-        sec-mem-ref-line = '970';
+        sec-mem-ref-line = '975';
         sec-mem-ref-name = 'getNext4Block';
     };
       sec-mem-referenceto = {
@@ -2262,7 +2267,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gaa2f71ce870525b429f302ec957d5be0d';
-        sec-mem-ref-line = '875';
+        sec-mem-ref-line = '880';
         sec-mem-ref-name = 'getRdsAllData';
     };
       sec-mem-referencedby = {
@@ -2298,7 +2303,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
-        sec-mem-ref-line = '1040';
+        sec-mem-ref-line = '1045';
         sec-mem-ref-name = 'getRdsText2A';
     };
     }; /* sec-member */
@@ -2326,7 +2331,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga6afb347f32121c480adea2a36032d56f';
-        sec-mem-ref-line = '933';
+        sec-mem-ref-line = '938';
         sec-mem-ref-name = 'getNext2Block';
     };
       sec-mem-referenceto = {
@@ -2336,7 +2341,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gaa2f71ce870525b429f302ec957d5be0d';
-        sec-mem-ref-line = '875';
+        sec-mem-ref-line = '880';
         sec-mem-ref-name = 'getRdsAllData';
     };
       sec-mem-referencedby = {
@@ -2369,7 +2374,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
-        sec-mem-ref-line = '1067';
+        sec-mem-ref-line = '1072';
         sec-mem-ref-name = 'getRdsText2B';
     };
     }; /* sec-member */
@@ -2397,7 +2402,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gaa2f71ce870525b429f302ec957d5be0d';
-        sec-mem-ref-line = '875';
+        sec-mem-ref-line = '880';
         sec-mem-ref-name = 'getRdsAllData';
     };
     }; /* sec-member */
@@ -2455,7 +2460,7 @@ _EnD_oF_dEf_TeXt_;
 Gets the current Status of block A.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1175 
+\iline 1180 
 
 Block Errors Level of RDS_DATA_0, and is always read as Errors Level of RDS BLOCK A (in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1)
 
@@ -2486,7 +2491,7 @@ _EnD_oF_dEf_TeXt_;
 Gets the current Status of block B.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1198 
+\iline 1203 
 
 Block Errors Level of RDS_DATA_1, and is always read as Errors Level of RDS BLOCK B (in RDS mode ) or E (in RBDS mode when ABCD_E flag is 1).
 <table class="markdownTable">
@@ -2539,7 +2544,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gaa2f71ce870525b429f302ec957d5be0d';
-        sec-mem-ref-line = '875';
+        sec-mem-ref-line = '880';
         sec-mem-ref-name = 'getRdsAllData';
     };
     }; /* sec-member */
@@ -2743,7 +2748,7 @@ _EnD_oF_dEf_TeXt_;
 If 0, I2S output unsigned 16-bit audio data. If 1, I2S output signed 16-bit audio data.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1442 
+\iline 1447 
 
 @param value  true (1) or false (0)
 _EnD_oF_dEf_TeXt_;
@@ -2910,7 +2915,7 @@ _EnD_oF_dEf_TeXt_;
 Check the I2C bus address.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1332 
+\iline 1337 
 
 @param uint8_t address Array - this array will be populated with the I2C bus addresses found (minimum three elements)
 @return 0 if no i2c device is found; -1 if error is found or n > 0, where n is the number of I2C bus address found
@@ -3352,12 +3357,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga22c43e0f08a650bd32446eef6cd8f550';
-        sec-mem-ref-line = '1273';
+        sec-mem-ref-line = '1278';
         sec-mem-ref-name = 'clearRdsBuffer';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
-        sec-mem-ref-line = '1040';
+        sec-mem-ref-line = '1045';
         sec-mem-ref-name = 'getRdsText2A';
     };
     }; /* sec-member */
@@ -3380,12 +3385,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga22c43e0f08a650bd32446eef6cd8f550';
-        sec-mem-ref-line = '1273';
+        sec-mem-ref-line = '1278';
         sec-mem-ref-name = 'clearRdsBuffer';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
-        sec-mem-ref-line = '1067';
+        sec-mem-ref-line = '1072';
         sec-mem-ref-name = 'getRdsText2B';
     };
     }; /* sec-member */
@@ -3408,17 +3413,17 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga22c43e0f08a650bd32446eef6cd8f550';
-        sec-mem-ref-line = '1273';
+        sec-mem-ref-line = '1278';
         sec-mem-ref-name = 'clearRdsBuffer';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
-        sec-mem-ref-line = '1012';
+        sec-mem-ref-line = '1017';
         sec-mem-ref-name = 'getRdsText0A';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gad602518e28efa9abb8319f1f25480551';
-        sec-mem-ref-line = '848';
+        sec-mem-ref-line = '853';
         sec-mem-ref-name = 'isNewRdsFlagAB';
     };
     }; /* sec-member */
@@ -3441,12 +3446,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga22c43e0f08a650bd32446eef6cd8f550';
-        sec-mem-ref-line = '1273';
+        sec-mem-ref-line = '1278';
         sec-mem-ref-name = 'clearRdsBuffer';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gaef398d848e7378ec4897965b8e1b4441';
-        sec-mem-ref-line = '1092';
+        sec-mem-ref-line = '1097';
         sec-mem-ref-name = 'getRdsTime';
     };
     }; /* sec-member */
