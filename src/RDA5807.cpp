@@ -356,13 +356,18 @@ void RDA5807::setChannel(uint16_t channel)
  * @brief Sets the frequency
  * @details Tunes the receiver at a given frequency. Example:
  * @code {.cpp}
- * #include <RDA5807.h>
- * RDA5807 rx;
+ * #include <RDA5807.h> 
+ * RDA5807 rx; 
  * void setup() {
- *  rx.setup();
- *  rx.setFrequency(10390); // Tunes at 103.9 MHz
+ *  pinMode(4, INPUT_PULLUP); // Arduino pin 4 - Frequency Up
+ *  pinMode(5, INPUT_PULLUP); // Arduino pin 5 - Frequency Down
+ *  rx.setup(); 
+ *  rx.setFrequency(10390); // Tunes at 103.9 MHz 
  * }
  * void loop() {
+ *  if (digitalRead(4) == LOW) rx.setFrequencyUp();
+ *  if (digitalRead(5) == LOW) rx.setFrequencyDown();
+ *  delay(200);
  * }
  * @endcode
  * 
