@@ -241,7 +241,7 @@ Basic Functions</h1>
 <dd>
 <a class="el" href="group__GA01.html#ae51bb0aaf958ee320da80866bb20ffb5" title="shadow status registers">shadowStatusRegisters</a>; </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="#l00745">RDA5807::getRdsReady()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00805">RDA5807::getRdsReady()</a>.</p>
 
 </div>
 </div>
@@ -281,7 +281,7 @@ Basic Functions</h1>
 
 <p>Powers the receiver on. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00275">RDA5807::setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00278">RDA5807::setup()</a>.</p>
 
 </div>
 </div>
@@ -553,14 +553,17 @@ Basic Functions</h1>
 <div class="line"><a class="code hl_class" href="group__GA01.html#classRDA5807">RDA5807</a> rx; </div>
 <div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group__GA02.html#ga272444216a784ea5317c83783eb2bfe7">setup</a>() {</div>
 <div class="line">   rx.<a class="code hl_function" href="group__GA02.html#ga272444216a784ea5317c83783eb2bfe7">setup</a>(); <span class="comment">// Starts the receiver with default parameters</span></div>
+<div class="line">   <span class="comment">// rx.setup(CLOCK_32K, OSCILLATOR_TYPE_ACTIVE);  // 32.768kHz Active Crystal</span></div>
+<div class="line">   <span class="comment">// rx.setup(CLOCK_12M, OSCILLATOR_TYPE_PASSIVE); // 12MHz passive crystal </span></div>
+<div class="line">   <span class="comment">// rx.setup(CLOCK_38_4M, OSCILLATOR_TYPE_PASSIVE); // 38.4 MHz passive crystal</span></div>
 <div class="line">   rx.<a class="code hl_function" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a">setFrequency</a>(10390); <span class="comment">// Tunes in 103.9 MHz  </span></div>
 <div class="line">}</div>
 <div class="line"><span class="keywordtype">void</span> loop() {</div>
 <div class="line">}</div>
 <div class="ttc" id="aRDA5807_8h_html"><div class="ttname"><a href="RDA5807_8h.html">RDA5807.h</a></div></div>
 <div class="ttc" id="agroup__GA01_html_classRDA5807"><div class="ttname"><a href="group__GA01.html#classRDA5807">RDA5807</a></div><div class="ttdoc">KT0915 Class.</div><div class="ttdef"><b>Definition:</b> RDA5807.h:568</div></div>
-<div class="ttc" id="agroup__GA02_html_ga272444216a784ea5317c83783eb2bfe7"><div class="ttname"><a href="group__GA02.html#ga272444216a784ea5317c83783eb2bfe7">RDA5807::setup</a></div><div class="ttdeci">void setup(uint8_t clock_frequency=CLOCK_32K, uint8_t oscillator_type=OSCILLATOR_TYPE_PASSIVE, uint8_t rlck_no_calibrate=RLCK_NO_CALIBRATE_MODE_OFF)</div><div class="ttdoc">Starts the device.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:275</div></div>
-<div class="ttc" id="agroup__GA03_html_gad16a6afa9520b77498b17a72c226305a"><div class="ttname"><a href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a">RDA5807::setFrequency</a></div><div class="ttdeci">void setFrequency(uint16_t frequency)</div><div class="ttdoc">Sets the frequency.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:356</div></div>
+<div class="ttc" id="agroup__GA02_html_ga272444216a784ea5317c83783eb2bfe7"><div class="ttname"><a href="group__GA02.html#ga272444216a784ea5317c83783eb2bfe7">RDA5807::setup</a></div><div class="ttdeci">void setup(uint8_t clock_frequency=CLOCK_32K, uint8_t oscillator_type=OSCILLATOR_TYPE_PASSIVE, uint8_t rlck_no_calibrate=RLCK_NO_CALIBRATE_MODE_OFF)</div><div class="ttdoc">Starts the device.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:278</div></div>
+<div class="ttc" id="agroup__GA03_html_gad16a6afa9520b77498b17a72c226305a"><div class="ttname"><a href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a">RDA5807::setFrequency</a></div><div class="ttdeci">void setFrequency(uint16_t frequency)</div><div class="ttdoc">Sets the frequency.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:359</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">clock_frequency</td><td>optional; Clock frequency. Default 32.768 kHz. </td></tr>
@@ -615,7 +618,7 @@ Basic Functions</h1>
 
 <p>Waits for Seek or Tune finish. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l00527">RDA5807::seek()</a>, and <a class="el" href="#l00340">RDA5807::setChannel()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00546">RDA5807::seek()</a>, and <a class="el" href="#l00343">RDA5807::setChannel()</a>.</p>
 
 </div>
 </div>

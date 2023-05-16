@@ -92,7 +92,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gacfa48dfcf792a9bcee489658177aed90';
-        sec-mem-ref-line = '745';
+        sec-mem-ref-line = '805';
         sec-mem-ref-name = 'getRdsReady';
     };
     }; /* sec-member */
@@ -286,12 +286,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gade55e697c7752811086300e710727397';
-        sec-mem-ref-line = '527';
+        sec-mem-ref-line = '546';
         sec-mem-ref-name = 'seek';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gaa9cfaddbd43257e810bb3817b021fa8a';
-        sec-mem-ref-line = '340';
+        sec-mem-ref-line = '343';
         sec-mem-ref-name = 'setChannel';
     };
     }; /* sec-member */
@@ -333,7 +333,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga272444216a784ea5317c83783eb2bfe7';
-        sec-mem-ref-line = '275';
+        sec-mem-ref-line = '278';
         sec-mem-ref-name = 'setup';
     };
     }; /* sec-member */
@@ -405,6 +405,9 @@ _EnD_oF_dEf_TeXt_;
 RDA5807 rx; 
 void setup() {
    rx.setup(); // Starts the receiver with default parameters
+   // rx.setup(CLOCK_32K, OSCILLATOR_TYPE_ACTIVE);  // 32.768kHz Active Crystal
+   // rx.setup(CLOCK_12M, OSCILLATOR_TYPE_PASSIVE); // 12MHz passive crystal 
+   // rx.setup(CLOCK_38_4M, OSCILLATOR_TYPE_PASSIVE); // 38.4 MHz passive crystal
    rx.setFrequency(10390); // Tunes in 103.9 MHz  
 }
 void loop() {
@@ -470,7 +473,7 @@ _EnD_oF_dEf_TeXt_;
 Sets AFC true or false.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 318 
+\iline 321 
 
 @param value  true or false
 _EnD_oF_dEf_TeXt_;
@@ -699,6 +702,22 @@ Increments the current frequency.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
  The increment uses the band space as step. See array: uint16_t fmSpace[4] = {100/10, 200/10, 50/10, 25/10};
+@code {.cpp}
+#include <RDA5807.h> 
+RDA5807 rx; 
+void setup() {
+ pinMode(4, INPUT_PULLUP); // Arduino pin 4 - Frequency Up
+ pinMode(5, INPUT_PULLUP); // Arduino pin 5 - Frequency Down
+ rx.setup(); 
+ rx.setFrequency(10390); // Tunes in 103.9 MHz 
+}
+void loop() {
+ if (digitalRead(4) == LOW) rx.setFrequencyUp();
+ if (digitalRead(5) == LOW) rx.setFrequencyDown();
+ delay(200);
+}
+@endcode
+@see setFrequency, getFrequency
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -812,7 +831,7 @@ _EnD_oF_dEf_TeXt_;
 Gets the current channel stored in 0x0A status register.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 429 
+\iline 448 
 
 @see setChannel, setFrequency, setBand, setSpace
 @see RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 and 12.
@@ -1020,19 +1039,30 @@ _EnD_oF_dEf_TeXt_;
 Sets the FM band. See table below.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 561 
+\iline 580 
 
 FM band table
 
 <table class="markdownTable">
-  <tr class="markdownTableHead">    <th class="markdownTableHeadNone"> Value \ilinebr </th>    <th class="markdownTableHeadNone"> Description \ilinebr </th>  </tr>
-<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 00 \ilinebr </td>    <td class="markdownTableBodyNone"> 87–108 MHz (US/Europe) \ilinebr </td>  </tr>
-<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 01 \ilinebr </td>    <td class="markdownTableBodyNone"> 76–91 MHz (Japan) \ilinebr </td>  </tr>
-<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 10 \ilinebr </td>    <td class="markdownTableBodyNone"> 76–108 MHz (world wide) \ilinebr </td>  </tr>
-<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 11 \ilinebr </td>    <td class="markdownTableBodyNone"> 65 –76 MHz (East Europe) or 50-65MHz (see bit 9 of gegister 0x07) \ilinebr </td>  </tr></table>
+  <tr class="markdownTableHead">    <th class="markdownTableHeadNone"> Value \ilinebr </th>    <th class="markdownTableHeadNone"> Decimal \ilinebr </th>    <th class="markdownTableHeadNone"> Description \ilinebr </th>  </tr>
+<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 00 \ilinebr </td>    <td class="markdownTableBodyNone"> 0 \ilinebr </td>    <td class="markdownTableBodyNone"> 87–108 MHz (US/Europe) \ilinebr </td>  </tr>
+<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 01 \ilinebr </td>    <td class="markdownTableBodyNone"> 1 \ilinebr </td>    <td class="markdownTableBodyNone"> 76–91 MHz (Japan) \ilinebr </td>  </tr>
+<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 10 \ilinebr </td>    <td class="markdownTableBodyNone"> 2 \ilinebr </td>    <td class="markdownTableBodyNone"> 76–108 MHz (world wide) \ilinebr </td>  </tr>
+<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 11 \ilinebr </td>    <td class="markdownTableBodyNone"> 3 \ilinebr </td>    <td class="markdownTableBodyNone"> 65 –76 MHz (East Europe) or 50-65MHz (see bit 9 of gegister 0x07) \ilinebr </td>  </tr></table>
 
 \ilinebr\ilinebr if you are using the band 3 with 50 to 65 MHz setup, the setFrequencyUp, setFrequencyDown, setFrequencyToBeginBand and setFrequencyToEndBand
 \ilinebr\ilinebr will not work properly. In this case, you have control the limits of the band by yourself.
+@code {.cpp}
+#include <RDA5807.h>
+RDA5807 rx;
+void setup() {
+  rx.setup();
+  rx.setBand(2); // Sets band: 76–108 MHz (world wide)  
+  rx.setFrequency(10390); // Tunes at 103.9 MHz
+}
+void loop() {
+}
+@endcode
 
 @param band FM band index. See table above.
 @see  setBand3_50_65_Mode, getBand3Status
@@ -1081,19 +1111,36 @@ _EnD_oF_dEf_TeXt_;
 Sets the FM channel space.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 615 
+ You can define the frequency step in kHz (see table below)
 
 Channel space table
 
 <table class="markdownTable">
-  <tr class="markdownTableHead">    <th class="markdownTableHeadNone"> Value \ilinebr </th>    <th class="markdownTableHeadNone"> Description \ilinebr </th>  </tr>
-<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 00 \ilinebr </td>    <td class="markdownTableBodyNone"> 100KHz \ilinebr </td>  </tr>
-<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 01 \ilinebr </td>    <td class="markdownTableBodyNone"> 200KHz \ilinebr </td>  </tr>
-<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 10 \ilinebr </td>    <td class="markdownTableBodyNone"> 50KHz \ilinebr </td>  </tr>
-<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 11 \ilinebr </td>    <td class="markdownTableBodyNone"> 25KHz \ilinebr </td>  </tr></table>
+  <tr class="markdownTableHead">    <th class="markdownTableHeadNone"> Value \ilinebr </th>    <th class="markdownTableHeadNone"> Decimal \ilinebr </th>    <th class="markdownTableHeadNone"> Description \ilinebr </th>  </tr>
+<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 00 \ilinebr </td>    <td class="markdownTableBodyNone"> 0 \ilinebr </td>    <td class="markdownTableBodyNone"> 100KHz \ilinebr </td>  </tr>
+<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 01 \ilinebr </td>    <td class="markdownTableBodyNone"> 1 \ilinebr </td>    <td class="markdownTableBodyNone"> 200KHz \ilinebr </td>  </tr>
+<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 10 \ilinebr </td>    <td class="markdownTableBodyNone"> 2 \ilinebr </td>    <td class="markdownTableBodyNone"> 50KHz \ilinebr </td>  </tr>
+<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 11 \ilinebr </td>    <td class="markdownTableBodyNone"> 3 \ilinebr </td>    <td class="markdownTableBodyNone"> 25KHz \ilinebr </td>  </tr></table>
+
+@code {.cpp}
+#include <RDA5807.h>
+RDA5807 rx;
+void setup() {
+ pinMode(4, INPUT_PULLUP); // Arduino pin 4 - Frequency Up
+ pinMode(5, INPUT_PULLUP); // Arduino pin 5 - Frequency Down
+ rx.setup();
+ rx.setBandSpace(2); // 50 kHz Step
+ rx.setFrequency(10390); // Tunes in 103.9 MHz
+}
+void loop() {
+ if (digitalRead(4) == LOW) rx.setFrequencyUp();   // Up 50 kHz
+ if (digitalRead(5) == LOW) rx.setFrequencyDown(); // Down 50 kHz
+ delay(200);
+}
+@endcode
 
 @param space FM channel space. See table above.
- \xrefitem todo 1.
+ \xrefitem todo 1.@see setStep
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -1327,7 +1374,7 @@ _EnD_oF_dEf_TeXt_;
 Sets audio Mono or stereo.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1421 
+\iline 1481 
 
 @param value TRUE = Mono; FALSE force stereo
 _EnD_oF_dEf_TeXt_;
@@ -1353,7 +1400,7 @@ _EnD_oF_dEf_TeXt_;
 Sets Bass Boost.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1434 
+\iline 1494 
 
 @param value FALSE = Disable; TRUE = Enable
 _EnD_oF_dEf_TeXt_;
@@ -1373,7 +1420,7 @@ _EnD_oF_dEf_TeXt_;
 Gets the current Stereo status.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1447 
+\iline 1507 
 
 @return TRUE if stereo;
 _EnD_oF_dEf_TeXt_;
@@ -1483,7 +1530,7 @@ _EnD_oF_dEf_TeXt_;
 Sets Soft Blend.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 306 
+\iline 309 
 
 @param value  true or false
 _EnD_oF_dEf_TeXt_;
@@ -1509,9 +1556,26 @@ _EnD_oF_dEf_TeXt_;
 Sets the audio volume level.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1459 
+ You can use values between 0 and 15. 
+@code {.cpp}
+#include <RDA5807.h>
+RDA5807 rx;
+void setup() {
+  pinMode(4, INPUT_PULLUP); // Arduino pin 4 - Volume Up
+  pinMode(5, INPUT_PULLUP); // Arduino pin 5 - Volume Down
+  rx.setup();
+  rx.setFrequency(10390); // Tunes at 103.9 MHz
+  rx.setVolume(7);
+}
+void loop() {
+  if (digitalRead(4) == LOW) rx.setVolumeUp();
+  if (digitalRead(5) == LOW) rx.setVolumeDown();
+  delay(200);
+}
+@endcode
 
-@param value
+@param value (from 0 to 15)
+@see setVolumeUp, setVolumeDown, setMute, getVolume
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -1529,7 +1593,7 @@ _EnD_oF_dEf_TeXt_;
 Gets the current audio volume level.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1474 
+\iline 1552 
 
 @return uint8_t  0 to 15
 _EnD_oF_dEf_TeXt_;
@@ -1549,7 +1613,7 @@ _EnD_oF_dEf_TeXt_;
 Increments the audio volume.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1485 
+\iline 1563 
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -1567,7 +1631,7 @@ _EnD_oF_dEf_TeXt_;
 Decrements the audio volume.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1499 
+\iline 1577 
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -1591,7 +1655,18 @@ _EnD_oF_dEf_TeXt_;
 Sets De-emphasis.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
- 75 μs. Used in USA (default); 50 μs. Used in Europe, Australia, Japan.
+ Default is 75 μs (used in USA); 50 μs is used in Europe, Australia, Japan.
+@code {.cpp}
+#include <RDA5807.h>
+RDA5807 rx;
+void setup() {
+ rx.setup();
+ rx.setFrequency(10390); // Tunes in 103.9 MHz
+ rx.setFmDeemphasis(1); // Sets to 50 μs. Used in Europe, Australia, Japan.
+}
+void loop() {
+}
+@endcode
 
 @param de  0 = 75 μs; 1 = 50 μs
 _EnD_oF_dEf_TeXt_;
@@ -1680,7 +1755,7 @@ _EnD_oF_dEf_TeXt_;
 Sets RDS fifo mode enable.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1170 
+\iline 1230 
 
 @param value  If true, it makes the the fifo mode enable.
 @return true  or false
@@ -1710,7 +1785,7 @@ _EnD_oF_dEf_TeXt_;
 Clear RDS fifo.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1183 
+\iline 1243 
 
 @param value  If true, it makes the the fifo mode enable.
 @return true  or false
@@ -1792,7 +1867,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gaa2f71ce870525b429f302ec957d5be0d';
-        sec-mem-ref-line = '802';
+        sec-mem-ref-line = '862';
         sec-mem-ref-name = 'getRdsAllData';
     };
     }; /* sec-member */
@@ -1846,32 +1921,32 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gacfa48dfcf792a9bcee489658177aed90';
-        sec-mem-ref-line = '745';
+        sec-mem-ref-line = '805';
         sec-mem-ref-name = 'getRdsReady';
     };
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
-        sec-mem-ref-line = '939';
+        sec-mem-ref-line = '999';
         sec-mem-ref-name = 'getRdsText0A';
     };
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
-        sec-mem-ref-line = '967';
+        sec-mem-ref-line = '1027';
         sec-mem-ref-name = 'getRdsText2A';
     };
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
-        sec-mem-ref-line = '994';
+        sec-mem-ref-line = '1054';
         sec-mem-ref-name = 'getRdsText2B';
     };
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gaef398d848e7378ec4897965b8e1b4441';
-        sec-mem-ref-line = '1019';
+        sec-mem-ref-line = '1079';
         sec-mem-ref-name = 'getRdsTime';
     };
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gac6b8c39c1134700ce3e2a9e5216a5325';
-        sec-mem-ref-line = '1162';
+        sec-mem-ref-line = '1222';
         sec-mem-ref-name = 'hasRdsInfoAB';
     };
     }; /* sec-member */
@@ -1967,7 +2042,7 @@ _EnD_oF_dEf_TeXt_;
 Return the group type.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 817 
+\iline 877 
 
 @return uint16_t
 _EnD_oF_dEf_TeXt_;
@@ -2021,12 +2096,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
-        sec-mem-ref-line = '939';
+        sec-mem-ref-line = '999';
         sec-mem-ref-name = 'getRdsText0A';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
-        sec-mem-ref-line = '994';
+        sec-mem-ref-line = '1054';
         sec-mem-ref-name = 'getRdsText2B';
     };
     }; /* sec-member */
@@ -2051,13 +2126,13 @@ _EnD_oF_dEf_TeXt_;
 Process data received from group 2A.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 893 
+\iline 953 
 
 @param c  char array reference to the "group  2A" text
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
-        sec-mem-ref-line = '967';
+        sec-mem-ref-line = '1027';
         sec-mem-ref-name = 'getRdsText2A';
     };
     }; /* sec-member */
@@ -2081,14 +2156,14 @@ _EnD_oF_dEf_TeXt_;
 Gets the station name and other messages.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
- \xrefitem todo 5.\iline 934 
+ \xrefitem todo 5.\iline 994 
 
 @return char* should return a string with the station name.
         However, some stations send other kind of messages
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga6afb347f32121c480adea2a36032d56f';
-        sec-mem-ref-line = '860';
+        sec-mem-ref-line = '920';
         sec-mem-ref-name = 'getNext2Block';
     };
       sec-mem-referenceto = {
@@ -2098,7 +2173,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gaa2f71ce870525b429f302ec957d5be0d';
-        sec-mem-ref-line = '802';
+        sec-mem-ref-line = '862';
         sec-mem-ref-name = 'getRdsAllData';
     };
       sec-mem-referencedby = {
@@ -2133,7 +2208,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
-        sec-mem-ref-line = '939';
+        sec-mem-ref-line = '999';
         sec-mem-ref-name = 'getRdsText0A';
     };
     }; /* sec-member */
@@ -2164,7 +2239,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga3ab713bb63978518d42a761b9db445c9';
-        sec-mem-ref-line = '897';
+        sec-mem-ref-line = '957';
         sec-mem-ref-name = 'getNext4Block';
     };
       sec-mem-referenceto = {
@@ -2174,7 +2249,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gaa2f71ce870525b429f302ec957d5be0d';
-        sec-mem-ref-line = '802';
+        sec-mem-ref-line = '862';
         sec-mem-ref-name = 'getRdsAllData';
     };
       sec-mem-referencedby = {
@@ -2210,7 +2285,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
-        sec-mem-ref-line = '967';
+        sec-mem-ref-line = '1027';
         sec-mem-ref-name = 'getRdsText2A';
     };
     }; /* sec-member */
@@ -2238,7 +2313,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga6afb347f32121c480adea2a36032d56f';
-        sec-mem-ref-line = '860';
+        sec-mem-ref-line = '920';
         sec-mem-ref-name = 'getNext2Block';
     };
       sec-mem-referenceto = {
@@ -2248,7 +2323,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gaa2f71ce870525b429f302ec957d5be0d';
-        sec-mem-ref-line = '802';
+        sec-mem-ref-line = '862';
         sec-mem-ref-name = 'getRdsAllData';
     };
       sec-mem-referencedby = {
@@ -2281,7 +2356,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
-        sec-mem-ref-line = '994';
+        sec-mem-ref-line = '1054';
         sec-mem-ref-name = 'getRdsText2B';
     };
     }; /* sec-member */
@@ -2309,7 +2384,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gaa2f71ce870525b429f302ec957d5be0d';
-        sec-mem-ref-line = '802';
+        sec-mem-ref-line = '862';
         sec-mem-ref-name = 'getRdsAllData';
     };
     }; /* sec-member */
@@ -2367,7 +2442,7 @@ _EnD_oF_dEf_TeXt_;
 Gets the current Status of block A.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1102 
+\iline 1162 
 
 Block Errors Level of RDS_DATA_0, and is always read as Errors Level of RDS BLOCK A (in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1)
 
@@ -2398,7 +2473,7 @@ _EnD_oF_dEf_TeXt_;
 Gets the current Status of block B.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1125 
+\iline 1185 
 
 Block Errors Level of RDS_DATA_1, and is always read as Errors Level of RDS BLOCK B (in RDS mode ) or E (in RBDS mode when ABCD_E flag is 1).
 <table class="markdownTable">
@@ -2451,7 +2526,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gaa2f71ce870525b429f302ec957d5be0d';
-        sec-mem-ref-line = '802';
+        sec-mem-ref-line = '862';
         sec-mem-ref-name = 'getRdsAllData';
     };
     }; /* sec-member */
@@ -2655,7 +2730,7 @@ _EnD_oF_dEf_TeXt_;
 If 0, I2S output unsigned 16-bit audio data. If 1, I2S output signed 16-bit audio data.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1369 
+\iline 1429 
 
 @param value  true (1) or false (0)
 _EnD_oF_dEf_TeXt_;
@@ -2822,7 +2897,7 @@ _EnD_oF_dEf_TeXt_;
 Check the I2C bus address.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1259 
+\iline 1319 
 
 @param uint8_t address Array - this array will be populated with the I2C bus addresses found (minimum three elements)
 @return 0 if no i2c device is found; -1 if error is found or n > 0, where n is the number of I2C bus address found
@@ -3264,12 +3339,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga22c43e0f08a650bd32446eef6cd8f550';
-        sec-mem-ref-line = '1200';
+        sec-mem-ref-line = '1260';
         sec-mem-ref-name = 'clearRdsBuffer';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
-        sec-mem-ref-line = '967';
+        sec-mem-ref-line = '1027';
         sec-mem-ref-name = 'getRdsText2A';
     };
     }; /* sec-member */
@@ -3292,12 +3367,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga22c43e0f08a650bd32446eef6cd8f550';
-        sec-mem-ref-line = '1200';
+        sec-mem-ref-line = '1260';
         sec-mem-ref-name = 'clearRdsBuffer';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
-        sec-mem-ref-line = '994';
+        sec-mem-ref-line = '1054';
         sec-mem-ref-name = 'getRdsText2B';
     };
     }; /* sec-member */
@@ -3320,17 +3395,17 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga22c43e0f08a650bd32446eef6cd8f550';
-        sec-mem-ref-line = '1200';
+        sec-mem-ref-line = '1260';
         sec-mem-ref-name = 'clearRdsBuffer';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
-        sec-mem-ref-line = '939';
+        sec-mem-ref-line = '999';
         sec-mem-ref-name = 'getRdsText0A';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gad602518e28efa9abb8319f1f25480551';
-        sec-mem-ref-line = '775';
+        sec-mem-ref-line = '835';
         sec-mem-ref-name = 'isNewRdsFlagAB';
     };
     }; /* sec-member */
@@ -3353,12 +3428,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1ga22c43e0f08a650bd32446eef6cd8f550';
-        sec-mem-ref-line = '1200';
+        sec-mem-ref-line = '1260';
         sec-mem-ref-name = 'clearRdsBuffer';
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8cpp_1gaef398d848e7378ec4897965b8e1b4441';
-        sec-mem-ref-line = '1019';
+        sec-mem-ref-line = '1079';
         sec-mem-ref-name = 'getRdsTime';
     };
     }; /* sec-member */
