@@ -957,6 +957,8 @@ Cordova provides an easy way to develop for iOS and Android.
 * [FM Receiver with RDA5807 Arduino Library by PU2CLR](https://youtu.be/eLWEWEjxM8U)
 * [RDA5807 FM receiver and ATiny85 with PU2CLR Arduino Library](https://youtu.be/FX8O5V6vcLg)
 * [MINIMALIST RECEIVER WITH RDA5807 ARDUINO LIBRARY](https://youtu.be/C-wlpbgniLY)
+* [RDA5807 Arduino Library with  RDS support (ATtiny85, Arduino Nano, ESP32)](https://youtu.be/se6AjPaYcXo)
+* [MORE RDS WITH RDA5807 ARDUINO LIBRARY ON ARDUINO NANO, ESP32 AND ATTINY85](https://youtu.be/ZircO8PAPBs)
 * [Receptor de FM SDR con RDA5807 - Spanish](https://youtu.be/6PAnqT2TrL8)
 * [RDA5807 Fm based radio - Portuguese](https://youtu.be/2g1KJkDFCaU)
 * [Rádio FM RDA5807 com ESP32, Arduino etc - Portuguese](https://www.dobitaobyte.com.br/radio-fm-rda5807-com-esp32-arduino-etc/?amp)
