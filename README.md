@@ -62,7 +62,7 @@ This library has been successfully tested on RDA5807M and RDA5807FP devices. The
 
 {% include video03.html %}
 
-* [See RDS and Nokia 5110 Display example - youtube](https://youtu.be/jInacTWoF9Y) 
+* [See RDS and RDA5807 using this library - youtube](https://youtu.be/ZircO8PAPBs) 
 
 
 {% include video02.html %}
