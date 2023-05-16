@@ -490,7 +490,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <div class="line">   pinMode(4, INPUT_PULLUP); <span class="comment">// Arduino pin 4 - Seek station down</span></div>
 <div class="line">   pinMode(5, INPUT_PULLUP); <span class="comment">// Arduino pin 5 - Seek station up</span></div>
 <div class="line">   rx.<a class="code hl_function" href="group__GA02.html#ga272444216a784ea5317c83783eb2bfe7">setup</a>(); <span class="comment">// Starts the receiver with default parameters</span></div>
-<div class="line">   rx.<a class="code hl_function" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a">setFrequency</a>(10390); <span class="comment">// Tunes in 103.9 MHz  - Switch to your local favorite station</span></div>
+<div class="line">   rx.<a class="code hl_function" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a">setFrequency</a>(10390); <span class="comment">// Tunes at 103.9 MHz  - Switch to your local favorite station</span></div>
 <div class="line">}</div>
 <div class="line"><span class="keywordtype">void</span> loop() {</div>
 <div class="line">  <span class="keywordflow">if</span> (digitalRead(4) == LOW) rx.<a class="code hl_function" href="group__GA03.html#ga87de696f0a40724c19c89b6b48766020">seek</a>(<a class="code hl_define" href="RDA5807_8h.html#a52b8411f4955a310beb41daaa5f352af">RDA_SEEK_WRAP</a>,<a class="code hl_define" href="RDA5807_8h.html#a74e39d5bc02861c91b57da7751729ef1">RDA_SEEK_DOWN</a>);</div>
@@ -503,8 +503,8 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <div class="ttc" id="aRDA5807_8h_html_a74e39d5bc02861c91b57da7751729ef1"><div class="ttname"><a href="RDA5807_8h.html#a74e39d5bc02861c91b57da7751729ef1">RDA_SEEK_DOWN</a></div><div class="ttdeci">#define RDA_SEEK_DOWN</div><div class="ttdoc">Seek Down.</div><div class="ttdef"><b>Definition:</b> RDA5807.h:59</div></div>
 <div class="ttc" id="agroup__GA01_html_classRDA5807"><div class="ttname"><a href="group__GA01.html#classRDA5807">RDA5807</a></div><div class="ttdoc">KT0915 Class.</div><div class="ttdef"><b>Definition:</b> RDA5807.h:568</div></div>
 <div class="ttc" id="agroup__GA02_html_ga272444216a784ea5317c83783eb2bfe7"><div class="ttname"><a href="group__GA02.html#ga272444216a784ea5317c83783eb2bfe7">RDA5807::setup</a></div><div class="ttdeci">void setup(uint8_t clock_frequency=CLOCK_32K, uint8_t oscillator_type=OSCILLATOR_TYPE_PASSIVE, uint8_t rlck_no_calibrate=RLCK_NO_CALIBRATE_MODE_OFF)</div><div class="ttdoc">Starts the device.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:278</div></div>
-<div class="ttc" id="agroup__GA03_html_ga87de696f0a40724c19c89b6b48766020"><div class="ttname"><a href="group__GA03.html#ga87de696f0a40724c19c89b6b48766020">RDA5807::seek</a></div><div class="ttdeci">void seek(uint8_t seek_mode, uint8_t direction)</div><div class="ttdoc">Seek function.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:505</div></div>
-<div class="ttc" id="agroup__GA03_html_gad16a6afa9520b77498b17a72c226305a"><div class="ttname"><a href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a">RDA5807::setFrequency</a></div><div class="ttdeci">void setFrequency(uint16_t frequency)</div><div class="ttdoc">Sets the frequency.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:359</div></div>
+<div class="ttc" id="agroup__GA03_html_ga87de696f0a40724c19c89b6b48766020"><div class="ttname"><a href="group__GA03.html#ga87de696f0a40724c19c89b6b48766020">RDA5807::seek</a></div><div class="ttdeci">void seek(uint8_t seek_mode, uint8_t direction)</div><div class="ttdoc">Seek function.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:518</div></div>
+<div class="ttc" id="agroup__GA03_html_gad16a6afa9520b77498b17a72c226305a"><div class="ttname"><a href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a">RDA5807::setFrequency</a></div><div class="ttdeci">void setFrequency(uint16_t frequency)</div><div class="ttdoc">Sets the frequency.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:372</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">seek_mode</td><td>if 0, wrap at the upper or lower band limit and continue seeking; 1 = stop seeking at the upper or lower band limit </td></tr>
@@ -565,7 +565,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <div class="line"><span class="keywordtype">void</span> loop() {</div>
 <div class="line"> .</div>
 <div class="line"> .</div>
-<div class="line">     rx.seek(SI470X_SEEK_WRAP, SI470X_SEEK_UP, showFrequency); <span class="comment">// Seek Up</span></div>
+<div class="line">     rx.seek(<a class="code hl_define" href="RDA5807_8h.html#a52b8411f4955a310beb41daaa5f352af">RDA_SEEK_WRAP</a>, <a class="code hl_define" href="RDA5807_8h.html#a6cfac82e09114c1cdf276646ad595949">RDA_SEEK_UP</a>, showFrequency); <span class="comment">// Seek Up</span></div>
 <div class="line"> .</div>
 <div class="line"> .</div>
 <div class="line">}</div>
@@ -648,7 +648,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <div class="line">}</div>
 <div class="line"><span class="keywordtype">void</span> loop() {</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__GA03_html_ga889cfe43f3f9c9ca92c9862261d5dbbf"><div class="ttname"><a href="group__GA03.html#ga889cfe43f3f9c9ca92c9862261d5dbbf">RDA5807::setBand</a></div><div class="ttdeci">void setBand(uint8_t band=0)</div><div class="ttdoc">Sets the FM band. See table below.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:608</div></div>
+<div class="ttc" id="agroup__GA03_html_ga889cfe43f3f9c9ca92c9862261d5dbbf"><div class="ttname"><a href="group__GA03.html#ga889cfe43f3f9c9ca92c9862261d5dbbf">RDA5807::setBand</a></div><div class="ttdeci">void setBand(uint8_t band=0)</div><div class="ttdoc">Sets the FM band. See table below.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:621</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">band</td><td>FM band index. See table above. </td></tr>
@@ -768,12 +768,12 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <div class="line"><a class="code hl_class" href="group__GA01.html#classRDA5807">RDA5807</a> rx;</div>
 <div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group__GA02.html#ga272444216a784ea5317c83783eb2bfe7">setup</a>() {</div>
 <div class="line"> rx.<a class="code hl_function" href="group__GA02.html#ga272444216a784ea5317c83783eb2bfe7">setup</a>();</div>
-<div class="line"> rx.<a class="code hl_function" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a">setFrequency</a>(10390); <span class="comment">// Tunes in 103.9 MHz</span></div>
+<div class="line"> rx.<a class="code hl_function" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a">setFrequency</a>(10390); <span class="comment">// Tunes at 103.9 MHz</span></div>
 <div class="line"> rx.<a class="code hl_function" href="group__GA03.html#ga4f8fe00a561c39d2dc9a0a143b1866e9">setFmDeemphasis</a>(1); <span class="comment">// Sets to 50 μs. Used in Europe, Australia, Japan.</span></div>
 <div class="line">}</div>
 <div class="line"><span class="keywordtype">void</span> loop() {</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__GA03_html_ga4f8fe00a561c39d2dc9a0a143b1866e9"><div class="ttname"><a href="group__GA03.html#ga4f8fe00a561c39d2dc9a0a143b1866e9">RDA5807::setFmDeemphasis</a></div><div class="ttdeci">void setFmDeemphasis(uint8_t de)</div><div class="ttdoc">Sets De-emphasis.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:733</div></div>
+<div class="ttc" id="agroup__GA03_html_ga4f8fe00a561c39d2dc9a0a143b1866e9"><div class="ttname"><a href="group__GA03.html#ga4f8fe00a561c39d2dc9a0a143b1866e9">RDA5807::setFmDeemphasis</a></div><div class="ttdeci">void setFmDeemphasis(uint8_t de)</div><div class="ttdoc">Sets De-emphasis.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:746</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">de</td><td>0 = 75 μs; 1 = 50 μs </td></tr>
@@ -800,12 +800,21 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 </div><div class="memdoc">
 
 <p>Sets the frequency. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Tunes the receiver at a given frequency. Example: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="RDA5807_8h.html">RDA5807.h</a>&gt;</span></div>
+<div class="line"><a class="code hl_class" href="group__GA01.html#classRDA5807">RDA5807</a> rx;</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group__GA02.html#ga272444216a784ea5317c83783eb2bfe7">setup</a>() {</div>
+<div class="line"> rx.<a class="code hl_function" href="group__GA02.html#ga272444216a784ea5317c83783eb2bfe7">setup</a>();</div>
+<div class="line"> rx.<a class="code hl_function" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a">setFrequency</a>(10390); <span class="comment">// Tunes at 103.9 MHz</span></div>
+<div class="line">}</div>
+<div class="line"><span class="keywordtype">void</span> loop() {</div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">frequency</td><td></td></tr>
+    <tr><td class="paramname">frequency</td><td>- an integer with the frequency value (Example: 7600=76MHz, 10790 = 107,90MHz) </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA03.html#ga4e8db177fea475ea00fa04e3d8f1f08c" title="Increments the current frequency.">setFrequencyUp</a>, <a class="el" href="group__GA03.html#gadba771c864ace7a8373a76554b9d3e6a" title="Decrements the current frequency.">setFrequencyDown</a>, <a class="el" href="group__GA03.html#ga59b981002d383a13731bd939482a5236" title="Gets the current frequency.">getFrequency</a> </dd></dl>
 
 </div>
 </div>
@@ -933,15 +942,15 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <div class="line"> pinMode(4, INPUT_PULLUP); <span class="comment">// Arduino pin 4 - Frequency Up</span></div>
 <div class="line"> pinMode(5, INPUT_PULLUP); <span class="comment">// Arduino pin 5 - Frequency Down</span></div>
 <div class="line"> rx.<a class="code hl_function" href="group__GA02.html#ga272444216a784ea5317c83783eb2bfe7">setup</a>(); </div>
-<div class="line"> rx.<a class="code hl_function" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a">setFrequency</a>(10390); <span class="comment">// Tunes in 103.9 MHz </span></div>
+<div class="line"> rx.<a class="code hl_function" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a">setFrequency</a>(10390); <span class="comment">// Tunes at 103.9 MHz </span></div>
 <div class="line">}</div>
 <div class="line"><span class="keywordtype">void</span> loop() {</div>
 <div class="line"> <span class="keywordflow">if</span> (digitalRead(4) == LOW) rx.<a class="code hl_function" href="group__GA03.html#ga4e8db177fea475ea00fa04e3d8f1f08c">setFrequencyUp</a>();</div>
 <div class="line"> <span class="keywordflow">if</span> (digitalRead(5) == LOW) rx.<a class="code hl_function" href="group__GA03.html#gadba771c864ace7a8373a76554b9d3e6a">setFrequencyDown</a>();</div>
 <div class="line"> delay(200);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__GA03_html_ga4e8db177fea475ea00fa04e3d8f1f08c"><div class="ttname"><a href="group__GA03.html#ga4e8db177fea475ea00fa04e3d8f1f08c">RDA5807::setFrequencyUp</a></div><div class="ttdeci">void setFrequencyUp()</div><div class="ttdoc">Increments the current frequency.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:411</div></div>
-<div class="ttc" id="agroup__GA03_html_gadba771c864ace7a8373a76554b9d3e6a"><div class="ttname"><a href="group__GA03.html#gadba771c864ace7a8373a76554b9d3e6a">RDA5807::setFrequencyDown</a></div><div class="ttdeci">void setFrequencyDown()</div><div class="ttdoc">Decrements the current frequency.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:426</div></div>
+<div class="ttc" id="agroup__GA03_html_ga4e8db177fea475ea00fa04e3d8f1f08c"><div class="ttname"><a href="group__GA03.html#ga4e8db177fea475ea00fa04e3d8f1f08c">RDA5807::setFrequencyUp</a></div><div class="ttdeci">void setFrequencyUp()</div><div class="ttdoc">Increments the current frequency.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:424</div></div>
+<div class="ttc" id="agroup__GA03_html_gadba771c864ace7a8373a76554b9d3e6a"><div class="ttname"><a href="group__GA03.html#gadba771c864ace7a8373a76554b9d3e6a">RDA5807::setFrequencyDown</a></div><div class="ttdeci">void setFrequencyDown()</div><div class="ttdoc">Decrements the current frequency.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:439</div></div>
 </div><!-- fragment --> <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a" title="Sets the frequency.">setFrequency</a>, <a class="el" href="group__GA03.html#ga59b981002d383a13731bd939482a5236" title="Gets the current frequency.">getFrequency</a> </dd></dl>
 
 </div>
@@ -1036,7 +1045,7 @@ RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015; pages 9 an
 <div class="line"> pinMode(5, INPUT_PULLUP); <span class="comment">// Arduino pin 5 - Frequency Down</span></div>
 <div class="line"> rx.<a class="code hl_function" href="group__GA02.html#ga272444216a784ea5317c83783eb2bfe7">setup</a>();</div>
 <div class="line"> rx.setBandSpace(2); <span class="comment">// 50 kHz Step</span></div>
-<div class="line"> rx.<a class="code hl_function" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a">setFrequency</a>(10390); <span class="comment">// Tunes in 103.9 MHz</span></div>
+<div class="line"> rx.<a class="code hl_function" href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a">setFrequency</a>(10390); <span class="comment">// Tunes at 103.9 MHz</span></div>
 <div class="line">}</div>
 <div class="line"><span class="keywordtype">void</span> loop() {</div>
 <div class="line"> <span class="keywordflow">if</span> (digitalRead(4) == LOW) rx.<a class="code hl_function" href="group__GA03.html#ga4e8db177fea475ea00fa04e3d8f1f08c">setFrequencyUp</a>();   <span class="comment">// Up 50 kHz</span></div>
