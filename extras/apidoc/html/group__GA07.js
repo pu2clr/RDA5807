@@ -7,6 +7,7 @@ var group__GA07 =
     [ "RDA5807::isStereo", "group__GA07.html#ga250ff3788a7831dae3c6200919b446dd", null ],
     [ "RDA5807::setAudioOutputHighImpedance", "group__GA07.html#gaabd554f39778bf6d81712df0ea72d0fa", null ],
     [ "RDA5807::setBass", "group__GA07.html#ga8002bb394ef19db02e04a39de04dffc5", null ],
+    [ "RDA5807::setLedStereoIndicator", "group__GA07.html#ga7955280c2b3a9b5e7336fc3862133b39", null ],
     [ "RDA5807::setMono", "group__GA07.html#gad6e77ffbeb3f4dc885548130e09590d6", null ],
     [ "RDA5807::setMute", "group__GA07.html#gafec3018913d735ee0684b88cf503c84a", null ],
     [ "RDA5807::setSoftmute", "group__GA07.html#gadd2c2ab8b861ab0714fdeb99c774d656", null ],

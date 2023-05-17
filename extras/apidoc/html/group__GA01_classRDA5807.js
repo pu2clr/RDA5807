@@ -77,6 +77,7 @@ var group__GA01_classRDA5807 =
     [ "setI2SOn", "group__GA06.html#gafe324014c135a510714e7d722f291273", null ],
     [ "setI2SSpeed", "group__GA06.html#ga3d5618cd755c0a56fea68ea589bb828f", null ],
     [ "setInterruptMode", "group__GA02.html#gabd676c0e4ad20c6152a68f8daba64cb3", null ],
+    [ "setLedStereoIndicator", "group__GA07.html#ga7955280c2b3a9b5e7336fc3862133b39", null ],
     [ "setLnaIcSel", "group__GA08.html#ga35428e147462af6490c382acdf769173", null ],
     [ "setLnaPortSel", "group__GA08.html#gaf595aab626e55ab733af8682674faa61", null ],
     [ "setMono", "group__GA07.html#gad6e77ffbeb3f4dc885548130e09590d6", null ],
