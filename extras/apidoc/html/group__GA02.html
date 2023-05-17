@@ -241,7 +241,7 @@ Basic Functions</h1>
 <dd>
 <a class="el" href="group__GA01.html#ae51bb0aaf958ee320da80866bb20ffb5" title="shadow status registers">shadowStatusRegisters</a>; </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="#l00823">RDA5807::getRdsReady()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l00824">RDA5807::getRdsReady()</a>.</p>
 
 </div>
 </div>
@@ -435,12 +435,12 @@ Basic Functions</h1>
 
 <p>Sets InterruptMode. </p>
 <p>If 0, generate 5ms interrupt;</p>
-<p>If 1, interrupt last until read reg0CH action occurs.</p>
+<p>If 1, interrupt last until read reg 0CH action occurs.</p>
 <p>When 1, it can be used to Interact with RDS - BLOCK A ( in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1)</p>
 <p>In this case, use the GPIO2 to interrupt setup with the MCU (microcontroller)</p>
 <p>ATTENTION: This function affects the behavior of the GPIO2 pin. The register 0x04 GPIO2 attribute will be setted to 1 </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>0 or 1 </td></tr>
+    <tr><td class="paramname">value</td><td>1 - Enable RDS Interrupt interation; 0 - Disable </td></tr>
   </table>
   </dd>
 </dl>
