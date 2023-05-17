@@ -2579,7 +2579,7 @@ _EnD_oF_dEf_TeXt_;
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
       sec-mem-desc-line = '888';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Returns true when the RDS system has valid Station Name information.
+Returns true when the RDS system has valid information.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
 @return  true or false
