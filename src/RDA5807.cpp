@@ -32,8 +32,7 @@
  * @param mcuPip    MCU (Arduino) pin connected to the gpio
  */
 void RDA5807::setGpio(uint8_t gpioPin, uint8_t gpioSetup, int mcuPin)
-{
-
+{   
     switch (gpioPin)
     {
     case 1:
@@ -62,7 +61,7 @@ void RDA5807::setGpio(uint8_t gpioPin, uint8_t gpioSetup, int mcuPin)
  * @details When 1, it can be used to Interact with RDS - BLOCK A ( in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1)
  * @details In this case, use the GPIO2 to interrupt setup with the MCU  (microcontroller)
  * @details ATTENTION: This function affects the behavior of the GPIO2 pin. The register 0x04 GPIO2 attribute will be setted to 1
- * @param value  0 or 1
+ * @param value  1 - Enable RDS Interrupt interation; 0 - Disable
  * @see setGpio
  */
 void RDA5807::setInterruptMode(uint8_t value)
@@ -70,8 +69,9 @@ void RDA5807::setInterruptMode(uint8_t value)
     reg05->refined.INT_MODE = value; // 0 - generate 5ms interrupt; 1 - interrupt last until read reg0CH action occurs.
     setRegister(REG05, reg05->raw);
 
-    reg04->refined.GPIO2 = value; // 0 - Hight impedance or 1 - Interrupt (INT)
+    reg04->refined.GPIO2 = 0; // 0 - Hight impedance or 1 - Interrupt (INT)
     setRegister(REG04, reg04->raw);
+
 }
 
 /**
@@ -1261,7 +1261,7 @@ void RDA5807::setRdsFifo(bool value)
  * @ingroup GA04
  * @brief Clear RDS fifo
  *
- * @param value  If true, it makes the the fifo mode enable.
+ * @param value  If true, clears the RDS fifo
  * @return true  or false
  */
 void RDA5807::clearRdsFifo(bool value)

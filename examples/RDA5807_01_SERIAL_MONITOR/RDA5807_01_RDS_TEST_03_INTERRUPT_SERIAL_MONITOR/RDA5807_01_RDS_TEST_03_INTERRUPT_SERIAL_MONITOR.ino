@@ -27,7 +27,7 @@
 
 #define  MAX_DELAY_STATUS 30000        // Defined time to update the receiver status information 
 #define  RDS_ACTION_INTERRUPT 2
-#define  STATION_WITH_RDS_SERVICE 8990  // Local station with good RDS service (89,90Mhz)
+#define  STATION_WITH_RDS_SERVICE 9390  // Local station with good RDS service (89,90Mhz)
 
 
 long rds_elapsed = millis();
@@ -40,33 +40,33 @@ volatile int rdsCount = 0; //
 RDA5807 rx;
 
 void setup() {
-
   Serial.begin(9600);
   while (!Serial)
     ;
   Serial.println(F("\nPU2CLR RDA5807 Arduino Library."));
   Serial.println(F("\nRDA5807FP Device and RDS with Interrupt control via GPIO2"));
 
-  attachInterrupt(digitalPinToInterrupt(RDS_ACTION_INTERRUPT), rdsAction, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(RDS_ACTION_INTERRUPT), rdsAction, RISING);
 
   rx.setup();
-  rx.setInterruptMode(1);
+
+  rx.setGpio(3, 1); // Out of topic: Just checking the GPIO3 - LED Stereo indicator setup 
+
+  rx.setInterruptMode(1); // Sets interrupt on GPIO2 to deal with RDS.
+  
   rx.setRDS(true);  // Turns RDS on
+  rx.setRdsFifo(true);
 
   rx.setVolume(6);
-
   delay(500);
-
   // Select a station with RDS service in your place
   Serial.print(F("\nTuning at the FM local station with good RDS service (see: STATION_WITH_RDS_SERVICE"));
   rx.setFrequency(STATION_WITH_RDS_SERVICE);
-
   // RDS setup
   rx.setRDS(true);
   rx.setRdsFifo(true);
   rx.setLnaPortSel(3);  // Trying improve sensitivity.
   rx.setAFC(true);      // Sets Automatic Frequency Control
-
   showHelp();
 }
 
@@ -126,7 +126,8 @@ void showRDS() {
 void loop() {
 
   // checks for any RDS action
-  if ( rdsCount > 0 ) {
+
+  if ( rdsCount > 1) {
       showRDS();      // Consumes all RDS information
       rdsCount = 0;
   }
@@ -138,6 +139,7 @@ void loop() {
 
   if (Serial.available() > 0) {
     char key = Serial.read();
+    rx.clearRdsBuffer();
     switch (key) {
       case '+':
         rx.setVolumeUp();
@@ -167,4 +169,5 @@ void loop() {
     }
     showStatus();
   }
+  delay(5);
 }
