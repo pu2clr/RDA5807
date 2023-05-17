@@ -348,7 +348,7 @@ The photos below show a Breakout that uses the RDA5807M.
 
 If you are using the standalone RDA5807FP you must add some parts to make it work.  In my opinion, there is no big  reasons to use the RDA5807FP instead of the RDA5807M breakout in most applications. I think the most important situations are the possibility to use the digital audio configuration via I2S protocol or GPIO setup (Stereo indicator, interrupt etc). This library has function to deal with I2S and GPIO.
 
-__The RDA7088 has the same RDA5807FP pinout. However, the RDS and Stereo features do not work on RDA7088.__ In contrast, all functions implemented in this library work well on RDA5807FP. Including RDS and Stereo audio. 
+__The RDA7088 has the same RDA5807FP pinout. However, the RDS, Seek and Stereo features have not worked on RDA7088.__ In contrast, all functions implemented in this library work well on RDA5807FP. 
 
 
 The photo below shows the RDA5807FP on a SOP16 board adapter. 

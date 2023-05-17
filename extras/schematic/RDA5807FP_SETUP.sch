@@ -2790,12 +2790,13 @@ Audio_Jack_2.5MM
 <sheets>
 <sheet>
 <plain>
-<text x="127" y="53.34" size="1.778" layer="91">RDA5807FP</text>
+<text x="124.46" y="55.88" size="1.778" layer="91">RDA5807FP</text>
 <text x="162.56" y="15.24" size="1.778" layer="91">3.3V</text>
 <text x="99.06" y="-15.24" size="1.778" layer="91">I2C - PULLUP</text>
 <text x="172.72" y="35.56" size="1.778" layer="91">Audio Amp.</text>
 <text x="66.04" y="10.16" size="1.778" layer="91">SDIO/SDA</text>
 <text x="66.04" y="15.24" size="1.778" layer="91">SCLK/CLOCK</text>
+<text x="124.46" y="53.34" size="1.778" layer="91">RDA7088</text>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="167.64" y="30.48" smashed="yes"/>
