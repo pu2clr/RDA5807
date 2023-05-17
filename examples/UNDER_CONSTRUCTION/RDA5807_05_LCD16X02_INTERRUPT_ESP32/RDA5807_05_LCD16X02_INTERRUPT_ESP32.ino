@@ -306,6 +306,7 @@ void showStereoMono() {
  *********************************************************/
 char *programInfo;
 char *stationName;
+char *stationInfo;
 char *rdsTime;
 int currentMsgType = 0;
 long polling_rds = millis();
@@ -315,9 +316,9 @@ int progInfoIndex = 0;  // controls the part of the rdsMsg text will be shown on
 
 
 /**
-  showRDSMsg - Shows the Program Information
+  showRdsProgramInfo - Shows the Program Information
 */
-void showRDSMsg() {
+void showRdsProgramInfo() {
   char txtAux[17];
 
   if (programInfo == NULL) return;
@@ -382,12 +383,12 @@ void showRds() {
   else
     lcd.print(" ");
 
-  if (currentMsgType == 0)
-    showRDSMsg();
-  else if (currentMsgType == 1)
-    showRDSStation();
-  else if (currentMsgType == 2)
-    showRDSTime();
+  //if (currentMsgType == 0)
+    showRdsProgramInfo();
+  //else if (currentMsgType == 1)
+  //  showRDSStation();
+  //else if (currentMsgType == 2)
+  //  showRDSTime();
 }
 
 /*********************************************************
@@ -456,14 +457,16 @@ void loop() {
     pollin_elapsed = millis();
   }
 
-  if (bRds) {
+  //if (bRds) {
     if ((millis() - polling_rds) > POLLING_RDS) {
     // if (rdsCount > 0) {
-      checkRDS();
+      //checkRDS();
+      rx.getRdsAllData(stationName, stationInfo, programInfo, rdsTime );
+      showRdsProgramInfo();      
       polling_rds = millis();
       rdsCount = 0;
     }
-  }
+  // }
 
   if ((millis() - timeTextType) > RDS_MSG_TYPE_TIME) {
     // Toggles the type of message to be shown - See showRds function
