@@ -17,11 +17,16 @@ hasRdsInfo              KEYWORD2
 getErrorBlockB          KEYWORD2
 getBlockId              KEYWORD2
 getRdsSync              KEYWORD2
+clearRdsBuffer          KEYWORD2
 getRdsTime              KEYWORD2
 getRdsText2B            KEYWORD2
 getRdsText2A            KEYWORD2
 getRdsText0A            KEYWORD2
-getRdsText              KEYWORD2
+getRdsProgramInformation KEYWORD2
+getRdsStationInformation KEYWORD2
+getRdsStationName       KEYWORD2
+getRdsAllData           KEYWORD2
+isNewRdsFlagAB          KEYWORD2
 getNext4Block           KEYWORD2
 getNext2Block           KEYWORD2
 getRdsProgramType       KEYWORD2
@@ -43,9 +48,23 @@ isStereo                KEYWORD2
 setBass                 KEYWORD2
 setMono                 KEYWORD2
 setSoftmute             KEYWORD2
+isSoftmuted             KEYWORD2
 getRssi                 KEYWORD2
 setSpace                KEYWORD2
+setBand3_50_65_Mode     KEYWORD2
+isFmTrue                KEYWORD2
+isFmReady               KEYWORD2
+setLedStereoIndicator   KEYWORD2
+isMuted                 KEYWORD2
+isAudioOutputHighImpedance KEYWORD2
+setI2SOn                KEYWORD2
+setI2SAllParameters     KEYWORD2
+setI2SMaster            KEYWORD2
+setI2SSpeed             KEYWORD2
+setI2SDataSigned        KEYWORD2
+setStep                 KEYWORD2
 setBand                 KEYWORD2
+getBand                 KEYWORD2
 setSeekThreshold        KEYWORD2
 seek                    KEYWORD2
 setChannel              KEYWORD2
@@ -62,5 +81,11 @@ setGpio                 KEYWORD2
 setRegister             KEYWORD2
 getStatus               KEYWORD2
 getStatusRegisters      KEYWORD2
+convertToChar           KEYWORD2
+formatCurrentFrequency  KEYWORD2
+formatFrequency         KEYWORD2
+checkI2C                KEYWORD2
+
+
 
 
