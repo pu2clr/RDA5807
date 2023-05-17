@@ -1,6 +1,6 @@
 # [RDA5807 Arduino Library](https://pu2clr.github.io/RDA5807/)
 
-It is a cross-platform Arduino Library for RDA5807 family device from RDA. You can use it with official Arduino boards, ATtiny, STM32 , ESP32 and more. It works with I2C protocol and can provide you an easier interface to control the RDA5807 device. This library was built based on "RDA microelectronics RDA5807MS - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015" and RDA microelectronics RDA5807FP - SINGLE-CHIP BROADCAST FM RADIO TUNER. Please, be guided by the table of contents below to make the best use of this documentation.
+It is a cross-platform Arduino Library for RDA5807 and RDA7088 family device from RDA. You can use it with official Arduino boards, ATtiny, STM32 , ESP32 and more. It works with I2C protocol and can provide you an easier interface to control the RDA5807 device. This library was built based on "RDA microelectronics RDA5807MS - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015" and RDA microelectronics RDA5807FP - SINGLE-CHIP BROADCAST FM RADIO TUNER. Please, be guided by the table of contents below to make the best use of this documentation.
 
 This library can be freely distributed using the MIT Free Software model. It means you can copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software. See [MIT License](https://pu2clr.github.io/RDA5807#mit-license) for more details.
 
@@ -19,7 +19,7 @@ Contact: __pu2clr@gmail.com__.
 5. [Examples summary](https://pu2clr.github.io/RDA5807#examples-summary)
 6. [Boards where this library has been tested](https://pu2clr.github.io/RDA5807#boards-where-this-library-has-been-tested)
 7. [RDA5807M breakout](https://pu2clr.github.io/RDA5807#rda5807m-breakout)
-8. [RDA5807FP standalone IC](https://pu2clr.github.io/RDA5807#rda5807fp-standalone-ic)
+8. [RDA5807FP and RDA7088 standalone IC](https://pu2clr.github.io/RDA5807#rda5807fp-and-rda7088-standalone-ic)
 9. [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html)
 10. [MIT License](https://pu2clr.github.io/RDA5807#mit-license)
 11. [Basic Schematic](https://pu2clr.github.io/RDA5807#schematic)
@@ -344,11 +344,15 @@ The photos below show a Breakout that uses the RDA5807M.
 
 <BR>
 
-## RDA5807FP standalone IC
+## RDA5807FP and RDA7088 standalone IC
 
 If you are using the standalone RDA5807FP you must add some parts to make it work.  In my opinion, there is no big  reasons to use the RDA5807FP instead of the RDA5807M breakout in most applications. I think the most important situations are the possibility to use the digital audio configuration via I2S protocol or GPIO setup (Stereo indicator, interrupt etc). This library has function to deal with I2S and GPIO.
 
+__The RDA7088 has the same RDA5807FP pinout. However, the RDS and Stereo features do not work on RDA7088.__ In contrast, all functions implemented in this library work well on RDA5807FP. Including RDS and Stereo audio. 
+
+
 The photo below shows the RDA5807FP on a SOP16 board adapter. 
+
 
 ![RDA5807 Breakout board](extras/images/RDA5807FP_ON_BOARD_ADAPTER.jpg) 
 
