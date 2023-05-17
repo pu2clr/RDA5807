@@ -1235,13 +1235,13 @@ bool RDA5807::hasRdsInfo()
 
 /**
  * @ingroup GA04
- * @brief Returns true when the RDS system has valid Station Name information
+ * @brief Returns true when the RDS system has valid information
  * @return  true or false
  */
 bool RDA5807::hasRdsInfoAB()
 {
     getStatus(REG0B);
-    return (reg0a->refined.RDSS && reg0b->refined.ABCD_E == 0 && reg0b->refined.BLERA == 0 && reg0b->refined.BLERA == 0);
+    return (reg0a->refined.RDSS && reg0b->refined.ABCD_E == 0 && reg0b->refined.BLERA == 0 && reg0b->refined.BLERB == 0);
 }
 
 /**

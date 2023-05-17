@@ -28,6 +28,7 @@
 #define  MAX_DELAY_STATUS 30000        // Defined time to update the receiver status information 
 #define  RDS_ACTION_INTERRUPT 2
 #define  STATION_WITH_RDS_SERVICE 9390  // Local station with good RDS service (89,90Mhz)
+#define  RDS_DELAY 1000
 
 
 long rds_elapsed = millis();
@@ -126,8 +127,9 @@ void loop() {
 
   // checks for any RDS action
 
-  if ( rdsCount > 1) {
+  if ( rdsCount > 1 && (millis() - rds_elapsed) > RDS_DELAY ) {
       showRDS();      // Consumes all RDS information
+      rds_elapsed = millis();
       rdsCount = 0;
   }
 
