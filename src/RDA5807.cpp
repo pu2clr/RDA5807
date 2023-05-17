@@ -58,7 +58,7 @@ void RDA5807::setGpio(uint8_t gpioPin, uint8_t gpioSetup, int mcuPin)
  * @ingroup GA02
  * @brief Sets InterruptMode
  * @details If 0, generate 5ms interrupt;
- * @details If 1, interrupt last until read reg0CH action occurs.
+ * @details If 1, interrupt last until read reg 0CH action occurs.
  * @details When 1, it can be used to Interact with RDS - BLOCK A ( in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1)
  * @details In this case, use the GPIO2 to interrupt setup with the MCU  (microcontroller)
  * @details ATTENTION: This function affects the behavior of the GPIO2 pin. The register 0x04 GPIO2 attribute will be setted to 1
@@ -817,8 +817,9 @@ void RDA5807::setRBDS(bool value)
  * }
  * @endcode
  * 
- * @return true
- * @return false
+ * @return true or false
+ * @see setRDS, setInterruptMode, getRdsAllData, getRdsSync, setRdsFifo
+ * 
  */
 bool RDA5807::getRdsReady()
 {

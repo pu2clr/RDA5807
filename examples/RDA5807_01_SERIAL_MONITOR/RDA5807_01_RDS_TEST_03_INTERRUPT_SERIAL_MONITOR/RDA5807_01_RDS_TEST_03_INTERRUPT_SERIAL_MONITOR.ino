@@ -1,9 +1,7 @@
 /*
 
     Test RDS functions  using Serial Monitor.
-    This sketch is useful to check how the RDS work and how the local stations provide this service.
-    For example: I have noticed in my location that some stations send wrong time information. So, for these stations, 
-    the RDS time functions implemented by this library seem do not work fine
+    This sketch is useful to check how the RDS and interrupt setup. 
 
     To use this aplication, please select the Arduino IDE Serial Monitor. 
     Type ? to see the instructions. 
@@ -11,10 +9,11 @@
 
     Arduino Pro Mini and RDA5807 wire up
 
-    | Device  RDA5807 |  Arduino Pin  |
-    | --------------- | ------------  |
-    | SDIO            |     A4        |
-    | SCLK            |     A5        |
+    | Device  RDA5807 |  Arduino Pin  | Description       |
+    | --------------- | ------------  | ----------------- | 
+    | GPIO2           |      2        | Will tell to the system when a RDS action occurs | 
+    | SDIO            |     A4        | I2C Data communication  |
+    | SCLK            |     A5        | I2C Clock communication |
 
 
   ATTENTION:
@@ -26,16 +25,17 @@
 
 #include <RDA5807.h>
 
-#define MAX_DELAY_RDS 80  //  polling method
-#define MAX_DELAY_STATUS 5000
-#define MAX_DELAY_SHOW_RDS 80
+#define  MAX_DELAY_STATUS 30000        // Defined time to update the receiver status information 
+#define  RDS_ACTION_INTERRUPT 2
+#define  STATION_WITH_RDS_SERVICE 8990  // Local station with good RDS service (89,90Mhz)
 
-#define STATION_WITH_RDS_SERVICE 8990  // Local station with good RDS service (Example: 89,90Mhz)
 
 long rds_elapsed = millis();
 long status_elapsed = millis();
-
 uint8_t showrRdsInfo = 3;  // Default: show RDS time.
+
+volatile int rdsCount = 0; // 
+
 
 RDA5807 rx;
 
@@ -45,9 +45,12 @@ void setup() {
   while (!Serial)
     ;
   Serial.println(F("\nPU2CLR RDA5807 Arduino Library."));
+  Serial.println(F("\nRDA5807FP Device and RDS with Interrupt control via GPIO2"));
+
+  attachInterrupt(digitalPinToInterrupt(RDS_ACTION_INTERRUPT), rdsAction, CHANGE);
 
   rx.setup();
-
+  rx.setInterruptMode(1);
   rx.setRDS(true);  // Turns RDS on
 
   rx.setVolume(6);
@@ -66,6 +69,13 @@ void setup() {
 
   showHelp();
 }
+
+
+// Tells to the system that RDA5807FP has RDS information 
+void rdsAction() {
+  rdsCount++;
+} 
+
 
 void showHelp() {
   Serial.println(F("Type U to increase and D to decrease the frequency"));
@@ -110,14 +120,15 @@ void showRDS() {
     showRdsInfo((char *) "Station Name........: ", stationName);
     utcTime = rx.getRdsTime();
     showRdsInfo((char *) "UTC Time............: ", utcTime);
-    delay(MAX_DELAY_SHOW_RDS);
   }
 }
 
 void loop() {
-  if ((millis() - rds_elapsed) > MAX_DELAY_RDS) {
-      showRDS();
-    rds_elapsed = millis();
+
+  // checks for any RDS action
+  if ( rdsCount > 0 ) {
+      showRDS();      // Consumes all RDS information
+      rdsCount = 0;
   }
 
   if ((millis() - status_elapsed) > MAX_DELAY_STATUS) {

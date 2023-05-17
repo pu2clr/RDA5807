@@ -13,7 +13,6 @@
 
     | Device  RDA5807 |  Arduino Pin  |
     | --------------- | ------------  |
-    | RESET           |     14/A0     |
     | SDIO            |     A4        |
     | SCLK            |     A5        |
 
@@ -26,8 +25,6 @@
 */
 
 #include <RDA5807.h>
-
-#define RESET_PIN 14 // On Arduino Atmega328 based board, this pin is labeled as A0 (14 means digital pin instead analog)
 
 #define MAX_DELAY_RDS 80 //  polling method
 #define MAX_DELAY_STATUS 5000

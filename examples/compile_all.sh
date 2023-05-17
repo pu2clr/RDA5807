@@ -23,7 +23,10 @@ arduino-cli compile -b arduino:avr:nano ./RDA5807_05_LCD16X02 --output-dir ~/Dow
 arduino-cli compile -b arduino:avr:uno ./RDA5807_06_UNO_TM1638 --output-dir ~/Downloads/hex/atmega/RDA5807_06_UNO_TM1638  --warnings all
 arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_ALL_TEST_SERIAL_MONITOR --output-dir ~/Downloads/hex/atmega/RDA5807_01_ALL_TEST_SERIAL_MONITOR  --warnings all
 arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_BAND_TEST_SERIAL_MONITOR --output-dir ~/Downloads/hex/atmega/RDA5807_01_BAND_TEST_SERIAL_MONITOR  --warnings all
-arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS_TEST_SERIAL_MONITOR --output-dir ~/Downloads/hex/atmega/RDA5807_01_RDS_TEST_SERIAL_MONITOR  --warnings all
+arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS_TEST_01_SERIAL_MONITOR --output-dir ~/Downloads/hex/atmega/RDA5807_01_RDS_TEST_01_SERIAL_MONITOR  --warnings all
+arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS_TEST_02_SERIAL_MONITOR --output-dir ~/Downloads/hex/atmega/RDA5807_02_RDS_TEST_01_SERIAL_MONITOR  --warnings all
+arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS_TEST_03_INTERRUPT_SERIAL_MONITOR --output-dir ~/Downloads/hex/atmega/RDA5807_01_RDS_TEST_03_INTERRUPT_SERIAL_MONITOR  --warnings all
+
 
 arduino-cli compile -b arduino:avr:uno ./RDA5807_07_NANO_OLED --output-dir ~/Downloads/hex/atmega/RDA5807_07_NANO_OLED  --warnings all 
 arduino-cli compile -b arduino:avr:uno ./RDA5807_07_NANO_OLED_V2 --output-dir ~/Downloads/hex/atmega/RDA5807_07_NANO_OLED_V2  --warnings all 
