@@ -50,8 +50,7 @@ void setup() {
 
   rx.setup();
 
-  rx.setGpio(3, 1); // Out of topic: Just checking the GPIO3 - LED Stereo indicator setup 
-
+  rx.setLedStereoIndicator(true); // Out of the topic: Same: rx.setGpio(3, 1); // Just checking the GPIO3 - LED Stereo indicator setup 
   rx.setInterruptMode(1); // Sets interrupt on GPIO2 to deal with RDS.
   
   rx.setRDS(true);  // Turns RDS on

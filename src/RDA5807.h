@@ -786,6 +786,28 @@ public:
     void setBass(bool value);
     bool isStereo();
 
+    /**
+     * @ingroup GA07
+     * @brief Sets the system to use a LED to indicate Stereo or Mono.  
+     * @details Call this function to setup the GPIO3 of the RDA5807FP (pin 15) to turn a LED on or OFF.
+     * @details When Stereo, the GPIO3 is HIGH.  
+     * @code {.cpp}
+     * #include <RDA5807.h>
+     * RDA5807 rx;
+     * void setup() {
+     *    rx.setup();
+     *    rx.setFrequency(10390); // Tunes in 103.9 MHz
+     *    rx.setLedStereoIndicator(true); // The GPIO3 (pin 15 of the RDA5807) can use to turn a LED on when Stereo
+     * }
+     * void loop() {
+     * }
+     * @endcode
+     * 
+     * @param value true or false. 
+     * @see setGpio, isStereo
+     */
+    inline void setLedStereoIndicator(bool value = true) { this->setGpio(3, value); };
+
     void setMute(bool value);
     /**
      * @ingroup GA07
