@@ -41,7 +41,7 @@ char *stationName;
 char *programInfo;
 uint16_t currentFrequency;
 
-long timeRdsSHow = millis();
+long timeRdsShow = millis();
 bool hasRds = false;
 
 RDA5807 rx;
@@ -57,11 +57,11 @@ void setup() {
   oled.setFont(FONT8X16);
   // Remove the Splash if you want.
   // Begin Splash
-  oled.setCursor(0, 0);
-  oled.print(F("RDA5807-Attiny85"));
-  oled.setCursor(0, 2);
-  oled.print(F("   By PU2CLR   "));
-  delay(2000);
+  // oled.setCursor(0, 0);
+  // oled.print(F("RDA5807-ATtiny85"));
+  // oled.setCursor(0, 2);
+  // oled.print(F("   By PU2CLR   "));
+  // delay(2000);
   oled.clear();
   // End Splash
   rx.setup();
@@ -129,7 +129,7 @@ void loop() {
   // You must call getRdsReady before calling any RDS query function/method
   if (!hasRds) {
     if (rx.getRdsReady()) {
-      if (rx.hasRdsInfoAB() && !rx.isNewRdsFlagAB()) {
+      if (rx.hasRdsInfoAB()  && !rx.isNewRdsFlagAB() ) {
         stationName = rx.getRdsStationName();
         programInfo = rx.getRdsProgramInformation();
         if (stationName != NULL)
@@ -142,9 +142,9 @@ void loop() {
     }
   }
 
-  if ( ( millis() - timeRdsSHow ) >  (long) TIME_RDS_ON_DISPLAY ) { 
+  if ( ( millis() - timeRdsShow ) >  (long) TIME_RDS_ON_DISPLAY ) { 
     hasRds = false; 
-    timeRdsSHow = millis();
+    timeRdsShow = millis();
   }  
 
   delay(5);

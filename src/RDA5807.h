@@ -788,9 +788,9 @@ public:
 
     /**
      * @ingroup GA07
-     * @brief Sets the system to use a LED to indicate Stereo or Mono.  
+     * @brief Sets the system to use a LED to indicate Stereo or Mono.
      * @details Call this function to setup the GPIO3 of the RDA5807FP (pin 15) to turn a LED on or OFF.
-     * @details When Stereo, the GPIO3 is HIGH.  
+     * @details When Stereo, the GPIO3 is HIGH.
      * @code {.cpp}
      * #include <RDA5807.h>
      * RDA5807 rx;
@@ -802,8 +802,8 @@ public:
      * void loop() {
      * }
      * @endcode
-     * 
-     * @param value true or false. 
+     *
+     * @param value true or false.
      * @see setGpio, isStereo
      */
     inline void setLedStereoIndicator(bool value = true) { this->setGpio(3, value); };
@@ -880,12 +880,109 @@ public:
 
     char *getRdsTime();
 
-    bool getRdsSync();
-    uint8_t getBlockId();
-    uint8_t getErrorBlockA();
-    uint8_t getErrorBlockB();
-    bool hasRdsInfo();
-    bool hasRdsInfoAB(); // Temporary (Test)
+    /**
+     * @ingroup GA04
+     * @brief Gets the current Block ID
+     * @details You must call getRdsReady before calling this function
+     * @see getRdsReady
+     * @details 1= the block id of register 0cH,0dH,0eH,0fH is E
+     * @details 0= the block id of register 0cH, 0dH, 0eH,0fH is A, B, C, D
+     * @return  0= the block id of register 0cH, 0dH, 0eH,0fH is A, B, C, D; 1 = the block id of register 0cH,0dH,0eH,0fH is E
+     */
+    inline uint8_t getBlockId()
+    {
+        // getStatus(REG0B);
+        return reg0b->refined.ABCD_E;
+    }
+
+    /**
+     * @ingroup GA04
+     * @brief Gets the current Status of block A
+     * @details You must call getRdsReady before calling this function
+     * @see getRdsReady
+     * Block Errors Level of RDS_DATA_0, and is always read as Errors Level of RDS BLOCK A (in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1)
+     *
+     * | value | description |
+     * | ----- | ----------- |
+     * |  00   | 0 errors requiring correction |
+     * |  01   | 1~2 errors requiring correction |
+     * |  10   | 3~5 errors requiring correction |
+     * |  11   | 6+ errors or error in checkword, correction not possible |
+     *
+     *  **Available only in RDS Verbose mode**
+     *
+     * @return  value See table above.
+     */
+    inline uint8_t getErrorBlockA()
+    {
+        // getStatus(REG0B);
+        return reg0b->refined.BLERA;
+    }
+
+    /**
+     * @ingroup GA04
+     * @brief Gets the current Status of block B
+     * @details You must call getRdsReady before calling this function
+     * @see getRdsReady
+     *
+     * Block Errors Level of RDS_DATA_1, and is always read as Errors Level of RDS BLOCK B (in RDS mode ) or E (in RBDS mode when ABCD_E flag is 1).
+     * | value | description |
+     * | ----- | ----------- |
+     * |  00   | 0 errors requiring correction |
+     * |  01   | 1~2 errors requiring correction |
+     * |  10   | 3~5 errors requiring correction |
+     * |  11   | 6+ errors or error in checkword, correction not possible |
+     *
+     *  **Available only in RDS Verbose mode**
+     *
+     * @return  value See table above.
+     */
+    inline uint8_t getErrorBlockB()
+    {
+        // getStatus(REG0B);
+        return reg0b->refined.BLERB;
+    }
+
+    /**
+     * @ingroup GA04
+     * @brief Returns true when the RDS system has valid information
+     * @details Returns true if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
+     * @details You must call getRdsReady before calling this function
+     * @see getRdsReady
+     * @return  true or false
+     */
+    inline bool hasRdsInfo()
+    {
+        // getStatus(REG0B);
+        return (reg0a->refined.RDSS && reg0b->refined.ABCD_E == 0 && reg0b->refined.BLERB == 0);
+    }
+
+    /**
+     * @ingroup GA04
+     * @brief Returns true when the RDS system has valid information
+     * @details You must call getRdsReady before calling this function
+     * @see getRdsReady
+     * @return  true or false
+     */
+    inline bool hasRdsInfoAB()
+    {
+        // getStatus(REG0B);
+        return (reg0a->refined.RDSS && reg0b->refined.ABCD_E == 0 && reg0b->refined.BLERA == 0 && reg0b->refined.BLERB == 0);
+    }
+
+    /**
+     * @ingroup GA04
+     * @brief Gets the Rds Sync
+     * @details You must call getRdsReady before calling this function
+     * @see getRdsReady
+     * @details Returns true if RDS currently synchronized.
+     * @return true or false
+     */
+    inline bool getRdsSync()
+    {
+        // getStatus(REG0A);
+        return reg0a->refined.RDSS;
+    }
 
     // I2S
     void setI2SOn(bool value);

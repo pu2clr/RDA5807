@@ -55,23 +55,18 @@ void RDA5807::setGpio(uint8_t gpioPin, uint8_t gpioSetup, int mcuPin)
 
 /**
  * @ingroup GA02
- * @brief Sets InterruptMode
- * @details If 0, generate 5ms interrupt;
- * @details If 1, interrupt last until read reg 0CH action occurs.
- * @details When 1, it can be used to Interact with RDS - BLOCK A ( in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1)
- * @details In this case, use the GPIO2 to interrupt setup with the MCU  (microcontroller)
+ * @brief Sets Interrupt Mode
+ * @details GPIO2 could be programmed to output a low interrupt (interrupt will be generated only with interrupt enable bit STCIEN is set to high) when seek/tune process completes
+ * @details Setting STCIEN = 1 will generate a low pulse on GPIO2 when the interrupt occurs.
  * @details ATTENTION: This function affects the behavior of the GPIO2 pin. The register 0x04 GPIO2 attribute will be setted to 1
- * @param value  1 - Enable RDS Interrupt interation; 0 - Disable
+ * @param value  0 =  disable; 1 = enqble
  * @see setGpio
  */
 void RDA5807::setInterruptMode(uint8_t value)
 {
-    reg05->refined.INT_MODE = value; // 0 - generate 5ms interrupt; 1 - interrupt last until read reg0CH action occurs.
-    setRegister(REG05, reg05->raw);
-
-    reg04->refined.GPIO2 = 0; // 0 - Hight impedance or 1 - Interrupt (INT)
+    reg04->refined.GPIO2 = value;  // Sets the GPIO2 to deal with interrupt   
+    reg04->refined.STCIEN = value; // Enable or disable interrupr 
     setRegister(REG04, reg04->raw);
-
 }
 
 /**
@@ -823,7 +818,7 @@ void RDA5807::setRBDS(bool value)
  */
 bool RDA5807::getRdsReady()
 {
-    getStatus(REG0A);
+    // getStatus(REG0A);
     getStatusRegisters();
 
     return reg0a->refined.RDSR;
@@ -848,6 +843,7 @@ uint8_t RDA5807::getRdsFlagAB(void)
  * @brief Returns true if the Text Flag A/B  has changed
  * @details This function returns true if a new FlagAB has chenged. Also it clears the Station Name buffer in that condition.
  * @details It is useful to check and show the RDS Text in your application.
+ * @details You must call getRdsReady before calling this function.
  * 
  * @return True or false
  */
@@ -1151,98 +1147,8 @@ char *RDA5807::getRdsTime()
     return NULL;
 }
 
-/**
- * @ingroup GA04
- * @brief Gets the Rds Sync
- * @details Returns true if RDS currently synchronized.
- * @return true or false
- */
-bool RDA5807::getRdsSync()
-{
-    getStatus(REG0A);
-    return reg0a->refined.RDSS;
-}
 
-/**
- * @ingroup GA04
- * @brief Gets the current Block ID
- * @details 1= the block id of register 0cH,0dH,0eH,0fH is E
- * @details 0= the block id of register 0cH, 0dH, 0eH,0fH is A, B, C, D
- * @return  0= the block id of register 0cH, 0dH, 0eH,0fH is A, B, C, D; 1 = the block id of register 0cH,0dH,0eH,0fH is E
- */
-uint8_t RDA5807::getBlockId()
-{
-    getStatus(REG0B);
-    return reg0b->refined.ABCD_E;
-}
 
-/**
- * @ingroup GA04
- * @brief Gets the current Status of block A
- *
- * Block Errors Level of RDS_DATA_0, and is always read as Errors Level of RDS BLOCK A (in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1)
- *
- * | value | description |
- * | ----- | ----------- |
- * |  00   | 0 errors requiring correction |
- * |  01   | 1~2 errors requiring correction |
- * |  10   | 3~5 errors requiring correction |
- * |  11   | 6+ errors or error in checkword, correction not possible |
- *
- *  **Available only in RDS Verbose mode**
- *
- * @return  value See table above.
- */
-uint8_t RDA5807::getErrorBlockA()
-{
-    getStatus(REG0B);
-    return reg0b->refined.BLERA;
-}
-
-/**
- * @ingroup GA04
- * @brief Gets the current Status of block B
- *
- * Block Errors Level of RDS_DATA_1, and is always read as Errors Level of RDS BLOCK B (in RDS mode ) or E (in RBDS mode when ABCD_E flag is 1).
- * | value | description |
- * | ----- | ----------- |
- * |  00   | 0 errors requiring correction |
- * |  01   | 1~2 errors requiring correction |
- * |  10   | 3~5 errors requiring correction |
- * |  11   | 6+ errors or error in checkword, correction not possible |
- *
- *  **Available only in RDS Verbose mode**
- *
- * @return  value See table above.
- */
-uint8_t RDA5807::getErrorBlockB()
-{
-    getStatus(REG0B);
-    return reg0b->refined.BLERB;
-}
-
-/**
- * @ingroup GA04
- * @brief Returns true when the RDS system has valid information
- * @details Returns true if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
- * @return  true or false
- */
-bool RDA5807::hasRdsInfo()
-{
-    getStatus(REG0B);
-    return (reg0a->refined.RDSS && reg0b->refined.ABCD_E == 0 && reg0b->refined.BLERB == 0);
-}
-
-/**
- * @ingroup GA04
- * @brief Returns true when the RDS system has valid information
- * @return  true or false
- */
-bool RDA5807::hasRdsInfoAB()
-{
-    getStatus(REG0B);
-    return (reg0a->refined.RDSS && reg0b->refined.ABCD_E == 0 && reg0b->refined.BLERA == 0 && reg0b->refined.BLERB == 0);
-}
 
 /**
  * @ingroup GA04
