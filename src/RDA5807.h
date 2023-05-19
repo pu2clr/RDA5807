@@ -891,7 +891,6 @@ public:
      */
     inline uint8_t getBlockId()
     {
-        // getStatus(REG0B);
         return reg0b->refined.ABCD_E;
     }
 
@@ -913,9 +912,8 @@ public:
      *
      * @return  value See table above.
      */
-    inline uint8_t getErrorBlockA()
+    inline uint8_t getErrorBlockA() 
     {
-        // getStatus(REG0B);
         return reg0b->refined.BLERA;
     }
 
@@ -939,7 +937,6 @@ public:
      */
     inline uint8_t getErrorBlockB()
     {
-        // getStatus(REG0B);
         return reg0b->refined.BLERB;
     }
 
@@ -953,7 +950,6 @@ public:
      */
     inline bool hasRdsInfo()
     {
-        // getStatus(REG0B);
         return (reg0a->refined.RDSS && reg0b->refined.ABCD_E == 0 && reg0b->refined.BLERB == 0);
     }
 
@@ -966,7 +962,6 @@ public:
      */
     inline bool hasRdsInfoAB()
     {
-        // getStatus(REG0B);
         return (reg0a->refined.RDSS && reg0b->refined.ABCD_E == 0 && reg0b->refined.BLERA == 0 && reg0b->refined.BLERB == 0);
     }
 
@@ -980,7 +975,6 @@ public:
      */
     inline bool getRdsSync()
     {
-        // getStatus(REG0A);
         return reg0a->refined.RDSS;
     }
 
