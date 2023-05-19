@@ -46,7 +46,7 @@ arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_ALL
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_BAND_TEST_SERIAL_MONITOR --output-dir ~/Downloads/hex/lgt8fx/RDA5807_01_BAND_TEST_SERIAL_MONITOR  --warnings all
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS_TEST_01_SERIAL_MONITOR --output-dir ~/Downloads/hex/lgt8fx/RDA5807_01_RDS_TEST_01_SERIAL_MONITOR  --warnings all
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS_TEST_02_SERIAL_MONITOR --output-dir ~/Downloads/hex/lgt8fx/RDA5807_01_RDS_TEST_02_SERIAL_MONITOR  --warnings all
-arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS_TEST_03_SERIAL_MONITOR --output-dir ~/Downloads/hex/lgt8fx/RDA5807_01_RDS_TEST_03_SERIAL_MONITOR  --warnings all
+arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS_TEST_03_INTERRUPT_SERIAL_MONITOR --output-dir ~/Downloads/hex/lgt8fx/RDA5807_01_RDS_TEST_03_INTERRUPT_SERIAL_MONITOR  --warnings all
 
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_07_NANO_OLED_V2 --output-dir ~/Downloads/hex/lgt8fx/RDA5807_07_NANO_OLED_V2  
 

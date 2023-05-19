@@ -1,9 +1,13 @@
 /*
-  This sketch can be useful to adapt your display and use it with RDA5807 Application
+
+  This project is about a library to control the RDA5807 device and the focus of this project is the library and its functionalities. 
+  It is not part of this project to assist you in your: displays, encoders, LED, buttons or something else out the library scope. 
+
+  This sketch can be useful to mitigate your effort to develop a RDA5807 application with your favourit display.
   
   ABOUT THE EEPROM:
   ATMEL says the lifetime of an EEPROM memory position is about 100,000 writes.
-  For this reason, this sketch tries to avoid save unnecessary writes into the eeprom.
+  For this reason, this sketch tries to avoid unnecessary writes into the eeprom.
   So, the condition to store any status of the receiver is changing the frequency or volume and 10 seconds of inactivity.
   For example, if you switch the band and turn the receiver off immediately, no new information will be written into the eeprom.
   But you wait 10 seconds after changing anything, all new information will be written.
@@ -15,27 +19,27 @@
 
   Wire up on Arduino UNO, Nano or Pro mini
 
-  | Device name               | Device Pin / Description  |  Arduino Pin  |
-  | --------------------------| --------------------      | ------------  |
-  | YOur Display Setup        |                           |  8, 9, 10, 11,|
-  |                           |                           | 13, A1 (15),  |
-  |                           |                           | A2 (16).      |
-  | --------------------------| ------------------------- | --------------|
-  | RDA5807                   |                           |               | 
-  |                           | +Vcc 3.3V [1]             |   3.3V        |    
-  |                           | SDIO (pin 8)              |     A4        |
-  |                           | SCLK (pin 7)              |     A5        |
-  | --------------------------| --------------------------| --------------|
-  | Buttons                   |                           |               |
-  |                           | Volume Up                 |      4        |
-  |                           | Volume Down               |      5        |
-  |                           | Stereo/Mono               |      6        |
-  |                           | RDS ON/off                |      7        |
-  |                           | SEEK (encoder button)     |     A0/14     |
-  | --------------------------| --------------------------|---------------| 
-  | Encoder                   |                           |               |
-  |                           | A                         |       2       |
-  |                           | B                         |       3       |
+  | Device name               | Device Pin / Description  |  Free Arduino Pins |
+  | --------------------------| ------------------------- | -----------------  |
+  | YOur Display Setup        |                           |  8, 9, 10, 11,     |
+  |                           |                           | 13, A1 (15),       |
+  |                           |                           | A2 (16).           |
+  | --------------------------| ------------------------- | -------------------|
+  | RDA5807                   |                           |                    | 
+  |                           | +Vcc 3.3V [1]             |   3.3V             |    
+  |                           | SDIO (pin 8)              |     A4             |
+  |                           | SCLK (pin 7)              |     A5             |
+  | --------------------------| --------------------------| -------------------|
+  | Buttons                   |                           |                    |
+  |                           | Volume Up                 |      4             |
+  |                           | Volume Down               |      5             |
+  |                           | Stereo/Mono               |      6             |
+  |                           | RDS ON/off                |      7             |
+  |                           | SEEK (encoder button)     |     A0/14          |
+  | --------------------------| --------------------------|--------------------| 
+  | Encoder                   |                           |                    |
+  |                           | A                         |       2            |
+  |                           | B                         |       3            |
 
   1. Do not use more than 3.3V to power the RDA5807.
 

@@ -6,7 +6,7 @@
    
   ABOUT THE ATMEGA328 EEPROM and saving the receiver current information 
   ATMEL says the lifetime of an EEPROM memory position is about 100,000 writes.
-  For this reason, this sketch tries to avoid save unnecessary writes into the eeprom.
+  For this reason, this sketch tries to avoid unnecessary writes into the eeprom.
   This firmware saves the latest frequency or volume data 10 secounds after one of these information is changed.
   For example, if you switch the band and turn the receiver off immediately, no new information will be written into the eeprom.
   But you wait 10 seconds after changing anything, all new information will be written.
