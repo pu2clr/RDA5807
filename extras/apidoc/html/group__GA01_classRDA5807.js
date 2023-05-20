@@ -20,7 +20,7 @@ var group__GA01_classRDA5807 =
     [ "getMinimumFrequencyOfTheBand", "group__GA03.html#ga67d6e95313dd3b27d719af06cbcac813", null ],
     [ "getNext2Block", "group__GA04.html#ga6afb347f32121c480adea2a36032d56f", null ],
     [ "getNext4Block", "group__GA04.html#ga3ab713bb63978518d42a761b9db445c9", null ],
-    [ "getRdsAllData", "group__GA04.html#gaa2f71ce870525b429f302ec957d5be0d", null ],
+    [ "getRdsAllData", "group__GA04.html#gadafba5991f6f60a52ad73fdda8fac984", null ],
     [ "getRdsFlagAB", "group__GA04.html#ga04e5fe0cacbdcae620388a15630cf9c1", null ],
     [ "getRdsGroupType", "group__GA04.html#ga32c361b9b996a5920519315aa86d174d", null ],
     [ "getRdsProgramInformation", "group__GA04.html#ga73610b1372a8bdaa959862881eae05fb", null ],

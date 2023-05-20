@@ -14,7 +14,7 @@ var searchData=
   ['getminimumfrequencyoftheband_11',['getMinimumFrequencyOfTheBand',['../group__GA03.html#ga67d6e95313dd3b27d719af06cbcac813',1,'RDA5807']]],
   ['getnext2block_12',['getNext2Block',['../group__GA04.html#ga6afb347f32121c480adea2a36032d56f',1,'RDA5807']]],
   ['getnext4block_13',['getNext4Block',['../group__GA04.html#ga3ab713bb63978518d42a761b9db445c9',1,'RDA5807']]],
-  ['getrdsalldata_14',['getRdsAllData',['../group__GA04.html#gaa2f71ce870525b429f302ec957d5be0d',1,'RDA5807']]],
+  ['getrdsalldata_14',['getRdsAllData',['../group__GA04.html#gadafba5991f6f60a52ad73fdda8fac984',1,'RDA5807']]],
   ['getrdsflagab_15',['getRdsFlagAB',['../group__GA04.html#ga04e5fe0cacbdcae620388a15630cf9c1',1,'RDA5807']]],
   ['getrdsgrouptype_16',['getRdsGroupType',['../group__GA04.html#ga32c361b9b996a5920519315aa86d174d',1,'RDA5807']]],
   ['getrdsprograminformation_17',['getRdsProgramInformation',['../group__GA04.html#ga73610b1372a8bdaa959862881eae05fb',1,'RDA5807']]],
