@@ -841,7 +841,7 @@ public:
     void clearRdsBuffer();
 
     bool getRdsReady();
-    bool getRdsAllData(char *stationName, char *stationInformation, char *programInformation, char *utcTime);
+    bool getRdsAllData(char **stationName, char **stationInformation, char **programInformation, char **utcTime);
     uint8_t getRdsFlagAB(void);
     bool isNewRdsFlagAB(void);
     uint8_t getRdsVersionCode(void);

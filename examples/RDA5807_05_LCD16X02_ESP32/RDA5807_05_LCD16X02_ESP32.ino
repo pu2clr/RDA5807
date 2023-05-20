@@ -78,8 +78,8 @@
 #define SEEK_FUNCTION 27  // Seek function
 
 #define POLLING_TIME 1900
-#define RDS_MSG_TYPE_TIME 23000
-#define POLLING_RDS 51
+#define RDS_MSG_TYPE_TIME 25000
+#define POLLING_RDS 80
 
 #define STORE_TIME 10000  // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
 #define PUSH_MIN_DELAY 300
@@ -164,6 +164,7 @@ void setup() {
   rx.setAFC(true);
   rx.setFrequency(currentFrequency);  // It is the frequency you want to select in MHz multiplied by 100.
   rx.setSeekThreshold(50);            // Sets RSSI Seek Threshold (0 to 127)
+  lcd.clear();
   showStatus();
 }
 
@@ -244,7 +245,7 @@ void showFrequency() {
 }
 
 void showFrequencySeek() {
-  lcd.clear();
+  clearLcdLine(1);
   showFrequency();
 }
 
@@ -252,13 +253,13 @@ void showFrequencySeek() {
     Show some basic information on display
 */
 void showStatus() {
-  lcd.clear();
+  clearLcdLine(1);
   showFrequency();
   showStereoMono();
   showRSSI();
 
   if (bRds) {
-    showRds();
+    showRdsIndicator();
   }
 
   lcd.display();
@@ -296,6 +297,10 @@ long timeTextType = millis();  // controls the type of each text will be shown (
 
 int progInfoIndex = 0;  // controls the part of the rdsMsg text will be shown on LCD 16x2 Display
 
+long delayProgramInfo = millis();
+long delayStationName = millis();
+long delayRdsTime = millis();
+
 
 /**
   showRDSMsg - Shows the Program Information
@@ -303,8 +308,9 @@ int progInfoIndex = 0;  // controls the part of the rdsMsg text will be shown on
 void showRDSMsg() {
   char txtAux[17];
 
-  if (programInfo == NULL) return;
-
+  if (programInfo == NULL || strlen(programInfo) < 2 || (millis() - delayProgramInfo) < 1000) return;
+  delayProgramInfo = millis();
+  clearLcdLine(0);
   programInfo[61] = '\0';  // Truncate the message to fit on display line
   strncpy(txtAux, &programInfo[progInfoIndex], 16);
   txtAux[16] = '\0';
@@ -318,7 +324,9 @@ void showRDSMsg() {
    showRDSStation - Shows the 
 */
 void showRDSStation() {
-  if (stationName == NULL) return;
+  if (stationName == NULL || strlen(stationName) < 2 || (millis() - delayStationName) < 3000) return;
+  delayStationName = millis();
+  clearLcdLine(0);
   lcd.setCursor(0, 0);
   lcd.print(stationName);
 }
@@ -326,8 +334,9 @@ void showRDSStation() {
 void showRDSTime() {
   char txtAux[17];
 
-  if (rdsTime == NULL) return;
-
+  if (rdsTime == NULL || strlen(rdsTime) < 2 || (millis() - delayRdsTime) < 60000) return;
+  delayRdsTime = millis();
+  clearLcdLine(0);
   rdsTime[16] = '\0';
   strncpy(txtAux, rdsTime, 16);
   txtAux[16] = '\0';
@@ -336,6 +345,14 @@ void showRDSTime() {
 }
 
 
+
+void clearLcdLine(uint8_t line) {
+  for (int i = 0; i < 16; i++) {
+    lcd.setCursor(i, line);
+    lcd.print(' ');
+  }
+}
+
 void clearRds() {
   bShow = false;
   programInfo = NULL;
@@ -343,33 +360,35 @@ void clearRds() {
   rdsTime = NULL;
   progInfoIndex = currentMsgType = 0;
   rx.clearRdsBuffer();
+  clearLcdLine(0);
 }
 
 void checkRDS() {
   // You must call getRdsReady before calling any RDS query function.
   if (rx.getRdsReady()) {
-    if (rx.hasRdsInfo() ) {
+    if (rx.hasRdsInfo()) {
+
       programInfo = rx.getRdsProgramInformation();
       stationName = rx.getRdsStationName();
       rdsTime = rx.getRdsTime();
+
+      if (currentMsgType == 0)
+        showRDSMsg();
+      else if (currentMsgType == 1)
+        showRDSStation();
+      else if (currentMsgType == 2)
+        showRDSTime();
     }
   }
 }
 
-void showRds() {
+void showRdsIndicator() {
 
   lcd.setCursor(2, 1);
   if (bRds)
     lcd.print(".");
   else
     lcd.print(" ");
-
-  if (currentMsgType == 0)
-    showRDSMsg();
-  else if (currentMsgType == 1)
-    showRDSStation();
-  else if (currentMsgType == 2)
-    showRDSTime();
 }
 
 /*********************************************************
@@ -387,7 +406,7 @@ void doStereo() {
 void doRds() {
   rx.setRDS((bRds = !bRds));
   progInfoIndex = currentMsgType = 0;
-  showRds();
+  showRdsIndicator();
   resetEepromDelay();
 }
 

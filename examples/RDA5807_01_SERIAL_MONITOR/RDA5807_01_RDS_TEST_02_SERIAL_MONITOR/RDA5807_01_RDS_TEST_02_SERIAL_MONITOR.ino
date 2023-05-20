@@ -101,7 +101,8 @@ void showRdsInfo(char *infoType, char *infoText) {
 }
 
 void showRDS() {
-  if (rx.getRdsAllData(stationName, stationInfo, programInfo, utcTime)) {
+  // Checks RDS information. Gets the points of char array containing RDS information.
+  if (rx.getRdsAllData(&stationName, &stationInfo, &programInfo, &utcTime)) {
     programInfo = rx.getRdsProgramInformation();
     showRdsInfo((char *) "Progrgam Information: ", programInfo);
     stationInfo = rx.getRdsStationInformation();

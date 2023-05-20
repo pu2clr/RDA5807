@@ -111,7 +111,7 @@ void showRdsInfo(char *infoType, char *infoText) {
 }
 
 void showRDS() {
-  if (rx.getRdsAllData(stationName, stationInfo, programInfo, utcTime)) {
+  if (rx.getRdsAllData(&stationName, &stationInfo, &programInfo, &utcTime)) {
     programInfo = rx.getRdsProgramInformation();
     showRdsInfo((char *) "Progrgam Information: ", programInfo);
     stationInfo = rx.getRdsStationInformation();

@@ -874,14 +874,14 @@ bool RDA5807::isNewRdsFlagAB(void)
  * @return True if found at least one valid data 
  * @see setRDS, setRdsFifo, getRdsAllData
  */
-bool RDA5807::getRdsAllData(char *stationName, char *stationInformation, char *programInformation, char *utcTime) {
+bool RDA5807::getRdsAllData(char **stationName, char **stationInformation, char **programInformation, char **utcTime) {
 
     if ( !this->getRdsReady() ) return false;
     if ( !this->hasRdsInfoAB() ) return false;
-    stationName = this->getRdsText0A(); // returns NULL if no information
-    stationInformation = this->getRdsText2B(); // returns NULL if no information
-    programInformation = this->getRdsText2A(); // returns NULL if no information
-    utcTime = this->getRdsTime(); // returns NULL if no information
+    *stationName = this->getRdsText0A(); // returns NULL if no information
+    *stationInformation = this->getRdsText2B(); // returns NULL if no information
+    *programInformation = this->getRdsText2A(); // returns NULL if no information
+    *utcTime = this->getRdsTime(); // returns NULL if no information
 
     return (bool)stationName | (bool)stationInformation | (bool) programInformation | (bool) utcTime;
 }

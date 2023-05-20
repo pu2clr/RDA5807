@@ -2,8 +2,6 @@
 
   ESP32 Dev Modeule version.
 
-  Use the RDA5907FP device to deal with RDS and interrupt control.
-
   This sketch uses an ESP32 with LCD16X02 DISPLAY
   It is also a FM receiver capable to tune your local FM stations.
   This sketch saves the latest status of the receiver into the Atmega328 eeprom.
@@ -30,7 +28,6 @@
   |                           | VCC                       |  3.3V         |
   |                           | SDIO / SDA (pin 8)        |  GPIO21       |
   |                           | SCLK (pin 7)              |  GPIO22       |
-  |                           | GPIO2 (Pin 16)            |  GPIO34       |
   | Buttons                   |                           |               |
   |                           | Volume Up                 |  GPIO32       |
   |                           | Volume Down               |  GPIO33       |
@@ -72,7 +69,6 @@
 // Enconder PINs
 #define ENCODER_PIN_A 13
 #define ENCODER_PIN_B 14
-#define RDS_FLAG 34
 
 // Buttons controllers
 #define VOLUME_UP 32      // Volume Up
@@ -83,7 +79,7 @@
 
 #define POLLING_TIME 1900
 #define RDS_MSG_TYPE_TIME 23000
-#define POLLING_RDS 51
+#define POLLING_RDS 80
 
 #define STORE_TIME 10000  // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
 #define PUSH_MIN_DELAY 300
@@ -107,7 +103,6 @@ int maxY1;
 
 // Encoder control variables
 volatile int encoderCount = 0;
-volatile int rdsCount = 0;
 uint16_t currentFrequency;
 uint16_t previousFrequency;
 
@@ -132,7 +127,7 @@ void setup() {
   pinMode(SEEK_FUNCTION, INPUT_PULLUP);
 
   // Start LCD display device
-  lcd.begin(16, 2);
+  lcd.begin(20, 4);
   showSplash();
 
   EEPROM.begin(EEPROM_SIZE);
@@ -150,12 +145,8 @@ void setup() {
   // Encoder interrupt
   attachInterrupt(digitalPinToInterrupt(ENCODER_PIN_A), rotaryEncoder, CHANGE);
   attachInterrupt(digitalPinToInterrupt(ENCODER_PIN_B), rotaryEncoder, CHANGE);
-  attachInterrupt(digitalPinToInterrupt(RDS_FLAG), rdsData, CHANGE);
 
   rx.setup();
-
-  rx.setInterruptMode(1);  // Sets interrupt on GPIO2 to deal with RDS.
-
   delay(100);
 
   // Checking the EEPROM content
@@ -173,6 +164,7 @@ void setup() {
   rx.setAFC(true);
   rx.setFrequency(currentFrequency);  // It is the frequency you want to select in MHz multiplied by 100.
   rx.setSeekThreshold(50);            // Sets RSSI Seek Threshold (0 to 127)
+  lcd.clear();
   showStatus();
 }
 
@@ -217,14 +209,6 @@ void resetEepromDelay() {
 
 
 /*
-  Will be called by the system when a RDS DATA is available
-  When the RDA5807FP, pin 16 (GPIO2) has changed 
-*/
-void rdsData() {
-  rdsCount++;
-}
-
-/*
     Reads encoder via interrupt
     Use Rotary.h and  Rotary.cpp implementation to process encoder via interrupt
 */
@@ -255,13 +239,13 @@ void showTemplate() {
 */
 void showFrequency() {
   currentFrequency = rx.getFrequency();
-  lcd.setCursor(4, 1);
+  lcd.setCursor(6, 0);
   lcd.print(rx.formatCurrentFrequency());
   lcd.display();
 }
 
 void showFrequencySeek() {
-  lcd.clear();
+  clearLcdLine(0);
   showFrequency();
 }
 
@@ -269,7 +253,7 @@ void showFrequencySeek() {
     Show some basic information on display
 */
 void showStatus() {
-  lcd.clear();
+  clearLcdLine(0);
   showFrequency();
   showStereoMono();
   showRSSI();
@@ -288,12 +272,12 @@ void showRSSI() {
   char rssi[12];
   rx.convertToChar(rx.getRssi(), rssi, 3, 0, '.');
   strcat(rssi, "dB");
-  lcd.setCursor(13, 1);
+  lcd.setCursor(15, 0);
   lcd.print(rssi);
 }
 
 void showStereoMono() {
-  lcd.setCursor(0, 1);
+  lcd.setCursor(0, 0);
   if (bSt) {
     lcd.print("ST");
   } else {
@@ -306,29 +290,39 @@ void showStereoMono() {
  *********************************************************/
 char *programInfo;
 char *stationName;
-char *stationInfo;
 char *rdsTime;
-int currentMsgType = 0;
 long polling_rds = millis();
 long timeTextType = millis();  // controls the type of each text will be shown (Message, Station Name or time)
 
 int progInfoIndex = 0;  // controls the part of the rdsMsg text will be shown on LCD 16x2 Display
 
+long delayProgramInfor = millis();
+long delayStationName = millis();
+long delayTime = millis();
+
+
+void clearLcdLine(int line) {
+  for (int i = 0; i < 20; i++) {
+    lcd.setCursor(i, line);
+    lcd.print(' ');
+  }
+}
 
 /**
-  showRdsProgramInfo - Shows the Program Information
+  showRDSMsg - Shows the Program Information
 */
-void showRdsProgramInfo() {
-  char txtAux[17];
+void showRDSMsg() {
+  char txtAux[21];
 
-  if (programInfo == NULL) return;
-
+  if (programInfo == NULL || strlen( programInfo ) < 2 || ( millis() -  delayProgramInfor) < 1000 ) return;
+  delayProgramInfor = millis();
+  clearLcdLine(3);
   programInfo[61] = '\0';  // Truncate the message to fit on display line
-  strncpy(txtAux, &programInfo[progInfoIndex], 16);
-  txtAux[16] = '\0';
-  progInfoIndex += 3;
+  strncpy(txtAux, &programInfo[progInfoIndex], 20);
+  txtAux[20] = '\0';
+  progInfoIndex += 4;
   if (progInfoIndex > 60) progInfoIndex = 0;
-  lcd.setCursor(0, 0);
+  lcd.setCursor(0, 3);
   lcd.print(txtAux);
 }
 
@@ -336,20 +330,21 @@ void showRdsProgramInfo() {
    showRDSStation - Shows the 
 */
 void showRDSStation() {
-  if (stationName == NULL) return;
-  lcd.setCursor(0, 0);
+  if (stationName == NULL || strlen(stationName) < 2 || (millis() - delayStationName) < 3000 ) return;
+  delayStationName = millis();
+  lcd.setCursor(0, 1);
   lcd.print(stationName);
+  delay(25);
 }
 
 void showRDSTime() {
-  char txtAux[17];
-
-  if (rdsTime == NULL) return;
-
+  char txtAux[21];
+  if (rdsTime == NULL || strlen(rdsTime) < 6 || (millis() - delayTime) < 60000 ) return;
+  delayTime = millis();
   rdsTime[16] = '\0';
-  strncpy(txtAux, rdsTime, 16);
-  txtAux[16] = '\0';
-  lcd.setCursor(0, 0);
+  strncpy(txtAux, rdsTime, 20);
+  txtAux[20] = '\0';
+  lcd.setCursor(0, 2);
   lcd.print(txtAux);
 }
 
@@ -359,36 +354,32 @@ void clearRds() {
   programInfo = NULL;
   stationName = NULL;
   rdsTime = NULL;
-  progInfoIndex = currentMsgType = 0;
   rx.clearRdsBuffer();
+  clearLcdLine(1);
+  clearLcdLine(2);
+  clearLcdLine(3);
 }
 
 void checkRDS() {
   // You must call getRdsReady before calling any RDS query function.
   if (rx.getRdsReady()) {
-    if (rx.hasRdsInfoAB()) {
+    if (rx.hasRdsInfo() ) {
       programInfo = rx.getRdsProgramInformation();
       stationName = rx.getRdsStationName();
       rdsTime = rx.getRdsTime();
-      showRds();
+      showRDSMsg();
+      showRDSStation();
+      showRDSTime();
     }
   }
 }
 
 void showRds() {
-
-  lcd.setCursor(2, 1);
+  lcd.setCursor(2, 0);
   if (bRds)
     lcd.print(".");
   else
     lcd.print(" ");
-
-  //if (currentMsgType == 0)
-    showRdsProgramInfo();
-  //else if (currentMsgType == 1)
-  //  showRDSStation();
-  //else if (currentMsgType == 2)
-  //  showRDSTime();
 }
 
 /*********************************************************
@@ -405,7 +396,7 @@ void doStereo() {
 
 void doRds() {
   rx.setRDS((bRds = !bRds));
-  progInfoIndex = currentMsgType = 0;
+  progInfoIndex = 0;
   showRds();
   resetEepromDelay();
 }
@@ -453,26 +444,20 @@ void loop() {
 
   if ((millis() - pollin_elapsed) > POLLING_TIME) {
     showStatus();
-    // if (bShow) clearRds();
+    if (bShow) clearRds();
     pollin_elapsed = millis();
   }
 
-  //if (bRds) {
-    if ((millis() - polling_rds) > POLLING_RDS) {
-    // if (rdsCount > 0) {
-      //checkRDS();
-      rx.getRdsAllData(&stationName, &stationInfo, &programInfo, &rdsTime );
-      showRdsProgramInfo();      
-      polling_rds = millis();
-      rdsCount = 0;
+  if ((millis() - polling_rds) > POLLING_RDS) {
+    if (bRds) {
+      checkRDS();
     }
-  // }
+    polling_rds = millis();
+  }
 
   if ((millis() - timeTextType) > RDS_MSG_TYPE_TIME) {
     // Toggles the type of message to be shown - See showRds function
-    currentMsgType++;
     progInfoIndex = 0;
-    if (currentMsgType > 2) currentMsgType = 0;
     timeTextType = millis();
   }
 
