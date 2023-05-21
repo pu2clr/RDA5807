@@ -303,9 +303,9 @@ long delayRdsTime = millis();
 
 
 /**
-  showRDSMsg - Shows the Program Information
+  showProgramInfo - Shows the Program Information
 */
-void showRDSMsg() {
+void showProgramInfo() {
   char txtAux[17];
 
   if (programInfo == NULL || strlen(programInfo) < 2 || (millis() - delayProgramInfo) < 1000) return;
@@ -372,11 +372,11 @@ void checkRDS() {
       stationName = rx.getRdsStationName();
       rdsTime = rx.getRdsTime();
 
-      if (currentMsgType == 0)
-        showRDSMsg();
-      else if (currentMsgType == 1)
+      if (currentMsgType == 0) // Time to show program information
+        showProgramInfo();
+      else if (currentMsgType == 1) // Time to show Station Name
         showRDSStation();
-      else if (currentMsgType == 2)
+      else if (currentMsgType == 2) // Time to show UTC time - Some stations broadcast wrong information
         showRDSTime();
     }
   }
