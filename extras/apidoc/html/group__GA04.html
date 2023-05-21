@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="LOGO.png"/></td>
   <td id="projectalign">
-   <div id="projectname">PU2CLR RDA5807 Arduino Library<span id="projectnumber">&#160;1.1.7</span>
+   <div id="projectname">PU2CLR RDA5807 Arduino Library<span id="projectnumber">&#160;1.1.8</span>
    </div>
    <div id="projectbrief">Arduino Library for RDA5807 Devices - By Ricardo Lima Caratti</div>
   </td>
@@ -293,15 +293,15 @@ RDS/RBDS</h1>
 <p>You must call getRdsReady before calling this function </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA04.html#gacfa48dfcf792a9bcee489658177aed90" title="Returns true if RDS Ready.">getRdsReady</a> Block Errors Level of RDS_DATA_0, and is always read as Errors Level of RDS BLOCK A (in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1)</dd></dl>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">value   </th><th class="markdownTableHeadNone">description    </th></tr>
+<th class="markdownTableHeadNone">Bin   </th><th class="markdownTableHeadNone">Dec   </th><th class="markdownTableHeadNone">description    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">00   </td><td class="markdownTableBodyNone">0 errors requiring correction    </td></tr>
+<td class="markdownTableBodyNone">00   </td><td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">0 errors requiring correction    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">01   </td><td class="markdownTableBodyNone">1~2 errors requiring correction    </td></tr>
+<td class="markdownTableBodyNone">01   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">1~2 errors requiring correction    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">10   </td><td class="markdownTableBodyNone">3~5 errors requiring correction    </td></tr>
+<td class="markdownTableBodyNone">10   </td><td class="markdownTableBodyNone">2   </td><td class="markdownTableBodyNone">3~5 errors requiring correction    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">11   </td><td class="markdownTableBodyNone">6+ errors or error in checkword, correction not possible   </td></tr>
+<td class="markdownTableBodyNone">11   </td><td class="markdownTableBodyNone">3   </td><td class="markdownTableBodyNone">6+ errors or error in checkword, correction not possible   </td></tr>
 </table>
 <p><b>Available only in RDS Verbose mode</b></p>
 <dl class="section return"><dt>Returns</dt><dd>value See table above. </dd></dl>
@@ -333,17 +333,18 @@ RDS/RBDS</h1>
 
 <p>Gets the current Status of block B. </p>
 <p>You must call getRdsReady before calling this function </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA04.html#gacfa48dfcf792a9bcee489658177aed90" title="Returns true if RDS Ready.">getRdsReady</a></dd></dl>
-<p>Block Errors Level of RDS_DATA_1, and is always read as Errors Level of RDS BLOCK B (in RDS mode ) or E (in RBDS mode when ABCD_E flag is 1). </p><table class="markdownTable">
+<p>Block Errors Level of RDS_DATA_1, and is always read as Errors Level of RDS BLOCK B (in RDS mode ) or E (in RBDS mode when ABCD_E flag is 1).</p>
+<table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">value   </th><th class="markdownTableHeadNone">description    </th></tr>
+<th class="markdownTableHeadNone">Bin   </th><th class="markdownTableHeadNone">Dec   </th><th class="markdownTableHeadNone">description    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">00   </td><td class="markdownTableBodyNone">0 errors requiring correction    </td></tr>
+<td class="markdownTableBodyNone">00   </td><td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">0 errors requiring correction    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">01   </td><td class="markdownTableBodyNone">1~2 errors requiring correction    </td></tr>
+<td class="markdownTableBodyNone">01   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">1~2 errors requiring correction    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">10   </td><td class="markdownTableBodyNone">3~5 errors requiring correction    </td></tr>
+<td class="markdownTableBodyNone">10   </td><td class="markdownTableBodyNone">2   </td><td class="markdownTableBodyNone">3~5 errors requiring correction    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">11   </td><td class="markdownTableBodyNone">6+ errors or error in checkword, correction not possible   </td></tr>
+<td class="markdownTableBodyNone">11   </td><td class="markdownTableBodyNone">3   </td><td class="markdownTableBodyNone">6+ errors or error in checkword, correction not possible   </td></tr>
 </table>
 <p><b>Available only in RDS Verbose mode</b></p>
 <dl class="section return"><dt>Returns</dt><dd>value See table above. </dd></dl>
@@ -459,7 +460,7 @@ RDS/RBDS</h1>
 <dl class="section return"><dt>Returns</dt><dd>True if found at least one valid data </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__GA04.html#ga4b741f1433eda57949bb40fa9e973732" title="Sets the RDS operation.">setRDS</a>, <a class="el" href="group__GA04.html#gae27337170a5f3dedebf585aa19855ad6" title="Sets RDS fifo mode enable.">setRdsFifo</a>, <a class="el" href="group__GA04.html#gadafba5991f6f60a52ad73fdda8fac984" title="Gets Station Name, Station Information, Program Information and utcTime.">getRdsAllData</a> </dd></dl>
 
-<p class="reference">References <a class="el" href="#l00819">RDA5807::getRdsReady()</a>, <a class="el" href="#l01014">RDA5807::getRdsText0A()</a>, <a class="el" href="#l01042">RDA5807::getRdsText2A()</a>, <a class="el" href="#l01069">RDA5807::getRdsText2B()</a>, <a class="el" href="#l01094">RDA5807::getRdsTime()</a>, and <a class="el" href="#l00963">RDA5807::hasRdsInfoAB()</a>.</p>
+<p class="reference">References <a class="el" href="#l00819">RDA5807::getRdsReady()</a>, <a class="el" href="#l01014">RDA5807::getRdsText0A()</a>, <a class="el" href="#l01042">RDA5807::getRdsText2A()</a>, <a class="el" href="#l01069">RDA5807::getRdsText2B()</a>, <a class="el" href="#l01094">RDA5807::getRdsTime()</a>, and <a class="el" href="#l00964">RDA5807::hasRdsInfoAB()</a>.</p>
 
 </div>
 </div>

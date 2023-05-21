@@ -2004,7 +2004,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8h_1gac6b8c39c1134700ce3e2a9e5216a5325';
-        sec-mem-ref-line = '963';
+        sec-mem-ref-line = '964';
         sec-mem-ref-name = 'hasRdsInfoAB';
     };
     }; /* sec-member */
@@ -2489,11 +2489,11 @@ _EnD_oF_dEf_TeXt_;
 Block Errors Level of RDS_DATA_0, and is always read as Errors Level of RDS BLOCK A (in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1)
 
 <table class="markdownTable">
-  <tr class="markdownTableHead">    <th class="markdownTableHeadNone"> value \ilinebr </th>    <th class="markdownTableHeadNone"> description \ilinebr </th>  </tr>
-<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 00 \ilinebr </td>    <td class="markdownTableBodyNone"> 0 errors requiring correction \ilinebr </td>  </tr>
-<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 01 \ilinebr </td>    <td class="markdownTableBodyNone"> 1~2 errors requiring correction \ilinebr </td>  </tr>
-<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 10 \ilinebr </td>    <td class="markdownTableBodyNone"> 3~5 errors requiring correction \ilinebr </td>  </tr>
-<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 11 \ilinebr </td>    <td class="markdownTableBodyNone"> 6+ errors or error in checkword, correction not possible \ilinebr </td>  </tr></table>
+  <tr class="markdownTableHead">    <th class="markdownTableHeadNone"> Bin \ilinebr </th>    <th class="markdownTableHeadNone"> Dec \ilinebr </th>    <th class="markdownTableHeadNone"> description \ilinebr </th>  </tr>
+<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 00 \ilinebr </td>    <td class="markdownTableBodyNone"> 0 \ilinebr </td>    <td class="markdownTableBodyNone"> 0 errors requiring correction \ilinebr </td>  </tr>
+<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 01 \ilinebr </td>    <td class="markdownTableBodyNone"> 1 \ilinebr </td>    <td class="markdownTableBodyNone"> 1~2 errors requiring correction \ilinebr </td>  </tr>
+<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 10 \ilinebr </td>    <td class="markdownTableBodyNone"> 2 \ilinebr </td>    <td class="markdownTableBodyNone"> 3~5 errors requiring correction \ilinebr </td>  </tr>
+<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 11 \ilinebr </td>    <td class="markdownTableBodyNone"> 3 \ilinebr </td>    <td class="markdownTableBodyNone"> 6+ errors or error in checkword, correction not possible \ilinebr </td>  </tr></table>
 
  <strong>Available only in RDS Verbose mode</strong>
 
@@ -2510,7 +2510,7 @@ uint8_t
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'getErrorBlockB';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '938';
+      sec-mem-desc-line = '939';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the current Status of block B.
 _EnD_oF_dEf_TeXt_;
@@ -2519,12 +2519,13 @@ _EnD_oF_dEf_TeXt_;
 @see getRdsReady
 
 Block Errors Level of RDS_DATA_1, and is always read as Errors Level of RDS BLOCK B (in RDS mode ) or E (in RBDS mode when ABCD_E flag is 1).
+
 <table class="markdownTable">
-  <tr class="markdownTableHead">    <th class="markdownTableHeadNone"> value \ilinebr </th>    <th class="markdownTableHeadNone"> description \ilinebr </th>  </tr>
-<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 00 \ilinebr </td>    <td class="markdownTableBodyNone"> 0 errors requiring correction \ilinebr </td>  </tr>
-<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 01 \ilinebr </td>    <td class="markdownTableBodyNone"> 1~2 errors requiring correction \ilinebr </td>  </tr>
-<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 10 \ilinebr </td>    <td class="markdownTableBodyNone"> 3~5 errors requiring correction \ilinebr </td>  </tr>
-<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 11 \ilinebr </td>    <td class="markdownTableBodyNone"> 6+ errors or error in checkword, correction not possible \ilinebr </td>  </tr></table>
+  <tr class="markdownTableHead">    <th class="markdownTableHeadNone"> Bin \ilinebr </th>    <th class="markdownTableHeadNone"> Dec \ilinebr </th>    <th class="markdownTableHeadNone"> description \ilinebr </th>  </tr>
+<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 00 \ilinebr </td>    <td class="markdownTableBodyNone"> 0 \ilinebr </td>    <td class="markdownTableBodyNone"> 0 errors requiring correction \ilinebr </td>  </tr>
+<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 01 \ilinebr </td>    <td class="markdownTableBodyNone"> 1 \ilinebr </td>    <td class="markdownTableBodyNone"> 1~2 errors requiring correction \ilinebr </td>  </tr>
+<tr class="markdownTableRowOdd">    <td class="markdownTableBodyNone"> 10 \ilinebr </td>    <td class="markdownTableBodyNone"> 2 \ilinebr </td>    <td class="markdownTableBodyNone"> 3~5 errors requiring correction \ilinebr </td>  </tr>
+<tr class="markdownTableRowEven">    <td class="markdownTableBodyNone"> 11 \ilinebr </td>    <td class="markdownTableBodyNone"> 3 \ilinebr </td>    <td class="markdownTableBodyNone"> 6+ errors or error in checkword, correction not possible \ilinebr </td>  </tr></table>
 
  <strong>Available only in RDS Verbose mode</strong>
 
@@ -2541,7 +2542,7 @@ bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'hasRdsInfo';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '951';
+      sec-mem-desc-line = '952';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Returns true when the RDS system has valid information.
 _EnD_oF_dEf_TeXt_;
@@ -2562,7 +2563,7 @@ bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'hasRdsInfoAB';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '963';
+      sec-mem-desc-line = '964';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Returns true when the RDS system has valid information.
 _EnD_oF_dEf_TeXt_;
@@ -2587,7 +2588,7 @@ bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'getRdsSync';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '976';
+      sec-mem-desc-line = '977';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the Rds Sync.
 _EnD_oF_dEf_TeXt_;
@@ -2614,7 +2615,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'value';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '982';
+      sec-mem-desc-line = '983';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Enables I2S setup.
 _EnD_oF_dEf_TeXt_;
@@ -2700,7 +2701,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'OPEN_MODE';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '983';
+      sec-mem-desc-line = '984';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Configures all parameters for I2S.
 _EnD_oF_dEf_TeXt_;
@@ -2741,7 +2742,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'value';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '984';
+      sec-mem-desc-line = '985';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -2765,7 +2766,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'value';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '985';
+      sec-mem-desc-line = '986';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Sets the speed in kbps. You can use the predefined constantes: I2S_WS_STEP_48, I2S_WS_STEP_44_1, I2S_WS_STEP_32,.
 _EnD_oF_dEf_TeXt_;
@@ -2793,7 +2794,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'value';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '986';
+      sec-mem-desc-line = '987';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 If 0, I2S output unsigned 16-bit audio data. If 1, I2S output signed 16-bit audio data.
 _EnD_oF_dEf_TeXt_;
@@ -2852,7 +2853,7 @@ true
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '989';
+      sec-mem-desc-line = '990';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Converts a number to a char array.
 _EnD_oF_dEf_TeXt_;
@@ -2896,12 +2897,12 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'decimalSeparator';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '1000';
+      sec-mem-desc-line = '1001';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Convert a numeric frequency to a formated string (char *) frequency.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 993 
+\iline 994 
 
 @param uint16_t value  - A given frequency to be formated
 @param char *strValue - Formated frequency (Exe: 103,90) - Array of char ( minimal 7 elements )
@@ -2928,7 +2929,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '1014';
+      sec-mem-desc-line = '1015';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Convert the current frequency to a formated string (char *) frequency.
 _EnD_oF_dEf_TeXt_;
@@ -2960,7 +2961,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'addressArray';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '1020';
+      sec-mem-desc-line = '1021';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Check the I2C bus address.
 _EnD_oF_dEf_TeXt_;
@@ -3542,7 +3543,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8h_1ga43c6c86481dd1fdba0fc14438bc8e18e';
-        sec-mem-ref-line = '1014';
+        sec-mem-ref-line = '1015';
         sec-mem-ref-name = 'formatCurrentFrequency';
     };
     }; /* sec-member */
