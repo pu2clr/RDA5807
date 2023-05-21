@@ -901,12 +901,12 @@ public:
      * @see getRdsReady
      * Block Errors Level of RDS_DATA_0, and is always read as Errors Level of RDS BLOCK A (in RDS mode) or BLOCK E (in RBDS mode when ABCD_E flag is 1)
      *
-     * | value | description |
-     * | ----- | ----------- |
-     * |  00   | 0 errors requiring correction |
-     * |  01   | 1~2 errors requiring correction |
-     * |  10   | 3~5 errors requiring correction |
-     * |  11   | 6+ errors or error in checkword, correction not possible |
+     * | Bin   |  Dec  | description |
+     * | ----- | ----- | ----------- |
+     * |  00   |  0    | 0 errors requiring correction |
+     * |  01   |  1    | 1~2 errors requiring correction |
+     * |  10   |  2    | 3~5 errors requiring correction |
+     * |  11   |  3    | 6+ errors or error in checkword, correction not possible |
      *
      *  **Available only in RDS Verbose mode**
      *
@@ -924,12 +924,13 @@ public:
      * @see getRdsReady
      *
      * Block Errors Level of RDS_DATA_1, and is always read as Errors Level of RDS BLOCK B (in RDS mode ) or E (in RBDS mode when ABCD_E flag is 1).
-     * | value | description |
-     * | ----- | ----------- |
-     * |  00   | 0 errors requiring correction |
-     * |  01   | 1~2 errors requiring correction |
-     * |  10   | 3~5 errors requiring correction |
-     * |  11   | 6+ errors or error in checkword, correction not possible |
+     * 
+     * | Bin   |  Dec  | description |
+     * | ----- | ----- | ----------- |
+     * |  00   |  0    | 0 errors requiring correction |
+     * |  01   |  1    | 1~2 errors requiring correction |
+     * |  10   |  2    | 3~5 errors requiring correction |
+     * |  11   |  3    | 6+ errors or error in checkword, correction not possible |
      *
      *  **Available only in RDS Verbose mode**
      *
