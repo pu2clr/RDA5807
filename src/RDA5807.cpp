@@ -864,7 +864,7 @@ bool RDA5807::isNewRdsFlagAB(void)
 /**
  * @ingroup GA04
  * @brief Gets Station Name, Station Information, Program Information and utcTime
- * @details This function populates four char pointers with the following contents (Arguments/parameters must be pointers to char).
+ * @details This function populates four char pointer variable parameters with Station Name, Station Information, Programa Information and UTC time.
  * @details You must call  setRDS(true), setRdsFifo(true) before calling getRdsAllData(...) 
  * @details ATTENTION: the parameters below are point to point to array of char. 
  * @details the right way to call this function is shown below.
@@ -879,10 +879,10 @@ bool RDA5807::isNewRdsFlagAB(void)
  *     showUtcTime(rdsTime); 
  * }
  * @endcode
- * @param stationName   - if NOT NULL,  point to Name of the Station (char array -  9 bytes)
- * @param stationInformation - if NOT NULL, point to Station information (char array - 33 bytes)
- * @param programInformation - if NOT NULL, point to program information (char array - 65 nytes)
- * @param utcTime - if NOT NULL, point to char array containing the current UTC time (format HH:MM:SS +HH:MM)
+ * @param stationName (reference)  - if NOT NULL,  point to Name of the Station (char array -  9 bytes)
+ * @param stationInformation (reference)  - if NOT NULL, point to Station information (char array - 33 bytes)
+ * @param programInformation (reference)  - if NOT NULL, point to program information (char array - 65 nytes)
+ * @param utcTime  (reference)  - if NOT NULL, point to char array containing the current UTC time (format HH:MM:SS +HH:MM)
  * @return True if found at least one valid data 
  * @see setRDS, setRdsFifo, getRdsAllData
  */
