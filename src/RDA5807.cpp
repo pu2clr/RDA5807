@@ -1415,6 +1415,7 @@ void RDA5807::setMute(bool value)
 /**
  * @ingroup GA07
  * @brief Sets audio output impedance high ow low
+ * @details Useful to setup high impedance headphones 
  * @param value TRUE = High; FALSE = Low
  */
 void RDA5807::setAudioOutputHighImpedance(bool value)
