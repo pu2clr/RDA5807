@@ -855,6 +855,7 @@ public:
      * @ingroup GA04
      * @brief Gets the Station Name
      * @details Alias for getRdsText0A
+     * @details ATTENTION: You must call getRdsReady before calling this function. 
      * @return char* should return a string with the station name. However, some stations send other kind of messages
      * @see getRdsText0A
      */
@@ -865,6 +866,7 @@ public:
      * @ingroup @ingroup GA04
      * @brief Gets the Program Information
      * @details Process the program information data. Same getRdsText2A(). It is a alias for getRdsText2A.
+     * @details ATTENTION: You must call getRdsReady before calling this function. 
      * @return char array with the program information (63 bytes)
      * @see getRdsText2A
      */
@@ -874,7 +876,9 @@ public:
     /**
      * @ingroup GA04
      * @brief Gets the Station Information.
+     * @details ATTENTION: You must call getRdsReady before calling this function. 
      * @return char array with the Text of Station Information (33 bytes)
+     * @see getRdsReady
      */
     inline char *getRdsStationInformation(void) { return getRdsText2B(); };
 

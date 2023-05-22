@@ -826,9 +826,10 @@ bool RDA5807::getRdsReady()
 
 /**
  * @ingroup GA04
- *
  * @brief Returns the current Text Flag A/B
+ * @details ATTENTION: You must call getRdsReady before calling this function. 
  * @return uint8_t current Text Flag A/B
+ * @see getRdsReady
  */
 uint8_t RDA5807::getRdsFlagAB(void)
 {
@@ -902,8 +903,9 @@ bool RDA5807::getRdsAllData(char **stationName, char **stationInformation, char 
 /**
  * @ingroup GA04
  * @brief Return the group type
- *
+ * @details ATTENTION: You must call getRdsReady before calling this function. 
  * @return uint16_t
+ * @see getRdsReady
  */
 uint16_t RDA5807::getRdsGroupType()
 {
@@ -914,9 +916,10 @@ uint16_t RDA5807::getRdsGroupType()
 
 /**
  * @ingroup GA04
- *
  * @brief Gets the version code (extracted from the Block B)
+ * @details ATTENTION: You must call getRdsReady before calling this function. 
  * @returns  0=A or 1=B
+ * @see getRdsReady
  */
 uint8_t RDA5807::getRdsVersionCode(void)
 {
@@ -928,7 +931,9 @@ uint8_t RDA5807::getRdsVersionCode(void)
 /**
  * @ingroup GA04
  * @brief Returns the Program Type (extracted from the Block B)
+ * @details ATTENTION: You must call getRdsReady before calling this function. 
  * @see https://en.wikipedia.org/wiki/Radio_Data_System
+ * @see getRdsReady
  * @return program type (an integer betwenn 0 and 31)
  */
 uint8_t RDA5807::getRdsProgramType(void)
@@ -1017,11 +1022,11 @@ void RDA5807::getNext4Block(char *c)
 
 /**
  * @ingroup GA04
- * @todo RDS Dynamic PS or Scrolling PS support
  * @brief Gets the station name and other messages.
- *
+ * @details ATTENTION: You must call getRdsReady before calling this function. 
  * @return char* should return a string with the station name.
  *         However, some stations send other kind of messages
+ * @see getRdsReady
  */
 char *RDA5807::getRdsText0A(void)
 {
@@ -1049,7 +1054,9 @@ char *RDA5807::getRdsText0A(void)
  *
  * @brief Gets the Program Information
  * @details Process the program information data. 
+ * @details ATTENTION: You must call getRdsReady before calling this function. 
  * @return char array with the program information (63 bytes) 
+ * @see getRdsReady
  */
 char *RDA5807::getRdsText2A(void)
 {
@@ -1076,7 +1083,9 @@ char *RDA5807::getRdsText2A(void)
 /**
  * @ingroup GA04
  * @brief Gets the Station Information.  
+ * @details ATTENTION: You must call getRdsReady before calling this function. 
  * @return char array with the Text of Station Information (33 bytes)
+ * @see getRdsReady
  */
 char *RDA5807::getRdsText2B(void)
 {
@@ -1101,7 +1110,9 @@ char *RDA5807::getRdsText2B(void)
  * @ingroup GA04
  * @todo Need to check.
  * @brief Gets the RDS time and date when the Group type is 4
+ * @details ATTENTION: You must call getRdsReady before calling this function. 
  * @return char* a string with hh:mm +/- offset
+ * @see getRdsReady
  */
 char *RDA5807::getRdsTime()
 {
