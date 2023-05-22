@@ -863,7 +863,6 @@ bool RDA5807::isNewRdsFlagAB(void)
 
 /**
  * @ingroup GA04
- * @todo It is under construction...
  * @brief Gets Station Name, Station Information, Program Information and utcTime
  * @details This function populates four char pointers with the following contents (Arguments/parameters must be pointers to char).
  * @details You must call  setRDS(true), setRdsFifo(true) before calling getRdsAllData(...) 
