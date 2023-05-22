@@ -867,7 +867,20 @@ bool RDA5807::isNewRdsFlagAB(void)
  * @brief Gets Station Name, Station Information, Program Information and utcTime
  * @details This function populates four char pointers with the following contents (Arguments/parameters must be pointers to char).
  * @details You must call  setRDS(true), setRdsFifo(true) before calling getRdsAllData(...) 
- * @param stationName  - if NOT NULL,  point to Name of the Station (char array -  9 bytes)
+ * @details ATTENTION: the parameters below are point to point to array of char. 
+ * @details the right way to call this function is shown below.
+ * @code {.cpp}
+ * 
+ * char *stationName, *stationInfo, *programInfo, *rdsTime;
+ * // The char pointers above will be populate by the call below. So, the char pointers need to be passed by reference (pointer to pointer).
+ * if (rx.getRdsAllData(&stationName, &stationInfo , &programInfo, &rdsTime) ) {
+ *     showProgramaInfo(programInfo);  
+ *     showStationName(stationName); 
+ *     showStationInfo(stationInfo);
+ *     showUtcTime(rdsTime); 
+ * }
+ * @endcode
+ * @param stationName   - if NOT NULL,  point to Name of the Station (char array -  9 bytes)
  * @param stationInformation - if NOT NULL, point to Station information (char array - 33 bytes)
  * @param programInformation - if NOT NULL, point to program information (char array - 65 nytes)
  * @param utcTime - if NOT NULL, point to char array containing the current UTC time (format HH:MM:SS +HH:MM)
