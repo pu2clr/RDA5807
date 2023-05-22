@@ -1968,7 +1968,7 @@ _EnD_oF_dEf_TeXt_;
 Gets Station Name, Station Information, Program Information and utcTime.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
- This function populates four char pointers with the following contents (Arguments/parameters must be pointers to char).
+ This function populates four char pointer variable parameters with Station Name, Station Information, Programa Information and UTC time.
 \ilinebr\ilinebr You must call  setRDS(true), setRdsFifo(true) before calling getRdsAllData(...) 
 \ilinebr\ilinebr ATTENTION: the parameters below are point to point to array of char. 
 \ilinebr\ilinebr the right way to call this function is shown below.
@@ -1983,10 +1983,10 @@ if (rx.getRdsAllData(&stationName, &stationInfo , &programInfo, &rdsTime) ) {
     showUtcTime(rdsTime); 
 }
 @endcode
-@param stationName   - if NOT NULL,  point to Name of the Station (char array -  9 bytes)
-@param stationInformation - if NOT NULL, point to Station information (char array - 33 bytes)
-@param programInformation - if NOT NULL, point to program information (char array - 65 nytes)
-@param utcTime - if NOT NULL, point to char array containing the current UTC time (format HH:MM:SS +HH:MM)
+@param stationName (reference)  - if NOT NULL,  point to Name of the Station (char array -  9 bytes)
+@param stationInformation (reference)  - if NOT NULL, point to Station information (char array - 33 bytes)
+@param programInformation (reference)  - if NOT NULL, point to program information (char array - 65 nytes)
+@param utcTime  (reference)  - if NOT NULL, point to char array containing the current UTC time (format HH:MM:SS +HH:MM)
 @return True if found at least one valid data 
 @see setRDS, setRdsFifo, getRdsAllData
 _EnD_oF_dEf_TeXt_;

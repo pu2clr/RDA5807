@@ -446,7 +446,7 @@ RDS/RBDS</h1>
 </div><div class="memdoc">
 
 <p>Gets Station Name, Station Information, Program Information and utcTime. </p>
-<p>This function populates four char pointers with the following contents (Arguments/parameters must be pointers to char).</p>
+<p>This function populates four char pointer variable parameters with Station Name, Station Information, Programa Information and UTC time.</p>
 <p>You must call setRDS(true), setRdsFifo(true) before calling getRdsAllData(...)</p>
 <p>ATTENTION: the parameters below are point to point to array of char.</p>
 <p>the right way to call this function is shown below. </p><div class="fragment"><div class="line"><span class="keywordtype">char</span> *stationName, *stationInfo, *programInfo, *rdsTime;</div>
@@ -459,10 +459,10 @@ RDS/RBDS</h1>
 <div class="line">}</div>
 </div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">stationName</td><td>- if NOT NULL, point to Name of the Station (char array - 9 bytes) </td></tr>
-    <tr><td class="paramname">stationInformation</td><td>- if NOT NULL, point to Station information (char array - 33 bytes) </td></tr>
-    <tr><td class="paramname">programInformation</td><td>- if NOT NULL, point to program information (char array - 65 nytes) </td></tr>
-    <tr><td class="paramname">utcTime</td><td>- if NOT NULL, point to char array containing the current UTC time (format HH:MM:SS +HH:MM) </td></tr>
+    <tr><td class="paramname">stationName</td><td>(reference) - if NOT NULL, point to Name of the Station (char array - 9 bytes) </td></tr>
+    <tr><td class="paramname">stationInformation</td><td>(reference) - if NOT NULL, point to Station information (char array - 33 bytes) </td></tr>
+    <tr><td class="paramname">programInformation</td><td>(reference) - if NOT NULL, point to program information (char array - 65 nytes) </td></tr>
+    <tr><td class="paramname">utcTime</td><td>(reference) - if NOT NULL, point to char array containing the current UTC time (format HH:MM:SS +HH:MM) </td></tr>
   </table>
   </dd>
 </dl>
