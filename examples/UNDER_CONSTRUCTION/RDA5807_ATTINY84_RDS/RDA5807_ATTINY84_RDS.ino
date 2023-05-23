@@ -38,6 +38,7 @@ char *programInfo;
 char *utcTime;
 
 uint8_t idxProgInfo = 0;
+uint8_t idxStationInfo = 0;
 
 long delayStationName = millis();
 long delayStationInfo = millis();
@@ -75,27 +76,21 @@ void setup() {
   showStatus();
 }
 
-
-
 void showStatus() {
   oled.setFont(FONT8X16);
+
   oled.setCursor(0, 0);
-  oled.print(F("FM"));
-  oled.setCursor(38, 0);
   oled.clearToEOL();
-  oled.setCursor(38, 0);
+  oled.setCursor(0, 0);
   oled.print(rx.formatCurrentFrequency());
-  oled.setCursor(95, 0);
-  oled.print(F("MHz"));
-  oled.setCursor(0, 2);
-  oled.clearToEOL();
+
   rx.clearRdsBuffer();
 }
 
-void showRdsText(uint8_t lin, char *rdsInfo) {
-  oled.setCursor(0, lin);
+void showRdsText(uint8_t col, uint8_t lin, char *rdsInfo) {
+  oled.setCursor(col, lin);
   oled.clearToEOL();
-  oled.setCursor(0, lin);
+  oled.setCursor(col, lin);
   oled.print(rdsInfo);
 }
 
@@ -104,30 +99,35 @@ void processRdsInfo() {
   long currentmillis = millis();
   char aux[10];
 
+  // Shows station name on Display each three seconds.
   if (stationName != NULL && (currentmillis - delayStationName) > 3000) {
-    showRdsText(1,stationName);
+    showRdsText(0,12,stationName);
     delayStationName = currentmillis;
   }
 
-  if (stationInfo != NULL && (currentmillis - delayStationInfo) > 5000) {
-    strncpy(aux, stationInfo, 10);
+  // Shows, with scrolling, station info on display each five seconds.
+  if (stationInfo != NULL && (currentmillis - delayStationInfo) > 1000) {
+    strncpy(aux, &stationInfo[idxStationInfo], 10);
     aux[10] = 0;
-    showRdsText(2,aux);
+    showRdsText(0,1,aux);
+    idxStationInfo += 2; 
+    if ( idxStationInfo > 31 ) idxStationInfo = 0;
     delayStationInfo = currentmillis;
   }
 
+  // Shows, with scrolling, the  program information each a half seconds.
   if (programInfo != NULL && (currentmillis - delayProgramInfo) > 500) {
     // Process scrolling
     strncpy(aux, &programInfo[idxProgInfo], 10);
     aux[10] = 0;
     idxProgInfo += 2;
-    showRdsText(2,aux);
+    showRdsText(0,2,aux);
     if ( idxProgInfo > 60 ) idxProgInfo = 0;
     delayProgramInfo = currentmillis;
   }
 
   if (utcTime != NULL && (currentmillis - delayUtcTime) > 60000 ) {
-    showRdsText(3,utcTime);
+    showRdsText(0,3,utcTime);
     delayUtcTime = currentmillis;
   }
 }
@@ -149,9 +149,8 @@ void loop() {
     elapsedTimeEncoder = millis();  // keep elapsedTimeEncoder updated
   }
 
-  if (rx.getRdsAllData(&stationName, &stationInfo, &programInfo, &utcTime)) {
+  if (rx.getRdsAllData(&stationName, &stationInfo, &programInfo, &utcTime)) 
     processRdsInfo();
-  }
 
   if (digitalRead(SEEK_UP) == LOW) {
     rx.seek(RDA_SEEK_WRAP, RDA_SEEK_UP, showStatus);
