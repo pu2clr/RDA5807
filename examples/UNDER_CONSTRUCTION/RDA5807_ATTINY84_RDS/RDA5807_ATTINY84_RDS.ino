@@ -59,8 +59,7 @@ void setup() {
 
   oled.begin();
   oled.on();
-  oled.setFont(FONT6X8);
-  /*
+
   oled.setFont(FONT8X16);
   oled.setCursor(0, 0);
   oled.print(F("RDA5807-Attiny84A"));
@@ -68,7 +67,7 @@ void setup() {
   oled.print(F("   By PU2CLR   "));
   delay(3000);
   oled.clear();
-  */
+
 
   rx.setup();
 

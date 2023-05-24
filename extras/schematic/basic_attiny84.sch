@@ -1452,12 +1452,8 @@ Variant with &lt;b&gt;I2C interface&lt;/b&gt;
 <segment>
 <pinref part="SEEK_DOWN" gate="G$1" pin="P$1"/>
 <pinref part="U$1" gate="G$1" pin="(PCINT5/OC1B/MISO/DO/ADC5)PA5"/>
-<wire x1="0" y1="68.58" x2="17.78" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="68.58" x2="50.8" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="0" y1="68.58" x2="50.8" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="68.58" x2="50.8" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="U$3" gate="G$1" pin="SCL"/>
-<wire x1="17.78" y1="91.44" x2="17.78" y2="68.58" width="0.1524" layer="91"/>
-<junction x="17.78" y="68.58"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -1491,11 +1487,15 @@ Variant with &lt;b&gt;I2C interface&lt;/b&gt;
 <net name="N$2" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="(PCINT4/T1/SCL/USCK/ADC4)PA4"/>
-<wire x1="0" y1="66.04" x2="38.1" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="0" y1="66.04" x2="17.78" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="U$2" gate="G$1" pin="SCL"/>
+<wire x1="17.78" y1="66.04" x2="38.1" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="51.88" y1="88.98" x2="51.88" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="51.88" y1="88.9" x2="38.1" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="88.9" x2="38.1" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="U$3" gate="G$1" pin="SCL"/>
+<wire x1="17.78" y1="91.44" x2="17.78" y2="66.04" width="0.1524" layer="91"/>
+<junction x="17.78" y="66.04"/>
 </segment>
 </net>
 <net name="N$3" class="0">
