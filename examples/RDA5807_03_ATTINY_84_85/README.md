@@ -25,7 +25,7 @@ The table below shows the pin functions of the ATTiny84 and ATTiny85  needed to 
 
 ## ATTiny84 
 
-![Schematic - ATTiny84 with oled setup ](../../extras/images/circuit_ATTiny84.png)
+![Schematic - ATTiny84 with oled setup ](../../extras/images/circuit_attiny84.png)
 
 
 ### ATTiny84 wireup
@@ -43,14 +43,14 @@ The table below shows the pin functions of the ATTiny84 and ATTiny85  needed to 
 
 ### ATTiny84 pinout
 
-![ATTiny84 pinout](../../extras/images/ATTiny84.png)
+![ATTiny84 pinout](../../extras/images/attiny84.png)
 
 
 ## ATTiny85 
 
 
 
-![Schematic - ATTiny85 with oled setup ](../../extras/images/circuit_ATTiny85.png)
+![Schematic - ATTiny85 with oled setup ](../../extras/images/circuit_attiny85.png)
 
 
 ### ATTiny85 and RDA5807 wireup  
@@ -164,13 +164,13 @@ ATTENTION: if you select Clock source 8 MHz, for some reason, the system will wo
 
 See [ATTiny Core - 1634, x313, x4, x41, x5, x61, x7, x8 and 828 for Arduino](https://github.com/SpenceKonde/ATTinyCore).
 
-See also [ATTiny85 pinout](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2586-AVR-8-bit-Microcontroller-ATTiny25-ATTiny45-ATTiny85_Datasheet.pdf).
+See also [ATTiny85 pinout](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2586-AVR-8-bit-Microcontroller-attiny25-attiny45-attiny85_Datasheet.pdf).
 
 
 # References 
 
-* [Programming ATTiny85 / 84 / 45 / 44 / 25 /24](https://wolles-elektronikkiste.de/en/programming-ATTiny85-84-45-44-25-24) 
-[ ATTinyCore](https://github.com/SpenceKonde/ATTinyCore)
+* [Programming ATTiny85 / 84 / 45 / 44 / 25 /24](https://wolles-elektronikkiste.de/en/programming-attiny85-84-45-44-25-24) 
+[ ATTinyCore](https://github.com/SpenceKonde/attinyCore)
 * [How To Program ATTiny13/ATTiny13a using Arduino IDE](https://www.electronics-lab.com/project/how-to-program-ATTiny13ATTiny13a-using-arduino-ide/)
 * [](https://github.com/SpenceKonde/ATTinyCore)
 
