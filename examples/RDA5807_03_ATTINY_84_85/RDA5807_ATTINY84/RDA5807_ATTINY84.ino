@@ -1,17 +1,19 @@
 /*
    Test and validation of RDA5807 on ATtiny84 device.
    It is FM receiver with  
-  
+
+   
    ATtiny84 and RDA5807 wireup  
 
-    | RDA5807 pin      | Attiny84 REF pin | Physical pin  | 
-    | ----------------| -----------------| ------------- | 
-    | SEEK_UP         |     3            |    10         | 
-    | SEEK_DOWN       |     5            |     8         |
-    | ENCODER_PIN_A   |     0            |    13         |
-    | ENCODER_PIN_B   |     1            |    12         |  
-    | SDIO / SDA      |     SDA          |     7         |
-    | SCLK / CLK      |     SCL          |     9         |
+    | RDA5807 Function | Attiny84 REF pin | Physical pin  | 
+    | ---------------- | -----------------| ------------- | 
+    | SEEK_UP          |     3            |    10         | 
+    | SEEK_DOWN        |     5            |     8         |
+    | ENCODER_PIN_A    |     0            |    13         |
+    | ENCODER_PIN_B    |     1            |    12         |  
+    | SDIO / SDA       |     SDA          |     7         |
+    | SCLK / CLK       |     SCL          |     9         |
+
 
    By Ricardo Lima Caratti, 2020.
 */
@@ -21,7 +23,7 @@
 
 
 // Please, check the ATtiny84 physical pins 
-#define SDA_PIN             SDA  //  
+
 #define SEEK_UP             3       
 #define SEEK_DOWN           5
 #define ENCODER_PIN_A       0
