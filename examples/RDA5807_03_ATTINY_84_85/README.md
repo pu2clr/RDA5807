@@ -3,6 +3,10 @@
 It is possible to use the Arduino IDE platform with the PU2CLR RDA5807 Arduino Library to implement receivers with the ATTiny84 and ATTiny85. You will find details on how to do this below.
 
 
+{% include video08.html %}
+
+* [Vídeo: RDS Monitor with RDA5807 and ATTiny84 - youtube](https://youtu.be/UZYYkJeZIGM) 
+
 ## Programming Interface (USBAsp 6 pin)
 
 The table below shows the pin functions of the ATTiny84 and ATTiny85  needed to upload sketch via USBAsp interface.
@@ -143,7 +147,6 @@ void loop()
   delay(5);
 }
 ```
-
 
 
 ### Installing ATtiny Core in Arduino IDE 
