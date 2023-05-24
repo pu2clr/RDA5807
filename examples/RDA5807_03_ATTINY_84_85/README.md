@@ -1,6 +1,17 @@
 # ATTiny84 and ATTiny85 setup
 
 
+## Programming Interface
+
+| Function    | ATTiny85 Pin |  ATTiny84 Pin | 
+| ----------- | ------------ | ------------- |
+| RESET       | 1 (PB5)      | 4 (PB3)       |   
+| MOSI        | 5 (PB0)      | 7 (PA6)       |
+| MISO        | 6 (PB1)      | 8 (PA5)       |
+| SCK         | 7 (PB2)      | 9 (PA4)       |
+| GND         | 4            | 14            |
+| VCC         | 8            | 1             |
+
 
 ## Attiny84 
 
@@ -145,7 +156,8 @@ See also [ATtiny85 pinout](https://ww1.microchip.com/downloads/en/DeviceDoc/Atme
 
 # References 
 
-* [ ATTinyCore](https://github.com/SpenceKonde/ATTinyCore)
+* [Programming ATtiny85 / 84 / 45 / 44 / 25 /24](https://wolles-elektronikkiste.de/en/programming-attiny85-84-45-44-25-24) 
+[ ATTinyCore](https://github.com/SpenceKonde/ATTinyCore)
 * [How To Program ATtiny13/ATtiny13a using Arduino IDE](https://www.electronics-lab.com/project/how-to-program-attiny13attiny13a-using-arduino-ide/)
 * [](https://github.com/SpenceKonde/ATTinyCore)
 
