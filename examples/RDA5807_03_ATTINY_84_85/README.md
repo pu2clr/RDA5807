@@ -1,16 +1,22 @@
 # ATTiny84 and ATTiny85 setup
 
+It is possible to use the Arduino IDE platform with the PU2CLR RDA5807 Arduino Library to implement receivers with the ATTiny84 and ATTiny85. You will find details on how to do this below.
+
 
 ## Programming Interface (USBAsp 6 pin)
 
-| Function    | ATTiny85 Pin |  ATTiny84 Pin | 
-| ----------- | ------------ | ------------- |
-| RESET       | 1 (PB5)      | 4 (PB3)       |   
-| MOSI        | 5 (PB0)      | 7 (PA6)       |
-| MISO        | 6 (PB1)      | 8 (PA5)       |
-| SCK         | 7 (PB2)      | 9 (PA4)       |
-| GND         | 4            | 14            |
-| VCC         | 8            | 1             |
+The table below shows the pin functions of the ATTiny84 and ATTiny85  needed to upload sketch via USBAsp interface.
+
+
+| Function / USBAsp   | ATTiny85 Pin |  ATTiny84 Pin | 
+| ------------------- | ------------ | ------------- |
+| RESET               | 1 (PB5)      | 4 (PB3)       |   
+| MOSI                | 5 (PB0)      | 7 (PA6)       |
+| MISO                | 6 (PB1)      | 8 (PA5)       |
+| SCK                 | 7 (PB2)      | 9 (PA4)       |
+| GND                 | 4            | 14            |
+| VCC                 | 8            | 1             |
+
 
 
 ## Attiny84 
