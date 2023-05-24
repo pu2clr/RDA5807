@@ -67,7 +67,7 @@ The table below shows the pin functions of the ATTiny84 and ATTiny85  needed to 
 
 #### ATTiny85 pinout
 
-![Schematic - ATTiny85 pinout](../../extras/images/ATTiny85_pinout.jpg)
+![Schematic - ATTiny85 pinout](../../extras/images/attiny85_pinout.jpg)
 
 
 #### The example below implements an FM receiver with RDS and audio mute functions.
