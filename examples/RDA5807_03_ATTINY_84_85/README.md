@@ -1,7 +1,7 @@
 # ATTiny84 and ATTiny85 setup
 
 
-## Programming Interface
+## Programming Interface (USBAsp 6 pin)
 
 | Function    | ATTiny85 Pin |  ATTiny84 Pin | 
 | ----------- | ------------ | ------------- |
