@@ -1,19 +1,22 @@
 /*
-   Test and validation of RDA5807 on ATtiny84 device.
-   It is FM receiver with  
+   It is a RDA5807 receiver controlled by an ATtiny84 device.
+   It is FM receiver with RDS support. You can monitor Station Name, Station Info, Program info and UTC (time).
+   You can also explore other RDS information by addming more functions.   
+
+   This sketch uses polling method to control the encoder instead interrupt. 
   
    ATtiny84 and RDA5807 wireup  
 
-    | RDA5807 pin      | Attiny84 REF pin | Physical pin  | 
-    | ----------------| -----------------| ------------- | 
-    | SEEK_UP         |     3            |    10         | 
-    | SEEK_DOWN       |     5            |     8         |
-    | ENCODER_PIN_A   |     0            |    13         |
-    | ENCODER_PIN_B   |     1            |    12         |  
-    | SDIO / SDA      |     SDA          |     7         |
-    | SCLK / CLK      |     SCL          |     9         |
+    | RDA5807 Function | Attiny84 REF pin | Physical pin  | 
+    | ---------------- | -----------------| ------------- | 
+    | SEEK_UP          |     3            |    10         | 
+    | SEEK_DOWN        |     5            |     8         |
+    | ENCODER_PIN_A    |     0            |    13         |
+    | ENCODER_PIN_B    |     1            |    12         |  
+    | SDIO / SDA       |     SDA          |     7         |
+    | SCLK / CLK       |     SCL          |     9         |
 
-   By Ricardo Lima Caratti, 2020.
+   By Ricardo Lima Caratti, 2023.
 */
 
 #include <RDA5807.h>
@@ -55,8 +58,9 @@ void setup() {
   pinMode(ENCODER_PIN_B, INPUT_PULLUP);
 
   oled.begin();
-  oled.clear();
   oled.on();
+  oled.setFont(FONT6X8);
+  /*
   oled.setFont(FONT8X16);
   oled.setCursor(0, 0);
   oled.print(F("RDA5807-Attiny84A"));
@@ -64,26 +68,22 @@ void setup() {
   oled.print(F("   By PU2CLR   "));
   delay(3000);
   oled.clear();
+  */
 
   rx.setup();
 
   // Starts RDS setup
   rx.setRDS(true);
   rx.setRdsFifo(true);
-
-  rx.setVolume(6);
+  // rx.setVolume(6);
   rx.setFrequency(10650);  // It is the frequency you want to select in MHz multiplied by 100.
   showStatus();
 }
 
 void showStatus() {
-  oled.setFont(FONT8X16);
-
-  oled.setCursor(0, 0);
-  oled.clearToEOL();
+  oled.clear();
   oled.setCursor(0, 0);
   oled.print(rx.formatCurrentFrequency());
-
   rx.clearRdsBuffer();
 }
 
@@ -97,43 +97,56 @@ void showRdsText(uint8_t col, uint8_t lin, char *rdsInfo) {
 void processRdsInfo() {
 
   long currentmillis = millis();
-  char aux[10];
+  char aux[22];
 
   // Shows station name on Display each three seconds.
   if (stationName != NULL && (currentmillis - delayStationName) > 3000) {
-    showRdsText(0,12,stationName);
+    showRdsText(0, 12, stationName);
     delayStationName = currentmillis;
   }
 
   // Shows, with scrolling, station info on display each five seconds.
-  if (stationInfo != NULL && (currentmillis - delayStationInfo) > 1000) {
-    strncpy(aux, &stationInfo[idxStationInfo], 10);
-    aux[10] = 0;
-    showRdsText(0,1,aux);
-    idxStationInfo += 2; 
-    if ( idxStationInfo > 31 ) idxStationInfo = 0;
+  if (stationInfo != NULL && strlen(stationInfo) > 1 && (currentmillis - delayStationInfo) > 1000) {
+    strncpy(aux, &stationInfo[idxStationInfo], 20);
+    aux[20] = 0;
+    showRdsText(0, 1, aux);
+    idxStationInfo += 2;  // shift left two character
+    if (idxStationInfo > 31) idxStationInfo = 0;
     delayStationInfo = currentmillis;
   }
 
   // Shows, with scrolling, the  program information each a half seconds.
-  if (programInfo != NULL && (currentmillis - delayProgramInfo) > 500) {
+  if (programInfo != NULL && strlen(programInfo) > 1 && (currentmillis - delayProgramInfo) > 500) {
     // Process scrolling
-    strncpy(aux, &programInfo[idxProgInfo], 10);
-    aux[10] = 0;
-    idxProgInfo += 2;
-    showRdsText(0,2,aux);
-    if ( idxProgInfo > 60 ) idxProgInfo = 0;
+    strncpy(aux, &programInfo[idxProgInfo], 20);
+    aux[20] = 0;
+    idxProgInfo += 2;  // shift left two character
+    showRdsText(0, 2, aux);
+    if (idxProgInfo > 60) idxProgInfo = 0;
     delayProgramInfo = currentmillis;
   }
-
-  if (utcTime != NULL && (currentmillis - delayUtcTime) > 60000 ) {
-    showRdsText(0,3,utcTime);
+  // Some stations broadcast spurious information. In this case, the displayed time may not make sense.
+  if (utcTime != NULL && strlen(utcTime) > 8 && (currentmillis - delayUtcTime) > 60000) {
+    showRdsText(0, 3, utcTime);
     delayUtcTime = currentmillis;
   }
 }
 
-
 void loop() {
+
+  uint8_t bkey;
+  bkey = (digitalRead(SEEK_UP) << 1) | digitalRead(SEEK_DOWN);  // If 3 (0b11) means no button is pressed - It may help you to save some bytes of memory
+  if (bkey != 0b11) {
+    if (bkey == 0b10)  // 2 (0b10) -  Seek up pressed
+      rx.seek(RDA_SEEK_WRAP, RDA_SEEK_UP, showStatus);
+    else  // 1 (0b01) - Seek down pressed
+      rx.seek(RDA_SEEK_WRAP, RDA_SEEK_DOWN, showStatus);
+    showStatus();  // call once again to show the latest status.
+    delay(200);    // avoids repeated reading of the button
+  }
+
+  // Instead of using interrupts to deal with encoder control, this sketch utilizes the polling approach.
+  // While it may not be the optimal method, it proved effective memory optimization in this particular case.
   if ((millis() - elapsedTimeEncoder) > 5) {
     encoder_pin_a = digitalRead(ENCODER_PIN_A);
     encoder_pin_b = digitalRead(ENCODER_PIN_B);
@@ -149,16 +162,8 @@ void loop() {
     elapsedTimeEncoder = millis();  // keep elapsedTimeEncoder updated
   }
 
-  if (rx.getRdsAllData(&stationName, &stationInfo, &programInfo, &utcTime)) 
+  if (rx.getRdsAllData(&stationName, &stationInfo, &programInfo, &utcTime))
     processRdsInfo();
 
-  if (digitalRead(SEEK_UP) == LOW) {
-    rx.seek(RDA_SEEK_WRAP, RDA_SEEK_UP, showStatus);
-    showStatus();
-  }
-  if (digitalRead(SEEK_DOWN) == LOW) {
-    rx.seek(RDA_SEEK_WRAP, RDA_SEEK_DOWN, showStatus);
-    showStatus();
-  }
   delay(1);
 }
