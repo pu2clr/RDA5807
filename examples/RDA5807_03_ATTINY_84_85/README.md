@@ -23,14 +23,14 @@ The table below shows the pin functions of the ATTiny84 and ATTiny85  needed to 
 
 
 
-## Attiny84 
+## ATTiny84 
 
-![Schematic - Attiny84 with oled setup ](../../extras/images/circuit_attiny84.png)
+![Schematic - ATTiny84 with oled setup ](../../extras/images/circuit_ATTiny84.png)
 
 
-### Attiny84 wireup
+### ATTiny84 wireup
 
-| RDA5807 pin     | Attiny84 REF pin | Physical pin  | 
+| RDA5807 pin     | ATTiny84 REF pin | Physical pin  | 
 | ----------------| -----------------| ------------- | 
 | SEEK_UP         |     3            |    10         | 
 | SEEK_DOWN       |     5            |     8         |
@@ -41,17 +41,21 @@ The table below shows the pin functions of the ATTiny84 and ATTiny85  needed to 
 
 
 
+### ATTiny84 pinout
 
-## Attiny85 
-
-
-
-![Schematic - Attiny85 with oled setup ](../../extras/images/circuit_attiny85.png)
+![ATTiny84 pinout](../../extras/images/ATTiny84.png)
 
 
-### ATtiny85 and RDA5807 wireup  
+## ATTiny85 
 
-| RDA5807 pin     | Attiny85 REF pin | Physical pin | 
+
+
+![Schematic - ATTiny85 with oled setup ](../../extras/images/circuit_ATTiny85.png)
+
+
+### ATTiny85 and RDA5807 wireup  
+
+| RDA5807 pin     | ATTiny85 REF pin | Physical pin | 
 | ----------------| -----------------| ------------- | 
 | SEEK_UP         |     PB1          |     6         | 
 | SEEK_DOWN       |     PB4          |     3         |
@@ -61,16 +65,16 @@ The table below shows the pin functions of the ATTiny84 and ATTiny85  needed to 
    
 <BR>
 
-#### ATtiny85 pinout
+#### ATTiny85 pinout
 
-![Schematic - Attiny85 pinout](../../extras/images/attiny85_pinout.jpg)
+![Schematic - ATTiny85 pinout](../../extras/images/ATTiny85_pinout.jpg)
 
 
 #### The example below implements an FM receiver with RDS and audio mute functions.
 
 ```cpp
 #include <RDA5807.h>
-#include <EEPROM.h> // The ATtiny85 contains 512 bytes of data EEPROM memory. The EEPROM has an endurance of at least 100,000 write/erase cycles.
+#include <EEPROM.h> // The ATTiny85 contains 512 bytes of data EEPROM memory. The EEPROM has an endurance of at least 100,000 write/erase cycles.
 #include <Tiny4kOLED.h>
 #define SEEK_UP   PB1     
 #define SEEK_DOWN PB4  
@@ -149,25 +153,25 @@ void loop()
 ```
 
 
-### Installing ATtiny Core in Arduino IDE 
+### Installing ATTiny Core in Arduino IDE 
 
-The ATtiny core board/plataform can be installed using the Arduino IDE boards manager. 
-Inserts the URL http://drazzy.com/package_drazzy.com_index.json on board manager. To do that, go to Preferences, enter the above URL in "Additional Boards Manager URLs. To setup ATtiny85 on Arduino IDE, go to Tools Menu, Board, Board Manager and install "ATTinyCore by Spence Konde". 
+The ATTiny core board/plataform can be installed using the Arduino IDE boards manager. 
+Inserts the URL http://drazzy.com/package_drazzy.com_index.json on board manager. To do that, go to Preferences, enter the above URL in "Additional Boards Manager URLs. To setup ATTiny85 on Arduino IDE, go to Tools Menu, Board, Board Manager and install "ATTinyCore by Spence Konde". 
 
-Board setup: Select Chip = ATtiny85;  Clock Source = 4MHz (Internal); LTO = Enabled; millis() / macros() = Enabled; 
+Board setup: Select Chip = ATTiny85;  Clock Source = 4MHz (Internal); LTO = Enabled; millis() / macros() = Enabled; 
 
 ATTENTION: if you select Clock source 8 MHz, for some reason, the system will work very slow. Maybe a bug. Not sure. 
 
-See [ATtiny Core - 1634, x313, x4, x41, x5, x61, x7, x8 and 828 for Arduino](https://github.com/SpenceKonde/ATTinyCore).
+See [ATTiny Core - 1634, x313, x4, x41, x5, x61, x7, x8 and 828 for Arduino](https://github.com/SpenceKonde/ATTinyCore).
 
-See also [ATtiny85 pinout](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2586-AVR-8-bit-Microcontroller-ATtiny25-ATtiny45-ATtiny85_Datasheet.pdf).
+See also [ATTiny85 pinout](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2586-AVR-8-bit-Microcontroller-ATTiny25-ATTiny45-ATTiny85_Datasheet.pdf).
 
 
 # References 
 
-* [Programming ATtiny85 / 84 / 45 / 44 / 25 /24](https://wolles-elektronikkiste.de/en/programming-attiny85-84-45-44-25-24) 
+* [Programming ATTiny85 / 84 / 45 / 44 / 25 /24](https://wolles-elektronikkiste.de/en/programming-ATTiny85-84-45-44-25-24) 
 [ ATTinyCore](https://github.com/SpenceKonde/ATTinyCore)
-* [How To Program ATtiny13/ATtiny13a using Arduino IDE](https://www.electronics-lab.com/project/how-to-program-attiny13attiny13a-using-arduino-ide/)
+* [How To Program ATTiny13/ATTiny13a using Arduino IDE](https://www.electronics-lab.com/project/how-to-program-ATTiny13ATTiny13a-using-arduino-ide/)
 * [](https://github.com/SpenceKonde/ATTinyCore)
 
 
