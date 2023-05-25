@@ -21,7 +21,7 @@
 
 #include <RDA5807.h>
 #include <Tiny4kOLED.h>
-#include <EEPROM.h> 
+#include <EEPROM.h>
 
 
 // Please, check the ATtiny84 physical pins
@@ -72,7 +72,7 @@ void setup() {
   oled.print(F("RDA5807-Attiny84"));
   oled.setCursor(0, 2);
   oled.print(F("   By PU2CLR   "));
-  delay(3000);
+  delay(2000);
   oled.clear();
 
   rx.setup();
@@ -96,12 +96,12 @@ void setup() {
 
 
 void saveEEPROM() {
-    // Saves the current frequency if it has changed.
-    // currentFrequency = rx.getFrequency();
-    EEPROM.update(0, VALID_DATA);               // Says that a valid frequency will be saved
-    EEPROM.update(1, currentFrequency >> 8);    // stores the current Frequency HIGH byte
-    EEPROM.update(2, currentFrequency & 0xFF);  // stores the current Frequency LOW byte
-    EEPROM.update(3, rx.isMuted());             // Stores the current audio mute status  
+  // Saves the current frequency if it has changed.
+  // currentFrequency = rx.getFrequency();
+  EEPROM.update(0, VALID_DATA);               // Says that a valid frequency will be saved
+  EEPROM.update(1, currentFrequency >> 8);    // stores the current Frequency HIGH byte
+  EEPROM.update(2, currentFrequency & 0xFF);  // stores the current Frequency LOW byte
+  EEPROM.update(3, rx.isMuted());             // Stores the current audio mute status
 }
 
 void showStatus() {
@@ -168,6 +168,7 @@ void loop() {
     showStatus();  // call once again to show the latest status.
     delay(200);    // avoids repeated reading of the button
     currentFrequency = rx.getFrequency();
+    delayInativity = millis();
   }
 
   // Instead of using interrupts to deal with encoder control, this sketch utilizes the polling approach.
@@ -182,21 +183,22 @@ void loop() {
       else
         rx.setFrequencyDown();
       showStatus();
+      currentFrequency = rx.getFrequency();
+      delayInativity = millis();
     }
     encoder_prev = encoder_pin_a;
     elapsedTimeEncoder = millis();  // keep elapsedTimeEncoder updated
-    currentFrequency = rx.getFrequency();
   }
 
   if (rx.getRdsAllData(&stationName, &stationInfo, &programInfo, &utcTime))
     processRdsInfo();
 
-   // Save only if the frequency changes and the time of inativity is grater than 10s. 
-   if ( oldFrequency != currentFrequency && ( millis() - delayInativity ) > 10000 ) {
-     oldFrequency = currentFrequency;
-     delayInativity = millis();
-     saveEEPROM(); 
-   } 
+  // Save only if the frequency changes and the time of inativity is grater than 10s.
+  if (oldFrequency != currentFrequency && (millis() - delayInativity) > 10000L) {
+    oldFrequency = currentFrequency;
+    delayInativity = millis();
+    saveEEPROM();
+  }
 
   delay(1);
 }
