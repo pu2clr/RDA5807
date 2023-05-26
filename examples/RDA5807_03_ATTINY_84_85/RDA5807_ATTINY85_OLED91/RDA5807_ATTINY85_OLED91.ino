@@ -1,5 +1,5 @@
 /*
-  Test and validation of RDA5807 on ATtiny85 device.
+  Test and validation of RDA5807 on ATtiny85 device  using I2C OLED 91" (128x32).
   It is a FM receiver with mini OLED and and two push buttons  
    
   ATtiny85 and RDA5807 wireup  

@@ -1,5 +1,5 @@
 /*
-   Test and validation of RDA5807 on ATtiny85 device.
+   Test and validation of RDA5807 on ATtiny85 device  using I2C OLED 91" (128x32).
    It is a FM receiver with mini OLED and and three push buttons (Seek Up, Seek Down and Audio Mute).
    This sketch implements FM RDS and eeprom function to store the latest frequency and audio status .  
    
@@ -28,21 +28,15 @@
 #include <RDA5807.h>
 #include <EEPROM.h>  // The ATtiny85 contains 512 bytes of data EEPROM memory. The EEPROM has an endurance of at least 100,000 write/erase cycles.
 #include <Tiny4kOLED.h>
-#include <5x5_font.h>
 
 #define SEEK_UP PB1
 #define SEEK_DOWN PB4
 #define AUDIO_MUTE PB3
-#define TIME_RDS_ON_DISPLAY 2300
 
 #define VALID_DATA 85
 
 char *stationName;
-char *programInfo;
 uint16_t currentFrequency;
-
-long timeRdsShow = millis();
-bool hasRds = false;
 
 RDA5807 rx;
 
@@ -57,11 +51,11 @@ void setup() {
   oled.setFont(FONT8X16);
   // Remove the Splash if you want.
   // Begin Splash
-  // oled.setCursor(0, 0);
-  // oled.print(F("RDA5807-ATtiny85"));
-  // oled.setCursor(0, 2);
-  // oled.print(F("   By PU2CLR   "));
-  // delay(2000);
+  oled.setCursor(0, 0);
+  oled.print(F("RDA5807-Attiny85"));
+  oled.setCursor(0, 2);
+  oled.print(F("   By PU2CLR   "));
+  delay(2000);
   oled.clear();
   // End Splash
   rx.setup();
@@ -82,7 +76,6 @@ void setup() {
 }
 
 void showStatus() {
-  oled.setFont(FONT8X16);
   oled.setCursor(0, 0);
   oled.print(F("FM"));
   oled.setCursor(38, 0);
@@ -93,17 +86,6 @@ void showStatus() {
   oled.print(F("MHz"));
   oled.setCursor(0, 2);
   oled.clearToEOL();
-  rx.clearRdsBuffer();
-  hasRds = false;
-}
-
-void showRdsMsg(uint8_t lin, char *msg) {
-  oled.setFont(FONT5X5);
-  oled.setCursor(0, lin);
-  oled.clearToEOL();
-  oled.setCursor(0, lin);
-  oled.print(msg);
-  hasRds = true;
 }
 
 void loop() {
@@ -127,25 +109,14 @@ void loop() {
   }
 
   // You must call getRdsReady before calling any RDS query function/method
-  if (!hasRds) {
-    if (rx.getRdsReady()) {
-      if (rx.hasRdsInfoAB()  && !rx.isNewRdsFlagAB() ) {
-        stationName = rx.getRdsStationName();
-        programInfo = rx.getRdsProgramInformation();
-        if (stationName != NULL)
-          showRdsMsg(2, stationName);
-        if (programInfo != NULL)
-          showRdsMsg(3, programInfo);
-
-        delay(70);
-      }
+  if (rx.getRdsReady()) {
+    if (rx.hasRdsInfoAB() && !rx.isNewRdsFlagAB()) {
+      stationName = rx.getRdsStationName();
+      oled.setCursor(0, 2);
+      if (stationName != NULL)
+        oled.print(stationName);
+      delay(70);
     }
   }
-
-  if ( ( millis() - timeRdsShow ) >  (long) TIME_RDS_ON_DISPLAY ) { 
-    hasRds = false; 
-    timeRdsShow = millis();
-  }  
-
   delay(5);
 }

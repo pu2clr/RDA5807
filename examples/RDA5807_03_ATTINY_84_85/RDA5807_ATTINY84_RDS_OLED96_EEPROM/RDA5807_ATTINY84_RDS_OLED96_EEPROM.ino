@@ -1,5 +1,5 @@
 /*
-   It is a RDA5807 receiver controlled by an ATtiny84 device using a display I2C OLED 0,96".
+   It is a RDA5807 receiver controlled by an ATtiny84 device  using I2C OLED 96" (128x64).
    It is FM receiver with RDS support. You can monitor Station Name, Station Info, Program info and UTC (time).
    It also uses the internal EEPROM to save the latest frequency (Condition: After 10s of inativity and frequency changed) 
    You can also explore other RDS information by addming more functions.   
