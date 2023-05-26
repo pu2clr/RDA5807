@@ -77,9 +77,10 @@ arduino-cli compile  --fqbn stm32duino:STM32F1:genericSTM32F103C ./RDA5807_01_SE
 # echo "ATTINY84 and ATTINY84"
 # arduino-cli board -b ATTinyCore:avr:attinyx4  details   
 arduino-cli compile --fqbn ATTinyCore:avr:attinyx4:millis=enabled  ./RDA5807_03_ATTINY_84_85/RDA5807_ATTINY84 --output-dir ~/Downloads/hex/ATTIMY84/RDA5807_ATTINY84 --warnings all
-arduino-cli compile --fqbn ATTinyCore:avr:attinyx5:millis=enabled  ./RDA5807_03_ATTINY_84_85/RDA5807_ATTINY85 --output-dir ~/Downloads/hex/ATTIMY85/RDA5807_ATTINY85 --warnings all
+arduino-cli compile --fqbn ATTinyCore:avr:attinyx4:millis=enabled  ./RDA5807_03_ATTINY_84_85/RDA5807_ATTINY84_RDS_OLED96_EEPROM --output-dir ~/Downloads/hex/ATTIMY84/RDA5807_ATTINY84_RDS_OLED96_EEPROM --warnings all
+arduino-cli compile --fqbn ATTinyCore:avr:attinyx5:millis=enabled  ./RDA5807_03_ATTINY_84_85/RDA5807_ATTINY85_OLED91 --output-dir ~/Downloads/hex/ATTIMY85/RDA5807_ATTINY85_OLED91 --warnings all
 arduino-cli compile --fqbn ATTinyCore:avr:attinyx5:millis=enabled  ./RDA5807_03_ATTINY_84_85/RDA5807_ATTINY85_ZIP --output-dir ~/Downloads/hex/ATTIMY85/RDA5807_ATTINY85_ZIP --warnings all
-arduino-cli compile --fqbn ATTinyCore:avr:attinyx5:millis=enabled  ./RDA5807_03_ATTINY_84_85/RDA5807_ATTINY85_RDS --output-dir ~/Downloads/hex/ATTIMY85/RDA5807_ATTINY85_RDS --warnings all
+arduino-cli compile --fqbn ATTinyCore:avr:attinyx5:millis=enabled  ./RDA5807_03_ATTINY_84_85/RDA5807_ATTINY85_RDS_OLED96_EEPROM --output-dir ~/Downloads/hex/ATTIMY85/RDA5807_ATTINY85_RDS_OLED96_EEPROM --warnings all
 
 
 # UNDER CONSTRUCTION...
