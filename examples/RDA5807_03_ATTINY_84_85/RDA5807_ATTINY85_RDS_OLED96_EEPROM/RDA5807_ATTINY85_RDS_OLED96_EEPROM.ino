@@ -103,7 +103,10 @@ void showRdsText(uint8_t col, uint8_t lin, char *rdsInfo) {
   oled.print(rdsInfo);
 }
 
-
+/**
+ * Processes the RDS Station Name, Station Information, Program information and UTC
+ * Runs scrolling to show Station Information and Program information
+ */
 void processRdsInfo() {
 
   long currentmillis = millis();
@@ -162,6 +165,7 @@ void loop() {
     EEPROM.update(3, rx.isMuted());             // Stores the current audio mute status
   }
 
+  // Queries RDS information.
   if (rx.getRdsAllData(&stationName, &stationInfo, &programInfo, &utcTime))
     processRdsInfo();
 

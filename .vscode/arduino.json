@@ -1,0 +1,5 @@
+{
+    "configuration": "LTO=enable,chip=84,clock=8internal,eesave=aenable,bod=disable,pinmapping=anew,millis=enabled,neopixelport=porta",
+    "board": "ATTinyCore:avr:attinyx4",
+    "sketch": "examples/RDA5807_03_ATTINY_84_85/RDA5807_ATTINY84_RDS_OLED96_EEPROM/RDA5807_ATTINY84_RDS_OLED96_EEPROM.ino"
+}
