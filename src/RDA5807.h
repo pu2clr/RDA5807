@@ -883,6 +883,7 @@ public:
     inline char *getRdsStationInformation(void) { return getRdsText2B(); };
 
     char *getRdsTime();
+    char *getRdsLocalTime();
 
     /**
      * @ingroup GA04

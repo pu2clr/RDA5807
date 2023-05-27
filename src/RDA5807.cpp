@@ -1108,16 +1108,13 @@ char *RDA5807::getRdsText2B(void)
 
 /**
  * @ingroup GA04
- * @todo Need to check.
- * @brief Gets the RDS time and date when the Group type is 4
+ * @brief Gets the RDS UTC time and date when the Group type is 4
  * @details ATTENTION: You must call getRdsReady before calling this function. 
  * @return char* a string with hh:mm +/- offset
  * @see getRdsReady
  */
 char *RDA5807::getRdsTime()
 {
-    // Under Test and construction
-    // Need to check the Group Type before.
     rds_date_time dt;
     word16_to_bytes blk_b, blk_c, blk_d;
     rds_blockb blkb;
@@ -1163,6 +1160,69 @@ char *RDA5807::getRdsTime()
         rds_time[9] = ':';
         this->convertToChar(offset_m, &rds_time[10], 2, 0, ' ', false);
         rds_time[12] = '\0';
+
+        return rds_time;
+    }
+
+    return NULL;
+}
+
+/**
+ * @ingroup GA04
+ * @todo Need to check.
+ * @brief Gets the RDS time converted to local time. 
+ * @details ATTENTION: You must call getRdsReady before calling this function. 
+ * @details ATTENTION: Some station broadcast wrong time.
+ * @return char* a string with hh:mm 
+ * @see getRdsReady
+ */
+char *RDA5807::getRdsLocalTime()
+{
+    rds_date_time dt;
+    word16_to_bytes blk_b, blk_c, blk_d;
+    rds_blockb blkb;
+
+    blk_b.raw = blkb.blockB = reg0d->RDSB;
+    blk_c.raw = reg0e->RDSC;
+    blk_d.raw = reg0f->RDSD;
+
+    uint16_t minute;
+    uint16_t hour;
+    uint16_t localTime;
+
+    if (blkb.group0.groupType == 4)
+    {
+        int offset_h;
+        int offset_m;
+
+        dt.raw[4] = blk_b.refined.lowByte;
+        dt.raw[5] = blk_b.refined.highByte;
+
+        dt.raw[2] = blk_c.refined.lowByte;
+        dt.raw[3] = blk_c.refined.highByte;
+
+        dt.raw[0] = blk_d.refined.lowByte;
+        dt.raw[1] = blk_d.refined.highByte;
+
+        minute = dt.refined.minute;
+        hour = dt.refined.hour;
+
+        offset_h = (dt.refined.offset * 30) / 60;
+        offset_m = (dt.refined.offset * 30) - (offset_h * 60);
+
+        localTime = (hour * 60  + minute); 
+        if ( dt.refined.offset_sense == 1) 
+            localTime -= (offset_h * 60 + offset_m);
+        else 
+            localTime += (offset_h * 60 + offset_m);
+
+        hour = localTime / 60;
+        minute = localTime - (hour * 60);
+
+        this->convertToChar(hour, rds_time, 2, 0, ' ', false);
+        rds_time[2] = ':';
+        this->convertToChar(minute, &rds_time[3], 2, 0, ' ', false);
+        rds_time[5] = '\0';
 
         return rds_time;
     }
