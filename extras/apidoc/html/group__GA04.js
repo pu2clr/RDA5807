@@ -10,6 +10,7 @@ var group__GA04 =
     [ "RDA5807::getRdsAllData", "group__GA04.html#gadafba5991f6f60a52ad73fdda8fac984", null ],
     [ "RDA5807::getRdsFlagAB", "group__GA04.html#ga04e5fe0cacbdcae620388a15630cf9c1", null ],
     [ "RDA5807::getRdsGroupType", "group__GA04.html#ga32c361b9b996a5920519315aa86d174d", null ],
+    [ "RDA5807::getRdsLocalTime", "group__GA04.html#gaa3432b4df8ec20277e3d3be60782b395", null ],
     [ "RDA5807::getRdsProgramInformation", "group__GA04.html#ga73610b1372a8bdaa959862881eae05fb", null ],
     [ "RDA5807::getRdsProgramType", "group__GA04.html#gae3bde947a89c6dadfc4dc22aea85b467", null ],
     [ "RDA5807::getRdsReady", "group__GA04.html#gacfa48dfcf792a9bcee489658177aed90", null ],

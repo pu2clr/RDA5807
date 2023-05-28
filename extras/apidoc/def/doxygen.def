@@ -1,12 +1,12 @@
 AutoGen Definitions dummy;
 class = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'RDA5807';
   cp-section = {
     sec-kind = 'public-func';
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a02_1ga1db36d126d26a553668c1b70de9b3823';
+      sec-mem-id   = 'group__GA02_1ga1db36d126d26a553668c1b70de9b3823';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -31,7 +31,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a02_1gadf634cb6733022e30d8f1a74a5946e78';
+      sec-mem-id   = 'group__GA02_1gadf634cb6733022e30d8f1a74a5946e78';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -61,19 +61,19 @@ _EnD_oF_dEf_TeXt_;
 @param fullAccess
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1a18c3e5a103b683af7c46d8b9a3d47518';
+        sec-mem-ref-id = 'RDA5807_8h_1a18c3e5a103b683af7c46d8b9a3d47518';
         sec-mem-ref-line = '606';
         sec-mem-ref-name = 'deviceAddressDirectAccess';
     };
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1a81c00f45187f93be0698ef8c5bd80619';
+        sec-mem-ref-id = 'RDA5807_8h_1a81c00f45187f93be0698ef8c5bd80619';
         sec-mem-ref-line = '607';
         sec-mem-ref-name = 'deviceAddressFullAccess';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a02_1gab9e3a5584a6238f719e9c9e49435f5ce';
+      sec-mem-id   = 'group__GA02_1gab9e3a5584a6238f719e9c9e49435f5ce';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -91,14 +91,14 @@ _EnD_oF_dEf_TeXt_;
 @see shadowStatusRegisters;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gacfa48dfcf792a9bcee489658177aed90';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gacfa48dfcf792a9bcee489658177aed90';
         sec-mem-ref-line = '819';
         sec-mem-ref-name = 'getRdsReady';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a02_1ga69981ef141e22ab00e4bde3f18f84964';
+      sec-mem-id   = 'group__GA02_1ga69981ef141e22ab00e4bde3f18f84964';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -125,7 +125,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a02_1ga1f4bc3d6f9d94171b2965dbb4e812f4f';
+      sec-mem-id   = 'group__GA02_1ga1f4bc3d6f9d94171b2965dbb4e812f4f';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -151,7 +151,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a02_1ga3b581b82ab8c631cfec537a47008ddf3';
+      sec-mem-id   = 'group__GA02_1ga3b581b82ab8c631cfec537a47008ddf3';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -187,7 +187,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a02_1ga677eff1084b294696a32e3ca4dfe593b';
+      sec-mem-id   = 'group__GA02_1ga677eff1084b294696a32e3ca4dfe593b';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -239,7 +239,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a02_1gabd676c0e4ad20c6152a68f8daba64cb3';
+      sec-mem-id   = 'group__GA02_1gabd676c0e4ad20c6152a68f8daba64cb3';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -267,7 +267,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a02_1ga3fe1feed45d3290beba0efef491128e6';
+      sec-mem-id   = 'group__GA02_1ga3fe1feed45d3290beba0efef491128e6';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -283,19 +283,19 @@ _EnD_oF_dEf_TeXt_;
 
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gade55e697c7752811086300e710727397';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gade55e697c7752811086300e710727397';
         sec-mem-ref-line = '559';
         sec-mem-ref-name = 'seek';
     };
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gaa9cfaddbd43257e810bb3817b021fa8a';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gaa9cfaddbd43257e810bb3817b021fa8a';
         sec-mem-ref-line = '338';
         sec-mem-ref-name = 'setChannel';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a02_1ga3f6dace4c93f82ec66da5641e3e3fdaa';
+      sec-mem-id   = 'group__GA02_1ga3f6dace4c93f82ec66da5641e3e3fdaa';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -314,7 +314,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a02_1ga30d2b0c4662922df53bcef118663329c';
+      sec-mem-id   = 'group__GA02_1ga30d2b0c4662922df53bcef118663329c';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -330,14 +330,14 @@ _EnD_oF_dEf_TeXt_;
 
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga272444216a784ea5317c83783eb2bfe7';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga272444216a784ea5317c83783eb2bfe7';
         sec-mem-ref-line = '273';
         sec-mem-ref-name = 'setup';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a02_1ga214f631aef72ece69db73c99879c7c46';
+      sec-mem-id   = 'group__GA02_1ga214f631aef72ece69db73c99879c7c46';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -355,7 +355,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a02_1ga272444216a784ea5317c83783eb2bfe7';
+      sec-mem-id   = 'group__GA02_1ga272444216a784ea5317c83783eb2bfe7';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -419,14 +419,14 @@ void loop() {
 @see powerUp, rda_reg02
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga30d2b0c4662922df53bcef118663329c';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga30d2b0c4662922df53bcef118663329c';
         sec-mem-ref-line = '197';
         sec-mem-ref-name = 'powerUp';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a02_1gab97c1c8ad3ab0cd5d2852f712caee0a1';
+      sec-mem-id   = 'group__GA02_1gab97c1c8ad3ab0cd5d2852f712caee0a1';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -452,7 +452,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga965658767399e2f923852144e324805f';
+      sec-mem-id   = 'group__GA03_1ga965658767399e2f923852144e324805f';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -478,7 +478,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a08_1ga35428e147462af6490c382acdf769173';
+      sec-mem-id   = 'group__GA08_1ga35428e147462af6490c382acdf769173';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -503,7 +503,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a08_1gaf595aab626e55ab733af8682674faa61';
+      sec-mem-id   = 'group__GA08_1gaf595aab626e55ab733af8682674faa61';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -528,7 +528,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a08_1gacdf40b2507df37ef2f7cbed8c12c68f7';
+      sec-mem-id   = 'group__GA08_1gacdf40b2507df37ef2f7cbed8c12c68f7';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -549,7 +549,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a08_1gafa3762b30fbf95bd6bb04139faed47c6';
+      sec-mem-id   = 'group__GA08_1gafa3762b30fbf95bd6bb04139faed47c6';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -568,7 +568,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1gad16a6afa9520b77498b17a72c226305a';
+      sec-mem-id   = 'group__GA03_1gad16a6afa9520b77498b17a72c226305a';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -610,7 +610,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1gac879c84895fee9032c1b29638e209527';
+      sec-mem-id   = 'group__GA03_1gac879c84895fee9032c1b29638e209527';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -629,7 +629,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga8042f480c26abb7f74560a29c0fb2f46';
+      sec-mem-id   = 'group__GA03_1ga8042f480c26abb7f74560a29c0fb2f46';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -648,7 +648,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga9e17e0a2176967ca812933fb57ccfa78';
+      sec-mem-id   = 'group__GA03_1ga9e17e0a2176967ca812933fb57ccfa78';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -667,7 +667,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga67d6e95313dd3b27d719af06cbcac813';
+      sec-mem-id   = 'group__GA03_1ga67d6e95313dd3b27d719af06cbcac813';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -686,7 +686,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga59b981002d383a13731bd939482a5236';
+      sec-mem-id   = 'group__GA03_1ga59b981002d383a13731bd939482a5236';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -704,7 +704,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga4e8db177fea475ea00fa04e3d8f1f08c';
+      sec-mem-id   = 'group__GA03_1ga4e8db177fea475ea00fa04e3d8f1f08c';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -738,7 +738,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1gadba771c864ace7a8373a76554b9d3e6a';
+      sec-mem-id   = 'group__GA03_1gadba771c864ace7a8373a76554b9d3e6a';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -756,7 +756,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga4b15ce7408d1d38989d9afdb6483b1f4';
+      sec-mem-id   = 'group__GA03_1ga4b15ce7408d1d38989d9afdb6483b1f4';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -781,7 +781,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1gae0c05586e7230063b0c42fd5f4b24906';
+      sec-mem-id   = 'group__GA03_1gae0c05586e7230063b0c42fd5f4b24906';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -805,7 +805,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga1476967ed4e1d9bc00e2ea8e3135520e';
+      sec-mem-id   = 'group__GA03_1ga1476967ed4e1d9bc00e2ea8e3135520e';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -834,7 +834,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga39480a49f7878fffe8c3ddf120aba2b0';
+      sec-mem-id   = 'group__GA03_1ga39480a49f7878fffe8c3ddf120aba2b0';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -857,7 +857,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1gaa9cfaddbd43257e810bb3817b021fa8a';
+      sec-mem-id   = 'group__GA03_1gaa9cfaddbd43257e810bb3817b021fa8a';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -886,14 +886,14 @@ _EnD_oF_dEf_TeXt_;
 @param channel
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga3fe1feed45d3290beba0efef491128e6';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga3fe1feed45d3290beba0efef491128e6';
         sec-mem-ref-line = '173';
         sec-mem-ref-name = 'waitAndFinishTune';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga87de696f0a40724c19c89b6b48766020';
+      sec-mem-id   = 'group__GA03_1ga87de696f0a40724c19c89b6b48766020';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -941,7 +941,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1gade55e697c7752811086300e710727397';
+      sec-mem-id   = 'group__GA03_1gade55e697c7752811086300e710727397';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1002,14 +1002,14 @@ void loop() {
 @param showFunc  function that you have to implement to show the frequency during the seeking process. Set NULL if you do not want to show the progress.
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga3fe1feed45d3290beba0efef491128e6';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga3fe1feed45d3290beba0efef491128e6';
         sec-mem-ref-line = '173';
         sec-mem-ref-name = 'waitAndFinishTune';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga41dbf6ea359175b3671072a3c382d42c';
+      sec-mem-id   = 'group__GA03_1ga41dbf6ea359175b3671072a3c382d42c';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1033,7 +1033,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga889cfe43f3f9c9ca92c9862261d5dbbf';
+      sec-mem-id   = 'group__GA03_1ga889cfe43f3f9c9ca92c9862261d5dbbf';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1086,7 +1086,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1gac6ace7da84074b90d8ecf075d14c7bfe';
+      sec-mem-id   = 'group__GA03_1gac6ace7da84074b90d8ecf075d14c7bfe';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1105,7 +1105,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga76f6c3400b038aef15ba7318592e1dd0';
+      sec-mem-id   = 'group__GA03_1ga76f6c3400b038aef15ba7318592e1dd0';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1161,7 +1161,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga8bbf57aaeb92f226179579efa61cc846';
+      sec-mem-id   = 'group__GA03_1ga8bbf57aaeb92f226179579efa61cc846';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1191,7 +1191,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1gab6cc94517eb6bc3325fbd6386bbffe15';
+      sec-mem-id   = 'group__GA03_1gab6cc94517eb6bc3325fbd6386bbffe15';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1209,7 +1209,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga13f6c6e974c768a9456c049645434ca1';
+      sec-mem-id   = 'group__GA03_1ga13f6c6e974c768a9456c049645434ca1';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1236,7 +1236,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1gaea595cf077e2a709bf927deddf8a63ba';
+      sec-mem-id   = 'group__GA03_1gaea595cf077e2a709bf927deddf8a63ba';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1255,7 +1255,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a08_1ga4bd7597d4c9090b04486aec21a6a0a5d';
+      sec-mem-id   = 'group__GA08_1ga4bd7597d4c9090b04486aec21a6a0a5d';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1275,7 +1275,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga85d1635f7bd51c740546d69133a97530';
+      sec-mem-id   = 'group__GA03_1ga85d1635f7bd51c740546d69133a97530';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1293,7 +1293,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga49ae7bc2ecf631c5391bab17b44df3fd';
+      sec-mem-id   = 'group__GA03_1ga49ae7bc2ecf631c5391bab17b44df3fd';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1311,7 +1311,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a02_1gad1d589d43adc89a93c5e07b2d4cb6a4c';
+      sec-mem-id   = 'group__GA02_1gad1d589d43adc89a93c5e07b2d4cb6a4c';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1329,7 +1329,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a07_1gadd2c2ab8b861ab0714fdeb99c774d656';
+      sec-mem-id   = 'group__GA07_1gadd2c2ab8b861ab0714fdeb99c774d656';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1353,7 +1353,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a07_1ga428ddd720c58c17273322d7526e51cbe';
+      sec-mem-id   = 'group__GA07_1ga428ddd720c58c17273322d7526e51cbe';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1371,7 +1371,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a07_1gad6e77ffbeb3f4dc885548130e09590d6';
+      sec-mem-id   = 'group__GA07_1gad6e77ffbeb3f4dc885548130e09590d6';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1390,14 +1390,14 @@ _EnD_oF_dEf_TeXt_;
 Sets audio Mono or stereo.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1490 
+\iline 1491 
 
 @param value TRUE = Mono; FALSE force stereo
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a07_1ga8002bb394ef19db02e04a39de04dffc5';
+      sec-mem-id   = 'group__GA07_1ga8002bb394ef19db02e04a39de04dffc5';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1416,14 +1416,14 @@ _EnD_oF_dEf_TeXt_;
 Sets Bass Boost.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1503 
+\iline 1504 
 
 @param value FALSE = Disable; TRUE = Enable
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a07_1ga250ff3788a7831dae3c6200919b446dd';
+      sec-mem-id   = 'group__GA07_1ga250ff3788a7831dae3c6200919b446dd';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1436,14 +1436,14 @@ _EnD_oF_dEf_TeXt_;
 Gets the current Stereo status.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1516 
+\iline 1517 
 
 @return TRUE if stereo;
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a07_1ga7955280c2b3a9b5e7336fc3862133b39';
+      sec-mem-id   = 'group__GA07_1ga7955280c2b3a9b5e7336fc3862133b39';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1485,7 +1485,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a07_1gafec3018913d735ee0684b88cf503c84a';
+      sec-mem-id   = 'group__GA07_1gafec3018913d735ee0684b88cf503c84a';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1509,7 +1509,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a07_1gaef3ebf331e0646a67b6ebfa6d47c3a16';
+      sec-mem-id   = 'group__GA07_1gaef3ebf331e0646a67b6ebfa6d47c3a16';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1527,7 +1527,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a07_1ga5195195da106c05f29218910b17f6f6b';
+      sec-mem-id   = 'group__GA07_1ga5195195da106c05f29218910b17f6f6b';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1545,7 +1545,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a07_1gaabd554f39778bf6d81712df0ea72d0fa';
+      sec-mem-id   = 'group__GA07_1gaabd554f39778bf6d81712df0ea72d0fa';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1570,7 +1570,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga6dd81b0cff50747906d7d05b127112de';
+      sec-mem-id   = 'group__GA03_1ga6dd81b0cff50747906d7d05b127112de';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1596,7 +1596,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a07_1ga51bf4344ebeb44f7170265901df870f5';
+      sec-mem-id   = 'group__GA07_1ga51bf4344ebeb44f7170265901df870f5';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1639,7 +1639,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a07_1ga743d91d820922b3feda10d06443bc8a9';
+      sec-mem-id   = 'group__GA07_1ga743d91d820922b3feda10d06443bc8a9';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1652,14 +1652,14 @@ _EnD_oF_dEf_TeXt_;
 Gets the current audio volume level.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1561 
+\iline 1562 
 
 @return uint8_t  0 to 15
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a07_1ga864af32df4d3365e03f8876703218283';
+      sec-mem-id   = 'group__GA07_1ga864af32df4d3365e03f8876703218283';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1672,12 +1672,12 @@ _EnD_oF_dEf_TeXt_;
 Increments the audio volume.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1572 
+\iline 1573 
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a07_1ga910965f74897b0246a0b3bed39743d8c';
+      sec-mem-id   = 'group__GA07_1ga910965f74897b0246a0b3bed39743d8c';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1690,12 +1690,12 @@ _EnD_oF_dEf_TeXt_;
 Decrements the audio volume.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1586 
+\iline 1587 
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a03_1ga4f8fe00a561c39d2dc9a0a143b1866e9';
+      sec-mem-id   = 'group__GA03_1ga4f8fe00a561c39d2dc9a0a143b1866e9';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1732,7 +1732,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1ga4b741f1433eda57949bb40fa9e973732';
+      sec-mem-id   = 'group__GA04_1ga4b741f1433eda57949bb40fa9e973732';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1769,7 +1769,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1gaecbab42ef08c486b2eb1ab25649c921a';
+      sec-mem-id   = 'group__GA04_1gaecbab42ef08c486b2eb1ab25649c921a';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1795,7 +1795,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1gae27337170a5f3dedebf585aa19855ad6';
+      sec-mem-id   = 'group__GA04_1gae27337170a5f3dedebf585aa19855ad6';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1814,7 +1814,7 @@ _EnD_oF_dEf_TeXt_;
 Sets RDS fifo mode enable.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1238 
+\iline 1239 
 
 @param value  If true, it makes the the fifo mode enable.
 @return true  or false
@@ -1822,7 +1822,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1ga196b453f68b2a23d2e6b2515c6412ee2';
+      sec-mem-id   = 'group__GA04_1ga196b453f68b2a23d2e6b2515c6412ee2';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1844,7 +1844,7 @@ _EnD_oF_dEf_TeXt_;
 Clear RDS fifo.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1251 
+\iline 1252 
 
 @param value  If true, clears the RDS fifo
 @return true  or false
@@ -1852,7 +1852,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1ga22c43e0f08a650bd32446eef6cd8f550';
+      sec-mem-id   = 'group__GA04_1ga22c43e0f08a650bd32446eef6cd8f550';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1868,29 +1868,29 @@ _EnD_oF_dEf_TeXt_;
  Clear the buffer with latest RDS information
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1a01973fd833000d82609206bfbef62977';
+        sec-mem-ref-id = 'RDA5807_8h_1a01973fd833000d82609206bfbef62977';
         sec-mem-ref-line = '599';
         sec-mem-ref-name = 'rds_buffer0A';
     };
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1af7eb4e812ca7b0883a3e9c7879a034d9';
+        sec-mem-ref-id = 'RDA5807_8h_1af7eb4e812ca7b0883a3e9c7879a034d9';
         sec-mem-ref-line = '597';
         sec-mem-ref-name = 'rds_buffer2A';
     };
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1a81d7aaf8d628afb9cc268777fea95045';
+        sec-mem-ref-id = 'RDA5807_8h_1a81d7aaf8d628afb9cc268777fea95045';
         sec-mem-ref-line = '598';
         sec-mem-ref-name = 'rds_buffer2B';
     };
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1a3d9eae606a7de8a650611eaf1f9a8482';
+        sec-mem-ref-id = 'RDA5807_8h_1a3d9eae606a7de8a650611eaf1f9a8482';
         sec-mem-ref-line = '600';
         sec-mem-ref-name = 'rds_time';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1gacfa48dfcf792a9bcee489658177aed90';
+      sec-mem-id   = 'group__GA04_1gacfa48dfcf792a9bcee489658177aed90';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1920,19 +1920,19 @@ if (rx.getRdsReady()) {
 @see setRDS, setInterruptMode, getRdsAllData, getRdsSync, setRdsFifo
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gab9e3a5584a6238f719e9c9e49435f5ce';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gab9e3a5584a6238f719e9c9e49435f5ce';
         sec-mem-ref-line = '79';
         sec-mem-ref-name = 'getStatusRegisters';
     };
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gadafba5991f6f60a52ad73fdda8fac984';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gadafba5991f6f60a52ad73fdda8fac984';
         sec-mem-ref-line = '890';
         sec-mem-ref-name = 'getRdsAllData';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1gadafba5991f6f60a52ad73fdda8fac984';
+      sec-mem-id   = 'group__GA04_1gadafba5991f6f60a52ad73fdda8fac984';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -1992,39 +1992,39 @@ if (rx.getRdsAllData(&stationName, &stationInfo , &programInfo, &rdsTime) ) {
 @see setRDS, setRdsFifo, getRdsAllData
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gacfa48dfcf792a9bcee489658177aed90';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gacfa48dfcf792a9bcee489658177aed90';
         sec-mem-ref-line = '819';
         sec-mem-ref-name = 'getRdsReady';
     };
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
         sec-mem-ref-line = '1031';
         sec-mem-ref-name = 'getRdsText0A';
     };
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
         sec-mem-ref-line = '1061';
         sec-mem-ref-name = 'getRdsText2A';
     };
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
         sec-mem-ref-line = '1090';
         sec-mem-ref-name = 'getRdsText2B';
     };
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gaef398d848e7378ec4897965b8e1b4441';
-        sec-mem-ref-line = '1116';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gaef398d848e7378ec4897965b8e1b4441';
+        sec-mem-ref-line = '1117';
         sec-mem-ref-name = 'getRdsTime';
     };
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1gac6b8c39c1134700ce3e2a9e5216a5325';
+        sec-mem-ref-id = 'RDA5807_8h_1gac6b8c39c1134700ce3e2a9e5216a5325';
         sec-mem-ref-line = '969';
         sec-mem-ref-name = 'hasRdsInfoAB';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1ga04e5fe0cacbdcae620388a15630cf9c1';
+      sec-mem-id   = 'group__GA04_1ga04e5fe0cacbdcae620388a15630cf9c1';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2049,7 +2049,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1gad602518e28efa9abb8319f1f25480551';
+      sec-mem-id   = 'group__GA04_1gad602518e28efa9abb8319f1f25480551';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2074,14 +2074,14 @@ _EnD_oF_dEf_TeXt_;
 @return True or false
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1a01973fd833000d82609206bfbef62977';
+        sec-mem-ref-id = 'RDA5807_8h_1a01973fd833000d82609206bfbef62977';
         sec-mem-ref-line = '599';
         sec-mem-ref-name = 'rds_buffer0A';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1gad85ccedd8baecd8bc2f42325a3ee8741';
+      sec-mem-id   = 'group__GA04_1gad85ccedd8baecd8bc2f42325a3ee8741';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2106,7 +2106,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1ga32c361b9b996a5920519315aa86d174d';
+      sec-mem-id   = 'group__GA04_1ga32c361b9b996a5920519315aa86d174d';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2126,7 +2126,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1gae3bde947a89c6dadfc4dc22aea85b467';
+      sec-mem-id   = 'group__GA04_1gae3bde947a89c6dadfc4dc22aea85b467';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2152,7 +2152,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1ga6afb347f32121c480adea2a36032d56f';
+      sec-mem-id   = 'group__GA04_1ga6afb347f32121c480adea2a36032d56f';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2174,19 +2174,19 @@ _EnD_oF_dEf_TeXt_;
 @param c  char array reference to the "group 2B" text
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
         sec-mem-ref-line = '1031';
         sec-mem-ref-name = 'getRdsText0A';
     };
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
         sec-mem-ref-line = '1090';
         sec-mem-ref-name = 'getRdsText2B';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1ga3ab713bb63978518d42a761b9db445c9';
+      sec-mem-id   = 'group__GA04_1ga3ab713bb63978518d42a761b9db445c9';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2210,14 +2210,14 @@ _EnD_oF_dEf_TeXt_;
 @param c  char array reference to the "group  2A" text
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
         sec-mem-ref-line = '1061';
         sec-mem-ref-name = 'getRdsText2A';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1ga5a26789f1910a5b2098919dbd50e6a3c';
+      sec-mem-id   = 'group__GA04_1ga5a26789f1910a5b2098919dbd50e6a3c';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2241,29 +2241,29 @@ _EnD_oF_dEf_TeXt_;
 @see getRdsReady
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga6afb347f32121c480adea2a36032d56f';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga6afb347f32121c480adea2a36032d56f';
         sec-mem-ref-line = '952';
         sec-mem-ref-name = 'getNext2Block';
     };
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1a01973fd833000d82609206bfbef62977';
+        sec-mem-ref-id = 'RDA5807_8h_1a01973fd833000d82609206bfbef62977';
         sec-mem-ref-line = '599';
         sec-mem-ref-name = 'rds_buffer0A';
     };
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gadafba5991f6f60a52ad73fdda8fac984';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gadafba5991f6f60a52ad73fdda8fac984';
         sec-mem-ref-line = '890';
         sec-mem-ref-name = 'getRdsAllData';
     };
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1gac2defc3812e1900ccd1ac719268abe2e';
+        sec-mem-ref-id = 'RDA5807_8h_1gac2defc3812e1900ccd1ac719268abe2e';
         sec-mem-ref-line = '862';
         sec-mem-ref-name = 'getRdsStationName';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1gac2defc3812e1900ccd1ac719268abe2e';
+      sec-mem-id   = 'group__GA04_1gac2defc3812e1900ccd1ac719268abe2e';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2287,14 +2287,14 @@ _EnD_oF_dEf_TeXt_;
 @see getRdsText0A
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
         sec-mem-ref-line = '1031';
         sec-mem-ref-name = 'getRdsText0A';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1ga482098a64299cb8af976d4d10a460212';
+      sec-mem-id   = 'group__GA04_1ga482098a64299cb8af976d4d10a460212';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2320,29 +2320,29 @@ _EnD_oF_dEf_TeXt_;
 @see getRdsReady
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga3ab713bb63978518d42a761b9db445c9';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga3ab713bb63978518d42a761b9db445c9';
         sec-mem-ref-line = '989';
         sec-mem-ref-name = 'getNext4Block';
     };
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1af7eb4e812ca7b0883a3e9c7879a034d9';
+        sec-mem-ref-id = 'RDA5807_8h_1af7eb4e812ca7b0883a3e9c7879a034d9';
         sec-mem-ref-line = '597';
         sec-mem-ref-name = 'rds_buffer2A';
     };
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gadafba5991f6f60a52ad73fdda8fac984';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gadafba5991f6f60a52ad73fdda8fac984';
         sec-mem-ref-line = '890';
         sec-mem-ref-name = 'getRdsAllData';
     };
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1ga73610b1372a8bdaa959862881eae05fb';
+        sec-mem-ref-id = 'RDA5807_8h_1ga73610b1372a8bdaa959862881eae05fb';
         sec-mem-ref-line = '873';
         sec-mem-ref-name = 'getRdsProgramInformation';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1ga73610b1372a8bdaa959862881eae05fb';
+      sec-mem-id   = 'group__GA04_1ga73610b1372a8bdaa959862881eae05fb';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2367,14 +2367,14 @@ _EnD_oF_dEf_TeXt_;
 @see getRdsText2A
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
         sec-mem-ref-line = '1061';
         sec-mem-ref-name = 'getRdsText2A';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1gacd6614bc7be99d55a3d9a17739ee7074';
+      sec-mem-id   = 'group__GA04_1gacd6614bc7be99d55a3d9a17739ee7074';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2397,29 +2397,29 @@ _EnD_oF_dEf_TeXt_;
 @see getRdsReady
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga6afb347f32121c480adea2a36032d56f';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga6afb347f32121c480adea2a36032d56f';
         sec-mem-ref-line = '952';
         sec-mem-ref-name = 'getNext2Block';
     };
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1a81d7aaf8d628afb9cc268777fea95045';
+        sec-mem-ref-id = 'RDA5807_8h_1a81d7aaf8d628afb9cc268777fea95045';
         sec-mem-ref-line = '598';
         sec-mem-ref-name = 'rds_buffer2B';
     };
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gadafba5991f6f60a52ad73fdda8fac984';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gadafba5991f6f60a52ad73fdda8fac984';
         sec-mem-ref-line = '890';
         sec-mem-ref-name = 'getRdsAllData';
     };
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1ga2e78c58aca2f5121306d2e5ceb98effd';
+        sec-mem-ref-id = 'RDA5807_8h_1ga2e78c58aca2f5121306d2e5ceb98effd';
         sec-mem-ref-line = '883';
         sec-mem-ref-name = 'getRdsStationInformation';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1ga2e78c58aca2f5121306d2e5ceb98effd';
+      sec-mem-id   = 'group__GA04_1ga2e78c58aca2f5121306d2e5ceb98effd';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2442,14 +2442,14 @@ _EnD_oF_dEf_TeXt_;
 @see getRdsReady
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
         sec-mem-ref-line = '1090';
         sec-mem-ref-name = 'getRdsText2B';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1gaef398d848e7378ec4897965b8e1b4441';
+      sec-mem-id   = 'group__GA04_1gaef398d848e7378ec4897965b8e1b4441';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2463,23 +2463,24 @@ Gets the RDS UTC time and date when the Group type is 4.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
  ATTENTION: You must call getRdsReady before calling this function. 
+\ilinebr\ilinebr ATTENTION: Some stations broadcast wrong time.
 @return char* a string with hh:mm +/- offset
 @see getRdsReady
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1a3d9eae606a7de8a650611eaf1f9a8482';
+        sec-mem-ref-id = 'RDA5807_8h_1a3d9eae606a7de8a650611eaf1f9a8482';
         sec-mem-ref-line = '600';
         sec-mem-ref-name = 'rds_time';
     };
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gadafba5991f6f60a52ad73fdda8fac984';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gadafba5991f6f60a52ad73fdda8fac984';
         sec-mem-ref-line = '890';
         sec-mem-ref-name = 'getRdsAllData';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1gaa3432b4df8ec20277e3d3be60782b395';
+      sec-mem-id   = 'group__GA04_1gaa3432b4df8ec20277e3d3be60782b395';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2493,19 +2494,19 @@ Gets the RDS time converted to local time.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
  \xrefitem todo 4.\ilinebr\ilinebr ATTENTION: You must call getRdsReady before calling this function. 
-\ilinebr\ilinebr ATTENTION: Some station broadcast wrong time.
+\ilinebr\ilinebr ATTENTION: Some stations broadcast wrong time.
 @return char* a string with hh:mm 
 @see getRdsReady
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1a3d9eae606a7de8a650611eaf1f9a8482';
+        sec-mem-ref-id = 'RDA5807_8h_1a3d9eae606a7de8a650611eaf1f9a8482';
         sec-mem-ref-line = '600';
         sec-mem-ref-name = 'rds_time';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1ga2e63d5c85cb1825492a5ba2ea3bef2c3';
+      sec-mem-id   = 'group__GA04_1ga2e63d5c85cb1825492a5ba2ea3bef2c3';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2527,7 +2528,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1ga24e26921d1b0931681ae4cf9c23742d4';
+      sec-mem-id   = 'group__GA04_1ga24e26921d1b0931681ae4cf9c23742d4';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2558,7 +2559,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1gadcc73bed36f5dbad1b41a8777be575d9';
+      sec-mem-id   = 'group__GA04_1gadcc73bed36f5dbad1b41a8777be575d9';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2590,7 +2591,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1ga0d809c6cc2928e1fee006713f77b60e9';
+      sec-mem-id   = 'group__GA04_1ga0d809c6cc2928e1fee006713f77b60e9';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2611,7 +2612,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1gac6b8c39c1134700ce3e2a9e5216a5325';
+      sec-mem-id   = 'group__GA04_1gac6b8c39c1134700ce3e2a9e5216a5325';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2629,14 +2630,14 @@ _EnD_oF_dEf_TeXt_;
 @return  true or false
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gadafba5991f6f60a52ad73fdda8fac984';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gadafba5991f6f60a52ad73fdda8fac984';
         sec-mem-ref-line = '890';
         sec-mem-ref-name = 'getRdsAllData';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a04_1ga25df690020bab4154b0737e7365ed8ea';
+      sec-mem-id   = 'group__GA04_1ga25df690020bab4154b0737e7365ed8ea';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2657,7 +2658,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a06_1gafe324014c135a510714e7d722f291273';
+      sec-mem-id   = 'group__GA06_1gafe324014c135a510714e7d722f291273';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2683,7 +2684,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a06_1ga2070bff9af95a523a77ac304eee7b22f';
+      sec-mem-id   = 'group__GA06_1ga2070bff9af95a523a77ac304eee7b22f';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2784,7 +2785,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a06_1ga70f086ccb3be49c4c51133bae2e8b113';
+      sec-mem-id   = 'group__GA06_1ga70f086ccb3be49c4c51133bae2e8b113';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2808,7 +2809,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a06_1ga3d5618cd755c0a56fea68ea589bb828f';
+      sec-mem-id   = 'group__GA06_1ga3d5618cd755c0a56fea68ea589bb828f';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2836,7 +2837,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g_a06_1gabeb9446fc371fe58e075bea7ebc51fdb';
+      sec-mem-id   = 'group__GA06_1gabeb9446fc371fe58e075bea7ebc51fdb';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2855,14 +2856,14 @@ _EnD_oF_dEf_TeXt_;
 If 0, I2S output unsigned 16-bit audio data. If 1, I2S output signed 16-bit audio data.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1437 
+\iline 1438 
 
 @param value  true (1) or false (0)
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g05_1ga0f40d75452088ceeffb4d8969fb34999';
+      sec-mem-id   = 'group__G05_1ga0f40d75452088ceeffb4d8969fb34999';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2927,7 +2928,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g05_1ga2275869d5ec1bd0eaea2e278e2a70cc7';
+      sec-mem-id   = 'group__G05_1ga2275869d5ec1bd0eaea2e278e2a70cc7';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2968,7 +2969,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g05_1ga43c6c86481dd1fdba0fc14438bc8e18e';
+      sec-mem-id   = 'group__G05_1ga43c6c86481dd1fdba0fc14438bc8e18e';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -2996,14 +2997,14 @@ _EnD_oF_dEf_TeXt_;
 @see setFrequency, seek, setFrequencyUp and setFrequencyDown
 _EnD_oF_dEf_TeXt_;
       sec-mem-referenceto = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1a7f1dad9330a21ce952c91d55ef8e2ad0';
+        sec-mem-ref-id = 'RDA5807_8h_1a7f1dad9330a21ce952c91d55ef8e2ad0';
         sec-mem-ref-line = '603';
         sec-mem-ref-name = 'strFrequency';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group___g05_1ga16f6ef1f816a032fb07a91017c34bb50';
+      sec-mem-id   = 'group__G05_1ga16f6ef1f816a032fb07a91017c34bb50';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3022,7 +3023,7 @@ _EnD_oF_dEf_TeXt_;
 Check the I2C bus address.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1327 
+\iline 1328 
 
 @param uint8_t address Array - this array will be populated with the I2C bus addresses found (minimum three elements)
 @return 0 if no i2c device is found; -1 if error is found or n > 0, where n is the number of I2C bus address found
@@ -3033,7 +3034,7 @@ _EnD_oF_dEf_TeXt_;
     sec-kind = 'protected-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ae51bb0aaf958ee320da80866bb20ffb5';
+      sec-mem-id   = 'group__GA01_1ae51bb0aaf958ee320da80866bb20ffb5';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3051,7 +3052,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ae9572809d64fc5c82f95d4f26d5c308d';
+      sec-mem-id   = 'group__GA01_1ae9572809d64fc5c82f95d4f26d5c308d';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3069,7 +3070,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1af9cbd65bd00bce76f8b362159cf9d589';
+      sec-mem-id   = 'group__GA01_1af9cbd65bd00bce76f8b362159cf9d589';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3090,7 +3091,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a63267deb8311ff567df5ae6202ffa3fb';
+      sec-mem-id   = 'group__GA01_1a63267deb8311ff567df5ae6202ffa3fb';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3111,7 +3112,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a68804842ce8d8c4304bc260b6a386e12';
+      sec-mem-id   = 'group__GA01_1a68804842ce8d8c4304bc260b6a386e12';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3132,7 +3133,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a132aac1d76094cdc72e5b4b7db289c82';
+      sec-mem-id   = 'group__GA01_1a132aac1d76094cdc72e5b4b7db289c82';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3153,7 +3154,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a62e2d8060258c3a4d3406831092d2072';
+      sec-mem-id   = 'group__GA01_1a62e2d8060258c3a4d3406831092d2072';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3174,7 +3175,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a990456ae8b88efa66b0816010ee24244';
+      sec-mem-id   = 'group__GA01_1a990456ae8b88efa66b0816010ee24244';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3195,7 +3196,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1af368d9ec82388831ddf4749f0a83a1b3';
+      sec-mem-id   = 'group__GA01_1af368d9ec82388831ddf4749f0a83a1b3';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3216,7 +3217,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a35030e0df66225f165407b4848ec8921';
+      sec-mem-id   = 'group__GA01_1a35030e0df66225f165407b4848ec8921';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3237,7 +3238,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a57b48edbf9ba4cef513cc45223c690d8';
+      sec-mem-id   = 'group__GA01_1a57b48edbf9ba4cef513cc45223c690d8';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3258,7 +3259,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a249a8706a3b945522e2215e4eeea7407';
+      sec-mem-id   = 'group__GA01_1a249a8706a3b945522e2215e4eeea7407';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3279,7 +3280,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ab14d92c603d940e16e2f1fa6b179b74f';
+      sec-mem-id   = 'group__GA01_1ab14d92c603d940e16e2f1fa6b179b74f';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3300,7 +3301,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a72a563279c17e5646a892ae77cfd8c1a';
+      sec-mem-id   = 'group__GA01_1a72a563279c17e5646a892ae77cfd8c1a';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3321,7 +3322,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a619559a0a083492f37527f5206a6c25d';
+      sec-mem-id   = 'group__GA01_1a619559a0a083492f37527f5206a6c25d';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3342,7 +3343,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a61725075be18d3439886e1414a0ac119';
+      sec-mem-id   = 'group__GA01_1a61725075be18d3439886e1414a0ac119';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3363,7 +3364,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a1613897e42f69fadd07a6e0c713a4c6b';
+      sec-mem-id   = 'group__GA01_1a1613897e42f69fadd07a6e0c713a4c6b';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3384,7 +3385,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1acddb5bea9e4872e9aecf4dc9bd89a1e6';
+      sec-mem-id   = 'group__GA01_1acddb5bea9e4872e9aecf4dc9bd89a1e6';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3405,7 +3406,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1aaede268d40e40776118adbc1a8400418';
+      sec-mem-id   = 'group__GA01_1aaede268d40e40776118adbc1a8400418';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3426,7 +3427,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ad77c4ef4294d6de7b1711bac943ae97c';
+      sec-mem-id   = 'group__GA01_1ad77c4ef4294d6de7b1711bac943ae97c';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3447,7 +3448,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1af7eb4e812ca7b0883a3e9c7879a034d9';
+      sec-mem-id   = 'group__GA01_1af7eb4e812ca7b0883a3e9c7879a034d9';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3463,19 +3464,19 @@ _EnD_oF_dEf_TeXt_;
 
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga22c43e0f08a650bd32446eef6cd8f550';
-        sec-mem-ref-line = '1268';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga22c43e0f08a650bd32446eef6cd8f550';
+        sec-mem-ref-line = '1269';
         sec-mem-ref-name = 'clearRdsBuffer';
     };
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga482098a64299cb8af976d4d10a460212';
         sec-mem-ref-line = '1061';
         sec-mem-ref-name = 'getRdsText2A';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a81d7aaf8d628afb9cc268777fea95045';
+      sec-mem-id   = 'group__GA01_1a81d7aaf8d628afb9cc268777fea95045';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3491,19 +3492,19 @@ _EnD_oF_dEf_TeXt_;
 
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga22c43e0f08a650bd32446eef6cd8f550';
-        sec-mem-ref-line = '1268';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga22c43e0f08a650bd32446eef6cd8f550';
+        sec-mem-ref-line = '1269';
         sec-mem-ref-name = 'clearRdsBuffer';
     };
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gacd6614bc7be99d55a3d9a17739ee7074';
         sec-mem-ref-line = '1090';
         sec-mem-ref-name = 'getRdsText2B';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a01973fd833000d82609206bfbef62977';
+      sec-mem-id   = 'group__GA01_1a01973fd833000d82609206bfbef62977';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3519,24 +3520,24 @@ _EnD_oF_dEf_TeXt_;
 
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga22c43e0f08a650bd32446eef6cd8f550';
-        sec-mem-ref-line = '1268';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga22c43e0f08a650bd32446eef6cd8f550';
+        sec-mem-ref-line = '1269';
         sec-mem-ref-name = 'clearRdsBuffer';
     };
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga5a26789f1910a5b2098919dbd50e6a3c';
         sec-mem-ref-line = '1031';
         sec-mem-ref-name = 'getRdsText0A';
     };
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gad602518e28efa9abb8319f1f25480551';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gad602518e28efa9abb8319f1f25480551';
         sec-mem-ref-line = '851';
         sec-mem-ref-name = 'isNewRdsFlagAB';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a3d9eae606a7de8a650611eaf1f9a8482';
+      sec-mem-id   = 'group__GA01_1a3d9eae606a7de8a650611eaf1f9a8482';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3552,24 +3553,24 @@ _EnD_oF_dEf_TeXt_;
 
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1ga22c43e0f08a650bd32446eef6cd8f550';
-        sec-mem-ref-line = '1268';
+        sec-mem-ref-id = 'RDA5807_8cpp_1ga22c43e0f08a650bd32446eef6cd8f550';
+        sec-mem-ref-line = '1269';
         sec-mem-ref-name = 'clearRdsBuffer';
     };
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gaa3432b4df8ec20277e3d3be60782b395';
-        sec-mem-ref-line = '1179';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gaa3432b4df8ec20277e3d3be60782b395';
+        sec-mem-ref-line = '1180';
         sec-mem-ref-name = 'getRdsLocalTime';
     };
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8cpp_1gaef398d848e7378ec4897965b8e1b4441';
-        sec-mem-ref-line = '1116';
+        sec-mem-ref-id = 'RDA5807_8cpp_1gaef398d848e7378ec4897965b8e1b4441';
+        sec-mem-ref-line = '1117';
         sec-mem-ref-name = 'getRdsTime';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ae83461389f706c7a27512e5e08655f1b';
+      sec-mem-id   = 'group__GA01_1ae83461389f706c7a27512e5e08655f1b';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3587,7 +3588,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a7f1dad9330a21ce952c91d55ef8e2ad0';
+      sec-mem-id   = 'group__GA01_1a7f1dad9330a21ce952c91d55ef8e2ad0';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3603,14 +3604,14 @@ _EnD_oF_dEf_TeXt_;
 
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1ga43c6c86481dd1fdba0fc14438bc8e18e';
+        sec-mem-ref-id = 'RDA5807_8h_1ga43c6c86481dd1fdba0fc14438bc8e18e';
         sec-mem-ref-line = '1020';
         sec-mem-ref-name = 'formatCurrentFrequency';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a18c3e5a103b683af7c46d8b9a3d47518';
+      sec-mem-id   = 'group__GA01_1a18c3e5a103b683af7c46d8b9a3d47518';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3629,14 +3630,14 @@ _EnD_oF_dEf_TeXt_;
 
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1gadf634cb6733022e30d8f1a74a5946e78';
+        sec-mem-ref-id = 'RDA5807_8h_1gadf634cb6733022e30d8f1a74a5946e78';
         sec-mem-ref-line = '641';
         sec-mem-ref-name = 'setI2CBusAddrs';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a81c00f45187f93be0698ef8c5bd80619';
+      sec-mem-id   = 'group__GA01_1a81c00f45187f93be0698ef8c5bd80619';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3655,14 +3656,14 @@ _EnD_oF_dEf_TeXt_;
 
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
-        sec-mem-ref-id = '_r_d_a5807_8h_1gadf634cb6733022e30d8f1a74a5946e78';
+        sec-mem-ref-id = 'RDA5807_8h_1gadf634cb6733022e30d8f1a74a5946e78';
         sec-mem-ref-line = '641';
         sec-mem-ref-name = 'setI2CBusAddrs';
     };
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a55c07acd68120f74f787999364fc92c9';
+      sec-mem-id   = 'group__GA01_1a55c07acd68120f74f787999364fc92c9';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3680,7 +3681,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a14040afdfd6c6cf486278c4e75c63927';
+      sec-mem-id   = 'group__GA01_1a14040afdfd6c6cf486278c4e75c63927';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3698,7 +3699,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1aaf56888de5a078b5e5090a0b0dd6ae61';
+      sec-mem-id   = 'group__GA01_1aaf56888de5a078b5e5090a0b0dd6ae61';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3719,7 +3720,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ae175c8602c76c5512c61b836de086620';
+      sec-mem-id   = 'group__GA01_1ae175c8602c76c5512c61b836de086620';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3740,7 +3741,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a33272a8f152f2307adc012072b8e0582';
+      sec-mem-id   = 'group__GA01_1a33272a8f152f2307adc012072b8e0582';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3761,7 +3762,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a022d3357b6bddf3477b3f26f2d78a75c';
+      sec-mem-id   = 'group__GA01_1a022d3357b6bddf3477b3f26f2d78a75c';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3782,7 +3783,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ab6a9fc2bd5ca266079c3e7796b5025af';
+      sec-mem-id   = 'group__GA01_1ab6a9fc2bd5ca266079c3e7796b5025af';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3803,7 +3804,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ae6f2d5f535edc14951e75a03e46ebc01';
+      sec-mem-id   = 'group__GA01_1ae6f2d5f535edc14951e75a03e46ebc01';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3824,7 +3825,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1af0c39d19376c30217eeb6bf17b398e46';
+      sec-mem-id   = 'group__GA01_1af0c39d19376c30217eeb6bf17b398e46';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3845,7 +3846,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a4c8780f2d28725d66850f9e3be14745a';
+      sec-mem-id   = 'group__GA01_1a4c8780f2d28725d66850f9e3be14745a';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3866,7 +3867,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ac3714ff155c783961b0d097000837ee5';
+      sec-mem-id   = 'group__GA01_1ac3714ff155c783961b0d097000837ee5';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3887,7 +3888,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a8b9e02f7c7121cf57fc0006f4ff7162a';
+      sec-mem-id   = 'group__GA01_1a8b9e02f7c7121cf57fc0006f4ff7162a';
       sec-mem-virt = normal;
       sec-mem-prot = protected;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -3922,7 +3923,7 @@ _EnD_oF_dEf_TeXt_;
         node-id    = 1;
         node-label = 'RDA5807';
         node-link = {
-          node-link-id = 'group___g_a01#class_r_d_a5807';
+          node-link-id = 'group__GA01#classRDA5807';
         };
         node-child = {
           child-id = '2';
@@ -4034,118 +4035,118 @@ _EnD_oF_dEf_TeXt_;
         node-id    = 2;
         node-label = 'rda_reg00';
         node-link = {
-          node-link-id = 'group___g_a01#unionrda__reg00';
+          node-link-id = 'group__GA01#unionrda__reg00';
         };
       }; /* node */
       node = {
         node-id    = 3;
         node-label = 'rda_reg01';
         node-link = {
-          node-link-id = 'group___g_a01#unionrda__reg01';
+          node-link-id = 'group__GA01#unionrda__reg01';
         };
       }; /* node */
       node = {
         node-id    = 4;
         node-label = 'rda_reg02';
         node-link = {
-          node-link-id = 'group___g_a01#unionrda__reg02';
+          node-link-id = 'group__GA01#unionrda__reg02';
         };
       }; /* node */
       node = {
         node-id    = 5;
         node-label = 'rda_reg03';
         node-link = {
-          node-link-id = 'group___g_a01#unionrda__reg03';
+          node-link-id = 'group__GA01#unionrda__reg03';
         };
       }; /* node */
       node = {
         node-id    = 6;
         node-label = 'rda_reg04';
         node-link = {
-          node-link-id = 'group___g_a01#unionrda__reg04';
+          node-link-id = 'group__GA01#unionrda__reg04';
         };
       }; /* node */
       node = {
         node-id    = 7;
         node-label = 'rda_reg05';
         node-link = {
-          node-link-id = 'group___g_a01#unionrda__reg05';
+          node-link-id = 'group__GA01#unionrda__reg05';
         };
       }; /* node */
       node = {
         node-id    = 8;
         node-label = 'rda_reg06';
         node-link = {
-          node-link-id = 'group___g_a01#unionrda__reg06';
+          node-link-id = 'group__GA01#unionrda__reg06';
         };
       }; /* node */
       node = {
         node-id    = 9;
         node-label = 'rda_reg07';
         node-link = {
-          node-link-id = 'group___g_a01#unionrda__reg07';
+          node-link-id = 'group__GA01#unionrda__reg07';
         };
       }; /* node */
       node = {
         node-id    = 10;
         node-label = 'rda_reg08';
         node-link = {
-          node-link-id = 'group___g_a01#unionrda__reg08';
+          node-link-id = 'group__GA01#unionrda__reg08';
         };
       }; /* node */
       node = {
         node-id    = 11;
         node-label = 'rda_reg0a';
         node-link = {
-          node-link-id = 'group___g_a01#unionrda__reg0a';
+          node-link-id = 'group__GA01#unionrda__reg0a';
         };
       }; /* node */
       node = {
         node-id    = 12;
         node-label = 'rda_reg0b';
         node-link = {
-          node-link-id = 'group___g_a01#unionrda__reg0b';
+          node-link-id = 'group__GA01#unionrda__reg0b';
         };
       }; /* node */
       node = {
         node-id    = 13;
         node-label = 'rda_reg0c';
         node-link = {
-          node-link-id = 'group___g_a01#unionrda__reg0c';
+          node-link-id = 'group__GA01#unionrda__reg0c';
         };
       }; /* node */
       node = {
         node-id    = 14;
         node-label = 'rda_reg0d';
         node-link = {
-          node-link-id = 'group___g_a01#unionrda__reg0d';
+          node-link-id = 'group__GA01#unionrda__reg0d';
         };
       }; /* node */
       node = {
         node-id    = 15;
         node-label = 'rda_reg0e';
         node-link = {
-          node-link-id = 'group___g_a01#unionrda__reg0e';
+          node-link-id = 'group__GA01#unionrda__reg0e';
         };
       }; /* node */
       node = {
         node-id    = 16;
         node-label = 'rda_reg0f';
         node-link = {
-          node-link-id = 'group___g_a01#unionrda__reg0f';
+          node-link-id = 'group__GA01#unionrda__reg0f';
         };
       }; /* node */
 
 _EnD_oF_dEf_TeXt_;
 }; /* class */
 union = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg00';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ac5a1a7191e10e3c1d300537387e6acbc';
+      sec-mem-id   = 'group__GA01_1ac5a1a7191e10e3c1d300537387e6acbc';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4163,7 +4164,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a4032484c615397b498d1af01aa1d1453';
+      sec-mem-id   = 'group__GA01_1a4032484c615397b498d1af01aa1d1453';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4190,13 +4191,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg00.refined';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ab1408e92ecfc268499c1ff228bf815b2';
+      sec-mem-id   = 'group__GA01_1ab1408e92ecfc268499c1ff228bf815b2';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4214,7 +4215,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ae9ab18e96e3a6f4d4f9ade0ea0501da4';
+      sec-mem-id   = 'group__GA01_1ae9ab18e96e3a6f4d4f9ade0ea0501da4';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4241,13 +4242,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 union = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg01';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a95db31874aa1c376e10041fbf4c04bd0';
+      sec-mem-id   = 'group__GA01_1a95db31874aa1c376e10041fbf4c04bd0';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4265,7 +4266,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a5753f7265ef5b1291ff160c431ebe863';
+      sec-mem-id   = 'group__GA01_1a5753f7265ef5b1291ff160c431ebe863';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4292,13 +4293,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg01.refined';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a51ab88497cad20027df936afa223b23d';
+      sec-mem-id   = 'group__GA01_1a51ab88497cad20027df936afa223b23d';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4316,7 +4317,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a7b99e4a5dc723242645ede8c604610df';
+      sec-mem-id   = 'group__GA01_1a7b99e4a5dc723242645ede8c604610df';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4343,13 +4344,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 union = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg02';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a1809838a4ec469d3ff1eeb7dacb89252';
+      sec-mem-id   = 'group__GA01_1a1809838a4ec469d3ff1eeb7dacb89252';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4367,7 +4368,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a1a250acebf8f445cc5b685da35ae2b7a';
+      sec-mem-id   = 'group__GA01_1a1a250acebf8f445cc5b685da35ae2b7a';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4411,13 +4412,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg02.refined';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ab332708e4304e13c9b424e7465254954';
+      sec-mem-id   = 'group__GA01_1ab332708e4304e13c9b424e7465254954';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4435,7 +4436,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1afea1117fa1ab6be6c3b43d3df783cce0';
+      sec-mem-id   = 'group__GA01_1afea1117fa1ab6be6c3b43d3df783cce0';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4453,7 +4454,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a60923301c913b155d020368e74200657';
+      sec-mem-id   = 'group__GA01_1a60923301c913b155d020368e74200657';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4471,7 +4472,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a1ede90c00f1a2c926163d5203ec3b75e';
+      sec-mem-id   = 'group__GA01_1a1ede90c00f1a2c926163d5203ec3b75e';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4489,7 +4490,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a7f2173081ed2422920d15baa1919e01b';
+      sec-mem-id   = 'group__GA01_1a7f2173081ed2422920d15baa1919e01b';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4507,7 +4508,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a3afc70c9a6693899b152ca51a42f07b7';
+      sec-mem-id   = 'group__GA01_1a3afc70c9a6693899b152ca51a42f07b7';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4525,7 +4526,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a71fa98cecf9e896e77d11325dbe19dc6';
+      sec-mem-id   = 'group__GA01_1a71fa98cecf9e896e77d11325dbe19dc6';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4543,7 +4544,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1aed8a1fd68dec9364930b51d020ba07d6';
+      sec-mem-id   = 'group__GA01_1aed8a1fd68dec9364930b51d020ba07d6';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4561,7 +4562,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ad1ec79cd81992e6bd3131ce076f78679';
+      sec-mem-id   = 'group__GA01_1ad1ec79cd81992e6bd3131ce076f78679';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4579,7 +4580,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a253053953b1971ea97f782cc746e5e55';
+      sec-mem-id   = 'group__GA01_1a253053953b1971ea97f782cc746e5e55';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4597,7 +4598,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ae1618eb6a84ac61faefe0a87d5649689';
+      sec-mem-id   = 'group__GA01_1ae1618eb6a84ac61faefe0a87d5649689';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4615,7 +4616,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1af5f75f1b95652443e4398974b82c3f7c';
+      sec-mem-id   = 'group__GA01_1af5f75f1b95652443e4398974b82c3f7c';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4633,7 +4634,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1af7dd74521218c605e3553fdeb618e6eb';
+      sec-mem-id   = 'group__GA01_1af7dd74521218c605e3553fdeb618e6eb';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4651,7 +4652,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1adec239f2597576f6182f387472c2272b';
+      sec-mem-id   = 'group__GA01_1adec239f2597576f6182f387472c2272b';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4678,13 +4679,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 union = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg03';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a8a7bf8e4ddb7f76cbafe53ba366d04ca';
+      sec-mem-id   = 'group__GA01_1a8a7bf8e4ddb7f76cbafe53ba366d04ca';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4702,7 +4703,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a896ca93bb7040c45cbf062396d40ebca';
+      sec-mem-id   = 'group__GA01_1a896ca93bb7040c45cbf062396d40ebca';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4759,13 +4760,13 @@ IMPORTANT: CHAN is updated after a seek operation.
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg03.refined';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a6506ae39fdca9845e3a6de3865183e57';
+      sec-mem-id   = 'group__GA01_1a6506ae39fdca9845e3a6de3865183e57';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4783,7 +4784,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1aa8a5bbeedca093b94b7f0d3f185b98f7';
+      sec-mem-id   = 'group__GA01_1aa8a5bbeedca093b94b7f0d3f185b98f7';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4801,7 +4802,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a05069c0e15b79590b44ff985487037b7';
+      sec-mem-id   = 'group__GA01_1a05069c0e15b79590b44ff985487037b7';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4819,7 +4820,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a799f81e68cf18ca017f69d9405267e41';
+      sec-mem-id   = 'group__GA01_1a799f81e68cf18ca017f69d9405267e41';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4837,7 +4838,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1adf21771052967392286eeab054755423';
+      sec-mem-id   = 'group__GA01_1adf21771052967392286eeab054755423';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4864,13 +4865,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 union = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg04';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1af1c6e72539ee65749eb0f049303ad616';
+      sec-mem-id   = 'group__GA01_1af1c6e72539ee65749eb0f049303ad616';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4888,7 +4889,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a5c872e111c0fbaf477625700a2076359';
+      sec-mem-id   = 'group__GA01_1a5c872e111c0fbaf477625700a2076359';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4917,13 +4918,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg04.refined';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a0ed149a12d2a87f1496cdc90c23bfb1c';
+      sec-mem-id   = 'group__GA01_1a0ed149a12d2a87f1496cdc90c23bfb1c';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4941,7 +4942,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ac8715973930ed16be4d52340ef11181b';
+      sec-mem-id   = 'group__GA01_1ac8715973930ed16be4d52340ef11181b';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4959,7 +4960,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1af2d579fe9d83fc7fe6f55c570c02af38';
+      sec-mem-id   = 'group__GA01_1af2d579fe9d83fc7fe6f55c570c02af38';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4977,7 +4978,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1aff7333bc2a0234725b53e4e4207e1915';
+      sec-mem-id   = 'group__GA01_1aff7333bc2a0234725b53e4e4207e1915';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -4995,7 +4996,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a1742cf1b14a750532e645aab85933d3c';
+      sec-mem-id   = 'group__GA01_1a1742cf1b14a750532e645aab85933d3c';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5013,7 +5014,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1afddec52dd7b530641dc1ae72d27a429f';
+      sec-mem-id   = 'group__GA01_1afddec52dd7b530641dc1ae72d27a429f';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5031,7 +5032,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a7e06d843d0840990717eb42b3b7e554c';
+      sec-mem-id   = 'group__GA01_1a7e06d843d0840990717eb42b3b7e554c';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5049,7 +5050,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a28055088ef40b9bdc9378b3809a21199';
+      sec-mem-id   = 'group__GA01_1a28055088ef40b9bdc9378b3809a21199';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5067,7 +5068,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a3a52f3c22ed6fcde5bf696a6c02c9e73';
+      sec-mem-id   = 'group__GA01_1a3a52f3c22ed6fcde5bf696a6c02c9e73';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5085,7 +5086,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a39f20b8df74171b4ee31bab0b0680310';
+      sec-mem-id   = 'group__GA01_1a39f20b8df74171b4ee31bab0b0680310';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5103,7 +5104,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a9acb1f82a2515f84bce0747ced06fed8';
+      sec-mem-id   = 'group__GA01_1a9acb1f82a2515f84bce0747ced06fed8';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5121,7 +5122,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ab09bf67829bc4d5914945a87be624698';
+      sec-mem-id   = 'group__GA01_1ab09bf67829bc4d5914945a87be624698';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5139,7 +5140,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a8d50eb6e30711e4eb7625e651ed1a11d';
+      sec-mem-id   = 'group__GA01_1a8d50eb6e30711e4eb7625e651ed1a11d';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5166,13 +5167,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 union = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg05';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ad2153e9e90608e267b44117ececc5783';
+      sec-mem-id   = 'group__GA01_1ad2153e9e90608e267b44117ececc5783';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5190,7 +5191,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1aaa18c311f81277e3d73436ea0b601bb1';
+      sec-mem-id   = 'group__GA01_1aaa18c311f81277e3d73436ea0b601bb1';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5217,13 +5218,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg05.refined';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a730956af87021c351084317bbc63eea6';
+      sec-mem-id   = 'group__GA01_1a730956af87021c351084317bbc63eea6';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5241,7 +5242,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a160505dce0d227e0f21232f52fef890f';
+      sec-mem-id   = 'group__GA01_1a160505dce0d227e0f21232f52fef890f';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5259,7 +5260,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a11b8f14c44524bb37f0a89d4b5559a94';
+      sec-mem-id   = 'group__GA01_1a11b8f14c44524bb37f0a89d4b5559a94';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5277,7 +5278,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a991f75a1bf4d56192acecdf31ad3db47';
+      sec-mem-id   = 'group__GA01_1a991f75a1bf4d56192acecdf31ad3db47';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5295,7 +5296,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a8d50eb6e30711e4eb7625e651ed1a11d';
+      sec-mem-id   = 'group__GA01_1a8d50eb6e30711e4eb7625e651ed1a11d';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5313,7 +5314,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ac34168e070146678d72546abc1c8b236';
+      sec-mem-id   = 'group__GA01_1ac34168e070146678d72546abc1c8b236';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5331,7 +5332,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a54e8dc27cd18af681fec547952404531';
+      sec-mem-id   = 'group__GA01_1a54e8dc27cd18af681fec547952404531';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5358,13 +5359,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 union = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg06';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a360eecf942f40d3f51812293e76a0d67';
+      sec-mem-id   = 'group__GA01_1a360eecf942f40d3f51812293e76a0d67';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5382,7 +5383,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a6821afdfb5ab6f0a279ef1c4fdeaa9e1';
+      sec-mem-id   = 'group__GA01_1a6821afdfb5ab6f0a279ef1c4fdeaa9e1';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5423,13 +5424,13 @@ I2S_SW_CNT values table
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg06.refined';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a575d0f8dbbda12d743c6cbd80436d8d2';
+      sec-mem-id   = 'group__GA01_1a575d0f8dbbda12d743c6cbd80436d8d2';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5447,7 +5448,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a4ce1c95146a332f39eb691cbc95ccbb2';
+      sec-mem-id   = 'group__GA01_1a4ce1c95146a332f39eb691cbc95ccbb2';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5465,7 +5466,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a3f5cd3a22eb13c67f7d20adcd15f1ad1';
+      sec-mem-id   = 'group__GA01_1a3f5cd3a22eb13c67f7d20adcd15f1ad1';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5483,7 +5484,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a90f7e01cd9d2f78095b8d23a9dc1b18d';
+      sec-mem-id   = 'group__GA01_1a90f7e01cd9d2f78095b8d23a9dc1b18d';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5501,7 +5502,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1afbff3a29529e5e3276e2bebab1f15a3f';
+      sec-mem-id   = 'group__GA01_1afbff3a29529e5e3276e2bebab1f15a3f';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5519,7 +5520,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ab5e655121ad945deced0a44ac51ad7c9';
+      sec-mem-id   = 'group__GA01_1ab5e655121ad945deced0a44ac51ad7c9';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5537,7 +5538,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ac20607bab830e003f8aef1927f30da81';
+      sec-mem-id   = 'group__GA01_1ac20607bab830e003f8aef1927f30da81';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5555,7 +5556,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ab0a4aea0751fa685c79ed52660ad78fb';
+      sec-mem-id   = 'group__GA01_1ab0a4aea0751fa685c79ed52660ad78fb';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5573,7 +5574,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a8f48ecc038b447fc3a713924344e8094';
+      sec-mem-id   = 'group__GA01_1a8f48ecc038b447fc3a713924344e8094';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5591,7 +5592,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a5b44678fa097828236f91b766d1bca94';
+      sec-mem-id   = 'group__GA01_1a5b44678fa097828236f91b766d1bca94';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5609,7 +5610,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a6e2ac78f66cfafa9ecf1b7e62f037b43';
+      sec-mem-id   = 'group__GA01_1a6e2ac78f66cfafa9ecf1b7e62f037b43';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5627,7 +5628,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ae57526e5b56fb9372080178384f4c872';
+      sec-mem-id   = 'group__GA01_1ae57526e5b56fb9372080178384f4c872';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5654,13 +5655,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 union = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg07';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ac5c4daceecb405708b96c79b477db70b';
+      sec-mem-id   = 'group__GA01_1ac5c4daceecb405708b96c79b477db70b';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5678,7 +5679,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a2dacd798a51d8fc4effa015d9d16c1a0';
+      sec-mem-id   = 'group__GA01_1a2dacd798a51d8fc4effa015d9d16c1a0';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5705,13 +5706,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg07.refined';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1aad08cffd0c185c95ee8611afce73ec18';
+      sec-mem-id   = 'group__GA01_1aad08cffd0c185c95ee8611afce73ec18';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5729,7 +5730,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a6183fe98d5a6c9859da1f4d1bd75af33';
+      sec-mem-id   = 'group__GA01_1a6183fe98d5a6c9859da1f4d1bd75af33';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5747,7 +5748,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a733877b31393b0f040b3a649004e8e5d';
+      sec-mem-id   = 'group__GA01_1a733877b31393b0f040b3a649004e8e5d';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5765,7 +5766,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a1742cf1b14a750532e645aab85933d3c';
+      sec-mem-id   = 'group__GA01_1a1742cf1b14a750532e645aab85933d3c';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5783,7 +5784,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a07e1e84799a0bd2c979bff75111e85d5';
+      sec-mem-id   = 'group__GA01_1a07e1e84799a0bd2c979bff75111e85d5';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5801,7 +5802,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a76b1c2c14aefb604449d3ff3f0ae80c4';
+      sec-mem-id   = 'group__GA01_1a76b1c2c14aefb604449d3ff3f0ae80c4';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5819,7 +5820,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a8d50eb6e30711e4eb7625e651ed1a11d';
+      sec-mem-id   = 'group__GA01_1a8d50eb6e30711e4eb7625e651ed1a11d';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5846,13 +5847,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 union = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg08';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a6b901f2c85429c6822d5e8dc19d1c780';
+      sec-mem-id   = 'group__GA01_1a6b901f2c85429c6822d5e8dc19d1c780';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5870,7 +5871,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a7ca80902d2748f8f0dca2edafafdeebe';
+      sec-mem-id   = 'group__GA01_1a7ca80902d2748f8f0dca2edafafdeebe';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5899,13 +5900,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg08.refined';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a51ab88497cad20027df936afa223b23d';
+      sec-mem-id   = 'group__GA01_1a51ab88497cad20027df936afa223b23d';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5923,7 +5924,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a7b99e4a5dc723242645ede8c604610df';
+      sec-mem-id   = 'group__GA01_1a7b99e4a5dc723242645ede8c604610df';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5950,13 +5951,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 union = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg0a';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ac3a52ed2e4783d2bb7c1e82716c98af3';
+      sec-mem-id   = 'group__GA01_1ac3a52ed2e4783d2bb7c1e82716c98af3';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -5974,7 +5975,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a4739c58f7e2dcffa54e2368e98716e99';
+      sec-mem-id   = 'group__GA01_1a4739c58f7e2dcffa54e2368e98716e99';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6011,13 +6012,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg0a.refined';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1abe63df93c3d4af07359a55d5902f0f7a';
+      sec-mem-id   = 'group__GA01_1abe63df93c3d4af07359a55d5902f0f7a';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6035,7 +6036,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1aec8e57d71f07e31203035548b79d03c8';
+      sec-mem-id   = 'group__GA01_1aec8e57d71f07e31203035548b79d03c8';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6053,7 +6054,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a3c723083c9b52fde34d2c4beb725942f';
+      sec-mem-id   = 'group__GA01_1a3c723083c9b52fde34d2c4beb725942f';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6071,7 +6072,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a3928b702beefaf125960c8f1f7fceac7';
+      sec-mem-id   = 'group__GA01_1a3928b702beefaf125960c8f1f7fceac7';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6089,7 +6090,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a94a990462684a2fbb5dfc7fab1c8975d';
+      sec-mem-id   = 'group__GA01_1a94a990462684a2fbb5dfc7fab1c8975d';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6107,7 +6108,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a3a247d1d806ebfcd27b09041e3186b4e';
+      sec-mem-id   = 'group__GA01_1a3a247d1d806ebfcd27b09041e3186b4e';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6125,7 +6126,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1accd030164321bb71a36d491b2e6cd424';
+      sec-mem-id   = 'group__GA01_1accd030164321bb71a36d491b2e6cd424';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6152,13 +6153,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 union = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg0b';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a0eeacb17a43648ed4c922fb16253fa5c';
+      sec-mem-id   = 'group__GA01_1a0eeacb17a43648ed4c922fb16253fa5c';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6176,7 +6177,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a025a972ff39a3584183e12de290d0fb6';
+      sec-mem-id   = 'group__GA01_1a025a972ff39a3584183e12de290d0fb6';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6213,13 +6214,13 @@ Always read as Errors Level of RDS BLOCKs A and B (in RDS mode ) or E (in RBDS m
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg0b.refined';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1abf73094dcea591929f5c4ffe912d6750';
+      sec-mem-id   = 'group__GA01_1abf73094dcea591929f5c4ffe912d6750';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6237,7 +6238,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a5cf5d2b056255cb2235ce6c52c0e9795';
+      sec-mem-id   = 'group__GA01_1a5cf5d2b056255cb2235ce6c52c0e9795';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6255,7 +6256,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a297000d9caac4f06fe67d8972202b2f8';
+      sec-mem-id   = 'group__GA01_1a297000d9caac4f06fe67d8972202b2f8';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6273,7 +6274,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a1742cf1b14a750532e645aab85933d3c';
+      sec-mem-id   = 'group__GA01_1a1742cf1b14a750532e645aab85933d3c';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6291,7 +6292,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a7b86ad4e3ff3b175ed1b73968c43140f';
+      sec-mem-id   = 'group__GA01_1a7b86ad4e3ff3b175ed1b73968c43140f';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6309,7 +6310,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1aa792520704f786ade70d6a06b6b8ba34';
+      sec-mem-id   = 'group__GA01_1aa792520704f786ade70d6a06b6b8ba34';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6327,7 +6328,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a6833f5d3374c1679bea428b50dbad9cc';
+      sec-mem-id   = 'group__GA01_1a6833f5d3374c1679bea428b50dbad9cc';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6354,13 +6355,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 union = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg0c';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1aa8b7d1851c44335e2380eb7a4468c093';
+      sec-mem-id   = 'group__GA01_1aa8b7d1851c44335e2380eb7a4468c093';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6378,7 +6379,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1aa84daa949defa1d8459599e6a5f7774e';
+      sec-mem-id   = 'group__GA01_1aa84daa949defa1d8459599e6a5f7774e';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6405,13 +6406,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg0c.refined';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a51ab88497cad20027df936afa223b23d';
+      sec-mem-id   = 'group__GA01_1a51ab88497cad20027df936afa223b23d';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6429,7 +6430,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a7b99e4a5dc723242645ede8c604610df';
+      sec-mem-id   = 'group__GA01_1a7b99e4a5dc723242645ede8c604610df';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6456,13 +6457,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 union = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg0d';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a28f1298327e3fc8309f38005be0b70a2';
+      sec-mem-id   = 'group__GA01_1a28f1298327e3fc8309f38005be0b70a2';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6480,7 +6481,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a8ea42352501defa20b4a586e146035d2';
+      sec-mem-id   = 'group__GA01_1a8ea42352501defa20b4a586e146035d2';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6507,13 +6508,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg0d.refined';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a51ab88497cad20027df936afa223b23d';
+      sec-mem-id   = 'group__GA01_1a51ab88497cad20027df936afa223b23d';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6531,7 +6532,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a7b99e4a5dc723242645ede8c604610df';
+      sec-mem-id   = 'group__GA01_1a7b99e4a5dc723242645ede8c604610df';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6558,13 +6559,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 union = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg0e';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a63c425b6b07f0604a43481f0312d3d59';
+      sec-mem-id   = 'group__GA01_1a63c425b6b07f0604a43481f0312d3d59';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6582,7 +6583,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a519e4146ff314e51a19f354ec7f07b8e';
+      sec-mem-id   = 'group__GA01_1a519e4146ff314e51a19f354ec7f07b8e';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6609,13 +6610,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg0e.refined';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a51ab88497cad20027df936afa223b23d';
+      sec-mem-id   = 'group__GA01_1a51ab88497cad20027df936afa223b23d';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6633,7 +6634,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a7b99e4a5dc723242645ede8c604610df';
+      sec-mem-id   = 'group__GA01_1a7b99e4a5dc723242645ede8c604610df';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6660,13 +6661,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 union = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg0f';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a2277c8c28e92e2ad993af1c0c5fb4c94';
+      sec-mem-id   = 'group__GA01_1a2277c8c28e92e2ad993af1c0c5fb4c94';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6684,7 +6685,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a468a600809a23e18a9b40dadccfd3740';
+      sec-mem-id   = 'group__GA01_1a468a600809a23e18a9b40dadccfd3740';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6711,13 +6712,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rda_reg0f.refined';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a51ab88497cad20027df936afa223b23d';
+      sec-mem-id   = 'group__GA01_1a51ab88497cad20027df936afa223b23d';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6735,7 +6736,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a7b99e4a5dc723242645ede8c604610df';
+      sec-mem-id   = 'group__GA01_1a7b99e4a5dc723242645ede8c604610df';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6762,13 +6763,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 union = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rds_blockb';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ac5781cba2e954484c72ae3077e25afcf';
+      sec-mem-id   = 'group__GA01_1ac5781cba2e954484c72ae3077e25afcf';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6786,7 +6787,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a0a430ac426505b17010fe872dba656a8';
+      sec-mem-id   = 'group__GA01_1a0a430ac426505b17010fe872dba656a8';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6804,7 +6805,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1ab34c18f5ea4466a422f8370757d4fcbc';
+      sec-mem-id   = 'group__GA01_1ab34c18f5ea4466a422f8370757d4fcbc';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6822,7 +6823,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a5dae9f2b7edfd4dff7592ed38e403344';
+      sec-mem-id   = 'group__GA01_1a5dae9f2b7edfd4dff7592ed38e403344';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6861,13 +6862,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rds_blockb.group0';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a884d9804999fc47a3c2694e49ad2536a';
+      sec-mem-id   = 'group__GA01_1a884d9804999fc47a3c2694e49ad2536a';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6885,7 +6886,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1aa1b1c0cd777edd2e5cfcaf8e2e7dcab8';
+      sec-mem-id   = 'group__GA01_1aa1b1c0cd777edd2e5cfcaf8e2e7dcab8';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6903,7 +6904,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a7a663caea1b722a63dc2868158ed584d';
+      sec-mem-id   = 'group__GA01_1a7a663caea1b722a63dc2868158ed584d';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6921,7 +6922,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a890a10788493e3d572586e991cd43543';
+      sec-mem-id   = 'group__GA01_1a890a10788493e3d572586e991cd43543';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6939,7 +6940,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a264bd2c2ca8c895803767b0d39ff4a09';
+      sec-mem-id   = 'group__GA01_1a264bd2c2ca8c895803767b0d39ff4a09';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6957,7 +6958,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a59e69d63ce38754ea53c4461b5cba1e2';
+      sec-mem-id   = 'group__GA01_1a59e69d63ce38754ea53c4461b5cba1e2';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6975,7 +6976,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a20583dcf173525a78f726ef45329c5ae';
+      sec-mem-id   = 'group__GA01_1a20583dcf173525a78f726ef45329c5ae';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -6993,7 +6994,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a19223bd3731a4215ead3ba6a1eb8bbe8';
+      sec-mem-id   = 'group__GA01_1a19223bd3731a4215ead3ba6a1eb8bbe8';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7020,13 +7021,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rds_blockb.group2';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a884d9804999fc47a3c2694e49ad2536a';
+      sec-mem-id   = 'group__GA01_1a884d9804999fc47a3c2694e49ad2536a';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7044,7 +7045,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a652bfdc159637b708ac6e6f92d7650bc';
+      sec-mem-id   = 'group__GA01_1a652bfdc159637b708ac6e6f92d7650bc';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7062,7 +7063,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a264bd2c2ca8c895803767b0d39ff4a09';
+      sec-mem-id   = 'group__GA01_1a264bd2c2ca8c895803767b0d39ff4a09';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7080,7 +7081,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a59e69d63ce38754ea53c4461b5cba1e2';
+      sec-mem-id   = 'group__GA01_1a59e69d63ce38754ea53c4461b5cba1e2';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7098,7 +7099,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a20583dcf173525a78f726ef45329c5ae';
+      sec-mem-id   = 'group__GA01_1a20583dcf173525a78f726ef45329c5ae';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7116,7 +7117,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a19223bd3731a4215ead3ba6a1eb8bbe8';
+      sec-mem-id   = 'group__GA01_1a19223bd3731a4215ead3ba6a1eb8bbe8';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7143,13 +7144,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rds_blockb.refined';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a9a0364b9e99bb480dd25e1f0284c8555';
+      sec-mem-id   = 'group__GA01_1a9a0364b9e99bb480dd25e1f0284c8555';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7167,7 +7168,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a652bfdc159637b708ac6e6f92d7650bc';
+      sec-mem-id   = 'group__GA01_1a652bfdc159637b708ac6e6f92d7650bc';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7185,7 +7186,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a264bd2c2ca8c895803767b0d39ff4a09';
+      sec-mem-id   = 'group__GA01_1a264bd2c2ca8c895803767b0d39ff4a09';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7203,7 +7204,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a59e69d63ce38754ea53c4461b5cba1e2';
+      sec-mem-id   = 'group__GA01_1a59e69d63ce38754ea53c4461b5cba1e2';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7221,7 +7222,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a20583dcf173525a78f726ef45329c5ae';
+      sec-mem-id   = 'group__GA01_1a20583dcf173525a78f726ef45329c5ae';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7239,7 +7240,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a19223bd3731a4215ead3ba6a1eb8bbe8';
+      sec-mem-id   = 'group__GA01_1a19223bd3731a4215ead3ba6a1eb8bbe8';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7266,13 +7267,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 union = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rds_date_time';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a9bcded0e419c611d9920953260c352cb';
+      sec-mem-id   = 'group__GA01_1a9bcded0e419c611d9920953260c352cb';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7290,7 +7291,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1abb6c459455299730ef24dc149a871202';
+      sec-mem-id   = 'group__GA01_1abb6c459455299730ef24dc149a871202';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7323,13 +7324,13 @@ split minute and hour representation.
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'rds_date_time.refined';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a7a86c157ee9713c34fbd7a1ee40f0c5a';
+      sec-mem-id   = 'group__GA01_1a7a86c157ee9713c34fbd7a1ee40f0c5a';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7347,7 +7348,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a5ba6e404c489ff4f757e7c77cb9fa310';
+      sec-mem-id   = 'group__GA01_1a5ba6e404c489ff4f757e7c77cb9fa310';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7365,7 +7366,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a0a7d55be9d12a369a6a8da0fb517fba4';
+      sec-mem-id   = 'group__GA01_1a0a7d55be9d12a369a6a8da0fb517fba4';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7383,7 +7384,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a896c55cc5e46fab38ce9f51ebf7bfcd3';
+      sec-mem-id   = 'group__GA01_1a896c55cc5e46fab38ce9f51ebf7bfcd3';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7401,7 +7402,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a7f7685b39180278dd0fa69f523c7bd24';
+      sec-mem-id   = 'group__GA01_1a7f7685b39180278dd0fa69f523c7bd24';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7428,13 +7429,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 union = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'word16_to_bytes';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1aac9f5d78f176c0422d073877cd65fe51';
+      sec-mem-id   = 'group__GA01_1aac9f5d78f176c0422d073877cd65fe51';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7452,7 +7453,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1abed44166b8c3d82c0c44fb317d3b650a';
+      sec-mem-id   = 'group__GA01_1abed44166b8c3d82c0c44fb317d3b650a';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7479,13 +7480,13 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* union */
 struct = {
-  cp-id     = 'group___g_a01';
+  cp-id     = 'group__GA01';
   cp-name   = 'word16_to_bytes.refined';
   cp-section = {
     sec-kind = 'public-attrib';
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a51ab88497cad20027df936afa223b23d';
+      sec-mem-id   = 'group__GA01_1a51ab88497cad20027df936afa223b23d';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7503,7 +7504,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'variable';
-      sec-mem-id   = 'group___g_a01_1a7b99e4a5dc723242645ede8c604610df';
+      sec-mem-id   = 'group__GA01_1a7b99e4a5dc723242645ede8c604610df';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
@@ -7530,7 +7531,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* struct */
 file = {
-  file-id   = '_r_d_a5807_8cpp';
+  file-id   = 'RDA5807_8cpp';
   file-name = 'RDA5807.cpp';
   file-full-name  = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.cpp';
   file-first-line = '1';
@@ -7542,12 +7543,12 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* file */
 file = {
-  file-id   = '_r_d_a5807_8h';
+  file-id   = 'RDA5807_8h';
   file-name = 'RDA5807.h';
     define = {
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1afb81dd661d531fa5c5422549fab7588f';
+      define-mem-id   = 'RDA5807_8h_1afb81dd661d531fa5c5422549fab7588f';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'MAX_DELAY_AFTER_OSCILLATOR';
@@ -7565,7 +7566,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a391d926a92f7cd486866d16b53bf9bc8';
+      define-mem-id   = 'RDA5807_8h_1a391d926a92f7cd486866d16b53bf9bc8';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'I2C_ADDR_DIRECT_ACCESS';
@@ -7583,7 +7584,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1acae259a7c57b67ef6c890c1c178dce00';
+      define-mem-id   = 'RDA5807_8h_1acae259a7c57b67ef6c890c1c178dce00';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'I2C_ADDR_FULL_ACCESS';
@@ -7601,7 +7602,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1ad0763fd256db4ec1ecc62f84bbff56e2';
+      define-mem-id   = 'RDA5807_8h_1ad0763fd256db4ec1ecc62f84bbff56e2';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'OSCILLATOR_TYPE_CRYSTAL';
@@ -7619,7 +7620,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a0941eab712587842e5513eb6cd562717';
+      define-mem-id   = 'RDA5807_8h_1a0941eab712587842e5513eb6cd562717';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'OSCILLATOR_TYPE_PASSIVE';
@@ -7637,7 +7638,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1ad079e38ccae2f64aa341332e2ccb8b8e';
+      define-mem-id   = 'RDA5807_8h_1ad079e38ccae2f64aa341332e2ccb8b8e';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'OSCILLATOR_TYPE_REFCLK';
@@ -7655,7 +7656,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a6231498726197328216bb70c6dfc21aa';
+      define-mem-id   = 'RDA5807_8h_1a6231498726197328216bb70c6dfc21aa';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'OSCILLATOR_TYPE_ACTIVE';
@@ -7673,7 +7674,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a0bc18a7036f4f2571abdb66daa63c918';
+      define-mem-id   = 'RDA5807_8h_1a0bc18a7036f4f2571abdb66daa63c918';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'RLCK_NO_CALIBRATE_MODE_ON';
@@ -7691,7 +7692,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1acf26b27b8292674e78e04908e3c27bff';
+      define-mem-id   = 'RDA5807_8h_1acf26b27b8292674e78e04908e3c27bff';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'RLCK_NO_CALIBRATE_MODE_OFF';
@@ -7709,7 +7710,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1aaaa8a7748321c8739d938babeb67d8e9';
+      define-mem-id   = 'RDA5807_8h_1aaaa8a7748321c8739d938babeb67d8e9';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'CLOCK_32K';
@@ -7727,7 +7728,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a7161794919bf15d59a7266f4f4286345';
+      define-mem-id   = 'RDA5807_8h_1a7161794919bf15d59a7266f4f4286345';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'CLOCK_12M';
@@ -7745,7 +7746,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1abc1ed9bc20cc60e460427165671eedbe';
+      define-mem-id   = 'RDA5807_8h_1abc1ed9bc20cc60e460427165671eedbe';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'CLOCK_13M';
@@ -7763,7 +7764,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a7e2e33a05c45d29254940aa2e6787881';
+      define-mem-id   = 'RDA5807_8h_1a7e2e33a05c45d29254940aa2e6787881';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'CLOCK_19_2M';
@@ -7781,7 +7782,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1aba23c874d4dca5d2a56e7ed7f8c8972e';
+      define-mem-id   = 'RDA5807_8h_1aba23c874d4dca5d2a56e7ed7f8c8972e';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'CLOCK_24M';
@@ -7799,7 +7800,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1aab44e9c9586b2d6ca816e20dd04bc7b4';
+      define-mem-id   = 'RDA5807_8h_1aab44e9c9586b2d6ca816e20dd04bc7b4';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'CLOCK_26M';
@@ -7817,7 +7818,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a99d478076fadfab2791d09e00ed1a780';
+      define-mem-id   = 'RDA5807_8h_1a99d478076fadfab2791d09e00ed1a780';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'CLOCK_38_4M';
@@ -7835,7 +7836,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a128f40c85c30594203fd937611ba5f2c';
+      define-mem-id   = 'RDA5807_8h_1a128f40c85c30594203fd937611ba5f2c';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'RDS_STANDARD';
@@ -7853,7 +7854,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1acdc3372b73fee284997dbef795123257';
+      define-mem-id   = 'RDA5807_8h_1acdc3372b73fee284997dbef795123257';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'RDS_VERBOSE';
@@ -7871,7 +7872,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1aecb43af824137b805ef778575bb1755b';
+      define-mem-id   = 'RDA5807_8h_1aecb43af824137b805ef778575bb1755b';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'RDA_FM_BAND_USA_EU';
@@ -7889,7 +7890,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1ad4baaf95cb1692947a4faebfea59c5ba';
+      define-mem-id   = 'RDA5807_8h_1ad4baaf95cb1692947a4faebfea59c5ba';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'RDA_FM_BAND_JAPAN_WIDE';
@@ -7907,7 +7908,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a4a70e6ea770ca5e1ab7035a9838a699b';
+      define-mem-id   = 'RDA5807_8h_1a4a70e6ea770ca5e1ab7035a9838a699b';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'RDA_FM_BAND_WORLD';
@@ -7925,7 +7926,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a6110423784aaf630ec0ade041bc296a5';
+      define-mem-id   = 'RDA5807_8h_1a6110423784aaf630ec0ade041bc296a5';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'RDA_FM_BAND_SPECIAL';
@@ -7943,7 +7944,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a52b8411f4955a310beb41daaa5f352af';
+      define-mem-id   = 'RDA5807_8h_1a52b8411f4955a310beb41daaa5f352af';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'RDA_SEEK_WRAP';
@@ -7961,7 +7962,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a8b7a44cf48668f90e59f62b34b4ce16a';
+      define-mem-id   = 'RDA5807_8h_1a8b7a44cf48668f90e59f62b34b4ce16a';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'RDA_SEEK_STOP';
@@ -7979,7 +7980,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a74e39d5bc02861c91b57da7751729ef1';
+      define-mem-id   = 'RDA5807_8h_1a74e39d5bc02861c91b57da7751729ef1';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'RDA_SEEK_DOWN';
@@ -7997,7 +7998,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a6cfac82e09114c1cdf276646ad595949';
+      define-mem-id   = 'RDA5807_8h_1a6cfac82e09114c1cdf276646ad595949';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'RDA_SEEK_UP';
@@ -8015,7 +8016,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a748ad53bef975af9c1edbcacc58e5be4';
+      define-mem-id   = 'RDA5807_8h_1a748ad53bef975af9c1edbcacc58e5be4';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'REG00';
@@ -8033,7 +8034,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a09a3d3fef9f53f0dbe1dd0072f02c1d4';
+      define-mem-id   = 'RDA5807_8h_1a09a3d3fef9f53f0dbe1dd0072f02c1d4';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'REG02';
@@ -8051,7 +8052,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1ac2446f96334b533154259a21c13950e6';
+      define-mem-id   = 'RDA5807_8h_1ac2446f96334b533154259a21c13950e6';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'REG03';
@@ -8069,7 +8070,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a88dee04c27a51e335798ab012dccbea1';
+      define-mem-id   = 'RDA5807_8h_1a88dee04c27a51e335798ab012dccbea1';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'REG04';
@@ -8087,7 +8088,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a848ac333ddfea97bc1f16a2e69eaf953';
+      define-mem-id   = 'RDA5807_8h_1a848ac333ddfea97bc1f16a2e69eaf953';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'REG05';
@@ -8105,7 +8106,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1ac5641e8e0c3254714bcd533a4b0111ca';
+      define-mem-id   = 'RDA5807_8h_1ac5641e8e0c3254714bcd533a4b0111ca';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'REG06';
@@ -8123,7 +8124,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a2a41df49654ae321f569bfabfa74de24';
+      define-mem-id   = 'RDA5807_8h_1a2a41df49654ae321f569bfabfa74de24';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'REG07';
@@ -8141,7 +8142,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a96f1c217ac648e08bc64dd3b9086612c';
+      define-mem-id   = 'RDA5807_8h_1a96f1c217ac648e08bc64dd3b9086612c';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'REG08';
@@ -8159,7 +8160,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a5ec596211175cecd682755f5e996b6dd';
+      define-mem-id   = 'RDA5807_8h_1a5ec596211175cecd682755f5e996b6dd';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'REG0A';
@@ -8177,7 +8178,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a76c73d8e23848f8d73679450c2d7264b';
+      define-mem-id   = 'RDA5807_8h_1a76c73d8e23848f8d73679450c2d7264b';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'REG0B';
@@ -8195,7 +8196,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a0e3b6e600782d453f87223f87784c54d';
+      define-mem-id   = 'RDA5807_8h_1a0e3b6e600782d453f87223f87784c54d';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'REG0C';
@@ -8213,7 +8214,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a41b7a4f7b9e629eb87dba4152995a616';
+      define-mem-id   = 'RDA5807_8h_1a41b7a4f7b9e629eb87dba4152995a616';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'REG0D';
@@ -8231,7 +8232,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a1a5322c7bc447986d2d3b4d13de95315';
+      define-mem-id   = 'RDA5807_8h_1a1a5322c7bc447986d2d3b4d13de95315';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'REG0E';
@@ -8249,7 +8250,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a949846d6974a39c871614c2f15ee0691';
+      define-mem-id   = 'RDA5807_8h_1a949846d6974a39c871614c2f15ee0691';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'REG0F';
@@ -8267,7 +8268,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1aab666077c255544a7917c9c3bc1c9823';
+      define-mem-id   = 'RDA5807_8h_1aab666077c255544a7917c9c3bc1c9823';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'SH_REG0A';
@@ -8285,7 +8286,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1aab0f53fa6543d47802083a4392f3cae8';
+      define-mem-id   = 'RDA5807_8h_1aab0f53fa6543d47802083a4392f3cae8';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'SH_REG0B';
@@ -8303,7 +8304,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a97d86a295365c8476e3383c294a9ed1d';
+      define-mem-id   = 'RDA5807_8h_1a97d86a295365c8476e3383c294a9ed1d';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'SH_REG0C';
@@ -8321,7 +8322,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a85cd795594517e3bce030696a8a6bb97';
+      define-mem-id   = 'RDA5807_8h_1a85cd795594517e3bce030696a8a6bb97';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'SH_REG0D';
@@ -8339,7 +8340,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a03c5e8c07784d364f88f9c856e1468bf';
+      define-mem-id   = 'RDA5807_8h_1a03c5e8c07784d364f88f9c856e1468bf';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'SH_REG0E';
@@ -8357,7 +8358,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a3c08c738466db46639091800ff72d36c';
+      define-mem-id   = 'RDA5807_8h_1a3c08c738466db46639091800ff72d36c';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'SH_REG0F';
@@ -8375,7 +8376,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a8cc7bca87e8bd1915883f98e0375100d';
+      define-mem-id   = 'RDA5807_8h_1a8cc7bca87e8bd1915883f98e0375100d';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'I2S_WS_STEP_48';
@@ -8393,7 +8394,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a8f09a53b7b1826db85f4b60e431eb78b';
+      define-mem-id   = 'RDA5807_8h_1a8f09a53b7b1826db85f4b60e431eb78b';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'I2S_WS_STEP_44_1';
@@ -8411,7 +8412,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a83b94de83fe3e0137781766c9d24ff03';
+      define-mem-id   = 'RDA5807_8h_1a83b94de83fe3e0137781766c9d24ff03';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'I2S_WS_STEP_32';
@@ -8429,7 +8430,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a1eb6de93bc10ee0d2285bb0a96ea4d34';
+      define-mem-id   = 'RDA5807_8h_1a1eb6de93bc10ee0d2285bb0a96ea4d34';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'I2S_WS_STEP_24';
@@ -8447,7 +8448,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1aa4420ec166a5a69646e3e7920b3a9ae4';
+      define-mem-id   = 'RDA5807_8h_1aa4420ec166a5a69646e3e7920b3a9ae4';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'I2S_WS_STEP_22_05';
@@ -8465,7 +8466,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a09b2cfeb7551abc5f42c0e8843308a39';
+      define-mem-id   = 'RDA5807_8h_1a09b2cfeb7551abc5f42c0e8843308a39';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'I2S_WS_STEP_16';
@@ -8483,7 +8484,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a57fa45d0d016b7519d0d15442cdfcade';
+      define-mem-id   = 'RDA5807_8h_1a57fa45d0d016b7519d0d15442cdfcade';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'I2S_WS_STEP_12';
@@ -8501,7 +8502,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a0a5f68f3a153a03accb7b21be33daf2e';
+      define-mem-id   = 'RDA5807_8h_1a0a5f68f3a153a03accb7b21be33daf2e';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'I2S_WS_STEP_11_025';
@@ -8519,7 +8520,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {
       define-mem-kind = 'define';
-      define-mem-id   = '_r_d_a5807_8h_1a36c4bf71600437c900e73d2d573f4529';
+      define-mem-id   = 'RDA5807_8h_1a36c4bf71600437c900e73d2d573f4529';
       define-mem-virt = normal;
       define-mem-prot = public;
       define-mem-name = 'I2S_WS_STEP_8';

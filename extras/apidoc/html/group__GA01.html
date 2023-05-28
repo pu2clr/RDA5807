@@ -1152,8 +1152,11 @@ refined</td>
 <tr class="memdesc:ga2e78c58aca2f5121306d2e5ceb98effd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Station Information.  <br /></td></tr>
 <tr class="separator:ga2e78c58aca2f5121306d2e5ceb98effd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaef398d848e7378ec4897965b8e1b4441"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#gaef398d848e7378ec4897965b8e1b4441">getRdsTime</a> ()</td></tr>
-<tr class="memdesc:gaef398d848e7378ec4897965b8e1b4441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the RDS time and date when the Group type is 4.  <br /></td></tr>
+<tr class="memdesc:gaef398d848e7378ec4897965b8e1b4441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the RDS UTC time and date when the Group type is 4.  <br /></td></tr>
 <tr class="separator:gaef398d848e7378ec4897965b8e1b4441"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa3432b4df8ec20277e3d3be60782b395"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#gaa3432b4df8ec20277e3d3be60782b395">getRdsLocalTime</a> ()</td></tr>
+<tr class="memdesc:gaa3432b4df8ec20277e3d3be60782b395"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the RDS time converted to local time.  <br /></td></tr>
+<tr class="separator:gaa3432b4df8ec20277e3d3be60782b395"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2e63d5c85cb1825492a5ba2ea3bef2c3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA04.html#ga2e63d5c85cb1825492a5ba2ea3bef2c3">getBlockId</a> ()</td></tr>
 <tr class="memdesc:ga2e63d5c85cb1825492a5ba2ea3bef2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current Block ID.  <br /></td></tr>
 <tr class="separator:ga2e63d5c85cb1825492a5ba2ea3bef2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1659,7 +1662,7 @@ refined</td>
 
 <p>RDS Basic tuning and switching information (Type 0 groups) - Station Name. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l01208">clearRdsBuffer()</a>, <a class="el" href="#l01031">getRdsText0A()</a>, and <a class="el" href="#l00851">isNewRdsFlagAB()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l01269">clearRdsBuffer()</a>, <a class="el" href="#l01031">getRdsText0A()</a>, and <a class="el" href="#l00851">isNewRdsFlagAB()</a>.</p>
 
 </div>
 </div>
@@ -1685,7 +1688,7 @@ refined</td>
 
 <p>RDS Radio Text buffer - Program Information. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l01208">clearRdsBuffer()</a>, and <a class="el" href="#l01061">getRdsText2A()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l01269">clearRdsBuffer()</a>, and <a class="el" href="#l01061">getRdsText2A()</a>.</p>
 
 </div>
 </div>
@@ -1711,7 +1714,7 @@ refined</td>
 
 <p>RDS Radio Text buffer - Station Information. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l01208">clearRdsBuffer()</a>, and <a class="el" href="#l01090">getRdsText2B()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l01269">clearRdsBuffer()</a>, and <a class="el" href="#l01090">getRdsText2B()</a>.</p>
 
 </div>
 </div>
@@ -1737,7 +1740,7 @@ refined</td>
 
 <p>RDS date time received information - UTC Time. </p>
 
-<p class="reference">Referenced by <a class="el" href="#l01208">clearRdsBuffer()</a>, and <a class="el" href="#l01117">getRdsTime()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l01269">clearRdsBuffer()</a>, <a class="el" href="#l01180">getRdsLocalTime()</a>, and <a class="el" href="#l01117">getRdsTime()</a>.</p>
 
 </div>
 </div>
@@ -2207,7 +2210,7 @@ refined</td>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="#l01019">formatCurrentFrequency()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#l01020">formatCurrentFrequency()</a>.</p>
 
 </div>
 </div>
