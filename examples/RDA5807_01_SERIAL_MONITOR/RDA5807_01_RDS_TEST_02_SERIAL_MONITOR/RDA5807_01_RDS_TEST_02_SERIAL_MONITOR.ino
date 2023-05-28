@@ -91,33 +91,38 @@ char *programInfo;
 char *stationName;
 char *stationInfo;
 char *utcTime;
+char *localTime;
 
 void showRdsInfo(char *infoType, char *infoText) {
   char aux[120];
-  if ( infoText != NULL ) {
-    sprintf(aux,"%s => %s", infoType, infoText);
+  if (infoText != NULL) {
+    sprintf(aux, "%s => %s", infoType, infoText);
     Serial.println(aux);
   }
 }
 
 void showRDS() {
   // Checks RDS information. Gets the points of char array containing RDS information.
-  if (rx.getRdsAllData(&stationName, &stationInfo, &programInfo, &utcTime)) {
-    programInfo = rx.getRdsProgramInformation();
-    showRdsInfo((char *) "Progrgam Information: ", programInfo);
-    stationInfo = rx.getRdsStationInformation();
-    showRdsInfo((char *) "Station Information:  ", stationInfo);
-    stationName = rx.getRdsStationName();
-    showRdsInfo((char *) "Station Name........: ", stationName);
-    utcTime = rx.getRdsTime();
-    showRdsInfo((char *) "UTC Time............: ", utcTime);
-    delay(MAX_DELAY_SHOW_RDS);
+  if (rx.getRdsReady()) {
+    if (rx.hasRdsInfo()) {
+      programInfo = rx.getRdsProgramInformation();
+      showRdsInfo((char *)"Progrgam Information: ", programInfo);
+      stationInfo = rx.getRdsStationInformation();
+      showRdsInfo((char *)"Station Information:  ", stationInfo);
+      stationName = rx.getRdsStationName();
+      showRdsInfo((char *)"Station Name........: ", stationName);
+      utcTime = rx.getRdsTime();
+      showRdsInfo((char *)"UTC Time............: ", utcTime);
+      delay(MAX_DELAY_SHOW_RDS);
+      localTime = rx.getRdsLocalTime();
+      showRdsInfo((char *)"Local Time............: ", localTime);
+    }
   }
 }
 
 void loop() {
   if ((millis() - rds_elapsed) > MAX_DELAY_RDS) {
-      showRDS();
+    showRDS();
     rds_elapsed = millis();
   }
 
