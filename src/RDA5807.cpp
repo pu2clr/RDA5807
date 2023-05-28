@@ -1082,6 +1082,7 @@ char *RDA5807::getRdsText2A(void)
 
 /**
  * @ingroup GA04
+ * @todo Under construction... To be checked.
  * @brief Gets the Station Information.  
  * @details ATTENTION: You must call getRdsReady before calling this function. 
  * @return char array with the Text of Station Information (33 bytes)
@@ -1093,7 +1094,7 @@ char *RDA5807::getRdsText2B(void)
     rds_blockb blkb;
 
     blkb.blockB = reg0d->RDSB;
-    if (blkb.group2.groupType == 2)
+    if (blkb.group2.groupType == 1)
     {
         // Process group 2B
         rdsTextAdress2B = blkb.group2.address;
