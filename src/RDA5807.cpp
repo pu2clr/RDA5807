@@ -1110,6 +1110,7 @@ char *RDA5807::getRdsText2B(void)
  * @ingroup GA04
  * @brief Gets the RDS UTC time and date when the Group type is 4
  * @details ATTENTION: You must call getRdsReady before calling this function. 
+ * @details ATTENTION: Some stations broadcast wrong time.
  * @return char* a string with hh:mm +/- offset
  * @see getRdsReady
  */
@@ -1172,7 +1173,7 @@ char *RDA5807::getRdsTime()
  * @todo Need to check.
  * @brief Gets the RDS time converted to local time. 
  * @details ATTENTION: You must call getRdsReady before calling this function. 
- * @details ATTENTION: Some station broadcast wrong time.
+ * @details ATTENTION: Some stations broadcast wrong time.
  * @return char* a string with hh:mm 
  * @see getRdsReady
  */
