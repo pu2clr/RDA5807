@@ -191,6 +191,8 @@ void loop() {
     elapsedTimeEncoder = millis();  // keep elapsedTimeEncoder updated
   }
 
+  // This RDA5807 Arduino Library implements almost all needed function to get all RDS information. 
+  // Please, check the API documentation or the source-code and check it out.
   if (rx.getRdsAllData(&stationName, &stationInfo, &programInfo, &utcTime))
     processRdsInfo();
 
