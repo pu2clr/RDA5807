@@ -755,6 +755,10 @@ void RDA5807::setFmDeemphasis(uint8_t de)
  * @details Is important to mention that almost all the essential methods required to implement RDS are already implemented here.
  * @details Begin working with RDS, simply invoke the setRDS or setRBDS methods.
  * @details Querying a set of RDS information, please ensure to call getRdsReady before.
+ * @see [2WCOM - RDS BasicsRDS](https://www.2wcom.com/fileadmin/redaktion/dokumente/Company/RDS_Basics.pdf)
+ * @see [Radio Data System](https://en.wikipedia.org/wiki/Radio_Data_System)
+ * @see [RDS in Europe, RBDS in the USA – What are the differences and how can receivers cope with both systems?](https://tech.ebu.ch/docs/techreview/trev_255-beale.pdf)
+ * @see [RDS encoder - Implematation Manual](https://www.pira.cz/rds/readbest.pdf)
  */
 
 /**
