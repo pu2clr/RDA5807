@@ -814,6 +814,7 @@ void RDA5807::setRBDS(bool value)
  * 
  * @return true or false
  * @see setRDS, setInterruptMode, getRdsAllData, getRdsSync, setRdsFifo
+ * @see [2wcom - RDS BasicsRDS](https://www.2wcom.com/fileadmin/redaktion/dokumente/Company/RDS_Basics.pdf)
  * 
  */
 bool RDA5807::getRdsReady()
@@ -933,6 +934,7 @@ uint8_t RDA5807::getRdsVersionCode(void)
  * @brief Returns the Program Type (extracted from the Block B)
  * @details ATTENTION: You must call getRdsReady before calling this function. 
  * @see https://en.wikipedia.org/wiki/Radio_Data_System
+ * @see [2wcom RDS Basics](https://www.2wcom.com/fileadmin/redaktion/dokumente/Company/RDS_Basics.pdf)
  * @see getRdsReady
  * @return program type (an integer betwenn 0 and 31)
  */
