@@ -752,7 +752,9 @@ void RDA5807::setFmDeemphasis(uint8_t de)
 /**
  * @defgroup GA04 RDS Functions
  * @section GA04 RDS/RBDS
- * @todo Need optimizing the method to get the RDS informastion - getStatusRegisters should be called just once at a cicle.
+ * @details Is important to mention that almost all the essential methods required to implement RDS are already implemented here.
+ * @details Begin working with RDS, simply invoke the setRDS or setRBDS methods.
+ * @details Querying a set of RDS information, please ensure to call getRdsReady before.
  */
 
 /**
