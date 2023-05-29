@@ -188,7 +188,9 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h1><a class="anchor" id="GA04"></a>
 RDS/RBDS</h1>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>Need optimizing the method to get the RDS informastion - getStatusRegisters should be called just once at a cicle. </dd></dl>
+<p>Is important to mention that almost all the essential methods required to implement RDS are already implemented here.</p>
+<p>Begin working with RDS, simply invoke the setRDS or setRBDS methods.</p>
+<p>Querying a set of RDS information, please ensure to call getRdsReady before. </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gac2defc3812e1900ccd1ac719268abe2e" name="gac2defc3812e1900ccd1ac719268abe2e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac2defc3812e1900ccd1ac719268abe2e">&#9670;&#160;</a></span>getRdsStationName()</h2>
@@ -221,7 +223,7 @@ RDS/RBDS</h1>
 
 <p class="definition">Definition at line <a class="el" href="_r_d_a5807_8h_source.html#l00862">862</a> of file <a class="el" href="_r_d_a5807_8h_source.html">RDA5807.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_r_d_a5807_8cpp_source.html#l01031">RDA5807::getRdsText0A()</a>.</p>
+<p class="reference">References <a class="el" href="_r_d_a5807_8cpp_source.html#l01035">RDA5807::getRdsText0A()</a>.</p>
 
 </div>
 </div>
@@ -257,7 +259,7 @@ RDS/RBDS</h1>
 
 <p class="definition">Definition at line <a class="el" href="_r_d_a5807_8h_source.html#l00873">873</a> of file <a class="el" href="_r_d_a5807_8h_source.html">RDA5807.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_r_d_a5807_8cpp_source.html#l01061">RDA5807::getRdsText2A()</a>.</p>
+<p class="reference">References <a class="el" href="_r_d_a5807_8cpp_source.html#l01065">RDA5807::getRdsText2A()</a>.</p>
 
 </div>
 </div>
@@ -291,7 +293,7 @@ RDS/RBDS</h1>
 
 <p class="definition">Definition at line <a class="el" href="_r_d_a5807_8h_source.html#l00883">883</a> of file <a class="el" href="_r_d_a5807_8h_source.html">RDA5807.h</a>.</p>
 
-<p class="reference">References <a class="el" href="_r_d_a5807_8cpp_source.html#l01090">RDA5807::getRdsText2B()</a>.</p>
+<p class="reference">References <a class="el" href="_r_d_a5807_8cpp_source.html#l01095">RDA5807::getRdsText2B()</a>.</p>
 
 </div>
 </div>
@@ -477,7 +479,7 @@ RDS/RBDS</h1>
 
 <p class="definition">Definition at line <a class="el" href="_r_d_a5807_8h_source.html#l00969">969</a> of file <a class="el" href="_r_d_a5807_8h_source.html">RDA5807.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_r_d_a5807_8cpp_source.html#l00890">RDA5807::getRdsAllData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_r_d_a5807_8cpp_source.html#l00893">RDA5807::getRdsAllData()</a>.</p>
 
 </div>
 </div>
@@ -543,8 +545,8 @@ RDS/RBDS</h1>
 <div class="ttc" id="agroup___g_a01_html_class_r_d_a5807"><div class="ttname"><a href="group___g_a01.html#class_r_d_a5807">RDA5807</a></div><div class="ttdoc">KT0915 Class.</div><div class="ttdef"><b>Definition:</b> <a href="_r_d_a5807_8h_source.html#l00567">RDA5807.h:568</a></div></div>
 <div class="ttc" id="agroup___g_a02_html_ga272444216a784ea5317c83783eb2bfe7"><div class="ttname"><a href="group___g_a02.html#ga272444216a784ea5317c83783eb2bfe7">RDA5807::setup</a></div><div class="ttdeci">void setup(uint8_t clock_frequency=CLOCK_32K, uint8_t oscillator_type=OSCILLATOR_TYPE_PASSIVE, uint8_t rlck_no_calibrate=RLCK_NO_CALIBRATE_MODE_OFF)</div><div class="ttdoc">Starts the device.</div><div class="ttdef"><b>Definition:</b> <a href="_r_d_a5807_8cpp_source.html#l00273">RDA5807.cpp:273</a></div></div>
 <div class="ttc" id="agroup___g_a03_html_gad16a6afa9520b77498b17a72c226305a"><div class="ttname"><a href="group___g_a03.html#gad16a6afa9520b77498b17a72c226305a">RDA5807::setFrequency</a></div><div class="ttdeci">void setFrequency(uint16_t frequency)</div><div class="ttdoc">Sets the frequency.</div><div class="ttdef"><b>Definition:</b> <a href="_r_d_a5807_8cpp_source.html#l00372">RDA5807.cpp:372</a></div></div>
-<div class="ttc" id="agroup___g_a04_html_ga4b741f1433eda57949bb40fa9e973732"><div class="ttname"><a href="group___g_a04.html#ga4b741f1433eda57949bb40fa9e973732">RDA5807::setRDS</a></div><div class="ttdeci">void setRDS(bool value)</div><div class="ttdoc">Sets the RDS operation.</div><div class="ttdef"><b>Definition:</b> <a href="_r_d_a5807_8cpp_source.html#l00776">RDA5807.cpp:776</a></div></div>
-<div class="ttc" id="agroup___g_a04_html_gae27337170a5f3dedebf585aa19855ad6"><div class="ttname"><a href="group___g_a04.html#gae27337170a5f3dedebf585aa19855ad6">RDA5807::setRdsFifo</a></div><div class="ttdeci">void setRdsFifo(bool value)</div><div class="ttdoc">Sets RDS fifo mode enable.</div><div class="ttdef"><b>Definition:</b> <a href="_r_d_a5807_8cpp_source.html#l01243">RDA5807.cpp:1243</a></div></div>
+<div class="ttc" id="agroup___g_a04_html_ga4b741f1433eda57949bb40fa9e973732"><div class="ttname"><a href="group___g_a04.html#ga4b741f1433eda57949bb40fa9e973732">RDA5807::setRDS</a></div><div class="ttdeci">void setRDS(bool value)</div><div class="ttdoc">Sets the RDS operation.</div><div class="ttdef"><b>Definition:</b> <a href="_r_d_a5807_8cpp_source.html#l00778">RDA5807.cpp:778</a></div></div>
+<div class="ttc" id="agroup___g_a04_html_gae27337170a5f3dedebf585aa19855ad6"><div class="ttname"><a href="group___g_a04.html#gae27337170a5f3dedebf585aa19855ad6">RDA5807::setRdsFifo</a></div><div class="ttdeci">void setRdsFifo(bool value)</div><div class="ttdoc">Sets RDS fifo mode enable.</div><div class="ttdef"><b>Definition:</b> <a href="_r_d_a5807_8cpp_source.html#l01249">RDA5807.cpp:1249</a></div></div>
 </div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">true</td><td>= turns the RDS ON; false = turns the RDS OFF </td></tr>
@@ -553,7 +555,7 @@ RDS/RBDS</h1>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group___g_a04.html#gae27337170a5f3dedebf585aa19855ad6" title="Sets RDS fifo mode enable.">setRdsFifo</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00776">776</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00778">778</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -582,7 +584,7 @@ RDS/RBDS</h1>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00790">790</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00792">792</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -612,13 +614,15 @@ RDS/RBDS</h1>
 <div class="line">   }</div>
 <div class="line">}</div>
 </div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group___g_a04.html#ga4b741f1433eda57949bb40fa9e973732" title="Sets the RDS operation.">setRDS</a>, <a class="el" href="group___g_a02.html#gabd676c0e4ad20c6152a68f8daba64cb3" title="Sets Interrupt Mode.">setInterruptMode</a>, <a class="el" href="group___g_a04.html#gadafba5991f6f60a52ad73fdda8fac984" title="Gets Station Name, Station Information, Program Information and utcTime.">getRdsAllData</a>, <a class="el" href="group___g_a04.html#ga25df690020bab4154b0737e7365ed8ea" title="Gets the Rds Sync.">getRdsSync</a>, <a class="el" href="group___g_a04.html#gae27337170a5f3dedebf585aa19855ad6" title="Sets RDS fifo mode enable.">setRdsFifo</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group___g_a04.html#ga4b741f1433eda57949bb40fa9e973732" title="Sets the RDS operation.">setRDS</a>, <a class="el" href="group___g_a02.html#gabd676c0e4ad20c6152a68f8daba64cb3" title="Sets Interrupt Mode.">setInterruptMode</a>, <a class="el" href="group___g_a04.html#gadafba5991f6f60a52ad73fdda8fac984" title="Gets Station Name, Station Information, Program Information and utcTime.">getRdsAllData</a>, <a class="el" href="group___g_a04.html#ga25df690020bab4154b0737e7365ed8ea" title="Gets the Rds Sync.">getRdsSync</a>, <a class="el" href="group___g_a04.html#gae27337170a5f3dedebf585aa19855ad6" title="Sets RDS fifo mode enable.">setRdsFifo</a> </dd>
+<dd>
+<a href="https://www.2wcom.com/fileadmin/redaktion/dokumente/Company/RDS_Basics.pdf">2wcom - RDS BasicsRDS</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00819">819</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00822">822</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_r_d_a5807_8cpp_source.html#l00079">RDA5807::getStatusRegisters()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_r_d_a5807_8cpp_source.html#l00890">RDA5807::getRdsAllData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_r_d_a5807_8cpp_source.html#l00893">RDA5807::getRdsAllData()</a>.</p>
 
 </div>
 </div>
@@ -642,7 +646,7 @@ RDS/RBDS</h1>
 <p>ATTENTION: You must call getRdsReady before calling this function. </p><dl class="section return"><dt>Returns</dt><dd>uint8_t current Text Flag A/B </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group___g_a04.html#gacfa48dfcf792a9bcee489658177aed90" title="Returns true if RDS Ready.">getRdsReady</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00834">834</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00837">837</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -668,7 +672,7 @@ RDS/RBDS</h1>
 <p>You must call getRdsReady before calling this function.</p>
 <dl class="section return"><dt>Returns</dt><dd>True or false </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00851">851</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00854">854</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_r_d_a5807_8h_source.html#l00599">RDA5807::rds_buffer0A</a>.</p>
 
@@ -736,9 +740,9 @@ RDS/RBDS</h1>
 <dl class="section return"><dt>Returns</dt><dd>True if found at least one valid data </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group___g_a04.html#ga4b741f1433eda57949bb40fa9e973732" title="Sets the RDS operation.">setRDS</a>, <a class="el" href="group___g_a04.html#gae27337170a5f3dedebf585aa19855ad6" title="Sets RDS fifo mode enable.">setRdsFifo</a>, <a class="el" href="group___g_a04.html#gadafba5991f6f60a52ad73fdda8fac984" title="Gets Station Name, Station Information, Program Information and utcTime.">getRdsAllData</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00890">890</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00893">893</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_r_d_a5807_8cpp_source.html#l00819">RDA5807::getRdsReady()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l01031">RDA5807::getRdsText0A()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l01061">RDA5807::getRdsText2A()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l01090">RDA5807::getRdsText2B()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l01116">RDA5807::getRdsTime()</a>, and <a class="el" href="_r_d_a5807_8h_source.html#l00969">RDA5807::hasRdsInfoAB()</a>.</p>
+<p class="reference">References <a class="el" href="_r_d_a5807_8cpp_source.html#l00822">RDA5807::getRdsReady()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l01035">RDA5807::getRdsText0A()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l01065">RDA5807::getRdsText2A()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l01095">RDA5807::getRdsText2B()</a>, <a class="el" href="_r_d_a5807_8cpp_source.html#l01122">RDA5807::getRdsTime()</a>, and <a class="el" href="_r_d_a5807_8h_source.html#l00969">RDA5807::hasRdsInfoAB()</a>.</p>
 
 </div>
 </div>
@@ -761,7 +765,7 @@ RDS/RBDS</h1>
 <p>ATTENTION: You must call getRdsReady before calling this function. </p><dl class="section return"><dt>Returns</dt><dd>uint16_t </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group___g_a04.html#gacfa48dfcf792a9bcee489658177aed90" title="Returns true if RDS Ready.">getRdsReady</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00910">910</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00913">913</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -785,7 +789,7 @@ RDS/RBDS</h1>
 <p>ATTENTION: You must call getRdsReady before calling this function. </p><dl class="section return"><dt>Returns</dt><dd>0=A or 1=B </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group___g_a04.html#gacfa48dfcf792a9bcee489658177aed90" title="Returns true if RDS Ready.">getRdsReady</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00924">924</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00927">927</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -808,10 +812,12 @@ RDS/RBDS</h1>
 <p>Returns the Program Type (extracted from the Block B) </p>
 <p>ATTENTION: You must call getRdsReady before calling this function. </p><dl class="section see"><dt>See also</dt><dd><a href="https://en.wikipedia.org/wiki/Radio_Data_System">https://en.wikipedia.org/wiki/Radio_Data_System</a> </dd>
 <dd>
+<a href="https://www.2wcom.com/fileadmin/redaktion/dokumente/Company/RDS_Basics.pdf">2wcom RDS Basics</a> </dd>
+<dd>
 <a class="el" href="group___g_a04.html#gacfa48dfcf792a9bcee489658177aed90" title="Returns true if RDS Ready.">getRdsReady</a> </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>program type (an integer betwenn 0 and 31) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00939">939</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00943">943</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -839,9 +845,9 @@ RDS/RBDS</h1>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00952">952</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00956">956</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_r_d_a5807_8cpp_source.html#l01031">RDA5807::getRdsText0A()</a>, and <a class="el" href="_r_d_a5807_8cpp_source.html#l01090">RDA5807::getRdsText2B()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_r_d_a5807_8cpp_source.html#l01035">RDA5807::getRdsText0A()</a>, and <a class="el" href="_r_d_a5807_8cpp_source.html#l01095">RDA5807::getRdsText2B()</a>.</p>
 
 </div>
 </div>
@@ -869,9 +875,9 @@ RDS/RBDS</h1>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00989">989</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l00993">993</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_r_d_a5807_8cpp_source.html#l01061">RDA5807::getRdsText2A()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_r_d_a5807_8cpp_source.html#l01065">RDA5807::getRdsText2A()</a>.</p>
 
 </div>
 </div>
@@ -895,11 +901,11 @@ RDS/RBDS</h1>
 <p>ATTENTION: You must call getRdsReady before calling this function. </p><dl class="section return"><dt>Returns</dt><dd>char* should return a string with the station name. However, some stations send other kind of messages </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group___g_a04.html#gacfa48dfcf792a9bcee489658177aed90" title="Returns true if RDS Ready.">getRdsReady</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l01031">1031</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l01035">1035</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_r_d_a5807_8cpp_source.html#l00952">RDA5807::getNext2Block()</a>, and <a class="el" href="_r_d_a5807_8h_source.html#l00599">RDA5807::rds_buffer0A</a>.</p>
+<p class="reference">References <a class="el" href="_r_d_a5807_8cpp_source.html#l00956">RDA5807::getNext2Block()</a>, and <a class="el" href="_r_d_a5807_8h_source.html#l00599">RDA5807::rds_buffer0A</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_r_d_a5807_8cpp_source.html#l00890">RDA5807::getRdsAllData()</a>, and <a class="el" href="_r_d_a5807_8h_source.html#l00862">RDA5807::getRdsStationName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_r_d_a5807_8cpp_source.html#l00893">RDA5807::getRdsAllData()</a>, and <a class="el" href="_r_d_a5807_8h_source.html#l00862">RDA5807::getRdsStationName()</a>.</p>
 
 </div>
 </div>
@@ -925,11 +931,11 @@ RDS/RBDS</h1>
 <p>ATTENTION: You must call getRdsReady before calling this function. </p><dl class="section return"><dt>Returns</dt><dd>char array with the program information (63 bytes) </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group___g_a04.html#gacfa48dfcf792a9bcee489658177aed90" title="Returns true if RDS Ready.">getRdsReady</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l01061">1061</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l01065">1065</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_r_d_a5807_8cpp_source.html#l00989">RDA5807::getNext4Block()</a>, and <a class="el" href="_r_d_a5807_8h_source.html#l00597">RDA5807::rds_buffer2A</a>.</p>
+<p class="reference">References <a class="el" href="_r_d_a5807_8cpp_source.html#l00993">RDA5807::getNext4Block()</a>, and <a class="el" href="_r_d_a5807_8h_source.html#l00597">RDA5807::rds_buffer2A</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_r_d_a5807_8cpp_source.html#l00890">RDA5807::getRdsAllData()</a>, and <a class="el" href="_r_d_a5807_8h_source.html#l00873">RDA5807::getRdsProgramInformation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_r_d_a5807_8cpp_source.html#l00893">RDA5807::getRdsAllData()</a>, and <a class="el" href="_r_d_a5807_8h_source.html#l00873">RDA5807::getRdsProgramInformation()</a>.</p>
 
 </div>
 </div>
@@ -951,14 +957,15 @@ RDS/RBDS</h1>
 
 <p>Gets the Station Information. <br  />
  </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>Under construction... To be checked. </dd></dl>
 <p>ATTENTION: You must call getRdsReady before calling this function. </p><dl class="section return"><dt>Returns</dt><dd>char array with the Text of Station Information (33 bytes) </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group___g_a04.html#gacfa48dfcf792a9bcee489658177aed90" title="Returns true if RDS Ready.">getRdsReady</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l01090">1090</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l01095">1095</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_r_d_a5807_8cpp_source.html#l00952">RDA5807::getNext2Block()</a>, and <a class="el" href="_r_d_a5807_8h_source.html#l00598">RDA5807::rds_buffer2B</a>.</p>
+<p class="reference">References <a class="el" href="_r_d_a5807_8cpp_source.html#l00956">RDA5807::getNext2Block()</a>, and <a class="el" href="_r_d_a5807_8h_source.html#l00598">RDA5807::rds_buffer2B</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_r_d_a5807_8cpp_source.html#l00890">RDA5807::getRdsAllData()</a>, and <a class="el" href="_r_d_a5807_8h_source.html#l00883">RDA5807::getRdsStationInformation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_r_d_a5807_8cpp_source.html#l00893">RDA5807::getRdsAllData()</a>, and <a class="el" href="_r_d_a5807_8h_source.html#l00883">RDA5807::getRdsStationInformation()</a>.</p>
 
 </div>
 </div>
@@ -978,14 +985,15 @@ RDS/RBDS</h1>
 </div><div class="memdoc">
 
 <p>Gets the RDS UTC time and date when the Group type is 4. </p>
-<p>ATTENTION: You must call getRdsReady before calling this function. </p><dl class="section return"><dt>Returns</dt><dd>char* a string with hh:mm +/- offset </dd></dl>
+<p>ATTENTION: You must call getRdsReady before calling this function.</p>
+<p>ATTENTION: Some stations broadcast wrong time. </p><dl class="section return"><dt>Returns</dt><dd>char* a string with hh:mm +/- offset </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group___g_a04.html#gacfa48dfcf792a9bcee489658177aed90" title="Returns true if RDS Ready.">getRdsReady</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l01116">1116</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l01122">1122</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_r_d_a5807_8h_source.html#l00600">RDA5807::rds_time</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_r_d_a5807_8cpp_source.html#l00890">RDA5807::getRdsAllData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_r_d_a5807_8cpp_source.html#l00893">RDA5807::getRdsAllData()</a>.</p>
 
 </div>
 </div>
@@ -1007,10 +1015,10 @@ RDS/RBDS</h1>
 <p>Gets the RDS time converted to local time. </p>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>Need to check. </dd></dl>
 <p>ATTENTION: You must call getRdsReady before calling this function.</p>
-<p>ATTENTION: Some station broadcast wrong time. </p><dl class="section return"><dt>Returns</dt><dd>char* a string with hh:mm </dd></dl>
+<p>ATTENTION: Some stations broadcast wrong time. </p><dl class="section return"><dt>Returns</dt><dd>char* a string with hh:mm </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group___g_a04.html#gacfa48dfcf792a9bcee489658177aed90" title="Returns true if RDS Ready.">getRdsReady</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l01179">1179</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l01185">1185</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_r_d_a5807_8h_source.html#l00600">RDA5807::rds_time</a>.</p>
 
@@ -1041,7 +1049,7 @@ RDS/RBDS</h1>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l01243">1243</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l01249">1249</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -1070,7 +1078,7 @@ RDS/RBDS</h1>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l01256">1256</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l01262">1262</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 </div>
 </div>
@@ -1092,7 +1100,7 @@ RDS/RBDS</h1>
 <p>Clear RDS Information (Station Name, Station Information, Program Information and Time) </p>
 <p>Clear the buffer with latest RDS information </p>
 
-<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l01268">1268</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_d_a5807_8cpp_source.html#l01274">1274</a> of file <a class="el" href="_r_d_a5807_8cpp_source.html">RDA5807.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="_r_d_a5807_8h_source.html#l00599">RDA5807::rds_buffer0A</a>, <a class="el" href="_r_d_a5807_8h_source.html#l00597">RDA5807::rds_buffer2A</a>, <a class="el" href="_r_d_a5807_8h_source.html#l00598">RDA5807::rds_buffer2B</a>, and <a class="el" href="_r_d_a5807_8h_source.html#l00600">RDA5807::rds_time</a>.</p>
 
