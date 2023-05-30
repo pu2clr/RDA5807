@@ -346,7 +346,7 @@ void showRDSStation() {
 
   if (stationName == NULL || strlen(stationName) < 2 || (millis() - delayStationName) < 6000) return;
   display.setTextSize(1);
-  display.fillRect(0, 40, 42, 8, WHITE);
+  display.fillRect(0, 40, 49, 8, WHITE);
   display.setCursor(0, 40);
   stationName[8] = 0;
   display.print(stationName);
