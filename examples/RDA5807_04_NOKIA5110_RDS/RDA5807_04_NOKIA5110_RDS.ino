@@ -88,7 +88,6 @@
 #define SEEK_FUNCTION 14  // Pin A0 / Digital 14
 
 #define POLLING_TIME 3000
-#define POLLING_RDS 20
 
 #define STORE_TIME 10000    // Time of inactivity to make the current receiver status writable (10s / 10000 milliseconds).
 #define PUSH_MIN_DELAY 300  // Minimum waiting time after an action
@@ -100,7 +99,6 @@ long storeTime = millis();
 
 bool bSt = true;
 bool bRds = false;
-bool bShow = false;
 uint8_t seekDirection = 1;  // 0 = Down; 1 = Up. This value is set by the last encoder direction.
 
 long pollin_elapsed = millis();
@@ -280,17 +278,12 @@ void showFrequencySeek() {
 */
 void showStatus() {
 
-  display.clearDisplay();
+  display.fillRect(0, 0, 84, 23, WHITE);
   display.setTextColor(BLACK);
   showFrequency();
   showStereoMono();
   showRSSI();
   showRds();
-  if (bRds) {
-    showProgramInfo();
-    showRDSStation();
-    showRDSTime();
-  }
   display.display();
 }
 
@@ -322,23 +315,26 @@ void showStereoMono() {
 char *programInfo;
 char *stationName;
 char *rdsTime;
-long stationNameElapsed = millis();
-long polling_rds = millis();
 
+long delayStationName = millis();
 long delayProgramInfo = millis();
-uint8_t idx
-
-
+long delayTime = millis();
+uint8_t idxProgramInfo = 0;
 
 void showProgramInfo() {
 
-  if (programInfo == NULL || (millis() - delayProgramInfo) < 1000 ) return;
+  char aux[20];
 
-  programInfo[27] = '>';
-  programInfo[28] = '\0';
+  if (programInfo == NULL || (strlen(programInfo) < 2) || (millis() - delayProgramInfo) < 1000) return;
+
+  strncpy(aux, &programInfo[idxProgramInfo], 14);
+  aux[14] = '\0';
   display.setTextSize(1);
+  display.fillRect(0, 24, 84, 8, WHITE);
   display.setCursor(0, 24);
-  display.print(programInfo);
+  display.print(aux);
+  idxProgramInfo += 4;
+  if (idxProgramInfo > 60) idxProgramInfo = 0;
   display.display();
   delayProgramInfo = millis();
 }
@@ -348,37 +344,66 @@ void showProgramInfo() {
 */
 void showRDSStation() {
 
-  if (stationName == NULL) return;
+  if (stationName == NULL || strlen(stationName) < 2 || (millis() - delayStationName) < 6000) return;
   display.setTextSize(1);
+  display.fillRect(0, 40, 42, 8, WHITE);
   display.setCursor(0, 40);
+  stationName[8] = 0;
   display.print(stationName);
   display.display();
-  delay(30);
+  delayStationName = millis();
 }
 
 void showRDSTime() {
-  if (rdsTime == NULL) return;
+  char *p;
+  if (rdsTime == NULL || (millis() - delayTime) < 60000) return;
+
+  // Shows also the current program type.
+  display.fillRect(0, 32, 84, 8, WHITE);
+  display.setCursor(0, 32);
+  display.print(rx.getRdsProgramType());
+  switch (rx.getRdsProgramType()) {
+    case 1: p = "News"; break;
+    case 3:
+    case 4: p = "Info/Sport"; break;
+    case 7: p = "Culture"; break;
+    case 10:
+    case 11:
+    case 12:
+    case 13:
+    case 14:
+    case 15: p = "Music"; break;
+    default: p = "Other";
+  }
+  display.setCursor(15, 32);
+  display.print(p);
+
+  display.fillRect(42, 40, 42, 8, WHITE);
   display.setCursor(50, 40);
   display.print(rdsTime);
   display.display();
-  delay(30);
+  delayTime = millis();
 }
 
 
 void clearRds() {
-  bShow = false;
   programInfo = NULL;
   stationName = NULL;
   rdsTime = NULL;
+  rx.clearRdsBuffer();
+  display.fillRect(0, 24, 84, 24, WHITE);
 }
 
 void checkRDS() {
-  // You must call getRdsReady before calling any RDS query function. 
+  // You must call getRdsReady before calling any RDS query function.
   if (rx.getRdsReady()) {
-    if (rx.hasRdsInfo() ) {
+    if (rx.hasRdsInfo()) {
       programInfo = rx.getRdsProgramInformation();
       stationName = rx.getRdsStationName();
-      rdsTime = rx.getRdsTime();  // Gets the UTC Time. Check the getRdsTime documentation for more details. Some stations do not broadcast the right time.
+      rdsTime = rx.getRdsLocalTime();  // Gets the Local Time. Check the getRdsTime documentation for more details. Some stations do not broadcast the right time.
+      showProgramInfo();
+      showRDSStation();
+      showRDSTime();
     }
   }
 }
@@ -402,7 +427,6 @@ void showRds() {
 
 void doStereo() {
   rx.setMono((bSt = !bSt));
-  bShow = true;
   showStereoMono();
   resetEepromDelay();
 }
@@ -420,7 +444,6 @@ void doRds() {
 void doSeek() {
   rx.seek(RDA_SEEK_WRAP, seekDirection, showFrequencySeek);  // showFrequency will be called by the seek function during the process.
   delay(PUSH_MIN_DELAY);
-  bShow = true;
   showStatus();
 }
 
@@ -436,7 +459,6 @@ void loop() {
       seekDirection = RDA_SEEK_DOWN;
     }
     showStatus();
-    bShow = true;
     encoderCount = 0;
     storeTime = millis();
   }
@@ -456,16 +478,13 @@ void loop() {
 
   if ((millis() - pollin_elapsed) > POLLING_TIME) {
     showStatus();
-    if (bShow) clearRds();
     pollin_elapsed = millis();
   }
 
-  if ((millis() - polling_rds) > POLLING_RDS) {
-    if (bRds) {
-      checkRDS();
-    }
-    polling_rds = millis();
+  if (bRds) {
+    checkRDS();
   }
+
 
   // Show the current frequency only if it has changed
   if ((currentFrequency = rx.getFrequency()) != previousFrequency) {

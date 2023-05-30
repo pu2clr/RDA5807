@@ -1229,6 +1229,8 @@ char *RDA5807::getRdsLocalTime()
         hour = localTime / 60;
         minute = localTime - (hour * 60);
 
+        if (hour > 24 || minute > 60 ) return NULL;
+
         this->convertToChar(hour, rds_time, 2, 0, ' ', false);
         rds_time[2] = ':';
         this->convertToChar(minute, &rds_time[3], 2, 0, ' ', false);
