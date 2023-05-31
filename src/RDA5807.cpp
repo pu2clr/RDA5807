@@ -1160,7 +1160,9 @@ char *RDA5807::getRdsTime()
         offset_h = (dt.refined.offset * 30) / 60;
         offset_m = (dt.refined.offset * 30) - (offset_h * 60);
 
-        // sprintf(rds_time, "%02u:%02u %c%02u:%02u", hour, minute, offset_sign, offset_h, offset_m);
+        // If wrong time, return NULL
+        if ( offset_h > 12 || offset_m > 60 || hour > 24 || minute > 60 ) return NULL;
+
         this->convertToChar(hour, rds_time, 2, 0, ' ', false);
         rds_time[2] = ':';
         this->convertToChar(minute, &rds_time[3], 2, 0, ' ', false);

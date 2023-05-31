@@ -864,7 +864,7 @@ public:
     char *getRdsText2A(void);
     /**
      * @ingroup @ingroup GA04
-     * @brief Gets the Program Information
+     * @brief Gets the Program Information (RT - Radio Text)
      * @details Process the program information data. Same getRdsText2A(). It is a alias for getRdsText2A.
      * @details ATTENTION: You must call getRdsReady before calling this function. 
      * @return char array with the program information (63 bytes)
