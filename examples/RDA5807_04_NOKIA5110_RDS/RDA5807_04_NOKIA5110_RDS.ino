@@ -363,17 +363,17 @@ void showRDSTime() {
   display.setCursor(0, 32);
   display.print(rx.getRdsProgramType());
   switch (rx.getRdsProgramType()) {
-    case 1: p = "News"; break;
+    case 1: p = (char *) "News"; break;
     case 3:
-    case 4: p = "Info/Sport"; break;
-    case 7: p = "Culture"; break;
+    case 4: p = (char *) "Info/Sport"; break;
+    case 7: p = (char *) "Culture"; break;
     case 10:
     case 11:
     case 12:
     case 13:
     case 14:
-    case 15: p = "Music"; break;
-    default: p = "Other";
+    case 15: p = (char *) "Music"; break;
+    default: p = (char *) "Other";
   }
   display.setCursor(15, 32);
   display.print(p);
