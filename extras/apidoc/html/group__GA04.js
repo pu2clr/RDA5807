@@ -21,6 +21,7 @@ var group__GA04 =
     [ "RDA5807::getRdsText2A", "group__GA04.html#ga482098a64299cb8af976d4d10a460212", null ],
     [ "RDA5807::getRdsText2B", "group__GA04.html#gacd6614bc7be99d55a3d9a17739ee7074", null ],
     [ "RDA5807::getRdsTime", "group__GA04.html#gaef398d848e7378ec4897965b8e1b4441", null ],
+    [ "RDA5807::getRdsTrafficProgramCode", "group__GA04.html#ga54b3bea446e68453ee1ce57762ade2e4", null ],
     [ "RDA5807::getRdsVersionCode", "group__GA04.html#gad85ccedd8baecd8bc2f42325a3ee8741", null ],
     [ "RDA5807::hasRdsInfo", "group__GA04.html#ga0d809c6cc2928e1fee006713f77b60e9", null ],
     [ "RDA5807::hasRdsInfoAB", "group__GA04.html#gac6b8c39c1134700ce3e2a9e5216a5325", null ],

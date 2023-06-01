@@ -847,6 +847,7 @@ public:
     uint8_t getRdsVersionCode(void);
     uint16_t getRdsGroupType();
     uint8_t getRdsProgramType(void);
+    uint8_t getRdsTrafficProgramCode(void);
     void getNext2Block(char *c);
     void getNext4Block(char *c);
 

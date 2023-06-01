@@ -953,6 +953,23 @@ uint8_t RDA5807::getRdsProgramType(void)
 
 /**
  * @ingroup GA04
+ * @brief Returns the Traffic Alerts given by the station
+ * @details ATTENTION: You must call getRdsReady before calling this function. 
+ * @see https://en.wikipedia.org/wiki/Radio_Data_System
+ * @see [2wcom RDS Basics](https://www.2wcom.com/fileadmin/redaktion/dokumente/Company/RDS_Basics.pdf)
+ * @see getRdsReady
+ * @return  0 = No Traffic Alerts; 1 = Station gives Traffic Alerts
+ */
+uint8_t RDA5807::getRdsTrafficProgramCode(void)
+{
+    rds_blockb blkb;
+    blkb.blockB = reg0d->RDSB;
+    return blkb.refined.trafficProgramCode;
+}
+
+
+/**
+ * @ingroup GA04
  *
  * @brief Process data received from group 2B
  * @param c  char array reference to the "group 2B" text

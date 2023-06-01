@@ -28,12 +28,13 @@ var searchData=
   ['getrdstext2a_25',['getRdsText2A',['../group__GA04.html#ga482098a64299cb8af976d4d10a460212',1,'RDA5807']]],
   ['getrdstext2b_26',['getRdsText2B',['../group__GA04.html#gacd6614bc7be99d55a3d9a17739ee7074',1,'RDA5807']]],
   ['getrdstime_27',['getRdsTime',['../group__GA04.html#gaef398d848e7378ec4897965b8e1b4441',1,'RDA5807']]],
-  ['getrdsversioncode_28',['getRdsVersionCode',['../group__GA04.html#gad85ccedd8baecd8bc2f42325a3ee8741',1,'RDA5807']]],
-  ['getrealchannel_29',['getRealChannel',['../group__GA03.html#ga39480a49f7878fffe8c3ddf120aba2b0',1,'RDA5807']]],
-  ['getrealfrequency_30',['getRealFrequency',['../group__GA03.html#ga1476967ed4e1d9bc00e2ea8e3135520e',1,'RDA5807']]],
-  ['getrssi_31',['getRssi',['../group__GA08.html#ga4bd7597d4c9090b04486aec21a6a0a5d',1,'RDA5807']]],
-  ['getspace_32',['getSpace',['../group__GA03.html#gab6cc94517eb6bc3325fbd6386bbffe15',1,'RDA5807']]],
-  ['getstatus_33',['getStatus',['../group__GA02.html#ga1f4bc3d6f9d94171b2965dbb4e812f4f',1,'RDA5807']]],
-  ['getstatusregisters_34',['getStatusRegisters',['../group__GA02.html#gab9e3a5584a6238f719e9c9e49435f5ce',1,'RDA5807']]],
-  ['getvolume_35',['getVolume',['../group__GA07.html#ga743d91d820922b3feda10d06443bc8a9',1,'RDA5807']]]
+  ['getrdstrafficprogramcode_28',['getRdsTrafficProgramCode',['../group__GA04.html#ga54b3bea446e68453ee1ce57762ade2e4',1,'RDA5807']]],
+  ['getrdsversioncode_29',['getRdsVersionCode',['../group__GA04.html#gad85ccedd8baecd8bc2f42325a3ee8741',1,'RDA5807']]],
+  ['getrealchannel_30',['getRealChannel',['../group__GA03.html#ga39480a49f7878fffe8c3ddf120aba2b0',1,'RDA5807']]],
+  ['getrealfrequency_31',['getRealFrequency',['../group__GA03.html#ga1476967ed4e1d9bc00e2ea8e3135520e',1,'RDA5807']]],
+  ['getrssi_32',['getRssi',['../group__GA08.html#ga4bd7597d4c9090b04486aec21a6a0a5d',1,'RDA5807']]],
+  ['getspace_33',['getSpace',['../group__GA03.html#gab6cc94517eb6bc3325fbd6386bbffe15',1,'RDA5807']]],
+  ['getstatus_34',['getStatus',['../group__GA02.html#ga1f4bc3d6f9d94171b2965dbb4e812f4f',1,'RDA5807']]],
+  ['getstatusregisters_35',['getStatusRegisters',['../group__GA02.html#gab9e3a5584a6238f719e9c9e49435f5ce',1,'RDA5807']]],
+  ['getvolume_36',['getVolume',['../group__GA07.html#ga743d91d820922b3feda10d06443bc8a9',1,'RDA5807']]]
 ];

@@ -109,6 +109,7 @@ var group__GA01 =
       [ "getRdsText2A", "group__GA04.html#ga482098a64299cb8af976d4d10a460212", null ],
       [ "getRdsText2B", "group__GA04.html#gacd6614bc7be99d55a3d9a17739ee7074", null ],
       [ "getRdsTime", "group__GA04.html#gaef398d848e7378ec4897965b8e1b4441", null ],
+      [ "getRdsTrafficProgramCode", "group__GA04.html#ga54b3bea446e68453ee1ce57762ade2e4", null ],
       [ "getRdsVersionCode", "group__GA04.html#gad85ccedd8baecd8bc2f42325a3ee8741", null ],
       [ "getRealChannel", "group__GA03.html#ga39480a49f7878fffe8c3ddf120aba2b0", null ],
       [ "getRealFrequency", "group__GA03.html#ga1476967ed4e1d9bc00e2ea8e3135520e", null ],
