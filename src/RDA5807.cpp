@@ -5,7 +5,7 @@
  * @details This library was built based on "RDA5807M - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015"
  * @details and RDA microelectronics RDA5807FP - SINGLE-CHIP BROADCAST FM RADIO TUNER
  * @details This library can be freely distributed using the MIT Free Software model.
- * @copyright Copyright (c) 2020 Ricardo Lima Caratti.
+ * @copyright Copyright (c) 2020-2023 Ricardo Lima Caratti.
  * @author Ricardo LIma Caratti (pu2clr@gmail.com)
  */
 
