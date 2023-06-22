@@ -1,15 +1,65 @@
 # ATTiny84 and ATTiny85 setup
 
-It is possible to use the Arduino IDE platform with the PU2CLR RDA5807 Arduino Library to implement receivers with the ATTiny84 and ATTiny85. You will find details on how to do this below.
+It is possible to use the Arduino IDE platform with the PU2CLR SI470X Arduino Library to implement receivers with the ATTiny84 and ATTiny85. You will find details on how to do this below.
 
 
-{% include video08.html %}
+## Arduino IDE setup
 
-* [Vídeo: RDS Monitor with RDA5807 and ATTiny84 - youtube](https://youtu.be/UZYYkJeZIGM) 
+
+* Open the Arduino IDE on your computer.
+* Go to the "File" or "Arduino IDE" menu and select "Preferences".
+* In the Preferences window, look for the "Additional Boards Manager URLs" field and click on the icon to edit it.
+* Add the following URL to the field: [http://drazzy.com/package_drazzy.com_index.json](http://drazzy.com/package_drazzy.com_index.json)
+* Click "OK" to close the Preferences window.
+* Next, go to the "Tools" menu and select "Board" -> "Boards Manager".
+* In the Boards Manager, type "attiny" in the search bar.
+* Look for "ATTinyCore by Spence Konde" and click on the "Install" button next to it.
+* Wait for the installation to complete.
+* Once installed, you can close the Boards Manager.
+* Now, go to the "Tools" menu and select "Board". You should see a new "ATTinyCore" section.
+* Select the appropriate ATtiny microcontroller you are using, along with the desired clock speed and other options. 
+* You are now ready to program and use ATtiny microcontrollers with the Arduino IDE using the AttinyCore. 
+* Please note that the specific steps and menu options may vary slightly depending on the version of the Arduino IDE you are using. See image below.
+
+
+
+![ATTiny84 Arduino IDE setup](../../extras/images/ATTIny_Arduino_SETUP_01.jpg)
+
+
+[More details](https://github.com/SpenceKonde/ATTinyCore)
+
+
 
 ## Programming Interface (USBAsp 6 pin)
 
+
+After installing ATTiny Core on Arduino IDE, connect USBASP following the steps below:
+* Make sure your USBASP programmer is connected to your computer via USB.
+* Connect the USBASP to the target ATTiny microcontroller using the appropriate connections (MISO, MOSI, SCK, RST, VCC, and GND). See tables below.
+* Select the Board and Programmer:
+* Go to "Tools" -> "Board" and select the ATTiny microcontroller you are using (e.g., ATTiny85).
+* Go to "Tools" -> "Programmer" and select "USBasp."
+* Compile the Sketch:
+    * Write or open your Arduino sketch.
+    * Go to "Sketch" -> "Verify/Compile" to compile the sketch for the selected ATTiny board.
+    * Upload the Sketch:
+    * Go to "Sketch" menu -> "Upload Using Programmer" or press Shift + Ctrl + U.
+    * The Arduino IDE will compile the sketch and upload it to the ATTiny microcontroller using the USBASP programmer.
+    * Verify the Upload.
+
+
 The table below shows the pin functions of the ATTiny84 and ATTiny85  needed to upload sketch via USBAsp interface.
+
+
+| Function / USBAsp   | ATTiny85 Pin |  ATTiny84 Pin | 
+| ------------------- | ------------ | ------------- |
+| RESET               | 1 (PB5)      | 4 (PB3)       |   
+| MOSI                | 5 (PB0)      | 7 (PA6)       |
+| MISO                | 6 (PB1)      | 8 (PA5)       |
+| SCK                 | 7 (PB2)      | 9 (PA4)       |
+| GND                 | 4            | 14            |
+| VCC                 | 8            | 1             |
+
 
 
 | Function / USBAsp   | ATTiny85 Pin |  ATTiny84 Pin | 
