@@ -9,8 +9,9 @@ This library can be freely distributed using the MIT Free Software model. It mea
 
 Contact: __pu2clr@gmail.com__.
 
-__If you find this project useful, consider making a donation so that the author can purchase components and modules for improvements and testing of this library.__
-[Click here to donate](https://www.paypal.com/donate/?business=LLV4PHKTXC4JW&no_recurring=0&item_name=Consider+making+a+donation.++So+I+can+purchase+components+and+modules+for+improvements+and+testing+of+this+library.&currency_code=USD)
+## Donate 
+
+[If you find this project useful, consider making a donation so that the author of this library can purchase components and modules for improvements and testing of this library. Click here to donate.](https://www.paypal.com/donate/?business=LLV4PHKTXC4JW&no_recurring=0&item_name=Consider+making+a+donation.++So+I+can+purchase+components+and+modules+for+improvements+and+testing+of+this+library.&currency_code=USD)
 
 
 
