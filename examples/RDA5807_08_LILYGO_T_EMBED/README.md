@@ -26,6 +26,12 @@ As you can see in the picture above, the LilyGO/T-Embed has some extra pins that
 [See this link for more details about LilyGo T-Embed](https://github.com/Xinyuan-LilyGO/T-Embed)
 
 
+## Donate 
+
+[If you find this project useful, consider making a donation so that the author of this library can purchase components and modules for improvements and testing of this library. Click here to donate.](https://www.paypal.com/donate/?business=LLV4PHKTXC4JW&no_recurring=0&item_name=Consider+making+a+donation.++So+I+can+purchase+components+and+modules+for+improvements+and+testing+of+this+library.&currency_code=USD)
+
+
+
 ## Arduino setup
 
 * On Arduino IDE, go to Preferences, edit the field "Additional Boards Manager URLs:" and add the URL 

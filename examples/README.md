@@ -32,6 +32,11 @@ The following table shows the main examples implemented in this library. These e
 | [LilyGO/T-Embed and RDA5807 setup](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_08_LILYGO_T_EMBED)| This sketch was an adaptation of the Volos's sketch and uses PU2CLR RDA5807 Arduino Library with LilyGO T-Embed.  |
 
 
+## Donate 
+
+[If you find this project useful, consider making a donation so that the author of this library can purchase components and modules for improvements and testing of this library. Click here to donate.](https://www.paypal.com/donate/?business=LLV4PHKTXC4JW&no_recurring=0&item_name=Consider+making+a+donation.++So+I+can+purchase+components+and+modules+for+improvements+and+testing+of+this+library.&currency_code=USD)
+
+
 
 ## Examples and Schematics
 
