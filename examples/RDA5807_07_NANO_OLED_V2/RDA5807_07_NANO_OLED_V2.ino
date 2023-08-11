@@ -121,13 +121,13 @@ void setup()
     // rx.setRBDS(true);  //  set RDS and RBDS. See setRDS.
     rx.setRDS(true);
     rx.setRdsFifo(true);
-    currentFrequency = previousFrequency = 10390;
+    currentFrequency = previousFrequency = 9390;
+    // currentFrequency = previousFrequency = 10650;
   }
 
   rx.setFrequency(currentFrequency);  // It is the frequency you want to select in MHz multiplied by 100.
   rx.setSeekThreshold(50);            // Sets RSSI Seek Threshold (0 to 127)
   rx.setLnaPortSel(3);                // LNA setup
-
 
   rx.setRDS(true);
   rx.setRdsFifo(true);
@@ -195,7 +195,7 @@ void showStatus()
 void showFrequency()
 {
   oled.setFont(&DSEG7_Classic_Regular_16);
-  oled.setCursor(20, 27);
+  oled.setCursor(20, 20);
   oled.print(rx.formatCurrentFrequency());
   oled.setFont(NULL);
   oled.setTextSize(1);
@@ -221,13 +221,14 @@ void showProgramInfo() {
 
   if (programInfo == NULL || (strlen(programInfo) < 2) || (millis() - delayProgramInfo) < 1000) return;
 
-  strncpy(aux, &programInfo[idxProgramInfo], 14);
-  aux[14] = '\0';
-  // oled.setCursor(0, 24);
-  // oled.print(aux);
-  idxProgramInfo += 4;
+  strncpy(aux, &programInfo[idxProgramInfo], 18);
+  aux[18] = '\0';
+  oled.fillRect(0, 25, 120, 20, BLACK);
+  oled.setCursor(0, 25);
+  oled.print(aux);
+  idxProgramInfo += 3;
   if (idxProgramInfo > 60) idxProgramInfo = 0;
-  // oled.display();
+  oled.display();
   delayProgramInfo = millis();
 }
 
@@ -235,18 +236,21 @@ void showProgramInfo() {
    TODO: show RDS information 
 */
 void showRDSStation() {
-
+  // TO DO
+  /*
   if (stationName == NULL || strlen(stationName) < 2 || (millis() - delayStationName) < 6000) return;
-  // oled.setTextSize(1);
 
   // oled.setCursor(0, 40);
   stationName[8] = 0;
   // oled.print(stationName);
   // oled.display();
   delayStationName = millis();
+  */
 }
 
 void showRDSTime() {
+  // TO DO
+  /*
   char *p;
   if (rdsTime == NULL || (millis() - delayTime) < 60000) return;
 
@@ -276,6 +280,7 @@ void showRDSTime() {
   // oled.print(rdsTime);
   // oled.display();
   delayTime = millis();
+  */
 }
 
 
