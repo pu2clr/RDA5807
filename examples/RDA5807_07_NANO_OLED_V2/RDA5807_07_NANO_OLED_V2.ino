@@ -1,4 +1,6 @@
 /*
+  UNDER CONSTRUCTION...
+  
   This sketch works on Atmega328 and LGT8FX based board.
 
   Nano/LGT8FX and RDA5807 wireup
