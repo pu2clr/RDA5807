@@ -18,7 +18,9 @@ echo "********************"
 arduino-cli compile -b arduino:avr:nano ./RDA5807_01_SERIAL_MONITOR/RDA5807_00_CIRCUIT_TEST --output-dir ~/Downloads/hex/atmega/RDA5807_00_CIRCUIT_TEST  --warnings all
 arduino-cli compile -b arduino:avr:nano ./RDA5807_02_TFT_display --output-dir ~/Downloads/hex/atmega/RDA5807_02_TFT_display  --warnings all
 arduino-cli compile -b arduino:avr:nano ./RDA5807_04_NOKIA5110_RDS --output-dir ~/Downloads/hex/atmega/RDA5807_04_NOKIA5110_RDS  --warnings all
-arduino-cli compile -b arduino:avr:nano ./RDA5807_05_LCD16X02 --output-dir ~/Downloads/hex/atmega/RDA5807_05_LCD16X02  --warnings all
+arduino-cli compile -b arduino:avr:nano ./RDA5807_05_A_LCD16X02_NANO --output-dir ~/Downloads/hex/atmega/RDA5807_05_A_LCD16X02_NANO  --warnings all
+arduino-cli compile -b arduino:avr:nano ./RDA5807_05_A_LCD20X04_NANO --output-dir ~/Downloads/hex/atmega/RDA5807_05_A_LCD20X04_NANO  --warnings all
+
 
 arduino-cli compile -b arduino:avr:uno ./RDA5807_06_UNO_TM1638 --output-dir ~/Downloads/hex/atmega/RDA5807_06_UNO_TM1638  --warnings all
 arduino-cli compile -b arduino:avr:uno ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_ALL_TEST_SERIAL_MONITOR --output-dir ~/Downloads/hex/atmega/RDA5807_01_ALL_TEST_SERIAL_MONITOR  --warnings all
