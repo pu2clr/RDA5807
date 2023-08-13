@@ -105,6 +105,16 @@ void setup()
   // End Splash
 
 
+  // If you want to reset the eeprom, keep the ENCODER PUSH BUTTON  pressed during statup
+  if (digitalRead(SEEK_FUNCTION) == LOW) {
+    EEPROM.write(eeprom_address, 0);
+    oled.clear();
+    oled.setCursor(0, 0);
+    oled.print("RESET");
+    delay(1500);
+  }
+
+
   // Encoder interrupt
   attachInterrupt(digitalPinToInterrupt(ENCODER_PIN_A), rotaryEncoder, CHANGE);
   attachInterrupt(digitalPinToInterrupt(ENCODER_PIN_B), rotaryEncoder, CHANGE);
