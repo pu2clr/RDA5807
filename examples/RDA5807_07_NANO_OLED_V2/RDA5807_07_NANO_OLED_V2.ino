@@ -106,11 +106,11 @@ void setup()
 
 
   // If you want to reset the eeprom, keep the ENCODER PUSH BUTTON  pressed during statup
-  if (digitalRead(SEEK_FUNCTION) == LOW) {
+  if (digitalRead(SEEK_STATION) == LOW) {
     EEPROM.write(eeprom_address, 0);
-    oled.clear();
     oled.setCursor(0, 0);
     oled.print("RESET");
+    oled.display();
     delay(1500);
   }
 
@@ -220,10 +220,22 @@ char *programInfo;
 char *stationName;
 char *rdsTime;
 
+uint8_t controlInfo = 0;
+long delayContronInfo = millis();
+
 long delayStationName = millis();
 long delayProgramInfo = millis();
 long delayTime = millis();
 uint8_t idxProgramInfo = 0;
+
+
+
+void showLineRDS( char *info) {
+  oled.fillRect(0, 25, 120, 20, BLACK);
+  oled.setCursor(0, 25);
+  oled.print(info);
+  oled.display();
+}
 
 void showProgramInfo() {
 
@@ -233,12 +245,9 @@ void showProgramInfo() {
 
   strncpy(aux, &programInfo[idxProgramInfo], 18);
   aux[18] = '\0';
-  oled.fillRect(0, 25, 120, 20, BLACK);
-  oled.setCursor(0, 25);
-  oled.print(aux);
+  showLineRDS(aux);
   idxProgramInfo += 3;
   if (idxProgramInfo > 60) idxProgramInfo = 0;
-  oled.display();
   delayProgramInfo = millis();
 }
 
@@ -246,22 +255,19 @@ void showProgramInfo() {
    TODO: show RDS information 
 */
 void showRDSStation() {
-  // TO DO
-  /*
+
   if (stationName == NULL || strlen(stationName) < 2 || (millis() - delayStationName) < 6000) return;
 
-  // oled.setCursor(0, 40);
   stationName[8] = 0;
-  // oled.print(stationName);
-  // oled.display();
+  showLineRDS(stationName);
   delayStationName = millis();
-  */
+
 }
 
 void showRDSTime() {
-  // TO DO
-  /*
+
   char *p;
+  char aux[30];
   if (rdsTime == NULL || (millis() - delayTime) < 60000) return;
 
   // Shows also the current program type.
@@ -281,16 +287,12 @@ void showRDSTime() {
     default: p = (char *) "Other";
   }
 
-  // shows p content and rdsTime
-  // oled.setCursor(y,x);
-  // oled.print(p);
-
+  strcpy(aux,p);
+  strcat(aux," - ");
+  strcat(aux,rdsTime);
   
-  // oled.setCursor(y, x);
-  // oled.print(rdsTime);
-  // oled.display();
+  showLineRDS(aux);
   delayTime = millis();
-  */
 }
 
 
@@ -299,19 +301,31 @@ void clearRds() {
   stationName = NULL;
   rdsTime = NULL;
   rx.clearRdsBuffer();
-  
 }
 
 void checkRDS() {
   // You must call getRdsReady before calling any RDS query function.
   if (rx.getRdsReady()) {
     if (rx.hasRdsInfo()) {
-      programInfo = rx.getRdsProgramInformation();
-      stationName = rx.getRdsStationName();
-      rdsTime = rx.getRdsLocalTime();  // Gets the Local Time. Check the getRdsTime documentation for more details. Some stations do not broadcast the right time.
-      showProgramInfo();
-      showRDSStation();
-      showRDSTime();
+      if ( controlInfo == 0 ) {
+        programInfo = rx.getRdsProgramInformation();
+        showProgramInfo();
+      }
+      else if ( controlInfo == 1 ) {
+        stationName = rx.getRdsStationName();
+        showRDSStation();
+      }
+      else if ( controlInfo == 2 ) { 
+        rdsTime = rx.getRdsLocalTime();  // Gets the Local Time. Check the getRdsTime documentation for more details. Some stations do not broadcast the right time.
+        showRDSTime();
+      }
+
+      if ( (millis() - delayContronInfo) > 25000 ) {
+        controlInfo++;
+        if (controlInfo > 2) controlInfo = 0;
+        delayContronInfo = millis();
+      }
+
     }
   }
 }
