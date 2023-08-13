@@ -1,7 +1,16 @@
 /*
-  UNDER CONSTRUCTION...
   
   This sketch works on Atmega328 and LGT8FX based board.
+
+  Features:
+      RDS - Program information, Station Name, Program Type and Time
+      Bass, Volume and Mute control
+      Seek Station
+
+  SEEK COMMAND - On FM or AM modes press the encoder push button.
+                 The direction of the seek up or seek down will  depend on the last rotating movement of the encoder, 
+                 clockwise and counterclockwise respectively.
+
 
   Nano/LGT8FX and RDA5807 wireup
 
