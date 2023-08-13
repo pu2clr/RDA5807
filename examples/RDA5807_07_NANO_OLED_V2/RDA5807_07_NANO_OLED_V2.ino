@@ -19,10 +19,10 @@
   |                           | VCC                       |    3.3V       |
   | --------------------------| --------------------------| --------------|
   | Buttons                   |                           |               |
-  |                           | Volume Up                 |      4        |
-  |                           | Volume Down               |      5        |
-  |                           | Mute                      |      6         |
-  |                           | Bass                      |      7        |
+  |                           | Volume Up                 |      8        |
+  |                           | Volume Down               |      9        |
+  |                           | Mute                      |     10        |
+  |                           | Bass                      |     11        |
   |                           | SEEK (encoder button)     |     D14/A0    |
   | --------------------------| --------------------------|---------------|
   | Encoder                   |                           |               |
@@ -42,10 +42,10 @@
 
 // Please, check the ATtiny84 physical pins
 
-#define VOLUME_UP 4
-#define VOLUME_DOWN 5
-#define AUDIO_MUTE  6
-#define AUDIO_BASS  7
+#define VOLUME_UP 8
+#define VOLUME_DOWN 9
+#define AUDIO_MUTE  10
+#define AUDIO_BASS  11
 #define SEEK_STATION 14 // A0 = D14
 
 // Enconder PINs
@@ -61,7 +61,6 @@ const int eeprom_address = 0;
 long storeTime = millis();
 
 bool bBass = false;
-bool bMute = false;
 
 volatile int encoderCount = 0;
 uint8_t seekDirection = 1; // 0 = Down; 1 = Up. This value is set by the last encoder direction.
@@ -359,7 +358,7 @@ void loop()
   else if (bVold = digitalRead(VOLUME_DOWN) == LOW)
     rx.setVolumeDown();
   else if (bMute = digitalRead(AUDIO_MUTE) == LOW)
-    rx.setMute(bMute = !bMute);  
+    rx.setMute(!rx.isMuted());  
   else if (digitalRead(SEEK_STATION) == LOW) {
     rx.seek(RDA_SEEK_WRAP, seekDirection, showStatus); // showFrequency will be called by the seek function during the process.
     delay(200);
