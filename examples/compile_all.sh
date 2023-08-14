@@ -41,7 +41,9 @@ echo "********************"
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_01_SERIAL_MONITOR/RDA5807_00_CIRCUIT_TEST --output-dir ~/Downloads/hex/lgt8fx/RDA5807_00_CIRCUIT_TEST  --warnings all
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_02_TFT_display --output-dir ~/Downloads/hex/lgt8fx/RDA5807_02_TFT_display  
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_04_NOKIA5110_RDS --output-dir ~/Downloads/hex/lgt8fx/RDA5807_04_NOKIA5110_RDS  
-arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_05_LCD16X02 --output-dir ~/Downloads/hex/lgt8fx/RDA5807_05_LCD16X02  --warnings all
+arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_05_A_LCD16X02_NANO --output-dir ~/Downloads/hex/lgt8fx/RDA5807_05_A_LCD16X02_NANO  --warnings all
+arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_05_A_LCD20X04_NANO --output-dir ~/Downloads/hex/lgt8fx/RDA5807_05_A_LCD20X04_NANO  --warnings all
+
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_06_UNO_TM1638 --output-dir ~/Downloads/hex/lgt8fx/RDA5807_06_UNO_TM1638  --warnings all
 
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_ALL_TEST_SERIAL_MONITOR --output-dir ~/Downloads/hex/lgt8fx/RDA5807_01_ALL_TEST_SERIAL_MONITOR  --warnings all
@@ -51,7 +53,6 @@ arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_01_SERIAL_MONITOR/RDA5807_01_RDS_TEST_03_INTERRUPT_SERIAL_MONITOR --output-dir ~/Downloads/hex/lgt8fx/RDA5807_01_RDS_TEST_03_INTERRUPT_SERIAL_MONITOR  --warnings all
 
 arduino-cli compile -b lgt8fx:avr:328 ./RDA5807_07_NANO_OLED_V2 --output-dir ~/Downloads/hex/lgt8fx/RDA5807_07_NANO_OLED_V2  
-
 
 # compiles ESP32 LCD16x2_ALL_IN_ONE
 echo "********************"
