@@ -89,7 +89,7 @@ This library has been successfully tested on RDA5807M and RDA5807FP devices. The
 10. Mono/Stereo control
 11. [RDS/RBDS Processor](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA06.html) 
 12. [I2S Digital Audio (RDA5807FP)](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA04.html) 
-13. [LNA (Low Noise Amplifiers Amplificadores)](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA08.html) 
+13. [LNA (Low Noise Amplifiers)](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA08.html) 
 14. [Softmute](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA07.html) 
 15. [Stereo / Mono](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA07.html)
 16. [Step](https://pu2clr.github.io/RDA5807/extras/apidoc/html/group__GA03.html) 
