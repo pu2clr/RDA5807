@@ -783,8 +783,19 @@ public:
     inline bool isSoftmuted() { return reg04->refined.SOFTMUTE_EN; };
 
     void setMono(bool value);
-    void setBass(bool value);
     bool isStereo();
+    void setBass(bool value);
+
+    /**
+     * @ingroup GA07
+     * @brief Gets Bass Boost
+     *
+     * @return FALSE = Disable; TRUE = Enable
+     */
+    bool inline getBass() {
+        return reg02->refined.BASS;
+    }   
+
 
     /**
      * @ingroup GA07
@@ -815,6 +826,13 @@ public:
      * @return True if muted
      */
     inline bool isMuted() { return !reg02->refined.DMUTE; };
+
+    /**
+     * @ingroup GA07
+     * @brief Gets Audio Mute Status. Same isMuted
+     * @return True if muted
+     */
+    inline bool getMute() { return !reg02->refined.DMUTE; };
 
     /**
      * @ingroup GA07

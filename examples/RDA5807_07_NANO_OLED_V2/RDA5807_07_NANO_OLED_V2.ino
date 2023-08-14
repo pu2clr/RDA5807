@@ -69,8 +69,6 @@ const uint8_t app_id = 43;  // Useful to check the EEPROM content before process
 const int eeprom_address = 0;
 long storeTime = millis();
 
-bool bBass = false;
-
 volatile int encoderCount = 0;
 uint8_t seekDirection = 1; // 0 = Down; 1 = Up. This value is set by the last encoder direction.
 long elapsedTimeEncoder = millis();
@@ -137,9 +135,6 @@ void setup()
     // Default values
     rx.setVolume(6);
     rx.setMono(false);  // Force stereo
-    // rx.setRBDS(true);  //  set RDS and RBDS. See setRDS.
-    rx.setRDS(true);
-    rx.setRdsFifo(true);
     currentFrequency = previousFrequency = 9390;
     // currentFrequency = previousFrequency = 10650;
   }
@@ -279,9 +274,6 @@ void showRDSTime() {
   char aux[30];
   if (rdsTime == NULL || (millis() - delayTime) < 60000) return;
 
-  // Shows also the current program type.
-  // oled.setCursor(0, 32);
-  // oled.print(rx.getRdsProgramType());
   switch (rx.getRdsProgramType()) {
     case 1: p = (char *) "News"; break;
     case 3:
@@ -343,7 +335,7 @@ void checkRDS() {
 void loop()
 {
 
-  bool bVolu,bVold,bAudio, bMute, bBass;
+  bool bVolu,bVold, bMute, bBass;
   bVolu = bVold =  bMute = bBass = false;
 
   // Check if the encoder has moved.
@@ -362,18 +354,18 @@ void loop()
     showStatus();
     encoderCount = 0;
   }
-  else if (bVolu = digitalRead(VOLUME_UP) == LOW) 
+  else if ( (bVolu = digitalRead(VOLUME_UP)) == LOW) 
     rx.setVolumeUp();
-  else if (bVold = digitalRead(VOLUME_DOWN) == LOW)
+  else if ( (bVold = digitalRead(VOLUME_DOWN) ) == LOW)
     rx.setVolumeDown();
-  else if (bMute = digitalRead(AUDIO_MUTE) == LOW)
-    rx.setMute(!rx.isMuted());  
+  else if ( (bMute = digitalRead(AUDIO_MUTE)) == LOW)
+    rx.setMute(!rx.getMute());  
   else if (digitalRead(SEEK_STATION) == LOW) {
     rx.seek(RDA_SEEK_WRAP, seekDirection, showStatus); // showFrequency will be called by the seek function during the process.
     delay(200);
   }
-  else if (bBass = digitalRead(AUDIO_BASS) == LOW)
-    rx.setBass(bBass = !bBass);
+  else if ( (bBass = digitalRead(AUDIO_BASS)) == LOW)
+    rx.setBass(!rx.getBass());
 
   // Delay a litle more if some button was pressed
   if (bVolu || bVold || bMute || bBass ) delay(PUSH_MIN_DELAY);
