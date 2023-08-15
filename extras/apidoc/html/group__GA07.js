@@ -1,5 +1,7 @@
 var group__GA07 =
 [
+    [ "RDA5807::getBass", "group__GA07.html#ga49e08eb54c1e235bd7516c552dee1320", null ],
+    [ "RDA5807::getMute", "group__GA07.html#gaf488f0fdb96addfa014ce05e977b8a52", null ],
     [ "RDA5807::getVolume", "group__GA07.html#ga743d91d820922b3feda10d06443bc8a9", null ],
     [ "RDA5807::isAudioOutputHighImpedance", "group__GA07.html#ga5195195da106c05f29218910b17f6f6b", null ],
     [ "RDA5807::isMuted", "group__GA07.html#gaef3ebf331e0646a67b6ebfa6d47c3a16", null ],

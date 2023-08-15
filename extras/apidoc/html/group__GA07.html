@@ -102,12 +102,18 @@ Functions</h2></td></tr>
 <tr class="memitem:ga428ddd720c58c17273322d7526e51cbe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA07.html#ga428ddd720c58c17273322d7526e51cbe">RDA5807::isSoftmuted</a> ()</td></tr>
 <tr class="memdesc:ga428ddd720c58c17273322d7526e51cbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the softmute status.  <br /></td></tr>
 <tr class="separator:ga428ddd720c58c17273322d7526e51cbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga49e08eb54c1e235bd7516c552dee1320"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA07.html#ga49e08eb54c1e235bd7516c552dee1320">RDA5807::getBass</a> ()</td></tr>
+<tr class="memdesc:ga49e08eb54c1e235bd7516c552dee1320"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets Bass Boost.  <br /></td></tr>
+<tr class="separator:ga49e08eb54c1e235bd7516c552dee1320"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7955280c2b3a9b5e7336fc3862133b39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA07.html#ga7955280c2b3a9b5e7336fc3862133b39">RDA5807::setLedStereoIndicator</a> (bool value=true)</td></tr>
 <tr class="memdesc:ga7955280c2b3a9b5e7336fc3862133b39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the system to use a LED to indicate Stereo or Mono.  <br /></td></tr>
 <tr class="separator:ga7955280c2b3a9b5e7336fc3862133b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaef3ebf331e0646a67b6ebfa6d47c3a16"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA07.html#gaef3ebf331e0646a67b6ebfa6d47c3a16">RDA5807::isMuted</a> ()</td></tr>
 <tr class="memdesc:gaef3ebf331e0646a67b6ebfa6d47c3a16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets Audio Mute Status.  <br /></td></tr>
 <tr class="separator:gaef3ebf331e0646a67b6ebfa6d47c3a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf488f0fdb96addfa014ce05e977b8a52"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA07.html#gaf488f0fdb96addfa014ce05e977b8a52">RDA5807::getMute</a> ()</td></tr>
+<tr class="memdesc:gaf488f0fdb96addfa014ce05e977b8a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets Audio Mute Status. Same isMuted.  <br /></td></tr>
+<tr class="separator:gaf488f0fdb96addfa014ce05e977b8a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5195195da106c05f29218910b17f6f6b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GA07.html#ga5195195da106c05f29218910b17f6f6b">RDA5807::isAudioOutputHighImpedance</a> ()</td></tr>
 <tr class="memdesc:ga5195195da106c05f29218910b17f6f6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets true if the output audio impedance is high.  <br /></td></tr>
 <tr class="separator:ga5195195da106c05f29218910b17f6f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,6 +152,62 @@ Functions</h2></td></tr>
 <h1><a class="anchor" id="GA07"></a>
 Audio</h1>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga49e08eb54c1e235bd7516c552dee1320" name="ga49e08eb54c1e235bd7516c552dee1320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga49e08eb54c1e235bd7516c552dee1320">&#9670;&#160;</a></span>getBass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RDA5807::getBass </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets Bass Boost. </p>
+<dl class="section return"><dt>Returns</dt><dd>FALSE = Disable; TRUE = Enable </dd></dl>
+
+</div>
+</div>
+<a id="gaf488f0fdb96addfa014ce05e977b8a52" name="gaf488f0fdb96addfa014ce05e977b8a52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf488f0fdb96addfa014ce05e977b8a52">&#9670;&#160;</a></span>getMute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RDA5807::getMute </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets Audio Mute Status. Same isMuted. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if muted </dd></dl>
+
+</div>
+</div>
 <a id="ga743d91d820922b3feda10d06443bc8a9" name="ga743d91d820922b3feda10d06443bc8a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga743d91d820922b3feda10d06443bc8a9">&#9670;&#160;</a></span>getVolume()</h2>
 
@@ -361,7 +423,7 @@ Audio</h1>
 <div class="ttc" id="agroup__GA01_html_classRDA5807"><div class="ttname"><a href="group__GA01.html#classRDA5807">RDA5807</a></div><div class="ttdoc">KT0915 Class.</div><div class="ttdef"><b>Definition:</b> RDA5807.h:568</div></div>
 <div class="ttc" id="agroup__GA02_html_ga272444216a784ea5317c83783eb2bfe7"><div class="ttname"><a href="group__GA02.html#ga272444216a784ea5317c83783eb2bfe7">RDA5807::setup</a></div><div class="ttdeci">void setup(uint8_t clock_frequency=CLOCK_32K, uint8_t oscillator_type=OSCILLATOR_TYPE_PASSIVE, uint8_t rlck_no_calibrate=RLCK_NO_CALIBRATE_MODE_OFF)</div><div class="ttdoc">Starts the device.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:273</div></div>
 <div class="ttc" id="agroup__GA03_html_gad16a6afa9520b77498b17a72c226305a"><div class="ttname"><a href="group__GA03.html#gad16a6afa9520b77498b17a72c226305a">RDA5807::setFrequency</a></div><div class="ttdeci">void setFrequency(uint16_t frequency)</div><div class="ttdoc">Sets the frequency.</div><div class="ttdef"><b>Definition:</b> RDA5807.cpp:372</div></div>
-<div class="ttc" id="agroup__GA07_html_ga7955280c2b3a9b5e7336fc3862133b39"><div class="ttname"><a href="group__GA07.html#ga7955280c2b3a9b5e7336fc3862133b39">RDA5807::setLedStereoIndicator</a></div><div class="ttdeci">void setLedStereoIndicator(bool value=true)</div><div class="ttdoc">Sets the system to use a LED to indicate Stereo or Mono.</div><div class="ttdef"><b>Definition:</b> RDA5807.h:809</div></div>
+<div class="ttc" id="agroup__GA07_html_ga7955280c2b3a9b5e7336fc3862133b39"><div class="ttname"><a href="group__GA07.html#ga7955280c2b3a9b5e7336fc3862133b39">RDA5807::setLedStereoIndicator</a></div><div class="ttdeci">void setLedStereoIndicator(bool value=true)</div><div class="ttdoc">Sets the system to use a LED to indicate Stereo or Mono.</div><div class="ttdef"><b>Definition:</b> RDA5807.h:820</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>true or false. </td></tr>

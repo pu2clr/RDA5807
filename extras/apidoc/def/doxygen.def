@@ -1397,6 +1397,26 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
+      sec-mem-id   = 'group__GA07_1ga250ff3788a7831dae3c6200919b446dd';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'isStereo';
+      sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
+      sec-mem-desc-line = '786';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Gets the current Stereo status.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+\iline 1547 
+
+@return TRUE if stereo;
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
       sec-mem-id   = 'group__GA07_1ga8002bb394ef19db02e04a39de04dffc5';
       sec-mem-virt = normal;
       sec-mem-prot = public;
@@ -1411,7 +1431,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'value';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '786';
+      sec-mem-desc-line = '787';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Sets Bass Boost.
 _EnD_oF_dEf_TeXt_;
@@ -1423,22 +1443,22 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'group__GA07_1ga250ff3788a7831dae3c6200919b446dd';
+      sec-mem-id   = 'group__GA07_1ga49e08eb54c1e235bd7516c552dee1320';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
 bool
 _EnD_oF_dEf_TeXt_;
-      sec-mem-name = 'isStereo';
+      sec-mem-name = 'getBass';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '787';
+      sec-mem-desc-line = '795';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-Gets the current Stereo status.
+Gets Bass Boost.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1547 
+\iline 791 
 
-@return TRUE if stereo;
+@return FALSE = Disable; TRUE = Enable
 _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
@@ -1460,7 +1480,7 @@ true
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '809';
+      sec-mem-desc-line = '820';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Sets the system to use a LED to indicate Stereo or Mono.
 _EnD_oF_dEf_TeXt_;
@@ -1499,7 +1519,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'value';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '811';
+      sec-mem-desc-line = '822';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Sets Audio mute or unmute.
 _EnD_oF_dEf_TeXt_;
@@ -1517,9 +1537,27 @@ bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'isMuted';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '817';
+      sec-mem-desc-line = '828';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets Audio Mute Status.
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+@return True if muted
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'group__GA07_1gaf488f0fdb96addfa014ce05e977b8a52';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+bool
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'getMute';
+      sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
+      sec-mem-desc-line = '835';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+Gets Audio Mute Status. Same isMuted.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
 @return True if muted
@@ -1535,7 +1573,7 @@ bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'isAudioOutputHighImpedance';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '824';
+      sec-mem-desc-line = '842';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets true if the output audio impedance is high.
 _EnD_oF_dEf_TeXt_;
@@ -1559,7 +1597,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'value';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '826';
+      sec-mem-desc-line = '844';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Sets audio output impedance high ow low.
 _EnD_oF_dEf_TeXt_;
@@ -1584,7 +1622,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'value';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '827';
+      sec-mem-desc-line = '845';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Sets Soft Blend.
 _EnD_oF_dEf_TeXt_;
@@ -1610,7 +1648,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'value';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '829';
+      sec-mem-desc-line = '847';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Sets the audio volume level.
 _EnD_oF_dEf_TeXt_;
@@ -1647,7 +1685,7 @@ uint8_t
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'getVolume';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '830';
+      sec-mem-desc-line = '848';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the current audio volume level.
 _EnD_oF_dEf_TeXt_;
@@ -1667,7 +1705,7 @@ void
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'setVolumeUp';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '831';
+      sec-mem-desc-line = '849';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Increments the audio volume.
 _EnD_oF_dEf_TeXt_;
@@ -1685,7 +1723,7 @@ void
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'setVolumeDown';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '832';
+      sec-mem-desc-line = '850';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Decrements the audio volume.
 _EnD_oF_dEf_TeXt_;
@@ -1709,7 +1747,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'de';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '834';
+      sec-mem-desc-line = '852';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Sets De-emphasis.
 _EnD_oF_dEf_TeXt_;
@@ -1746,7 +1784,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'value';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '837';
+      sec-mem-desc-line = '855';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Sets the RDS operation.
 _EnD_oF_dEf_TeXt_;
@@ -1783,7 +1821,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'value';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '838';
+      sec-mem-desc-line = '856';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Sets the RBDS operation.
 _EnD_oF_dEf_TeXt_;
@@ -1809,7 +1847,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'value';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '839';
+      sec-mem-desc-line = '857';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Sets RDS fifo mode enable.
 _EnD_oF_dEf_TeXt_;
@@ -1839,7 +1877,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '840';
+      sec-mem-desc-line = '858';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Clear RDS fifo.
 _EnD_oF_dEf_TeXt_;
@@ -1860,7 +1898,7 @@ void
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'clearRdsBuffer';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '841';
+      sec-mem-desc-line = '859';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Clear RDS Information (Station Name, Station Information, Program Information and Time)
 _EnD_oF_dEf_TeXt_;
@@ -1898,7 +1936,7 @@ bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'getRdsReady';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '843';
+      sec-mem-desc-line = '861';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Returns true if RDS Ready.
 _EnD_oF_dEf_TeXt_;
@@ -1965,7 +2003,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'utcTime';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '844';
+      sec-mem-desc-line = '862';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets Station Name, Station Information, Program Information and utcTime.
 _EnD_oF_dEf_TeXt_;
@@ -2019,7 +2057,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referenceto = {
         sec-mem-ref-id = 'RDA5807_8h_1gac6b8c39c1134700ce3e2a9e5216a5325';
-        sec-mem-ref-line = '970';
+        sec-mem-ref-line = '988';
         sec-mem-ref-name = 'hasRdsInfoAB';
     };
     }; /* sec-member */
@@ -2038,7 +2076,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '845';
+      sec-mem-desc-line = '863';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Returns the current Text Flag A/B.
 _EnD_oF_dEf_TeXt_;
@@ -2063,7 +2101,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '846';
+      sec-mem-desc-line = '864';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Returns true if the Text Flag A/B  has changed.
 _EnD_oF_dEf_TeXt_;
@@ -2095,7 +2133,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '847';
+      sec-mem-desc-line = '865';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the version code (extracted from the Block B)
 _EnD_oF_dEf_TeXt_;
@@ -2115,7 +2153,7 @@ uint16_t
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'getRdsGroupType';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '848';
+      sec-mem-desc-line = '866';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Return the group type.
 _EnD_oF_dEf_TeXt_;
@@ -2140,7 +2178,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '849';
+      sec-mem-desc-line = '867';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Returns the Program Type (extracted from the Block B)
 _EnD_oF_dEf_TeXt_;
@@ -2167,7 +2205,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '850';
+      sec-mem-desc-line = '868';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Returns the Traffic Alerts given by the station.
 _EnD_oF_dEf_TeXt_;
@@ -2195,7 +2233,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'c';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '851';
+      sec-mem-desc-line = '869';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Process data received from group 2B.
 _EnD_oF_dEf_TeXt_;
@@ -2229,7 +2267,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'c';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '852';
+      sec-mem-desc-line = '870';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Process data received from group 2A.
 _EnD_oF_dEf_TeXt_;
@@ -2259,7 +2297,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '854';
+      sec-mem-desc-line = '872';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the station name and other messages.
 _EnD_oF_dEf_TeXt_;
@@ -2286,7 +2324,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8h_1gac2defc3812e1900ccd1ac719268abe2e';
-        sec-mem-ref-line = '863';
+        sec-mem-ref-line = '881';
         sec-mem-ref-name = 'getRdsStationName';
     };
     }; /* sec-member */
@@ -2305,7 +2343,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '863';
+      sec-mem-desc-line = '881';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the Station Name.
 _EnD_oF_dEf_TeXt_;
@@ -2336,7 +2374,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '865';
+      sec-mem-desc-line = '883';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the Program Information.
 _EnD_oF_dEf_TeXt_;
@@ -2365,7 +2403,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8h_1ga73610b1372a8bdaa959862881eae05fb';
-        sec-mem-ref-line = '874';
+        sec-mem-ref-line = '892';
         sec-mem-ref-name = 'getRdsProgramInformation';
     };
     }; /* sec-member */
@@ -2384,7 +2422,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '874';
+      sec-mem-desc-line = '892';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the Program Information (RT - Radio Text)
 _EnD_oF_dEf_TeXt_;
@@ -2416,7 +2454,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '876';
+      sec-mem-desc-line = '894';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the Station Information.  <br>
 _EnD_oF_dEf_TeXt_;
@@ -2442,7 +2480,7 @@ _EnD_oF_dEf_TeXt_;
     };
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8h_1ga2e78c58aca2f5121306d2e5ceb98effd';
-        sec-mem-ref-line = '884';
+        sec-mem-ref-line = '902';
         sec-mem-ref-name = 'getRdsStationInformation';
     };
     }; /* sec-member */
@@ -2461,7 +2499,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '884';
+      sec-mem-desc-line = '902';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the Station Information.
 _EnD_oF_dEf_TeXt_;
@@ -2486,7 +2524,7 @@ char *
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'getRdsTime';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '886';
+      sec-mem-desc-line = '904';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the RDS UTC time and date when the Group type is 4.
 _EnD_oF_dEf_TeXt_;
@@ -2517,7 +2555,7 @@ char *
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'getRdsLocalTime';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '887';
+      sec-mem-desc-line = '905';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the RDS time converted to local time.
 _EnD_oF_dEf_TeXt_;
@@ -2543,7 +2581,7 @@ uint8_t
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'getBlockId';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '898';
+      sec-mem-desc-line = '916';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the current Block ID.
 _EnD_oF_dEf_TeXt_;
@@ -2565,7 +2603,7 @@ uint8_t
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'getErrorBlockA';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '921';
+      sec-mem-desc-line = '939';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the current Status of block A.
 _EnD_oF_dEf_TeXt_;
@@ -2596,7 +2634,7 @@ uint8_t
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'getErrorBlockB';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '945';
+      sec-mem-desc-line = '963';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the current Status of block B.
 _EnD_oF_dEf_TeXt_;
@@ -2628,7 +2666,7 @@ bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'hasRdsInfo';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '958';
+      sec-mem-desc-line = '976';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Returns true when the RDS system has valid information.
 _EnD_oF_dEf_TeXt_;
@@ -2649,7 +2687,7 @@ bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'hasRdsInfoAB';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '970';
+      sec-mem-desc-line = '988';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Returns true when the RDS system has valid information.
 _EnD_oF_dEf_TeXt_;
@@ -2674,7 +2712,7 @@ bool
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'getRdsSync';
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '983';
+      sec-mem-desc-line = '1001';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Gets the Rds Sync.
 _EnD_oF_dEf_TeXt_;
@@ -2701,7 +2739,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'value';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '989';
+      sec-mem-desc-line = '1007';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Enables I2S setup.
 _EnD_oF_dEf_TeXt_;
@@ -2787,7 +2825,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'OPEN_MODE';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '990';
+      sec-mem-desc-line = '1008';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Configures all parameters for I2S.
 _EnD_oF_dEf_TeXt_;
@@ -2828,7 +2866,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'value';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '991';
+      sec-mem-desc-line = '1009';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -2852,7 +2890,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'value';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '992';
+      sec-mem-desc-line = '1010';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Sets the speed in kbps. You can use the predefined constantes: I2S_WS_STEP_48, I2S_WS_STEP_44_1, I2S_WS_STEP_32,.
 _EnD_oF_dEf_TeXt_;
@@ -2880,7 +2918,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'value';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '993';
+      sec-mem-desc-line = '1011';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 If 0, I2S output unsigned 16-bit audio data. If 1, I2S output signed 16-bit audio data.
 _EnD_oF_dEf_TeXt_;
@@ -2939,7 +2977,7 @@ true
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '996';
+      sec-mem-desc-line = '1014';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Converts a number to a char array.
 _EnD_oF_dEf_TeXt_;
@@ -2983,12 +3021,12 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'decimalSeparator';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '1007';
+      sec-mem-desc-line = '1025';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Convert a numeric frequency to a formated string (char *) frequency.
 _EnD_oF_dEf_TeXt_;
       sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
-\iline 1000 
+\iline 1018 
 
 @param uint16_t value  - A given frequency to be formated
 @param char *strValue - Formated frequency (Exe: 103,90) - Array of char ( minimal 7 elements )
@@ -3015,7 +3053,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '1021';
+      sec-mem-desc-line = '1039';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Convert the current frequency to a formated string (char *) frequency.
 _EnD_oF_dEf_TeXt_;
@@ -3047,7 +3085,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'addressArray';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = '/Users/rcaratti/Desenvolvimento/eu/Arduino/DSP/rda5XXX/rda5807/RDA5807/src/RDA5807.h';
-      sec-mem-desc-line = '1027';
+      sec-mem-desc-line = '1045';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 Check the I2C bus address.
 _EnD_oF_dEf_TeXt_;
@@ -3634,7 +3672,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       sec-mem-referencedby = {
         sec-mem-ref-id = 'RDA5807_8h_1ga43c6c86481dd1fdba0fc14438bc8e18e';
-        sec-mem-ref-line = '1021';
+        sec-mem-ref-line = '1039';
         sec-mem-ref-name = 'formatCurrentFrequency';
     };
     }; /* sec-member */
