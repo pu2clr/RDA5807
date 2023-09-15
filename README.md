@@ -1,6 +1,6 @@
 # [RDA5807 Arduino Library](https://pu2clr.github.io/RDA5807/)
 
-It is a cross-platform Arduino Library for RDA5807 and RDA7088 family device from RDA. You can use it with official Arduino boards, ATtiny, STM32 , ESP32 and more. It works with I2C protocol and can provide you an easier interface to control the RDA5807 device. This library was built based on "RDA microelectronics RDA5807MS - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015" and RDA microelectronics RDA5807FP - SINGLE-CHIP BROADCAST FM RADIO TUNER. Please, be guided by the table of contents below to make the best use of this documentation.
+It is a cross-platform Arduino library for the RDA5807 and RDA7088 family of devices from RDA Microelectronics. This library is compatible with official Arduino boards, ATtiny, STM32, ESP32, and more. Utilizing the I2C protocol, it provides an easier interface for controlling the RDA5807 device. The library was developed based on the 'RDA5807MS - SINGLE-CHIP BROADCAST FM RADIO TUNER - Rev.1.1–Aug.2015' and the 'RDA5807FP - SINGLE-CHIP BROADCAST FM RADIO TUNER' documentation from RDA Microelectronics. Please refer to the table of contents below to make the best use of this documentation.
 
 This library can be freely distributed using the MIT Free Software model. It means you can copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software. See [MIT License](https://pu2clr.github.io/RDA5807#mit-license) for more details.
 
@@ -41,9 +41,9 @@ If you find this project useful, consider making a donation so that the author o
 
 ## Preface 
 
-The RDA5807 is a FM DSP integrated circuit receiver (50 to 115MHz) with low noise amplifier support. This device requires very few external components if compared with other similar devices. It also supports RDS/RBDS functionalities, direct auto gain control (AGC) and real time adaptive noise cancellation function. The PU2CLR RDA5807 Arduino Library was developed to take the most functionalities of this device. Knowing the functioning aspects of this receiver and sharing this knowledge were the main motivation for the development of this library. Currently, this library has more than 80 functions implemented. I hope this work will be useful for electronics experimenters and hobbyists. 
+The RDA5807 is an FM DSP integrated circuit receiver that operates in the 50 to 115MHz range and includes support for a low-noise amplifier. This device requires fewer external components compared to other similar products and offers features such as RDS/RBDS functionalities, direct auto gain control (AGC), and real-time adaptive noise cancellation. The PU2CLR RDA5807 Arduino Library was developed to maximize the functionalities of this device. The primary motivations for developing this library were to understand the operational aspects of this receiver and to share this knowledge. Currently, the library has over 80 functions implemented. I hope this work will prove useful to electronics experimenters and hobbyists.
 
-This documentation exposes the understanding of the author of this library about the functioning of the IC RDA5807 family. That said, it is possible that some information is not correct. If you find any wrong or inaccurate information, please let me know.
+This documentation reflects the author's understanding of the IC RDA5807 family's operation. With that said, there may be inaccuracies or incorrect information. If you find any errors, please bring them to my attention.
 
 Please, check the [API Documentation](https://pu2clr.github.io/RDA5807/extras/apidoc/html/) for more details. 
 
@@ -448,13 +448,24 @@ The photos below show the RDA5807FP setup on a Arduino Uno board adapter.
 
 Copyright (c) 2019 Ricardo Lima Caratti
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE ARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 
 
@@ -673,22 +684,25 @@ ATTENTION: Be guided by the ESP32 IO/GPIO pins.
 
 
 
-## Storing data into the EEPROM
+## Storing Data into the EEPROM
 
-The EEPROM has a lifetime around 100,000 write/erase cycles. The "Atmel" DATASHEET, page 19, you will find "The Atmel® ATmega328P contains 1Kbyte of data EEPROM memory. It is organized as a separate data space, in which single bytes can be read and written. The EEPROM has an endurance of at least 100,000 write/erase cycles". Therefore, writing data to eeprom with each system status change could give an application a very short life. To mitigate this problem, some approaches can be used to save recordings on the EEPROM.
+The EEPROM has a lifespan of around 100,000 write/erase cycles. According to the "Atmel" datasheet, page 19, "The Atmel® ATmega328P contains 1Kbyte of data EEPROM memory. It is organized as a separate data space, in which single bytes can be read and written. The EEPROM has an endurance of at least 100,000 write/erase cycles." Consequently, writing data to the EEPROM every time the system status changes could severely limit the application's lifespan. To address this issue, several strategies can be used to optimize EEPROM writes.
 
-The following approach stores data every time when some important status changes. The idea is to store data only if it is necessary.
+### Approach
 
-Steps:
+This approach involves storing data only when crucial system statuses change. The aim is to minimize unnecessary writes to the EEPROM.
 
-* Select the data you want to keep into the EEPROM;
-* Add the code to monitor the data in your sketch;
-* Add code to save the data. In this case, you need to define the criteria that will be used to perform a recording on the EEPROM. In general, a good criteria is:  any change of useful data AND elapsed time. It will depend on your application;
-* Consider using the method EEPROM.update instead EEPROM.write. It will not write information if it is the same stored before. The ESP32 and other MCU, the EEPROM.write implementation works like  EEPROM.update;
-* Add the code to restore data from EEPROM;
-* Add the code to check if exist useful data stored into EEPROM. It can be a single byte indicating that exist valid information for the system. Use an identification number (ID) that will be understood as valid data by the system.
-* Add code to erase the information in EEPROM. All you have to do is erasing the identification number. Actually just change the ID value. In other words, you do not need erease all data stored into EEPROM to reset the data to the system.
-* Add code to RESET the system. At system startup check if a given button is pressed and then erase the ID;
+### Steps:
+
+1. **Select the Data**: Choose the data you wish to store in the EEPROM.
+2. **Monitor the Data**: Add code to your sketch to monitor the selected data.
+3. **Criteria for Saving Data**: Define the criteria that will trigger a write to the EEPROM. Generally, a good criterion involves any useful data change AND a time interval. This will depend on your specific application.
+4. **Optimize Writes**: Consider using the `EEPROM.update` method instead of `EEPROM.write`. The `.update` method will not write information if it matches what is already stored. On ESP32 and other MCUs, the `EEPROM.write` implementation functions similarly to `EEPROM.update`.
+5. **Restore Data**: Add code to retrieve the data from EEPROM.
+6. **Data Validation**: Include code to check whether valid data exists in the EEPROM. This could be a single byte or an identification number (ID) that the system recognizes as valid data.
+7. **Data Erasure**: Add code to erase specific information in the EEPROM. This usually means changing the stored ID. Essentially, you do not need to erase all the data to reset the system—just alter the ID value.
+8. **System Reset**: Add code to reset the system. Upon system startup, check if a designated button is pressed and then erase the ID.
+
 
 
 #### The code below can guide you to deal with the RDA5807 data and Arduino Board EEPROM
@@ -800,15 +814,14 @@ The following table shows some examples that implement functions that save and r
 
 ## Extending the RDA5807 Arduino Library by exteding RDA5807 class
 
-The best way to customize the PU2CLR RDA5807 Arduino Library for your needs is extending the current version of the library by using C++ OOP approach.  
+The most effective way to customize the PU2CLR RDA5807 Arduino Library for your specific requirements is by extending the existing library using the C++ Object-Oriented Programming (OOP) approach.
 
-### When should you extend the RDA5807 class?  
+### When Should You Extend the RDA5807 Class?
 
-You have at least two great reasons to extend the RDA5807 class: 
+There are at least two compelling reasons to extend the RDA5807 class:
 
-1. you need a function that has not yet been implemented in RDA5807;
-2. you want to change the behavior of an already implemented function.
-
+1. You need functionality that is not yet implemented in the RDA5807 library.
+2. You want to modify the behavior of an existing function.
 
 The code below shows these tow situations.
 
@@ -896,7 +909,7 @@ void loop() {
 }
 ```
 
-If you use that approach, all you have to do is download the current version of PU2CLR RDA5807 Arduino Library. Instead of using the PU2CLR RDA5807 Arduino Library class directly, you can use your own class that extends the original class. This way, you always have the current version of the library customized for your needs. So, no extra work will be needed when you update the PU2CLR RDA5807 Arduino Library. In other words, your custom code will always be synchronized with the PU2CLR RDA5807 Arduino Library code.
+By adopting this approach, all you need to do is download the latest version of the PU2CLR RDA5807 Arduino Library. Instead of using the original RDA5807 class directly, you can use your own class that extends it. This ensures that you always have a version of the library tailored to your needs, without requiring additional work when updating the PU2CLR RDA5807 Arduino Library. In other words, your custom code will always be synchronized with the latest version of the PU2CLR RDA5807 Arduino Library.
 
 
 Please, see the Sketches [RDA5807_90_EXTENDING_CLASS](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_90_EXTENDING_CLASS) and [RDA5807_91_EXTENDING_CLASS](https://github.com/pu2clr/RDA5807/tree/master/examples/RDA5807_01_SERIAL_MONITOR/RDA5807_91_EXTENDING_CLASS) for more details.
