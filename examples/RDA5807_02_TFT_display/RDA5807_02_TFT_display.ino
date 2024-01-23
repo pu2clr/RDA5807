@@ -39,8 +39,8 @@
 
 #include <RDA5807.h>
 
-#include <Adafruit_GFX.h>    // Core graphics library
-#include <Adafruit_ST7735.h> // Hardware-specific library for ST7735
+#include <Adafruit_GFX.h>     // Core graphics library
+#include <Adafruit_ST7735.h>  // Hardware-specific library for ST7735
 #include "Serif_plain_7.h"
 #include "Serif_plain_14.h"
 #include "DSEG7_Classic_Mini_Regular_30.h"
@@ -51,10 +51,10 @@
 // TFT MICROYUM or ILI9225 based device pin setup
 #define TFT_RST 8
 #define TFT_DC 9
-#define TFT_CS 10  // SS
-#define TFT_SDI 11 // MOSI
-#define TFT_CLK 13 // SCK
-#define TFT_LED 0  // 0 if wired to +3.3V directly
+#define TFT_CS 10   // SS
+#define TFT_SDI 11  // MOSI
+#define TFT_CLK 13  // SCK
+#define TFT_LED 0   // 0 if wired to +3.3V directly
 #define TFT_BRIGHTNESS 200
 
 #define COLOR_BLACK 0x0000
@@ -64,7 +64,7 @@
 #define COLOR_BLUE 0x001F
 
 #define RESET_PIN 14
-#define SDA_PIN A4 // SDA pin used by your Arduino Board
+#define SDA_PIN A4  // SDA pin used by your Arduino Board
 
 // Enconder PINs
 #define ENCODER_PIN_A 2
@@ -77,8 +77,8 @@
 #define SWITCH_RDS 7      // SDR ON or OFF
 #define SEEK_FUNCTION 14  // Pin A0 / D14
 
-#define POLLING_TIME  2000
-#define POLLING_RDS     80
+#define POLLING_TIME 2000
+#define POLLING_RDS 80
 
 char oldFreq[10];
 char oldStereo[10];
@@ -89,7 +89,7 @@ char oldRdsMsg[65];
 bool bSt = true;
 bool bRds = true;
 bool bShow = false;
-uint8_t seekDirection = 1; // 0 = Down; 1 = Up. This value is set by the last encoder direction.
+uint8_t seekDirection = 1;  // 0 = Down; 1 = Up. This value is set by the last encoder direction.
 
 long pollin_elapsed = millis();
 
@@ -111,8 +111,7 @@ RDA5807 rx;
     Reads encoder via interrupt
     Use Rotary.h and  Rotary.cpp implementation to process encoder via interrupt
 */
-void rotaryEncoder()
-{ // rotary encoder events
+void rotaryEncoder() {  // rotary encoder events
   uint8_t encoderStatus = encoder.process();
   if (encoderStatus)
     encoderCount = (encoderStatus == DIR_CW) ? 1 : -1;
@@ -121,8 +120,7 @@ void rotaryEncoder()
 /*
    Shows the static content on  display
 */
-void showTemplate()
-{
+void showTemplate() {
 
   int maxX1 = tft.width() - 2;
   int maxY1 = tft.height() - 5;
@@ -138,8 +136,7 @@ void showTemplate()
   Prevents blinking during the frequency display.
   Erases the old digits if it has changed and print the new digit values.
 */
-void printValue(int col, int line, char *oldValue, char *newValue, uint8_t space, uint16_t color)
-{
+void printValue(int col, int line, char *oldValue, char *newValue, uint8_t space, uint16_t color) {
   int c = col;
   char *pOld;
   char *pNew;
@@ -148,10 +145,8 @@ void printValue(int col, int line, char *oldValue, char *newValue, uint8_t space
   pNew = newValue;
 
   // prints just changed digits
-  while (*pOld && *pNew)
-  {
-    if (*pOld != *pNew)
-    {
+  while (*pOld && *pNew) {
+    if (*pOld != *pNew) {
       // Erases olde value
       tft.setTextColor(COLOR_BLACK);
       tft.setCursor(c, line);
@@ -168,8 +163,7 @@ void printValue(int col, int line, char *oldValue, char *newValue, uint8_t space
 
   // Is there anything else to erase?
   tft.setTextColor(COLOR_BLACK);
-  while (*pOld)
-  {
+  while (*pOld) {
     tft.setCursor(c, line);
     tft.print(*pOld);
     pOld++;
@@ -178,8 +172,7 @@ void printValue(int col, int line, char *oldValue, char *newValue, uint8_t space
 
   // Is there anything else to print?
   tft.setTextColor(color);
-  while (*pNew)
-  {
+  while (*pNew) {
     tft.setCursor(c, line);
     tft.print(*pNew);
     pNew++;
@@ -193,8 +186,7 @@ void printValue(int col, int line, char *oldValue, char *newValue, uint8_t space
 /*
    Shows frequency information on Display
 */
-void showFrequency()
-{
+void showFrequency() {
   char freq[10];
   char tmp[10];
 
@@ -220,9 +212,8 @@ void showFrequency()
 /*
     Show some basic information on display
 */
-void showStatus()
-{
-  oldFreq[0] = oldStereo[0] = oldRdsStatus[0] = oldRdsMsg[0] =  0;
+void showStatus() {
+  oldFreq[0] = oldStereo[0] = oldRdsStatus[0] = oldRdsMsg[0] = 0;
 
   showFrequency();
   showStereoMono();
@@ -232,8 +223,7 @@ void showStatus()
 /* *******************************
    Shows RSSI status
 */
-void showRSSI()
-{
+void showRSSI() {
   char rssi[10];
   sprintf(rssi, "%i dBuV", rx.getRssi());
   tft.setFont(&Serif_plain_14);
@@ -249,83 +239,86 @@ void showStereoMono() {
   printValue(125, 55, oldStereo, stereo, 15, COLOR_WHITE);
 }
 
+
+
 /*********************************************************
    RDS
  *********************************************************/
-char *rdsMsg;
+char *programInfo;
 char *stationName;
 char *rdsTime;
 char bufferStatioName[16];
 char bufferRdsMsg[40];
 char bufferRdsTime[20];
-long stationNameElapsed = millis();
-long polling_rds = millis();
-long clear_fifo = millis();
 
-void showRDSMsg()
-{
+long delayStationName = millis();
+long delayProgramInfo = millis();
+long delayTime = millis();
+uint8_t idxProgramInfo = 0;
+
+
+void showProgramInfo() {
+
+  char txtAux[23];
+  if (programInfo == NULL || (strlen(programInfo) < 2) || (millis() - delayProgramInfo) < 1000) return;
+  programInfo[61] = '\0'; 
+  strncpy(txtAux, &programInfo[idxProgramInfo], 22);
+  txtAux[22] = bufferRdsMsg[22] = '\0';
+  idxProgramInfo += 3;
+  if (idxProgramInfo > 60) idxProgramInfo = 0;
   tft.setFont(&Serif_plain_7);
-  rdsMsg[22] = bufferRdsMsg[22] = '\0';   // Truncate the message to fit on display.  You can try scrolling
-  if (strcmp(bufferRdsMsg, rdsMsg) == 0)
-    return;
-  printValue(5, 90, bufferRdsMsg, rdsMsg, 7, COLOR_YELLOW);
-  delay(250);
+  printValue(5, 90, bufferRdsMsg, txtAux, 7, COLOR_YELLOW);
+
+  delayProgramInfo = millis();
 }
 
 /**
    TODO: process RDS Dynamic PS or Scrolling PS
 */
-void showRDSStation()
-{
+void showRDSStation() {
+
+  if (stationName == NULL || strlen(stationName) < 2 || (millis() - delayStationName) < 6000) return;
+
   tft.setFont(&Serif_plain_7);
   if (strncmp(bufferStatioName, stationName, 3) == 0)
     return;
   printValue(5, 110, bufferStatioName, stationName, 7, COLOR_YELLOW);
+  delayStationName = millis();
 }
 
-void showRDSTime()
-{
+void showRDSTime() {
+  if (rdsTime == NULL || (millis() - delayTime) < 60000) return;
   tft.setFont(&Serif_plain_7);
   if (strcmp(bufferRdsTime, rdsTime) == 0)
     return;
   printValue(80, 110, bufferRdsTime, rdsTime, 6, COLOR_RED);
-  delay(100);
+  delayTime = millis();
 }
 
 
 void clearRds() {
   tft.fillRect(4, 79, 150, 40, COLOR_BLACK);
   bShow = false;
+  programInfo = NULL;
+  stationName = NULL;
+  rdsTime = NULL;
+  rx.clearRdsBuffer();
 }
 
-void checkRDS()
-{
-  // check if RDS currently synchronized; the information are A, B, C and D blocks; and no errors
-  if ( rx.hasRdsInfo() ) {
-    rdsMsg = rx.getRdsProgramInformation();
-    stationName = rx.getRdsStationName();
-    rdsTime = rx.getRdsTime();
-    if (rdsMsg != NULL)
-      showRDSMsg();
+void checkRDS() {
 
-    if ((millis() - stationNameElapsed) > 1000)
-    {
-      if (stationName != NULL)
-        showRDSStation();
-      stationNameElapsed = millis();
-    }
-
-    if (rdsTime != NULL)
+  if (rx.getRdsReady()) {
+    if (rx.hasRdsInfo()) {
+      programInfo = rx.getRdsProgramInformation();
+      stationName = rx.getRdsStationName();
+      rdsTime = rx.getRdsLocalTime();  // Gets the Local Time. Check the getRdsTime documentation for more details. Some stations do not broadcast the right time.
+      showProgramInfo();
+      showRDSStation();
       showRDSTime();
-  }
-
-  if ( (millis() - clear_fifo) > 60000 ) {
-    rx.clearRdsFifo();
-    rx.clearRdsBuffer();
-    clear_fifo = millis();
-    
+    }
   }
 }
+
 
 void showRds() {
   char rdsStatus[10];
@@ -341,8 +334,7 @@ void showRds() {
 
  *********************************************************/
 
-void showSplash()
-{
+void showSplash() {
   // Splash
   tft.setFont(&Serif_plain_14);
   tft.setTextSize(1);
@@ -360,8 +352,7 @@ void showSplash()
   delay(4000);
 }
 
-void setup()
-{
+void setup() {
   Serial.begin(9600);
   pinMode(ENCODER_PIN_A, INPUT_PULLUP);
   pinMode(ENCODER_PIN_B, INPUT_PULLUP);
@@ -387,20 +378,20 @@ void setup()
 
   rx.setup();
   rx.setVolume(6);
-  rx.setMono(false); // Force stereo
+  rx.setMono(false);  // Force stereo
   // rx.setRBDS(true);  //  set RDS and RBDS. See setRDS.
   rx.setRDS(true);
   rx.setRdsFifo(true);
 
-  rx.setFrequency(10650); // It is the frequency you want to select in MHz multiplied by 100.
-  rx.setSeekThreshold(50); // Sets RSSI Seek Threshold (0 to 127)
+  rx.setFrequency(8990);   // It is the frequency you want to select in MHz multiplied by 100.
+  rx.setSeekThreshold(50);  // Sets RSSI Seek Threshold (0 to 127)
   showStatus();
 }
 
 
 void doStereo() {
   rx.setMono((bSt = !bSt));
-  bShow =  true;
+  bShow = true;
   showStereoMono();
   delay(100);
 }
@@ -417,21 +408,18 @@ void doRds() {
 void doSeek() {
   rx.seek(RDA_SEEK_WRAP, seekDirection, showFrequency);  // showFrequency will be called by the seek function during the process.
   delay(200);
-  bShow =  true;
+  bShow = true;
   showFrequency();
 }
 
-void loop()
-{
+void loop() {
 
   // Check if the encoder has moved.
-  if (encoderCount != 0)
-  {
+  if (encoderCount != 0) {
     if (encoderCount == 1) {
       rx.setFrequencyUp();
       seekDirection = RDA_SEEK_UP;
-    }
-    else {
+    } else {
       rx.setFrequencyDown();
       seekDirection = RDA_SEEK_DOWN;
     }
@@ -451,18 +439,16 @@ void loop()
   else if (digitalRead(SEEK_FUNCTION) == LOW)
     doSeek();
 
-  if ( (millis() - pollin_elapsed) > POLLING_TIME ) {
+  if ((millis() - pollin_elapsed) > POLLING_TIME) {
     showRSSI();
     showStereoMono();
-    if ( bShow ) clearRds();
+    if (bShow) clearRds();
     pollin_elapsed = millis();
   }
 
-  if ( (millis() - polling_rds) > POLLING_RDS) {
-    if ( bRds ) {
-      showRds();
-    }
-    polling_rds = millis();
+
+  if (bRds) {
+    showRds();
   }
 
   delay(5);
