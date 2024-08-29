@@ -23,9 +23,9 @@
  * @details For example: You can use these pins to control RDS and SEEK via interrupt.
  * @details GPIOs are General Purpose I/O pin.
  * @details GPIO setup
- * @details When GPIO1 (#1), gpioSetup can be: 00 = High impedance; 01 = Reserved; 10 = Low; 11 = High
- * @details When GPIO2 (#2), gpioSetup can be: 00 = High impedance; 01 = Interrupt (INT) 10 = Low; 11 = High
- * @details When GPIO3 (#3), gpioSetup can be: 00 = High impedance; 01 = Mono/Stereo indicator (ST) = Low; 11 = High
+ * @details When gpio1 (#1), gpioSetup can be: 00 = High impedance; 01 = Reserved; 10 = Low; 11 = High
+ * @details When gpio2 (#2), gpioSetup can be: 00 = High impedance; 01 = Interrupt (INT) 10 = Low; 11 = High
+ * @details When gpio3 (#3), gpioSetup can be: 00 = High impedance; 01 = Mono/Stereo indicator (ST) = Low; 11 = High
  *
  * @param gpioPin   gpio number (1, 2 or 3)
  * @param gpioSetup See description above
@@ -37,15 +37,15 @@ void RDA5807::setGpio(uint8_t gpioPin, uint8_t gpioSetup, int mcuPin)
     {
     case 1:
         this->gpio1Control = mcuPin;
-        reg04->refined.GPIO1 = gpioSetup;
+        reg04->refined.gpio1 = gpioSetup;
         break;
     case 2:
         this->gpio2Control = mcuPin;
-        reg04->refined.GPIO2 = gpioSetup;
+        reg04->refined.gpio2 = gpioSetup;
         break;
     case 3:
         this->gpio3Control = mcuPin;
-        reg04->refined.GPIO3 = gpioSetup;
+        reg04->refined.gpio3 = gpioSetup;
         break;
     default:
         gpio1Control = gpio2Control = gpio3Control = -1;
@@ -56,15 +56,15 @@ void RDA5807::setGpio(uint8_t gpioPin, uint8_t gpioSetup, int mcuPin)
 /**
  * @ingroup GA02
  * @brief Sets Interrupt Mode
- * @details GPIO2 could be programmed to output a low interrupt (interrupt will be generated only with interrupt enable bit STCIEN is set to high) when seek/tune process completes
- * @details Setting STCIEN = 1 will generate a low pulse on GPIO2 when the interrupt occurs.
- * @details ATTENTION: This function affects the behavior of the GPIO2 pin. The register 0x04 GPIO2 attribute will be setted to 1
+ * @details gpio2 could be programmed to output a low interrupt (interrupt will be generated only with interrupt enable bit STCIEN is set to high) when seek/tune process completes
+ * @details Setting STCIEN = 1 will generate a low pulse on gpio2 when the interrupt occurs.
+ * @details ATTENTION: This function affects the behavior of the gpio2 pin. The register 0x04 gpio2 attribute will be setted to 1
  * @param value  0 =  disable; 1 = enqble
  * @see setGpio
  */
 void RDA5807::setInterruptMode(uint8_t value)
 {
-    reg04->refined.GPIO2 = value;  // Sets the GPIO2 to deal with interrupt   
+    reg04->refined.gpio2 = value;  // Sets the gpio2 to deal with interrupt   
     reg04->refined.STCIEN = value; // Enable or disable interrupr 
     setRegister(REG04, reg04->raw);
 }
@@ -1383,7 +1383,7 @@ int RDA5807::checkI2C(uint8_t *addressArray)
 /**
  * @defgroup GA06 I2S Functions
  * @section  GA06 I2S
- * @details  When setting I2S_ENABLE (register 04) bit is high, the RDA5807FP can get the output signals SCK, WS, SD signals from GPIO3, GPIO1 and GPIO2 (I2S master)
+ * @details  When setting I2S_ENABLE (register 04) bit is high, the RDA5807FP can get the output signals SCK, WS, SD signals from gpio3, gpio1 and gpio2 (I2S master)
  */
 
 /**
@@ -1428,7 +1428,7 @@ void RDA5807::setI2SAllParameters(uint8_t R_DELY, uint8_t L_DELY, uint8_t SCLK_O
 /**
  * @ingroup GA06 set I2S on or off
  * @brief Enables I2S setup
- * @details  When setting I2S_ENABLE (register 04) bit is high, the RDA5807FP you can get the output signals SCK, WS, SD signals from GPIO3, GPIO1 and  GPIO2 (I2S master)
+ * @details  When setting I2S_ENABLE (register 04) bit is high, the RDA5807FP you can get the output signals SCK, WS, SD signals from gpio3, gpio1 and  gpio2 (I2S master)
  *
  * @param value  true or false
  */
