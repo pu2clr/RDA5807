@@ -1,0 +1,51 @@
+# Requerimentos para o Driver RDA5807 Python
+
+## Dependências básicas (incluídas no Python padrão)
+# - json
+# - time
+# - threading
+# - http.server
+# - urllib.parse
+# - logging
+
+## Dependências opcionais para recursos específicos
+
+# Para comunicação I2C com hardware real (Raspberry Pi, etc.)
+smbus==1.1.post2
+
+# Para cliente MQTT
+paho-mqtt>=1.6.0
+
+# Para interface web avançada (opcional)
+flask>=2.0.0
+flask-socketio>=5.0.0
+
+# Para logging avançado (opcional)
+colorlog>=6.0.0
+
+## Instalação das dependências:
+
+# Básico (apenas simulação):
+# pip install smbus
+
+# Com MQTT:
+# pip install smbus paho-mqtt
+
+# Completo (todas as funcionalidades):
+# pip install smbus paho-mqtt flask flask-socketio colorlog
+
+## Notas de instalação:
+
+# No Raspberry Pi:
+# sudo apt-get install python3-smbus
+# pip3 install paho-mqtt flask flask-socketio
+
+# No Ubuntu/Debian:
+# sudo apt-get install python3-smbus-dev
+# pip3 install smbus paho-mqtt
+
+# No macOS:
+# pip3 install smbus paho-mqtt
+
+# No Windows (apenas simulação):
+# pip install paho-mqtt flask flask-socketio
