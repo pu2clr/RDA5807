@@ -233,9 +233,9 @@ typedef union
 {
     struct
     {
-        uint8_t GPIO1 : 2;      //!< General Purpose I/O 1. when gpio_sel=01; 00 = High impedance; 01 = Reserved; 10 = Low; 11 = High
-        uint8_t GPIO2 : 2;      //!< General Purpose I/O 2. when gpio_sel=01; 00 = High impedance; 01 = Reserved; 10 = Low; 11 = High
-        uint8_t GPIO3 : 2;      //!< General Purpose I/O 1. when gpio_sel=01; 00 = High impedance; 01 = Mono/Stereo indicator (ST); 10 = Low; 11 = High
+        uint8_t gpio1 : 2;      //!< General Purpose I/O 1. when gpio_sel=01; 00 = High impedance; 01 = Reserved; 10 = Low; 11 = High
+        uint8_t gpio2 : 2;      //!< General Purpose I/O 2. when gpio_sel=01; 00 = High impedance; 01 = Reserved; 10 = Low; 11 = High
+        uint8_t gpio3 : 2;      //!< General Purpose I/O 1. when gpio_sel=01; 00 = High impedance; 01 = Mono/Stereo indicator (ST); 10 = Low; 11 = High
         uint8_t I2S_ENABLE : 1; //!< I2S enable; 0 = disabled; 1 = enabled.
         uint8_t RSVD1 : 1;
         uint8_t AFCD : 1;         //!< AFC disable; If 0, afc work; If 1, afc disabled.
